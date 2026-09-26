@@ -1,0 +1,38 @@
+# Secrets and local environment
+.env
+.env.*
+!.env.example
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Frontend dependencies and generated output
+node_modules/
+.next/
+dist/
+build/
+coverage/
+
+# Raw and generated document data; share the catalog and reproduction steps
+/data/raw/*
+!/data/raw/.gitkeep
+/data/processed/*
+!/data/processed/.gitkeep
+/data/chunks/*
+!/data/chunks/.gitkeep
+
+# Local runtime and held-out evaluation data
+/logs/
+*.log
+/infra/volumes/
+/evaluation/private/
+
+# OS files
+.DS_Store
+Thumbs.db
