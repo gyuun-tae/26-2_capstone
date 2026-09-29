@@ -89,3 +89,8 @@ YGPA-001은 신청자격 예외와 4단계 절차를 한 청크로 유지한다.
 ## HTML 청크화 확대 (2026-09-29)
 
 [현재 실행·처리 범위·팀 연결 규격](../handoff/chunking_html_batch.md)을 따릅니다. HTML 19건을 검사하여 13개 문서에서 15개 초안 청크를 준비합니다. 나머지 6개 문서 및 일부 표 범위는 명시적으로 보류합니다. FAQ 제외, 원문 위치 추적, index_approved=false를 유지합니다.
+
+
+## HTML 표 청크화 (2026-09-29)
+
+[표 청크 실행·규격](../handoff/chunking_html_tables.md): 설명 청크 16개 실제 저장 확인 후, 표 14개의 구조를 보존하는 청크 54개를 준비했습니다. source_locator.kind=html_table 및 context_locators로 원본 셀·조건을 연결합니다. 표가 일부 보류됐으므로 전체 문서 완료나 검색 승인으로 해석하지 않습니다.
