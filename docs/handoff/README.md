@@ -61,3 +61,8 @@ YGPA-031 후속 상태(2026-09-29): 도면 4쪽의 실제 저장·무결성 검�
 ## HTML 표 청크화 (2026-09-29)
 
 [표 청크 실행·규격](chunking_html_tables.md): 설명 청크 16개 실제 저장 확인 후, 표 14개의 구조를 보존하는 청크 54개를 준비했습니다. source_locator.kind=html_table 및 context_locators로 원본 셀·조건을 연결합니다. 표가 일부 보류됐으므로 전체 문서 완료나 검색 승인으로 해석하지 않습니다.
+
+
+## 현재 첨부 청크화 단계 (2026-09-29)
+
+HTML 청크 70개 실제 저장 확인. [첨부 13건 청크화 실행·규격](chunking_attachments.md)에서 108개 추가 청크를 준비했습니다. source_locator.kind=attachment_composite로 문단/페이지/표를 연결합니다. 부칙은 과거 적용 규정 표시를 붙이며 PDF 별표·도형 배치는 보류합니다. 코드·설명 문서 갱신 후 커밋·main push까지 수행합니다.
