@@ -36,3 +36,14 @@ coverage/
 # OS files
 .DS_Store
 Thumbs.db
+
+# Local notebook conversions and editor backups
+*.backup-*
+*.bak
+*~
+
+# Dataset archives and notebook checkpoints
+/data/*.zip
+/data/*.7z
+/data/*.tar*
+.ipynb_checkpoints/

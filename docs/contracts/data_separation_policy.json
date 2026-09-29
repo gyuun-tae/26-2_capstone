@@ -1,12 +1,44 @@
 {
-  "policy_version": "1.0",
+  "policy_version": "1.1",
   "decision_date": "2026-09-23",
   "catalog_path": "data/catalog/ygpa_document_candidates.csv",
   "allowed_hosts": [
     "www.ygpa.or.kr"
   ],
   "allowed_urls": [
-    "https://www.ygpa.or.kr/hmpg/ygpa/mwse/onmw/mwgu/contPageDetail.do?conts_no=69ABE2DCEF294D449FCE2A530341F15D"
+    "https://www.ygpa.or.kr/hmpg/ygpa/mwse/onmw/mwgu/contPageDetail.do?conts_no=69ABE2DCEF294D449FCE2A530341F15D",
+    "https://www.ygpa.or.kr/hmpg/ygpa/mwse/pmis/pmpr/pm01/contPageDetail.do?conts_no=D7600AC6607F41F1B506538F6CD0870E",
+    "https://www.ygpa.or.kr/hmpg/ygpa/mwse/pfor/pmgu/contPageDetail.do?conts_no=F0065097172F4BB0AFE9967F38A39F6D",
+    "https://www.ygpa.or.kr/hmpg/ygpa/mwse/pfor/prfm/prfmRegistList.do",
+    "https://www.ygpa.or.kr/hmpg/ygpa/comu/resv/faci/contPageDetail.do?conts_no=553FFE81A6344CD4987BD450219FDFF8",
+    "https://www.ygpa.or.kr/hmpg/ygpa/comu/resv/faci/rsvtCalendar.do",
+    "https://www.ygpa.or.kr/hmpg/ygpa/comu/resv/prom/contPageDetail.do?conts_no=4A2880C709E0433B90ED90AEF01D0337",
+    "https://www.ygpa.or.kr/hmpg/ygpa/comu/resv/ship/contPageDetail.do?conts_no=7AFB90C77B4F45B0A0ED114D46DD1E6E",
+    "https://www.ygpa.or.kr/hmpg/ygpa/port/term/cstt/contPageDetail.do?conts_no=CB334C8DFB0A48E3AF20234346EA74AB",
+    "https://www.ygpa.or.kr/hmpg/ygpa/port/term/expt/contPageDetail.do?conts_no=6798493037AB4EF8BA1986B003049BC4",
+    "https://www.ygpa.or.kr/hmpg/ygpa/port/yspt/faci/fa01/contPageDetail.do?conts_no=4140BB39301345688AC8FC546543B8FC",
+    "https://www.ygpa.or.kr/hmpg/ygpa/port/gypt/faci/gygy/fa51/contPageDetail.do?conts_no=4250BDB752384A788FE0E2C8E60E154A",
+    "https://www.ygpa.or.kr/hmpg/ygpa/port/gypt/faci/gyyc/fa01/contPageDetail.do?conts_no=A2100D9CE1294A4BB0A5CBEF440F5D27",
+    "https://www.ygpa.or.kr/hmpg/ygpa/port/gypt/faci/gygy/fa53/contPageDetail.do?conts_no=B8FF3486A2D04D1985A4528F38B03D86",
+    "https://www.ygpa.or.kr/hmpg/ygpa/port/gypt/faci/gygy/fa54/contPageDetail.do?conts_no=C29A3AE99AA9481ABDA8265417F4D8A6",
+    "https://www.ygpa.or.kr/hmpg/ygpa/port/gypt/faci/gygy/fa52/contPageDetail.do?conts_no=15A91FC057B940AE98868B4EB943CF89",
+    "https://www.ygpa.or.kr/hmpg/ygpa/port/gypt/ptsi/pt01/contPageDetail.do?conts_no=8D6C358F52C648CCA956DD97DD0F234C",
+    "https://www.ygpa.or.kr/hmpg/ygpa/port/gypt/ptsi/pt02/contPageDetail.do?conts_no=2923C709A80A4FCAA35FA45386437F88",
+    "https://www.ygpa.or.kr/hmpg/ygpa/port/gybe/mvsu/ms02/contPageDetail.do?conts_no=2F7614BF09354B08B5BB759D3D7788F6",
+    "https://www.ygpa.or.kr/hmpg/ygpa/port/gybe/mvsu/ms03/contPageDetail.do?conts_no=B47765FC88524CC7A2451671573FBAD7",
+    "https://www.ygpa.or.kr/hmpg/comm/file/fileDownLoad.do?file_no=FILE_000000000020472",
+    "https://www.ygpa.or.kr/hmpg/comm/file/fileDownLoad.do?file_no=FILE_000000000002083",
+    "https://www.ygpa.or.kr/hmpg/comm/file/fileDownLoad.do?file_no=FILE_000000000007123",
+    "https://www.ygpa.or.kr/hmpg/comm/file/fileDownLoad.do?file_no=FILE_000000000008393",
+    "https://www.ygpa.or.kr/hmpg/comm/file/fileDownLoad.do?file_no=FILE_000000000007140",
+    "https://www.ygpa.or.kr/hmpg/comm/file/fileDownLoad.do?file_no=FILE_000000000016984",
+    "https://www.ygpa.or.kr/hmpg/comm/file/fileDownLoad.do?file_no=FILE_000000000020296",
+    "https://www.ygpa.or.kr/hmpg/comm/file/fileDownLoad.do?file_no=FILE_000000000012170",
+    "https://www.ygpa.or.kr/hmpg/comm/file/fileDownLoad.do?file_no=FILE_000000000012489",
+    "https://www.ygpa.or.kr/hmpg/comm/file/fileDownLoad.do?file_no=A062229EEE864AC3BFCFABBBC007787D",
+    "https://www.ygpa.or.kr/hmpg/comm/file/fileDownLoad.do?file_no=CAE1651DFFDD4BA2917B8B5C44A50F2B",
+    "https://www.ygpa.or.kr/hmpg/comm/file/fileDownLoad.do?file_no=C9B71D7B02744D889FAA190B7D853186",
+    "https://www.ygpa.or.kr/hmpg/comm/file/fileDownLoad.do?file_no=0D4AC8D2035D43F98897C1A1755F8EEC"
   ],
   "blocked_path_prefixes": [
     "/hmpg/ygpa/comu/faqs/"
@@ -23,5 +55,88 @@
   ],
   "evaluation_storage": "evaluation/private/ygpa_faq/",
   "evaluation_use": "final_evaluation_only",
-  "retrieval_input_directory": "data/chunks/"
+  "retrieval_input_directory": "data/chunks/",
+  "updated_on": "2026-09-27",
+  "catalog_version": "0.2",
+  "allowed_parent_urls": [
+    "https://www.ygpa.or.kr/hmpg/ygpa/mwse/onmw/mwfm/bordContDetail.do?mode=W&bbs_no=211&pst_no=BBS_211_000000000000000000000026",
+    "https://www.ygpa.or.kr/hmpg/ygpa/mwse/onmw/mwfm/bordContDetail.do?mode=W&bbs_no=211&pst_no=BBS_211_000000000000000000000018",
+    "https://www.ygpa.or.kr/hmpg/ygpa/mwse/onmw/mwfm/bordContDetail.do?mode=W&bbs_no=211&pst_no=BBS_211_000000000000000000000015",
+    "https://www.ygpa.or.kr/hmpg/ygpa/mwse/onmw/mwfm/bordContDetail.do?mode=W&bbs_no=211&pst_no=BBS_211_000000000000000000000023",
+    "https://www.ygpa.or.kr/hmpg/ygpa/mwse/onmw/mwfm/bordContDetail.do?mode=W&bbs_no=211&pst_no=BBS_211_000000000000000000000014",
+    "https://www.ygpa.or.kr/hmpg/ygpa/mwse/onmw/mwfm/bordContDetail.do?mode=W&bbs_no=211&pst_no=BBS_211_000000000000000000000013",
+    "https://www.ygpa.or.kr/hmpg/ygpa/mwse/onmw/mwfm/bordContDetail.do?mode=W&bbs_no=211&pst_no=BBS_211_000000000000000000000012",
+    "https://www.ygpa.or.kr/hmpg/ygpa/mwse/onmw/mwfm/bordContDetail.do?mode=W&bbs_no=211&pst_no=BBS_211_000000000000000000000011",
+    "https://www.ygpa.or.kr/hmpg/ygpa/mwse/pmis/pmpr/pm02/contPageDetail.do?conts_no=FA24945B1B3A4045B67E6AA40EC59600",
+    "https://www.ygpa.or.kr/hmpg/ygpa/comu/resv/faci/contPageDetail.do?conts_no=553FFE81A6344CD4987BD450219FDFF8"
+  ],
+  "attachment_sources": [
+    {
+      "doc_id": "YGPA-021",
+      "source_url": "https://www.ygpa.or.kr/hmpg/comm/file/fileDownLoad.do?file_no=FILE_000000000020472",
+      "parent_source_url": "https://www.ygpa.or.kr/hmpg/ygpa/mwse/onmw/mwfm/bordContDetail.do?mode=W&bbs_no=211&pst_no=BBS_211_000000000000000000000026"
+    },
+    {
+      "doc_id": "YGPA-022",
+      "source_url": "https://www.ygpa.or.kr/hmpg/comm/file/fileDownLoad.do?file_no=FILE_000000000002083",
+      "parent_source_url": "https://www.ygpa.or.kr/hmpg/ygpa/mwse/onmw/mwfm/bordContDetail.do?mode=W&bbs_no=211&pst_no=BBS_211_000000000000000000000018"
+    },
+    {
+      "doc_id": "YGPA-023",
+      "source_url": "https://www.ygpa.or.kr/hmpg/comm/file/fileDownLoad.do?file_no=FILE_000000000007123",
+      "parent_source_url": "https://www.ygpa.or.kr/hmpg/ygpa/mwse/onmw/mwfm/bordContDetail.do?mode=W&bbs_no=211&pst_no=BBS_211_000000000000000000000015"
+    },
+    {
+      "doc_id": "YGPA-024",
+      "source_url": "https://www.ygpa.or.kr/hmpg/comm/file/fileDownLoad.do?file_no=FILE_000000000008393",
+      "parent_source_url": "https://www.ygpa.or.kr/hmpg/ygpa/mwse/onmw/mwfm/bordContDetail.do?mode=W&bbs_no=211&pst_no=BBS_211_000000000000000000000023"
+    },
+    {
+      "doc_id": "YGPA-025",
+      "source_url": "https://www.ygpa.or.kr/hmpg/comm/file/fileDownLoad.do?file_no=FILE_000000000007140",
+      "parent_source_url": "https://www.ygpa.or.kr/hmpg/ygpa/mwse/onmw/mwfm/bordContDetail.do?mode=W&bbs_no=211&pst_no=BBS_211_000000000000000000000014"
+    },
+    {
+      "doc_id": "YGPA-026",
+      "source_url": "https://www.ygpa.or.kr/hmpg/comm/file/fileDownLoad.do?file_no=FILE_000000000016984",
+      "parent_source_url": "https://www.ygpa.or.kr/hmpg/ygpa/mwse/onmw/mwfm/bordContDetail.do?mode=W&bbs_no=211&pst_no=BBS_211_000000000000000000000013"
+    },
+    {
+      "doc_id": "YGPA-027",
+      "source_url": "https://www.ygpa.or.kr/hmpg/comm/file/fileDownLoad.do?file_no=FILE_000000000020296",
+      "parent_source_url": "https://www.ygpa.or.kr/hmpg/ygpa/mwse/onmw/mwfm/bordContDetail.do?mode=W&bbs_no=211&pst_no=BBS_211_000000000000000000000013"
+    },
+    {
+      "doc_id": "YGPA-028",
+      "source_url": "https://www.ygpa.or.kr/hmpg/comm/file/fileDownLoad.do?file_no=FILE_000000000012170",
+      "parent_source_url": "https://www.ygpa.or.kr/hmpg/ygpa/mwse/onmw/mwfm/bordContDetail.do?mode=W&bbs_no=211&pst_no=BBS_211_000000000000000000000012"
+    },
+    {
+      "doc_id": "YGPA-029",
+      "source_url": "https://www.ygpa.or.kr/hmpg/comm/file/fileDownLoad.do?file_no=FILE_000000000012489",
+      "parent_source_url": "https://www.ygpa.or.kr/hmpg/ygpa/mwse/onmw/mwfm/bordContDetail.do?mode=W&bbs_no=211&pst_no=BBS_211_000000000000000000000011"
+    },
+    {
+      "doc_id": "YGPA-030",
+      "source_url": "https://www.ygpa.or.kr/hmpg/comm/file/fileDownLoad.do?file_no=A062229EEE864AC3BFCFABBBC007787D",
+      "parent_source_url": "https://www.ygpa.or.kr/hmpg/ygpa/mwse/pmis/pmpr/pm02/contPageDetail.do?conts_no=FA24945B1B3A4045B67E6AA40EC59600"
+    },
+    {
+      "doc_id": "YGPA-031",
+      "source_url": "https://www.ygpa.or.kr/hmpg/comm/file/fileDownLoad.do?file_no=CAE1651DFFDD4BA2917B8B5C44A50F2B",
+      "parent_source_url": "https://www.ygpa.or.kr/hmpg/ygpa/mwse/pmis/pmpr/pm02/contPageDetail.do?conts_no=FA24945B1B3A4045B67E6AA40EC59600"
+    },
+    {
+      "doc_id": "YGPA-032",
+      "source_url": "https://www.ygpa.or.kr/hmpg/comm/file/fileDownLoad.do?file_no=C9B71D7B02744D889FAA190B7D853186",
+      "parent_source_url": "https://www.ygpa.or.kr/hmpg/ygpa/mwse/pmis/pmpr/pm02/contPageDetail.do?conts_no=FA24945B1B3A4045B67E6AA40EC59600"
+    },
+    {
+      "doc_id": "YGPA-033",
+      "source_url": "https://www.ygpa.or.kr/hmpg/comm/file/fileDownLoad.do?file_no=0D4AC8D2035D43F98897C1A1755F8EEC",
+      "parent_source_url": "https://www.ygpa.or.kr/hmpg/ygpa/comu/resv/faci/contPageDetail.do?conts_no=553FFE81A6344CD4987BD450219FDFF8"
+    }
+  ],
+  "attachment_collection_status": "collector_ready_live_unverified",
+  "require_attachment_provenance": true
 }

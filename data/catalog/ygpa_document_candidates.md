@@ -1,4 +1,214 @@
-# 여수광양항만공사 첫 데이터셋: 공식 문서 후보 20건
+# 여수광양항만공사 공식 문서 후보 33건
+
+- 목록 버전: 0.2 / 확장 등록일: 2026-09-27
+- 기존 20건: YGPA-001~020. 기존 21개 열의 값은 보존했다. 수집·추출은 사용자 실행 보고 기준 완료이며 현행성·본문 품질·색인 승인은 별도다.
+- 추가 13건: YGPA-021~033. 첨부 링크만 확인한 신규 수집 후보이며 다운로드·본문 추출 전이다.
+- 탐색 후보 중 보류 8건은 아래 목록에 남기고 CSV 및 허용 다운로드 URL에서 제외했다.
+- [후보 CSV](ygpa_document_candidates.csv) · [탐색 근거](../../docs/handoff/additional_document_discovery_20260927.md) · [수집 정책](../../docs/contracts/data_separation_policy.json)
+
+## 신규 등록 13건
+
+시설 이용·출입·선박 신청에 직접 연결되는 서식·규정을 우선 선정했다. 7건은 우선 수집 준비 대상이고 6건은 다음 순서다. 이는 내용 정확성이나 현행성 검토 통과를 뜻하지 않는다.
+
+| 문서 ID | 탐색 번호 | 문서·다운로드 | 부모 게시글 작성일 | 형식 힌트 | 순서 |
+|---|---|---|---|---|---|
+| YGPA-021 | 탐색-01 | [더드림스마트센터 이용 신청서](https://www.ygpa.or.kr/hmpg/comm/file/fileDownLoad.do?file_no=FILE_000000000020472) | 2021-06-28 | hwp | 우선 |
+| YGPA-022 | 탐색-09 | [출입증분실경위서](https://www.ygpa.or.kr/hmpg/comm/file/fileDownLoad.do?file_no=FILE_000000000002083) | 2015-02-11 | hwp | 후속 |
+| YGPA-023 | 탐색-10 | [항만시설출입업체등록신청서](https://www.ygpa.or.kr/hmpg/comm/file/fileDownLoad.do?file_no=FILE_000000000007123) | 2015-02-11 | hwp | 후속 |
+| YGPA-024 | 탐색-11 | [항만 상시출입증 기간연장 신청서](https://www.ygpa.or.kr/hmpg/comm/file/fileDownLoad.do?file_no=FILE_000000000008393) | 2016-03-28 | hwp | 후속 |
+| YGPA-025 | 탐색-12 | [항만상시출입증발급신청서](https://www.ygpa.or.kr/hmpg/comm/file/fileDownLoad.do?file_no=FILE_000000000007140) | 2015-02-11 | hwp | 후속 |
+| YGPA-026 | 탐색-13 | [안전작업 계획서 표준양식](https://www.ygpa.or.kr/hmpg/comm/file/fileDownLoad.do?file_no=FILE_000000000016984) | 2021-06-01 | hwp | 우선 |
+| YGPA-027 | 탐색-14 | [항만시설사용신청서양식(202106)](https://www.ygpa.or.kr/hmpg/comm/file/fileDownLoad.do?file_no=FILE_000000000020296) | 2021-06-01 | hwp | 우선 |
+| YGPA-028 | 탐색-15 | [통과선박 인정 신청서](https://www.ygpa.or.kr/hmpg/comm/file/fileDownLoad.do?file_no=FILE_000000000012170) | 2015-01-23 | hwp | 후속 |
+| YGPA-029 | 탐색-16 | [선박제원신고서](https://www.ygpa.or.kr/hmpg/comm/file/fileDownLoad.do?file_no=FILE_000000000012489) | 2015-01-23 | hwp | 후속 |
+| YGPA-030 | 탐색-17 | [여수항ㆍ광양항 통과선박 운영 지침](https://www.ygpa.or.kr/hmpg/comm/file/fileDownLoad.do?file_no=A062229EEE864AC3BFCFABBBC007787D) | 미확인 | unknown | 우선 |
+| YGPA-031 | 탐색-18 | [여수광양항만공사 항만시설 운영규정](https://www.ygpa.or.kr/hmpg/comm/file/fileDownLoad.do?file_no=CAE1651DFFDD4BA2917B8B5C44A50F2B) | 미확인 | unknown | 우선 |
+| YGPA-032 | 탐색-19 | [여수광양항만공사의 항만시설 사용 및 사용료 등에 관한 규정](https://www.ygpa.or.kr/hmpg/comm/file/fileDownLoad.do?file_no=C9B71D7B02744D889FAA190B7D853186) | 미확인 | unknown | 우선 |
+| YGPA-033 | 탐색-21 | [체육시설 이용 신청서(안내 문구 기준 가칭)](https://www.ygpa.or.kr/hmpg/comm/file/fileDownLoad.do?file_no=0D4AC8D2035D43F98897C1A1755F8EEC) | 미확인 | unknown | 우선 |
+
+모든 신규 첨부의 발행일·개정일은 미확인이다. 게시글 작성일을 첨부 개정일로 복사하지 않는다. HEAD 405는 서버가 HEAD 방식을 거부한 결과이며 GET 다운로드 불가 판정이 아니다. HWP 표시는 게시글의 파일명 기준 힌트로, 실제 파일 형식은 다운로드 후 확인한다.
+
+## 신규 문서별 메모
+
+### YGPA-021 더드림스마트센터 이용 신청서
+
+- 공식 부모 페이지: [출처](https://www.ygpa.or.kr/hmpg/ygpa/mwse/onmw/mwfm/bordContDetail.do?mode=W&bbs_no=211&pst_no=BBS_211_000000000000000000000026)
+- 첨부 주소: [다운로드 링크](https://www.ygpa.or.kr/hmpg/comm/file/fileDownLoad.do?file_no=FILE_000000000020472)
+- 날짜 근거: 부모 게시글 작성일 2021-06-28만 확인. 첨부 자체의 발행·개정일은 미검증이며 게시글 날짜를 대입하지 않음.
+- 접근 상태: 부모 게시글 상세 HTML에서 첨부 파일명·직접 링크 확인. 첨부 GET 다운로드·본문은 아직 미검증.
+- 질문 범주: 시설 이용 신청
+- 수집 방식: 확인한 첨부 URL만 GET 수집; 파일 시그니처로 HWP 확인 후 HWP 전용 추출·표 대조
+- 청크화 주의: 시설명·이용 목적·이용일시·신청 조건을 같은 신청 단위로 보존. 빈 칸을 실제 예약정보로 해석하지 않음.
+- 검토 사항: 수집 대상 후보 등록이며 검색 승인 아님. 부모 게시글은 2021-06-28 작성으로 현행 서식 여부 재확인 필요. 첨부 확보 후 내용 중복·표·조건 검토. index_approved=false 유지.
+
+### YGPA-022 출입증분실경위서
+
+- 공식 부모 페이지: [출처](https://www.ygpa.or.kr/hmpg/ygpa/mwse/onmw/mwfm/bordContDetail.do?mode=W&bbs_no=211&pst_no=BBS_211_000000000000000000000018)
+- 첨부 주소: [다운로드 링크](https://www.ygpa.or.kr/hmpg/comm/file/fileDownLoad.do?file_no=FILE_000000000002083)
+- 날짜 근거: 부모 게시글 작성일 2015-02-11만 확인. 첨부 자체의 발행·개정일은 미검증이며 게시글 날짜를 대입하지 않음.
+- 접근 상태: 부모 게시글 상세 HTML에서 첨부 파일명·직접 링크 확인. 첨부 GET 다운로드·본문은 아직 미검증.
+- 질문 범주: 시설 사용·출입 신청
+- 수집 방식: 확인한 첨부 URL만 GET 수집; 파일 시그니처로 HWP 확인 후 HWP 전용 추출·표 대조
+- 청크화 주의: 분실·훼손 구분, 경위 작성 항목, 신청 주체와 서명란 관계를 보존. 개인이 작성한 내용은 수집 대상 아님.
+- 검토 사항: 수집 대상 후보 등록이며 검색 승인 아님. 부모 게시글은 2015-02-11 작성으로 현행 서식 여부 재확인 필요. 첨부 확보 후 내용 중복·표·조건 검토. index_approved=false 유지.
+
+### YGPA-023 항만시설출입업체등록신청서
+
+- 공식 부모 페이지: [출처](https://www.ygpa.or.kr/hmpg/ygpa/mwse/onmw/mwfm/bordContDetail.do?mode=W&bbs_no=211&pst_no=BBS_211_000000000000000000000015)
+- 첨부 주소: [다운로드 링크](https://www.ygpa.or.kr/hmpg/comm/file/fileDownLoad.do?file_no=FILE_000000000007123)
+- 날짜 근거: 부모 게시글 작성일 2015-02-11만 확인. 첨부 자체의 발행·개정일은 미검증이며 게시글 날짜를 대입하지 않음.
+- 접근 상태: 부모 게시글 상세 HTML에서 첨부 파일명·직접 링크 확인. 첨부 GET 다운로드·본문은 아직 미검증.
+- 질문 범주: 시설 사용·출입 신청
+- 수집 방식: 확인한 첨부 URL만 GET 수집; 파일 시그니처로 HWP 확인 후 HWP 전용 추출·표 대조
+- 청크화 주의: 업체 정보와 담당자 정보, 첨부서류·서약 조건을 분리해 표 머리글과 함께 보존. 작성 예시를 본 서식과 중복 계산하지 않음.
+- 검토 사항: 수집 대상 후보 등록이며 검색 승인 아님. 부모 게시글은 2015-02-11 작성으로 현행 서식 여부 재확인 필요. 첨부 확보 후 내용 중복·표·조건 검토. index_approved=false 유지.
+
+### YGPA-024 항만 상시출입증 기간연장 신청서
+
+- 공식 부모 페이지: [출처](https://www.ygpa.or.kr/hmpg/ygpa/mwse/onmw/mwfm/bordContDetail.do?mode=W&bbs_no=211&pst_no=BBS_211_000000000000000000000023)
+- 첨부 주소: [다운로드 링크](https://www.ygpa.or.kr/hmpg/comm/file/fileDownLoad.do?file_no=FILE_000000000008393)
+- 날짜 근거: 부모 게시글 작성일 2016-03-28만 확인. 첨부 자체의 발행·개정일은 미검증이며 게시글 날짜를 대입하지 않음.
+- 접근 상태: 부모 게시글 상세 HTML에서 첨부 파일명·직접 링크 확인. 첨부 GET 다운로드·본문은 아직 미검증.
+- 질문 범주: 시설 사용·출입 신청
+- 수집 방식: 확인한 첨부 URL만 GET 수집; 파일 시그니처로 HWP 확인 후 HWP 전용 추출·표 대조
+- 청크화 주의: 연장 대상·기존 유효기간·신청기간·제출조건의 관계를 보존. 최초 발급과 연장 신청을 혼동하지 않음.
+- 검토 사항: 수집 대상 후보 등록이며 검색 승인 아님. 부모 게시글은 2016-03-28 작성으로 현행 서식 여부 재확인 필요. 첨부 확보 후 내용 중복·표·조건 검토. index_approved=false 유지.
+
+### YGPA-025 항만상시출입증발급신청서
+
+- 공식 부모 페이지: [출처](https://www.ygpa.or.kr/hmpg/ygpa/mwse/onmw/mwfm/bordContDetail.do?mode=W&bbs_no=211&pst_no=BBS_211_000000000000000000000014)
+- 첨부 주소: [다운로드 링크](https://www.ygpa.or.kr/hmpg/comm/file/fileDownLoad.do?file_no=FILE_000000000007140)
+- 날짜 근거: 부모 게시글 작성일 2015-02-11만 확인. 첨부 자체의 발행·개정일은 미검증이며 게시글 날짜를 대입하지 않음.
+- 접근 상태: 부모 게시글 상세 HTML에서 첨부 파일명·직접 링크 확인. 첨부 GET 다운로드·본문은 아직 미검증.
+- 질문 범주: 시설 사용·출입 신청
+- 수집 방식: 확인한 첨부 URL만 GET 수집; 파일 시그니처로 HWP 확인 후 HWP 전용 추출·표 대조
+- 청크화 주의: 출입 대상·출입 구역·신청 주체·구비서류를 관련 항목과 함께 보존. 기간연장 서식과 구분.
+- 검토 사항: 수집 대상 후보 등록이며 검색 승인 아님. 부모 게시글은 2015-02-11 작성으로 현행 서식 여부 재확인 필요. 첨부 확보 후 내용 중복·표·조건 검토. index_approved=false 유지.
+
+### YGPA-026 안전작업 계획서 표준양식
+
+- 공식 부모 페이지: [출처](https://www.ygpa.or.kr/hmpg/ygpa/mwse/onmw/mwfm/bordContDetail.do?mode=W&bbs_no=211&pst_no=BBS_211_000000000000000000000013)
+- 첨부 주소: [다운로드 링크](https://www.ygpa.or.kr/hmpg/comm/file/fileDownLoad.do?file_no=FILE_000000000016984)
+- 날짜 근거: 부모 게시글 작성일 2021-06-01만 확인. 첨부 자체의 발행·개정일은 미검증이며 게시글 날짜를 대입하지 않음.
+- 접근 상태: 부모 게시글 상세 HTML에서 첨부 파일명·직접 링크 확인. 첨부 GET 다운로드·본문은 아직 미검증.
+- 질문 범주: 시설 사용 신청의 구비서류
+- 수집 방식: 확인한 첨부 URL만 GET 수집; 파일 시그니처로 HWP 확인 후 HWP 전용 추출·표 대조
+- 청크화 주의: 작업 종류·장소·기간·위험요인·안전대책의 표 관계를 보존. 첨부돼 있다는 이유만으로 모든 신청자의 의무서류라고 단정하지 않음.
+- 검토 사항: 수집 대상 후보 등록이며 검색 승인 아님. 부모 게시글은 2021-06-01 작성으로 현행 서식 여부 재확인 필요. 첨부 확보 후 내용 중복·표·조건 검토. index_approved=false 유지.
+
+### YGPA-027 항만시설사용신청서양식(202106)
+
+- 공식 부모 페이지: [출처](https://www.ygpa.or.kr/hmpg/ygpa/mwse/onmw/mwfm/bordContDetail.do?mode=W&bbs_no=211&pst_no=BBS_211_000000000000000000000013)
+- 첨부 주소: [다운로드 링크](https://www.ygpa.or.kr/hmpg/comm/file/fileDownLoad.do?file_no=FILE_000000000020296)
+- 날짜 근거: 부모 게시글 작성일 2021-06-01만 확인. 첨부 자체의 발행·개정일은 미검증이며 게시글 날짜를 대입하지 않음.
+- 접근 상태: 부모 게시글 상세 HTML에서 첨부 파일명·직접 링크 확인. 첨부 GET 다운로드·본문은 아직 미검증.
+- 질문 범주: 시설 사용·출입 신청
+- 수집 방식: 확인한 첨부 URL만 GET 수집; 파일 시그니처로 HWP 확인 후 HWP 전용 추출·표 대조
+- 청크화 주의: 사용 대상·장소·기간·목적·신청과 승낙 항목을 구별. 최초·연장 작성 예시와 섞지 않고 첨부 조건을 함께 보존.
+- 검토 사항: 수집 대상 후보 등록이며 검색 승인 아님. 부모 게시글은 2021-06-01 작성으로 현행 서식 여부 재확인 필요. 첨부 확보 후 내용 중복·표·조건 검토. index_approved=false 유지.
+
+### YGPA-028 통과선박 인정 신청서
+
+- 공식 부모 페이지: [출처](https://www.ygpa.or.kr/hmpg/ygpa/mwse/onmw/mwfm/bordContDetail.do?mode=W&bbs_no=211&pst_no=BBS_211_000000000000000000000012)
+- 첨부 주소: [다운로드 링크](https://www.ygpa.or.kr/hmpg/comm/file/fileDownLoad.do?file_no=FILE_000000000012170)
+- 날짜 근거: 부모 게시글 작성일 2015-01-23만 확인. 첨부 자체의 발행·개정일은 미검증이며 게시글 날짜를 대입하지 않음.
+- 접근 상태: 부모 게시글 상세 HTML에서 첨부 파일명·직접 링크 확인. 첨부 GET 다운로드·본문은 아직 미검증.
+- 질문 범주: 선박 신고·통과 신청
+- 수집 방식: 확인한 첨부 URL만 GET 수집; 파일 시그니처로 HWP 확인 후 HWP 전용 추출·표 대조
+- 청크화 주의: 선박 식별·입출항·신청 사유를 관련 조건과 함께 보존. 통과선박 운영 지침과 연결하고 서식명만으로 인정 기준을 추정하지 않음.
+- 검토 사항: 수집 대상 후보 등록이며 검색 승인 아님. 부모 게시글은 2015-01-23 작성으로 현행 서식 여부 재확인 필요. 첨부 확보 후 내용 중복·표·조건 검토. index_approved=false 유지.
+
+### YGPA-029 선박제원신고서
+
+- 공식 부모 페이지: [출처](https://www.ygpa.or.kr/hmpg/ygpa/mwse/onmw/mwfm/bordContDetail.do?mode=W&bbs_no=211&pst_no=BBS_211_000000000000000000000011)
+- 첨부 주소: [다운로드 링크](https://www.ygpa.or.kr/hmpg/comm/file/fileDownLoad.do?file_no=FILE_000000000012489)
+- 날짜 근거: 부모 게시글 작성일 2015-01-23만 확인. 첨부 자체의 발행·개정일은 미검증이며 게시글 날짜를 대입하지 않음.
+- 접근 상태: 부모 게시글 상세 HTML에서 첨부 파일명·직접 링크 확인. 첨부 GET 다운로드·본문은 아직 미검증.
+- 질문 범주: 선박 신고·통과 신청
+- 수집 방식: 확인한 첨부 URL만 GET 수집; 파일 시그니처로 HWP 확인 후 HWP 전용 추출·표 대조
+- 청크화 주의: 신규·변경 구분과 제원별 단위·식별 항목을 보존. 작성 예시의 수치를 일반 기준으로 사용하지 않음.
+- 검토 사항: 수집 대상 후보 등록이며 검색 승인 아님. 부모 게시글은 2015-01-23 작성으로 현행 서식 여부 재확인 필요. 첨부 확보 후 내용 중복·표·조건 검토. index_approved=false 유지.
+
+### YGPA-030 여수항ㆍ광양항 통과선박 운영 지침
+
+- 공식 부모 페이지: [출처](https://www.ygpa.or.kr/hmpg/ygpa/mwse/pmis/pmpr/pm02/contPageDetail.do?conts_no=FA24945B1B3A4045B67E6AA40EC59600)
+- 첨부 주소: [다운로드 링크](https://www.ygpa.or.kr/hmpg/comm/file/fileDownLoad.do?file_no=A062229EEE864AC3BFCFABBBC007787D)
+- 날짜 근거: 첨부 자체 발행·개정일 미검증. 안내 페이지 갱신일이나 수집 시각으로 대체하지 않음.
+- 접근 상태: 공식 안내 HTML에서 연결 확인. HEAD 응답 405로 헤더 확인 불가. GET 다운로드 실패로 단정하지 않음. 실제 파일명·형식·본문은 미검증.
+- 질문 범주: 통과선박 인정 조건
+- 수집 방식: 확인한 첨부 URL만 GET 수집; Content-Type·파일 시그니처·실제 파일명 확인 후 형식별 추출
+- 청크화 주의: 조문·별표·예외·부칙·시행일을 연결. 통과선박 인정 신청서의 항목과 규정의 기준을 구별.
+- 검토 사항: 수집 대상 후보 등록이며 검색 승인 아님. 첨부 개정일·시행일 확인 필요. 첨부 확보 후 내용 중복·표·조건 검토. index_approved=false 유지.
+
+### YGPA-031 여수광양항만공사 항만시설 운영규정
+
+- 공식 부모 페이지: [출처](https://www.ygpa.or.kr/hmpg/ygpa/mwse/pmis/pmpr/pm02/contPageDetail.do?conts_no=FA24945B1B3A4045B67E6AA40EC59600)
+- 첨부 주소: [다운로드 링크](https://www.ygpa.or.kr/hmpg/comm/file/fileDownLoad.do?file_no=CAE1651DFFDD4BA2917B8B5C44A50F2B)
+- 날짜 근거: 첨부 자체 발행·개정일 미검증. 안내 페이지 갱신일이나 수집 시각으로 대체하지 않음.
+- 접근 상태: 공식 안내 HTML에서 연결 확인. HEAD 응답 405로 헤더 확인 불가. GET 다운로드 실패로 단정하지 않음. 실제 파일명·형식·본문은 미검증.
+- 질문 범주: 항만시설 운영·이용
+- 수집 방식: 확인한 첨부 URL만 GET 수집; Content-Type·파일 시그니처·실제 파일명 확인 후 형식별 추출
+- 청크화 주의: 조문 번호·정의·적용 시설·운영 조건·별표를 함께 유지. 개정 이력과 시행일 확인 후 현행 적용 여부 판단.
+- 검토 사항: 수집 대상 후보 등록이며 검색 승인 아님. 첨부 개정일·시행일 확인 필요. 첨부 확보 후 내용 중복·표·조건 검토. index_approved=false 유지.
+
+### YGPA-032 여수광양항만공사의 항만시설 사용 및 사용료 등에 관한 규정
+
+- 공식 부모 페이지: [출처](https://www.ygpa.or.kr/hmpg/ygpa/mwse/pmis/pmpr/pm02/contPageDetail.do?conts_no=FA24945B1B3A4045B67E6AA40EC59600)
+- 첨부 주소: [다운로드 링크](https://www.ygpa.or.kr/hmpg/comm/file/fileDownLoad.do?file_no=C9B71D7B02744D889FAA190B7D853186)
+- 날짜 근거: 첨부 자체 발행·개정일 미검증. 안내 페이지 갱신일이나 수집 시각으로 대체하지 않음.
+- 접근 상태: 공식 안내 HTML에서 연결 확인. HEAD 응답 405로 헤더 확인 불가. GET 다운로드 실패로 단정하지 않음. 실제 파일명·형식·본문은 미검증.
+- 질문 범주: 시설 사용·사용료·감면
+- 수집 방식: 확인한 첨부 URL만 GET 수집; Content-Type·파일 시그니처·실제 파일명 확인 후 형식별 추출
+- 청크화 주의: 요금 항목·대상·단위·기간·감면 조건과 예외를 표 머리글·주석과 함께 보존. 구판 사용료를 현행 요금으로 자동 승인하지 않음.
+- 검토 사항: 수집 대상 후보 등록이며 검색 승인 아님. 첨부 개정일·시행일 확인 필요. 첨부 확보 후 내용 중복·표·조건 검토. index_approved=false 유지.
+
+### YGPA-033 체육시설 이용 신청서(안내 문구 기준 가칭)
+
+- 공식 부모 페이지: [출처](https://www.ygpa.or.kr/hmpg/ygpa/comu/resv/faci/contPageDetail.do?conts_no=553FFE81A6344CD4987BD450219FDFF8)
+- 첨부 주소: [다운로드 링크](https://www.ygpa.or.kr/hmpg/comm/file/fileDownLoad.do?file_no=0D4AC8D2035D43F98897C1A1755F8EEC)
+- 날짜 근거: 첨부 자체 발행·개정일 미검증. 안내 페이지 갱신일이나 수집 시각으로 대체하지 않음.
+- 접근 상태: 2026-09-23 저장한 YGPA-005 원본에서 연결 확인. HEAD 응답 405로 헤더 확인 불가. GET 다운로드 실패로 단정하지 않음. 실제 파일명·형식·본문은 미검증.
+- 질문 범주: 체육시설 사용 신청
+- 수집 방식: 확인한 첨부 URL만 GET 수집; Content-Type·파일 시그니처·실제 파일명 확인 후 형식별 추출
+- 청크화 주의: 실제 파일 제목·시설 구분·이용시간·서명·동의·구비서류를 확인 후 추출. 예약 가능 현황과 정적 서식의 내용을 구분.
+- 검토 사항: 수집 대상 후보 등록이며 검색 승인 아님. 첨부 개정일·시행일 확인 필요. 문서 제목은 안내 문구 기준 가칭. 첨부 확보 후 내용 중복·표·조건 검토. index_approved=false 유지.
+
+## 이번 등록에서 보류한 8건
+
+| 탐색 번호 | 문서 | 보류 이유 |
+|---|---|---|
+| 탐색-02 | [기업민원 보호위반 신고서](https://www.ygpa.or.kr/hmpg/ygpa/mwse/onmw/mwfm/bordContDetail.do?mode=W&bbs_no=211&pst_no=BBS_211_000000000000000000000025) | 기업 민원 보호로 업무 범위 확대 여부 결정 필요 |
+| 탐색-03 | [중소ㆍ중견기업 규제애로 신고서](https://www.ygpa.or.kr/hmpg/ygpa/mwse/onmw/mwfm/bordContDetail.do?mode=W&bbs_no=211&pst_no=BBS_211_000000000000000000000025) | 규제애로 신고로 업무 범위 확대 여부 결정 필요 |
+| 탐색-04 | [신원진술서(약식)](https://www.ygpa.or.kr/hmpg/ygpa/mwse/onmw/mwfm/bordContDetail.do?mode=W&bbs_no=211&pst_no=BBS_211_000000000000000000000024) | 항만출입에 적용되는 대상과 약식 서식 관계 확인 필요 |
+| 탐색-05 | [신원진술서[별지 제2-1호 서식]](https://www.ygpa.or.kr/hmpg/ygpa/mwse/onmw/mwfm/bordContDetail.do?mode=W&bbs_no=211&pst_no=BBS_211_000000000000000000000022) | 항만출입에 적용되는 대상과 현행 서식 여부 확인 필요 |
+| 탐색-06 | [민원사무편람](https://www.ygpa.or.kr/hmpg/ygpa/mwse/onmw/mwfm/bordContDetail.do?mode=W&bbs_no=211&pst_no=BBS_211_000000000000000000000021) | 2015년 민원사무편람의 현행성 및 수록 범위 검토 필요 |
+| 탐색-07 | [민원사무 처리기준표](https://www.ygpa.or.kr/hmpg/ygpa/mwse/onmw/mwfm/bordContDetail.do?mode=W&bbs_no=211&pst_no=BBS_211_000000000000000000000020) | 2015년 민원사무 처리기준표의 현행 처리기한·담당업무 대조 필요 |
+| 탐색-08 | [CIQ임시출입신청서](https://www.ygpa.or.kr/hmpg/ygpa/mwse/onmw/mwfm/bordContDetail.do?mode=W&bbs_no=211&pst_no=BBS_211_000000000000000000000019) | CIQ 임시출입 업무의 현행 운영 주체·적용 범위 확인 필요 |
+| 탐색-20 | [여수광양항 선박저속운항 프로그램 세부운영방안](https://www.ygpa.or.kr/hmpg/ygpa/mwse/pmis/pmpr/pm02/contPageDetail.do?conts_no=FA24945B1B3A4045B67E6AA40EC59600) | 저속운항 프로그램의 적용 연도·대상·운영조건 확인 필요 |
+
+## CSV 0.2 규격과 담당자 연결
+
+기존 21열의 이름·순서를 유지하고 아래 4열을 끝에 추가했다. CSV는 UTF-8 BOM이며 날짜 문자열은 YYYY-MM-DD, 미확인은 빈 값이다.
+
+| 추가 열 | 의미 |
+|---|---|
+| parent_source_url | 첨부 링크를 확인한 공식 부모 페이지. 기존 HTML 문서는 빈 값 |
+| parent_published_at | 부모 게시글 작성일. 첨부 발행일·개정일과 구별 |
+| format_hint | html / hwp / unknown. 파일 시그니처 확인 전 힌트 |
+| discovery_id | 2026-09-27 탐색 보고서의 임시 번호. 기존 20건은 빈 값 |
+
+신규 상태값은 date_status=unverified_attachment(첨부 날짜 미검증), access_status=attachment_link_verified(부모 페이지에서 첨부 링크 확인)다. review_status=attachment_and_rules_review를 사용한다. priority=extension_first_batch는 우선 7건, extension_next_batch는 후속 6건이다. sample_question은 원문 검토용 질문 제안이며 FAQ 최종평가 질문을 사용하지 않았다.
+
+수집 정책 1.1은 기존 HTML 20개와 신규 첨부 13개의 source_url만 allowed_urls에 등록한다. allowed_parent_urls는 링크 근거를 재확인하는 부모 화면 전용이며 독립 학습 문서나 자동 순회 허용 목록이 아니다. attachment_sources는 doc_id·첨부 URL·부모 URL의 대응이다. 파일 다운로드 경로 전체나 file_no 전체를 허용하지 않는다. FAQ 차단·리다이렉트 금지·자동 링크 순회 금지를 유지한다.
+
+현재 collect_remaining.py와 extract_remaining.py는 대상이 19건이어야 하고 HTML만 처리한다. 확장된 CSV로 바로 실행하지 않는다. 다음 3단계에서 신규 ID 선택, URL별 robots 검사, 첨부 응답 검증·저장, 재시도 및 provenance 검증을 적용해야 한다. 정책의 require_attachment_provenance는 그 요구사항이며 현재 코드가 이미 강제한다는 의미가 아니다.
+
+문서 처리 담당자는 doc_id와 source_url을 유지하고 원본 해시·실제 파일 형식·수집 시각을 붙인다. 검색 담당자는 내용 검토 전의 첨부를 색인하지 않는다. 신규 수집 후 메타데이터에도 index_approved=false를 유지한다. FAQ는 최종평가 전용으로 제외한다.
+
+## 초기 20건의 탐색 기록 — 2026-09-23
+
+아래는 초기 탐색 기록이다. 날짜·접근 상태는 당시 기록이며, 이후 사용자가 완료한 수집·추출의 실제 상태는 data/raw 및 data/processed의 메타데이터에서 확인한다. 위 0.2 규격이 현재 CSV 규격이다.
+
 
 - 목록 버전: 0.1
 - 확인 기준일: 2026-09-23 (한국 시간, 확인한 날짜만 기록)
