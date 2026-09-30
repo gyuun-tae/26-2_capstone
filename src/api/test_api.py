@@ -72,12 +72,12 @@ def last_log(question):
         return db.scalars(select(ChatLog).where(ChatLog.question == question).order_by(ChatLog.id.desc())).first()
 
 
-# 로그: 성공은 응답 유형과 함께, 실패는 answer_type=error + 원인 + 그때까지의 답변으로 남는다
+# 로그: 성공은 응답 유형과 함께, 실패는 질문 + answer_type=error + 오류 종류만 남는다 (답변 조각·메시지는 안 남김)
 assert last_log("민원 신청은 어떻게 하나요?").answer_type == "answer"
 log = last_log("테스트:오류")
-assert log.answer_type == "error" and "RuntimeError" in log.error and log.answer, (log.answer_type, log.error)
+assert (log.answer_type, log.error, log.answer, log.sources) == ("error", "RuntimeError", "", []), (log.error, log.answer)
 log = last_log("검색 오류")
-assert log.answer_type == "error" and "검색 실패" in log.error and log.answer == ""
+assert (log.answer_type, log.error, log.answer) == ("error", "RuntimeError", "")
 assert last_log("저장 오류") is None  # DB가 원인이면 저장할 수 없다 (서버 로그에만 남음)
 
 # 기존 테이블에 새 열이 없어도 서버 시작 때 자동으로 추가된다 (예: 이미 만들어진 Neon 테이블)

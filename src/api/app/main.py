@@ -38,11 +38,13 @@ def health():
     return {"status": "ok"}
 
 
-def save_error_log(question: str, partial_answer: str, sources: list, error: str):
-    """실패한 대화도 평가용으로 남긴다. DB 자체가 원인이면 저장도 실패하므로 서버 로그만 남기고 넘어간다."""
+def save_error_log(question: str, error_type: str):
+    """실패한 대화도 평가용으로 남긴다. 질문과 오류 종류만 저장한다.
+    검증 전 답변 조각·예외 메시지는 남기지 않는다 (상세 원인은 서버 로그에서 확인).
+    DB 자체가 원인이면 저장도 실패하므로 서버 로그만 남기고 넘어간다."""
     try:
         with SessionLocal() as db:
-            db.add(ChatLog(question=question, answer=partial_answer, sources=sources, answer_type="error", error=error[:1000]))
+            db.add(ChatLog(question=question, answer="", sources=[], answer_type="error", error=error_type))
             db.commit()
     except Exception:
         logger.exception("오류 로그 저장 실패")
@@ -54,9 +56,9 @@ async def chat(req: ChatRequest):
     검색·생성·로그 저장 중 어디서든 실패하면 done 대신 error를 보내고 끝낸다.
     (FE는 done 또는 error를 받아야 로딩을 멈출 수 있다)"""
     question = req.messages[-1].content
-    parts, sources = [], []
     try:
         result = rag.answer(req.messages)
+        parts = []
         async for text in result.tokens:
             parts.append(text)
             yield ServerSentEvent(event="token", data={"text": text})
@@ -80,7 +82,7 @@ async def chat(req: ChatRequest):
             done.message_id = log.id
     except Exception as e:
         logger.exception("채팅 처리 실패")
-        save_error_log(question, "".join(parts).strip(), sources, f"{type(e).__name__}: {e}")
+        save_error_log(question, type(e).__name__)
         yield ServerSentEvent(
             event="error",
             data={"code": "generation_failed", "message": "답변을 만드는 중 문제가 생겼습니다. 잠시 후 다시 시도해 주세요."},

@@ -19,4 +19,4 @@ class ChatLog(Base):
     created_at: Mapped[datetime] = mapped_column(server_default=func.now())
     # answer / clarify / unknown / error. 이 열이 생기기 전의 로그는 None
     answer_type: Mapped[str | None]
-    error: Mapped[str | None] = mapped_column(Text)  # 실패 원인 (예외 종류: 메시지)
+    error: Mapped[str | None] = mapped_column(Text)  # 실패한 대화의 오류 종류 (예: RuntimeError)
