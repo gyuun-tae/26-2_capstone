@@ -12,7 +12,7 @@ Path("data").mkdir(exist_ok=True)  # SQLite 파일과 Chroma 폴더 위치
 from app import rag  # noqa: E402
 from app.db import Base, SessionLocal, engine, get_db  # noqa: E402
 from app.models import ChatLog  # noqa: E402
-from app.schemas import ChatRequest, Feedback  # noqa: E402
+from app.schemas import ChatRequest, Done, Feedback  # noqa: E402
 from app.vectorstore import client  # noqa: E402
 
 Base.metadata.create_all(engine)
@@ -22,7 +22,10 @@ app = FastAPI(title="YGPA RAG 챗봇 API")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=os.getenv("CORS_ORIGINS", "http://localhost:5173,http://localhost:3000").split(","),
+    # 기본값: FE 로컬 개발 주소 + FE 데모(GitHub Pages)
+    allow_origins=os.getenv(
+        "CORS_ORIGINS", "http://localhost:5173,http://localhost:3000,https://dlghskgmll.github.io"
+    ).split(","),
     allow_methods=["*"],
     allow_headers=["*"],
 )
@@ -36,7 +39,7 @@ def health():
 
 @app.post("/chat", response_class=EventSourceResponse)
 async def chat(req: ChatRequest):
-    """SSE로 token(답변 조각) → sources(근거 문서) → done(로그 id, 응답 유형) 순서로 보낸다.
+    """SSE로 token(답변 조각) → sources(근거 문서, 순서 = 인용 번호) → done(로그 id, 응답 유형, actions, options) 순서로 보낸다.
     검색·생성·로그 저장 중 어디서든 실패하면 done 대신 error를 보내고 끝낸다.
     (FE는 done 또는 error를 받아야 로딩을 멈출 수 있다)"""
     try:
@@ -54,7 +57,12 @@ async def chat(req: ChatRequest):
             log = ChatLog(question=req.messages[-1].content, answer="".join(parts).strip(), sources=sources)
             db.add(log)
             db.commit()
-            message_id = log.id
+            done = Done(
+                message_id=log.id,
+                answer_type=result.answer_type,
+                actions=result.actions,
+                options=result.options,
+            )
     except Exception:
         logger.exception("채팅 처리 실패")
         yield ServerSentEvent(
@@ -63,7 +71,7 @@ async def chat(req: ChatRequest):
         )
         return
 
-    yield ServerSentEvent(event="done", data={"message_id": message_id, "answer_type": result.answer_type})
+    yield ServerSentEvent(event="done", data=done.model_dump())
 
 
 @app.put("/messages/{message_id}/feedback", status_code=204)
