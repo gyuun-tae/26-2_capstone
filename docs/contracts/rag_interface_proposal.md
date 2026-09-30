@@ -50,7 +50,7 @@ class Hit(TypedDict):
 ```
 
 - 결과는 점수 높은 순. 관련 청크가 없으면 빈 목록. 실패하면 예외를 던진다 (API가 `error`로 처리).
-- **청크를 그대로 돌려준다.** Chroma metadata는 중첩 객체를 받지 않으므로(검토 문서의 합성 테스트에서 `ValueError`), 검색용 필터 값만 평탄화하고 **청크 전체는 JSON 문자열이나 별도 테이블**(`chunk_id`로 연결)에 보관했다가 복원해서 돌려준다.
+- **청크를 그대로 돌려준다.** Chroma metadata는 중첩 객체를 받지 않으므로(검토 문서의 합성 테스트에서 `ValueError`), Chroma를 쓴다면 청크 전체를 JSON 문자열이나 별도 테이블에 보관했다가 복원해야 한다. [4.5절의 추천(pgvector)](#45-벡터-저장소-추천-neon-postgresql--pgvector)대로 하면 청크 전체를 `jsonb` 열에 그대로 두면 되어 이 문제가 없다.
 - 검색 대상은 등록 계획대로 **승인 목록에 있는 청크만**. 과거 부칙(`historical_addendum`)은 기본 제외, FAQ 출처는 차단.
 - 정할 것: `k` 기본값, "근거 없음(unknown)"으로 볼 점수 기준.
 
@@ -122,13 +122,70 @@ class Generation:
 
 ---
 
+## 4.5 벡터 저장소 추천: Neon PostgreSQL + pgvector
+
+**추천: 새 서비스를 추가하지 않고, 대화 로그를 저장 중인 Neon PostgreSQL에 `pgvector` 확장을 켜서 벡터 DB로 쓴다.** (5절 3번에 대한 API 쪽 의견. 최종 결정은 검색 담당과 함께)
+
+"벡터 DB"는 역할 이름이다. 질문과 뜻이 가까운 청크를 찾고(의미 검색), 벡터와 함께 본문·출처·버전을 보관하고, 승인·부칙 같은 조건으로 거르고, 색인 버전을 교체하는 일을 한다. PostgreSQL에 `pgvector`를 켜면 같은 DB가 이 역할을 맡는다.
+
+```text
+Render (서버 코드)
+   └──▶ Neon PostgreSQL
+          ├── chat_logs      (지금: 대화 로그)
+          └── chunks          (추가: 청크 전체 + 벡터 = 벡터 DB 역할)
+```
+
+| | Neon + pgvector (추천) | Chroma (현재 설치) | 전용 벡터 DB 서비스 |
+|---|---|---|---|
+| 새 서비스 | 없음 | 없음 | 가입·키 관리 추가 |
+| Render 무료 재배포 | **유지** (서버 밖 저장) | **색인 파일이 지워짐** → 매번 재생성하거나 이미지에 포함 | 유지 |
+| 청크 전체 보관 | `jsonb` 열에 그대로 (중첩 `source_locator` 포함) | 중첩 metadata 불가 → 평탄화·별도 보관 필요 | 서비스마다 다름 |
+| 키워드 검색 결합 | 같은 DB의 PostgreSQL 전문 검색·SQL 조건과 결합 가능 (계획서의 pgvector 근거와 같음). 한국어 처리 결과는 별도 검증 | 별도 구현 | 서비스마다 다름 |
+| 우리 규모 | 청크 178개 × 벡터 1개 ≈ 수 MB. 무료 용량 안 | 충분 | 과함 |
+| 관리할 곳 | Neon 하나 (로그와 같은 곳) | 서버 + Neon | 서버 + Neon + 새 서비스 |
+
+**표 구성 예시 (초안)**
+
+```sql
+CREATE EXTENSION IF NOT EXISTS vector;
+
+CREATE TABLE chunks (
+    chunk_id       text PRIMARY KEY,
+    index_version  text NOT NULL,      -- 색인 버전 (모델·입력 형식·승인 목록이 바뀌면 새 버전)
+    doc_id         text NOT NULL,
+    chunk_kind     text,               -- article / historical_addendum / whole_form ... (필터용)
+    approved       boolean NOT NULL,   -- 승인 목록 반영
+    chunk          jsonb NOT NULL,     -- chunks.jsonl 한 줄 그대로 → search()가 그대로 반환
+    embedding      vector(1024)        -- 차원은 임베딩 모델에 맞춤
+);
+```
+
+**검색 예시** (`<=>`는 코사인 거리. 작을수록 가깝다)
+
+```sql
+SELECT chunk, 1 - (embedding <=> :query_vector) AS score
+FROM chunks
+WHERE index_version = :active_version
+  AND approved
+  AND coalesce(chunk_kind, '') <> 'historical_addendum'
+ORDER BY embedding <=> :query_vector
+LIMIT :k;
+```
+
+- 이 경우 `search()`는 위 결과의 `chunk`·`score`를 그대로 돌려주면 1절 형식과 맞는다.
+- 색인 교체: 새 `index_version`으로 등록·검증한 뒤 활성 버전 값만 바꾼다. 이전 버전 행은 복구용으로 남긴다 (등록 계획의 "검증 후 활성 버전 교체").
+- 서로 다른 임베딩 모델의 벡터는 `index_version`으로 분리해 섞지 않는다.
+- 합의되면 API 쪽에서 쓰지 않게 되는 Chroma(`app/vectorstore.py`, `/health`의 Chroma 확인)는 제거하고, `/health`는 DB 연결 확인으로 바꾼다.
+
+---
+
 ## 5. 정해야 할 것
 
 | # | 질문 | 담당 |
 |---|---|---|
-| 1 | `search()` 반환 형식(청크 그대로 + 점수)에 동의하는가? 청크 전체를 어디에 보관할지 (Chroma 문서 필드 JSON / 별도 테이블) | 검색 |
+| 1 | `search()` 반환 형식(청크 그대로 + 점수)에 동의하는가? | 검색 |
 | 2 | `k` 기본값, unknown 점수 기준, 과거 부칙 제외 방식 | 검색 |
-| 3 | 임베딩 모델과 벡터 저장소 (Chroma 유지 / 로그와 같은 Neon PostgreSQL + pgvector) | 검색 · API |
+| 3 | 벡터 저장소: **API 추천은 Neon PostgreSQL + pgvector** ([4.5절](#45-벡터-저장소-추천-neon-postgresql--pgvector)). 임베딩 모델(한국어 품질·차원·입력 길이·비용) | 검색 · API |
 | 4 | `generate()` 형식, 인용·서식 규칙, `clarify` 기준 | 생성 |
 | 5 | 링크는 `action_keys`(이름만)로 받는 방식 | 생성 · API |
 | 6 | sources = 전달한 근거 전체 (인용 안 된 것은 FE가 흐리게) | 생성 · FE |
@@ -146,3 +203,4 @@ class Generation:
 
 - `src/api/test_sources.py`: 형식별 합성 청크로 `locator`·`snippet`·날짜·다운로드 버튼 규칙 확인 (실제 청크는 Git에 없음).
 - 로컬 실제 청크 178개: `chunk_to_source()` 178/178 통과, 서식 다운로드 버튼 10개, 빈 발췌문 0개.
+- 4.5절 SQL: `pgvector/pgvector:pg17` 로컬 컨테이너에서 표 생성·검색 실행. 합성 벡터 5행 중 과거 부칙·미승인·다른 색인 버전이 제외되고 가까운 순으로 2행 반환, `jsonb`의 중첩 `source_locator` 보존 확인. 실제 임베딩·Neon 적용은 하지 않음.
