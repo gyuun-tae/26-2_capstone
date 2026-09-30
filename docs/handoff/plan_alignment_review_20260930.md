@@ -18,7 +18,7 @@
 | API PR #1 / feat/api-server | `0f48ee4` | 검색 시작·DB 오류도 SSE error로 종료하는 수정 확인 |
 | feat/log-db-postgres | `9ff6e17` | DATABASE_URL에 따른 PostgreSQL/SQLite 선택 |
 | 최신 feat/frontend-widget | `9a77baa` | 이전 `02061de` 이후 SSE 연동 구현 |
-| 추가 feat/api-v0.2 | `950147b` | actions/options와 인용 텍스트 서식 추가 |
+| 추가 feat/api-v0.2 | `950147b` → `76935e2` | actions/options 이후 성공·실패 로그 유형 및 기존 테이블 열 추가 |
 
 최신 API v0.2와 프론트엔드는 기존 main 기준 `git merge-tree --write-tree`로 각각 충돌이 없음을 확인했다. 이는 Git 텍스트 충돌 검사이지 서비스 완성도 보장이 아니다. 이전 검토의 FE/API 경로·JSON/SSE 불일치 판정은 최신 FE에는 그대로 적용되지 않는다. 새 FE는 `/api` 프록시 접두사를 제거하고 `/chat`에 `messages[]`를 전송하며 SSE와 피드백 PUT을 사용한다. API v0.2의 actions/options도 소비한다.
 
@@ -152,3 +152,10 @@ API 수정안은 생성 전체를 내부에 모아 제한 시간/크기를 검�
 당장 이득이 검증된 파일 정리와 재현 가능한 SSE 수정은 보존했다. 품질·비용·지연의 이득이 미측정인 대규모 교체는 시행하지 않았다.
 
 파일 정리 후 병합 경계도 확인했다. API PR이 덧붙이는 계약 문단과 충돌하지 않도록 기존 첨부 청크 링크는 짧은 이동 안내로 보존했으며, API schema가 참조하는 첫 청크 설명도 이동 안내를 제공한다. 설명 본문은 번호 문서에만 있다.
+
+
+## 최종 원격 추가 변경 확인
+
+main 파일 정리 push 이후 API v0.2 `76935e2`가 추가되어 별도 임시 스냅샷으로 재검토했다. `test_api.py`는 종료 코드 0 / OK였으며 실패 로그·answer_type·누락 열 추가 시험을 포함한다. 검사 결과 출력용 보조 스크립트는 Windows cp949에서 대체 문자를 출력하다 인코딩 오류가 났지만, 자식 API 테스트는 이미 성공 종료했다. 정리된 main `9717e7d`와 최신 API의 merge-tree 검사도 충돌 없음이다.
+
+새 구현은 실패한 부분 답변과 예외 메시지를 DB에 기록한다. 실패율 평가에는 도움이 되지만 검증 전 초안을 보존하지 않는 앞의 응답 게이트 수정안과 정책이 다르므로 합칠 때 결정해야 한다. 사용자 식별 컬럼이 없다는 것만으로 질문·답변 본문이 익명화되지는 않는다. 질문/오류 문자열 마스킹·보존기간은 아직 구현되지 않았다. `add_missing_columns()`는 SQLite 단일 실행 시험만 확인했으며 실제 PostgreSQL·다중 프로세스 동시 DDL·rollback/versioned migration은 미검증이다. 현 mock 단계는 유지할 수 있지만 실서비스 배포 전 보완 대상이다. API v0.2의 wire 호환 fixture는 `950147b`에서 캡처했으며, 추가 커밋은 전송 schema를 바꾸지 않았다.
