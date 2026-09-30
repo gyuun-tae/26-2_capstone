@@ -24,9 +24,21 @@ class ChatRequest(BaseModel):
 
 
 class Source(BaseModel):
+    """답변 근거 1개. 필드 이름은 팀 청크 규격(docs/handoff/chunking_001.md)과 같다."""
+    doc_id: str
+    chunk_id: str
     title: str
-    url: str
+    source_url: str
+    locator: str  # 화면에 보여줄 근거 위치 문구 (예: "3쪽 표 2")
+    published_at: str | None  # 원문에 날짜가 없으면 None. 수집일로 채우지 않는다
+    updated_at: str | None
+    date_status: str  # not_displayed / page_updated / conflicting / unverified_attachment
+    fetched_at: str | None  # 수집 시각
     snippet: str
+
+
+# answer: 답변 / clarify: 조건 확인 필요 / unknown: 근거 없음(확인 불가). 오류는 SSE error 이벤트로 보낸다
+AnswerType = Literal["answer", "clarify", "unknown"]
 
 
 class Feedback(BaseModel):

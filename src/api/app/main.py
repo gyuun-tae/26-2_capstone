@@ -1,3 +1,4 @@
+import logging
 import os
 from pathlib import Path
 
@@ -15,6 +16,7 @@ from app.schemas import ChatRequest, Feedback  # noqa: E402
 from app.vectorstore import client  # noqa: E402
 
 Base.metadata.create_all(engine)
+logger = logging.getLogger(__name__)
 
 app = FastAPI(title="YGPA RAG 챗봇 API")
 
@@ -34,13 +36,23 @@ def health():
 
 @app.post("/chat", response_class=EventSourceResponse)
 async def chat(req: ChatRequest):
-    """SSE로 token(답변 조각) → sources(근거 문서) → done(로그 id) 순서로 보낸다."""
-    sources, tokens = rag.answer(req.messages)
+    """SSE로 token(답변 조각) → sources(근거 문서) → done(로그 id, 응답 유형) 순서로 보낸다.
+    생성 중 실패하면 done 대신 error를 보내고 끝낸다."""
+    result = rag.answer(req.messages)
+    sources = result.sources
 
     parts = []
-    async for text in tokens:
-        parts.append(text)
-        yield ServerSentEvent(event="token", data={"text": text})
+    try:
+        async for text in result.tokens:
+            parts.append(text)
+            yield ServerSentEvent(event="token", data={"text": text})
+    except Exception:
+        logger.exception("답변 생성 실패")
+        yield ServerSentEvent(
+            event="error",
+            data={"code": "generation_failed", "message": "답변을 만드는 중 문제가 생겼습니다. 잠시 후 다시 시도해 주세요."},
+        )
+        return
 
     yield ServerSentEvent(event="sources", data=[s.model_dump() for s in sources])
 
@@ -53,7 +65,7 @@ async def chat(req: ChatRequest):
         )
         db.add(log)
         db.commit()
-        yield ServerSentEvent(event="done", data={"message_id": log.id})
+        yield ServerSentEvent(event="done", data={"message_id": log.id, "answer_type": result.answer_type})
 
 
 @app.put("/messages/{message_id}/feedback", status_code=204)

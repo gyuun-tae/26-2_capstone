@@ -104,3 +104,25 @@ HTML 청크 70개 실제 저장 확인. [첨부 13건 청크화 실행·규격](
 ## 첨부 청크 실제 저장 확인 (2026-09-29)
 
 첨부 108개 저장 완료. HTML 70개와 합쳐 31개 문서에서 총 178개입니다. 출력 해시·개수·ID 고유성·검색 미승인 상태를 확인했습니다. [최신 저장 기록](../handoff/chunking_attachments.md)을 따릅니다. YGPA-002·013 및 일부 표·도형·날짜 검토는 남아 있으며, 다음 단계는 보류/검수 결과에 따라 검색용 청크와 채택 버전을 확정하는 것입니다.
+
+
+## 채팅 API 응답 형식 제안 (2026-09-30, FE·검색 담당 검토 전)
+
+서버 코드: `src/api` (mock 답변). 전체 필드·예시는 서버 실행 후 `/docs`에서 확인한다.
+
+- `POST /chat` 요청: `{"messages": [{"role": "user" | "assistant", "content": "..."}]}` — 창을 연 뒤의 대화 전체, 마지막은 이번 질문. 최대 20개, 질문 1000자 이하.
+- 응답은 SSE 스트림이며 이벤트 순서는 `token`(여러 번) → `sources` → `done`이다. 생성 중 실패하면 `done` 대신 `error`로 끝난다.
+
+| 이벤트 | data |
+|---|---|
+| token | `{"text": "답변 조각"}` |
+| sources | 근거 목록. 근거가 없으면 `[]` |
+| done | `{"message_id": 1, "answer_type": "answer" \| "clarify" \| "unknown"}` |
+| error | `{"code": "generation_failed", "message": "사용자에게 보여줄 문구"}` |
+
+응답 유형은 위 "API와 화면"의 네 가지에 대응한다: 답변=`answer`, 조건 확인=`clarify`, 확인 불가=`unknown`, 오류=`error` 이벤트. 조건 확인처럼 생성 후에 정해지는 유형이 있어 `done`에 싣는다.
+
+근거 1개의 필드는 청크 규격의 이름을 그대로 쓴다: `doc_id`, `chunk_id`, `title`, `source_url`, `locator`, `published_at`, `updated_at`, `date_status`, `fetched_at`, `snippet`. `locator`는 화면에 그대로 표시할 근거 위치 문구이며, `source_locator`에서 만드는 표기 방식은 검색 담당과 확정한다. 날짜가 원문에 없으면 `null`이고 수집일로 채우지 않는다. `snippet`은 화면에 보여줄 근거 발췌문이다.
+
+- `PUT /messages/{message_id}/feedback`: `{"rating": "up" | "down"}` → 204.
+- 화면 확인용 mock: 질문에 `테스트:조건`, `테스트:확인불가`, `테스트:오류`를 넣으면 각 상태를 흉내 낸다.
