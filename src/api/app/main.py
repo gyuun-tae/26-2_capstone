@@ -37,35 +37,33 @@ def health():
 @app.post("/chat", response_class=EventSourceResponse)
 async def chat(req: ChatRequest):
     """SSE로 token(답변 조각) → sources(근거 문서) → done(로그 id, 응답 유형) 순서로 보낸다.
-    생성 중 실패하면 done 대신 error를 보내고 끝낸다."""
-    result = rag.answer(req.messages)
-    sources = result.sources
-
-    parts = []
+    검색·생성·로그 저장 중 어디서든 실패하면 done 대신 error를 보내고 끝낸다.
+    (FE는 done 또는 error를 받아야 로딩을 멈출 수 있다)"""
     try:
+        result = rag.answer(req.messages)
+        parts = []
         async for text in result.tokens:
             parts.append(text)
             yield ServerSentEvent(event="token", data={"text": text})
+
+        sources = [s.model_dump() for s in result.sources]
+        yield ServerSentEvent(event="sources", data=sources)
+
+        # ponytail: 스트림 도중 창을 닫으면 로그가 남지 않음. 미완성 답변까지 필요해지면 그때 처리
+        with SessionLocal() as db:
+            log = ChatLog(question=req.messages[-1].content, answer="".join(parts).strip(), sources=sources)
+            db.add(log)
+            db.commit()
+            message_id = log.id
     except Exception:
-        logger.exception("답변 생성 실패")
+        logger.exception("채팅 처리 실패")
         yield ServerSentEvent(
             event="error",
             data={"code": "generation_failed", "message": "답변을 만드는 중 문제가 생겼습니다. 잠시 후 다시 시도해 주세요."},
         )
         return
 
-    yield ServerSentEvent(event="sources", data=[s.model_dump() for s in sources])
-
-    # ponytail: 스트림 도중 창을 닫으면 로그가 남지 않음. 미완성 답변까지 필요해지면 그때 처리
-    with SessionLocal() as db:
-        log = ChatLog(
-            question=req.messages[-1].content,
-            answer="".join(parts).strip(),
-            sources=[s.model_dump() for s in sources],
-        )
-        db.add(log)
-        db.commit()
-        yield ServerSentEvent(event="done", data={"message_id": log.id, "answer_type": result.answer_type})
+    yield ServerSentEvent(event="done", data={"message_id": message_id, "answer_type": result.answer_type})
 
 
 @app.put("/messages/{message_id}/feedback", status_code=204)

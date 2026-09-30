@@ -2,6 +2,7 @@
 import json
 import os
 import tempfile
+from unittest.mock import patch
 
 tmp = tempfile.mkdtemp()
 os.environ["DATABASE_URL"] = f"sqlite:///{tmp}/test.db"
@@ -38,6 +39,13 @@ unknown = chat("테스트:확인불가")
 assert unknown[-1][1]["answer_type"] == "unknown" and unknown[-2][1] == []
 err = chat("테스트:오류")
 assert err[-1][0] == "error" and "done" not in [e for e, _ in err], err
+
+# 검색 시작·로그 저장이 실패해도 error로 끝나야 FE가 로딩을 멈출 수 있다
+with patch("app.main.rag.answer", side_effect=RuntimeError("검색 실패")):
+    assert [e for e, _ in chat("검색 오류")] == ["error"]
+with patch("app.main.SessionLocal", side_effect=RuntimeError("DB 실패")):
+    names = [e for e, _ in chat("저장 오류")]
+    assert names[-1] == "error" and "done" not in names, names
 
 # 2. 피드백
 assert c.put(f"/messages/{message_id}/feedback", json={"rating": "up"}).status_code == 204
