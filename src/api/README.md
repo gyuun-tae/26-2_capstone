@@ -43,3 +43,5 @@ docker build -t ygpa-api . && docker run --rm -p 8000:8000 ygpa-api   # 로컬 �
 - 무료 플랜은 15분 동안 요청이 없으면 잠들고, 첫 요청 때 깨어나는 데 30초 이상 걸린다
 - 대화 로그는 Neon(PostgreSQL)에 저장된다 → Render Environment의 `DATABASE_URL`. 이 값이 없으면 서버 안 SQLite에 저장되고 재배포 때 지워진다
 - `DATABASE_URL`에는 비밀번호가 들어 있으므로 GitHub·채팅에 올리지 않는다
+- 로그 테이블 `chat_logs`: 질문·답변·근거·피드백·`answer_type`(answer/clarify/unknown/**error**)·`error`(오류 종류). 실패한 대화는 질문과 오류 종류만 남긴다. 답변 조각·예외 메시지는 저장하지 않고 상세 원인은 Render Logs에서 본다 (DB 자체가 실패한 경우는 로그 저장도 안 됨)
+- 모델에 nullable 열을 추가하면 서버 시작 때 기존 테이블에 자동으로 붙는다 (`db.add_missing_columns`)

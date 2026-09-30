@@ -126,3 +126,26 @@ HTML 청크 70개 실제 저장 확인. [첨부 13건 청크화 실행·규격](
 
 - `PUT /messages/{message_id}/feedback`: `{"rating": "up" | "down"}` → 204.
 - 화면 확인용 mock: 질문에 `테스트:조건`, `테스트:확인불가`, `테스트:오류`를 넣으면 각 상태를 흉내 낸다.
+
+
+## 채팅 API v0.2 — FE 제안 반영 (2026-09-30)
+
+FE 제안서 "YGPA 채팅 API v0.2 제안"을 반영했다. 위 절의 이벤트 순서·요청·`Source` 필드·`error`·피드백은 그대로이고, 아래 항목만 추가됐다. 새 필드의 기본값은 빈 배열이다.
+
+- **인용 번호**: `sources` 배열 순서가 곧 번호다(첫 근거 = `[1]`). 근거를 쓴 문장 끝에 `[1]` 또는 `[1][2]`를 붙이고, `sources`에 없는 번호는 쓰지 않는다. 스트리밍 중 `[1`과 `]`가 다른 `token`으로 나뉠 수 있다.
+- **답변 서식**: 요약 한두 문장 → 빈 줄 → `1.` 번호 목록(절차). `**굵게**`, `-` 목록, 빈 줄 문단까지만 쓰고 HTML·표·마크다운 링크는 쓰지 않는다. 링크는 `actions`로 보낸다.
+- **`done`에 추가**: `{"message_id", "answer_type", "actions": [...], "options": [...]}`
+
+| 필드 | 형식 | 규칙 |
+|---|---|---|
+| `actions[]` | `{type: "link" \| "download" \| "contact", label, url?, phone?, note?, source_ref?}` | link·download는 `https://` 주소 필수, contact는 `phone` 필수. `source_ref`는 근거가 된 `sources` 번호(1부터), 고정 링크면 `null` |
+| `options[]` | `{label}` (50자 이하) | `answer_type`이 `clarify`일 때만 채운다. FE는 누른 `label`을 다음 `user` 메시지로 보낸다 |
+
+**안전 원칙: `actions`의 URL·전화번호는 LLM이 만들지 않는다.** 검색된 근거의 메타데이터(첨부 원문 URL 등)나 `src/api/app/actions.py`의 고정 목록에서만 채운다. 서버는 형식(https·전화번호 유무)을 검사하고, 어기면 `error`로 끝낸다.
+
+- 고정 링크: Port-MIS는 `https://new.portmis.go.kr/`이다. 제안서 예시의 `portmis.go.kr`은 2026-09-30 확인 시 410(서비스 종료)이었다.
+- 서식 링크: 첨부 13건의 원문 다운로드 URL(`fileDownLoad.do?file_no=…`)을 쓴다. YGPA-023 링크의 응답(200) 확인.
+- mock: `테스트:조건` → `options` 3개, `테스트:확인불가` → `contact` 1개(가짜 번호 `061-000-0000`, 테스트용 표시). 일반 질문 → `[1]`·`[2]` 인용, 서식 `download` + Port-MIS `link`.
+- CORS 기본값에 FE 데모 `https://dlghskgmll.github.io`를 추가했다.
+
+미정(담당 협의 필요): 담당 부서 연락처 출처(목록 CSV에 부서·전화 항목 없음, 청크 본문에는 YGPA-005·007~010에 전화번호 존재 → 공식 조직도 기준 표 작성 제안), `clarify` 기준, 인용·서식 프롬프트 규칙(답변 생성 담당), 👎 사유 수집 여부.
