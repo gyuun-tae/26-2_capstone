@@ -6,8 +6,8 @@ import json
 from pathlib import Path
 import sys
 
-from chunk_one import sha
-from collect_attachments import check_url
+sha = __import__("12_chunk_one", fromlist=["sha"]).sha
+check_url = __import__("05_collect_attachments", fromlist=["check_url"]).check_url
 
 ROOT = Path(__file__).resolve().parents[1]
 VERSION = 'semantic-html-v1'

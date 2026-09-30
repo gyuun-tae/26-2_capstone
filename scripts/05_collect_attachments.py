@@ -1,7 +1,7 @@
 """Collect explicitly registered attachments; no extraction or indexing.
 
 Default: offline target preview. Add --download to make HTTP requests.
-Only requests is required (already used by collect_one.py).
+Only requests is required (already used by 01_collect_one.py).
 """
 import argparse
 import csv

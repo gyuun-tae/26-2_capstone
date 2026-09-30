@@ -39,7 +39,7 @@ YGPA-030의 표·그림 검토 화면 안내 후 사용자가 “오케이 확�
 
 코드·테스트·인수인계 문서는 Git 공유 대상이다. 원본·파생 결과·지도 이미지는 기존 .gitignore의 data/raw 및 data/processed 제외 범위에 둔다.
 
-- [YGPA-030 실행·규격](graphics_preservation_030.md)
-- [YGPA-033 실행·규격](table_restoration_controls.md)
-- [나머지 HWP 실행·규격](table_restoration_remaining.md)
+- [YGPA-030 실행·규격](09_restore_graphics_030.md)
+- [YGPA-033 실행·규격](08_restore_tables_remaining_controls.md)
+- [나머지 HWP 실행·규격](08_restore_tables_remaining.md)
 - [초기 첨부 검토와 PDF 보완 사항](attachment_review_20260927.md) — 당시 기록이며 후속 상태는 이 체크포인트를 우선 확인

@@ -1,5 +1,7 @@
 # 첨부 본문 추출 — 4단계
 
+대응 실행 파일: `scripts/06_extract_attachments.py`. 작업 번호와 기본 이름을 동일하게 맞췄습니다.
+
 2026-09-27 기준. 저장된 첨부 13건은 HWP 5.x 11건과 PDF 2건이다. HWP는 FileHeader와 BodyText 구조로 확인했다. PDF는 YGPA-031 29쪽, YGPA-032 23쪽이다. 추출 시험은 임시 폴더에서 13건 모두 텍스트가 나오는 것까지 확인했으며, 프로젝트의 처리 결과는 아래 명령으로 생성한다.
 
 ## 설치와 첫 실행
@@ -8,7 +10,7 @@
 
 ```powershell
 .\.venv\Scripts\python.exe -m pip install -r requirements-extraction.txt
-.\.venv\Scripts\python.exe -B .\scripts\extract_attachments.py --doc-ids YGPA-021 --extract
+.\.venv\Scripts\python.exe -B .\scripts\06_extract_attachments.py --doc-ids YGPA-021 --extract
 ```
 
 `--extract` 없이 실행하면 대상 목록만 보여준다. 스크립트는 외부 URL에 요청하지 않고 이미 수집한 파일만 읽는다. `.ole`를 `.hwp`로 이름 변경할 필요는 없다. 설치하는 추가 직접 의존성은 `olefile==0.47`, `pypdf==6.19.0`이며 requests는 기존 수집기와 공유한다.
@@ -16,7 +18,7 @@
 ## 첫 결과 확인 후 13건 확대
 
 ```powershell
-.\.venv\Scripts\python.exe -B .\scripts\extract_attachments.py --all --extract
+.\.venv\Scripts\python.exe -B .\scripts\06_extract_attachments.py --all --extract
 ```
 
 이미 같은 원본·추출기 버전으로 생성했고 해시가 일치하는 결과는 유지한다. 불완전하거나 다른 버전인 결과가 있으면 덮어쓰지 않고 보류한다. 오류 기록의 문서 ID와 원인을 확인한 후 처리한다. 보류가 하나라도 있으면 종료 코드는 1이다.

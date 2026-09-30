@@ -5,8 +5,9 @@ import json
 from pathlib import Path
 import sys
 
-from collect_attachments import select_targets
-from restore_tables_one import HWP_IDS, restore
+select_targets = __import__("05_collect_attachments", fromlist=["select_targets"]).select_targets
+HWP_IDS = __import__("07_restore_tables_one", fromlist=["HWP_IDS"]).HWP_IDS
+restore = __import__("07_restore_tables_one", fromlist=["restore"]).restore
 
 ROOT = Path(__file__).resolve().parents[1]
 REMAINING_IDS = tuple(doc_id for doc_id in HWP_IDS if doc_id != 'YGPA-021')

@@ -9,7 +9,7 @@ from pathlib import Path
 import struct
 import sys
 
-import restore_tables_one as r
+r = __import__("07_restore_tables_one")
 
 ROOT = Path(__file__).resolve().parents[1]
 DOC_ID = 'YGPA-030'

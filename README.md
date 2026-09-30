@@ -5,8 +5,8 @@
 ## 현재 단계
 
 - 수집·본문 추출: HTML 20건 + 첨부 13건, 총 33건 완료.
-- HTML 청크: 설명 16개 + 표 54개, 총 **70개 실제 저장 완료**. [HTML 표 청크 규격](docs/handoff/chunking_html_tables.md).
-- 첨부 13건: **108개 실제 저장 완료**. HTML과 합쳐 **31개 문서에서 총 178개 청크**를 저장했습니다. 출력 해시·청크 ID 중복 없음·검색 미승인 상태를 확인했습니다. [첨부 청크화 안내](docs/handoff/chunking_attachments.md).
+- HTML 청크: 설명 16개 + 표 54개, 총 **70개 실제 저장 완료**. [HTML 표 청크 규격](docs/handoff/14_chunk_html_tables.md).
+- 첨부 13건: **108개 실제 저장 완료**. HTML과 합쳐 **31개 문서에서 총 178개 청크**를 저장했습니다. 출력 해시·청크 ID 중복 없음·검색 미승인 상태를 확인했습니다. [첨부 청크화 안내](docs/handoff/15_chunk_attachments.md).
 - HTML 보류 항목과 첨부 도형·PDF 별표는 미완료입니다. 생성 완료와 검색 승인·현행성 검증은 구분합니다.
 - 모든 청크는 검색 승인 전 초안입니다. 임베딩·검색 등록은 아직 하지 않았습니다.
 - FAQ는 최종평가 전용이며 개발 수집·검색·튜닝에서 제외합니다.
@@ -20,10 +20,10 @@ Python 3.12 환경에서 프로젝트 최상위 폴더를 기준으로 실행합
 ```powershell
 py -3.12 -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -r requirements-collection.txt
-.\.venv\Scripts\python.exe -B .\scripts\collect_attachments.py
+.\.venv\Scripts\python.exe -B .\scripts\05_collect_attachments.py
 ```
 
-마지막 명령은 우선 7건의 목록만 확인하며 네트워크에 접속하지 않습니다. 실제 다운로드 옵션과 결과 확인은 [첨부 수집 안내](docs/handoff/attachment_collection.md)를 따릅니다. 기존 `collect_remaining.py`와 `extract_remaining.py`는 HTML 19건 전용이므로 현재 확장 목록으로 재실행하지 않습니다.
+마지막 명령은 우선 7건의 목록만 확인하며 네트워크에 접속하지 않습니다. 실제 다운로드 옵션과 결과 확인은 [첨부 수집 안내](docs/handoff/05_collect_attachments.md)를 따릅니다. 기존 `03_collect_remaining.py`와 `04_extract_remaining.py`는 HTML 19건 전용이므로 현재 확장 목록으로 재실행하지 않습니다.
 
 ```powershell
 .\.venv\Scripts\python.exe -B -m unittest discover -s tests -p "test_collect_attachments.py" -v
@@ -37,17 +37,17 @@ py -3.12 -m venv .venv
 
 ```powershell
 .\.venv\Scripts\python.exe -m pip install -r requirements-extraction.txt
-.\.venv\Scripts\python.exe -B .\scripts\extract_attachments.py --doc-ids YGPA-021 --extract
+.\.venv\Scripts\python.exe -B .\scripts\06_extract_attachments.py --doc-ids YGPA-021 --extract
 ```
 
-[첨부 본문 추출·검토 안내](docs/handoff/attachment_extraction.md)에 전체 실행 방법, 출력 규격, HWP 표·PDF 도면의 검토 한계를 정리했습니다. YGPA-030의 위치도 및 PDF 031의 26~29쪽 도면 등 이미지 속 글자는 OCR·주석과 원문 대조가 추가로 필요합니다. 현재 모든 결과는 검색 승인 전입니다.
+[첨부 본문 추출·검토 안내](docs/handoff/06_extract_attachments.md)에 전체 실행 방법, 출력 규격, HWP 표·PDF 도면의 검토 한계를 정리했습니다. YGPA-030의 위치도 및 PDF 031의 26~29쪽 도면 등 이미지 속 글자는 OCR·주석과 원문 대조가 추가로 필요합니다. 현재 모든 결과는 검색 승인 전입니다.
 
 ## YGPA-021 표 구조 복원
 
-첫 HWP 문서의 표·셀·병합·중첩 구조 복원 코드를 준비했습니다. 원본으로 시험한 표 11개·셀 193개의 위치·병합·글자가 별도 대조 자료와 일치했습니다. 기존 추출 결과를 보존하는 실행 방법은 [표 복원 안내](docs/handoff/table_restoration_021.md)에 있습니다. 실제 결과 저장은 아래 명령으로 실행합니다.
+첫 HWP 문서의 표·셀·병합·중첩 구조 복원 코드를 준비했습니다. 원본으로 시험한 표 11개·셀 193개의 위치·병합·글자가 별도 대조 자료와 일치했습니다. 기존 추출 결과를 보존하는 실행 방법은 [표 복원 안내](docs/handoff/07_restore_tables_one.md)에 있습니다. 실제 결과 저장은 아래 명령으로 실행합니다.
 
 ```powershell
-.\.venv\Scripts\python.exe -B .\scripts\restore_tables_one.py --restore
+.\.venv\Scripts\python.exe -B .\scripts\07_restore_tables_one.py --restore
 ```
 
 표 구조 복원이 검색 승인이나 신청 조건의 의미 검수를 뜻하지 않습니다.
@@ -121,27 +121,27 @@ scripts/           수집·색인·평가 기능의 실행 진입점
 
 ## HWP 표 복원 후속 단계 (2026-09-28)
 
-YGPA-021은 사용자 화면 확인에서 문제 제보가 없었습니다. 나머지 HWP 10건을 실행할 코드를 준비했습니다. 저장 전 시험에서 8건은 복원 가능했고 2건은 셀 내부 개체 처리 때문에 보류됩니다. [실행 방법과 인수인계](docs/handoff/table_restoration_remaining.md)를 확인하세요. 배치 실행 및 원문 검토, 청크화·검색 승인은 아직 별도 단계입니다.
+YGPA-021은 사용자 화면 확인에서 문제 제보가 없었습니다. 나머지 HWP 10건을 실행할 코드를 준비했습니다. 저장 전 시험에서 8건은 복원 가능했고 2건은 셀 내부 개체 처리 때문에 보류됩니다. [실행 방법과 인수인계](docs/handoff/08_restore_tables_remaining.md)를 확인하세요. 배치 실행 및 원문 검토, 청크화·검색 승인은 아직 별도 단계입니다.
 
 
-HWP 배치에서 8건 저장·2건 보류를 확인하고 파일 해시를 검증했습니다. YGPA-033 한 건의 글자 겹침을 보존하는 후속 코드를 준비했습니다. [실행 안내](docs/handoff/table_restoration_controls.md)를 따르세요. YGPA-030의 묶인 그림·도형은 계속 보류합니다.
+HWP 배치에서 8건 저장·2건 보류를 확인하고 파일 해시를 검증했습니다. YGPA-033 한 건의 글자 겹침을 보존하는 후속 코드를 준비했습니다. [실행 안내](docs/handoff/08_restore_tables_remaining_controls.md)를 따르세요. YGPA-030의 묶인 그림·도형은 계속 보류합니다.
 
 
-YGPA-033은 사용자 화면·원문 대조를 완료했습니다. 남은 YGPA-030은 [표·그림·도형 원본 데이터 보존 코드](docs/handoff/graphics_preservation_030.md)를 준비했습니다. 전용 실행 파일을 사용하며, 도형의 시각 배치 재현과 검색 승인은 아직 보류 상태입니다.
+YGPA-033은 사용자 화면·원문 대조를 완료했습니다. 남은 YGPA-030은 [표·그림·도형 원본 데이터 보존 코드](docs/handoff/09_restore_graphics_030.md)를 준비했습니다. 전용 실행 파일을 사용하며, 도형의 시각 배치 재현과 검색 승인은 아직 보류 상태입니다.
 
 
 ## PDF 도면 보존 준비 (2026-09-29)
 
-YGPA-031 PDF 파일 26~29쪽을 전체 이미지로 보존하는 실행 코드를 준비했습니다. [실행·검토·인수인계 안내](docs/handoff/pdf_pages_031.md)를 따릅니다. 임시 시험과 테스트는 통과했으며, 사용자 실제 저장·원문 대조 및 OCR·검색 승인은 별도 단계입니다.
+YGPA-031 PDF 파일 26~29쪽을 전체 이미지로 보존하는 실행 코드를 준비했습니다. [실행·검토·인수인계 안내](docs/handoff/10_preserve_pdf_pages_031.md)를 따릅니다. 임시 시험과 테스트는 통과했으며, 사용자 실제 저장·원문 대조 및 OCR·검색 승인은 별도 단계입니다.
 
 
 ## 청크화로 전환 (2026-09-29)
 
-YGPA-032 9쪽의 두 특수문자 보정 코드를 준비했습니다. [보정 실행 및 청크화 시작 범위](docs/handoff/symbol_correction_032.md)를 따릅니다. 사용자 요청에 따라 이 실행 다음 단계는 YGPA-001 청크화 시범입니다. 미해결 자료의 보완은 별도 진행하며 검색 승인과 구분합니다.
+YGPA-032 9쪽의 두 특수문자 보정 코드를 준비했습니다. [보정 실행 및 청크화 시작 범위](docs/handoff/11_correct_symbols_032.md)를 따릅니다. 사용자 요청에 따라 이 실행 다음 단계는 YGPA-001 청크화 시범입니다. 미해결 자료의 보완은 별도 진행하며 검색 승인과 구분합니다.
 
 
 ## 청크화 시작 (2026-09-29)
 
-YGPA-001 본문의 첫 청크 생성 코드를 준비했습니다. [실행·인수인계 안내](docs/handoff/chunking_001.md)를 따르세요. 짧은 자격·절차 본문 173자를 한 청크로 유지하고 이동 버튼 문구만 제외합니다. 사용자 요청에 따라 의미 영향이 작은 기호 문제는 기록 후 진행하며, 답을 바꾸는 조건·수치·표 관계를 우선 검토합니다.
+YGPA-001 본문의 첫 청크 생성 코드를 준비했습니다. [실행·인수인계 안내](docs/handoff/12_chunk_one.md)를 따르세요. 짧은 자격·절차 본문 173자를 한 청크로 유지하고 이동 버튼 문구만 제외합니다. 사용자 요청에 따라 의미 영향이 작은 기호 문제는 기록 후 진행하며, 답을 바꾸는 조건·수치·표 관계를 우선 검토합니다.
 
 - [수집 원본 33건·청크 178개 목록과 지식베이스 등록 계획](docs/handoff/dataset_and_knowledge_base.md)

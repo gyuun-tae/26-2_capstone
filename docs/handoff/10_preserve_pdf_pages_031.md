@@ -1,5 +1,7 @@
 # YGPA-031 PDF 도면 페이지 보존
 
+대응 실행 파일: `scripts/10_preserve_pdf_pages_031.py`. 작업 번호와 기본 이름을 동일하게 맞췄습니다.
+
 2026-09-29. 대상은 PDF 파일 순서 기준 26~29쪽이며 전체 원본은 29쪽이다. 개별 이미지 추출 대신 각 페이지 전체를 렌더링하므로 PDF에 배치된 글자·도형·그림을 함께 보존한다. 원본 PDF는 수정하거나 분할하지 않는다.
 
 ## 실행
@@ -9,7 +11,7 @@
 ```powershell
 Set-Location -LiteralPath "C:\Users\yountae\26-2_classes\capstone"
 $renderer = "C:\Users\yountae\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\poppler\Library\bin\pdftoppm.exe"
-.\.venv\Scripts\python.exe -B .\scripts\preserve_pdf_pages_031.py --pdftoppm $renderer --save
+.\.venv\Scripts\python.exe -B .\scripts\10_preserve_pdf_pages_031.py --pdftoppm $renderer --save
 ```
 
 `--save` 없이 실행하면 준비 안내만 출력한다. pdftoppm이 PATH에 있다면 `--pdftoppm`은 생략할 수 있다. 다른 팀원은 자기 PC의 pdftoppm 경로를 지정한다. 실행 파일과 개인 PC 경로를 코드에 고정하거나 바이너리를 저장소에 포함하지 않는다. 실행 파일을 찾지 못하면 보류하며 자동 설치나 다운로드를 하지 않는다.

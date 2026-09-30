@@ -3,7 +3,7 @@ import json
 from pathlib import Path
 import sys,tempfile,unittest
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'scripts'))
-import chunk_one as c
+c = __import__("12_chunk_one")
 
 TEXT='신청자격\n- 예외 조건 유지\n신청절차\n1. 회원가입\n2. 신청서 작성\n3. 신청서 검토\n4. 신청서 완료\n'+c.SUFFIX
 URL='https://www.ygpa.or.kr/synthetic'

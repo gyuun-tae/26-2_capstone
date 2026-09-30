@@ -7,7 +7,7 @@ import unittest
 from unittest.mock import patch
 
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'scripts'))
-import chunk_remaining as c
+c = __import__("13_chunk_remaining")
 
 
 def fixture(root, url='https://www.ygpa.or.kr/synthetic'):

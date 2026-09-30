@@ -1,5 +1,7 @@
 # YGPA-032 9쪽 특수문자 보정과 청크화 전환
 
+대응 실행 파일: `scripts/11_correct_symbols_032.py`. 작업 번호와 기본 이름을 동일하게 맞췄습니다.
+
 2026-09-29. 사용자가 다음 단계 진행과 청크화 시점을 요청했다. 이번 두 문자 보정 뒤에는 다른 문서의 보완을 선행 조건으로 계속 추가하지 않고, YGPA-001의 검토된 본문부터 청크화 초안을 만든다. 미해결 자료는 제외/보류 상태로 남기고 청크 생성과 검색 승인을 구분한다.
 
 ## 보정 근거
@@ -18,7 +20,7 @@
 
 ```powershell
 Set-Location -LiteralPath "C:\Users\yountae\26-2_classes\capstone"
-.\.venv\Scripts\python.exe -B .\scripts\correct_symbols_032.py --save
+.\.venv\Scripts\python.exe -B .\scripts\11_correct_symbols_032.py --save
 ```
 
 새 설치나 렌더러 실행은 필요 없다. 코드에 대조한 원본 해시를 고정했으며 네트워크 요청도 하지 않는다. 옵션 없이 실행하면 준비 안내만 출력한다.

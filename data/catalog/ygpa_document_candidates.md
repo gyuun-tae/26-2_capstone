@@ -201,7 +201,7 @@
 
 수집 정책 1.1은 기존 HTML 20개와 신규 첨부 13개의 source_url만 allowed_urls에 등록한다. allowed_parent_urls는 링크 근거를 재확인하는 부모 화면 전용이며 독립 학습 문서나 자동 순회 허용 목록이 아니다. attachment_sources는 doc_id·첨부 URL·부모 URL의 대응이다. 파일 다운로드 경로 전체나 file_no 전체를 허용하지 않는다. FAQ 차단·리다이렉트 금지·자동 링크 순회 금지를 유지한다.
 
-현재 collect_remaining.py와 extract_remaining.py는 대상이 19건이어야 하고 HTML만 처리한다. 확장된 CSV로 바로 실행하지 않는다. 다음 3단계에서 신규 ID 선택, URL별 robots 검사, 첨부 응답 검증·저장, 재시도 및 provenance 검증을 적용해야 한다. 정책의 require_attachment_provenance는 그 요구사항이며 현재 코드가 이미 강제한다는 의미가 아니다.
+현재 03_collect_remaining.py와 04_extract_remaining.py는 대상이 19건이어야 하고 HTML만 처리한다. 확장된 CSV로 바로 실행하지 않는다. 다음 3단계에서 신규 ID 선택, URL별 robots 검사, 첨부 응답 검증·저장, 재시도 및 provenance 검증을 적용해야 한다. 정책의 require_attachment_provenance는 그 요구사항이며 현재 코드가 이미 강제한다는 의미가 아니다.
 
 문서 처리 담당자는 doc_id와 source_url을 유지하고 원본 해시·실제 파일 형식·수집 시각을 붙인다. 검색 담당자는 내용 검토 전의 첨부를 색인하지 않는다. 신규 수집 후 메타데이터에도 index_approved=false를 유지한다. FAQ는 최종평가 전용으로 제외한다.
 

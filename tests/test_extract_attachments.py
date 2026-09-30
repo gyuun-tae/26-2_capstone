@@ -13,7 +13,7 @@ import zlib
 
 SCRIPTS = Path(__file__).resolve().parents[1] / "scripts"
 sys.path.insert(0, str(SCRIPTS))
-import extract_attachments as e
+e = __import__("06_extract_attachments")
 
 URL = "https://www.ygpa.or.kr/hmpg/comm/file/fileDownLoad.do?file_no=TEST"
 PARENT = "https://www.ygpa.or.kr/hmpg/test.do?bbs_no=211"

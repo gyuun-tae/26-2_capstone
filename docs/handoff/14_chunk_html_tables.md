@@ -1,12 +1,14 @@
 # HTML 표 청크화 — 2026-09-29
 
+대응 실행 파일: `scripts/14_chunk_html_tables.py`. 작업 번호와 기본 이름을 동일하게 맞췄습니다.
+
 > 후속 상태(2026-09-29): HTML 표 청크 54개 실제 저장 완료 확인. 기존 설명 16개와 합쳐 현재 70개입니다. 아래 준비·예상 결과 설명 이후의 상태입니다.
 
-기존 설명 청크 16개는 실제 저장을 확인했다. 다음 단계 스크립트 `scripts/chunk_html_tables.py`는 HTML 10건의 활성 표 14개를 복원해 54개 초안 청크를 준비한다. 실제 원본 읽기 및 임시 저장 검증 결과이며 프로젝트 데이터 폴더에 실제 저장하려면 아래 명령을 실행한다.
+기존 설명 청크 16개는 실제 저장을 확인했다. 다음 단계 스크립트 `scripts/14_chunk_html_tables.py`는 HTML 10건의 활성 표 14개를 복원해 54개 초안 청크를 준비한다. 실제 원본 읽기 및 임시 저장 검증 결과이며 프로젝트 데이터 폴더에 실제 저장하려면 아래 명령을 실행한다.
 
 ```powershell
 Set-Location -LiteralPath "C:\Users\yountae\26-2_classes\capstone"
-.\.venv\Scripts\python.exe -X utf8 -B .\scripts\chunk_html_tables.py --save
+.\.venv\Scripts\python.exe -X utf8 -B .\scripts\14_chunk_html_tables.py --save
 ```
 
 추가 설치는 필요 없다. `--save`를 생략하면 읽기 전용 미리보기다. 일부 문서만 처리하려면 `--doc-ids YGPA-005`처럼 지정한다. FAQ·외부 링크 접속, 임베딩, 검색 등록은 수행하지 않는다.

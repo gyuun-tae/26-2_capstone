@@ -3,7 +3,7 @@ from pathlib import Path
 import sys,unittest
 from unittest.mock import patch
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'scripts'))
-import correct_symbols_032 as c
+c = __import__("11_correct_symbols_032")
 
 class SymbolTests(unittest.TestCase):
     def sample(self):return '앞 문장 \uf000'+c.TITLE+'\uf000 뒤 문장'

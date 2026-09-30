@@ -8,7 +8,7 @@ import tempfile
 import unittest
 from unittest.mock import patch
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'scripts'))
-import restore_graphics_030 as g
+g = __import__("09_restore_graphics_030")
 from test_restore_tables_one import rec,start_table,cell
 r=g.r
 

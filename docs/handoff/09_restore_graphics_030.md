@@ -1,15 +1,17 @@
 # YGPA-030 표와 그리기 개체 보존
 
+대응 실행 파일: `scripts/09_restore_graphics_030.py`. 작업 번호와 기본 이름을 동일하게 맞췄습니다.
+
 2026-09-28. 이 단계는 누락 없이 자료를 보존하는 단계다. 원본 지도 위의 선·도형·글상자 합성 화면을 재현한 것은 아니며, 시각 배치와 의미 검토는 보류한다.
 
 ## 사용자 실행
 
 ```powershell
 Set-Location -LiteralPath "C:\Users\yountae\26-2_classes\capstone"
-.\.venv\Scripts\python.exe -B .\scripts\restore_graphics_030.py --restore
+.\.venv\Scripts\python.exe -B .\scripts\09_restore_graphics_030.py --restore
 ```
 
-옵션 없이 실행하면 준비 안내만 출력한다. 앞 단계의 requirements-extraction.txt 환경을 사용하고 네트워크 요청이나 새 패키지 설치는 하지 않는다. 기존 배치 restore_tables_remaining.py의 YGPA-030 처리는 여전히 보류하며, 이 문서의 전용 진입점으로 실행한다.
+옵션 없이 실행하면 준비 안내만 출력한다. 앞 단계의 requirements-extraction.txt 환경을 사용하고 네트워크 요청이나 새 패키지 설치는 하지 않는다. 기존 배치 08_restore_tables_remaining.py의 YGPA-030 처리는 여전히 보류하며, 이 문서의 전용 진입점으로 실행한다.
 
 예상 결과는 표 3개, 셀 58개, 묶인 그리기 개체 1개, 내부 레코드 35개, 그림 1개, 내부 문단 2개다. 결과는 `data/processed/YGPA-030/20260927T070445774628Z/hwp-graphics-v1/`에 저장한다. 원본과 기존 본문·메타데이터·문단 파일 및 다른 복원 결과는 보존한다. 같은 원본과 같은 결과는 건너뛰고 손상되거나 다른 기존 결과는 덮어쓰지 않는다.
 

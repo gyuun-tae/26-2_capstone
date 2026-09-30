@@ -1,5 +1,7 @@
 # 나머지 HWP 표 복원
 
+대응 실행 파일: `scripts/08_restore_tables_remaining.py`. 작업 번호와 기본 이름을 동일하게 맞췄습니다.
+
 2026-09-28. YGPA-021 시범 결과를 확인한 다음 단계다. 이 문서는 실행 준비 기록이며 실제 배치 저장 완료 기록은 아니다.
 
 ## 실행
@@ -7,12 +9,12 @@
 프로젝트 최상위 PowerShell에서 다음 명령을 실행한다. 기존 requirements-extraction.txt 환경을 사용하며 새 설치는 필요 없다.
 
 ```powershell
-.\.venv\Scripts\python.exe -B .\scripts\restore_tables_remaining.py --restore
+.\.venv\Scripts\python.exe -B .\scripts\08_restore_tables_remaining.py --restore
 ```
 
 옵션 없이 실행하면 대상만 표시한다. `--doc-ids YGPA-022 YGPA-023`으로 선택 실행할 수 있다. 기본 대상은 YGPA-022~030 및 YGPA-033 총 10건이다. YGPA-021과 PDF인 YGPA-031~032는 대상에 포함하지 않는다.
 
-원본과 기존 document.txt/document.json/blocks.json은 보존한다. 복원 결과는 각 원본과 같은 snapshot 이름 아래 `data/processed/<doc_id>/<snapshot>/hwp-tables-v1/`에 저장한다. 파일 형식과 검토 화면은 [시범 복원 안내](table_restoration_021.md)를 따른다. 검증된 기존 결과는 유지하고 불일치하는 결과는 덮어쓰지 않는다.
+원본과 기존 document.txt/document.json/blocks.json은 보존한다. 복원 결과는 각 원본과 같은 snapshot 이름 아래 `data/processed/<doc_id>/<snapshot>/hwp-tables-v1/`에 저장한다. 파일 형식과 검토 화면은 [시범 복원 안내](07_restore_tables_one.md)를 따른다. 검증된 기존 결과는 유지하고 불일치하는 결과는 덮어쓰지 않는다.
 
 전체 실행 결과와 문서별 보류 사유는 `data/processed/_table_restoration_runs/tables-<UTC>.json`에 기록한다. 보류 문서가 있으면 나머지 문서는 계속 처리하되 종료 코드는 1이다. 실행 로그에서 개별 결과를 확인한다.
 
@@ -55,11 +57,11 @@ YGPA-030은 Section0 레코드 366의 control=206f7367, YGPA-033은 Section0 레
 
 합성 테스트 13개 통과. 기존 9개에 여러 구역의 숫자 순서·ID·문단 연결, 셀 내부 미지원 개체, 보류 후 다음 문서 처리, 기본 미리보기의 무저장을 추가했다. FAQ나 실제 서식은 테스트에 포함하지 않는다.
 
-scripts/restore_tables_one.py는 공통 복원 함수를 제공하며 직접 실행 시에는 계속 YGPA-021만 처리한다. scripts/restore_tables_remaining.py가 나머지 문서의 실행 진입점이다. 팀원은 tables.json의 원본 버전과 셀 좌표, blocks_with_tables.json의 연결 ID를 사용할 수 있다. 열 머리글이나 질문·답변 의미는 자동 확정하지 않는다.
+scripts/07_restore_tables_one.py는 공통 복원 함수를 제공하며 직접 실행 시에는 계속 YGPA-021만 처리한다. scripts/08_restore_tables_remaining.py가 나머지 문서의 실행 진입점이다. 팀원은 tables.json의 원본 버전과 셀 좌표, blocks_with_tables.json의 연결 ID를 사용할 수 있다. 열 머리글이나 질문·답변 의미는 자동 확정하지 않는다.
 
 코드·합성 테스트·이 안내는 GitHub 공유 대상이다. 원본, 생성 결과, 실행 로그는 기존 .gitignore의 data/raw 및 data/processed 제외 규칙을 따른다. FAQ는 읽거나 가져오지 않고, 청크화·검색 등록도 수행하지 않는다.
 
 
 ## 2026-09-28 배치 실행 후속
 
-사용자 실행에서 8건 저장·2건 보류를 확인했고, 저장 결과와 기존 본문의 해시를 검증했다. YGPA-033의 글자 겹침을 보존하는 보완 코드가 준비됐다. [YGPA-033 한 건 실행 안내](table_restoration_controls.md)를 따른다. 위 사전 시험의 2건 보류는 당시 상태이며 YGPA-030은 여전히 보류다.
+사용자 실행에서 8건 저장·2건 보류를 확인했고, 저장 결과와 기존 본문의 해시를 검증했다. YGPA-033의 글자 겹침을 보존하는 보완 코드가 준비됐다. [YGPA-033 한 건 실행 안내](08_restore_tables_remaining_controls.md)를 따른다. 위 사전 시험의 2건 보류는 당시 상태이며 YGPA-030은 여전히 보류다.

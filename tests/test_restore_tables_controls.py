@@ -4,7 +4,7 @@ import struct
 import sys
 import unittest
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'scripts'))
-import restore_tables_one as r
+r = __import__("07_restore_tables_one")
 from test_restore_tables_one import rec, start_table, cell
 
 

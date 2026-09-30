@@ -1,8 +1,10 @@
 # HTML 설명 본문 청크화 — 2026-09-29
 
+대응 실행 파일: `scripts/13_chunk_remaining.py`. 작업 번호와 기본 이름을 동일하게 맞췄습니다.
+
 > 후속 상태(2026-09-29): HTML 설명 청크 15개 추가 저장 완료 확인. YGPA-001을 포함한 설명 청크는 16개입니다. 아래 준비·예상 결과 설명 이후의 상태입니다.
 
-YGPA-001 첫 청크는 사용자 실행으로 저장 완료했다. 다음 단계는 `scripts/chunk_remaining.py`로 나머지 HTML 19건을 검사하고, 설명·조건·절차에서 15개 초안 청크를 만든다. 13개 문서가 대상이며 6개 문서는 전부 보류한다. 이 수치는 실제 저장 전 미리보기 검증 결과다.
+YGPA-001 첫 청크는 사용자 실행으로 저장 완료했다. 다음 단계는 `scripts/13_chunk_remaining.py`로 나머지 HTML 19건을 검사하고, 설명·조건·절차에서 15개 초안 청크를 만든다. 13개 문서가 대상이며 6개 문서는 전부 보류한다. 이 수치는 실제 저장 전 미리보기 검증 결과다.
 
 ## 실행
 
@@ -10,7 +12,7 @@ YGPA-001 첫 청크는 사용자 실행으로 저장 완료했다. 다음 단계
 
 ```powershell
 Set-Location -LiteralPath "C:\Users\yountae\26-2_classes\capstone"
-.\.venv\Scripts\python.exe -X utf8 -B .\scripts\chunk_remaining.py --save
+.\.venv\Scripts\python.exe -X utf8 -B .\scripts\13_chunk_remaining.py --save
 ```
 
 `--save`를 생략하면 미리보기만 한다. 일부만 실행하려면 `--doc-ids YGPA-003 YGPA-004`를 추가한다. 이 스크립트는 네트워크에 접속하지 않는다.

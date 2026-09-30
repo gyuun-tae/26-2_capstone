@@ -1,0 +1,117 @@
+diff --git a/frontend/README.md b/frontend/README.md
+index 2e3e67f..de925e9 100644
+--- a/frontend/README.md
++++ b/frontend/README.md
+@@ -95,3 +95,7 @@ scripts/prepare-host.mjs  저장한 YGPA 페이지 → host/ 변환
+ - KRDS 자체 상징 기준: 본문 16px 이상, 행간 1.5 이상, 포커스 표시
+ - 귀동이: `public/assets/guidongi-*.svg`. 매뉴얼상 비율·색상 변경 금지이므로 크기만 조절한다.
+ - `tokens.css`의 색상은 Figma 렌더링에서 추정한 값이라, Figma 원본 값으로 교체해야 한다.
++
++## 2026-09-30 격리 검토 수정
++
++SSE의 CRLF가 두 네트워크 조각으로 분리될 때 이벤트 이름이 사라지는 문제를 회귀 테스트로 재현하고, 마지막 CR을 다음 조각까지 보존하도록 수정했습니다. `contract_review.test.ts`는 API v0.2 `950147b`의 TestClient로 생성한 합성 응답 4종을 모든 문자 분할점과 UTF-8 바이트 단위로 전달합니다. 19개 테스트, lint, build 통과. 실제 브라우저·원격 배포·GPU 답변 검증은 포함하지 않습니다. 이 변경은 검토용 로컬 브랜치에만 있으며 원격 FE/main에 적용하지 않았습니다.
+diff --git a/frontend/src/api/contract_review.test.ts b/frontend/src/api/contract_review.test.ts
+new file mode 100644
+index 0000000..247f9f2
+--- /dev/null
++++ b/frontend/src/api/contract_review.test.ts
+@@ -0,0 +1,40 @@
++import { afterEach, describe, expect, it, vi } from 'vitest'
++import { streamChat } from './client'
++import { createSseParser } from './sse'
++import { fixtures } from './reviewWireFixtures'
++
++afterEach(() => vi.unstubAllGlobals())
++
++describe('API v0.2 captured wire compatibility', () => {
++  it.each(fixtures)('preserves every event at all character boundaries: $question', ({ wire }) => {
++    const whole = createSseParser()
++    const expected = [...whole.push(wire), ...whole.flush()]
++    expect(expected.length).toBeGreaterThan(0)
++    for (let split = 0; split <= wire.length; split++) {
++      const parser = createSseParser()
++      expect([...parser.push(wire.slice(0, split)), ...parser.push(wire.slice(split)), ...parser.flush()]).toEqual(expected)
++    }
++  })
++
++  it.each(fixtures)('client accepts terminal event: $question', async ({ question, wire }) => {
++    const bytes = new TextEncoder().encode(wire)
++    vi.stubGlobal('fetch', vi.fn(async () => new Response(new ReadableStream({
++      start(controller) {
++        // Include split UTF-8 characters and CRLF in real transport bytes.
++        for (const byte of bytes) controller.enqueue(new Uint8Array([byte]))
++        controller.close()
++      },
++    }), { headers: { 'Content-Type': 'text/event-stream' } })))
++    const request = streamChat({ messages: [{ role: 'user', content: question }] }, {
++      onToken: vi.fn(), onSources: vi.fn(),
++    })
++    if (question.includes('오류')) {
++      await expect(request).rejects.toMatchObject({ code: 'generation_failed' })
++    } else {
++      const done = await request
++      expect(done.answer_type).toBe(question.includes('조건') ? 'clarify' : question.includes('확인불가') ? 'unknown' : 'answer')
++      if (done.answer_type === 'clarify') expect(done.options?.length).toBeGreaterThan(0)
++      if (done.answer_type === 'answer') expect(done.actions?.length).toBeGreaterThan(0)
++    }
++  })
++})
+diff --git a/frontend/src/api/reviewWireFixtures.ts b/frontend/src/api/reviewWireFixtures.ts
+new file mode 100644
+index 0000000..8dd34c5
+--- /dev/null
++++ b/frontend/src/api/reviewWireFixtures.ts
+@@ -0,0 +1,2 @@
++// Synthetic responses captured from API v0.2 950147b via TestClient. No real knowledge base.
++export const fixtures = [{"question": "안내", "wire": "event: token\ndata: {\"text\": \"\\ubbfc\\uc6d0\\uc740 \"}\n\nevent: token\ndata: {\"text\": \"\\uc5ec\\uc218\\uad11\\uc591\\ud56d\\ub9cc\\uacf5\\uc0ac \"}\n\nevent: token\ndata: {\"text\": \"\\ub204\\ub9ac\\uc9d1\\uc758 \"}\n\nevent: token\ndata: {\"text\": \"\\ubbfc\\uc6d0\\uc2e0\\uccad \"}\n\nevent: token\ndata: {\"text\": \"\\uba54\\ub274\\uc5d0\\uc11c \"}\n\nevent: token\ndata: {\"text\": \"\\uc2e0\\uccad\\ud560 \"}\n\nevent: token\ndata: {\"text\": \"\\uc218 \"}\n\nevent: token\ndata: {\"text\": \"\\uc788\\uc2b5\\ub2c8\\ub2e4[1]. \"}\n\nevent: token\ndata: {\"text\": \"(\\u203b \"}\n\nevent: token\ndata: {\"text\": \"\\ud14c\\uc2a4\\ud2b8\\uc6a9 \"}\n\nevent: token\ndata: {\"text\": \"\\uac00\\uc9dc \"}\n\nevent: token\ndata: {\"text\": \"\\ub2f5\\ubcc0\\uc785\\ub2c8\\ub2e4)\\n\\n\"}\n\nevent: token\ndata: {\"text\": \"1. \"}\n\nevent: token\ndata: {\"text\": \"\\ub204\\ub9ac\\uc9d1 \"}\n\nevent: token\ndata: {\"text\": \"\\ubbfc\\uc6d0\\uc2e0\\uccad \"}\n\nevent: token\ndata: {\"text\": \"\\uba54\\ub274\\uc5d0\\uc11c \"}\n\nevent: token\ndata: {\"text\": \"\\uc2e0\\uccad\\uc11c \"}\n\nevent: token\ndata: {\"text\": \"\\uc791\\uc131[1]\\n\"}\n\nevent: token\ndata: {\"text\": \"2. \"}\n\nevent: token\ndata: {\"text\": \"\\ud56d\\ub9cc\\uc2dc\\uc124 \"}\n\nevent: token\ndata: {\"text\": \"\\ucd9c\\uc785\\uc5c5\\uccb4 \"}\n\nevent: token\ndata: {\"text\": \"\\ub4f1\\ub85d\\uc740 \"}\n\nevent: token\ndata: {\"text\": \"\\uc2e0\\uccad\\uc11c(HWP)\\ub97c \"}\n\nevent: token\ndata: {\"text\": \"\\ub0b4\\ub824\\ubc1b\\uc544 \"}\n\nevent: token\ndata: {\"text\": \"\\uc791\\uc131[2]\\n\"}\n\nevent: token\ndata: {\"text\": \"3. \"}\n\nevent: token\ndata: {\"text\": \"\\ucc98\\ub9ac \"}\n\nevent: token\ndata: {\"text\": \"\\uacb0\\uacfc \"}\n\nevent: token\ndata: {\"text\": \"\\ud655\\uc778[1]\\n\"}\n\nevent: sources\ndata: [{\"doc_id\": \"YGPA-001\", \"chunk_id\": \"YGPA-001-mock-0001\", \"title\": \"\\ubbfc\\uc6d0\\uc2e0\\uccad\\uc548\\ub0b4\", \"source_url\": \"https://www.ygpa.or.kr/hmpg/ygpa/mwse/onmw/mwgu/contPageDetail.do?conts_no=69ABE2DCEF294D449FCE2A530341F15D\", \"locator\": \"\\ubcf8\\ubb38 1~15\\ud589\", \"published_at\": null, \"updated_at\": null, \"date_status\": \"not_displayed\", \"fetched_at\": \"2026-09-27T10:00:00+09:00\", \"snippet\": \"\\ubbfc\\uc6d0 \\uc2e0\\uccad \\uc790\\uaca9 \\ubc0f 4\\ub2e8\\uacc4 \\uc2e0\\uccad \\uc808\\ucc28...\"}, {\"doc_id\": \"YGPA-023\", \"chunk_id\": \"YGPA-023-mock-0001\", \"title\": \"\\ud56d\\ub9cc\\uc2dc\\uc124\\ucd9c\\uc785\\uc5c5\\uccb4\\ub4f1\\ub85d\\uc2e0\\uccad\\uc11c\", \"source_url\": \"https://www.ygpa.or.kr/hmpg/comm/file/fileDownLoad.do?file_no=FILE_000000000007123\", \"locator\": \"\\uc2e0\\uccad\\uc11c 1\\ucabd\", \"published_at\": null, \"updated_at\": null, \"date_status\": \"unverified_attachment\", \"fetched_at\": \"2026-09-27T10:00:00+09:00\", \"snippet\": \"\\ud56d\\ub9cc\\uc2dc\\uc124 \\ucd9c\\uc785\\uc5c5\\uccb4 \\ub4f1\\ub85d \\uc2e0\\uccad\\uc11c \\uc11c\\uc2dd...\"}]\n\nevent: done\ndata: {\"message_id\": 1, \"answer_type\": \"answer\", \"actions\": [{\"type\": \"download\", \"label\": \"\\ud56d\\ub9cc\\uc2dc\\uc124\\ucd9c\\uc785\\uc5c5\\uccb4\\ub4f1\\ub85d\\uc2e0\\uccad\\uc11c(HWP)\", \"url\": \"https://www.ygpa.or.kr/hmpg/comm/file/fileDownLoad.do?file_no=FILE_000000000007123\", \"phone\": null, \"note\": null, \"source_ref\": 2}, {\"type\": \"link\", \"label\": \"Port-MIS \\uc5f4\\uae30\", \"url\": \"https://new.portmis.go.kr/\", \"phone\": null, \"note\": \"\\ub85c\\uadf8\\uc778 \\ud544\\uc694\", \"source_ref\": null}], \"options\": []}\n\n"}, {"question": "테스트:조건", "wire": "event: token\ndata: {\"text\": \"\\uc774\\uc6a9\\ud558\\uc2dc\\ub824\\ub294 \"}\n\nevent: token\ndata: {\"text\": \"\\ud56d\\ub9cc\\uc2dc\\uc124\\uc5d0 \"}\n\nevent: token\ndata: {\"text\": \"\\ub530\\ub77c \"}\n\nevent: token\ndata: {\"text\": \"\\uc808\\ucc28\\uac00 \"}\n\nevent: token\ndata: {\"text\": \"\\ub2e4\\ub985\\ub2c8\\ub2e4. \"}\n\nevent: token\ndata: {\"text\": \"\\uc5b4\\ub290 \"}\n\nevent: token\ndata: {\"text\": \"\\ucabd\\uc778\\uac00\\uc694? \"}\n\nevent: token\ndata: {\"text\": \"(\\u203b \"}\n\nevent: token\ndata: {\"text\": \"\\ud14c\\uc2a4\\ud2b8\\uc6a9 \"}\n\nevent: token\ndata: {\"text\": \"\\uac00\\uc9dc \"}\n\nevent: token\ndata: {\"text\": \"\\ub2f5\\ubcc0\\uc785\\ub2c8\\ub2e4)\"}\n\nevent: sources\ndata: []\n\nevent: done\ndata: {\"message_id\": 2, \"answer_type\": \"clarify\", \"actions\": [], \"options\": [{\"label\": \"\\uc5ec\\uac1d \\ud130\\ubbf8\\ub110\"}, {\"label\": \"\\ud654\\ubb3c \\ubd80\\ub450\"}, {\"label\": \"\\uc798 \\ubaa8\\ub974\\uaca0\\uc5b4\\uc694\"}]}\n\n"}, {"question": "테스트:확인불가", "wire": "event: token\ndata: {\"text\": \"\\ud655\\uc778\\ud55c \"}\n\nevent: token\ndata: {\"text\": \"\\uacf5\\uc2dd \"}\n\nevent: token\ndata: {\"text\": \"\\uc790\\ub8cc\\ub9cc\\uc73c\\ub85c\\ub294 \"}\n\nevent: token\ndata: {\"text\": \"\\ub2f5\\uc744 \"}\n\nevent: token\ndata: {\"text\": \"\\ud655\\uc815\\ud558\\uae30 \"}\n\nevent: token\ndata: {\"text\": \"\\uc5b4\\ub835\\uc2b5\\ub2c8\\ub2e4. \"}\n\nevent: token\ndata: {\"text\": \"\\ub2f4\\ub2f9 \"}\n\nevent: token\ndata: {\"text\": \"\\ubd80\\uc11c\\ub97c \"}\n\nevent: token\ndata: {\"text\": \"\\ud1b5\\ud574 \"}\n\nevent: token\ndata: {\"text\": \"\\ud655\\uc778\\ud574 \"}\n\nevent: token\ndata: {\"text\": \"\\uc8fc\\uc138\\uc694. \"}\n\nevent: token\ndata: {\"text\": \"(\\u203b \"}\n\nevent: token\ndata: {\"text\": \"\\ud14c\\uc2a4\\ud2b8\\uc6a9 \"}\n\nevent: token\ndata: {\"text\": \"\\uac00\\uc9dc \"}\n\nevent: token\ndata: {\"text\": \"\\ub2f5\\ubcc0\\uc785\\ub2c8\\ub2e4)\"}\n\nevent: sources\ndata: []\n\nevent: done\ndata: {\"message_id\": 3, \"answer_type\": \"unknown\", \"actions\": [{\"type\": \"contact\", \"label\": \"\\uc5ec\\uc218\\uad11\\uc591\\ud56d\\ub9cc\\uacf5\\uc0ac (\\ud14c\\uc2a4\\ud2b8\\uc6a9)\", \"url\": null, \"phone\": \"061-000-0000\", \"note\": \"\\ud14c\\uc2a4\\ud2b8\\uc6a9 \\uac00\\uc9dc \\ubc88\\ud638\", \"source_ref\": null}], \"options\": []}\n\n"}, {"question": "테스트:오류", "wire": "event: token\ndata: {\"text\": \"\\ubbfc\\uc6d0\\uc740 \"}\n\nevent: token\ndata: {\"text\": \"\\uc5ec\\uc218\\uad11\\uc591\\ud56d\\ub9cc\\uacf5\\uc0ac \"}\n\nevent: token\ndata: {\"text\": \"\\ub204\\ub9ac\\uc9d1\\uc758 \"}\n\nevent: error\ndata: {\"code\": \"generation_failed\", \"message\": \"\\ub2f5\\ubcc0\\uc744 \\ub9cc\\ub4dc\\ub294 \\uc911 \\ubb38\\uc81c\\uac00 \\uc0dd\\uacbc\\uc2b5\\ub2c8\\ub2e4. \\uc7a0\\uc2dc \\ud6c4 \\ub2e4\\uc2dc \\uc2dc\\ub3c4\\ud574 \\uc8fc\\uc138\\uc694.\"}\n\n"}]
+diff --git a/frontend/src/api/sse.test.ts b/frontend/src/api/sse.test.ts
+index 8abcd1d..f75f316 100644
+--- a/frontend/src/api/sse.test.ts
++++ b/frontend/src/api/sse.test.ts
+@@ -2,6 +2,13 @@ import { describe, expect, it } from 'vitest'
+ import { createSseParser } from './sse'
+ 
+ describe('createSseParser', () => {
++  it('네트워크 조각 경계에서 CR과 LF가 갈려도 이벤트를 유지한다', () => {
++    const parser = createSseParser()
++    expect(parser.push('event: token\r')).toEqual([])
++    expect(parser.push('\ndata: {"text":"안녕"}\r')).toEqual([])
++    expect(parser.push('\n\r')).toEqual([])
++    expect(parser.push('\n')).toEqual([{ event: 'token', data: '{"text":"안녕"}' }])
++  })
+   it('조각나서 도착한 이벤트를 완성된 뒤에만 돌려준다', () => {
+     const parser = createSseParser()
+     expect(parser.push('event: token\ndata: {"text":"안')).toEqual([])
+diff --git a/frontend/src/api/sse.ts b/frontend/src/api/sse.ts
+index 10eb267..915deeb 100644
+--- a/frontend/src/api/sse.ts
++++ b/frontend/src/api/sse.ts
+@@ -10,6 +10,7 @@ export interface RawSseEvent {
+ /** 조각난 청크를 받아 완성된 이벤트만 돌려주는 상태 있는 파서 */
+ export function createSseParser() {
+   let buffer = ''
++  let pendingCR = false
+ 
+   const parseBlock = (block: string): RawSseEvent | null => {
+     let event = 'message'
+@@ -29,7 +30,10 @@ export function createSseParser() {
+   return {
+     /** 새로 받은 텍스트를 넣으면 이번에 완성된 이벤트들을 돌려준다 */
+     push(chunk: string): RawSseEvent[] {
+-      buffer += chunk.replace(/\r\n?/g, '\n')
++      // CRLF may straddle transport chunks. Hold the final CR until its next byte.
++      const joined = (pendingCR ? '\r' : '') + chunk
++      pendingCR = joined.endsWith('\r')
++      buffer += (pendingCR ? joined.slice(0, -1) : joined).replace(/\r\n?/g, '\n')
+       const events: RawSseEvent[] = []
+       let end = buffer.indexOf('\n\n')
+       while (end !== -1) {
+@@ -42,6 +46,8 @@ export function createSseParser() {
+     },
+     /** 스트림이 끝났을 때 남은 마지막 블록 */
+     flush(): RawSseEvent[] {
++      if (pendingCR) buffer += '\n'
++      pendingCR = false
+       const rest = buffer.trim() ? parseBlock(buffer) : null
+       buffer = ''
+       return rest ? [rest] : []

@@ -13,9 +13,9 @@ import zipfile
 import requests
 
 # Works in the repository and in the preparation directory.
-MODULE = Path(__file__).resolve().parents[1] / "scripts/collect_attachments.py"
+MODULE = Path(__file__).resolve().parents[1] / "scripts/05_collect_attachments.py"
 if not MODULE.exists():
-    MODULE = Path(__file__).with_name("collect_attachments.py")
+    MODULE = Path(__file__).with_name("05_collect_attachments.py")
 spec = importlib.util.spec_from_file_location("collect_attachments", MODULE)
 c = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(c)

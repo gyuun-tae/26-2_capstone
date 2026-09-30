@@ -9,7 +9,7 @@ import unittest
 from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
-import restore_tables_one as r
+r = __import__("07_restore_tables_one")
 
 
 def rec(tag, level, payload):

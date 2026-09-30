@@ -9,9 +9,9 @@ from pathlib import Path
 import re
 import sys
 
-import chunk_remaining as prose
-from chunk_one import sha
-from extract_remaining import decode_html
+prose = __import__("13_chunk_remaining")
+sha = __import__("12_chunk_one", fromlist=["sha"]).sha
+decode_html = __import__("04_extract_remaining", fromlist=["decode_html"]).decode_html
 
 ROOT = Path(__file__).resolve().parents[1]
 VERSION = 'semantic-html-tables-v1'

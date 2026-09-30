@@ -1,5 +1,7 @@
 # YGPA-021 표 구조 복원
 
+대응 실행 파일: `scripts/07_restore_tables_one.py`. 작업 번호와 기본 이름을 동일하게 맞췄습니다.
+
 2026-09-27. 더드림스마트센터 이용 신청서 1건을 대상으로 기존 문단과 표의 셀 위치를 연결하는 단계다. 다른 HWP의 처리는 아직 확대하지 않는다. 네트워크를 사용하지 않으며 추가 패키지 설치도 없다. 앞 단계의 requirements-extraction.txt 환경을 사용한다.
 
 ## 실행
@@ -7,7 +9,7 @@
 프로젝트 최상위 폴더의 PowerShell에서 실행한다.
 
 ```powershell
-.\.venv\Scripts\python.exe -B .\scripts\restore_tables_one.py --restore
+.\.venv\Scripts\python.exe -B .\scripts\07_restore_tables_one.py --restore
 ```
 
 옵션 없이 실행하면 준비 안내만 출력하며 파일을 저장하지 않는다. 원본, document.txt, document.json, blocks.json을 보존하고 다음 하위 폴더에 별도 결과를 쓴다.
@@ -75,4 +77,4 @@ Invoke-Item -LiteralPath (Join-Path $snapshot.FullName 'hwp-tables-v1\tables.htm
 
 ## 2026-09-28 후속 단계
 
-사용자가 표 화면 대조 후 문제를 발견하지 못했다고 보고했다. 위 내용은 최초 시범 단계 기록이다. 현재 공통 함수는 여러 HWP 구역도 지원하며, 이 파일의 단독 실행 대상은 계속 YGPA-021이다. 나머지 10건 실행 방법, 2건의 보류 사항, 사용자 확인 범위는 [나머지 HWP 표 복원](table_restoration_remaining.md)을 따른다. 검색 승인 상태는 변경하지 않는다.
+사용자가 표 화면 대조 후 문제를 발견하지 못했다고 보고했다. 위 내용은 최초 시범 단계 기록이다. 현재 공통 함수는 여러 HWP 구역도 지원하며, 이 파일의 단독 실행 대상은 계속 YGPA-021이다. 나머지 10건 실행 방법, 2건의 보류 사항, 사용자 확인 범위는 [나머지 HWP 표 복원](08_restore_tables_remaining.md)을 따른다. 검색 승인 상태는 변경하지 않는다.

@@ -11,7 +11,9 @@ import struct
 import sys
 import zlib
 
-from collect_attachments import select_targets, verify_parent, check_url
+select_targets = __import__("05_collect_attachments", fromlist=["select_targets"]).select_targets
+verify_parent = __import__("05_collect_attachments", fromlist=["verify_parent"]).verify_parent
+check_url = __import__("05_collect_attachments", fromlist=["check_url"]).check_url
 
 ROOT = Path(__file__).resolve().parents[1]
 VERSION = "attachments-text-v1"

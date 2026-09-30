@@ -10,8 +10,12 @@ from pathlib import Path
 import struct
 import sys
 
-from collect_attachments import select_targets
-from extract_attachments import validate_source, decompress_section, records, paragraph_text, sha
+select_targets = __import__("05_collect_attachments", fromlist=["select_targets"]).select_targets
+validate_source = __import__("06_extract_attachments", fromlist=["validate_source"]).validate_source
+decompress_section = __import__("06_extract_attachments", fromlist=["decompress_section"]).decompress_section
+records = __import__("06_extract_attachments", fromlist=["records"]).records
+paragraph_text = __import__("06_extract_attachments", fromlist=["paragraph_text"]).paragraph_text
+sha = __import__("06_extract_attachments", fromlist=["sha"]).sha
 
 ROOT = Path(__file__).resolve().parents[1]
 DOC_ID = "YGPA-021"

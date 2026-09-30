@@ -6,9 +6,12 @@ from pathlib import Path
 import re
 import sys
 
-from collect_attachments import select_targets, check_url
-from extract_attachments import validate_source, sha, build_text
-from restore_tables_one import validate_grid
+select_targets = __import__("05_collect_attachments", fromlist=["select_targets"]).select_targets
+check_url = __import__("05_collect_attachments", fromlist=["check_url"]).check_url
+validate_source = __import__("06_extract_attachments", fromlist=["validate_source"]).validate_source
+sha = __import__("06_extract_attachments", fromlist=["sha"]).sha
+build_text = __import__("06_extract_attachments", fromlist=["build_text"]).build_text
+validate_grid = __import__("07_restore_tables_one", fromlist=["validate_grid"]).validate_grid
 
 ROOT = Path(__file__).resolve().parents[1]
 VERSION = 'semantic-attachments-v1'

@@ -7,8 +7,8 @@ import unittest
 from unittest.mock import patch
 import zlib
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
-import restore_tables_one as r
-import restore_tables_remaining as batch
+r = __import__("07_restore_tables_one")
+batch = __import__("08_restore_tables_remaining")
 
 
 def record(tag, level, payload):

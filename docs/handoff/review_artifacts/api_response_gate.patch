@@ -1,0 +1,446 @@
+diff --git a/src/api/README.md b/src/api/README.md
+index b1d1ec1..3755ba1 100644
+--- a/src/api/README.md
++++ b/src/api/README.md
+@@ -43,3 +43,28 @@ docker build -t ygpa-api . && docker run --rm -p 8000:8000 ygpa-api   # 로컬 
+ - 무료 플랜은 15분 동안 요청이 없으면 잠들고, 첫 요청 때 깨어나는 데 30초 이상 걸린다
+ - 대화 로그는 Neon(PostgreSQL)에 저장된다 → Render Environment의 `DATABASE_URL`. 이 값이 없으면 서버 안 SQLite에 저장되고 재배포 때 지워진다
+ - `DATABASE_URL`에는 비밀번호가 들어 있으므로 GitHub·채팅에 올리지 않는다
++
++## 계획서 대조용 수정안 — 운영 반영 전
++
++이 체크아웃은 계획서 4장·6.4절의 **반환 전 검증**을 시험하는 수정안이다.
++`prepare_answer()`가 전체 초안을 모아 `Answer.verifier`로 검사하고 로그 저장까지
++성공한 뒤 기존 `token → sources → done` 형식으로 반환한다. 생성 중 원시 토큰은
++보내지 않으므로 첫 답변까지 대기 시간이 늘 수 있으며, 실 GPU 지연은 별도 측정한다.
++
++검증기가 False면 초안·출처를 버리고 `unknown` 안내를 반환한다. 검증기 누락·예외,
++30초 준비 시간 초과, 16,000자 초과, 생성·저장 오류는 본문 없이 `error`로 종료한다.
++검증기 연결은 필수이며 현재 `verify_mock`는 고정 mock 동일성만 검사한다.
++실제 문장-근거 검증·PII 마스킹·LLM·검색 기능을 완성한 것이 아니다.
++
++`get_collection()`은 `embedding_function`을 명시해야 한다. 외부에서 계산한
++벡터를 넘길 때는 `embedding_function=None`을 사용한다. 기본 Chroma 모델로
++잘못 색인하는 일을 막기 위한 변경이며 BGE-M3 자체 연결·모델 혼용 방지·승인 검사는
++다음 등록기에서 구현한다. 호출 규격 변경이므로 신규 검색 담당 코드에 전달해야 한다.
++
++```bash
++uv run python test_api.py
++uv run python -m unittest discover -s tests -v
++```
++
++프론트엔드 JSON/SSE 계약 불일치는 이 수정안에 포함하지 않았다. PostgreSQL 연결은
++임시 SQLite 및 드라이버 URL 변환 수준만 검증하며 실 Neon 접속을 보장하지 않는다.
+diff --git a/src/api/app/main.py b/src/api/app/main.py
+index 8795629..d39a5dc 100644
+--- a/src/api/app/main.py
++++ b/src/api/app/main.py
+@@ -12,6 +12,7 @@ Path("data").mkdir(exist_ok=True)  # SQLite 파일과 Chroma 폴더 위치
+ from app import rag  # noqa: E402
+ from app.db import Base, SessionLocal, engine, get_db  # noqa: E402
+ from app.models import ChatLog  # noqa: E402
++from app.response import prepare_answer  # noqa: E402
+ from app.schemas import ChatRequest, Feedback  # noqa: E402
+ from app.vectorstore import client  # noqa: E402
+ 
+@@ -36,22 +37,17 @@ def health():
+ 
+ @app.post("/chat", response_class=EventSourceResponse)
+ async def chat(req: ChatRequest):
+-    """SSE로 token(답변 조각) → sources(근거 문서) → done(로그 id, 응답 유형) 순서로 보낸다.
+-    검색·생성·로그 저장 중 어디서든 실패하면 done 대신 error를 보내고 끝낸다.
++    """생성·검증·저장 후 SSE token → sources → done을 보낸다.
++    검색·생성·검증·로그 저장 실패는 답변 본문 없이 error로 끝낸다.
+     (FE는 done 또는 error를 받아야 로딩을 멈출 수 있다)"""
+     try:
+         result = rag.answer(req.messages)
+-        parts = []
+-        async for text in result.tokens:
+-            parts.append(text)
+-            yield ServerSentEvent(event="token", data={"text": text})
++        prepared = await prepare_answer(result)
++        sources = [s.model_dump() for s in prepared.sources]
+ 
+-        sources = [s.model_dump() for s in result.sources]
+-        yield ServerSentEvent(event="sources", data=sources)
+-
+-        # ponytail: 스트림 도중 창을 닫으면 로그가 남지 않음. 미완성 답변까지 필요해지면 그때 처리
++        # 생성 완료·검증된 결과만 저장한다. 이후 연결이 끊겨도 완료 로그는 남는다.
+         with SessionLocal() as db:
+-            log = ChatLog(question=req.messages[-1].content, answer="".join(parts).strip(), sources=sources)
++            log = ChatLog(question=req.messages[-1].content, answer=prepared.text, sources=sources)
+             db.add(log)
+             db.commit()
+             message_id = log.id
+@@ -63,7 +59,10 @@ async def chat(req: ChatRequest):
+         )
+         return
+ 
+-    yield ServerSentEvent(event="done", data={"message_id": message_id, "answer_type": result.answer_type})
++    for text in prepared.parts:
++        yield ServerSentEvent(event="token", data={"text": text})
++    yield ServerSentEvent(event="sources", data=sources)
++    yield ServerSentEvent(event="done", data={"message_id": message_id, "answer_type": prepared.answer_type})
+ 
+ 
+ @app.put("/messages/{message_id}/feedback", status_code=204)
+diff --git a/src/api/app/rag.py b/src/api/app/rag.py
+index 2caa4d6..062661f 100644
+--- a/src/api/app/rag.py
++++ b/src/api/app/rag.py
+@@ -12,7 +12,7 @@ FE 화면 확인용: 질문에 아래 문구를 넣으면 해당 상태를 흉
+ """
+ import asyncio
+ from dataclasses import dataclass
+-from typing import AsyncIterator
++from typing import AsyncIterator, Awaitable, Callable
+ 
+ from app.schemas import AnswerType, Message, Source
+ 
+@@ -42,6 +42,9 @@ class Answer:
+     sources: list[Source]
+     tokens: AsyncIterator[str]
+     answer_type: AnswerType = "answer"
++    # 실 RAG는 문장-인용 및 근거충분성을 검증하는 함수를 제공해야 한다.
++    # 미설정은 통과가 아니다. mock 검증기를 운영 검증기로 재사용하지 않는다.
++    verifier: Callable[[str, list[Source]], Awaitable[bool]] | None = None
+ 
+ 
+ def answer(messages: list[Message]) -> Answer:
+@@ -58,4 +61,11 @@ def answer(messages: list[Message]) -> Answer:
+         result.answer_type = kind  # 실제 RAG에서는 생성이 끝난 뒤 정해질 수 있다
+ 
+     result.tokens = tokens()
++
++    async def verify_mock(text: str, sources: list[Source]) -> bool:
++        """고정 mock의 동일성 검사일 뿐, 실제 근거 충실도 검증이 아니다."""
++        expected = [] if kind == "unknown" else MOCK_SOURCES
++        return text == MOCK_ANSWERS[kind] and sources == expected
++
++    result.verifier = verify_mock
+     return result
+diff --git a/src/api/app/response.py b/src/api/app/response.py
+new file mode 100644
+index 0000000..8bf4231
+--- /dev/null
++++ b/src/api/app/response.py
+@@ -0,0 +1,58 @@
++"""Generate privately, verify, then release. No semantic verifier is implemented here."""
++import asyncio
++from dataclasses import dataclass
++
++from app.rag import Answer
++from app.schemas import AnswerType, Source
++
++ABSTENTION = "확인된 근거만으로 답변을 제공하기 어렵습니다. 공식 자료 또는 담당부서에 확인해 주세요."
++MAX_ANSWER_CHARS = 16000
++PREPARATION_TIMEOUT_SECONDS = 30
++
++
++@dataclass(frozen=True)
++class PreparedAnswer:
++    parts: tuple[str, ...]
++    sources: tuple[Source, ...]
++    answer_type: AnswerType
++
++    @property
++    def text(self) -> str:
++        return "".join(self.parts).strip()
++
++
++async def prepare_answer(result: Answer) -> PreparedAnswer:
++    """False means abstention; missing/broken verification means a technical error.
++
++    This buffers the whole draft; SSE transport remains, live generation tokens do not.
++    The caller persists only this finalized result before sending any answer content.
++    """
++    async with asyncio.timeout(PREPARATION_TIMEOUT_SECONDS):
++        parts = []
++        size = 0
++        async for part in result.tokens:
++            if not isinstance(part, str):
++                raise ValueError("Answer token must be text")
++            size += len(part)
++            if size > MAX_ANSWER_CHARS:
++                raise ValueError("Answer exceeds the output limit")
++            if part:
++                parts.append(part)
++        text = "".join(parts).strip()
++        if not text:
++            raise ValueError("Empty answer")
++        kind = result.answer_type  # The generator may finalize this during generation.
++        if kind not in {"answer", "clarify", "unknown"}:
++            raise ValueError("Invalid answer type")
++        sources = [source.model_copy(deep=True) for source in result.sources]
++        if result.verifier is None:
++            raise RuntimeError("Answer verifier is not configured")
++        # Pass copies so a verifier cannot silently alter the public response.
++        accepted = await result.verifier(text, [s.model_copy(deep=True) for s in sources])
++        if type(accepted) is not bool:
++            raise TypeError("Answer verifier must return bool")
++        if not accepted or (kind == "answer" and not sources):
++            return PreparedAnswer((ABSTENTION,), (), "unknown")
++        if kind == "unknown":
++            sources = []
++        return PreparedAnswer(tuple(parts), tuple(sources), kind)
+diff --git a/src/api/app/vectorstore.py b/src/api/app/vectorstore.py
+index cc2b6d1..aa55e47 100644
+--- a/src/api/app/vectorstore.py
++++ b/src/api/app/vectorstore.py
+@@ -8,6 +8,10 @@ CHROMA_PATH = os.getenv("CHROMA_PATH", "data/chroma")
+ client = chromadb.PersistentClient(path=CHROMA_PATH)
+ 
+ 
+-def get_collection(name="ygpa_docs"):
+-    # ponytail: Chroma 기본 임베딩 모델 사용 중. AI 팀이 모델을 정하면 embedding_function으로 넘길 것
+-    return client.get_or_create_collection(name)
++def get_collection(name="ygpa_docs", *, embedding_function):
++    """No implicit model. Pass an explicit embedder, or None for supplied vectors.
++
++    The planned BGE-M3 model is not downloaded or loaded by this helper.
++    Ingestion must separately enforce approval, model revision and vector dimensions.
++    """
++    return client.get_or_create_collection(name, embedding_function=embedding_function)
+diff --git a/src/api/tests/test_plan_alignment.py b/src/api/tests/test_plan_alignment.py
+new file mode 100644
+index 0000000..31beeb7
+--- /dev/null
++++ b/src/api/tests/test_plan_alignment.py
+@@ -0,0 +1,237 @@
++"""Synthetic change-safety tests. No FAQ content, model downloads or remote DB."""
++import asyncio
++import json
++import logging
++import os
++from pathlib import Path
++import runpy
++import tempfile
++import unittest
++from unittest.mock import patch
++
++RUNTIME = Path(tempfile.mkdtemp(prefix="ygpa-plan-tests-"))
++os.environ["DATABASE_URL"] = "sqlite:///" + (RUNTIME / "logs.db").as_posix()
++os.environ["CHROMA_PATH"] = str(RUNTIME / "chroma")
++os.environ["ANONYMIZED_TELEMETRY"] = "False"
++
++from fastapi.testclient import TestClient
++from sqlalchemy import func, select
++from sqlalchemy.orm import Session
++
++from app import main, rag, response, vectorstore
++from app.db import SessionLocal
++from app.models import ChatLog
++from app.schemas import ChatRequest
++
++logging.getLogger("app.main").setLevel(logging.CRITICAL)
++DRAFT = "합성 초안: 검증되지 않은 답변"
++
++
++async def accept(text, sources):
++    return True
++
++
++async def reject(text, sources):
++    return False
++
++
++def candidate(verifier=accept, *, text=DRAFT, kind="answer", sources=None):
++    async def tokens():
++        yield text
++
++    return rag.Answer(
++        sources=[s.model_copy(deep=True) for s in rag.MOCK_SOURCES] if sources is None else sources,
++        tokens=tokens(), answer_type=kind, verifier=verifier,
++    )
++
++
++def parse_sse(body):
++    result = []
++    for block in body.replace("\r\n", "\n").split("\n\n"):
++        fields = dict(line.split(": ", 1) for line in block.splitlines() if ": " in line and not line.startswith(":"))
++        if "event" in fields:
++            result.append((fields["event"], json.loads(fields["data"])))
++    return result
++
++
++def count_logs():
++    with SessionLocal() as db:
++        return db.scalar(select(func.count()).select_from(ChatLog))
++
++
++class PreparationTests(unittest.IsolatedAsyncioTestCase):
++    async def test_first_event_waits_for_verifier(self):
++        entered, release = asyncio.Event(), asyncio.Event()
++
++        async def delayed_verifier(text, sources):
++            entered.set()
++            await release.wait()
++            return True
++
++        with patch("app.main.rag.answer", return_value=candidate(delayed_verifier)):
++            stream = main.chat(ChatRequest(messages=[{"role": "user", "content": "synthetic"}]))
++            first = asyncio.create_task(anext(stream))
++            try:
++                await asyncio.wait_for(entered.wait(), 1)
++                self.assertFalse(first.done(), "Answer content leaked before verification")
++                release.set()
++                event = await asyncio.wait_for(first, 1)
++                self.assertEqual(event.event, "token")
++            finally:
++                if not first.done():
++                    first.cancel()
++                await stream.aclose()
++
++    async def test_cancel_before_verification_has_no_log(self):
++        entered = asyncio.Event()
++
++        async def waiting(text, sources):
++            entered.set()
++            await asyncio.Event().wait()
++
++        before = count_logs()
++        with patch("app.main.rag.answer", return_value=candidate(waiting)):
++            stream = main.chat(ChatRequest(messages=[{"role": "user", "content": "synthetic"}]))
++            first = asyncio.create_task(anext(stream))
++            await asyncio.wait_for(entered.wait(), 1)
++            first.cancel()
++            with self.assertRaises(asyncio.CancelledError):
++                await first
++            await stream.aclose()
++        self.assertEqual(count_logs(), before)
++
++    async def test_rejection_discards_text_and_sources(self):
++        out = await response.prepare_answer(candidate(reject))
++        self.assertEqual(out.answer_type, "unknown")
++        self.assertEqual(out.sources, ())
++        self.assertEqual(out.text, response.ABSTENTION)
++        self.assertNotIn(DRAFT, out.text)
++
++    async def test_answer_without_evidence_abstains_even_if_verifier_accepts(self):
++        out = await response.prepare_answer(candidate(sources=[]))
++        self.assertEqual(out.answer_type, "unknown")
++
++    async def test_final_type_is_read_after_generation(self):
++        result = candidate()
++
++        async def tokens():
++            yield "합성 확인 불가"
++            result.answer_type = "unknown"
++
++        result.tokens = tokens()
++        out = await response.prepare_answer(result)
++        self.assertEqual(out.answer_type, "unknown")
++        self.assertEqual(out.sources, ())
++
++    async def test_verifier_cannot_mutate_released_sources(self):
++        async def mutate(text, sources):
++            sources[0].title = "변조"
++            return True
++
++        out = await response.prepare_answer(candidate(mutate))
++        self.assertEqual(out.sources[0].title, rag.MOCK_SOURCES[0].title)
++
++    async def test_missing_verifier_is_not_implicit_approval(self):
++        with self.assertRaisesRegex(RuntimeError, "not configured"):
++            await response.prepare_answer(candidate(None))
++
++    async def test_non_boolean_verdict_is_rejected(self):
++        async def invalid(text, sources):
++            return "false"
++
++        with self.assertRaises(TypeError):
++            await response.prepare_answer(candidate(invalid))
++
++    async def test_empty_invalid_type_and_oversize_drafts_are_rejected(self):
++        for obj in (candidate(text=" "), candidate(kind="invalid"), candidate(text="x" * 16001)):
++            with self.subTest(kind=obj.answer_type), self.assertRaises(ValueError):
++                await response.prepare_answer(obj)
++
++    async def test_preparation_timeout(self):
++        async def slow(text, sources):
++            await asyncio.sleep(1)
++            return True
++
++        with patch("app.response.PREPARATION_TIMEOUT_SECONDS", 0.01):
++            with self.assertRaises(TimeoutError):
++                await response.prepare_answer(candidate(slow))
++
++
++class ApiCompatibilityTests(unittest.TestCase):
++    def setUp(self):
++        self.client = TestClient(main.app)
++        self.addCleanup(self.client.close)
++
++    def send(self, answer):
++        with patch("app.main.rag.answer", return_value=answer):
++            result = self.client.post("/chat", json={"messages": [{"role": "user", "content": "합성 검증 질문"}]})
++        self.assertEqual(result.status_code, 200)
++        return parse_sse(result.text)
++
++    def test_accepted_contract_and_persisted_content(self):
++        events = self.send(candidate())
++        self.assertEqual([e for e, _ in events], ["token", "sources", "done"])
++        self.assertEqual(events[-1][1]["answer_type"], "answer")
++        with SessionLocal() as db:
++            stored = db.get(ChatLog, events[-1][1]["message_id"])
++            self.assertEqual(stored.answer, DRAFT)
++            self.assertEqual(stored.sources, events[-2][1])
++
++    def test_rejected_draft_is_neither_sent_nor_logged(self):
++        events = self.send(candidate(reject))
++        self.assertNotIn(DRAFT, json.dumps(events, ensure_ascii=False))
++        self.assertEqual(events[-1][1]["answer_type"], "unknown")
++        self.assertEqual(events[-2][1], [])
++        with SessionLocal() as db:
++            stored = db.get(ChatLog, events[-1][1]["message_id"])
++            self.assertEqual(stored.answer, response.ABSTENTION)
++            self.assertEqual(stored.sources, [])
++
++    def test_commit_failure_releases_no_answer_content(self):
++        before = count_logs()
++        with patch.object(Session, "commit", side_effect=RuntimeError("synthetic database failure")):
++            events = self.send(candidate())
++        self.assertEqual([e for e, _ in events], ["error"])
++        self.assertEqual(count_logs(), before)
++
++    def test_verifier_exception_releases_no_content(self):
++        async def broken(text, sources):
++            raise RuntimeError("synthetic verifier failure")
++
++        before = count_logs()
++        self.assertEqual([e for e, _ in self.send(candidate(broken))], ["error"])
++        self.assertEqual(count_logs(), before)
++
++    def test_generation_failure_releases_no_partial_content(self):
++        async def broken_tokens():
++            yield DRAFT
++            raise RuntimeError("synthetic generation failure")
++
++        result = candidate()
++        result.tokens = broken_tokens()
++        self.assertEqual([e for e, _ in self.send(result)], ["error"])
++
++
++class StorageCompatibilityTests(unittest.TestCase):
++    def test_collection_requires_explicit_model_choice(self):
++        with self.assertRaises(TypeError):
++            vectorstore.get_collection()
++
++    def test_explicit_synthetic_vectors_roundtrip_without_model(self):
++        collection = vectorstore.get_collection("plan_synthetic", embedding_function=None)
++        self.addCleanup(vectorstore.client.delete_collection, "plan_synthetic")
++        collection.add(ids=["synthetic"], documents=["synthetic"], embeddings=[[1.0, 0.0]])
++        result = collection.query(query_embeddings=[[1.0, 0.0]], n_results=1)
++        self.assertEqual(result["ids"], [["synthetic"]])
++
++    def test_postgres_url_normalization_without_external_connection(self):
++        db_file = Path(main.__file__).with_name("db.py")
++        for prefix in ("postgres://", "postgresql://", "postgresql+psycopg://"):
++            with self.subTest(prefix=prefix), patch.dict(os.environ, {"DATABASE_URL": prefix + "example.invalid/test"}):
++                with patch("sqlalchemy.create_engine") as factory:
++                    runpy.run_path(str(db_file))
++                    factory.assert_called_once_with("postgresql+psycopg://example.invalid/test", pool_pre_ping=True)
++
++
++if __name__ == "__main__":
++    unittest.main()

@@ -8,7 +8,7 @@ from pathlib import Path
 import re
 import sys
 
-from collect_attachments import check_url
+check_url = __import__("05_collect_attachments", fromlist=["check_url"]).check_url
 
 ROOT=Path(__file__).resolve().parents[1]
 DOC_ID='YGPA-001'

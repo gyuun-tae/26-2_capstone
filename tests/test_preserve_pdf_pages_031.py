@@ -11,7 +11,7 @@ from unittest.mock import patch
 import zlib
 from pypdf import PdfWriter
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'scripts'))
-import preserve_pdf_pages_031 as p
+p = __import__("10_preserve_pdf_pages_031")
 
 
 def pdf(count=29):

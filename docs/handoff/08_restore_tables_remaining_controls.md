@@ -6,7 +6,7 @@
 
 ```powershell
 Set-Location -LiteralPath "C:\Users\yountae\26-2_classes\capstone"
-.\.venv\Scripts\python.exe -B .\scripts\restore_tables_remaining.py --doc-ids YGPA-033 --restore
+.\.venv\Scripts\python.exe -B .\scripts\08_restore_tables_remaining.py --doc-ids YGPA-033 --restore
 ```
 
 이 단계에서는 YGPA-033 한 건만 처리한다. 사전 검증 결과 표 5개, 셀 95개, 글자 겹침 개체 1개다. 새 패키지는 필요 없다. 저장 결과는 `data/processed/YGPA-033/20260927T070449680617Z/hwp-tables-v2/`다. v1이나 기존 본문은 덮어쓰지 않는다.
@@ -47,4 +47,4 @@ Section0 레코드 366 아래에 그림, 선, 도형, 글상자가 묶여 있다
 
 ## 후속 상태 (2026-09-28)
 
-사용자가 YGPA-033의 저장 결과 화면·원문 대조 후 ‘확인완료’라고 응답했다. 검색 승인 상태는 변경하지 않는다. YGPA-030은 [전용 자료 보존 단계](graphics_preservation_030.md)로 이어간다. 원본 개체 데이터는 보존하되 시각 배치 재현은 여전히 보류한다.
+사용자가 YGPA-033의 저장 결과 화면·원문 대조 후 ‘확인완료’라고 응답했다. 검색 승인 상태는 변경하지 않는다. YGPA-030은 [전용 자료 보존 단계](09_restore_graphics_030.md)로 이어간다. 원본 개체 데이터는 보존하되 시각 배치 재현은 여전히 보류한다.

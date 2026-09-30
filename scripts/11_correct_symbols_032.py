@@ -6,8 +6,9 @@ import json
 from pathlib import Path
 import sys
 
-from collect_attachments import select_targets
-from extract_attachments import validate_source,sha
+select_targets = __import__("05_collect_attachments", fromlist=["select_targets"]).select_targets
+validate_source = __import__("06_extract_attachments", fromlist=["validate_source"]).validate_source
+sha = __import__("06_extract_attachments", fromlist=["sha"]).sha
 
 ROOT=Path(__file__).resolve().parents[1]
 DOC_ID='YGPA-032'

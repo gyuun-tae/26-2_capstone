@@ -1,5 +1,7 @@
 # 첨부파일 수집 — 3단계
 
+대응 실행 파일: `scripts/05_collect_attachments.py`. 작업 번호와 기본 이름을 동일하게 맞췄습니다.
+
 2026-09-27. 후보 목록 33건 중 첨부 13건(YGPA-021~033)을 처리하는 수집기다. 기본 선택은 우선 7건이며 나머지는 명시적으로 선택한다. 기존 HTML 수집·추출 스크립트와 별개다. 현재 검증은 오프라인 테스트와 실제 CSV의 대상 확인까지이며, 실서버 다운로드 성공 여부는 아직 확인하지 않았다.
 
 ## 팀원 환경 준비
@@ -18,20 +20,20 @@ py -3.12 -m venv .venv
 1. 대상 확인: 네트워크 요청과 데이터 저장이 없다.
 
 ```powershell
-.\.venv\Scripts\python.exe -B .\scripts\collect_attachments.py
+.\.venv\Scripts\python.exe -B .\scripts\05_collect_attachments.py
 ```
 
 기본 대상은 YGPA-021, 026, 027, 030, 031, 032, 033의 7건이다. 처음에는 021 한 건을 다운로드해 결과를 확인한다.
 
 ```powershell
-.\.venv\Scripts\python.exe -B .\scripts\collect_attachments.py --doc-ids YGPA-021 --download
+.\.venv\Scripts\python.exe -B .\scripts\05_collect_attachments.py --doc-ids YGPA-021 --download
 ```
 
 2. 첫 결과 확인 후 우선 7건 또는 전체 첨부 13건으로 확대한다. 아래 두 명령 중 원하는 범위를 선택한다.
 
 ```powershell
-.\.venv\Scripts\python.exe -B .\scripts\collect_attachments.py --priority first --download
-.\.venv\Scripts\python.exe -B .\scripts\collect_attachments.py --priority all --download
+.\.venv\Scripts\python.exe -B .\scripts\05_collect_attachments.py --priority first --download
+.\.venv\Scripts\python.exe -B .\scripts\05_collect_attachments.py --priority all --download
 ```
 
 유효한 원본과 해시가 남아 있는 문서는 건너뛰므로 보류 문서만 재시도할 수 있다. 갱신 수집은 `--refresh`를 추가하며 기존 스냅샷을 덮어쓰지 않는다. 부모 링크 변화나 robots 차단은 URL 정책을 우회하지 말고 원인을 확인한다. 보류가 하나라도 있으면 종료 코드는 1이고, 개별 오류와 집계는 실행 기록에 남는다.
@@ -53,7 +55,7 @@ data/raw/_collection_failures/attachments-<UTC>/
 - `doc_id`, `source_url`, `raw_path`, `content_sha256`, `fetched_at`, `collection_batch`로 원본·추출본을 연결한다. 날짜 미확인은 그대로 유지한다.
 - `parent_source.html`은 첨부 연결을 입증하는 출처 확인용이다. 메뉴 등 공통 HTML을 포함하므로 검색·본문 추출 대상에 넣지 않는다. `provenance.parent_sha256`과 `parent_fetched_at`을 검증에 사용한다.
 - 신규 수집 결과도 `ingestion_status=raw_saved_pending_review`, `index_approved=false`다. 청크화·임베딩·검색 승인은 별도 단계다.
-- `extract_remaining.py`는 HTML 19건 전용이라 새 첨부에 사용하지 않는다. 첨부의 형식별 추출은 다음 단계다.
+- `04_extract_remaining.py`는 HTML 19건 전용이라 새 첨부에 사용하지 않는다. 첨부의 형식별 추출은 다음 단계다.
 
 ## 수집 규칙
 
@@ -78,4 +80,4 @@ CSV와 정책의 ID·첨부 URL·부모 URL이 모두 일치해야 한다. FAQ �
 
 ## 이후 진행 기록 — 2026-09-27
 
-사용자 실행으로 첨부 13건 수집 완료(첫 실행 1건, 확대 실행 성공 12건·기존 1건·보류 0건). 13건의 원본·부모 페이지 해시를 확인했다. 원본은 HWP 5.x 11건과 PDF 2건이다. 다음 실행 방법은 [첨부 본문 추출 안내](attachment_extraction.md)에 있다. 위의 실서버 미검증 표시는 수집기 준비 시점의 기록이다.
+사용자 실행으로 첨부 13건 수집 완료(첫 실행 1건, 확대 실행 성공 12건·기존 1건·보류 0건). 13건의 원본·부모 페이지 해시를 확인했다. 원본은 HWP 5.x 11건과 PDF 2건이다. 다음 실행 방법은 [첨부 본문 추출 안내](06_extract_attachments.md)에 있다. 위의 실서버 미검증 표시는 수집기 준비 시점의 기록이다.

@@ -5,7 +5,7 @@ from datetime import date, datetime, timezone
 from html.parser import HTMLParser
 from pathlib import Path
 
-from collect_one import check_url
+check_url = __import__("01_collect_one", fromlist=["check_url"]).check_url
 
 
 ROOT = Path(__file__).resolve().parents[1]

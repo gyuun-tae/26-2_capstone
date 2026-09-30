@@ -6,7 +6,7 @@ import tempfile
 import unittest
 from unittest.mock import patch
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'scripts'))
-import chunk_html_tables as c
+c = __import__("14_chunk_html_tables")
 from test_chunk_remaining import fixture
 
 TABLE='''<table><caption>시설 표</caption><thead><tr><th rowspan="2">시설</th><th colspan="2">수량</th></tr><tr><th>길이(m)</th><th>합계</th></tr></thead><tbody><tr><th rowspan="2">부두 A</th><td>100</td><td rowspan="2">300</td></tr><tr><td>200</td></tr><tr><th>부두 B</th><td></td><td>-</td></tr></tbody></table>'''
