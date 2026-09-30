@@ -8,9 +8,17 @@ tmp = tempfile.mkdtemp()
 os.environ["DATABASE_URL"] = f"sqlite:///{tmp}/test.db"
 os.environ["CHROMA_PATH"] = f"{tmp}/chroma"
 
-from fastapi.testclient import TestClient  # noqa: E402
+import re  # noqa: E402
 
+from fastapi.testclient import TestClient  # noqa: E402
+from pydantic import ValidationError  # noqa: E402
+from sqlalchemy import inspect, select  # noqa: E402
+from sqlalchemy import text as sql  # noqa: E402
+
+from app.db import SessionLocal, add_missing_columns, engine  # noqa: E402
 from app.main import app  # noqa: E402
+from app.models import ChatLog  # noqa: E402
+from app.schemas import Action  # noqa: E402
 
 c = TestClient(app)
 
@@ -33,10 +41,21 @@ assert {"doc_id", "chunk_id", "title", "source_url", "locator", "published_at", 
 assert done["answer_type"] == "answer"
 message_id = done["message_id"]
 
+# v0.2: 인용 번호는 sources 순서와 맞고, 서식(요약 → 빈 줄 → 번호 목록)과 actions가 온다
+text = "".join(d["text"] for e, d in events if e == "token")
+cited = {int(n) for n in re.findall(r"\[(\d+)\]", text)}
+assert cited and cited <= set(range(1, len(sources) + 1)), cited
+assert "\n\n1. " in text, text
+assert {a["type"] for a in done["actions"]} == {"download", "link"} and done["options"] == []
+assert all(a["url"].startswith("https://") for a in done["actions"])
+assert all(1 <= a["source_ref"] <= len(sources) for a in done["actions"] if a["source_ref"])
+
 # 응답 유형·오류 흉내 (FE 화면 확인용)
-assert chat("테스트:조건")[-1][1]["answer_type"] == "clarify"
+clarify = chat("테스트:조건")[-1][1]
+assert clarify["answer_type"] == "clarify" and clarify["options"] and clarify["actions"] == []
 unknown = chat("테스트:확인불가")
 assert unknown[-1][1]["answer_type"] == "unknown" and unknown[-2][1] == []
+assert unknown[-1][1]["actions"][0]["type"] == "contact" and unknown[-1][1]["options"] == []
 err = chat("테스트:오류")
 assert err[-1][0] == "error" and "done" not in [e for e, _ in err], err
 
@@ -46,6 +65,34 @@ with patch("app.main.rag.answer", side_effect=RuntimeError("검색 실패")):
 with patch("app.main.SessionLocal", side_effect=RuntimeError("DB 실패")):
     names = [e for e, _ in chat("저장 오류")]
     assert names[-1] == "error" and "done" not in names, names
+
+
+def last_log(question):
+    with SessionLocal() as db:
+        return db.scalars(select(ChatLog).where(ChatLog.question == question).order_by(ChatLog.id.desc())).first()
+
+
+# 로그: 성공은 응답 유형과 함께, 실패는 질문 + answer_type=error + 오류 종류만 남는다 (답변 조각·메시지는 안 남김)
+assert last_log("민원 신청은 어떻게 하나요?").answer_type == "answer"
+log = last_log("테스트:오류")
+assert (log.answer_type, log.error, log.answer, log.sources) == ("error", "RuntimeError", "", []), (log.error, log.answer)
+log = last_log("검색 오류")
+assert (log.answer_type, log.error, log.answer) == ("error", "RuntimeError", "")
+assert last_log("저장 오류") is None  # DB가 원인이면 저장할 수 없다 (서버 로그에만 남음)
+
+# 기존 테이블에 새 열이 없어도 서버 시작 때 자동으로 추가된다 (예: 이미 만들어진 Neon 테이블)
+with engine.begin() as conn:
+    conn.execute(sql("ALTER TABLE chat_logs DROP COLUMN error"))
+add_missing_columns()
+assert "error" in {col["name"] for col in inspect(engine).get_columns("chat_logs")}
+
+# Action 안전 규칙: 링크는 https 주소, 연락처는 전화번호가 있어야 한다
+for bad in [{"type": "link", "label": "x"}, {"type": "download", "label": "x", "url": "http://a"}, {"type": "contact", "label": "x"}]:
+    try:
+        Action(**bad)
+        raise AssertionError(f"통과하면 안 됨: {bad}")
+    except ValidationError:
+        pass
 
 # 2. 피드백
 assert c.put(f"/messages/{message_id}/feedback", json={"rating": "up"}).status_code == 204

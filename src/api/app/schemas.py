@@ -41,5 +41,37 @@ class Source(BaseModel):
 AnswerType = Literal["answer", "clarify", "unknown"]
 
 
+class Action(BaseModel):
+    """다음 행동 버튼·카드 (v0.2).
+    url·phone은 LLM이 만들지 않는다. 근거 메타데이터나 app/actions.py의 고정 목록에서만 채운다."""
+    type: Literal["link", "download", "contact"]
+    label: str  # "Port-MIS 열기", "선박입항신고서(HWP)", "항만운영팀"
+    url: str | None = None  # link, download
+    phone: str | None = None  # contact
+    note: str | None = None  # "로그인 필요", "평일 09~18시"
+    source_ref: int | None = Field(default=None, ge=1)  # 근거가 된 sources 번호(1부터). 고정 링크면 None
+
+    @model_validator(mode="after")
+    def has_target(self):
+        if self.type in ("link", "download") and not (self.url or "").startswith("https://"):
+            raise ValueError(f"{self.type}에는 https:// 주소가 필요합니다")
+        if self.type == "contact" and not self.phone:
+            raise ValueError("contact에는 phone이 필요합니다")
+        return self
+
+
+class Option(BaseModel):
+    """clarify 선택지 (v0.2). FE는 누른 label을 다음 user 메시지로 보낸다."""
+    label: str = Field(min_length=1, max_length=50)
+
+
+class Done(BaseModel):
+    """SSE done 이벤트의 data"""
+    message_id: int
+    answer_type: AnswerType
+    actions: list[Action] = []
+    options: list[Option] = []  # answer_type이 clarify일 때만 채운다
+
+
 class Feedback(BaseModel):
     rating: Literal["up", "down"]
