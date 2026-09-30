@@ -1,0 +1,440 @@
+.screen {
+  display: flex;
+  flex-direction: column;
+}
+
+.topRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 28px;
+  margin-bottom: 12px;
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  min-height: 32px;
+  margin-left: -4px;
+  padding: 0 4px;
+  border: 0;
+  border-radius: var(--radius-xs);
+  background: none;
+  color: var(--color-primary);
+  font-size: var(--fs-md);
+  font-weight: 700;
+}
+
+.backLink:hover {
+  text-decoration: underline;
+}
+
+.meta {
+  color: var(--color-text-tertiary);
+  font-size: var(--fs-md);
+}
+
+.userRow {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+
+.userBubble {
+  max-width: 85%;
+  margin: 0;
+  padding: 10px 16px;
+  border-radius: var(--radius-lg);
+  background: var(--color-primary-subtle);
+  font-size: var(--fs-lg);
+  line-height: var(--lh-body);
+  white-space: pre-wrap;
+}
+
+.bot {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.answerTitle {
+  margin: 4px 0 0;
+  font-size: var(--fs-xl);
+  font-weight: 700;
+  line-height: var(--lh-tight);
+}
+
+.lead {
+  margin: 0;
+  font-size: var(--fs-lg);
+  line-height: var(--lh-body);
+  white-space: pre-line;
+}
+
+.lead button,
+.step button {
+  margin-left: 6px;
+}
+
+/* ── 처리 중 ─────────────────────────── */
+
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.loadingText {
+  margin: 0;
+  color: var(--color-text-secondary);
+  font-size: var(--fs-lg);
+}
+
+.dots {
+  display: inline-flex;
+  gap: 4px;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+.dots span {
+  width: 6px;
+  height: 6px;
+  border-radius: var(--radius-full);
+  background: var(--color-primary);
+  animation: pulse 1.2s infinite ease-in-out;
+}
+
+.dots span:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.dots span:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+@keyframes pulse {
+  0%,
+  80%,
+  100% {
+    opacity: 0.25;
+    transform: translateY(0);
+  }
+  40% {
+    opacity: 1;
+    transform: translateY(-3px);
+  }
+}
+
+/* ── 조건 확인 카드 ───────────────────── */
+
+.options {
+  display: grid;
+  gap: 12px;
+  margin: 16px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.optionCard {
+  padding: 16px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+}
+
+.optionTitle {
+  margin: 0 0 6px;
+  font-size: var(--fs-lg);
+  font-weight: 700;
+}
+
+.optionDesc {
+  margin: 0 0 10px;
+  color: var(--color-text-secondary);
+  font-size: var(--fs-base);
+  line-height: var(--lh-body);
+}
+
+.optionCta {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  min-height: 32px;
+  margin-left: -4px;
+  padding: 0 4px;
+  border: 0;
+  border-radius: var(--radius-xs);
+  background: none;
+  color: var(--color-primary);
+  font-size: var(--fs-base);
+  font-weight: 700;
+}
+
+.optionCta:hover {
+  text-decoration: underline;
+}
+
+/* ── 상세 답변 ───────────────────────── */
+
+.summaryCard {
+  margin-bottom: 24px;
+  padding: 14px 16px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  transition: border-color var(--duration-fast), box-shadow var(--duration-fast);
+}
+
+.summaryActive {
+  border-color: var(--color-primary);
+  box-shadow: inset 0 0 0 1px var(--color-primary);
+}
+
+.summaryHead {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.summaryTitle {
+  margin: 0;
+  font-size: var(--fs-xl);
+  font-weight: 700;
+}
+
+.summaryLabel {
+  margin-left: auto;
+  color: var(--color-text-tertiary);
+  font-size: var(--fs-sm);
+}
+
+.summaryText {
+  margin: 0;
+  font-size: var(--fs-lg);
+  line-height: var(--lh-body);
+}
+
+.section + .section {
+  margin-top: 24px;
+}
+
+.sectionTitle {
+  margin: 0 0 10px;
+  font-size: var(--fs-xl);
+  font-weight: 700;
+}
+
+.steps {
+  margin: 0;
+  padding: 4px 16px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  list-style: none;
+}
+
+.step {
+  display: flex;
+  align-items: baseline;
+  gap: 20px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--color-border);
+  font-size: var(--fs-lg);
+  line-height: var(--lh-body);
+}
+
+.step:last-child {
+  border-bottom: 0;
+}
+
+.stepNum {
+  flex: none;
+  min-width: 24px;
+  color: var(--color-primary);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.note {
+  margin: 10px 0 0;
+  color: var(--color-text-tertiary);
+  font-size: var(--fs-sm);
+}
+
+/* ── 짧은 답변 행동 ─────────────────── */
+
+.inlineAction {
+  margin-top: 20px;
+}
+
+.actionNote {
+  margin: 8px 0 0;
+  color: var(--color-text-tertiary);
+  font-size: var(--fs-sm);
+}
+
+.actionRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.refLink {
+  align-self: center;
+  margin-top: 16px;
+  padding: 4px 8px;
+  border: 0;
+  border-radius: var(--radius-xs);
+  background: none;
+  color: var(--color-text-secondary);
+  font-size: var(--fs-base);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.textButton {
+  min-height: 40px;
+  padding: 0 8px;
+  border: 0;
+  border-radius: var(--radius-xs);
+  background: none;
+  color: var(--color-primary);
+  font-size: var(--fs-base);
+  font-weight: 700;
+}
+
+.textButton:hover {
+  text-decoration: underline;
+}
+
+/* ── 근거 부족 ───────────────────────── */
+
+.notice {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 16px;
+  border: 1px solid var(--color-warning-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-warning-bg);
+}
+
+.noticeLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+  color: var(--color-warning-text);
+  font-size: var(--fs-sm);
+  font-weight: 700;
+}
+
+.notice .answerTitle {
+  margin: 0;
+}
+
+.scope {
+  margin: 4px 0 0;
+  color: var(--color-text-tertiary);
+  font-size: var(--fs-sm);
+}
+
+/* ── 기술 오류 ───────────────────────── */
+
+.error {
+  padding: 16px;
+  border: 1px solid #f1c3c7;
+  border-radius: var(--radius-lg);
+  background: var(--color-danger-bg);
+}
+
+.errorTitle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0 0 4px;
+  color: var(--color-danger);
+  font-size: var(--fs-lg);
+  font-weight: 700;
+}
+
+.errorText {
+  margin: 0;
+  color: var(--color-text-secondary);
+  font-size: var(--fs-base);
+}
+
+.errorDetail {
+  margin: 4px 0 0;
+  color: var(--color-text-tertiary);
+  font-size: var(--fs-xs);
+}
+
+.retry {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 40px;
+  margin: 12px 0 16px;
+  padding: 0 16px;
+  border: 1px solid var(--color-primary);
+  border-radius: var(--radius-md);
+  background: var(--color-primary);
+  color: #fff;
+  font-weight: 700;
+}
+
+.retry:hover {
+  background: var(--color-primary-hover);
+}
+
+.error .actionRow {
+  margin-top: 8px;
+}
+
+/* ── 하단 다음 단계 바 ─────────────── */
+
+.actionBar {
+  display: flex;
+  flex: none;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 24px;
+  padding: 12px 24px;
+  border-top: 1px solid var(--color-border);
+  background: var(--color-surface);
+}
+
+.actionBarLabel {
+  font-size: var(--fs-lg);
+  font-weight: 700;
+}
+
+.actionBarButtons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.secondaryButton {
+  min-height: 40px;
+  padding: 0 14px;
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  color: var(--color-text-secondary);
+  font-size: var(--fs-base);
+}
+
+.secondaryButton:hover {
+  border-color: var(--color-text-tertiary);
+  background: var(--color-surface-muted);
+}

@@ -1,0 +1,225 @@
+.panel {
+  display: flex;
+  flex: none;
+  flex-direction: column;
+  width: var(--source-panel-width);
+  min-height: 0;
+  border-left: 1px solid var(--color-border);
+  background: var(--color-surface);
+  animation: slide-in var(--duration-base) var(--ease-out);
+}
+
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(16px);
+  }
+}
+
+.header {
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  height: 56px;
+  padding: 0 16px 0 24px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.heading {
+  margin: 0;
+  font-size: var(--fs-xl);
+  font-weight: 700;
+}
+
+.heading:focus {
+  outline: none;
+}
+
+.heading:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+.close {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface-muted);
+  color: var(--color-text-secondary);
+}
+
+.close:hover {
+  background: var(--color-surface-sunken);
+}
+
+.tabs {
+  display: flex;
+  gap: 6px;
+  padding: 12px 24px 0;
+}
+
+.tab {
+  min-width: 36px;
+  height: 28px;
+  border: 1px solid var(--color-primary-border);
+  border-radius: var(--radius-xs);
+  background: var(--color-surface);
+  color: var(--color-primary);
+  font-size: var(--fs-sm);
+  font-weight: 700;
+}
+
+.tab[aria-current='true'] {
+  border-color: var(--color-primary);
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.body {
+  flex: 1;
+  min-height: 0;
+  padding: 20px 24px 24px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.kicker {
+  margin: 0 0 4px;
+  color: var(--color-text-tertiary);
+  font-size: var(--fs-sm);
+}
+
+.title {
+  margin: 0 0 4px;
+  font-size: var(--fs-2xl);
+  font-weight: 700;
+  line-height: var(--lh-tight);
+}
+
+.path {
+  margin: 0 0 16px;
+  color: var(--color-text-tertiary);
+  font-size: var(--fs-md);
+}
+
+.metaTable {
+  margin: 0 0 16px;
+  padding: 2px 16px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.metaRow {
+  display: grid;
+  grid-template-columns: 96px minmax(0, 1fr);
+  gap: 8px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.metaRow:last-child {
+  border-bottom: 0;
+}
+
+.metaRow dt {
+  color: var(--color-text-tertiary);
+  font-size: var(--fs-md);
+}
+
+.metaRow dd {
+  margin: 0;
+  font-size: var(--fs-base);
+}
+
+.excerpt {
+  padding: 16px;
+  border: 1px solid var(--color-primary-border);
+  border-radius: var(--radius-md);
+  background: #eef4fc;
+}
+
+.excerptHeading {
+  margin: 0 0 8px;
+  font-size: var(--fs-base);
+  font-weight: 700;
+}
+
+.quote {
+  margin: 0;
+  font-size: var(--fs-base);
+  line-height: var(--lh-body);
+}
+
+.excerptNote {
+  margin: 12px 0 0;
+  color: var(--color-text-secondary);
+  font-size: var(--fs-base);
+  line-height: var(--lh-body);
+}
+
+.supportsTitle {
+  margin: 20px 0 4px;
+  font-size: var(--fs-base);
+  font-weight: 700;
+}
+
+.supports {
+  margin: 0;
+  color: var(--color-text-secondary);
+  font-size: var(--fs-md);
+  line-height: var(--lh-body);
+}
+
+.footer {
+  flex: none;
+  padding: 14px 24px 12px;
+  border-top: 1px solid var(--color-border);
+}
+
+.openButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  min-height: 44px;
+  border-radius: var(--radius-md);
+  background: var(--color-primary);
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.openButton:hover {
+  background: var(--color-primary-hover);
+}
+
+.footnote {
+  margin: 8px 0 0;
+  color: var(--color-text-tertiary);
+  font-size: var(--fs-xs);
+  text-align: center;
+}
+
+/* 패널이 좁아 답변 영역과 나란히 둘 수 없으면(태블릿·모바일·사용자가 줄인 경우) 답변 위를 덮는다 */
+@container (max-width: 879px) {
+  .panel {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    width: 100%;
+    border-left: 0;
+    animation-name: sheet-in;
+  }
+}
+
+@keyframes sheet-in {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+}

@@ -1,0 +1,81 @@
+/*
+ * 디자인 토큰 v0.1
+ * - 색상: Figma 프로토타입 렌더링에서 추정한 값. Figma 원본 값 확인 후 교체한다.
+ * - YGPA CI 원색은 로고 PNG에서 추출(#25377c, #f39200).
+ * - KRDS 자체 상징 기준: 본문 16px 이상, 여러 줄 행간 1.5 이상.
+ * - :root는 데모 페이지 문서용, :host는 위젯 Shadow DOM용.
+ */
+:root,
+:host {
+  /* Brand */
+  --ygpa-navy: #25377c;
+  --ygpa-orange: #f39200;
+
+  /* Primary (Figma 버튼·링크 블루, 추정) */
+  --color-primary: #1f4e9d;
+  --color-primary-hover: #19428a;
+  --color-primary-pressed: #143672;
+  --color-primary-subtle: #eaf1fb;
+  --color-primary-subtle-hover: #dde8f8;
+  --color-primary-border: #c6d7ef;
+
+  /* Neutral */
+  --color-text: #1e2124;
+  --color-text-secondary: #464c53;
+  --color-text-tertiary: #6d7882;
+  --color-text-disabled: #a2a9b0;
+  --color-border: #dfe3e8;
+  --color-border-strong: #c6ccd3;
+  --color-surface: #ffffff;
+  --color-surface-muted: #f5f7f9;
+  --color-surface-sunken: #eef1f4;
+
+  /* System */
+  --color-warning-bg: #fff8e6;
+  --color-warning-border: #f2d492;
+  --color-warning-text: #7a5300;
+  --color-danger: #c62f3c;
+  --color-danger-bg: #fdeff0;
+  --color-focus: #2b6fe0;
+
+  /* Typography */
+  --font-sans: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo',
+    'Malgun Gothic', system-ui, sans-serif;
+  --fs-xs: 13px;
+  --fs-sm: 14px;
+  --fs-md: 15px;
+  --fs-base: 16px;
+  --fs-lg: 17px;
+  --fs-xl: 18px;
+  --fs-2xl: 20px;
+  --fs-3xl: 22px;
+  --lh-tight: 1.35;
+  --lh-body: 1.55;
+
+  /* Shape */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 24px;
+  --radius-full: 999px;
+
+  /* Elevation */
+  --shadow-panel: 0 16px 48px rgb(15 30 60 / 0.18), 0 2px 8px rgb(15 30 60 / 0.08);
+  --shadow-launcher: 0 8px 24px rgb(15 30 60 / 0.22);
+  --shadow-dialog: 0 20px 60px rgb(15 30 60 / 0.28);
+
+  /* Widget layout */
+  --widget-gap: 24px;
+  --panel-compact-width: 440px;
+  --panel-expanded-width: 1100px;
+  --panel-max-height: 760px;
+  --source-panel-width: 440px;
+  --content-max-width: 688px;
+  --panel-header-height: 64px;
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration-fast: 120ms;
+  --duration-base: 200ms;
+}

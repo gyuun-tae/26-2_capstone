@@ -1,0 +1,127 @@
+.welcome {
+  container-type: inline-size;
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.heading {
+  margin: 0;
+  font-size: var(--fs-3xl);
+  font-weight: 700;
+  line-height: var(--lh-tight);
+  letter-spacing: -0.01em;
+}
+
+.sub {
+  margin: 4px 0 0;
+  color: var(--color-text-secondary);
+  font-size: var(--fs-base);
+  line-height: 1.5;
+}
+
+.sectionTitle {
+  margin: 0 0 10px;
+  font-size: var(--fs-lg);
+  font-weight: 700;
+}
+
+.accent {
+  color: var(--color-primary);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin: 0 0 18px;
+  padding: 0;
+  list-style: none;
+}
+
+/* 카드 하나에 약 200px이 필요해 4열은 넓을 때만 (좁으면 라벨이 줄바꿈된다) */
+@container (min-width: 860px) {
+  .grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.task {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  min-height: 56px;
+  padding: 8px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-size: var(--fs-lg);
+  font-weight: 500;
+  text-align: left;
+  text-decoration: none;
+  transition: border-color var(--duration-fast), background-color var(--duration-fast);
+}
+
+.task:hover {
+  border-color: var(--color-primary-border);
+  background: var(--color-primary-subtle);
+}
+
+.taskIcon {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+  background: var(--color-primary-subtle);
+  color: var(--ygpa-navy);
+}
+
+.task:hover .taskIcon {
+  background: var(--color-surface);
+}
+
+.taskLabel {
+  min-width: 0;
+}
+
+.examples {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.example {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  min-height: 48px;
+  padding: 10px 16px;
+  border: 0;
+  border-radius: var(--radius-md);
+  background: #f0f4fa;
+  color: var(--color-text);
+  font-size: var(--fs-lg);
+  text-align: left;
+  transition: background-color var(--duration-fast);
+}
+
+.example svg {
+  flex: none;
+  color: var(--color-text-tertiary);
+}
+
+.example:hover {
+  background: var(--color-primary-subtle-hover);
+}
