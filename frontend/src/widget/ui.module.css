@@ -78,3 +78,62 @@
   width: 100%;
   min-height: 48px;
 }
+
+.chip:disabled {
+  cursor: default;
+  opacity: 0.55;
+}
+
+/* ── 담당 부서 연락처 카드 ─────────────── */
+
+.contact {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 12px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+}
+
+.contactIcon {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+  background: var(--color-primary-subtle);
+  color: var(--ygpa-navy);
+}
+
+.contactBody {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.contactLabel {
+  margin: 0;
+  font-size: var(--fs-base);
+  font-weight: 700;
+}
+
+.contactPhone {
+  color: var(--color-primary);
+  font-size: var(--fs-lg);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  text-decoration: none;
+  user-select: all;
+}
+
+.contactPhone:hover {
+  text-decoration: underline;
+}
+
+.contactNote {
+  margin: 0;
+  color: var(--color-text-tertiary);
+  font-size: var(--fs-sm);
+}

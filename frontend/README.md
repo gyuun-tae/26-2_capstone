@@ -15,20 +15,27 @@ npm install
 npm run dev        # http://localhost:5173
 ```
 
-MSW 목업 응답이 기본으로 켜져 있어 백엔드 없이 동작한다. FastAPI(`localhost:8000`)와 연동할 때는 `.env.example`을 `.env`로 복사하고 `VITE_USE_MOCK=false`로 바꾸면 개발 서버가 `/api`를 프록시한다.
+MSW 목업 응답이 기본으로 켜져 있어 백엔드 없이 동작한다.
 
-### 백엔드 연동 전 확인할 것
+### 백엔드와 연결해서 실행
 
-`src/api/types.ts`·`docs/api-contract.md`는 프론트엔드 작업용 초안이다. `feat/api-server`의 `src/api/app/schemas.py`와 형식이 달라 연결 전에 맞춰야 한다.
+프론트엔드는 `feat/api-server`의 형식(`POST /chat`, `messages[]`, SSE `token` → `sources` → `done`)을 따른다. 자세한 대응은 [docs/api-contract.md](docs/api-contract.md)에 있다.
 
-| 항목 | 프론트엔드 초안 | `feat/api-server` |
-|---|---|---|
-| 경로 | `POST /api/chat` | `POST /chat` |
-| 요청 | `message` + `clarification` | `messages[]` (대화 전체) |
-| 응답 | JSON 한 번 (요약·절차·선택지·행동 버튼 구조화) | SSE `token` → `sources` → `done` / `error` (답변은 텍스트 스트림) |
-| 응답 유형 | `answer` / `clarify` / `insufficient` | `answer` / `clarify` / `unknown` |
-| 근거 | `id`, `title`, `excerpt`, `last_modified` … | `doc_id`, `chunk_id`, `locator`, `snippet`, `date_status` … |
-| 피드백 | `POST /api/feedback` | `PUT /messages/{id}/feedback` |
+1. 백엔드를 `localhost:8000`에서 실행한다 (`src/api/README.md`).
+2. `.env.example`을 `.env`로 복사하고 `VITE_USE_MOCK=false`로 바꾼다.
+3. `npm run dev` — 개발 서버가 `/api/chat`을 백엔드의 `/chat`으로 넘긴다.
+
+배포된 백엔드를 쓰려면 `.env`의 `VITE_API_BASE_URL`에 주소를 넣는다. 백엔드 `CORS_ORIGINS`에 프론트엔드 주소가 있어야 한다.
+
+### 테스트
+
+```bash
+npm test          # SSE 파서, 답변 서식 해석 (Vitest)
+npm run lint
+npm run build
+```
+
+MSW를 업그레이드하면 `npx msw init public`으로 `public/mockServiceWorker.js`를 직접 갱신한다. Vitest가 내부에 다른 버전의 MSW를 두고 있어서, `package.json`에 워커 자동 복사 설정을 두면 설치할 때 옛 버전 워커로 덮어써진다.
 
 ### 실제 YGPA 홈페이지 위에서 시연 (`/host/`)
 
@@ -48,26 +55,30 @@ npm run dev        # http://localhost:5173/host/
 
 | 입력 | 결과 (Figma 프레임) |
 |---|---|
-| "입항 절차를 알려주세요." | 입항 개요 → 외항선/내항선 선택 (04) |
-| └ 외항선 절차 자세히 | 확장 화면 상세 답변 (05) → `[1]`·참고자료 누르면 근거 패널 (06) |
-| └ 내항선 절차 자세히 | 근거 부족 안내 (WF-06) |
+| "입항 절차를 알려주세요." | 조건 확인 + 외항선/내항선 선택지 (04) |
+| └ 외항선 | 스트리밍 → 요약 카드·진행 순서·확장 화면 (05) → `[1]`·참고자료 누르면 근거 패널 (06) |
+| └ 내항선 | 확인 불가 안내 (WF-06) |
 | "견학 신청은 어디서 하나요?" | 짧은 답변 + 신청 버튼 (03) |
-| "오류 테스트" | 기술 오류 + 다시 시도 (WF-07) |
-| 그 밖의 질문 | 근거 부족 안내 |
+| "오류 테스트" | 스트리밍 도중 `error` 이벤트 → 다시 시도 (WF-07) |
+| 그 밖의 질문 | 확인 불가 안내 |
+
+실제 백엔드 목업은 `테스트:조건`, `테스트:확인불가`, `테스트:오류` 문구로 같은 상태를 흉내 낸다.
 
 ## 구조
 
 ```
 src/
-  api/types.ts        백엔드와 공유하는 응답 계약 (docs/api-contract.md)
-  api/client.ts       fetch 래퍼, 기술 오류(ApiError) 구분
-  mocks/              MSW 핸들러와 Figma 시나리오 데이터
+  api/types.ts        백엔드 schemas.py와 같은 형식 (docs/api-contract.md)
+  api/client.ts       POST /chat SSE 스트림, 피드백, 기술 오류(ApiError) 구분
+  api/sse.ts          text/event-stream 파서
+  api/parseAnswer.ts  답변 텍스트 → 요약·진행 순서·인용 번호
+  mocks/              같은 SSE 형식의 MSW 목업과 시나리오
   embed.tsx           외부 홈페이지 삽입용 진입점 (host/index.html에서 로드)
   main.tsx            캡처 배경 데모 페이지(/) 진입점
   widget/
     mount.tsx         Shadow DOM 마운트, 위젯 CSS 격리, visual viewport 보정
     ChatWidget.tsx    런처 · 컴팩트(440px) · 확장(1100px) 셸, 포커스 관리
-    useChat.ts        화면 스택 상태 (질문 → 되묻기 → 상세, 뒤로가기)
+    useChat.ts        화면 스택 + messages[] 대화 기록, 스트리밍 상태, 피드백
     WelcomeView.tsx   업무 카드 · 예시 질문 (02)
     ScreenView.tsx    답변 · 되묻기 · 근거 부족 · 처리 중 · 오류 · 다음 단계 바
     SourcePanel.tsx   근거 패널 (06)

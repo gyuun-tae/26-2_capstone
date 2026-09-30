@@ -1,11 +1,14 @@
-import { ChevronLeft, ChevronRight, CircleAlert, RotateCw, SearchX } from 'lucide-react'
-import type { Action, AnswerResponse, ChatResponse, ClarifyOption, InsufficientResponse } from '../api/types'
+import { ChevronLeft, ChevronRight, CircleAlert, RotateCw, SearchX, ThumbsDown, ThumbsUp } from 'lucide-react'
+import { Fragment } from 'react'
+import { hasSteps, parseAnswer, type Block, type Inline } from '../api/parseAnswer'
+import type { Action, ClarifyOption } from '../api/types'
 import type { Screen } from './useChat'
-import { ActionLink, CitationChip, Mascot } from './ui'
+import { splitActions } from './actions'
+import { ActionLink, CitationChip, ContactCard, Mascot } from './ui'
 import styles from './ScreenView.module.css'
 
-const PORT_MIS: Action = { id: 'portmis', label: 'Port-MIS', url: 'https://portmis.go.kr/', kind: 'secondary', external: true }
-const YGPA_HOME: Action = { id: 'home', label: 'YGPA 홈페이지', url: 'https://www.ygpa.or.kr/', kind: 'secondary', external: true }
+const PORT_MIS: Action = { type: 'link', label: 'Port-MIS', url: 'https://portmis.go.kr/' }
+const YGPA_HOME: Action = { type: 'link', label: 'YGPA 홈페이지', url: 'https://www.ygpa.or.kr/' }
 
 interface ScreenViewProps {
   screen: Screen
@@ -16,12 +19,14 @@ interface ScreenViewProps {
   onRetry: () => void
   onOpenCitation: (id: number, trigger: HTMLElement) => void
   onRewrite: () => void
+  onRate: (rating: 'up' | 'down') => void
 }
 
 export function ScreenView(props: ScreenViewProps) {
   const { screen, backLabel, onBack } = props
+  const busy = screen.status === 'loading' || screen.status === 'streaming'
   return (
-    <article className={styles.screen} aria-busy={screen.status === 'loading'}>
+    <article className={styles.screen} aria-busy={busy}>
       <div className={styles.topRow}>
         <button type="button" className={styles.backLink} onClick={onBack}>
           <ChevronLeft size={18} aria-hidden="true" />
@@ -37,57 +42,239 @@ export function ScreenView(props: ScreenViewProps) {
         </p>
       </div>
 
-      <ScreenBody {...props} />
+      {screen.status === 'loading' ? (
+        <Loading />
+      ) : screen.status === 'error' ? (
+        <TechnicalError message={screen.error} onRetry={props.onRetry} />
+      ) : (
+        <AnswerContent {...props} />
+      )}
     </article>
   )
 }
 
-function ScreenBody({ screen, onSelect, onRetry, onOpenCitation, activeCitationId, onRewrite }: ScreenViewProps) {
-  if (screen.status === 'loading') return <Loading />
-  if (screen.status === 'error' || !screen.response) return <TechnicalError message={screen.error} onRetry={onRetry} />
+// ── 인용·서식 렌더링 ─────────────────────────────────
 
-  const response = screen.response
-  switch (response.type) {
-    case 'clarify':
-      return (
-        <>
-          <BotHeading response={response} />
-          <ul className={styles.options}>
-            {response.options.map((option) => (
-              <li key={option.id} className={styles.optionCard}>
-                <h4 className={styles.optionTitle}>{option.title}</h4>
-                <p className={styles.optionDesc}>{option.description}</p>
-                <button type="button" className={styles.optionCta} onClick={() => onSelect(option)}>
-                  {option.cta_label}
-                  <ChevronRight size={16} aria-hidden="true" />
+interface CiteContext {
+  count: number
+  /** done을 받았으면 더 이상 근거가 오지 않는다 → 짝 없는 번호는 일반 글자 */
+  settled: boolean
+  activeId: number | null
+  onOpen: (id: number, trigger: HTMLElement) => void
+}
+
+function Inlines({ inlines, cite }: { inlines: Inline[]; cite: CiteContext }) {
+  return inlines.map((node, i) => {
+    if (node.kind === 'text') return <Fragment key={i}>{node.text}</Fragment>
+    if (node.kind === 'bold') return <strong key={i}>{node.text}</strong>
+    if (node.n <= cite.count) return <CitationChip key={i} id={node.n} active={cite.activeId === node.n} onOpen={cite.onOpen} />
+    if (!cite.settled) return <CitationChip key={i} id={node.n} pending onOpen={cite.onOpen} />
+    return <Fragment key={i}>[{node.n}]</Fragment>
+  })
+}
+
+function BlockView({ block, cite }: { block: Block; cite: CiteContext }) {
+  if (block.kind === 'p') {
+    return (
+      <p className={styles.paragraph}>
+        <Inlines inlines={block.inlines} cite={cite} />
+      </p>
+    )
+  }
+  const List = block.kind === 'ol' ? 'ol' : 'ul'
+  return (
+    <List className={block.kind === 'ol' ? styles.numbered : styles.bullets}>
+      {block.items.map((item, i) => (
+        <li key={i}>
+          <Inlines inlines={item} cite={cite} />
+        </li>
+      ))}
+    </List>
+  )
+}
+
+const citesIn = (block: Block): number[] =>
+  (block.kind === 'p' ? [block.inlines] : block.items).flat().flatMap((n) => (n.kind === 'cite' ? [n.n] : []))
+
+// ── 답변 본문 ──────────────────────────────────────
+
+function AnswerContent({ screen, activeCitationId, onSelect, onOpenCitation, onRewrite, onRate }: ScreenViewProps) {
+  const blocks = parseAnswer(screen.text)
+  const type = screen.done?.answer_type
+  const streaming = screen.status === 'streaming'
+  const cite: CiteContext = {
+    count: screen.sources.length,
+    settled: screen.status === 'success',
+    activeId: activeCitationId,
+    onOpen: onOpenCitation,
+  }
+  const { links, contacts } = splitActions(screen.done?.actions)
+  const caret = streaming && <span className={styles.caret} aria-hidden="true" />
+
+  let body
+  if (type === 'unknown') {
+    body = (
+      <div className={styles.bot}>
+        <Mascot size={44} />
+        <section className={styles.notice} aria-labelledby={`${screen.key}-notice`}>
+          <p className={styles.noticeLabel}>
+            <SearchX size={16} aria-hidden="true" />
+            확인 가능한 근거 부족
+          </p>
+          <h3 id={`${screen.key}-notice`} className={styles.answerTitle}>
+            확인할 근거가 부족해요
+          </h3>
+          {blocks.map((b, i) => (
+            <BlockView key={i} block={b} cite={cite} />
+          ))}
+        </section>
+        {contacts.map((a, i) => (
+          <ContactCard key={i} action={a} />
+        ))}
+        <div className={styles.actionRow}>
+          {links.map((a, i) => (
+            <ActionLink key={i} action={a} />
+          ))}
+          <button type="button" className={styles.textButton} onClick={onRewrite}>
+            질문 구체화하기
+          </button>
+        </div>
+      </div>
+    )
+  } else if (hasSteps(blocks)) {
+    // 절차형 답변 (Figma 05): 첫 문단 → 요약 카드, 첫 번호 목록 → 진행 순서
+    const [first, ...rest] = blocks
+    const summary = first.kind === 'p' ? first : null
+    const afterSummary = summary ? rest : blocks
+    const stepsIndex = afterSummary.findIndex((b) => b.kind === 'ol' && b.items.length >= 2)
+    const summaryActive = !!summary && citesIn(summary).includes(activeCitationId ?? -1)
+    body = (
+      <>
+        {summary && (
+          <section className={`${styles.summaryCard} ${summaryActive ? styles.summaryActive : ''}`}>
+            <p className={styles.summaryLabel}>한눈에 보기</p>
+            <p className={styles.summaryText}>
+              <Inlines inlines={summary.inlines} cite={cite} />
+            </p>
+          </section>
+        )}
+        {afterSummary.map((block, i) =>
+          i === stepsIndex && block.kind === 'ol' ? (
+            <section key={i} className={styles.section}>
+              <h4 className={styles.sectionTitle}>진행 순서</h4>
+              <ol className={styles.steps}>
+                {block.items.map((item, n) => (
+                  <li key={n} className={styles.step}>
+                    <span className={styles.stepNum} aria-hidden="true">
+                      {String(n + 1).padStart(2, '0')}
+                    </span>
+                    <span>
+                      <Inlines inlines={item} cite={cite} />
+                    </span>
+                  </li>
+                ))}
+              </ol>
+            </section>
+          ) : (
+            <div key={i} className={styles.section}>
+              <BlockView block={block} cite={cite} />
+            </div>
+          ),
+        )}
+        {caret}
+        {contacts.length > 0 && (
+          <div className={styles.contacts}>
+            {contacts.map((a, i) => (
+              <ContactCard key={i} action={a} />
+            ))}
+          </div>
+        )}
+      </>
+    )
+  } else {
+    // 짧은 답변(Figma 03)·조건 확인(Figma 04)·스트리밍 중인 답변
+    const [primary, ...secondary] = type === 'answer' ? links : []
+    body = (
+      <div className={styles.bot}>
+        <Mascot size={44} />
+        <div className={styles.text}>
+          {blocks.map((b, i) => (
+            <BlockView key={i} block={b} cite={cite} />
+          ))}
+          {caret}
+        </div>
+
+        {type === 'clarify' && (screen.done?.options?.length ?? 0) > 0 && (
+          <ul className={styles.options} aria-label="선택지">
+            {screen.done!.options!.map((option) => (
+              <li key={option.label}>
+                <button type="button" className={styles.optionButton} onClick={() => onSelect(option)}>
+                  <span>{option.label}</span>
+                  <ChevronRight size={18} aria-hidden="true" />
                 </button>
               </li>
             ))}
           </ul>
-        </>
-      )
-    case 'answer':
-      return response.summary ? (
-        <DetailedAnswer response={response} activeCitationId={activeCitationId} onOpenCitation={onOpenCitation} />
-      ) : (
-        <SimpleAnswer response={response} onOpenCitation={onOpenCitation} />
-      )
-    case 'insufficient':
-      return <Insufficient response={response} onRewrite={onRewrite} />
+        )}
+
+        {primary && (
+          <div className={styles.inlineAction}>
+            <ActionLink action={primary} variant="primary" block />
+            {primary.note && <p className={styles.actionNote}>{primary.note}</p>}
+          </div>
+        )}
+        {secondary.length > 0 && (
+          <div className={styles.actionRow}>
+            {secondary.map((a, i) => (
+              <ActionLink key={i} action={a} />
+            ))}
+          </div>
+        )}
+        {contacts.map((a, i) => (
+          <ContactCard key={i} action={a} />
+        ))}
+        {screen.status === 'success' && screen.sources.length > 0 && (
+          <button type="button" className={styles.refLink} onClick={(e) => onOpenCitation(1, e.currentTarget)}>
+            참고자료 {screen.sources.length}건
+          </button>
+        )}
+      </div>
+    )
   }
+
+  return (
+    <>
+      {body}
+      {screen.status === 'success' && type !== 'clarify' && <Feedback value={screen.feedback} onRate={onRate} />}
+    </>
+  )
 }
 
-function BotHeading({ response }: { response: ChatResponse }) {
+/** 답변마다 받는 짧은 피드백. 무엇이 부족했는지 개선 근거로 쓴다 */
+function Feedback({ value, onRate }: { value?: 'up' | 'down'; onRate: (rating: 'up' | 'down') => void }) {
+  if (value) {
+    return (
+      <p className={styles.feedbackDone} role="status">
+        의견을 보냈어요. 고맙습니다.
+      </p>
+    )
+  }
   return (
-    <div className={styles.bot}>
-      <Mascot size={44} />
-      <h3 className={styles.answerTitle}>{response.title}</h3>
-      {response.lead && <p className={styles.lead}>{response.lead}</p>}
+    <div className={styles.feedback}>
+      <span className={styles.feedbackLabel}>답변이 도움이 되었나요?</span>
+      <button type="button" className={styles.feedbackButton} onClick={() => onRate('up')}>
+        <ThumbsUp size={16} aria-hidden="true" />
+        도움돼요
+      </button>
+      <button type="button" className={styles.feedbackButton} onClick={() => onRate('down')}>
+        <ThumbsDown size={16} aria-hidden="true" />
+        아쉬워요
+      </button>
     </div>
   )
 }
 
-/** WF-02 처리 중 — 기술 용어 대신 사용자가 이해할 수 있는 작업 상태 */
+/** WF-02 처리 중 — 첫 글자가 오기 전까지. 기술 용어 대신 사용자가 이해할 수 있는 작업 상태 */
 function Loading() {
   return (
     <div className={styles.loading} role="status">
@@ -100,135 +287,6 @@ function Loading() {
           <span />
         </span>
       </p>
-    </div>
-  )
-}
-
-/** WF-03 조건 확인 이후의 상세 답변 (Figma 05) */
-function DetailedAnswer({
-  response,
-  activeCitationId,
-  onOpenCitation,
-}: {
-  response: AnswerResponse
-  activeCitationId: number | null
-  onOpenCitation: (id: number, trigger: HTMLElement) => void
-}) {
-  const summary = response.summary!
-  const summaryActive = summary.citation_ids.some((id) => id === activeCitationId)
-  return (
-    <>
-      <section className={`${styles.summaryCard} ${summaryActive ? styles.summaryActive : ''}`}>
-        <div className={styles.summaryHead}>
-          <h3 className={styles.summaryTitle}>{summary.title}</h3>
-          {summary.citation_ids.map((id) => (
-            <CitationChip key={id} id={id} active={id === activeCitationId} onOpen={onOpenCitation} />
-          ))}
-          {summary.label && <span className={styles.summaryLabel}>{summary.label}</span>}
-        </div>
-        <p className={styles.summaryText}>{summary.text}</p>
-      </section>
-
-      {response.sections.map((section, i) =>
-        section.kind === 'steps' ? (
-          <section key={i} className={styles.section}>
-            <h4 className={styles.sectionTitle}>{section.title}</h4>
-            <ol className={styles.steps}>
-              {section.items.map((item, n) => (
-                <li key={n} className={styles.step}>
-                  <span className={styles.stepNum} aria-hidden="true">
-                    {String(n + 1).padStart(2, '0')}
-                  </span>
-                  <span>
-                    {item.text}
-                    {item.citation_ids?.map((id) => (
-                      <CitationChip key={id} id={id} active={id === activeCitationId} onOpen={onOpenCitation} />
-                    ))}
-                  </span>
-                </li>
-              ))}
-            </ol>
-            {section.note && <p className={styles.note}>{section.note}</p>}
-          </section>
-        ) : (
-          <section key={i} className={styles.section}>
-            {section.title && <h4 className={styles.sectionTitle}>{section.title}</h4>}
-            <p className={styles.lead}>
-              {section.text}
-              {section.citation_ids?.map((id) => (
-                <CitationChip key={id} id={id} active={id === activeCitationId} onOpen={onOpenCitation} />
-              ))}
-            </p>
-          </section>
-        ),
-      )}
-    </>
-  )
-}
-
-/** 짧은 답변 + 바로 행동 (Figma 03_Compact_Simple) */
-function SimpleAnswer({
-  response,
-  onOpenCitation,
-}: {
-  response: AnswerResponse
-  onOpenCitation: (id: number, trigger: HTMLElement) => void
-}) {
-  const [primary, ...rest] = response.actions
-  const firstCitation = response.citations[0]
-  return (
-    <>
-      <BotHeading response={response} />
-      {primary && (
-        <div className={styles.inlineAction}>
-          <ActionLink action={primary} variant="primary" block />
-          {primary.note && <p className={styles.actionNote}>{primary.note}</p>}
-        </div>
-      )}
-      {rest.length > 0 && (
-        <div className={styles.actionRow}>
-          {rest.map((action) => (
-            <ActionLink key={action.id} action={action} variant="secondary" />
-          ))}
-        </div>
-      )}
-      {firstCitation && (
-        <button
-          type="button"
-          className={styles.refLink}
-          onClick={(e) => onOpenCitation(firstCitation.id, e.currentTarget)}
-        >
-          참고자료
-        </button>
-      )}
-    </>
-  )
-}
-
-/** WF-06 근거 부족 — 기술 오류가 아니라 "확인 가능한 근거가 없다"는 정상 응답 */
-function Insufficient({ response, onRewrite }: { response: InsufficientResponse; onRewrite: () => void }) {
-  return (
-    <div className={styles.bot}>
-      <Mascot size={44} />
-      <section className={styles.notice} aria-labelledby={`${response.id}-title`}>
-        <p className={styles.noticeLabel}>
-          <SearchX size={16} aria-hidden="true" />
-          확인 가능한 근거 부족
-        </p>
-        <h3 id={`${response.id}-title`} className={styles.answerTitle}>
-          {response.title}
-        </h3>
-        {response.lead && <p className={styles.lead}>{response.lead}</p>}
-        {response.searched_scope && <p className={styles.scope}>확인한 범위: {response.searched_scope}</p>}
-      </section>
-      <div className={styles.actionRow}>
-        {response.actions.map((action) => (
-          <ActionLink key={action.id} action={action} variant="secondary" />
-        ))}
-        <button type="button" className={styles.textButton} onClick={onRewrite}>
-          질문 구체화하기
-        </button>
-      </div>
     </div>
   )
 }
@@ -249,28 +307,30 @@ function TechnicalError({ message, onRetry }: { message?: string; onRetry: () =>
       </button>
       <p className={styles.errorText}>업무가 급한 경우 YGPA 공식 메뉴를 이용해 주세요.</p>
       <div className={styles.actionRow}>
-        <ActionLink action={PORT_MIS} variant="secondary" />
-        <ActionLink action={YGPA_HOME} variant="secondary" />
+        <ActionLink action={PORT_MIS} />
+        <ActionLink action={YGPA_HOME} />
       </div>
     </div>
   )
 }
 
 interface ActionBarProps {
-  response: AnswerResponse
+  links: Action[]
+  hasSources: boolean
   onOpenReferences: (trigger: HTMLElement) => void
 }
 
-/** 상세 답변 하단 고정 "다음 단계" 바 (Figma 05) */
-export function ActionBar({ response, onOpenReferences }: ActionBarProps) {
+/** 절차형 답변 하단 고정 "다음 단계" 바 (Figma 05) */
+export function ActionBar({ links, hasSources, onOpenReferences }: ActionBarProps) {
+  if (links.length === 0 && !hasSources) return null
   return (
     <div className={styles.actionBar}>
       <span className={styles.actionBarLabel}>다음 단계</span>
       <div className={styles.actionBarButtons}>
-        {response.actions.map((action) => (
-          <ActionLink key={action.id} action={action} />
+        {links.map((action, i) => (
+          <ActionLink key={i} action={action} variant={i === 0 ? 'primary' : 'secondary'} />
         ))}
-        {response.citations.length > 0 && (
+        {hasSources && (
           <button type="button" className={styles.secondaryButton} onClick={(e) => onOpenReferences(e.currentTarget)}>
             참고자료
           </button>

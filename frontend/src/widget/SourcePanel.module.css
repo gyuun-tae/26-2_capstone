@@ -149,18 +149,7 @@
   font-weight: 700;
 }
 
-.quote {
-  margin: 0;
-  font-size: var(--fs-base);
-  line-height: var(--lh-body);
-}
 
-.excerptNote {
-  margin: 12px 0 0;
-  color: var(--color-text-secondary);
-  font-size: var(--fs-base);
-  line-height: var(--lh-body);
-}
 
 .supportsTitle {
   margin: 20px 0 4px;
@@ -169,10 +158,25 @@
 }
 
 .supports {
+  display: grid;
+  gap: 4px;
   margin: 0;
+  padding-left: 1.2em;
   color: var(--color-text-secondary);
   font-size: var(--fs-md);
   line-height: var(--lh-body);
+}
+
+.excerptText {
+  margin: 0;
+  font-size: var(--fs-base);
+  line-height: var(--lh-body);
+  white-space: pre-line;
+}
+
+.mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: var(--fs-sm);
 }
 
 .footer {

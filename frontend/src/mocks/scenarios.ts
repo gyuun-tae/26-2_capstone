@@ -1,12 +1,19 @@
-import type { ChatRequest, ChatResponse, Citation } from '../api/types'
+import type { Action, ChatRequest, ClarifyOption, DoneEvent, Source } from '../api/types'
 
 /**
- * Figma 프로토타입(03~06) 시나리오를 재현하는 목업 응답.
+ * 백엔드 없이 화면을 확인하기 위한 목업 응답 (팀 SSE 형식 + v0.2 제안 필드).
  * 원문 발췌는 Figma 06 화면에 쓰인 내용만 사용한다. 수집하지 않은 절차는
- * 지어내지 않고 '근거 부족' 응답으로 돌려 WF-06 상태를 시연한다.
+ * 지어내지 않고 answer_type: 'unknown'으로 돌려 근거 부족 상태를 시연한다.
+ * 문서 ID는 실제 카탈로그(YGPA-001…)와 헷갈리지 않게 MOCK 접두어를 쓴다.
  */
 
-const RETRIEVED_AT = '2026-09-23'
+export interface MockReply {
+  text: string
+  sources: Source[]
+  done: Omit<DoneEvent, 'message_id'>
+  /** 이 번째 token을 보낸 뒤 error 이벤트로 끝낸다 (오류 화면 시연) */
+  failAfterTokens?: number
+}
 
 const PORT_MIS_URL = 'https://portmis.go.kr/'
 const YGPA_HOME_URL = 'https://www.ygpa.or.kr/'
@@ -14,169 +21,98 @@ const YGPA_HOME_URL = 'https://www.ygpa.or.kr/'
 const YGPA_PORTMIS_GUIDE_URL =
   'https://www.ygpa.or.kr/hmpg/ygpa/mwse/pmis/pmpr/pm01/contPageDetail.do?conts_no=D7600AC6607F41F1B506538F6CD0870E'
 
-const facilityProcedure: Citation = {
-  id: 1,
-  source_type: 'web',
+const facilityProcedure: Source = {
+  doc_id: 'MOCK-PORTMIS',
+  chunk_id: 'MOCK-PORTMIS-c01',
   title: '항만시설 이용절차',
-  path: 'Port-MIS / 항만시설 이용안내',
-  publisher: '여수광양항만공사',
-  section: '외항선 입출항 수속',
-  page: null,
-  last_modified: null,
-  retrieved_at: RETRIEVED_AT,
-  excerpt: {
-    heading: '원문 발췌 · 등록 확인',
-    quotes: ['신고전 사용자등록신청 (ID,Password 등록)', '선박제원등록여부'],
-    note: '도식 요약: 선박 제원이 미등록이면 제원신고서를 제출합니다. 입항보고 전에는 입출항 이력조회로 항차도 확인합니다.',
-  },
-  supports: '입항보고 전 사용자 등록과 선박 제원 등록 여부를 확인하세요.',
-  url: YGPA_PORTMIS_GUIDE_URL,
-  language: 'ko',
+  source_url: YGPA_PORTMIS_GUIDE_URL,
+  locator: 'Port-MIS 항만시설 이용안내 · 외항선 입출항 수속',
+  published_at: null,
+  updated_at: null,
+  date_status: 'not_displayed',
+  fetched_at: '2026-09-23T10:00:00+09:00',
+  snippet:
+    '“신고전 사용자등록신청 (ID,Password 등록)”\n“선박제원등록여부”\n\n도식 요약: 선박 제원이 미등록이면 제원신고서를 제출합니다. 입항보고 전에는 입출항 이력조회로 항차도 확인합니다.',
 }
 
-const tourGuide: Citation = {
-  id: 1,
-  source_type: 'web',
+const tourGuide: Source = {
+  doc_id: 'MOCK-TOUR',
+  chunk_id: 'MOCK-TOUR-c01',
   title: '항만시설 견학 신청',
-  path: '민원서비스 / 견학 신청',
-  publisher: '여수광양항만공사',
-  section: '견학 신청 안내',
-  page: null,
-  last_modified: null,
-  retrieved_at: RETRIEVED_AT,
-  excerpt: {
-    heading: '원문 발췌',
-    quotes: [],
-    note: '목업 데이터: 원문 발췌는 크롤링 데이터 연동 후 표시됩니다.',
+  source_url: YGPA_HOME_URL,
+  locator: '민원서비스 · 견학 신청',
+  published_at: null,
+  updated_at: null,
+  date_status: 'not_displayed',
+  fetched_at: '2026-09-23T10:00:00+09:00',
+  snippet: '목업 데이터: 원문 발췌는 백엔드 연동 후 표시됩니다.',
+}
+
+const portMisLink: Action = { type: 'link', label: 'Port-MIS 열기', url: PORT_MIS_URL, source_ref: null }
+const homeLink: Action = { type: 'link', label: 'YGPA 홈페이지', url: YGPA_HOME_URL, source_ref: null }
+const vesselOptions: ClarifyOption[] = [{ label: '외항선' }, { label: '내항선' }, { label: '잘 모르겠어요' }]
+
+const foreignArrival: MockReply = {
+  text:
+    '외항선은 입항보고 전에 사용자 등록과 선박 제원 등록 여부를 먼저 확인해야 합니다[1].\n\n' +
+    '1. 사용자 등록 여부 확인[1]\n2. 선박 제원 등록 여부 확인[1]\n3. 항차 확인 후 외항선 입항보고\n' +
+    '4. 화물 유무에 따른 통합화물신고\n5. 항만시설 사용 신청·신고\n\n' +
+    '선박·화물 조건에 따라 필요한 신고가 달라질 수 있어요.',
+  sources: [facilityProcedure],
+  done: { answer_type: 'answer', actions: [portMisLink], options: [] },
+}
+
+const arrivalClarify: MockReply = {
+  text: '외항선인지 내항선인지에 따라 입항 절차가 달라요. 어느 쪽인가요?',
+  sources: [],
+  done: { answer_type: 'clarify', actions: [], options: vesselOptions },
+}
+
+const arrivalUnsure: MockReply = {
+  text: '두 경우 모두 사용자·선박 등록 여부를 먼저 확인하고, 선박 구분에 맞는 입항보고를 진행합니다. 선박 구분을 확인하신 뒤 다시 골라 주세요.',
+  sources: [],
+  done: { answer_type: 'clarify', actions: [], options: vesselOptions.slice(0, 2) },
+}
+
+const tourApplication: MockReply = {
+  text: '항만시설 견학은 YGPA 홈페이지에서 신청할 수 있어요[1].\n신청 페이지에서 희망 일정과 방문 정보를 확인해 주세요.',
+  sources: [tourGuide],
+  done: {
+    answer_type: 'answer',
+    actions: [
+      { type: 'link', label: '견학 신청하기', url: YGPA_HOME_URL, note: '신청 시 YGPA 홈페이지 로그인이 필요합니다.', source_ref: 1 },
+    ],
+    options: [],
   },
-  supports: '항만시설 견학은 YGPA 홈페이지에서 신청할 수 있어요.',
-  url: YGPA_HOME_URL,
-  language: 'ko',
 }
 
-const now = () => new Date().toISOString()
-const newId = (prefix: string) => `${prefix}_${Math.random().toString(36).slice(2, 10)}`
-
-function arrivalOverview(): ChatResponse {
+function unknown(topic?: string): MockReply {
   return {
-    id: 'resp_arrival_overview',
-    type: 'clarify',
-    title: '입항 절차를 간단히 정리해드릴게요',
-    short_title: '입항 개요',
-    lead: '공통적인 입항 절차에 대해 안내해 드릴게요. 사용자·선박 등록 여부를 먼저 확인하고, 선박 구분에 맞는 입항보고를 진행합니다.',
-    options: [
-      {
-        id: 'foreign',
-        label: '외항선',
-        title: '외항선 입항',
-        description: '외항선 입항보고와 화물 유무에 따른 신고·항만시설 사용 절차를 확인해요.',
-        cta_label: '외항선 절차 자세히',
-      },
-      {
-        id: 'domestic',
-        label: '내항선',
-        title: '내항선 입항',
-        description: '내항선 입항보고와 화물 유무에 따른 신고·항만시설 사용 절차를 확인해요.',
-        cta_label: '내항선 절차 자세히',
-      },
-    ],
-    citations: [],
-    actions: [],
-    source_language: 'ko',
-    generated_at: now(),
+    text: `현재 확인한 공식 자료만으로는 ${topic ? `${topic}에 대한` : '이 질문에 대한'} 답을 확정하기 어려워요. 중요한 업무 판단은 원문이나 담당부서를 통해 확인해 주세요.`,
+    sources: [],
+    done: { answer_type: 'unknown', actions: [homeLink], options: [] },
   }
 }
 
-function foreignArrival(): ChatResponse {
-  return {
-    id: newId('resp'),
-    type: 'answer',
-    title: '외항선 입항 절차',
-    short_title: '외항선 입항 절차',
-    layout_hint: 'expanded',
-    summary: {
-      title: '외항선 입항 절차',
-      text: '입항보고 전 사용자 등록과 선박 제원 등록 여부를 확인하세요.',
-      citation_ids: [1],
-      label: '원문 요약',
-    },
-    sections: [
-      {
-        kind: 'steps',
-        title: '진행 순서',
-        items: [
-          { text: '사용자 등록 여부 확인' },
-          { text: '선박 제원 등록 여부 확인' },
-          { text: '항차 확인 후 외항선 입항보고' },
-          { text: '화물 유무에 따른 통합화물신고' },
-          { text: '항만시설 사용 신청·신고' },
-        ],
-        note: '선박·화물 조건에 따라 필요한 신고가 달라질 수 있어요.',
-      },
-    ],
-    citations: [facilityProcedure],
-    actions: [
-      { id: 'portmis', label: 'Port-MIS 열기', url: PORT_MIS_URL, kind: 'primary', external: true },
-    ],
-    source_language: 'ko',
-    generated_at: now(),
-  }
+/** 마지막 user 메시지로 목업 응답을 고른다 */
+export function resolveScenario(req: ChatRequest): MockReply {
+  const last = req.messages.at(-1)?.content ?? ''
+  const q = last.replace(/\s+/g, '')
+
+  if (q.includes('오류테스트')) return { ...unknown(), failAfterTokens: 3 }
+  if (q === '외항선' || q.includes('외항선')) return foreignArrival
+  if (q === '내항선' || q.includes('내항선')) return unknown('내항선 입항 절차')
+  if (q === '잘모르겠어요') return arrivalUnsure
+  if (/입항|출항|입출항/.test(q)) return arrivalClarify
+  if (/견학/.test(q)) return tourApplication
+  if (/사용료/.test(q)) return unknown('항만시설 사용료')
+  if (/배후단지|입주/.test(q)) return unknown('배후단지 입주')
+  return unknown()
 }
 
-function tourApplication(): ChatResponse {
-  return {
-    id: newId('resp'),
-    type: 'answer',
-    title: '항만시설 견학 신청 안내',
-    short_title: '견학 신청 안내',
-    lead: '항만시설 견학은 YGPA 홈페이지에서 신청할 수 있어요.\n신청 페이지에서 희망 일정과 방문 정보를 확인해 주세요.',
-    sections: [],
-    citations: [tourGuide],
-    actions: [
-      {
-        id: 'tour',
-        label: '견학 신청하기',
-        url: YGPA_HOME_URL,
-        kind: 'primary',
-        external: true,
-        note: '신청 시 YGPA 홈페이지 로그인이 필요합니다.',
-      },
-    ],
-    source_language: 'ko',
-    generated_at: now(),
-  }
-}
-
-function insufficient(topic?: string): ChatResponse {
-  return {
-    id: newId('resp'),
-    type: 'insufficient',
-    title: '확인할 근거가 부족해요',
-    lead: `현재 확인한 공식 자료만으로는 ${topic ? `${topic}에 대한` : '이 질문에 대한'} 답을 확정하기 어려워요. 중요한 업무 판단은 원문 또는 담당부서를 통해 확인해 주세요.`,
-    searched_scope: 'YGPA 홈페이지 민원서비스·항만운영 안내 (목업 데이터 범위)',
-    citations: [],
-    actions: [
-      { id: 'home', label: 'YGPA 홈페이지', url: YGPA_HOME_URL, kind: 'secondary', external: true },
-    ],
-    source_language: 'ko',
-    generated_at: now(),
-  }
-}
-
-/** 요청 → 목업 응답. null이면 핸들러가 500(기술 오류)을 돌려준다. */
-export function resolveScenario(req: ChatRequest): ChatResponse | null {
-  if (req.clarification?.response_id === 'resp_arrival_overview') {
-    return req.clarification.option_id === 'foreign'
-      ? foreignArrival()
-      : insufficient('내항선 입항 절차')
-  }
-
-  const q = req.message.replace(/\s+/g, '')
-  if (q.includes('오류테스트')) return null
-  if (/외항선/.test(q)) return foreignArrival()
-  if (/입항|출항|입출항/.test(q)) return arrivalOverview()
-  if (/견학/.test(q)) return tourApplication()
-  if (/사용료/.test(q)) return insufficient('항만시설 사용료')
-  if (/배후단지|입주/.test(q)) return insufficient('배후단지 입주')
-  return insufficient()
+/** 실제 LLM처럼 텍스트를 잘게 나눠 흘려보낸다 */
+export function chunkText(text: string, size = 6): string[] {
+  const chunks: string[] = []
+  for (let i = 0; i < text.length; i += size) chunks.push(text.slice(i, i + size))
+  return chunks
 }

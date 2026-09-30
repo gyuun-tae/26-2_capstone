@@ -1,11 +1,13 @@
 import { ArrowDownLeft, ArrowUpRight, X } from 'lucide-react'
 import { useCallback, useEffect, useRef, useState, type CSSProperties, type KeyboardEvent } from 'react'
-import type { ClarifyOption } from '../api/types'
+import { hasSteps, parseAnswer } from '../api/parseAnswer'
+import type { AnswerType, ClarifyOption } from '../api/types'
 import { Composer } from './Composer'
 import { HelpDialog } from './HelpDialog'
 import { ResizeHandles, type PanelSize } from './ResizeHandles'
 import { ActionBar, ScreenView } from './ScreenView'
 import { SourcePanel } from './SourcePanel'
+import { splitActions } from './actions'
 import { Mascot } from './ui'
 import { useChat } from './useChat'
 import { WelcomeView } from './WelcomeView'
@@ -19,6 +21,13 @@ const RESIZE_LIMITS: Record<Mode, { minWidth: number; minHeight: number }> = {
   expanded: { minWidth: 600, minHeight: 480 },
 }
 const WIDGET_GAP = 24
+
+// 답변이 끝났을 때 스크린리더에 알릴 문구
+const ANNOUNCEMENT: Record<AnswerType, string> = {
+  answer: '답변을 불러왔습니다.',
+  clarify: '답변에 필요한 조건을 골라 주세요.',
+  unknown: '확인할 근거가 부족하다는 안내가 도착했습니다.',
+}
 
 /**
  * 홈페이지 우측 하단 런처 → 440px 컴팩트 패널 → 확장 업무 화면(+근거 패널).
@@ -41,15 +50,16 @@ export function ChatWidget() {
   const wasOpenRef = useRef(false)
 
   const chat = useChat({
-    onResponse: (response) => {
-      if (response.type === 'answer' && response.layout_hint === 'expanded') setMode('expanded')
-      setAnnouncement(`답변을 불러왔습니다. ${response.title}`)
+    onResponse: ({ done, text }) => {
+      // 절차형 답변(번호 목록)은 요약 카드 + 진행 순서가 보이도록 확장 화면으로 보낸다
+      if (done.answer_type === 'answer' && hasSteps(parseAnswer(text))) setMode('expanded')
+      setAnnouncement(ANNOUNCEMENT[done.answer_type] ?? ANNOUNCEMENT.answer)
     },
   })
   const { current, previous } = chat
-  const response = current?.status === 'success' ? current.response : undefined
-  const citations = response?.citations ?? []
-  const activeCitation = mode === 'expanded' ? (citations.find((c) => c.id === citationId) ?? null) : null
+  const sources = current?.sources ?? []
+  // 근거 패널은 확장 화면에서만 연다. 인용 번호는 sources 배열 순서(1부터)
+  const activeCitation = mode === 'expanded' && citationId !== null && citationId <= sources.length ? citationId : null
 
   // 패널을 열면 입력창으로, 닫으면 런처로 포커스를 돌려준다
   useEffect(() => {
@@ -108,9 +118,11 @@ export function ChatWidget() {
     else close()
   }
 
-  const busy = current?.status === 'loading'
-  const backLabel = previous?.response?.short_title ?? previous?.response?.title ?? '전체 업무 보기'
-  const showActionBar = response?.type === 'answer' && !!response.summary
+  const busy = current?.status === 'loading' || current?.status === 'streaming'
+  const backLabel = previous ? '이전 안내' : '전체 업무 보기'
+  const showActionBar =
+    current?.status === 'success' && current.done?.answer_type === 'answer' && hasSteps(parseAnswer(current.text))
+  const actionLinks = splitActions(current?.done?.actions).links
   const size = sizes[mode]
   const panelStyle = size ? ({ '--panel-w': `${size.w}px`, '--panel-h': `${size.h}px` } as CSSProperties) : undefined
 
@@ -193,12 +205,13 @@ export function ChatWidget() {
                   key={current.key}
                   screen={current}
                   backLabel={backLabel}
-                  activeCitationId={activeCitation?.id ?? null}
+                  activeCitationId={activeCitation}
                   onBack={back}
                   onSelect={select}
                   onRetry={chat.retry}
                   onOpenCitation={openCitation}
                   onRewrite={() => composerRef.current?.focus()}
+                  onRate={chat.rate}
                 />
               ) : (
                 <WelcomeView onAsk={ask} />
@@ -206,10 +219,11 @@ export function ChatWidget() {
             </div>
           </div>
 
-          {showActionBar && response.type === 'answer' && (
+          {showActionBar && (
             <ActionBar
-              response={response}
-              onOpenReferences={(trigger) => openCitation(response.citations[0].id, trigger)}
+              links={actionLinks}
+              hasSources={sources.length > 0}
+              onOpenReferences={(trigger) => openCitation(1, trigger)}
             />
           )}
 
@@ -224,10 +238,11 @@ export function ChatWidget() {
           </footer>
         </div>
 
-        {activeCitation && (
+        {activeCitation && current && (
           <SourcePanel
-            citation={activeCitation}
-            citations={citations}
+            index={activeCitation}
+            sources={sources}
+            answerText={current.text}
             onSelect={setCitationId}
             onClose={closeCitation}
           />
