@@ -1,5 +1,5 @@
 import { ChevronLeft, ChevronRight, CircleAlert, RotateCw, SearchX, ThumbsDown, ThumbsUp } from 'lucide-react'
-import { Fragment } from 'react'
+import { Fragment, type ReactNode } from 'react'
 import { hasSteps, parseAnswer, type Block, type Inline } from '../api/parseAnswer'
 import type { Action, ClarifyOption } from '../api/types'
 import type { Screen } from './useChat'
@@ -63,14 +63,57 @@ interface CiteContext {
   onOpen: (id: number, trigger: HTMLElement) => void
 }
 
+function Cite({ n, cite }: { n: number; cite: CiteContext }) {
+  if (n <= cite.count) return <CitationChip id={n} active={cite.activeId === n} onOpen={cite.onOpen} />
+  if (!cite.settled) return <CitationChip id={n} pending onOpen={cite.onOpen} />
+  return <>[{n}]</>
+}
+
+// 인용 번호 바로 뒤의 문장부호. 번호와 떨어져 혼자 다음 줄로 넘어가지 않게 함께 묶는다
+const TRAILING_PUNCT = /^[.,!?)」』]+/
+
 function Inlines({ inlines, cite }: { inlines: Inline[]; cite: CiteContext }) {
-  return inlines.map((node, i) => {
-    if (node.kind === 'text') return <Fragment key={i}>{node.text}</Fragment>
-    if (node.kind === 'bold') return <strong key={i}>{node.text}</strong>
-    if (node.n <= cite.count) return <CitationChip key={i} id={node.n} active={cite.activeId === node.n} onOpen={cite.onOpen} />
-    if (!cite.settled) return <CitationChip key={i} id={node.n} pending onOpen={cite.onOpen} />
-    return <Fragment key={i}>[{node.n}]</Fragment>
-  })
+  const out: ReactNode[] = []
+  let i = 0
+  while (i < inlines.length) {
+    const node = inlines[i]
+    if (node.kind === 'text') {
+      out.push(<Fragment key={i}>{node.text}</Fragment>)
+      i++
+      continue
+    }
+    if (node.kind === 'bold') {
+      out.push(<strong key={i}>{node.text}</strong>)
+      i++
+      continue
+    }
+    // 연속된 [1][2]와 뒤따르는 문장부호를 한 덩어리로
+    const start = i
+    const group: ReactNode[] = []
+    while (i < inlines.length) {
+      const c = inlines[i]
+      if (c.kind !== 'cite') break
+      group.push(<Cite key={i} n={c.n} cite={cite} />)
+      i++
+    }
+    let rest = ''
+    const next = inlines[i]
+    if (next?.kind === 'text') {
+      const punct = TRAILING_PUNCT.exec(next.text)?.[0]
+      if (punct) {
+        group.push(punct)
+        rest = next.text.slice(punct.length)
+        i++
+      }
+    }
+    out.push(
+      <span key={`c${start}`} className={styles.nowrap}>
+        {group}
+      </span>,
+    )
+    if (rest) out.push(<Fragment key={`r${start}`}>{rest}</Fragment>)
+  }
+  return out
 }
 
 function BlockView({ block, cite }: { block: Block; cite: CiteContext }) {
@@ -128,9 +171,13 @@ function AnswerContent({ screen, activeCitationId, onSelect, onOpenCitation, onR
             <BlockView key={i} block={b} cite={cite} />
           ))}
         </section>
-        {contacts.map((a, i) => (
-          <ContactCard key={i} action={a} />
-        ))}
+        {contacts.length > 0 && (
+          <div className={styles.contacts}>
+            {contacts.map((a, i) => (
+              <ContactCard key={i} action={a} />
+            ))}
+          </div>
+        )}
         <div className={styles.actionRow}>
           {links.map((a, i) => (
             <ActionLink key={i} action={a} />
@@ -230,9 +277,13 @@ function AnswerContent({ screen, activeCitationId, onSelect, onOpenCitation, onR
             ))}
           </div>
         )}
-        {contacts.map((a, i) => (
-          <ContactCard key={i} action={a} />
-        ))}
+        {contacts.length > 0 && (
+          <div className={styles.contacts}>
+            {contacts.map((a, i) => (
+              <ContactCard key={i} action={a} />
+            ))}
+          </div>
+        )}
         {screen.status === 'success' && screen.sources.length > 0 && (
           <button type="button" className={styles.refLink} onClick={(e) => onOpenCitation(1, e.currentTarget)}>
             참고자료 {screen.sources.length}건

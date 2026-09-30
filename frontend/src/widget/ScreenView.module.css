@@ -223,6 +223,7 @@
 /* ── 짧은 답변 행동 ─────────────────── */
 
 .inlineAction {
+  align-self: stretch;
   margin-top: 20px;
 }
 
@@ -477,8 +478,14 @@
 
 .contacts {
   display: grid;
+  align-self: stretch;
   gap: 8px;
   margin-top: 16px;
+}
+
+/* 인용 번호와 뒤따르는 문장부호를 한 줄에 */
+.nowrap {
+  white-space: nowrap;
 }
 
 /* ── 답변 피드백 ─────────────────────── */
