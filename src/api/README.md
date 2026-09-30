@@ -18,6 +18,7 @@ uv run fastapi dev app/main.py   # 개발 서버: http://localhost:8000
 ```
 app/
 ├── main.py         # FastAPI 앱, 라우트
+├── sources.py      # 청크 → 화면용 근거(Source)·서식 다운로드 변환 (4단계 제안)
 ├── db.py           # DB 연결 (SQLAlchemy, DATABASE_URL로 SQLite·PostgreSQL 전환)
 └── vectorstore.py  # Chroma 연결 (벡터DB 접근은 여기에만)
 data/               # app.db, chroma/ 가 생성됨 (git 제외)
