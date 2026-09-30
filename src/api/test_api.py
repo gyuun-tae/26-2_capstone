@@ -12,8 +12,12 @@ import re  # noqa: E402
 
 from fastapi.testclient import TestClient  # noqa: E402
 from pydantic import ValidationError  # noqa: E402
+from sqlalchemy import inspect, select  # noqa: E402
+from sqlalchemy import text as sql  # noqa: E402
 
+from app.db import SessionLocal, add_missing_columns, engine  # noqa: E402
 from app.main import app  # noqa: E402
+from app.models import ChatLog  # noqa: E402
 from app.schemas import Action  # noqa: E402
 
 c = TestClient(app)
@@ -61,6 +65,26 @@ with patch("app.main.rag.answer", side_effect=RuntimeError("검색 실패")):
 with patch("app.main.SessionLocal", side_effect=RuntimeError("DB 실패")):
     names = [e for e, _ in chat("저장 오류")]
     assert names[-1] == "error" and "done" not in names, names
+
+
+def last_log(question):
+    with SessionLocal() as db:
+        return db.scalars(select(ChatLog).where(ChatLog.question == question).order_by(ChatLog.id.desc())).first()
+
+
+# 로그: 성공은 응답 유형과 함께, 실패는 answer_type=error + 원인 + 그때까지의 답변으로 남는다
+assert last_log("민원 신청은 어떻게 하나요?").answer_type == "answer"
+log = last_log("테스트:오류")
+assert log.answer_type == "error" and "RuntimeError" in log.error and log.answer, (log.answer_type, log.error)
+log = last_log("검색 오류")
+assert log.answer_type == "error" and "검색 실패" in log.error and log.answer == ""
+assert last_log("저장 오류") is None  # DB가 원인이면 저장할 수 없다 (서버 로그에만 남음)
+
+# 기존 테이블에 새 열이 없어도 서버 시작 때 자동으로 추가된다 (예: 이미 만들어진 Neon 테이블)
+with engine.begin() as conn:
+    conn.execute(sql("ALTER TABLE chat_logs DROP COLUMN error"))
+add_missing_columns()
+assert "error" in {col["name"] for col in inspect(engine).get_columns("chat_logs")}
 
 # Action 안전 규칙: 링크는 https 주소, 연락처는 전화번호가 있어야 한다
 for bad in [{"type": "link", "label": "x"}, {"type": "download", "label": "x", "url": "http://a"}, {"type": "contact", "label": "x"}]:
