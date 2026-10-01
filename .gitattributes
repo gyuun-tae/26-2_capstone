@@ -7,3 +7,4 @@
 .gitignore text eol=lf
 # Patch context lines intentionally contain a single space; preserve patch bytes.
 docs/handoff/review_artifacts/*.patch -text -whitespace
+*.sh text eol=lf
