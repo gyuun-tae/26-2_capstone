@@ -1,4 +1,4 @@
-# GPU 서버 — LLM(Qwen3-32B) 서빙
+# GPU 서버 — LLM(Qwen3-32B)·임베딩(BGE-M3) 서빙
 
 실행 방식 B: Render(API·조립) + Neon(로그·벡터) + **GPU 서버(임베딩·답변 생성)**. 이 문서는 GPU 서버에서 답변 생성 모델을 켜는 방법이다.
 
@@ -7,9 +7,9 @@
 | 접속 | JupyterHub `http://168.131.154.224:8888` (http라 비밀번호가 암호화되지 않음 — 다른 곳에서 쓰는 비밀번호 사용 금지) |
 | 하드웨어 | RTX 5090 × 2 (각 32GB, Blackwell sm120), RAM 123GB, 디스크 800GB |
 | 소프트웨어 | Python 3.12, uv, vLLM 0.30.0, PyTorch 2.13.0+cu130 (`~/llm-serve/.venv`) |
-| 모델 | `Qwen/Qwen3-32B-AWQ` (4bit), 서빙 이름 `qwen3-32b` |
-| GPU 배정 | 1번 = Qwen3-32B, 0번 = 임베딩(BGE-M3) 예정 |
-| 주소 | `127.0.0.1:8100` (서버 안에서만 접속). 외부 연결은 터널로 별도 구성 예정 |
+| 모델 | 생성 `Qwen/Qwen3-32B-AWQ` (4bit, 이름 `qwen3-32b`) · 임베딩 `BAAI/bge-m3` @ `5617a9f6` (이름 `bge-m3`) |
+| GPU 배정 | 1번 = Qwen3-32B, 0번 = BGE-M3 |
+| 주소 | 생성 `127.0.0.1:8100`, 임베딩 `127.0.0.1:8101` (서버 안에서만 접속). 외부 연결은 터널로 별도 구성 예정 |
 | 인증 | `~/llm-serve/.api_key` (권한 600). 내용을 저장소·채팅에 올리지 않는다 |
 
 ## 처음 설치 (관리자 권한 불필요, 홈 폴더 안)
@@ -26,10 +26,13 @@ hf download Qwen/Qwen3-32B-AWQ
 ## 켜기·끄기·상태
 
 ```bash
-bash start_qwen.sh                 # 저장소의 infra/gpu_server/start_qwen.sh를 ~/llm-serve에 복사해 실행. READY가 나오면 준비 완료
+cd ~/llm-serve
+R=https://raw.githubusercontent.com/gyuun-tae/26-2_capstone/main/infra/gpu_server
+curl -fsSO $R/start_qwen.sh && curl -fsSO $R/start_bge.sh && curl -fsSO $R/check_embedding.py   # 스크립트 받기
+bash start_qwen.sh                 # 생성 (세션 qwen, 로그 vllm.log). READY가 나오면 준비 완료
+bash start_bge.sh                  # 임베딩 (세션 bge, 로그 bge.log)
 tmux attach -t qwen                # 실행 화면 보기 (나올 때 Ctrl+B 다음 D)
-tmux kill-session -t qwen          # 끄기
-tail -30 ~/llm-serve/vllm.log      # 로그
+tmux kill-session -t qwen          # 끄기 (임베딩은 -t bge)
 ```
 
 시험 요청 (Qwen3의 "생각 과정" 출력은 끈다):
@@ -38,6 +41,14 @@ tail -30 ~/llm-serve/vllm.log      # 로그
 curl -s localhost:8100/v1/chat/completions -H "Authorization: Bearer $(cat ~/llm-serve/.api_key)" \
   -H "Content-Type: application/json" \
   -d '{"model":"qwen3-32b","messages":[{"role":"user","content":"안녕하세요"}],"max_tokens":100,"chat_template_kwargs":{"enable_thinking":false}}'
+```
+
+## 임베딩 일치 확인
+
+질의는 GPU 서버에서, 청크는 로컬(`scripts/16_build_index.py`)에서 벡터로 만들므로 둘이 같아야 검색이 맞다. `start_bge.sh`는 로컬 색인과 같은 모델 revision으로 고정한다. 로컬에서 만든 비교 파일(글 + 로컬 벡터)을 `~/llm-serve`에 올리고 확인한다.
+
+```bash
+python3 check_embedding.py bge_m3_check.json   # 모든 항목 코사인 0.999 이상이면 "결과: 일치"
 ```
 
 ## 알려진 문제
@@ -52,3 +63,4 @@ curl -s localhost:8100/v1/chat/completions -H "Authorization: Bearer $(cat ~/llm
 | 모델 로딩 | 18.24 GiB, KV cache 6.01 GiB (최대 길이 16,384 토큰) |
 | GPU 1번 사용량 | 27.9 / 32.6 GB |
 | 짧은 한국어 질문 | 자연스러운 2문장 답변, 62토큰 0.85초 (근거를 넣은 긴 입력은 조립 단계에서 다시 측정) |
+| BGE-M3 일치 | 로컬 색인 `bge-m3-dense-d67237d5942d`과 코사인 0.999998~1.000000 (최장 청크 6,463자·표·조문·서식·질문 5개), 5개 임베딩 0.07초 |
