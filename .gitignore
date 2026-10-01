@@ -26,6 +26,8 @@ coverage/
 !/data/processed/.gitkeep
 /data/chunks/*
 !/data/chunks/.gitkeep
+# Generated vector indexes (rebuild with scripts/16_build_index.py)
+/data/index/
 
 # Local runtime and held-out evaluation data
 /logs/

@@ -1,0 +1,7 @@
+# Dense index/search dependencies (scripts 16·17); versions verified in the project Python 3.12 environment.
+# CPU build on Windows. On the GPU server install the CUDA build of torch that supports the GPU.
+numpy==2.5.3
+torch==2.14.1
+sentence-transformers==6.1.0
+transformers==5.18.0
+huggingface-hub==1.33.0
