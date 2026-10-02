@@ -12,7 +12,7 @@ from pydantic import ValidationError
 
 from app import gpu, search
 from app.actions import ACTIONS
-from app.prompt import MetaFilter, build_messages, parse_meta, violations
+from app.prompt import MetaFilter, RuleLineFilter, build_messages, parse_meta, violations
 from app.rag import Answer
 from app.schemas import Action, Option
 from app.sources import chunk_to_source, form_download
@@ -48,7 +48,9 @@ def build_actions(kind: str, hits: list[dict], keys: list[str], text: str) -> li
                     actions.append(a)
             except ValidationError:  # https가 아닌 원문 주소 등은 버튼을 만들지 않는다
                 logger.warning("서식 버튼 생략: %s", h["chunk"]["chunk_id"])
-    return actions + [ACTIONS[k][0] for k in dict.fromkeys(keys)]
+    # 고정 링크는 근거에 그 서비스가 실제로 나올 때만 (LLM이 관련 없는 질문에 고르는 것을 막는다)
+    evidence = " ".join(h["chunk"]["text"] for h in hits).lower()
+    return actions + [ACTIONS[k][0] for k in dict.fromkeys(keys) if ACTIONS[k][2] in evidence]
 
 
 def answer(messages) -> Answer:
@@ -64,12 +66,12 @@ def answer(messages) -> Answer:
             return
 
         result.sources = [chunk_to_source(h["chunk"]) for h in hits]
-        meta, parts = MetaFilter(), []
+        meta, rules, parts = MetaFilter(), RuleLineFilter(), []
         async for piece in gpu.chat_stream(build_messages(messages, hits), MAX_TOKENS, TEMPERATURE):
-            if out := meta.feed(piece):
+            if out := rules.feed(meta.feed(piece)):
                 parts.append(out)
                 yield out
-        if out := meta.flush():
+        if out := rules.feed(meta.flush()) + rules.flush():
             parts.append(out)
             yield out
 

@@ -18,6 +18,7 @@ if missing:
     sys.exit(f".env에 없는 값: {missing}")
 
 from app import rag_real  # noqa: E402  (.env를 읽은 뒤 DB 연결)
+from app.prompt import uncited_lines  # noqa: E402
 from app.schemas import Message  # noqa: E402
 
 
@@ -30,7 +31,10 @@ async def ask(question: str):
         pieces.append(piece)
         print(piece, end="", flush=True)
     total = time.perf_counter() - start
-    print(f"\n\n── 유형 {result.answer_type} | 첫 글자 {first:.2f}초 · 전체 {total:.2f}초")
+    text = "".join(pieces)
+    lines = [ln for ln in text.splitlines() if ln.strip()]
+    print(f"\n\n── 유형 {result.answer_type} | 첫 글자 {first:.2f}초 · 전체 {total:.2f}초"
+          f" | 번호 없는 줄 {len(uncited_lines(text))}/{len(lines)} | 구분선 {'있음' if '---' in text else '없음'}")
     for i, s in enumerate(result.sources, 1):
         print(f"  [{i}] {s.doc_id} {s.title} · {s.locator}")
     for a in result.actions:

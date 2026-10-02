@@ -20,7 +20,8 @@ from app.schemas import Message  # noqa: E402
 from test_sources import form, html_text  # noqa: E402
 
 c = TestClient(app)
-HITS = [{"chunk": html_text | {"chunk_id": "h1"}, "score": 0.7}, {"chunk": form | {"chunk_id": "f1"}, "score": 0.6}]
+HITS = [{"chunk": html_text | {"chunk_id": "h1", "text": html_text["text"] + "\n- Port-MIS로 신고"}, "score": 0.7},
+        {"chunk": form | {"chunk_id": "f1"}, "score": 0.6}]
 calls = {"embed": [], "chat": []}
 
 
@@ -69,6 +70,14 @@ with SessionLocal() as db:
 done = run("민원 신청 방법", ["회원가입 후 신청합니다[1].", '@@META {"type": "answer"}'])[-1][1]
 assert done["actions"] == [], done
 
+# 2-1. 근거에 Port-MIS가 없으면 LLM이 골라도 버튼을 붙이지 않는다
+other = [{"chunk": form | {"chunk_id": "f1"}, "score": 0.6}]
+done = run("서식 있나요?", ["서식이 있습니다[1].", '@@META {"type": "answer", "actions": ["port_mis"]}'], hits=other)[-1][1]
+assert [a["type"] for a in done["actions"]] == ["download"], done["actions"]
+
+# 2-2. 선택지 없는 되묻기는 일반 답변으로 본다
+assert run("민원 신청", ["답[1]", '@@META {"type": "clarify", "options": []}'])[-1][1]["answer_type"] == "answer"
+
 # 3. 되묻기: 선택지는 clarify일 때만, 버튼 없음
 done = run("사용료가 얼마인가요?", ["어느 시설인가요?\n", '@@META {"type": "clarify", "options": ["부두", "체육시설"], "actions": ["port_mis"]}'])[-1][1]
 assert done["answer_type"] == "clarify" and [o["label"] for o in done["options"]] == ["부두", "체육시설"] and done["actions"] == []
@@ -103,6 +112,20 @@ f = prompt.MetaFilter()
 assert f.feed("이메일 @") == "이메일 " and f.feed("표시") == "@표시" and f.flush() == ""
 assert prompt.violations("자세한 건 https://x.kr 또는 061-123-4567 [3]", 2) == ["url_or_phone", "bad_citation"]
 assert prompt.violations("정상 답변[1][2]", 2) == []
+assert prompt.violations("Port-MIS로 신고합니다[port_mis].", 2) == ["action_name"]
+
+
+def filtered(pieces):
+    f = prompt.RuleLineFilter()
+    return "".join(f.feed(p) for p in pieces) + f.flush()
+
+
+# 구분선 줄은 조각이 나뉘어 와도 지우고, "- 목록"·문장 안의 ---·굵게는 그대로 둔다
+assert filtered(["요약[1].\n\n", "-", "--", "\n", "1. 항목[1]\n", "- 세부\n", "**굵게**[2]\n", "___"]) == \
+    "요약[1].\n\n1. 항목[1]\n- 세부\n**굵게**[2]\n"
+assert filtered(["a --- b\n", "  - - -  \n", "끝"]) == "a --- b\n끝"
+ev = run("민원 신청 방법", ["회원가입 후 신청합니다[1].\n\n---\n", '@@META {"type": "answer"}'])
+assert "---" not in text_of(ev) and text_of(ev).startswith("회원가입"), text_of(ev)
 
 # 9. 설정이 없으면 오류 이벤트 (조용히 mock으로 넘어가지 않는다)
 os.environ.pop("GPU_URL", None)

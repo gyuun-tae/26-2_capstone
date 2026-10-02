@@ -6,7 +6,8 @@ from app.schemas import Action
 # 2026-09-30 확인: portmis.go.kr은 410(서비스 종료), new.portmis.go.kr이 현재 Port-MIS
 PORT_MIS = Action(type="link", label="Port-MIS 열기", url="https://new.portmis.go.kr/", note="로그인 필요")
 
-# 이름 → (버튼, LLM에게 알려 줄 사용 조건)
+# 이름 → (버튼, LLM에게 알려 줄 사용 조건, 근거에 이 단어가 있어야 버튼을 붙인다)
+# 마지막 값은 LLM이 관련 없는 질문에 버튼을 고르는 것을 막는 안전장치 (대소문자 무시)
 ACTIONS = {
-    "port_mis": (PORT_MIS, "선박 입출항 신고, 항만시설 사용 신청 등 Port-MIS 전자 신고·신청이 필요한 경우"),
+    "port_mis": (PORT_MIS, "근거에 Port-MIS가 나오고, 선박 입출항 신고 등 Port-MIS 전자 신고·신청을 해야 하는 경우", "port-mis"),
 }
