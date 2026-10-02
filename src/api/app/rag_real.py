@@ -12,7 +12,7 @@ from pydantic import ValidationError
 
 from app import gpu, search
 from app.actions import ACTIONS
-from app.prompt import MetaFilter, RuleLineFilter, build_messages, parse_meta, violations
+from app.prompt import Meta, MetaFilter, RuleLineFilter, build_messages, parse_meta, violations
 from app.rag import Answer
 from app.schemas import Action, Option
 from app.sources import chunk_to_source, form_download
@@ -35,14 +35,15 @@ def search_query(messages) -> str:
     return f"{previous[-1]}\n{last}" if len(last) < SHORT_QUESTION and previous else last
 
 
-def build_actions(kind: str, hits: list[dict], keys: list[str], text: str) -> list[Action]:
-    """답변일 때만: 본문에 인용된 서식 청크의 다운로드 버튼 + LLM이 고른 고정 링크"""
-    if kind != "answer":
+def build_actions(meta: Meta, hits: list[dict], text: str) -> list[Action]:
+    """답변일 때만: LLM이 '작성·제출할 서식'으로 고르고 본문에도 인용한 서식 청크의 다운로드 버튼 + 고정 링크.
+    인용만으로는 버튼을 만들지 않는다 (일반 설명에 서식 근거가 섞여도 버튼이 붙던 문제). URL은 청크 메타데이터에서만"""
+    if meta.kind != "answer":
         return []
     cited = {int(n) for n in re.findall(r"\[(\d+)\]", text)}
     actions = []
     for i, h in enumerate(hits, 1):
-        if i in cited:
+        if i in cited and i in meta.forms:
             try:
                 if a := form_download(h["chunk"], source_ref=i):
                     actions.append(a)
@@ -50,7 +51,7 @@ def build_actions(kind: str, hits: list[dict], keys: list[str], text: str) -> li
                 logger.warning("서식 버튼 생략: %s", h["chunk"]["chunk_id"])
     # 고정 링크는 근거에 그 서비스가 실제로 나올 때만 (LLM이 관련 없는 질문에 고르는 것을 막는다)
     evidence = " ".join(h["chunk"]["text"] for h in hits).lower()
-    return actions + [ACTIONS[k][0] for k in dict.fromkeys(keys) if ACTIONS[k][2] in evidence]
+    return actions + [ACTIONS[k][0] for k in dict.fromkeys(meta.keys) if ACTIONS[k][2] in evidence]
 
 
 def answer(messages) -> Answer:
@@ -76,12 +77,12 @@ def answer(messages) -> Answer:
             yield out
 
         text = "".join(parts)
-        kind, options, keys = parse_meta(meta.meta)
-        result.answer_type = kind
-        if kind == "unknown":
+        parsed = parse_meta(meta.meta)
+        result.answer_type = parsed.kind
+        if parsed.kind == "unknown":
             result.sources = []  # 답하지 못했으면 관련 없는 근거를 보여주지 않는다
-        result.options = [Option(label=o) for o in options]
-        result.actions = build_actions(kind, hits, keys, text)
+        result.options = [Option(label=o) for o in parsed.options]
+        result.actions = build_actions(parsed, hits, text)
         if found := violations(text, len(hits)):
             logger.warning("답변 규칙 위반 %s (1위 %s)", found, hits[0]["chunk"]["chunk_id"])
 

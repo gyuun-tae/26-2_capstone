@@ -50,9 +50,9 @@ def text_of(events):
     return "".join(d["text"] for e, d in events if e == "token")
 
 
-# 1. 답변: 정리 줄이 여러 조각에 걸쳐 와도 화면에 나가지 않고, 인용된 서식 버튼 + 고른 고정 링크가 붙는다
+# 1. 답변: 정리 줄이 여러 조각에 걸쳐 와도 화면에 나가지 않고, 고른 서식 버튼 + 고른 고정 링크가 붙는다
 ev = run("선박제원 신고는 어떻게 하나요?", ["회원가입 후 신청합니다[1].\n\n1. 신고서 작성[2]\n", "@@", "ME",
-                                     'TA {"type": "answer", "options": [], "actions": ["port_mis", "없는이름"]}'])
+                                     'TA {"type": "answer", "options": [], "actions": ["port_mis", "없는이름"], "forms": [2]}'])
 assert [e for e, _ in ev][-2:] == ["sources", "done"], ev
 assert "@" not in text_of(ev) and text_of(ev).startswith("회원가입"), text_of(ev)
 sources, done = ev[-2][1], ev[-1][1]
@@ -66,13 +66,17 @@ with SessionLocal() as db:
     log = db.scalars(select(ChatLog).order_by(ChatLog.id.desc())).first()
     assert "@@META" not in log.answer and log.answer_type == "answer"
 
-# 2. 인용되지 않은 서식은 버튼을 만들지 않는다
-done = run("민원 신청 방법", ["회원가입 후 신청합니다[1].", '@@META {"type": "answer"}'])[-1][1]
-assert done["actions"] == [], done
+# 2. 서식 버튼은 LLM이 forms로 고르고 본문에도 인용한 서식 청크만. 인용만 됐거나 서식이 아니면 버튼 없음
+done = run("민원 신청 방법", ["회원가입 후 신청합니다[1].", '@@META {"type": "answer", "forms": [2]}'])[-1][1]
+assert done["actions"] == [], done  # forms에 있지만 본문에 인용 안 됨
+done = run("항만공사가 뭐하는 곳이야", ["항만을 운영합니다[1]. 신고서도 있습니다[2].", '@@META {"type": "answer"}'])[-1][1]
+assert done["actions"] == [], done  # 서식을 인용했지만 고르지 않음 (설명용 인용)
+done = run("민원 신청 방법", ["회원가입 후 신청합니다[1].", '@@META {"type": "answer", "forms": [1, "2", true]}'])[-1][1]
+assert done["actions"] == [], done  # [1]은 서식 청크가 아님, 숫자가 아닌 값은 무시
 
 # 2-1. 근거에 Port-MIS가 없으면 LLM이 골라도 버튼을 붙이지 않는다
 other = [{"chunk": form | {"chunk_id": "f1"}, "score": 0.6}]
-done = run("서식 있나요?", ["서식이 있습니다[1].", '@@META {"type": "answer", "actions": ["port_mis"]}'], hits=other)[-1][1]
+done = run("서식 있나요?", ["서식이 있습니다[1].", '@@META {"type": "answer", "actions": ["port_mis"], "forms": [1]}'], hits=other)[-1][1]
 assert [a["type"] for a in done["actions"]] == ["download"], done["actions"]
 
 # 2-2. 선택지 없는 되묻기는 일반 답변으로 본다

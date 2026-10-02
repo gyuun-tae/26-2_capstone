@@ -5,6 +5,7 @@ LLM은 본문 뒤 마지막 줄에 응답 유형·선택지·고정 링크 이�
 """
 import json
 import re
+from typing import NamedTuple
 
 from app.actions import ACTIONS
 from app.sources import locator_text
@@ -30,15 +31,17 @@ SYSTEM = """당신은 여수광양항만공사(YGPA)의 민원·항만 이용 �
 
 1. 안내데스크에서 가입 신청서를 작성합니다[2]
 2. 신분증을 확인받고 회원증을 받습니다[2][3]
-@@META {"type": "answer", "options": [], "actions": []}
+@@META {"type": "answer", "options": [], "actions": [], "forms": []}
 
 되묻기 예시
 어느 시설의 사용료를 알고 싶으신가요?
-@@META {"type": "clarify", "options": ["항만시설 사용료", "체육시설 사용료"], "actions": []}
+@@META {"type": "clarify", "options": ["항만시설 사용료", "체육시설 사용료"], "actions": [], "forms": []}
 
 답을 다 쓴 뒤 마지막 줄에 정리 줄을 한 번 씁니다 (사용자에게는 보이지 않습니다).
 - type: 근거로 답했으면 "answer", 6번처럼 되물었으면 "clarify", 5번처럼 답할 수 없으면 "unknown"
 - options: clarify일 때 선택지 문구 (각 20자 이내). 아니면 빈 목록
+- forms·actions는 사용자가 신고·신청·발급·예약 같은 **절차를 물었을 때만** 채웁니다. 기관·시설 소개나 일반 설명 질문이면 둘 다 빈 목록
+- forms: 사용자가 질문한 일을 하려면 직접 작성·제출해야 하는 서식의 근거 번호 (예: [2]가 그 서식이면 [2]). 서식을 묻지 않았거나 설명만 하는 답이면 빈 목록
 - actions: 아래 이름 중 사용자가 바로 해야 할 일과 직접 관련된 것만. 없으면 빈 목록
 """
 REMINDER = "(근거 번호는 문장·항목 맨 끝에, 하위 목록·구분선 없이, 마지막 줄에 @@META)"
@@ -89,18 +92,26 @@ class MetaFilter:
         return out
 
 
-def parse_meta(meta: str) -> tuple[str, list[str], list[str]]:
-    """(응답 유형, 선택지, 고정 링크 이름). 형식이 깨지면 일반 답변"""
+class Meta(NamedTuple):
+    kind: str = "answer"  # 응답 유형
+    options: list[str] = []  # clarify 선택지
+    keys: list[str] = []  # 고정 링크 이름
+    forms: list[int] = []  # 내려받을 서식의 근거 번호 (서식 청크인지는 조립 쪽에서 확인)
+
+
+def parse_meta(meta: str) -> Meta:
+    """형식이 깨지면 일반 답변 (버튼 없음)"""
     try:
         data = json.loads(meta.strip().splitlines()[0])
     except (ValueError, IndexError):
-        return "answer", [], []
+        return Meta()
     kind = data.get("type") if data.get("type") in ("answer", "clarify", "unknown") else "answer"
     options = [o.strip() for o in data.get("options") or [] if isinstance(o, str) and 0 < len(o.strip()) <= 50]
     keys = [k for k in data.get("actions") or [] if isinstance(k, str) and k in ACTIONS]
+    forms = [n for n in data.get("forms") or [] if isinstance(n, int) and not isinstance(n, bool)]
     if kind == "clarify" and not options:  # 선택지 없는 되묻기 = 유형을 잘못 적은 일반 답변
         kind = "answer"
-    return kind, options[:MAX_OPTIONS] if kind == "clarify" else [], keys
+    return Meta(kind, options[:MAX_OPTIONS] if kind == "clarify" else [], keys, forms)
 
 
 URL_OR_PHONE = re.compile(r"https?://|www\.|\b0\d{1,2}-\d{3,4}-\d{4}\b|[\w.+-]+@[\w-]+\.\w+")
