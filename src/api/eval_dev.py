@@ -8,6 +8,7 @@
 - 검색: 기대 문서 중 하나가 상위 5개 근거에 있는가 (unknown 기대 질문은 제외)
 - 유형: answer/clarify/unknown이 허용 목록에 있는가
 - 버튼: 필수 서식이 모두 있고, 허용 밖 서식이 없고, Port-MIS 여부가 맞는가 (port_mis가 null이면 상관없음)
+- 언급: must_mention의 단어가 답에 모두 있는가 (예: 이용 제한 공지)
 - 근거 번호 없는 줄, 첫 글자·전체 시간
 """
 import argparse
@@ -57,6 +58,8 @@ async def run_one(item: dict) -> dict:
     checks = {"type": result.answer_type in item["expect_type"]}
     if item["expect_docs"]:
         checks["retrieval"] = any(d in docs for d in item["expect_docs"])
+    if item.get("must_mention"):  # 꼭 알려야 하는 내용 (예: 이용 제한 공지)
+        checks["mention"] = all(word in text for word in item["must_mention"])
     allowed = set(item["forms_allowed"]) | set(item["forms_required"])
     checks["buttons"] = (set(item["forms_required"]) <= set(downloads) and set(downloads) <= allowed
                          and (item["port_mis"] is None or port_mis == item["port_mis"]))
@@ -74,7 +77,7 @@ def summarize(rows: list[dict]) -> dict:
     groups = sorted({r["group"] for r in rows})
     firsts = [r["first_token_s"] for r in rows]
     return {
-        "retrieval": rate("retrieval"), "type": rate("type"), "buttons": rate("buttons"),
+        "retrieval": rate("retrieval"), "type": rate("type"), "buttons": rate("buttons"), "mention": rate("mention"),
         "type_by_group": {g: rate("type", [r for r in rows if r["group"] == g]) for g in groups},
         "uncited_lines_total": sum(r["uncited_lines"] for r in rows if r["answer_type"] == "answer"),
         "first_token_s": {"mean": round(statistics.mean(firsts), 2), "max": max(firsts)},
