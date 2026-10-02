@@ -97,6 +97,12 @@ ev = run("오늘 날씨 어때?", ["부르면 안 됨"], hits=[{"chunk": html_te
 assert ev[-1][1]["answer_type"] == "unknown" and ev[-2][1] == [] and len(calls["chat"]) == n
 assert text_of(ev) == rag_real.UNKNOWN_TEXT
 assert run("x", ["부르면 안 됨"], hits=[])[-1][1]["answer_type"] == "unknown"
+# 점수가 낮아도 질문의 영문 용어가 근거에 그대로 있으면 LLM이 판단한다 (의미 검색이 약어 질문에 약함)
+term = [{"chunk": html_text | {"text": "Port-MIS란 해운항만물류정보시스템을 말한다."}, "score": 0.41}]
+n = len(calls["chat"])
+assert run("Port-MIS가 뭐예요?", ["정보시스템입니다[1].", '@@META {"type": "answer"}'], hits=term)[-1][1]["answer_type"] == "answer"
+assert len(calls["chat"]) == n + 1
+assert run("BTS 멤버 알려줘", ["부르면 안 됨"], hits=term)[-1][1]["answer_type"] == "unknown"
 # LLM이 근거로 답할 수 없다고 판단해도 근거·버튼을 보여주지 않는다
 ev = run("부산항 운영사는?", ["확인이 어렵습니다.", '@@META {"type": "unknown", "actions": ["port_mis"]}'])
 assert ev[-1][1]["answer_type"] == "unknown" and ev[-2][1] == [] and ev[-1][1]["actions"] == []
@@ -125,6 +131,12 @@ ev = run("문의처", ["문의는 061-797-", "4550 또는 play@ygpm.co.kr[1]. �
 t = text_of(ev)
 assert "061-797-4550" in t and "play@ygpm.co.kr[1]." in t, t
 assert "010-1234-5678" not in t and "fake.example" not in t and t.count(prompt.MASK) == 2, t
+
+# 7-4. 근거 개수를 넘는 번호는 지우고(조각이 나뉘어 와도), 맞는 번호·[별지3]·[] 같은 글자는 둔다
+ev = run("Port-MIS 뜻", ["정보시스템입니다[2", "0]. 서식은 〔별지3〕과 [별지4], [] 참고[1]", "[2].", '\n@@META {"type": "answer"}'])
+assert text_of(ev) == "정보시스템입니다. 서식은 〔별지3〕과 [별지4], [] 참고[1][2].\n", repr(text_of(ev))
+f = prompt.CitationFilter(5)
+assert f.feed("끝[") + f.flush() == "끝["
 
 # 7-1. 본문이 확인 불가 문구인데 정리 줄이 answer면 unknown으로 고친다
 ev = run("운임 얼마예요?", ["확인한 공식 자료만으로는 답을 확정하기 어렵습니다.", '@@META {"type": "answer"}'])

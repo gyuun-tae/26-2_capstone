@@ -12,7 +12,7 @@ from pydantic import ValidationError
 
 from app import gpu, search
 from app.actions import ACTIONS
-from app.prompt import (SHORT_QUESTION, UNKNOWN_PHRASE, ContactFilter, Meta, MetaFilter, RuleLineFilter,
+from app.prompt import (SHORT_QUESTION, UNKNOWN_PHRASE, CitationFilter, ContactFilter, Meta, MetaFilter, RuleLineFilter,
                         build_messages, parse_meta, violations)
 from app.rag import Answer
 from app.schemas import Action, Option
@@ -27,6 +27,16 @@ TEMPERATURE = 0.1  # 2026-10-02 dev 측정: 0.3과 지표 같음, 반복 실행 
 UNKNOWN_TEXT = "확인한 공식 자료만으로는 답을 확정하기 어렵습니다. 질문을 조금 더 구체적으로 써 주시거나 담당 부서에 문의해 주세요."
 
 logger = logging.getLogger(__name__)
+
+
+TERM = re.compile(r"[A-Za-z][A-Za-z0-9-]{1,}")  # 영문 용어·약어 (Port-MIS, DWT, TEU)
+
+
+def term_match(query: str, hits: list[dict]) -> bool:
+    """질문의 영문 용어가 근거에 글자 그대로 있는가. 의미 검색은 "Port-MIS가 뭐예요?"처럼 약어 하나뿐인 짧은 질문의
+    점수를 낮게 매겨(0.41) 확인 불가로 끝내 버린다 → 이런 경우는 LLM이 근거를 보고 판단하게 한다"""
+    evidence = " ".join(h["chunk"]["text"] + " " + h["chunk"]["title"] for h in hits).lower()
+    return any(t.lower() in evidence for t in TERM.findall(query))
 
 
 def search_query(messages) -> str:
@@ -62,21 +72,21 @@ def answer(messages) -> Answer:
     async def tokens():
         vector = await gpu.embed(search_query(messages))
         hits = await asyncio.to_thread(search.search, vector, int(os.getenv("RAG_K", K)))
-        if not hits or hits[0]["score"] < threshold:
+        if not hits or (hits[0]["score"] < threshold and not term_match(search_query(messages), hits)):
             result.answer_type = "unknown"
             yield UNKNOWN_TEXT
             return
 
         result.sources = [chunk_to_source(h["chunk"]) for h in hits]
-        # 화면으로 나가기 전 거르기: 정리 줄(@@META) → 구분선 → 근거에 없는 연락처
-        meta, rules, parts = MetaFilter(), RuleLineFilter(), []
+        # 화면으로 나가기 전 거르기: 정리 줄(@@META) → 구분선 → 없는 근거 번호 → 근거에 없는 연락처
+        meta, rules, cites, parts = MetaFilter(), RuleLineFilter(), CitationFilter(len(hits)), []
         contacts = ContactFilter("\n".join(h["chunk"]["text"] for h in hits))
         temperature = float(os.getenv("RAG_TEMPERATURE", TEMPERATURE))
         async for piece in gpu.chat_stream(build_messages(messages, hits), MAX_TOKENS, temperature):
-            if out := contacts.feed(rules.feed(meta.feed(piece))):
+            if out := contacts.feed(cites.feed(rules.feed(meta.feed(piece)))):
                 parts.append(out)
                 yield out
-        if out := contacts.feed(rules.feed(meta.flush()) + rules.flush()) + contacts.flush():
+        if out := contacts.feed(cites.feed(rules.feed(meta.flush()) + rules.flush()) + cites.flush()) + contacts.flush():
             parts.append(out)
             yield out
         if contacts.masked:

@@ -82,8 +82,9 @@ async def run_one(item: dict) -> dict:
     checks = {"type": result.answer_type in item["expect_type"]}
     if item["expect_docs"]:
         checks["retrieval"] = any(d in docs for d in item["expect_docs"])
+        checks["retrieval@1"] = bool(docs) and docs[0] in item["expect_docs"]  # 1위가 기대 문서인가 (순서 품질)
     if item.get("must_mention"):  # 꼭 알려야 하는 내용 (예: 이용 제한 공지)
-        checks["mention"] = all(word in text for word in item["must_mention"])
+        checks["mention"] = all(any(alt in text for alt in word.split("|")) for word in item["must_mention"])  # "a|b" = 둘 중 하나
     allowed = set(item["forms_allowed"]) | set(item["forms_required"])
     checks["buttons"] = (set(item["forms_required"]) <= set(downloads) and set(downloads) <= allowed
                          and (item["port_mis"] is None or port_mis == item["port_mis"]))
@@ -102,7 +103,7 @@ def summarize(rows: list[dict]) -> dict:
     groups = sorted({r["group"] for r in rows})
     firsts = [r["first_token_s"] for r in rows]
     return {
-        "retrieval": rate("retrieval"), "type": rate("type"), "buttons": rate("buttons"), "mention": rate("mention"),
+        "retrieval": rate("retrieval"), "retrieval@1": rate("retrieval@1"), "type": rate("type"), "buttons": rate("buttons"), "mention": rate("mention"),
         "type_by_group": {g: rate("type", [r for r in rows if r["group"] == g]) for g in groups},
         "uncited_lines_total": sum(r["uncited_lines"] for r in rows if r["answer_type"] == "answer"),
         "violations_total": sum(len(r["violations"]) for r in rows),
@@ -116,9 +117,11 @@ async def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--label", default="run")
     ap.add_argument("--only", help="쉼표로 구분한 id만 실행")
+    ap.add_argument("--dataset", default=DATASET.name, help="evaluation/datasets 안의 파일 이름")
     args = ap.parse_args()
 
-    items = [json.loads(line) for line in DATASET.read_text(encoding="utf-8").splitlines() if line.strip()]
+    dataset = DATASET.parent / args.dataset
+    items = [json.loads(line) for line in dataset.read_text(encoding="utf-8").splitlines() if line.strip()]
     if args.only:
         items = [i for i in items if i["id"] in args.only.split(",")]
     rows = []
@@ -132,7 +135,7 @@ async def main():
     summary = summarize(rows)
     print("\n" + json.dumps(summary, ensure_ascii=False, indent=1))
     out = ROOT / f"evaluation/reports/dev_eval_{datetime.now():%Y%m%d}_{args.label}.json"
-    out.write_text(json.dumps({"dataset": DATASET.name, "index_version": os.getenv("INDEX_VERSION"),
+    out.write_text(json.dumps({"dataset": dataset.name, "index_version": os.getenv("INDEX_VERSION"),
                                "run_at": datetime.now(timezone.utc).isoformat(), "summary": summary, "rows": rows},
                               ensure_ascii=False, indent=1), encoding="utf-8")
     print("저장:", out.relative_to(ROOT))

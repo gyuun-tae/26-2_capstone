@@ -229,3 +229,35 @@ class ContactFilter:
     def flush(self) -> str:
         out, self.word = self._check(self.word), ""
         return out
+
+
+class CitationFilter:
+    """근거 개수를 넘는 번호([20] 등)를 화면에 나가기 전에 지운다. 조문 번호(정의 제20호)를 근거 번호로 착각하는 경우가 있다.
+    '['부터 숫자가 이어지는 동안만 붙잡는다"""
+
+    def __init__(self, n_sources: int):
+        self.n, self.held = n_sources, ""
+
+    def feed(self, text: str) -> str:
+        out = []
+        for ch in text:
+            if not self.held:
+                if ch == "[":
+                    self.held = ch
+                else:
+                    out.append(ch)
+            elif ch.isdigit():
+                self.held += ch
+            elif ch == "]" and len(self.held) > 1:
+                if 1 <= int(self.held[1:]) <= self.n:
+                    out.append(self.held + ch)
+                self.held = ""
+            else:  # 근거 번호 모양이 아님 → 그대로 내보낸다
+                out.append(self.held)
+                self.held = ""
+                out.append(self.feed(ch))
+        return "".join(out)
+
+    def flush(self) -> str:
+        out, self.held = self.held, ""
+        return out
