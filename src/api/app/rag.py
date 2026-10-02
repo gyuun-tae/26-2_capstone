@@ -1,4 +1,4 @@
-"""AI 팀 RAG 파이프라인과의 접점. 지금은 가짜(mock) 답변을 돌려준다.
+"""AI 팀 RAG 파이프라인과의 접점. 기본은 가짜(mock) 답변, 환경변수 RAG_MODE=real이면 실제 검색·생성(app/rag_real.py).
 
 AI 팀과 합의할 인터페이스:
     answer(messages) -> Answer
@@ -13,6 +13,7 @@ FE 화면 확인용: 질문에 아래 문구를 넣으면 해당 상태를 흉�
     "테스트:조건" → clarify(+options), "테스트:확인불가" → unknown(근거 없음, +contact), "테스트:오류" → error 이벤트
 """
 import asyncio
+import os
 import re
 from dataclasses import dataclass, field
 from typing import AsyncIterator
@@ -79,6 +80,14 @@ class Answer:
 
 
 def answer(messages: list[Message]) -> Answer:
+    if os.getenv("RAG_MODE", "mock") == "real":
+        from app import rag_real  # 실제 모드에서만 GPU·검색 모듈을 쓴다
+
+        return rag_real.answer(messages)
+    return mock_answer(messages)
+
+
+def mock_answer(messages: list[Message]) -> Answer:
     q = messages[-1].content
     kind: AnswerType = "clarify" if "테스트:조건" in q else "unknown" if "테스트:확인불가" in q else "answer"
     result = Answer(sources=MOCK_SOURCES if kind == "answer" else [], tokens=None)
