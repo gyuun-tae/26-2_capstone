@@ -12,7 +12,8 @@ from pydantic import ValidationError
 
 from app import gpu, search
 from app.actions import ACTIONS
-from app.prompt import Meta, MetaFilter, RuleLineFilter, build_messages, parse_meta, violations
+from app.prompt import (SHORT_QUESTION, UNKNOWN_PHRASE, Meta, MetaFilter, RuleLineFilter, build_messages,
+                        parse_meta, violations)
 from app.rag import Answer
 from app.schemas import Action, Option
 from app.sources import chunk_to_source, form_download
@@ -21,7 +22,6 @@ K = 5
 # 2026-10-02 측정: 관련 질문 1위 최소 0.594, 무관 질문 최대 0.455, 주변 주제(자료 없음) 0.42~0.52.
 # 실제 사용자 표현은 예상 질문보다 점수가 낮을 수 있어 무관 쪽에 가깝게 잡는다. 주변 주제는 LLM이 unknown으로 판단
 DEFAULT_THRESHOLD = 0.48
-SHORT_QUESTION = 15  # 이보다 짧은 질문(예: 되묻기에 고른 선택지)은 앞 질문을 붙여 검색한다
 MAX_TOKENS = 1024
 TEMPERATURE = 0.3
 UNKNOWN_TEXT = "확인한 공식 자료만으로는 답을 확정하기 어렵습니다. 질문을 조금 더 구체적으로 써 주시거나 담당 부서에 문의해 주세요."
@@ -30,6 +30,7 @@ logger = logging.getLogger(__name__)
 
 
 def search_query(messages) -> str:
+    """검색용 질문: 되묻기에 대한 짧은 답이면 앞 질문을 붙인다 (LLM에는 prompt.effective_question으로 같은 내용을 보낸다)"""
     last = messages[-1].content.strip()
     previous = [m.content for m in messages[:-1] if m.role == "user"]
     return f"{previous[-1]}\n{last}" if len(last) < SHORT_QUESTION and previous else last
@@ -78,6 +79,8 @@ def answer(messages) -> Answer:
 
         text = "".join(parts)
         parsed = parse_meta(meta.meta)
+        if UNKNOWN_PHRASE in text and parsed.kind == "answer":  # 정리 줄을 잘못 적은 확인 불가 답변
+            parsed = Meta("unknown")
         result.answer_type = parsed.kind
         if parsed.kind == "unknown":
             result.sources = []  # 답하지 못했으면 관련 없는 근거를 보여주지 않는다

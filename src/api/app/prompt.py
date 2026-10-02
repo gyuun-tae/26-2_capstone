@@ -23,7 +23,7 @@ SYSTEM = """당신은 여수광양항만공사(YGPA)의 민원·항만 이용 �
 3. 형식: 요약 한두 문장 → 빈 줄 → 절차가 있으면 "1." 번호 목록. 목록은 한 단계만 쓰고 하위 목록은 쓰지 않습니다. **굵게**까지만 쓰고 표·구분선(---)·HTML·링크 문법은 쓰지 않습니다.
 4. URL·웹 주소·전화번호·이메일을 본문에 쓰지 않습니다. 링크와 서식 파일은 화면에 버튼으로 따로 제공됩니다. 정리 줄의 actions 이름도 본문에 쓰지 않습니다.
 5. 근거로 답할 수 없으면 추측하지 말고 "확인한 공식 자료만으로는 답을 확정하기 어렵습니다. 담당 부서에 문의해 주세요."라고만 답합니다.
-6. 질문이 가리키는 대상이 [근거]에서 둘 이상이고(예: "사용료"가 항만시설 사용료인지 체육시설 사용료인지) 질문만으로 어느 쪽인지 알 수 없으면, 한쪽을 골라 답하지 말고 어느 경우인지 묻는 한 문장만 쓰고 선택지를 options에 2~4개 넣습니다.
+6. 되묻기: 답하기 전에 [근거] 제목들을 보고 질문의 대상이 하나로 정해지는지 확인합니다. 질문에 시설·서류·업무 이름이 없고 [근거]에 서로 다른 대상이 둘 이상 있으면(예: "사용료"에 체육시설 사용료와 항만시설 사용료, "출입증 신청"에 새 발급·기간 연장·분실) 한쪽을 골라 답하거나 "확인 불가"로 답하지 말고, 어느 경우인지 묻는 한 문장만 쓰고 선택지를 options에 2~4개 넣습니다. 질문에 대상이 분명하면 되묻지 않습니다.
 7. 존댓말로 간결하게 답합니다.
 
 답변 예시 (항만과 무관한 형식 예시. 내용은 반드시 [근거]에서만 가져옵니다)
@@ -44,7 +44,19 @@ SYSTEM = """당신은 여수광양항만공사(YGPA)의 민원·항만 이용 �
 - forms: 사용자가 질문한 일을 하려면 직접 작성·제출해야 하는 서식의 근거 번호 (예: [2]가 그 서식이면 [2]). 서식을 묻지 않았거나 설명만 하는 답이면 빈 목록
 - actions: 아래 이름 중 사용자가 바로 해야 할 일과 직접 관련된 것만. 없으면 빈 목록
 """
-REMINDER = "(근거 번호는 문장·항목 맨 끝에, 하위 목록·구분선 없이, 마지막 줄에 @@META)"
+REMINDER = ("(대상이 여럿이면 되묻기 · 근거 번호는 문장·항목 맨 끝에 · 하위 목록·구분선 없이 · "
+            "작성할 서식을 안내했으면 그 번호를 forms에 · 마지막 줄에 @@META)")
+SHORT_QUESTION = 15  # 이보다 짧은 질문(예: 되묻기에 고른 선택지)은 앞 질문과 합쳐서 본다
+UNKNOWN_PHRASE = "답을 확정하기 어렵습니다"  # 지시문 5번 문구. 본문이 이 문구면 정리 줄과 상관없이 unknown
+
+
+def effective_question(messages) -> str:
+    """이번 질문. 되묻기에 대한 짧은 답이면 앞 질문과 합친다 (검색과 LLM에 같은 질문을 쓴다)"""
+    last = messages[-1].content.strip()
+    previous = [m.content for m in messages[:-1] if m.role == "user"]
+    if len(last) < SHORT_QUESTION and previous:
+        return f"{previous[-1]}\n(앞 질문에 대한 사용자의 선택: {last})"
+    return last
 
 
 def system_prompt() -> str:
@@ -64,7 +76,7 @@ def evidence(hits: list[dict]) -> str:
 def build_messages(messages, hits: list[dict]) -> list[dict]:
     """지시문 + 최근 대화 + (근거 + 이번 질문). 근거는 이번 질문에만 붙인다"""
     history = [{"role": m.role, "content": m.content} for m in messages[:-1]][-HISTORY:]
-    question = f"[근거]\n{evidence(hits)}\n\n[질문]\n{messages[-1].content}\n\n{REMINDER}"
+    question = f"[근거]\n{evidence(hits)}\n\n[질문]\n{effective_question(messages)}\n\n{REMINDER}"
     return [{"role": "system", "content": system_prompt()}, *history, {"role": "user", "content": question}]
 
 

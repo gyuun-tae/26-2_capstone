@@ -109,6 +109,17 @@ assert ev[-1][0] == "error" and "done" not in [e for e, _ in ev]
 run("체육시설", ['답[1]\n@@META {"type": "answer"}'], history=[
     {"role": "user", "content": "사용료가 얼마인가요?"}, {"role": "assistant", "content": "어느 시설인가요?"}])
 assert calls["embed"][-1] == "사용료가 얼마인가요?\n체육시설", calls["embed"][-1]
+assert "사용료가 얼마인가요?\n(앞 질문에 대한 사용자의 선택: 체육시설)" in calls["chat"][-1][-1]["content"]
+
+# 7-2. 검색 결과는 문서당 2개까지 (점수 순서 유지) → 여러 대상이 근거에 들어와 되물을 수 있다
+rows = [{"chunk": {"doc_id": d}, "score": s} for d, s in
+        [("A", .9), ("A", .8), ("A", .7), ("B", .6), ("A", .5), ("C", .4), ("B", .3), ("B", .2)]]
+assert [(r["chunk"]["doc_id"], r["score"]) for r in search.diversify(rows, 5)] == \
+    [("A", .9), ("A", .8), ("B", .6), ("C", .4), ("B", .3)]
+
+# 7-1. 본문이 확인 불가 문구인데 정리 줄이 answer면 unknown으로 고친다
+ev = run("운임 얼마예요?", ["확인한 공식 자료만으로는 답을 확정하기 어렵습니다.", '@@META {"type": "answer"}'])
+assert ev[-1][1]["answer_type"] == "unknown" and ev[-2][1] == []
 assert rag_real.search_query([Message(role="user", content="항만시설 사용 신청은 어떻게 하나요?")]) == "항만시설 사용 신청은 어떻게 하나요?"
 
 # 8. 표식 거르기 단위 확인: 표식과 비슷하지만 아닌 글자는 그대로 내보낸다
