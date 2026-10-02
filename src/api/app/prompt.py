@@ -4,6 +4,7 @@ LLM은 본문 뒤 마지막 줄에 응답 유형·선택지·고정 링크 이�
 본문은 바로 흘려보내고 정리 줄은 화면에 내보내지 않는다 (MetaFilter). 정리 줄이 없거나 깨지면 일반 답변으로 본다.
 """
 import json
+import os
 import re
 from typing import NamedTuple
 
@@ -19,7 +20,7 @@ SYSTEM = """당신은 여수광양항만공사(YGPA)의 민원·항만 이용 �
 
 규칙
 1. 근거에 있는 사실만 씁니다. 금액·기간·자격·조건을 일반 지식으로 보충하거나 추측하지 않습니다.
-2. 근거 번호는 내용을 쓴 문장과 목록 항목의 **맨 끝**에 [1] 또는 [1][2]처럼 붙입니다. 모든 문장·항목에 붙이고, 문장 앞("[1]에 따르면")에는 쓰지 않습니다. [근거]에 없는 번호는 쓰지 않습니다.
+2. 근거 번호는 내용을 쓴 문장과 목록 항목의 **맨 끝**에 [1] 또는 [1][2]처럼 붙입니다. 모든 문장·항목에 붙이고(이름만 나열하는 목록도 항목마다, 예: "1. 도서 대출 신청서[1]"), 문장 앞("[1]에 따르면")에는 쓰지 않습니다. [근거]에 없는 번호는 쓰지 않습니다.
 3. 형식: 요약 한두 문장 → 빈 줄 → 절차가 있으면 "1." 번호 목록. 목록은 한 단계만 쓰고 하위 목록은 쓰지 않습니다. **굵게**까지만 쓰고 표·구분선(---)·HTML·링크 문법은 쓰지 않습니다.
 4. URL·웹 주소·전화번호·이메일을 본문에 쓰지 않습니다. 링크와 서식 파일은 화면에 버튼으로 따로 제공됩니다. 정리 줄의 actions 이름도 본문에 쓰지 않습니다.
 5. 근거로 답할 수 없으면 추측하지 말고 "확인한 공식 자료만으로는 답을 확정하기 어렵습니다. 담당 부서에 문의해 주세요."라고만 답합니다.
@@ -69,15 +70,32 @@ def evidence(hits: list[dict]) -> str:
     for i, h in enumerate(hits, 1):
         c = h["chunk"]
         date = f" (수정일 {c['updated_at']})" if c.get("updated_at") else ""
-        text = c["text"] if len(c["text"]) <= CHUNK_CHARS else c["text"][:CHUNK_CHARS] + " …(이하 생략)"
+        limit = int(os.getenv("RAG_CHUNK_CHARS", CHUNK_CHARS))  # 실험용 조정값
+        text = c["text"] if len(c["text"]) <= limit else c["text"][:limit] + " …(이하 생략)"
         blocks.append(f"[{i}] {c['title']} · {locator_text(c)}{date}\n{text.strip()}")
     return "\n\n".join(blocks)
+
+
+NOTICE_WORDS = ("제한", "중단", "휴관", "불가", "중지", "폐쇄")
+
+
+def notices(hits: list[dict]) -> list[tuple[int, str]]:
+    """근거 속 '※'로 시작하는 이용 제한 공지 줄 (근거 번호, 문장). 지시문 8번만으로는 자주 빠뜨려 따로 짚어 준다"""
+    found = []
+    for i, h in enumerate(hits, 1):
+        for line in h["chunk"]["text"].splitlines():
+            line = line.strip()
+            if line.startswith("※") and any(w in line for w in NOTICE_WORDS):
+                found.append((i, line))
+    return found
 
 
 def build_messages(messages, hits: list[dict]) -> list[dict]:
     """지시문 + 최근 대화 + (근거 + 이번 질문). 근거는 이번 질문에만 붙인다"""
     history = [{"role": m.role, "content": m.content} for m in messages[:-1]][-HISTORY:]
-    question = f"[근거]\n{evidence(hits)}\n\n[질문]\n{effective_question(messages)}\n\n{REMINDER}"
+    alert = "".join(f"\n(주의: 근거 [{i}]에 이용 제한 공지가 있습니다 — \"{line}\" 질문과 관련 있으면 첫 문장에서 알리세요)"
+                    for i, line in notices(hits))
+    question = f"[근거]\n{evidence(hits)}\n\n[질문]\n{effective_question(messages)}\n{alert}\n{REMINDER}"
     return [{"role": "system", "content": system_prompt()}, *history, {"role": "user", "content": question}]
 
 
@@ -177,3 +195,37 @@ class RuleLineFilter:
 def uncited_lines(text: str) -> list[str]:
     """근거 번호가 없는 내용 줄 (개발용 점검: 규칙 2 준수율)"""
     return [line for line in text.splitlines() if line.strip() and not re.search(r"\[\d+\]", line)]
+
+
+CONTACT = re.compile(r"https?://[^\s)\]]+|www\.[^\s)\]]+|[\w.+-]+@[\w-]+(?:\.[\w-]+)+|0\d{1,2}-\d{3,4}-\d{4}")
+MASK = "(공식 안내 참고)"
+
+
+class ContactFilter:
+    """전화번호·이메일·URL이 근거에 글자 그대로 없으면 화면에 나가기 전에 가린다 (LLM이 지어낸 연락처 차단).
+    단어 단위로 붙잡았다가 공백에서 검사하므로 단어 하나만큼 늦게 나간다"""
+
+    def __init__(self, evidence: str):
+        self.evidence, self.word, self.masked = evidence, "", []
+
+    def _check(self, word: str) -> str:
+        def replace(m):
+            if m.group(0).rstrip(".,") in self.evidence:
+                return m.group(0)
+            self.masked.append(m.group(0))
+            return MASK
+        return CONTACT.sub(replace, word)
+
+    def feed(self, text: str) -> str:
+        out = []
+        for ch in text:
+            if ch.isspace():
+                out.append(self._check(self.word) + ch)
+                self.word = ""
+            else:
+                self.word += ch
+        return "".join(out)
+
+    def flush(self) -> str:
+        out, self.word = self._check(self.word), ""
+        return out

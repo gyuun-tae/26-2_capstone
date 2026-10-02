@@ -9,13 +9,14 @@
 - 유형: answer/clarify/unknown이 허용 목록에 있는가
 - 버튼: 필수 서식이 모두 있고, 허용 밖 서식이 없고, Port-MIS 여부가 맞는가 (port_mis가 null이면 상관없음)
 - 언급: must_mention의 단어가 답에 모두 있는가 (예: 이용 제한 공지)
-- 근거 번호 없는 줄, 첫 글자·전체 시간
+- 근거 번호 없는 줄, 규칙 위반(URL·전화·이메일, 없는 번호), 근거에 없는 숫자(환각 위험), 첫 글자·전체 시간
 """
 import argparse
 import asyncio
 from datetime import datetime, timezone
 import json
 import os
+import re
 from pathlib import Path
 import statistics
 import time
@@ -23,11 +24,27 @@ import time
 import try_real  # noqa: F401  (.env를 읽고 앱 모듈을 불러온다)
 from app import rag_real, search
 from app.actions import PORT_MIS
-from app.prompt import uncited_lines
+from app.prompt import CONTACT, uncited_lines, violations
 from app.schemas import Message
 
 ROOT = Path(__file__).resolve().parents[2]
 DATASET = ROOT / "evaluation/datasets/dev_questions_v1.jsonl"
+
+
+NUMBER = re.compile(r"\d[\d,.]*")
+
+
+def unsupported_numbers(text: str, evidence: str) -> list[str]:
+    """답에 나온 숫자 중 근거 글에 없는 것 (환각 위험 지표). 근거 번호 [n]과 목록 번호 "1."은 뺀다"""
+    body = re.sub(r"\[\d+\]", " ", text)
+    body = re.sub(r"(?m)^\s*\d+\.\s", " ", body)
+    plain = evidence.replace(",", "")
+    found = []
+    for n in NUMBER.findall(body):
+        n = n.rstrip(".,")
+        if n and n not in evidence and n.replace(",", "") not in plain:
+            found.append(n)
+    return found
 
 
 async def run_one(item: dict) -> dict:
@@ -52,6 +69,13 @@ async def run_one(item: dict) -> dict:
 
     text = "".join(pieces)
     docs = [h["chunk"]["doc_id"] for h in hits]
+    evidence = "\n".join(h["chunk"]["text"] + " " + h["chunk"]["title"] for h in hits)
+    numbers = unsupported_numbers(text, evidence) if result.answer_type == "answer" else []
+    contacts = CONTACT.findall(text)
+    unverified = [c for c in contacts if c.rstrip(".,") not in evidence]
+    found = violations(text, len(hits)) if result.answer_type == "answer" else []
+    if "url_or_phone" in found and not unverified:  # 근거에 글자 그대로 있는 연락처는 위반으로 세지 않는다
+        found.remove("url_or_phone")
     downloads = [result.sources[a.source_ref - 1].doc_id for a in result.actions if a.type == "download"]
     port_mis = any(a.url == PORT_MIS.url for a in result.actions)
 
@@ -66,6 +90,7 @@ async def run_one(item: dict) -> dict:
     return {"id": item["id"], "group": item["group"], "question": item["question"], "answer_type": result.answer_type,
             "top1_score": round(hits[0]["score"], 3) if hits else None, "top_docs": docs, "downloads": downloads,
             "port_mis": port_mis, "options": [o.label for o in result.options], "uncited_lines": len(uncited_lines(text)),
+            "violations": found, "contacts_from_evidence": len(contacts) - len(unverified), "unsupported_numbers": numbers,
             "first_token_s": round(first or total, 2), "total_s": round(total, 2), "checks": checks, "answer": text.strip()}
 
 
@@ -80,7 +105,10 @@ def summarize(rows: list[dict]) -> dict:
         "retrieval": rate("retrieval"), "type": rate("type"), "buttons": rate("buttons"), "mention": rate("mention"),
         "type_by_group": {g: rate("type", [r for r in rows if r["group"] == g]) for g in groups},
         "uncited_lines_total": sum(r["uncited_lines"] for r in rows if r["answer_type"] == "answer"),
-        "first_token_s": {"mean": round(statistics.mean(firsts), 2), "max": max(firsts)},
+        "violations_total": sum(len(r["violations"]) for r in rows),
+        "unsupported_numbers_total": sum(len(r["unsupported_numbers"]) for r in rows),
+        "first_token_s": {"mean": round(statistics.mean(firsts), 2), "median": round(statistics.median(firsts), 2),
+                          "max": max(firsts)},
     }
 
 

@@ -12,8 +12,8 @@ from pydantic import ValidationError
 
 from app import gpu, search
 from app.actions import ACTIONS
-from app.prompt import (SHORT_QUESTION, UNKNOWN_PHRASE, Meta, MetaFilter, RuleLineFilter, build_messages,
-                        parse_meta, violations)
+from app.prompt import (SHORT_QUESTION, UNKNOWN_PHRASE, ContactFilter, Meta, MetaFilter, RuleLineFilter,
+                        build_messages, parse_meta, violations)
 from app.rag import Answer
 from app.schemas import Action, Option
 from app.sources import chunk_to_source, form_download
@@ -23,7 +23,7 @@ K = 5
 # 실제 사용자 표현은 예상 질문보다 점수가 낮을 수 있어 무관 쪽에 가깝게 잡는다. 주변 주제는 LLM이 unknown으로 판단
 DEFAULT_THRESHOLD = 0.48
 MAX_TOKENS = 1024
-TEMPERATURE = 0.3
+TEMPERATURE = 0.1  # 2026-10-02 dev 측정: 0.3과 지표 같음, 반복 실행 때 답이 더 일정
 UNKNOWN_TEXT = "확인한 공식 자료만으로는 답을 확정하기 어렵습니다. 질문을 조금 더 구체적으로 써 주시거나 담당 부서에 문의해 주세요."
 
 logger = logging.getLogger(__name__)
@@ -61,21 +61,26 @@ def answer(messages) -> Answer:
 
     async def tokens():
         vector = await gpu.embed(search_query(messages))
-        hits = await asyncio.to_thread(search.search, vector, K)
+        hits = await asyncio.to_thread(search.search, vector, int(os.getenv("RAG_K", K)))
         if not hits or hits[0]["score"] < threshold:
             result.answer_type = "unknown"
             yield UNKNOWN_TEXT
             return
 
         result.sources = [chunk_to_source(h["chunk"]) for h in hits]
+        # 화면으로 나가기 전 거르기: 정리 줄(@@META) → 구분선 → 근거에 없는 연락처
         meta, rules, parts = MetaFilter(), RuleLineFilter(), []
-        async for piece in gpu.chat_stream(build_messages(messages, hits), MAX_TOKENS, TEMPERATURE):
-            if out := rules.feed(meta.feed(piece)):
+        contacts = ContactFilter("\n".join(h["chunk"]["text"] for h in hits))
+        temperature = float(os.getenv("RAG_TEMPERATURE", TEMPERATURE))
+        async for piece in gpu.chat_stream(build_messages(messages, hits), MAX_TOKENS, temperature):
+            if out := contacts.feed(rules.feed(meta.feed(piece))):
                 parts.append(out)
                 yield out
-        if out := rules.feed(meta.flush()) + rules.flush():
+        if out := contacts.feed(rules.feed(meta.flush()) + rules.flush()) + contacts.flush():
             parts.append(out)
             yield out
+        if contacts.masked:
+            logger.warning("근거에 없는 연락처를 가림: %d개", len(contacts.masked))
 
         text = "".join(parts)
         parsed = parse_meta(meta.meta)

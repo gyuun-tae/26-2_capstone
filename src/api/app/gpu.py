@@ -3,9 +3,11 @@
 관문(infra/gpu_server/gateway.py)은 Cloudflare 임시 터널 때문에 스트리밍을 SSE 대신 NDJSON(한 줄에 JSON 하나)으로 보낸다.
 환경변수: GPU_URL(터널 주소), GPU_API_KEY(GPU 서버 ~/llm-serve/.api_key 내용)
 """
+import asyncio
 import json
 import os
 from typing import AsyncIterator
+import weakref
 
 import httpx
 
@@ -19,6 +21,18 @@ class GpuError(RuntimeError):
     pass
 
 
+# 연결 재사용: 요청마다 새로 연결하면 터널(https) 연결 준비를 매번 다시 한다. 이벤트 루프마다 하나씩 둔다
+_clients: "weakref.WeakKeyDictionary[asyncio.AbstractEventLoop, httpx.AsyncClient]" = weakref.WeakKeyDictionary()
+
+
+def _client() -> httpx.AsyncClient:
+    loop = asyncio.get_running_loop()
+    client = _clients.get(loop)
+    if client is None or client.is_closed:
+        client = _clients[loop] = httpx.AsyncClient(timeout=TIMEOUT)
+    return client
+
+
 def _config() -> tuple[str, dict]:
     url, key = os.getenv("GPU_URL", "").rstrip("/"), os.getenv("GPU_API_KEY", "")
     if not url or not key:
@@ -28,8 +42,7 @@ def _config() -> tuple[str, dict]:
 
 async def embed(text: str) -> list[float]:
     url, headers = _config()
-    async with httpx.AsyncClient(timeout=TIMEOUT) as client:
-        r = await client.post(f"{url}/v1/embeddings", headers=headers, json={"model": EMBED_MODEL, "input": [text]})
+    r = await _client().post(f"{url}/v1/embeddings", headers=headers, json={"model": EMBED_MODEL, "input": [text]})
     if r.status_code != 200:
         raise GpuError(f"임베딩 실패 {r.status_code}")
     return r.json()["data"][0]["embedding"]
@@ -40,13 +53,12 @@ async def chat_stream(messages: list[dict], max_tokens: int, temperature: float)
     url, headers = _config()
     body = {"model": LLM_MODEL, "messages": messages, "stream": True, "max_tokens": max_tokens,
             "temperature": temperature, "chat_template_kwargs": {"enable_thinking": False}}
-    async with httpx.AsyncClient(timeout=TIMEOUT) as client:
-        async with client.stream("POST", f"{url}/v1/chat/completions", headers=headers, json=body) as r:
-            if r.status_code != 200:
-                raise GpuError(f"생성 실패 {r.status_code}")
-            async for line in r.aiter_lines():
-                if not line.strip():
-                    continue
-                choice = json.loads(line)["choices"][0]
-                if text := choice.get("delta", {}).get("content"):
-                    yield text
+    async with _client().stream("POST", f"{url}/v1/chat/completions", headers=headers, json=body) as r:
+        if r.status_code != 200:
+            raise GpuError(f"생성 실패 {r.status_code}")
+        async for line in r.aiter_lines():
+            if not line.strip():
+                continue
+            choice = json.loads(line)["choices"][0]
+            if text := choice.get("delta", {}).get("content"):
+                yield text

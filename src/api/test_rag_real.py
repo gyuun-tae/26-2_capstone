@@ -111,11 +111,20 @@ run("체육시설", ['답[1]\n@@META {"type": "answer"}'], history=[
 assert calls["embed"][-1] == "사용료가 얼마인가요?\n체육시설", calls["embed"][-1]
 assert "사용료가 얼마인가요?\n(앞 질문에 대한 사용자의 선택: 체육시설)" in calls["chat"][-1][-1]["content"]
 
-# 7-2. 검색 결과는 문서당 2개까지 (점수 순서 유지) → 여러 대상이 근거에 들어와 되물을 수 있다
-rows = [{"chunk": {"doc_id": d}, "score": s} for d, s in
-        [("A", .9), ("A", .8), ("A", .7), ("B", .6), ("A", .5), ("C", .4), ("B", .3), ("B", .2)]]
-assert [(r["chunk"]["doc_id"], r["score"]) for r in search.diversify(rows, 5)] == \
-    [("A", .9), ("A", .8), ("B", .6), ("C", .4), ("B", .3)]
+# 7-2. 근거에 '※ … 제한' 공지가 있으면 질문 옆에 짚어 준다 (없으면 붙이지 않는다)
+notice = [{"chunk": html_text | {"chunk_id": "n1", "text": "※ 경보 해제 시까지 예약이 제한됩니다.\n예약 안내"}, "score": 0.7}]
+run("홍보관 예약", ['답[1]\n@@META {"type": "answer"}'], hits=notice)
+assert '(주의: 근거 [1]에 이용 제한 공지가 있습니다 — "※ 경보 해제 시까지 예약이 제한됩니다."' in calls["chat"][-1][-1]["content"]
+run("민원 신청", ['답[1]\n@@META {"type": "answer"}'])
+assert "주의:" not in calls["chat"][-1][-1]["content"]
+
+# 7-3. 근거에 없는 연락처는 가리고, 근거에 글자 그대로 있는 것은 둔다 (조각이 나뉘어 와도)
+phone = [{"chunk": html_text | {"chunk_id": "p1", "text": "문의: 061-797-4550, play@ygpm.co.kr"}, "score": 0.7}]
+ev = run("문의처", ["문의는 061-797-", "4550 또는 play@ygpm.co.kr[1]. 다른 번호 010-1234-5678, ",
+                   "https://fake.example.com 참고[1].", '\n@@META {"type": "answer"}'], hits=phone)
+t = text_of(ev)
+assert "061-797-4550" in t and "play@ygpm.co.kr[1]." in t, t
+assert "010-1234-5678" not in t and "fake.example" not in t and t.count(prompt.MASK) == 2, t
 
 # 7-1. 본문이 확인 불가 문구인데 정리 줄이 answer면 unknown으로 고친다
 ev = run("운임 얼마예요?", ["확인한 공식 자료만으로는 답을 확정하기 어렵습니다.", '@@META {"type": "answer"}'])
