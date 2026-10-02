@@ -1,0 +1,325 @@
+{
+ "dataset": "dev_questions_v3.jsonl",
+ "index_version": "bge-m3-dense-d67237d5942d",
+ "run_at": "2026-10-02T15:07:13.996852+00:00",
+ "summary": {
+  "retrieval": "7/7",
+  "retrieval@1": "7/7",
+  "type": "9/9",
+  "buttons": "9/9",
+  "mention": "7/7",
+  "contact": "1/1",
+  "type_by_group": {
+   "answer": "2/2",
+   "followup": "1/1",
+   "hard": "6/6"
+  },
+  "uncited_lines_total": 9,
+  "violations_total": 0,
+  "unsupported_numbers_total": 0,
+  "first_token_s": {
+   "mean": 2.12,
+   "median": 1.87,
+   "max": 3.34
+  }
+ },
+ "rows": [
+  {
+   "id": "a06",
+   "group": "answer",
+   "question": "홍보관 견학 몇 명부터 신청 가능해요?",
+   "answer_type": "answer",
+   "top1_score": 0.647,
+   "top_docs": [
+    "YGPA-007",
+    "YGPA-008",
+    "YGPA-021",
+    "YGPA-005",
+    "YGPA-006"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [
+    "홍보관 문의 061-797-4550"
+   ],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 1,
+   "unsupported_numbers": [],
+   "first_token_s": 3.34,
+   "total_s": 4.54,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "※ 정부의 자원안보 위기 주의단계 경보 발령에 따라, 경보 해제 시까지 홍보관 예약이 제한됨을 안내드립니다[1].\n\n홍보관 견학은 최소 10명 이상부터 신청이 가능합니다[1]."
+  },
+  {
+   "id": "a17",
+   "group": "answer",
+   "question": "통과선박으로 인정받으려면 언제까지 신청해야 돼요?",
+   "answer_type": "answer",
+   "top1_score": 0.725,
+   "top_docs": [
+    "YGPA-030",
+    "YGPA-028",
+    "YGPA-030",
+    "YGPA-019",
+    "YGPA-031"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 1.36,
+   "total_s": 2.06,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "buttons": true
+   },
+   "answer": "통과선박으로 인정받으려면 출항일로부터 7일 이내에 통과선박 인정 신청서를 제출해야 합니다[1]."
+  },
+  {
+   "id": "h02",
+   "group": "hard",
+   "question": "통과선박 인정신청은 출항하고 며칠 안에 내야 돼요?",
+   "answer_type": "answer",
+   "top1_score": 0.75,
+   "top_docs": [
+    "YGPA-030",
+    "YGPA-030",
+    "YGPA-028",
+    "YGPA-031",
+    "YGPA-032"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 1.5,
+   "total_s": 2.1,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "통과선박 인정 신청은 출항일로부터 7일 이내에 제출해야 합니다[1]."
+  },
+  {
+   "id": "h03",
+   "group": "hard",
+   "question": "홍보관 몇시부터 몇시까지 볼수있어요",
+   "answer_type": "answer",
+   "top1_score": 0.694,
+   "top_docs": [
+    "YGPA-007",
+    "YGPA-005",
+    "YGPA-005",
+    "YGPA-006",
+    "YGPA-033"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [
+    "홍보관 문의 061-797-4550"
+   ],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 1,
+   "unsupported_numbers": [],
+   "first_token_s": 1.85,
+   "total_s": 3.61,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "※ 정부의 자원안보 위기 주의단계 경보 발령에 따라, 경보 해제 시까지 홍보관 예약이 제한됨을 안내드립니다[1].\n\n홍보관은 매주 월~금요일 10:00 ~ 16:00까지 운영됩니다[1]. 약 30분이 소요되며, 토·일·공휴일은 휴관합니다[1]."
+  },
+  {
+   "id": "h07",
+   "group": "hard",
+   "question": "항만안내선 무슨 요일에 운항해요?",
+   "answer_type": "answer",
+   "top1_score": 0.655,
+   "top_docs": [
+    "YGPA-008",
+    "YGPA-009",
+    "YGPA-009",
+    "YGPA-007",
+    "YGPA-031"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [
+    "항만안내선 담당 061-797-4438"
+   ],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 1,
+   "unsupported_numbers": [],
+   "first_token_s": 1.6,
+   "total_s": 3.3,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "※ 정부의 자원안보 위기 주의단계 경보 발령에 따라, 경보 해제 시까지 항만안내선 예약이 제한됩니다[1].\n\n항만안내선은 매주 화요일과 목요일에 운항합니다[1].\n\n1. 견학일정은 10:00 ~ 11:00, 14:00 ~ 15:00입니다[1]"
+  },
+  {
+   "id": "h11",
+   "group": "hard",
+   "question": "배후단지 입주하려면 어떤 순서로 진행돼요?",
+   "answer_type": "answer",
+   "top1_score": 0.697,
+   "top_docs": [
+    "YGPA-019",
+    "YGPA-020",
+    "YGPA-005",
+    "YGPA-025",
+    "YGPA-023"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 1,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 2.4,
+   "total_s": 5.0,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "광양항 배후단지 입주를 원하는 기업은 다음과 같은 순서로 진행됩니다.\n\n1. 입주기업 모집 공고를 확인합니다[1]\n2. 입주자격을 확인하고, 자격이 충족되는 경우 신청서를 제출합니다[1]\n3. 우선협상 대상자로 선정됩니다[1]\n4. 입주개상 기업으로 선정됩니다[1]\n5. 여수광양항만공사와 입주계약을 체결합니다[2]\n6. 건축 허가 및 신고를 진행합니다[1]\n7. 건축 착공 및 준공을 진행합니다[1]\n8. 영업을 개시합니다[1]"
+  },
+  {
+   "id": "h19",
+   "group": "hard",
+   "question": "주말에 테니스장 쓰려면 당일에 예약해도 돼요?",
+   "answer_type": "answer",
+   "top1_score": 0.636,
+   "top_docs": [
+    "YGPA-005",
+    "YGPA-005",
+    "YGPA-006",
+    "YGPA-033",
+    "YGPA-007"
+   ],
+   "downloads": [
+    "YGPA-033"
+   ],
+   "port_mis": false,
+   "contacts": [
+    "체육시설 예약 문의 061-793-8270"
+   ],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 1,
+   "unsupported_numbers": [],
+   "first_token_s": 1.87,
+   "total_s": 3.66,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "주말에 테니스장을 사용하려면 사용 예정일 직전 금요일 15시까지 예약 신청해야 합니다[2].\n\n1. 사용 예정일 직전 금요일 15시까지 예약 신청합니다[2]\n2. 1계정당 하루 최대 2시간, 1개 코트만 예약 가능합니다[3]\n3. 체육시설 이용 신청서를 작성하고 제출합니다[4]"
+  },
+  {
+   "id": "h25",
+   "group": "hard",
+   "question": "입주기업 모집 가장 최근이 언제야?",
+   "answer_type": "answer",
+   "top1_score": 0.525,
+   "top_docs": [
+    "YGPA-019",
+    "YGPA-020",
+    "YGPA-021",
+    "YGPA-023",
+    "YGPA-032"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [
+    "여수광양항만공사 대표전화 061-797-4300"
+   ],
+   "options": [],
+   "uncited_lines": 8,
+   "violations": [],
+   "contacts_from_evidence": 1,
+   "unsupported_numbers": [],
+   "first_token_s": 2.57,
+   "total_s": 4.07,
+   "checks": {
+    "type": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "입주기업 모집 절차는 [1]에 따르면 다음과 같습니다.\n\n1. 입주기업 모집\n2. 우선협상 대상자 선정\n3. 입주개상 기업선정\n4. 입주계약\n5. 건축 허가 · 신고\n6. 건축 착공 · 준공\n7. 영업 개시\n\n\n\n질문하신 날짜·시기는 확인한 공식 자료에 없습니다. 아래 대표전화로 확인해 주세요."
+  },
+  {
+   "id": "h26",
+   "group": "followup",
+   "question": "담당 부서가 어디야?",
+   "answer_type": "unknown",
+   "top1_score": 0.541,
+   "top_docs": [
+    "YGPA-019",
+    "YGPA-023",
+    "YGPA-020",
+    "YGPA-021",
+    "YGPA-025"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [
+    "여수광양항만공사 대표전화 061-797-4300"
+   ],
+   "options": [],
+   "uncited_lines": 1,
+   "violations": [],
+   "contacts_from_evidence": 1,
+   "unsupported_numbers": [],
+   "first_token_s": 2.6,
+   "total_s": 3.48,
+   "checks": {
+    "type": true,
+    "contact": true,
+    "buttons": true
+   },
+   "answer": "확인한 공식 자료만으로는 답을 확정하기 어렵습니다. 담당 부서를 모르시면 아래 대표전화로 문의해 주세요."
+  }
+ ]
+}

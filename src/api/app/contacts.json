@@ -1,0 +1,129 @@
+{
+ "generated_by": "scripts/21_extract_contacts.py",
+ "contacts": [
+  {
+   "key": "main",
+   "label": "여수광양항만공사 대표전화",
+   "phone": "061-797-4300",
+   "note": "담당 부서를 모를 때",
+   "doc_ids": [],
+   "source": "홈페이지 하단 (수집 페이지 33개 공통)",
+   "source_url": "https://www.ygpa.or.kr/"
+  },
+  {
+   "key": "form-1",
+   "label": "항만출입증 담당자 (광양)",
+   "phone": "061-797-4434",
+   "note": "광양 지역",
+   "doc_ids": [
+    "YGPA-022",
+    "YGPA-023",
+    "YGPA-024",
+    "YGPA-025"
+   ],
+   "source": "서식 게시판 담당 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/mwse/onmw/mwfm/bordContDetail.do?mode=W&bbs_no=211&pst_no=BBS_211_000000000000000000000018",
+   "fetched_on": "2026-09-27"
+  },
+  {
+   "key": "form-2",
+   "label": "항만출입증 담당자 (여수)",
+   "phone": "061-692-4336",
+   "note": "여수 지역",
+   "doc_ids": [
+    "YGPA-022",
+    "YGPA-023",
+    "YGPA-024",
+    "YGPA-025"
+   ],
+   "source": "서식 게시판 담당 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/mwse/onmw/mwfm/bordContDetail.do?mode=W&bbs_no=211&pst_no=BBS_211_000000000000000000000018",
+   "fetched_on": "2026-09-27"
+  },
+  {
+   "key": "form-3",
+   "label": "입출항/항만사용허가 담당자 (광양)",
+   "phone": "061-797-4434",
+   "note": "광양 지역",
+   "doc_ids": [
+    "YGPA-026",
+    "YGPA-027"
+   ],
+   "source": "서식 게시판 담당 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/mwse/onmw/mwfm/bordContDetail.do?mode=W&bbs_no=211&pst_no=BBS_211_000000000000000000000013",
+   "fetched_on": "2026-09-27"
+  },
+  {
+   "key": "form-4",
+   "label": "입출항/항만사용허가 담당자 (여수)",
+   "phone": "061-692-4336",
+   "note": "여수 지역",
+   "doc_ids": [
+    "YGPA-026",
+    "YGPA-027"
+   ],
+   "source": "서식 게시판 담당 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/mwse/onmw/mwfm/bordContDetail.do?mode=W&bbs_no=211&pst_no=BBS_211_000000000000000000000013",
+   "fetched_on": "2026-09-27"
+  },
+  {
+   "key": "form-5",
+   "label": "입출항담당자 (광양)",
+   "phone": "061-797-4434",
+   "note": "광양 지역",
+   "doc_ids": [
+    "YGPA-028",
+    "YGPA-029"
+   ],
+   "source": "서식 게시판 담당 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/mwse/onmw/mwfm/bordContDetail.do?mode=W&bbs_no=211&pst_no=BBS_211_000000000000000000000012",
+   "fetched_on": "2026-09-27"
+  },
+  {
+   "key": "form-6",
+   "label": "입출항담당자 (여수)",
+   "phone": "061-692-4336",
+   "note": "여수 지역",
+   "doc_ids": [
+    "YGPA-028",
+    "YGPA-029"
+   ],
+   "source": "서식 게시판 담당 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/mwse/onmw/mwfm/bordContDetail.do?mode=W&bbs_no=211&pst_no=BBS_211_000000000000000000000012",
+   "fetched_on": "2026-09-27"
+  },
+  {
+   "key": "facility-YGPA-007",
+   "label": "홍보관 문의",
+   "phone": "061-797-4550",
+   "note": null,
+   "doc_ids": [
+    "YGPA-007"
+   ],
+   "source": "안내 페이지 본문",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/comu/resv/prom/contPageDetail.do?conts_no=4A2880C709E0433B90ED90AEF01D0337"
+  },
+  {
+   "key": "facility-YGPA-008",
+   "label": "항만안내선 담당",
+   "phone": "061-797-4438",
+   "note": null,
+   "doc_ids": [
+    "YGPA-008"
+   ],
+   "source": "안내 페이지 본문",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/comu/resv/ship/contPageDetail.do?conts_no=7AFB90C77B4F45B0A0ED114D46DD1E6E"
+  },
+  {
+   "key": "facility-YGPA-005",
+   "label": "체육시설 예약 문의",
+   "phone": "061-793-8270",
+   "note": null,
+   "doc_ids": [
+    "YGPA-005"
+   ],
+   "source": "안내 페이지 본문",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/comu/resv/faci/contPageDetail.do?conts_no=553FFE81A6344CD4987BD450219FDFF8"
+  }
+ ]
+}

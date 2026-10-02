@@ -79,6 +79,22 @@ other = [{"chunk": form | {"chunk_id": "f1"}, "score": 0.6}]
 done = run("서식 있나요?", ["서식이 있습니다[1].", '@@META {"type": "answer", "actions": ["port_mis"], "forms": [1]}'], hits=other)[-1][1]
 assert [a["type"] for a in done["actions"]] == ["download"], done["actions"]
 
+# 2-3. 정리 줄 항목을 본문 줄로 따로 적어도("forms: [1]") 화면에 나가지 않고, 뒤의 @@META를 읽는다. 중국식 마침표는 바꾼다
+ev = run("서식", ["서식이 있습니다[2]。\n", "forms: [2]\n", '@@META {"type": "answer", "forms": [2]}'])
+assert text_of(ev) == "서식이 있습니다[2].", repr(text_of(ev))
+assert [a["type"] for a in ev[-1][1]["actions"]] == ["download"], ev[-1][1]
+assert prompt.parse_meta(' {"type": "clarify", "options": ["a", "b"]} 뒤에 글').kind == "clarify"
+assert prompt.parse_meta(" [1, 2]").kind == "answer"
+
+# 2-4. 날짜를 물었는데 답에 날짜·요일·숫자가 없으면 끝에 안내 + 대표전화. 날짜가 있으면 붙이지 않는다
+ev = run("입주기업 모집 가장 최근이 언제야?", ["모집 절차는 모집, 선정, 계약 순입니다[1].", '@@META {"type": "answer"}'])
+assert text_of(ev).endswith(rag_real.DATE_NOTE) and ev[-1][1]["actions"][-1]["label"] == "여수광양항만공사 대표전화"
+ev = run("홍보관은 언제 열어요?", ["매주 월~금요일에 엽니다[1].", '@@META {"type": "answer"}'])
+assert rag_real.DATE_NOTE not in text_of(ev)
+assert not rag_real.missing_date("며칠 안에 내야 해요?", "출항일로부터 7일 이내[1]")
+assert not rag_real.missing_date("서류가 뭐예요?", "신청서를 냅니다[1]")
+assert rag_real.missing_date("모집 언제야?", "절차입니다[1].\n\n1. 입주기업 모집\n2. 우선협상 대상자 선정")  # 목록 번호는 날짜가 아님
+
 # 2-2. 선택지 없는 되묻기는 일반 답변으로 본다
 assert run("민원 신청", ["답[1]", '@@META {"type": "clarify", "options": []}'])[-1][1]["answer_type"] == "answer"
 
@@ -103,9 +119,22 @@ n = len(calls["chat"])
 assert run("Port-MIS가 뭐예요?", ["정보시스템입니다[1].", '@@META {"type": "answer"}'], hits=term)[-1][1]["answer_type"] == "answer"
 assert len(calls["chat"]) == n + 1
 assert run("BTS 멤버 알려줘", ["부르면 안 됨"], hits=term)[-1][1]["answer_type"] == "unknown"
-# LLM이 근거로 답할 수 없다고 판단해도 근거·버튼을 보여주지 않는다
+# LLM이 근거로 답할 수 없다고 판단하면 근거·링크 대신 대표전화만 보여준다 (조기 판단도 같음)
+MAIN = {"type": "contact", "label": "여수광양항만공사 대표전화", "url": None, "phone": "061-797-4300",
+        "note": "담당 부서를 모를 때", "source_ref": None}
 ev = run("부산항 운영사는?", ["확인이 어렵습니다.", '@@META {"type": "unknown", "actions": ["port_mis"]}'])
-assert ev[-1][1]["answer_type"] == "unknown" and ev[-2][1] == [] and ev[-1][1]["actions"] == []
+assert ev[-1][1]["answer_type"] == "unknown" and ev[-2][1] == [] and ev[-1][1]["actions"] == [MAIN], ev[-1][1]
+assert run("오늘 날씨", ["부르면 안 됨"], hits=[{"chunk": html_text, "score": 0.40}])[-1][1]["actions"] == [MAIN]
+
+# 답에서 인용한 문서에 담당 연락처가 있으면 연락처 버튼 (contacts.json, 같은 이름·번호는 한 번만). 되묻기는 없음
+lost = [{"chunk": form | {"chunk_id": "g1", "doc_id": "YGPA-022", "title": "출입증분실경위서"}, "score": 0.7},
+        {"chunk": form | {"chunk_id": "g2", "doc_id": "YGPA-025", "title": "항만상시출입증발급신청서"}, "score": 0.6}]
+acts = run("출입증 분실", ["경위서를 냅니다[1][2].", '@@META {"type": "answer", "forms": [1]}'], hits=lost)[-1][1]["actions"]
+assert [(a["type"], a["label"], a.get("phone")) for a in acts] == [
+    ("download", "출입증분실경위서(HWP)", None),
+    ("contact", "항만출입증 담당자 (광양)", "061-797-4434"), ("contact", "항만출입증 담당자 (여수)", "061-692-4336")], acts
+assert run("출입증", ["어떤 출입증인가요?", '@@META {"type": "clarify", "options": ["발급", "연장"]}'],
+           hits=lost)[-1][1]["actions"] == []
 
 # 6. 생성 도중 실패 → error 이벤트 (done 없음), 오류 로그
 ev = run("민원 신청 방법", ["회원가입", RuntimeError("터널 끊김")])

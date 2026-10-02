@@ -10,7 +10,7 @@ from app.schemas import Action, Source
 SNIPPET_LEN = 150
 
 # 처리 과정에서 붙인 설명 줄 (사용자에게 보여줄 내용이 아님)
-_META_LINE = re.compile(r"^(행·열 번호는|표 좌표는|표 YGPA-\S+ \(|표 밖 안내:)")
+META_LINE = re.compile(r"^(행·열 번호는|표 좌표는|표 YGPA-\S+ \(|표 밖 안내:)")
 _HTML_CELL = re.compile(r"^- 행 \d+, 열 \d+ \[([^\]]+)\]: ")  # "- 행 2, 열 1 [구분]: 축구장" → "구분: 축구장"
 _HWP_CELL = re.compile(r"^행 \d+~\d+, 열 \d+~\d+: ")  # "행 1~1, 열 1~2: 접수번호" → "접수번호"
 _ARTICLE = re.compile(r"\s*(제\s*\d+\s*조(?:의\s*\d+)?\s*(?:\([^)]{0,40}\))?)")
@@ -52,7 +52,7 @@ def snippet_text(chunk: dict) -> str:
     lines = []
     for i, line in enumerate(chunk["text"].splitlines()):
         line = line.strip()
-        if not line or _META_LINE.match(line) or (i == 0 and line == chunk.get("title")):
+        if not line or META_LINE.match(line) or (i == 0 and line == chunk.get("title")):
             continue
         line = _HWP_CELL.sub("", _HTML_CELL.sub(r"\1: ", line))
         lines.append(line)

@@ -9,7 +9,7 @@ import re
 from typing import NamedTuple
 
 from app.actions import ACTIONS
-from app.sources import locator_text
+from app.sources import META_LINE, locator_text
 
 MARKER = "@@META"
 CHUNK_CHARS = 3000  # 근거 하나당 글자 상한. 5개 + 대화 + 답변이 Qwen 최대 길이(16,384토큰) 안에 들게
@@ -23,7 +23,7 @@ SYSTEM = """당신은 여수광양항만공사(YGPA)의 민원·항만 이용 �
 2. 근거 번호는 내용을 쓴 문장과 목록 항목의 **맨 끝**에 [1] 또는 [1][2]처럼 붙입니다. 모든 문장·항목에 붙이고(이름만 나열하는 목록도 항목마다, 예: "1. 도서 대출 신청서[1]"), 문장 앞("[1]에 따르면")에는 쓰지 않습니다. [근거]에 없는 번호는 쓰지 않습니다.
 3. 형식: 요약 한두 문장 → 빈 줄 → 절차가 있으면 "1." 번호 목록. 목록은 한 단계만 쓰고 하위 목록은 쓰지 않습니다. **굵게**까지만 쓰고 표·구분선(---)·HTML·링크 문법은 쓰지 않습니다.
 4. URL·웹 주소·전화번호·이메일을 본문에 쓰지 않습니다. 링크와 서식 파일은 화면에 버튼으로 따로 제공됩니다. 정리 줄의 actions 이름도 본문에 쓰지 않습니다.
-5. 근거로 답할 수 없으면 추측하지 말고 "확인한 공식 자료만으로는 답을 확정하기 어렵습니다. 담당 부서에 문의해 주세요."라고만 답합니다.
+5. 근거로 답할 수 없으면 추측하지 말고 "확인한 공식 자료만으로는 답을 확정하기 어렵습니다. 담당 부서를 모르시면 아래 대표전화로 문의해 주세요."라고만 답합니다. 담당 부서·연락처를 물었는데 [근거]에 없을 때도 같습니다.
 6. 되묻기: 답하기 전에 [근거] 제목들을 보고 질문의 대상이 하나로 정해지는지 확인합니다. 질문에 시설·서류·업무 이름이 없고 [근거]에 서로 다른 대상이 둘 이상 있으면(예: "사용료"에 체육시설 사용료와 항만시설 사용료, "출입증 신청"에 새 발급·기간 연장·분실) 한쪽을 골라 답하거나 "확인 불가"로 답하지 말고, 어느 경우인지 묻는 한 문장만 쓰고 선택지를 options에 2~4개 넣습니다. 질문에 대상이 분명하면 되묻지 않습니다.
 7. 존댓말로 간결하게 답합니다.
 8. 관련 근거에 이용 제한·중단·휴관·예약 불가 같은 공지(예: "경보 해제 시까지 예약이 제한됨")가 있으면, 절차보다 먼저 답의 첫 문장에서 그 사실을 알립니다.
@@ -71,7 +71,9 @@ def evidence(hits: list[dict]) -> str:
         c = h["chunk"]
         date = f" (수정일 {c['updated_at']})" if c.get("updated_at") else ""
         limit = int(os.getenv("RAG_CHUNK_CHARS", CHUNK_CHARS))  # 실험용 조정값
-        text = c["text"] if len(c["text"]) <= limit else c["text"][:limit] + " …(이하 생략)"
+        # 처리 과정에서 붙인 설명 줄(표 번호 YGPA-…-T001, 좌표 안내)은 빼고 보낸다: 답에 내부 번호가 새어 나오고 읽을 양만 는다
+        text = "\n".join(line for line in c["text"].splitlines() if not META_LINE.match(line.strip()))
+        text = text if len(text) <= limit else text[:limit] + " …(이하 생략)"
         blocks.append(f"[{i}] {c['title']} · {locator_text(c)}{date}\n{text.strip()}")
     return "\n\n".join(blocks)
 
@@ -99,8 +101,12 @@ def build_messages(messages, hits: list[dict]) -> list[dict]:
     return [{"role": "system", "content": system_prompt()}, *history, {"role": "user", "content": question}]
 
 
+# 정리 줄 시작 표식. LLM이 가끔 "@@META" 앞에 "forms: [1]"처럼 항목을 본문 줄로 따로 적어 그것도 표식으로 본다
+MARKERS = (MARKER, "\nforms:", "\nactions:", "\noptions:", "\ntype:")
+
+
 class MetaFilter:
-    """스트림에서 @@META 이후를 걸러 낸다. 표시 조각이 표식의 앞부분일 수 있으면 다음 조각까지 잠시 붙잡는다"""
+    """스트림에서 정리 줄 표식 이후를 걸러 낸다. 표시 조각이 표식의 앞부분일 수 있으면 다음 조각까지 잠시 붙잡는다"""
 
     def __init__(self):
         self.buffer, self.meta, self.found = "", "", False
@@ -110,11 +116,13 @@ class MetaFilter:
             self.meta += text
             return ""
         self.buffer += text
-        if (i := self.buffer.find(MARKER)) >= 0:
-            out, self.meta, self.found, self.buffer = self.buffer[:i], self.buffer[i + len(MARKER):], True, ""
+        hits = [(i, m) for m in MARKERS if (i := self.buffer.find(m)) >= 0]
+        if hits:
+            i, m = min(hits)
+            out, self.meta, self.found, self.buffer = self.buffer[:i], self.buffer[i:], True, ""
             return out
-        keep = next((n for n in range(min(len(MARKER) - 1, len(self.buffer)), 0, -1)
-                     if self.buffer.endswith(MARKER[:n])), 0)
+        keep = max((n for m in MARKERS for n in range(min(len(m) - 1, len(self.buffer)), 0, -1)
+                    if self.buffer.endswith(m[:n])), default=0)
         out, self.buffer = self.buffer[:len(self.buffer) - keep], self.buffer[len(self.buffer) - keep:]
         return out
 
@@ -132,9 +140,11 @@ class Meta(NamedTuple):
 
 def parse_meta(meta: str) -> Meta:
     """형식이 깨지면 일반 답변 (버튼 없음)"""
-    try:
-        data = json.loads(meta.strip().splitlines()[0])
-    except (ValueError, IndexError):
+    try:  # 표식 뒤 첫 JSON 객체 ("forms: [1]" 같은 줄이 앞에 있어도 @@META {...}를 찾는다)
+        data, _ = json.JSONDecoder().raw_decode(meta[meta.index("{"):])
+        if not isinstance(data, dict):
+            return Meta()
+    except ValueError:
         return Meta()
     kind = data.get("type") if data.get("type") in ("answer", "clarify", "unknown") else "answer"
     options = [o.strip() for o in data.get("options") or [] if isinstance(o, str) and 0 < len(o.strip()) <= 50]

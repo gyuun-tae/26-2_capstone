@@ -78,6 +78,7 @@ async def run_one(item: dict) -> dict:
         found.remove("url_or_phone")
     downloads = [result.sources[a.source_ref - 1].doc_id for a in result.actions if a.type == "download"]
     port_mis = any(a.url == PORT_MIS.url for a in result.actions)
+    contacts = [f"{a.label} {a.phone}" for a in result.actions if a.type == "contact"]
 
     checks = {"type": result.answer_type in item["expect_type"]}
     if item["expect_docs"]:
@@ -86,11 +87,13 @@ async def run_one(item: dict) -> dict:
     if item.get("must_mention"):  # 꼭 알려야 하는 내용 (예: 이용 제한 공지)
         checks["mention"] = all(any(alt in text for alt in word.split("|")) for word in item["must_mention"])  # "a|b" = 둘 중 하나
     allowed = set(item["forms_allowed"]) | set(item["forms_required"])
+    if result.answer_type == "unknown":  # 확인 불가면 대표전화 버튼으로 다음 행동을 안내해야 한다
+        checks["contact"] = any("대표전화" in c for c in contacts)
     checks["buttons"] = (set(item["forms_required"]) <= set(downloads) and set(downloads) <= allowed
                          and (item["port_mis"] is None or port_mis == item["port_mis"]))
     return {"id": item["id"], "group": item["group"], "question": item["question"], "answer_type": result.answer_type,
             "top1_score": round(hits[0]["score"], 3) if hits else None, "top_docs": docs, "downloads": downloads,
-            "port_mis": port_mis, "options": [o.label for o in result.options], "uncited_lines": len(uncited_lines(text)),
+            "port_mis": port_mis, "contacts": contacts, "options": [o.label for o in result.options], "uncited_lines": len(uncited_lines(text)),
             "violations": found, "contacts_from_evidence": len(contacts) - len(unverified), "unsupported_numbers": numbers,
             "first_token_s": round(first or total, 2), "total_s": round(total, 2), "checks": checks, "answer": text.strip()}
 
@@ -103,7 +106,7 @@ def summarize(rows: list[dict]) -> dict:
     groups = sorted({r["group"] for r in rows})
     firsts = [r["first_token_s"] for r in rows]
     return {
-        "retrieval": rate("retrieval"), "retrieval@1": rate("retrieval@1"), "type": rate("type"), "buttons": rate("buttons"), "mention": rate("mention"),
+        "retrieval": rate("retrieval"), "retrieval@1": rate("retrieval@1"), "type": rate("type"), "buttons": rate("buttons"), "mention": rate("mention"), "contact": rate("contact"),
         "type_by_group": {g: rate("type", [r for r in rows if r["group"] == g]) for g in groups},
         "uncited_lines_total": sum(r["uncited_lines"] for r in rows if r["answer_type"] == "answer"),
         "violations_total": sum(len(r["violations"]) for r in rows),

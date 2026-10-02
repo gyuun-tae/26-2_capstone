@@ -1,0 +1,276 @@
+{
+ "dataset": "dev_questions_v3.jsonl",
+ "index_version": "bge-m3-dense-d67237d5942d",
+ "run_at": "2026-10-02T14:56:57.410640+00:00",
+ "summary": {
+  "retrieval": "5/5",
+  "retrieval@1": "5/5",
+  "type": "7/7",
+  "buttons": "5/7",
+  "mention": "0/1",
+  "contact": "1/1",
+  "type_by_group": {
+   "answer": "2/2",
+   "followup": "1/1",
+   "hard": "4/4"
+  },
+  "uncited_lines_total": 1,
+  "violations_total": 0,
+  "unsupported_numbers_total": 0,
+  "first_token_s": {
+   "mean": 2.64,
+   "median": 2.57,
+   "max": 3.99
+  }
+ },
+ "rows": [
+  {
+   "id": "a13",
+   "group": "answer",
+   "question": "출입증 잃어버렸는데 뭐 써서 내야 돼요?",
+   "answer_type": "answer",
+   "top1_score": 0.591,
+   "top_docs": [
+    "YGPA-022",
+    "YGPA-025",
+    "YGPA-023",
+    "YGPA-024",
+    "YGPA-031"
+   ],
+   "downloads": [
+    "YGPA-022"
+   ],
+   "port_mis": false,
+   "contacts": [
+    "항만출입증 담당자 (광양) 061-797-4434",
+    "항만출입증 담당자 (여수) 061-692-4336"
+   ],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 2,
+   "unsupported_numbers": [],
+   "first_token_s": 3.83,
+   "total_s": 5.65,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "buttons": true
+   },
+   "answer": "출입증을 분실한 경우, 「출입증분실경위서」를 작성하여 제출해야 합니다[1].\n\n1. 분실(훼손) 경위를 6하 원칙(6W: What, When, Where, Who, Why, How)에 따라 상세히 기재합니다[1]\n2. 분실 책임에 대한 서약을 합니다[1]\n3. 상시출입증인 경우, 업체 대표자의 확인서를 함께 제출합니다[1]"
+  },
+  {
+   "id": "a14",
+   "group": "answer",
+   "question": "상시출입증 기간이 곧 끝나는데 연장은 어떻게 해요?",
+   "answer_type": "answer",
+   "top1_score": 0.631,
+   "top_docs": [
+    "YGPA-024",
+    "YGPA-025",
+    "YGPA-030",
+    "YGPA-031",
+    "YGPA-032"
+   ],
+   "downloads": [
+    "YGPA-024"
+   ],
+   "port_mis": false,
+   "contacts": [
+    "항만출입증 담당자 (광양) 061-797-4434",
+    "항만출입증 담당자 (여수) 061-692-4336"
+   ],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 2,
+   "unsupported_numbers": [],
+   "first_token_s": 1.32,
+   "total_s": 3.23,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "buttons": true
+   },
+   "answer": "항만상시출입증 기간을 연장하려면 \"항만 상시출입증 기간연장 신청서\"를 작성하여 제출해야 합니다[1].\n\n1. \"항만 상시출입증 기간연장 신청서\"를 작성합니다[1]\n2. 신청서에 인원 및 차량 정보를 기재합니다[1]\n3. 업체 정보와 대표자 서명을 입력합니다[1]\n4. 여수광양항만공사에 제출합니다[1]"
+  },
+  {
+   "id": "h15",
+   "group": "hard",
+   "question": "출입즘 잃어버렸어요 어케해요",
+   "answer_type": "answer",
+   "top1_score": 0.507,
+   "top_docs": [
+    "YGPA-022",
+    "YGPA-005",
+    "YGPA-025",
+    "YGPA-023",
+    "YGPA-031"
+   ],
+   "downloads": [
+    "YGPA-022"
+   ],
+   "port_mis": false,
+   "contacts": [
+    "항만출입증 담당자 (광양) 061-797-4434",
+    "항만출입증 담당자 (여수) 061-692-4336"
+   ],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 2,
+   "unsupported_numbers": [],
+   "first_token_s": 2.33,
+   "total_s": 4.17,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "buttons": true
+   },
+   "answer": "출입증을 분실한 경우, 분실 경위서와 업체(단체) 대표의 확인서를 3일 이내에 제출해야 합니다[3].\n\n1. 출입증분실경위서를 작성합니다[1]\n2. 상시출입증의 경우, 업체 대표자의 확인서를 함께 제출합니다[1]\n3. 분실 경위서와 확인서를 여수광양항만공사에 제출합니다[3]"
+  },
+  {
+   "id": "h16",
+   "group": "hard",
+   "question": "출입증 기한 지나기 전에 연장 신청하는 양식 있나요?",
+   "answer_type": "answer",
+   "top1_score": 0.661,
+   "top_docs": [
+    "YGPA-024",
+    "YGPA-025",
+    "YGPA-030",
+    "YGPA-030",
+    "YGPA-028"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [
+    "항만출입증 담당자 (광양) 061-797-4434",
+    "항만출입증 담당자 (여수) 061-692-4336"
+   ],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 2,
+   "unsupported_numbers": [],
+   "first_token_s": 1.37,
+   "total_s": 2.0,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "buttons": false
+   },
+   "answer": "항만 상시출입증 기간이 지나기 전에 연장 신청할 수 있는 양식은 [1] 항만 상시출입증 기간연장 신청서입니다."
+  },
+  {
+   "id": "h18",
+   "group": "hard",
+   "question": "상시출입증 새로 발급할 때랑 기간 연장할 때 내는 서류가 달라요?",
+   "answer_type": "answer",
+   "top1_score": 0.626,
+   "top_docs": [
+    "YGPA-024",
+    "YGPA-025",
+    "YGPA-023",
+    "YGPA-028",
+    "YGPA-027"
+   ],
+   "downloads": [
+    "YGPA-024",
+    "YGPA-025",
+    "YGPA-023",
+    "YGPA-028",
+    "YGPA-027"
+   ],
+   "port_mis": false,
+   "contacts": [
+    "항만출입증 담당자 (광양) 061-797-4434",
+    "항만출입증 담당자 (여수) 061-692-4336",
+    "입출항담당자 (광양) 061-797-4434",
+    "입출항담당자 (여수) 061-692-4336",
+    "입출항/항만사용허가 담당자 (광양) 061-797-4434",
+    "입출항/항만사용허가 담당자 (여수) 061-692-4336"
+   ],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 6,
+   "unsupported_numbers": [],
+   "first_token_s": 2.57,
+   "total_s": 5.94,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "buttons": false
+   },
+   "answer": "상시출입증을 새로 발급받을 때는 [2] 항만상시출입증발급신청서, [3] 항만시설출입업체등록신청서, [4] 통과선박 인정 신청서, [5] 항만시설사용신청서양식(202106) 등을 제출해야 합니다. 기간 연장 신청은 [1] 항만 상시출입증 기간연장 신청서를 제출하면 됩니다.\n\n1. 신규 발급 시에는 본인 서약서, 재직증명서, 개인정보 수집·이용 및 제3자 제공 동의서 등을 포함한 서류를 제출합니다[2][3][4][5].\n2. 기간 연장 신청은 기존 출입증 정보를 기반으로 신청서를 작성하여 제출하면 됩니다[1]."
+  },
+  {
+   "id": "h25",
+   "group": "hard",
+   "question": "입주기업 모집 가장 최근이 언제야?",
+   "answer_type": "answer",
+   "top1_score": 0.525,
+   "top_docs": [
+    "YGPA-019",
+    "YGPA-020",
+    "YGPA-021",
+    "YGPA-023",
+    "YGPA-032"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 1,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 3.99,
+   "total_s": 4.15,
+   "checks": {
+    "type": true,
+    "mention": false,
+    "buttons": true
+   },
+   "answer": "[근거]에 입주기업 모집의 가장 최근 날짜에 대한 정보는 없습니다."
+  },
+  {
+   "id": "h26",
+   "group": "followup",
+   "question": "담당 부서가 어디야?",
+   "answer_type": "unknown",
+   "top1_score": 0.541,
+   "top_docs": [
+    "YGPA-019",
+    "YGPA-023",
+    "YGPA-020",
+    "YGPA-021",
+    "YGPA-025"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [
+    "여수광양항만공사 대표전화 061-797-4300"
+   ],
+   "options": [],
+   "uncited_lines": 1,
+   "violations": [],
+   "contacts_from_evidence": 1,
+   "unsupported_numbers": [],
+   "first_token_s": 3.06,
+   "total_s": 3.56,
+   "checks": {
+    "type": true,
+    "contact": true,
+    "buttons": true
+   },
+   "answer": "확인한 공식 자료만으로는 답을 확정하기 어렵습니다. 담당 부서를 모르시면 아래 대표전화로 문의해 주세요."
+  }
+ ]
+}
