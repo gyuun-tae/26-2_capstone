@@ -9,7 +9,7 @@
 | 소프트웨어 | Python 3.12, uv, vLLM 0.30.0, PyTorch 2.13.0+cu130 (`~/llm-serve/.venv`) |
 | 모델 | 생성 `Qwen/Qwen3-32B-AWQ` (4bit, 이름 `qwen3-32b`) · 임베딩 `BAAI/bge-m3` @ `5617a9f6` (이름 `bge-m3`) |
 | GPU 배정 | 1번 = Qwen3-32B, 0번 = BGE-M3 |
-| 주소 | 생성 `127.0.0.1:8100`, 임베딩 `127.0.0.1:8101` (서버 안에서만 접속). 외부 연결은 터널로 별도 구성 예정 |
+| 주소 | 생성 `127.0.0.1:8100`, 임베딩 `127.0.0.1:8101` (서버 안에서만 접속). 외부(Render)는 관문 `127.0.0.1:8200` → 터널 주소로만 접속 |
 | 인증 | `~/llm-serve/.api_key` (권한 600). 내용을 저장소·채팅에 올리지 않는다 |
 
 ## 처음 설치 (관리자 권한 불필요, 홈 폴더 안)
@@ -28,7 +28,7 @@ hf download Qwen/Qwen3-32B-AWQ
 ```bash
 cd ~/llm-serve
 R=https://raw.githubusercontent.com/gyuun-tae/26-2_capstone/main/infra/gpu_server
-curl -fsSO $R/start_qwen.sh && curl -fsSO $R/start_bge.sh && curl -fsSO $R/check_embedding.py   # 스크립트 받기
+for f in start_qwen.sh start_bge.sh start_gateway.sh start_tunnel.sh gateway.py check_embedding.py check_gateway.py; do curl -fsSO $R/$f; done   # 스크립트 받기
 bash start_qwen.sh                 # 생성 (세션 qwen, 로그 vllm.log). READY가 나오면 준비 완료
 bash start_bge.sh                  # 임베딩 (세션 bge, 로그 bge.log)
 tmux attach -t qwen                # 실행 화면 보기 (나올 때 Ctrl+B 다음 D)
@@ -50,6 +50,29 @@ curl -s localhost:8100/v1/chat/completions -H "Authorization: Bearer $(cat ~/llm
 ```bash
 python3 check_embedding.py bge_m3_check.json   # 모든 항목 코사인 0.999 이상이면 "결과: 일치"
 ```
+
+## 외부 연결: 관문 + 터널
+
+```text
+Render ──https──▶ Cloudflare 임시 터널 ──▶ 관문 gateway.py (8200) ──▶ Qwen (8100) / BGE-M3 (8101)
+```
+
+| 관문이 하는 일 | 이유 |
+|---|---|
+| `Authorization: Bearer <.api_key>`가 맞아야 통과 | vLLM의 `--api-key`는 `/v1/...`만 검사해 `/tokenize`·`/metrics` 등이 키 없이 열린다 |
+| `POST /v1/embeddings`(모델 `bge-m3`), `POST /v1/chat/completions`(모델 `qwen3-32b`), `GET /health`만 허용 | 나머지 주소·문서 페이지는 404 |
+| 요청 1MB, 답변 2,048토큰 상한 | 큰 요청으로 GPU를 붙잡지 못하게 |
+| 스트리밍 답변을 SSE 대신 **NDJSON**(한 줄에 JSON 하나, `application/x-ndjson`)으로 전달 | [Cloudflare 임시 터널은 SSE를 지원하지 않음](https://developers.cloudflare.com/cloudflare-one/networks/connectors/cloudflare-tunnel/do-more-with-tunnels/trycloudflare/). 각 줄은 vLLM SSE의 `data:` 내용 그대로 |
+
+```bash
+bash start_gateway.sh              # 관문 (세션 gateway, 로그 gateway.log). Qwen·BGE-M3를 먼저 켠다
+bash start_tunnel.sh               # 터널 (세션 tunnel, 로그 tunnel.log). cloudflared를 ~/bin에 받고 주소를 tunnel_url에 저장
+python3 check_gateway.py           # 터널 주소로 키 검사·막힌 주소·임베딩·스트리밍 확인
+```
+
+- 임시 터널은 **다시 켤 때마다 주소가 바뀐다** → Render Environment의 `GPU_URL`을 새 주소로 고치고 재배포. 가동 보장이 없는 개발·시험용이다.
+- 고정 주소가 필요해지면 도메인 + Cloudflare 정식 터널 또는 ngrok으로 바꾼다 (관문은 그대로).
+- 끄기: `tmux kill-session -t tunnel; tmux kill-session -t gateway`
 
 ## 알려진 문제
 

@@ -1,0 +1,94 @@
+"""GPU 서버 관문: 터널 밖(Render)에서 들어오는 요청을 검사해 vLLM 두 개로 전달한다.
+
+- API 키(~/llm-serve/.api_key)가 맞아야 통과. vLLM은 /v1/... 만 키를 검사하므로 vLLM 포트를 직접 내보내지 않는다.
+- 허용: POST /v1/embeddings → BGE-M3(8101), POST /v1/chat/completions → Qwen(8100), GET /health
+- Cloudflare 임시 터널은 SSE를 지원하지 않으므로, 스트리밍 답변은 SSE 대신 한 줄에 JSON 하나(NDJSON)로 보낸다.
+실행: start_gateway.sh (tmux 세션 gateway, 127.0.0.1:8200)
+"""
+import hmac
+import json
+import os
+from pathlib import Path
+
+import httpx
+from fastapi import FastAPI, HTTPException, Request
+from fastapi.responses import JSONResponse, Response, StreamingResponse
+
+KEY = os.getenv("GATEWAY_API_KEY") or (Path.home() / "llm-serve/.api_key").read_text().strip()
+UPSTREAM = {
+    "/v1/embeddings": os.getenv("BGE_URL", "http://127.0.0.1:8101"),
+    "/v1/chat/completions": os.getenv("QWEN_URL", "http://127.0.0.1:8100"),
+}
+MODELS = {"/v1/embeddings": "bge-m3", "/v1/chat/completions": "qwen3-32b"}
+MAX_BODY = 1_000_000  # 근거 5개 + 대화를 넣어도 수십 KB. 큰 요청으로 GPU를 붙잡지 못하게 막는다
+MAX_TOKENS = 2048  # 답변 길이 상한
+
+app = FastAPI(docs_url=None, redoc_url=None, openapi_url=None)  # 문서 페이지도 열지 않는다
+client = httpx.AsyncClient(timeout=httpx.Timeout(120, connect=5))
+
+
+def sse_to_ndjson(line: str) -> str | None:
+    """vLLM SSE 한 줄 → NDJSON 한 줄. 'data: [DONE]'과 빈 줄은 버린다"""
+    if not line.startswith("data:"):
+        return None
+    data = line.removeprefix("data:").strip()
+    return None if data in ("", "[DONE]") else data + "\n"
+
+
+def check_body(path: str, body: dict) -> dict:
+    if body.get("model") != MODELS[path]:
+        raise HTTPException(400, f"model은 {MODELS[path]}만 허용")
+    if path == "/v1/chat/completions":
+        body["max_tokens"] = min(int(body.get("max_tokens") or MAX_TOKENS), MAX_TOKENS)
+    return body
+
+
+@app.get("/health")
+async def health():
+    """키 없이 열어 두되, 살아 있는지만 알려 준다"""
+    status = {}
+    for name, url in (("bge", UPSTREAM["/v1/embeddings"]), ("qwen", UPSTREAM["/v1/chat/completions"])):
+        try:
+            status[name] = (await client.get(f"{url}/health", timeout=3)).status_code == 200
+        except httpx.HTTPError:
+            status[name] = False
+    return JSONResponse(status, status_code=200 if all(status.values()) else 503)
+
+
+@app.post("/v1/embeddings")
+@app.post("/v1/chat/completions")
+async def forward(request: Request):
+    if not hmac.compare_digest(request.headers.get("authorization", ""), f"Bearer {KEY}"):
+        raise HTTPException(401, "API 키가 필요합니다")
+    raw = await request.body()
+    if len(raw) > MAX_BODY:
+        raise HTTPException(413, "요청이 너무 큽니다")
+    try:
+        body = json.loads(raw)
+    except ValueError:
+        raise HTTPException(400, "JSON 형식이 아닙니다")
+    path = request.url.path
+    body = check_body(path, body)
+    upstream = httpx.Request("POST", UPSTREAM[path] + path, json=body, headers={"Authorization": f"Bearer {KEY}"})
+
+    if not body.get("stream"):
+        r = await client.send(upstream)
+        return Response(r.content, status_code=r.status_code, media_type="application/json")
+
+    r = await client.send(upstream, stream=True)
+    if r.status_code != 200:  # vLLM 오류(예: 입력이 너무 김)는 그대로 전달
+        content = await r.aread()
+        await r.aclose()
+        return Response(content, status_code=r.status_code, media_type="application/json")
+
+    async def lines():
+        try:
+            async for line in r.aiter_lines():
+                if (out := sse_to_ndjson(line)) is not None:
+                    yield out
+        finally:
+            await r.aclose()  # Render가 끊으면 vLLM 생성도 멈춘다
+
+    # 버퍼링하지 말라는 표시: 프록시·터널이 모아 보내지 않게
+    return StreamingResponse(lines(), media_type="application/x-ndjson",
+                             headers={"Cache-Control": "no-cache", "X-Accel-Buffering": "no"})
