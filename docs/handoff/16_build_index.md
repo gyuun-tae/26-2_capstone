@@ -42,5 +42,5 @@ uv pip install --python .venv\Scripts\python.exe -r requirements-index.txt
 ## 운영으로 옮길 때
 
 - 질의도 같은 모델(같은 revision)로 벡터화해야 한다. 실행 방식 B(Render + GPU 서버)에서는 GPU 서버가 임베딩을 맡는다.
-- 저장소는 제안서 4.5절(Neon PostgreSQL + pgvector)로 옮긴다. 이 폴더의 `chunks.jsonl`·`vectors.npy`를 그대로 넣으면 된다.
+- 저장소는 제안서 4.5절(Neon PostgreSQL + pgvector)로 옮긴다 → [18번](18_load_pgvector.md)이 이 폴더의 `chunks.jsonl`·`vectors.npy`를 그대로 넣는다.
 - 승인 목록이 확정되면 승인된 청크만으로 새 색인 버전을 만든다.

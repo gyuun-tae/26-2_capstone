@@ -21,6 +21,7 @@
 | 15 | 첨부 조문·서식 청킹 | [실행 파일](../../scripts/15_chunk_attachments.py) | [15_chunk_attachments.md](15_chunk_attachments.md) |
 | 16 | 개발용 dense 색인 (BGE-M3) | [실행 파일](../../scripts/16_build_index.py) | [16_build_index.md](16_build_index.md) |
 | 17 | 개발용 검색 기준선 측정 | [실행 파일](../../scripts/17_search_eval.py) | [17_search_eval.md](17_search_eval.md) |
+| 18 | 색인을 Neon pgvector에 넣기·검증 | [실행 파일](../../scripts/18_load_pgvector.py) | [18_load_pgvector.md](18_load_pgvector.md) |
 
 08의 겹친 글자 후속 검토는 [보충 문서](08_restore_tables_remaining_controls.md)를 참고합니다. 테스트 파일은 unittest 발견 규칙인 `test_*.py`를 유지합니다. 숫자로 시작하는 실행 파일은 일반 import 문법에 맞지 않으므로 코드 내부는 명시적 `__import__`로 연결합니다. 처리 버전·청크 ID·출력 경로·원본 데이터는 바꾸지 않았습니다.
 
