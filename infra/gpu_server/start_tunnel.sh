@@ -19,4 +19,9 @@ for _ in $(seq 30); do
   URL=$(grep -o 'https://[a-z0-9-]*\.trycloudflare\.com' tunnel.log | head -1 || true)
   [ -n "$URL" ] && break; sleep 1
 done
-[ -n "${URL:-}" ] && { echo "$URL" > tunnel_url; echo "터널 주소: $URL"; } || { echo "주소를 받지 못했습니다:"; tail -8 tunnel.log; exit 1; }
+[ -n "${URL:-}" ] || { echo "주소를 받지 못했습니다:"; tail -8 tunnel.log; exit 1; }
+echo "$URL" > tunnel_url
+echo "터널 주소: $URL (연결 확인 중, 최대 1분)"
+# 주소가 먼저 나오고 연결·DNS 등록은 몇 초~수십 초 뒤에 끝난다. 바로 접속하면 'Name or service not known'
+for _ in $(seq 30); do curl -sf --max-time 5 "$URL/health" >/dev/null && { echo READY; exit 0; }; sleep 2; done
+echo "터널 주소로 접속되지 않습니다 (이 서버의 DNS가 아직 모를 수 있음). 잠시 뒤 python3 check_gateway.py를 다시 실행하세요."
