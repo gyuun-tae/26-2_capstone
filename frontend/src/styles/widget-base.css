@@ -1,0 +1,68 @@
+/*
+ * 위젯 Shadow DOM 기본 스타일.
+ * 호스트 홈페이지의 전역 초기화(html{line-height:1}, button{background:none;padding:0} 등)는
+ * Shadow DOM 경계를 넘지 못하지만, 상속 속성(color, line-height 등)은 넘어온다.
+ * 그래서 루트에서 상속값을 다시 잡고, 모든 규칙은 루트 클래스 아래로 한정해
+ * 호스트 페이지로 새지 않게 한다. 초기화 규칙은 :where()로 우선순위를 0으로 두어
+ * 컴포넌트 CSS Module 규칙이 항상 이기게 한다.
+ */
+@import './tokens.css';
+
+.ygpa-widget-root {
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-size: var(--fs-base);
+  font-style: normal;
+  font-weight: 400;
+  line-height: var(--lh-body);
+  letter-spacing: normal;
+  text-align: left;
+  text-shadow: none;
+  text-transform: none;
+  white-space: normal;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+  -webkit-font-smoothing: antialiased;
+}
+
+:where(.ygpa-widget-root) *,
+:where(.ygpa-widget-root) *::before,
+:where(.ygpa-widget-root) *::after {
+  box-sizing: border-box;
+}
+
+:where(.ygpa-widget-root) :where(button, input, textarea) {
+  font: inherit;
+  color: inherit;
+}
+
+:where(.ygpa-widget-root) :where(button) {
+  cursor: pointer;
+}
+
+:where(.ygpa-widget-root) :focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+:where(.ygpa-widget-root) .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :where(.ygpa-widget-root) *,
+  :where(.ygpa-widget-root) *::before,
+  :where(.ygpa-widget-root) *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

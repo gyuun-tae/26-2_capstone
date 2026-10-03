@@ -1,0 +1,277 @@
+/* ── 런처 (Figma 01) ───────────────────── */
+
+.launcher {
+  position: fixed;
+  right: calc(var(--widget-gap) + var(--vv-right-gap, 0px));
+  bottom: calc(var(--widget-gap) + var(--vv-bottom-gap, 0px));
+  z-index: 2147483000;
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  padding: 0;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-launcher);
+  transition: transform var(--duration-fast) var(--ease-out), box-shadow var(--duration-fast);
+}
+
+.launcher:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgb(15 30 60 / 0.26);
+}
+
+.launcher:active {
+  transform: scale(0.96);
+}
+
+/* ── 패널 셸 ───────────────────────────── */
+
+.panel {
+  position: fixed;
+  right: calc(var(--widget-gap) + var(--vv-right-gap, 0px));
+  bottom: calc(var(--widget-gap) + var(--vv-bottom-gap, 0px));
+  z-index: 2147483000;
+  display: flex;
+  flex-direction: column;
+  /* --panel-w/--panel-h: 사용자가 조절한 크기(ResizeHandles). 없으면 기본값, 화면보다 커지지 않게 제한 */
+  width: min(var(--panel-w, var(--panel-compact-width)), calc(var(--vv-width, 100vw) - 2 * var(--widget-gap)));
+  height: min(var(--panel-h, var(--panel-max-height)), calc(var(--vv-height, 100dvh) - 2 * var(--widget-gap)));
+  overflow: hidden;
+  border-radius: var(--radius-xl);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-panel);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-size: var(--fs-base);
+  line-height: var(--lh-body);
+  transform-origin: bottom right;
+  animation: panel-in var(--duration-base) var(--ease-out);
+}
+
+.panel[data-resizing] {
+  user-select: none;
+}
+
+@keyframes panel-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+}
+
+.expanded {
+  left: 0;
+  right: 0;
+  width: min(var(--panel-w, var(--panel-expanded-width)), calc(var(--vv-width, 100vw) - 2 * var(--widget-gap)));
+  margin-inline: auto;
+  transform-origin: bottom center;
+}
+
+/* ── 헤더 ─────────────────────────────── */
+
+.header {
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  height: var(--panel-header-height);
+  padding: 0 16px 0 20px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.expanded .header {
+  padding: 0 24px;
+}
+
+.title {
+  margin: 0;
+  font-size: var(--fs-2xl);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+
+.brand {
+  color: var(--color-primary);
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.iconButton {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface-muted);
+  color: var(--color-text-secondary);
+  transition: background-color var(--duration-fast);
+}
+
+.iconButton:hover {
+  background: var(--color-surface-sunken);
+}
+
+.collapseButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  min-height: 36px;
+  padding: 0 14px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  font-size: var(--fs-lg);
+  font-weight: 700;
+}
+
+.collapseButton:hover {
+  background: var(--color-surface-muted);
+}
+
+.textLink {
+  min-height: 32px;
+  padding: 0 4px;
+  border: 0;
+  border-radius: var(--radius-xs);
+  background: none;
+  color: var(--color-text-secondary);
+  font-size: var(--fs-md);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.textLink:hover {
+  color: var(--color-text);
+}
+
+/* ── 본문 ─────────────────────────────── */
+
+.body {
+  position: relative;
+  display: flex;
+  flex: 1;
+  min-height: 0;
+  /* 근거 패널이 패널 폭에 따라 나란히/덮기를 고르도록 컨테이너로 지정 */
+  container-type: inline-size;
+}
+
+.main {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.scroll {
+  flex: 1;
+  min-height: 0;
+  padding: 16px 20px 20px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.expanded .scroll {
+  padding: 24px;
+}
+
+.content {
+  width: 100%;
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+}
+
+.contentFull {
+  max-width: none;
+}
+
+/* ── 하단 입력 ─────────────────────────── */
+
+.footer {
+  flex: none;
+  padding: 12px 20px 8px;
+  border-top: 1px solid var(--color-border);
+  background: var(--color-surface);
+}
+
+.expanded .footer {
+  padding: 16px 24px 8px;
+  background: var(--color-surface-muted);
+}
+
+.footerRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.privacy {
+  margin: 0;
+  color: var(--color-text-tertiary);
+  font-size: var(--fs-xs);
+}
+
+.mobileOnly {
+  display: none;
+}
+
+/* ── 모바일: 전체 화면 ─────────────────── */
+
+@media (max-width: 640px) {
+  .desktopOnly {
+    display: none;
+  }
+
+  .mobileOnly {
+    display: grid;
+  }
+
+  .launcher {
+    right: calc(16px + var(--vv-right-gap, 0px));
+    bottom: calc(16px + var(--vv-bottom-gap, 0px));
+  }
+
+  .panel,
+  .expanded {
+    inset: auto;
+    top: var(--vv-top, 0px);
+    left: var(--vv-left, 0px);
+    width: var(--vv-width, 100%);
+    height: var(--vv-height, 100dvh);
+    margin: 0;
+    border-radius: 0;
+    animation-name: sheet-up;
+  }
+
+  @keyframes sheet-up {
+    from {
+      transform: translateY(24px);
+      opacity: 0;
+    }
+  }
+
+  .header,
+  .expanded .header {
+    padding: 0 12px 0 16px;
+  }
+
+  .scroll,
+  .expanded .scroll {
+    padding: 16px;
+  }
+
+  .footer,
+  .expanded .footer {
+    padding: 10px 16px calc(6px + env(safe-area-inset-bottom));
+  }
+}
