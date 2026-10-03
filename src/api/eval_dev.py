@@ -9,6 +9,7 @@
 - 유형: answer/clarify/unknown이 허용 목록에 있는가
 - 버튼: 필수 서식이 모두 있고, 허용 밖 서식이 없고, Port-MIS 여부가 맞는가 (port_mis가 null이면 상관없음)
 - 언급: must_mention의 단어가 답에 모두 있는가 (예: 이용 제한 공지)
+- 첫 문단: must_not_lead의 단어가 답의 첫 문단에 없는가 (예: 일반 입항 절차를 통과선박 절차로 시작)
 - 근거 번호 없는 줄, 규칙 위반(URL·전화·이메일, 없는 번호), 근거에 없는 숫자(환각 위험), 첫 글자·전체 시간
 """
 import argparse
@@ -84,6 +85,9 @@ async def run_one(item: dict) -> dict:
     if item["expect_docs"]:
         checks["retrieval"] = any(d in docs for d in item["expect_docs"])
         checks["retrieval@1"] = bool(docs) and docs[0] in item["expect_docs"]  # 1위가 기대 문서인가 (순서 품질)
+    if item.get("must_not_lead"):  # 답의 첫 문단(요약)에 나오면 안 되는 말 (예: 일반 입항 절차를 '통과선박'으로 시작)
+        lead = text.strip().split("\n\n")[0]
+        checks["lead"] = not any(w in lead for w in item["must_not_lead"])
     if item.get("must_mention"):  # 꼭 알려야 하는 내용 (예: 이용 제한 공지)
         checks["mention"] = all(any(alt in text for alt in word.split("|")) for word in item["must_mention"])  # "a|b" = 둘 중 하나
     allowed = set(item["forms_allowed"]) | set(item["forms_required"])
@@ -106,7 +110,7 @@ def summarize(rows: list[dict]) -> dict:
     groups = sorted({r["group"] for r in rows})
     firsts = [r["first_token_s"] for r in rows]
     return {
-        "retrieval": rate("retrieval"), "retrieval@1": rate("retrieval@1"), "type": rate("type"), "buttons": rate("buttons"), "mention": rate("mention"), "contact": rate("contact"),
+        "retrieval": rate("retrieval"), "retrieval@1": rate("retrieval@1"), "type": rate("type"), "buttons": rate("buttons"), "mention": rate("mention"), "lead": rate("lead"), "contact": rate("contact"),
         "type_by_group": {g: rate("type", [r for r in rows if r["group"] == g]) for g in groups},
         "uncited_lines_total": sum(r["uncited_lines"] for r in rows if r["answer_type"] == "answer"),
         "violations_total": sum(len(r["violations"]) for r in rows),

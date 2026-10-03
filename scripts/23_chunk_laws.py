@@ -10,6 +10,7 @@
   python scripts/23_chunk_laws.py
 """
 import hashlib
+import html
 import json
 import re
 from datetime import datetime, timezone
@@ -24,6 +25,7 @@ MAX_CHARS = 2500  # 근거 하나당 LLM에 넣는 글자 상한(prompt.CHUNK_CH
 # 상자 문자로 그린 표의 가로 테두리 줄 = 행 경계. 세로 칸막이만 있는 빈 줄은 버린다
 BOX_RULE = re.compile(r"^[\s┏┓┗┛┣┫┠┨┳┻╋╂━─┯┷┼├┤┬┴│┃┌┐└┘┝┥┿]*[━─][\s┏┓┗┛┣┫┠┨┳┻╋╂━─┯┷┼├┤┬┴│┃┌┐└┘┝┥┿]*$")
 BOX_EMPTY = re.compile(r"^[\s┃│]*$")
+DELETED_ANNEX = re.compile(r"^삭제\s*(?:<[^>]*>)?\s*$")
 DELETED = re.compile(r"^제\d+조(?:의\d+)?\s*삭제\s*(?:<[^>]*>)?\s*$")
 HEADING = re.compile(r"^제\d+(장|절|관)\s")
 ADMRUL_ARTICLE = re.compile(r"^제(\d+)조(?:의(\d+))?\s*(?:\(([^)]*)\))?")
@@ -189,14 +191,17 @@ def annex_units(lines: list[str]) -> list[list[str]]:
 def annexes(source: dict, held: dict) -> tuple[list[dict], dict]:
     """별표(표)만 넣는다. 서식·별지(빈 신청서 양식)는 본문 검색에 도움이 안 돼 개수만 기록"""
     body = source.get("법령") or source["AdmRulService"]
-    found, excluded = [], {"forms": 0, "annexes_held": []}
+    found, excluded = [], {"forms": 0, "annexes_held": [], "deleted_annexes": []}
     for b in as_list((body.get("별표") or {}).get("별표단위")):
         if b.get("별표구분") != "별표":
             excluded["forms"] += 1
             continue
         number = int(b["별표번호"])
         label = "[별표" + (f" {number}" if number else "") + (f"의{int(b['별표가지번호'])}" if int(b.get("별표가지번호") or 0) else "") + "]"
-        title = clean(b.get("별표제목", ""))
+        title = clean(html.unescape(b.get("별표제목", "")))  # "삭제 &lt;1998.12.31&gt;"
+        if DELETED_ANNEX.match(title):
+            excluded["deleted_annexes"].append(label)
+            continue
         if b["별표키"] in held:
             excluded["annexes_held"].append(dict(label=label, title=title, reason=held[b["별표키"]]))
             continue

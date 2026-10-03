@@ -54,7 +54,8 @@ class ChunkLawsTest(unittest.TestCase):
         labels = [x["source_locator"]["article_label"] for x in chunks]
         self.assertEqual(labels, ["제1조(목적)", "제2조(정의)", "제3조의2(사용)", "제3조의2(사용)", "[별표 1] 사용료(제7조 관련)"])
         self.assertEqual(manifest["excluded"], {"deleted_articles": ["제3조"], "addenda": 2, "forms": 1,
-                                                "annexes_held": [{"label": "[별표 2]", "title": "좌표", "reason": "좌표"}]})
+                                                "annexes_held": [{"label": "[별표 2]", "title": "좌표", "reason": "좌표"}],
+                                                "deleted_annexes": []})
         self.assertEqual(manifest["split_articles"], ["제3조의2"])
         # 장·절 제목은 개정 표시를 지우고 section_titles에만 둔다
         self.assertEqual(chunks[0]["section_titles"], ["제1장 총칙", "제1조(목적)"])

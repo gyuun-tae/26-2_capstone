@@ -26,7 +26,7 @@ SYSTEM = """당신은 여수광양항만공사(YGPA)의 민원·항만 이용 �
 4. URL·웹 주소·전화번호·이메일을 본문에 쓰지 않습니다. 링크와 서식 파일은 화면에 버튼으로 따로 제공됩니다. 정리 줄의 actions 이름도 본문에 쓰지 않습니다.
 5. 근거로 답할 수 없으면 추측하지 말고 "확인한 공식 자료만으로는 답을 확정하기 어렵습니다. 담당 부서를 모르시면 아래 대표전화로 문의해 주세요."라고만 답합니다. 담당 부서·연락처를 물었는데 [근거]에 없을 때도 같습니다.
 6. 되묻기: 답하기 전에 [근거] 제목들을 보고 질문의 대상이 하나로 정해지는지 확인합니다. 질문에 시설·서류·업무 이름이 없고 [근거]에 서로 다른 대상이 둘 이상 있으면(예: "사용료"에 체육시설 사용료와 항만시설 사용료, "출입증 신청"에 새 발급·기간 연장·분실) 한쪽을 골라 답하거나 "확인 불가"로 답하지 말고, 어느 경우인지 묻는 한 문장만 쓰고 선택지를 options에 2~4개 넣습니다. 질문에 대상이 분명하면 되묻지 않습니다.
-7. 존댓말로 간결하게 답합니다.
+7. 존댓말로 간결하게 답합니다. 질문이 영어 등 외국어로 쓰였으면 답(본문과 options)도 그 언어로 씁니다.
 8. 관련 근거에 이용 제한·중단·휴관·예약 불가 같은 공지(예: "경보 해제 시까지 예약이 제한됨")가 있으면, 절차보다 먼저 답의 첫 문장에서 그 사실을 알립니다.
 9. 근거 머리에 "기한 지난 조항 있음"이 붙어 있고 그 기한이 붙은 항목(예: "2024년 12월 31일까지 …")을 답에 쓰면, 그 기한을 함께 쓰고 지금도 적용되는지는 확인이 필요하다고 덧붙입니다.
 
@@ -70,6 +70,9 @@ def system_prompt() -> str:
     return SYSTEM + "".join(f'  - "{key}": {desc}\n' for key, (_, desc, _) in ACTIONS.items())
 
 
+HANGUL = re.compile(r"[가-힣]")
+FOREIGN_NOTE = ("(The question is not in Korean. Write the answer and the options in the same language as the question. "
+                "Keep the [n] citations and the @@META line as instructed.)")
 KST = timezone(timedelta(hours=9))
 UNTIL = re.compile(r"(\d{4})년\s*(\d{1,2})월\s*(\d{1,2})일\s*까지")
 
@@ -124,7 +127,10 @@ def build_messages(messages, hits: list[dict]) -> list[dict]:
     history = [{"role": m.role, "content": m.content} for m in messages[:-1]][-HISTORY:]
     alert = "".join(f"\n(주의: 근거 [{i}]에 이용 제한 공지가 있습니다 — \"{line}\" 질문과 관련 있으면 첫 문장에서 알리세요)"
                     for i, line in notices(hits))
-    question = f"[근거]\n{evidence(hits)}\n\n[질문]\n{effective_question(messages)}\n{alert}\n{REMINDER}"
+    asked = effective_question(messages)
+    # 한글이 없는 질문(영어 등): 지시문 7번만으로는 한국어로 답하는 경우가 있어(t24) 질문 끝에 한 번 더 짚는다
+    language = "" if HANGUL.search(asked) else f"\n{FOREIGN_NOTE}"
+    question = f"[근거]\n{evidence(hits)}\n\n[질문]\n{asked}\n{alert}\n{REMINDER}{language}"
     return [{"role": "system", "content": system_prompt()}, *history, {"role": "user", "content": question}]
 
 

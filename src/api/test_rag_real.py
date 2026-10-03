@@ -210,4 +210,10 @@ assert prompt.NO_EVIDENCE.search("[근거]에 부산항 신항 컨테이너 터�
 assert not prompt.NO_EVIDENCE.search("접안료 및 정박료의 최저액은 3,000원입니다[1].")
 assert not prompt.NO_EVIDENCE.search("[근거]에 따르면 일정 규모 이상의 선박은 예선을 사용하도록 의무화되어 있습니다[1].")  # l04
 
+# 12. 한글이 없는 질문에만 언어 안내를 붙인다 (t24)
+def last_user(question):
+    return prompt.build_messages([Message(role="user", content=question)], [{"chunk": html_text, "score": 0.7}])[-1]["content"]
+assert prompt.FOREIGN_NOTE in last_user("How do I get a port access pass?")
+assert prompt.FOREIGN_NOTE not in last_user("출입증 발급 신청은 어디서 하나요?")
+
 print("OK")
