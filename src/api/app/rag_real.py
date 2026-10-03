@@ -12,7 +12,7 @@ from pydantic import ValidationError
 
 from app import contacts, gpu, search
 from app.actions import ACTIONS
-from app.prompt import (SHORT_QUESTION, UNKNOWN_PHRASE, CitationFilter, ContactFilter, Meta, MetaFilter, RuleLineFilter,
+from app.prompt import (NO_EVIDENCE, NO_EVIDENCE_MAX, SHORT_QUESTION, UNKNOWN_PHRASE, CitationFilter, ContactFilter, Meta, MetaFilter, RuleLineFilter,
                         build_messages, parse_meta, violations)
 from app.rag import Answer
 from app.schemas import Action, Option
@@ -90,7 +90,7 @@ def answer(messages) -> Answer:
     async def tokens():
         vector = await gpu.embed(search_query(messages))
         hits = await asyncio.to_thread(search.search, vector, int(os.getenv("RAG_K", K)))
-        if not hits or (hits[0]["score"] < threshold and not term_match(search_query(messages), hits)):
+        if not hits or (max(h["score"] for h in hits) < threshold and not term_match(search_query(messages), hits)):
             result.answer_type = "unknown"
             result.actions = [contacts.MAIN]
             yield UNKNOWN_TEXT
@@ -114,7 +114,8 @@ def answer(messages) -> Answer:
 
         text = "".join(parts)
         parsed = parse_meta(meta.meta)
-        if UNKNOWN_PHRASE in text and parsed.kind == "answer":  # 정리 줄을 잘못 적은 확인 불가 답변
+        no_evidence = len(text) <= NO_EVIDENCE_MAX and NO_EVIDENCE.search(text)
+        if (UNKNOWN_PHRASE in text or no_evidence) and parsed.kind == "answer":  # 정리 줄을 잘못 적은 확인 불가 답변
             parsed = Meta("unknown")
         result.answer_type = parsed.kind
         if parsed.kind == "unknown":

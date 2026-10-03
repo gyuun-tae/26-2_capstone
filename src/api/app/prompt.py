@@ -6,6 +6,7 @@ LLM은 본문 뒤 마지막 줄에 응답 유형·선택지·고정 링크 이�
 import json
 import os
 import re
+from datetime import date, datetime, timedelta, timezone
 from typing import NamedTuple
 
 from app.actions import ACTIONS
@@ -27,6 +28,7 @@ SYSTEM = """당신은 여수광양항만공사(YGPA)의 민원·항만 이용 �
 6. 되묻기: 답하기 전에 [근거] 제목들을 보고 질문의 대상이 하나로 정해지는지 확인합니다. 질문에 시설·서류·업무 이름이 없고 [근거]에 서로 다른 대상이 둘 이상 있으면(예: "사용료"에 체육시설 사용료와 항만시설 사용료, "출입증 신청"에 새 발급·기간 연장·분실) 한쪽을 골라 답하거나 "확인 불가"로 답하지 말고, 어느 경우인지 묻는 한 문장만 쓰고 선택지를 options에 2~4개 넣습니다. 질문에 대상이 분명하면 되묻지 않습니다.
 7. 존댓말로 간결하게 답합니다.
 8. 관련 근거에 이용 제한·중단·휴관·예약 불가 같은 공지(예: "경보 해제 시까지 예약이 제한됨")가 있으면, 절차보다 먼저 답의 첫 문장에서 그 사실을 알립니다.
+9. 근거 머리에 "기한 지난 조항 있음"이 붙어 있고 그 기한이 붙은 항목(예: "2024년 12월 31일까지 …")을 답에 쓰면, 그 기한을 함께 쓰고 지금도 적용되는지는 확인이 필요하다고 덧붙입니다.
 
 답변 예시 (항만과 무관한 형식 예시. 내용은 반드시 [근거]에서만 가져옵니다)
 도서관 회원증은 신분증을 가지고 안내데스크에서 발급받습니다[2].
@@ -50,6 +52,9 @@ REMINDER = ("(대상이 여럿이면 되묻기 · 근거 번호는 문장·항�
             "작성할 서식을 안내했으면 그 번호를 forms에 · 마지막 줄에 @@META)")
 SHORT_QUESTION = 15  # 이보다 짧은 질문(예: 되묻기에 고른 선택지)은 앞 질문과 합쳐서 본다
 UNKNOWN_PHRASE = "답을 확정하기 어렵습니다"  # 지시문 5번 문구. 본문이 이 문구면 정리 줄과 상관없이 unknown
+# 지시문 5번 문구 대신 "[근거]에 … 포함되어 있지 않습니다"처럼 쓰는 경우 (u02). 짧은 답에서만 본다
+NO_EVIDENCE = re.compile(r"근거\]?에[^.]{0,60}(포함되어 있지 않|없습니다)")
+NO_EVIDENCE_MAX = 200
 
 
 def effective_question(messages) -> str:
@@ -65,17 +70,38 @@ def system_prompt() -> str:
     return SYSTEM + "".join(f'  - "{key}": {desc}\n' for key, (_, desc, _) in ACTIONS.items())
 
 
+KST = timezone(timedelta(hours=9))
+UNTIL = re.compile(r"(\d{4})년\s*(\d{1,2})월\s*(\d{1,2})일\s*까지")
+
+
+def expired_until(text: str, today: date | None = None) -> list[str]:
+    """근거 속 'YYYY년 M월 D일까지' 중 이미 지난 기한 (한시 감면 등. 규정 원문이 갱신되지 않았을 수 있다)"""
+    today = today or datetime.now(KST).date()
+    found = []
+    for m in UNTIL.finditer(text):
+        try:
+            end = date(*map(int, m.groups()))
+        except ValueError:
+            continue
+        label = f"{end.year}년 {end.month}월 {end.day}일까지"
+        if end < today and label not in found:
+            found.append(label)
+    return found
+
+
 def evidence(hits: list[dict]) -> str:
     blocks = []
     for i, h in enumerate(hits, 1):
         c = h["chunk"]
-        date = f" (수정일 {c['updated_at']})" if c.get("updated_at") else ""
-        date = f" (시행 {c['effective_at']})" if c.get("effective_at") else date  # 법령·고시
+        when = f" (수정일 {c['updated_at']})" if c.get("updated_at") else ""
+        when = f" (시행 {c['effective_at']})" if c.get("effective_at") else when  # 법령·고시
         limit = int(os.getenv("RAG_CHUNK_CHARS", CHUNK_CHARS))  # 실험용 조정값
         # 처리 과정에서 붙인 설명 줄(표 번호 YGPA-…-T001, 좌표 안내)은 빼고 보낸다: 답에 내부 번호가 새어 나오고 읽을 양만 는다
         text = "\n".join(line for line in c["text"].splitlines() if not META_LINE.match(line.strip()))
         text = text if len(text) <= limit else text[:limit] + " …(이하 생략)"
-        blocks.append(f"[{i}] {c['title']} · {locator_text(c)}{date}\n{text.strip()}")
+        expired = expired_until(text)
+        flag = f" · 기한 지난 조항 있음({', '.join(expired)})" if expired else ""
+        blocks.append(f"[{i}] {c['title']} · {locator_text(c)}{when}{flag}\n{text.strip()}")
     return "\n\n".join(blocks)
 
 

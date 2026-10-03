@@ -197,4 +197,17 @@ os.environ.pop("GPU_URL", None)
 body = c.post("/chat", json={"messages": [{"role": "user", "content": "민원 신청"}]}).text
 assert "event: error" in body
 
+# 10. 기한이 지난 한시 조항은 근거 머리에 표시한다 (지시문 9번). 아직 남은 기한·없는 날짜는 표시하지 않는다
+from datetime import date  # noqa: E402
+text = "(11)2024년 12월 31일까지 광양항에 입출항하는 선박\n(12)2030년 1월 1일까지 …\n(13)2024년 2월 30일까지"
+assert prompt.expired_until(text, today=date(2026, 10, 3)) == ["2024년 12월 31일까지"]
+fee = dict(form, chunk_kind="table", section_titles=["【별표 2】 감면"], text=text)
+assert "기한 지난 조항 있음(2024년 12월 31일까지)" in prompt.evidence([{"chunk": fee, "score": 0.7}])
+assert "기한 지난" not in prompt.evidence([{"chunk": html_text, "score": 0.7}])
+
+# 11. "[근거]에 … 포함되어 있지 않습니다"는 확인 불가로 본다 (u02). 보통 답은 해당 없음
+assert prompt.NO_EVIDENCE.search("[근거]에 부산항 신항 컨테이너 터미널 운영사에 대한 정보는 포함되어 있지 않습니다.")
+assert not prompt.NO_EVIDENCE.search("접안료 및 정박료의 최저액은 3,000원입니다[1].")
+assert not prompt.NO_EVIDENCE.search("[근거]에 따르면 일정 규모 이상의 선박은 예선을 사용하도록 의무화되어 있습니다[1].")  # l04
+
 print("OK")
