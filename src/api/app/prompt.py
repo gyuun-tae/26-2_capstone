@@ -70,6 +70,7 @@ def evidence(hits: list[dict]) -> str:
     for i, h in enumerate(hits, 1):
         c = h["chunk"]
         date = f" (수정일 {c['updated_at']})" if c.get("updated_at") else ""
+        date = f" (시행 {c['effective_at']})" if c.get("effective_at") else date  # 법령·고시
         limit = int(os.getenv("RAG_CHUNK_CHARS", CHUNK_CHARS))  # 실험용 조정값
         # 처리 과정에서 붙인 설명 줄(표 번호 YGPA-…-T001, 좌표 안내)은 빼고 보낸다: 답에 내부 번호가 새어 나오고 읽을 양만 는다
         text = "\n".join(line for line in c["text"].splitlines() if not META_LINE.match(line.strip()))

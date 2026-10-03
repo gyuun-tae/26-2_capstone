@@ -29,6 +29,8 @@ def locator_text(chunk: dict) -> str:
         return " · ".join(titles) or "본문"
     if loc["kind"] == "html_table":
         return f"{titles[0]} 표" if titles else "표"
+    if loc["kind"] == "law_api":  # 법령·고시 조문 (scripts/23_chunk_laws.py)
+        return loc["article_label"]
 
     kind = chunk.get("chunk_kind")
     if kind == "whole_form":

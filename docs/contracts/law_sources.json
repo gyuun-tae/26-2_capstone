@@ -1,0 +1,23 @@
+{
+  "version": "1.0",
+  "decision_date": "2026-10-03",
+  "source": "국가법령정보 공동활용 Open API (https://open.law.go.kr). 인증값 OC는 저장소 루트 .env의 LAW_OC (Git 제외)",
+  "copyright": "법령·고시는 저작권법 제7조(보호받지 못하는 저작물)에 해당해 공개 저장소에 둘 수 있다",
+  "excluded": "부칙, 내용이 '삭제'뿐인 조문, 서식·별지(빈 신청서 양식), 제개정이유, annex_held에 적은 별표",
+  "annex_held": {
+    "LAW-002": {"000100E": "전국 항만의 수상구역 경위도 좌표 약 5만 자. 검색 결과를 좌표 조각으로 채울 수 있어 보류"}
+  },
+  "laws": [
+    {"doc_id": "LAW-001", "name": "항만법", "target": "law", "tier": 1},
+    {"doc_id": "LAW-002", "name": "항만법 시행령", "target": "law", "tier": 1},
+    {"doc_id": "LAW-003", "name": "항만법 시행규칙", "target": "law", "tier": 1},
+    {"doc_id": "LAW-004", "name": "항만공사법", "target": "law", "tier": 1},
+    {"doc_id": "LAW-005", "name": "항만공사법 시행령", "target": "law", "tier": 1},
+    {"doc_id": "LAW-006", "name": "항만공사법 시행규칙", "target": "law", "tier": 1},
+    {"doc_id": "LAW-007", "name": "선박의 입항 및 출항 등에 관한 법률", "target": "law", "tier": 1},
+    {"doc_id": "LAW-008", "name": "선박의 입항 및 출항 등에 관한 법률 시행령", "target": "law", "tier": 1},
+    {"doc_id": "LAW-009", "name": "선박의 입항 및 출항 등에 관한 법률 시행규칙", "target": "law", "tier": 1},
+    {"doc_id": "LAW-010", "name": "무역항 등의 항만시설 사용 및 사용료에 관한 규정", "target": "admrul", "tier": 1},
+    {"doc_id": "LAW-011", "name": "항만공사가 징수하는 사용료 및 임대료의 세부 구분 등에 관한 규정", "target": "admrul", "tier": 1}
+  ]
+}

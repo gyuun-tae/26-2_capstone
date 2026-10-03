@@ -35,6 +35,17 @@ assert s.published_at is None and s.updated_at is None  # 빈 날짜는 null, �
 s = chunk_to_source(form)
 assert s.locator == "서식 전체" and s.snippet == "【별지 제3호 서식】 선박명", s.snippet
 
+# 법령 조문: 위치는 조문 번호·제목 그대로(띄어쓰기 유지), 날짜는 공포일
+law = chunk(
+    source_locator={"kind": "law_api", "article_label": "제41조(항만시설의 사용)", "part": 1, "part_count": 1},
+    chunk_kind="article", title="항만법", section_titles=["제5장 항만시설의 사용", "제41조(항만시설의 사용)"],
+    published_at="2026-02-27", effective_at="2026-02-27", date_status="official_api_current",
+    text="제41조(항만시설의 사용)\n① 항만시설을 사용하려는 자는",
+)
+s = chunk_to_source(law)
+assert s.locator == "제41조(항만시설의 사용)" and s.published_at == "2026-02-27", s
+assert form_download(law, source_ref=1) is None
+
 # 서식만 다운로드 버튼이 생기고, URL은 청크의 원문 주소 그대로
 a = form_download(form, source_ref=2)
 assert (a.type, a.label, a.url, a.source_ref) == ("download", "선박제원신고서(HWP)", form["source_url"], 2)

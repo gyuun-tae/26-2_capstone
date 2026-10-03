@@ -25,6 +25,8 @@
 | 19 | "확인 불가" 조기 판단 기준 측정 | [실행 파일](../../scripts/19_unknown_threshold.py) | [19_unknown_threshold.md](19_unknown_threshold.md) |
 | 20 | 개발용 질문 묶음으로 실제 RAG 측정 | [실행 파일](../../src/api/eval_dev.py) | [20_dev_eval.md](20_dev_eval.md) |
 | 21 | 공식 페이지에서 연락처 버튼 목록 만들기 | [실행 파일](../../scripts/21_extract_contacts.py) | [20_dev_eval.md](20_dev_eval.md#연락처-버튼과-사용-중-발견한-문제-2026-10-0203) |
+| 22 | 법령·고시 원문 수집 (국가법령정보 API) | [실행 파일](../../scripts/22_collect_laws.py) | [22_laws.md](22_laws.md) |
+| 23 | 법령·고시 조문·별표 청킹 | [실행 파일](../../scripts/23_chunk_laws.py) | [22_laws.md](22_laws.md#청킹-규칙-law-articles-v1) |
 
 08의 겹친 글자 후속 검토는 [보충 문서](08_restore_tables_remaining_controls.md)를 참고합니다. 테스트 파일은 unittest 발견 규칙인 `test_*.py`를 유지합니다. 숫자로 시작하는 실행 파일은 일반 import 문법에 맞지 않으므로 코드 내부는 명시적 `__import__`로 연결합니다. 처리 버전·청크 ID·출력 경로·원본 데이터는 바꾸지 않았습니다.
 
