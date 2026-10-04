@@ -1,0 +1,859 @@
+{
+ "dataset": "dev_questions_team_v1.jsonl",
+ "index_version": "bge-m3-dense-7c8c472af8bc",
+ "run_at": "2026-10-04T08:35:21.705243+00:00",
+ "summary": {
+  "retrieval": "20/20",
+  "retrieval@1": "19/20",
+  "type": "24/25",
+  "buttons": "24/25",
+  "mention": "6/6",
+  "lead": "2/2",
+  "absent": "2/2",
+  "contact_btn": "0/0",
+  "contact": "2/2",
+  "type_by_group": {
+   "team": "24/25"
+  },
+  "uncited_lines_total": 2,
+  "violations_total": 0,
+  "unsupported_numbers_total": 0,
+  "first_token_s": {
+   "mean": 2.0,
+   "median": 1.95,
+   "max": 3.31
+  }
+ },
+ "rows": [
+  {
+   "id": "t01",
+   "group": "team",
+   "question": "견학 신청은 어디서 하나요?",
+   "answer_type": "answer",
+   "top1_score": 0.542,
+   "top_docs": [
+    "YGPA-008",
+    "YGPA-005",
+    "YGPA-025",
+    "LAW-012",
+    "YGPA-001"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [
+    "항만안내선 담당 061-797-4438"
+   ],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 1,
+   "unsupported_numbers": [],
+   "first_token_s": 3.28,
+   "total_s": 7.16,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "buttons": true
+   },
+   "answer": "※ 정부의 자원안보 위기 주의단계 경보 발령에 따라, 경보 해제 시까지 항만안내선 예약이 제한됩니다[1].\n\n항만안내선 견학 신청은 여수광양항만공사의 항만안내선 담당자에게 문의하여 신청하실 수 있습니다[1].\n\n1. 견학 신청은 매주 화요일과 목요일에 운영됩니다[1].\n2. 견학일정은 10:00 ~ 11:00, 14:00 ~ 15:00이며, 최소 17명 ~ 최대 26명이 승선할 수 있습니다[1].\n3. 일반시민 누구나 신청 가능하며, 미취학 아동의 경우 2명당 보호자 1명 동행이 필요합니다[1].\n4. 유관기관 및 업·단체, 교육기관 등은 항만안내선 담당자(T. 061-797-4438)에게 문의 부탁드립니다[1]."
+  },
+  {
+   "id": "t02",
+   "group": "team",
+   "question": "선박 입·출항 절차를 알려주세요.",
+   "answer_type": "clarify",
+   "top1_score": 0.68,
+   "top_docs": [
+    "LAW-009",
+    "LAW-008",
+    "YGPA-031",
+    "YGPA-031",
+    "YGPA-032"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [
+    "내항선 입·출항 절차",
+    "외항선 입·출항 절차"
+   ],
+   "uncited_lines": 1,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 1.37,
+   "total_s": 2.63,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "absent": true,
+    "lead": true,
+    "buttons": true
+   },
+   "answer": "선박의 입·출항 절차는 선박의 종류(내항선 또는 외항선)에 따라 달라집니다. 어느 선박의 입·출항 절차를 알고 싶으신가요?"
+  },
+  {
+   "id": "t03",
+   "group": "team",
+   "question": "필요한 신청 서식을 찾고 싶어요.",
+   "answer_type": "answer",
+   "top1_score": 0.632,
+   "top_docs": [
+    "YGPA-001",
+    "YGPA-021",
+    "YGPA-003",
+    "LAW-021",
+    "YGPA-005"
+   ],
+   "downloads": [
+    "YGPA-021"
+   ],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 1.91,
+   "total_s": 3.12,
+   "checks": {
+    "type": false,
+    "buttons": false
+   },
+   "answer": "필요한 신청 서식은 더드림스마트센터 이용 신청서와 관련된 서식이 있습니다[2].\n\n1. 더드림스마트센터 이용신청서 작성[2]  \n2. 개인정보 수집 및 이용 동의서 작성[2]  \n3. 사업계획서 작성[2]"
+  },
+  {
+   "id": "t04",
+   "group": "team",
+   "question": "광양항의 항만여건에 대해 알려줘",
+   "answer_type": "answer",
+   "top1_score": 0.69,
+   "top_docs": [
+    "YGPA-012",
+    "YGPA-012",
+    "YGPA-014",
+    "YGPA-016",
+    "YGPA-017"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 1.22,
+   "total_s": 3.72,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "buttons": true
+   },
+   "answer": "광양항의 항만여건은 부두별로 다양한 조건을 갖추고 있습니다[1][2]. 예를 들어, 율촌일반부두는 최저수심 11m, 접안능력 20,000DWT, 하역능력 600천톤/년이며, 현대제철부두는 최저수심 12m, 접안능력 12,000DWT, 하역능력 810천톤/년입니다[1][2]. 또한, 광양항은 총 20개 부두, 59개 선석이 운영되며, 소형선부두나 관용선 부두는 시설능력 산정에서 제외됩니다[1][2]."
+  },
+  {
+   "id": "t05",
+   "group": "team",
+   "question": "항만공사는 주로 무슨 일을 해?",
+   "answer_type": "answer",
+   "top1_score": 0.653,
+   "top_docs": [
+    "LAW-004",
+    "LAW-004",
+    "YGPA-031",
+    "ORG-016",
+    "YGPA-031"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 0.91,
+   "total_s": 4.14,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "lead": true,
+    "buttons": true
+   },
+   "answer": "항만공사는 항만시설의 개발 및 관리·운영을 전문적으로 수행하여 항만을 경쟁력 있는 해운물류의 중심기지로 육성하는 일을 합니다[2]. 항만공사는 항만의 여건에 따라 항만별로 설립되며, 항만시설의 개발 및 관리·운영의 효율성을 높이기 위해 필요한 경우에는 2개 이상의 인접한 항만을 관할하는 공사도 설립할 수 있습니다[1].\n\n1. 항만공사는 항만의 청결을 유지하도록 항만시설을 이용하는 자에게 지시를 내리며, 항만청소는 구역별 관리주체의 책임 하에 실시됩니다[3].\n2. 항만 내 공해 및 오염 방지를 위해 항만시설을 사용하거나 이용하는 자는 환경보전 관련 법규를 준수해야 하며, 공해나 오염이 발생하지 않도록 조치해야 합니다[5]."
+  },
+  {
+   "id": "t06",
+   "group": "team",
+   "question": "너는 인천항만공사 챗봇보다 성능이 좋아?",
+   "answer_type": "unknown",
+   "top1_score": 0.458,
+   "top_docs": [
+    "LAW-020",
+    "LAW-020",
+    "ORG-013",
+    "ORG-015",
+    "ORG-017"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [
+    "여수광양항만공사 대표전화 061-797-4300"
+   ],
+   "options": [],
+   "uncited_lines": 1,
+   "violations": [],
+   "contacts_from_evidence": 1,
+   "unsupported_numbers": [],
+   "first_token_s": 0.38,
+   "total_s": 0.38,
+   "checks": {
+    "type": true,
+    "contact": true,
+    "buttons": true
+   },
+   "answer": "확인한 공식 자료만으로는 답을 확정하기 어렵습니다. 질문을 조금 더 구체적으로 써 주시거나, 아래 대표전화로 문의해 주세요."
+  },
+  {
+   "id": "t07",
+   "group": "team",
+   "question": "항만시설 사용료는 어떻게 확인하나요?",
+   "answer_type": "answer",
+   "top1_score": 0.734,
+   "top_docs": [
+    "LAW-001",
+    "LAW-011",
+    "YGPA-027",
+    "YGPA-032",
+    "YGPA-032"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 2.19,
+   "total_s": 3.76,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": false,
+    "buttons": true
+   },
+   "answer": "항만시설 사용료는 「여수광양항만공사의 항만시설 사용 및 사용료등에 관한 규정」에 따라 확인할 수 있습니다[2]. \n\n1. 사용료의 종류와 요율은 【별표 1】에 명시되어 있습니다[4].\n2. 사용료 산정 기준은 【별표 1】의 산정기준에 따라 확인하시기 바랍니다[5]."
+  },
+  {
+   "id": "t08",
+   "group": "team",
+   "question": "배후단지 입주 절차를 알려주세요.",
+   "answer_type": "answer",
+   "top1_score": 0.701,
+   "top_docs": [
+    "YGPA-036",
+    "YGPA-039",
+    "LAW-001",
+    "LAW-001",
+    "YGPA-035"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [
+    "물류단지부 (배후단지 담당) 061-797-4456"
+   ],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 1,
+   "unsupported_numbers": [],
+   "first_token_s": 1.75,
+   "total_s": 3.93,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "buttons": true
+   },
+   "answer": "광양항 배후단지 입주 절차는 동·서측 배후단지와 세풍 배후단지로 구분됩니다. 절차는 다음과 같습니다[1].\n\n1. 입주기업 모집[1]\n2. 우선협상대상자 선정[1]\n3. 결격사유 조회[1]\n4. 입주계약 신청[1]\n5. 입주계약 체결[1]\n6. 임대차계약 체결[1]\n7. 건축허가 및 신고[1]\n8. 건축착공[1]\n9. 영업개시[1]"
+  },
+  {
+   "id": "t09",
+   "group": "team",
+   "question": "입항 절차를 알려주세요.",
+   "answer_type": "answer",
+   "top1_score": 0.668,
+   "top_docs": [
+    "LAW-009",
+    "YGPA-031",
+    "LAW-008",
+    "YGPA-036",
+    "YGPA-031"
+   ],
+   "downloads": [],
+   "port_mis": true,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 1.29,
+   "total_s": 4.51,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "absent": true,
+    "buttons": true
+   },
+   "answer": "선박이 여수광양항에 입항하려면 입항 예정 24시간 전에 Port-MIS에 선박 관련 정보와 보안 정보를 입력해야 하며, 내용이 변경되면 즉시 수정하여 다시 입력해야 합니다[2]. 내항선과 외항선은 각각 별도의 출입 신고서를 제출해야 합니다[1][3].\n\n1. 입항 예정 24시간 전에 Port-MIS에 선박 관련 정보와 보안 정보를 입력합니다[2].\n2. 내항선은 별지 제1호서식에 따른 내항선 출입신고서를 제출하고, 외항선은 별지 제2호서식에 따른 외항선 출입신고서를 제출합니다[1][3].\n3. 입항 일시가 변경되면 지체 없이 관리청에 신고합니다[1]."
+  },
+  {
+   "id": "t10",
+   "group": "team",
+   "question": "출입증을 잃어버렸는데 어떻게 재발급 받나요?",
+   "answer_type": "answer",
+   "top1_score": 0.555,
+   "top_docs": [
+    "YGPA-022",
+    "LAW-012",
+    "YGPA-025",
+    "YGPA-023",
+    "LAW-013"
+   ],
+   "downloads": [
+    "YGPA-022"
+   ],
+   "port_mis": false,
+   "contacts": [
+    "항만출입증 담당자 (광양) 061-797-4434",
+    "항만출입증 담당자 (여수) 061-692-4336"
+   ],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 2,
+   "unsupported_numbers": [],
+   "first_token_s": 2.72,
+   "total_s": 4.56,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "출입증을 잃어버린 경우, 분실 경위서와 업체(단체) 대표의 확인서를 3일 이내에 제출해야 하며, 재발급 절차를 신청할 수 있습니다[3].\n\n1. 분실 경위서를 작성합니다[1]\n2. 업체(단체) 대표의 확인서를 함께 제출합니다[1]\n3. 여수광양항만공사에 재발급 신청을 합니다[3]"
+  },
+  {
+   "id": "t11",
+   "group": "team",
+   "question": "항만출입증 발급 신청은 어디서 하나요?",
+   "answer_type": "answer",
+   "top1_score": 0.69,
+   "top_docs": [
+    "YGPA-025",
+    "YGPA-023",
+    "LAW-002",
+    "LAW-021",
+    "YGPA-024"
+   ],
+   "downloads": [
+    "YGPA-025"
+   ],
+   "port_mis": false,
+   "contacts": [
+    "항만출입증 담당자 (광양) 061-797-4434",
+    "항만출입증 담당자 (여수) 061-692-4336"
+   ],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 2,
+   "unsupported_numbers": [],
+   "first_token_s": 3.23,
+   "total_s": 5.15,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "buttons": true
+   },
+   "answer": "항만상시출입증 발급 신청은 여수광양항만공사에 직접 제출해야 합니다[1].  \n\n1. 항만상시출입증발급신청서를 작성합니다[1]  \n2. 본인 서약서를 작성합니다[1]  \n3. 재직증명서(출입 신청자 증빙서류)를 첨부합니다[1]  \n4. 개인정보 수집·이용 및 제3자 제공 동의서를 작성합니다[1]"
+  },
+  {
+   "id": "t12",
+   "group": "team",
+   "question": "실적증명서 발급 받으려면 어떻게 해야 하나요?",
+   "answer_type": "answer",
+   "top1_score": 0.739,
+   "top_docs": [
+    "YGPA-003",
+    "YGPA-004",
+    "YGPA-001",
+    "LAW-006",
+    "LAW-004"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 1.01,
+   "total_s": 2.73,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "buttons": true
+   },
+   "answer": "실적증명서를 발급받으려면 업체회원으로 가입한 후, 신청 절차를 따라야 합니다[1].\n\n1. 업체 회원가입을 하고 로그인합니다[1]\n2. 증명서 선택 후 실적증명서 정보를 입력합니다[1]\n3. 승인부서의 검토를 받고 승인을 받습니다[1]\n4. 실적증명서를 조회하고 인쇄합니다[1]"
+  },
+  {
+   "id": "t13",
+   "group": "team",
+   "question": "항만안내선 견학 예약은 어떻게 하나요?",
+   "answer_type": "answer",
+   "top1_score": 0.741,
+   "top_docs": [
+    "YGPA-008",
+    "YGPA-007",
+    "LAW-021",
+    "YGPA-025",
+    "LAW-021"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [
+    "항만안내선 담당 061-797-4438"
+   ],
+   "options": [],
+   "uncited_lines": 1,
+   "violations": [],
+   "contacts_from_evidence": 1,
+   "unsupported_numbers": [],
+   "first_token_s": 2.37,
+   "total_s": 4.51,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "※ 정부의 자원안보 위기 주의단계 경보 발령에 따라, 경보 해제 시까지 항만안내선 예약이 제한됨을 안내드립니다[1].\n\n항만안내선 견학 예약 절차는 다음과 같습니다.\n\n1. 견학 신청[1]\n2. 예약 확정[1]\n3. 견학일정 5분 전까지 승선장소로 집결[1]\n4. 경비초소 신원 확인[1]\n5. 항만안내선 승선장으로 이동[1]"
+  },
+  {
+   "id": "t14",
+   "group": "team",
+   "question": "배후단지 입주 자격이 어떻게 되나요?",
+   "answer_type": "answer",
+   "top1_score": 0.687,
+   "top_docs": [
+    "LAW-001",
+    "LAW-001",
+    "YGPA-039",
+    "YGPA-036",
+    "YGPA-035"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [
+    "물류단지부 (배후단지 담당) 061-797-4456"
+   ],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 1,
+   "unsupported_numbers": [],
+   "first_token_s": 1.76,
+   "total_s": 7.31,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "buttons": true
+   },
+   "answer": "광양항 배후단지 입주 자격은 수출 제조업종, 지식서비스산업, 도매업, 물품하역·운송·보관 사업 등 항만법 및 자유무역지역법에 따라 충족하는 자입니다[5].\n\n1. 관할 항만을 이용하여 반입·반출되는 화물을 하역·운송·유통·판매·보관·전시하는 사업 또는 이를 지원하는 사업을 영위하는 자[1]\n2. 무역항에 입항·출항하는 선박을 이용한 수출입을 주목적으로 하는 화물의 제조업을 영위하는 자[1]\n3. 관할 항만에 입항·출항하는 선박을 이용한 수출입을 주목적으로 하는 국내복귀기업으로서 지원대상으로 선정된 자[1]\n4. 관할 항만에 입항·출항하는 선박을 이용한 물동량 창출이 가능한 외국인투자기업으로서 외국인투자 비중 등이 기준을 충족하는 자[1]\n5. 지식서비스산업 중 기준을 충족하는 자[1]\n6. 관할 항만에 입항·출항하는 선박을 이용한 수출입거래를 주목적으로 하는 도매업을 하려는 자[1]\n7. 입주기업체의 사업을 지원하는 사업을 영위하는 자[1]\n8. 항만친수시설의 관리·운영에 관한 사업을 영위하는 자[1]\n9. 항만의 관리·운영과 직접 관계가 있는 국가기관 또는 공공기관[1]"
+  },
+  {
+   "id": "t15",
+   "group": "team",
+   "question": "광양항 항만시설 사용료는 어떻게 계산되나요?",
+   "answer_type": "answer",
+   "top1_score": 0.724,
+   "top_docs": [
+    "YGPA-032",
+    "YGPA-032",
+    "LAW-010",
+    "LAW-010",
+    "YGPA-034"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 2.93,
+   "total_s": 5.8,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "buttons": true
+   },
+   "answer": "광양항 항만시설 사용료는 사용하는 시설의 종류와 사용량에 따라 다르게 계산됩니다. 사용료의 종류와 요율은 별표 1에 명시되어 있습니다[1].\n\n1. 선박료는 선박의 총톤수와 사용 시간에 따라 계산됩니다[4].\n2. 화물입출항료는 화물의 종류(일반화물, 컨테이너화물, 액체화물 등)와 중량 또는 용적에 따라 계산됩니다[1].\n3. 여객터미널이용료는 여객 수와 여객운임에 따라 계산됩니다[3].\n4. 창고 및 야적장 사용료는 사용 면적과 기간에 따라 계산됩니다[3]."
+  },
+  {
+   "id": "t16",
+   "group": "team",
+   "question": "위험물 컨테이너 반입 신고는 어떻게 하나요?",
+   "answer_type": "answer",
+   "top1_score": 0.734,
+   "top_docs": [
+    "LAW-009",
+    "LAW-007",
+    "YGPA-031",
+    "YGPA-023",
+    "YGPA-031"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 1.95,
+   "total_s": 5.25,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "위험물 컨테이너를 무역항의 수상구역등으로 반입하려는 자는 반입 24시간 전에 위험물 반입신고서, 위험물 일람표, 화물적부도를 지방해양수산청장 또는 시·도지사에 제출해야 합니다[1].  \n\n1. 별지 제10호서식의 위험물 반입신고서를 작성합니다[1]  \n2. 별지 제11호서식의 위험물 일람표를 작성합니다[1]  \n3. 별지 제11호의2서식의 화물적부도를 작성합니다[1]  \n4. 신고서를 제출받은 지방해양수산청장 또는 시·도지사는 위험물 반입신고서의 확인란에 날인하여 신고인에게 발급합니다[1]"
+  },
+  {
+   "id": "t17",
+   "group": "team",
+   "question": "오늘 광양 날씨 어때요?",
+   "answer_type": "unknown",
+   "top1_score": 0.513,
+   "top_docs": [
+    "YGPA-033",
+    "YGPA-007",
+    "YGPA-012",
+    "YGPA-012",
+    "YGPA-038"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [
+    "여수광양항만공사 대표전화 061-797-4300"
+   ],
+   "options": [],
+   "uncited_lines": 1,
+   "violations": [],
+   "contacts_from_evidence": 1,
+   "unsupported_numbers": [],
+   "first_token_s": 2.13,
+   "total_s": 2.95,
+   "checks": {
+    "type": true,
+    "contact": true,
+    "buttons": true
+   },
+   "answer": "확인한 공식 자료만으로는 답을 확정하기 어렵습니다. 담당 부서를 모르시면 아래 대표전화로 문의해 주세요."
+  },
+  {
+   "id": "t18",
+   "group": "team",
+   "question": "출입증 분실하면 며칠 안에 경위서를 내야 하나요?",
+   "answer_type": "answer",
+   "top1_score": 0.634,
+   "top_docs": [
+    "YGPA-022",
+    "LAW-015",
+    "YGPA-025",
+    "LAW-012",
+    "YGPA-023"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [
+    "항만출입증 담당자 (광양) 061-797-4434",
+    "항만출입증 담당자 (여수) 061-692-4336"
+   ],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 2,
+   "unsupported_numbers": [],
+   "first_token_s": 2.55,
+   "total_s": 3.43,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "출입증을 분실하였을 때는 즉시 신고하고 3일 이내에 분실 경위서 및 업체(단체) 대표의 확인서를 제출해야 합니다[3]."
+  },
+  {
+   "id": "t19",
+   "group": "team",
+   "question": "항만안내선 견학 날 몇 분 전까지 모여야 하나요?",
+   "answer_type": "answer",
+   "top1_score": 0.685,
+   "top_docs": [
+    "YGPA-008",
+    "YGPA-007",
+    "LAW-009",
+    "YGPA-009",
+    "LAW-017"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [
+    "항만안내선 담당 061-797-4438"
+   ],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 1,
+   "unsupported_numbers": [],
+   "first_token_s": 1.48,
+   "total_s": 2.72,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "※ 정부의 자원안보 위기 주의단계 경보 발령에 따라, 경보 해제 시까지 항만안내선 예약이 제한됩니다[1].\n\n항만안내선 견학은 견학일정 5분 전까지 승선장소로 집결해야 합니다[1]."
+  },
+  {
+   "id": "t20",
+   "group": "team",
+   "question": "출입증 발급 수수료는 얼마인가요?",
+   "answer_type": "answer",
+   "top1_score": 0.604,
+   "top_docs": [
+    "LAW-021",
+    "LAW-009",
+    "YGPA-025",
+    "YGPA-032",
+    "YGPA-023"
+   ],
+   "downloads": [
+    "YGPA-025"
+   ],
+   "port_mis": false,
+   "contacts": [
+    "항만출입증 담당자 (광양) 061-797-4434",
+    "항만출입증 담당자 (여수) 061-692-4336"
+   ],
+   "options": [],
+   "uncited_lines": 1,
+   "violations": [],
+   "contacts_from_evidence": 2,
+   "unsupported_numbers": [],
+   "first_token_s": 2.75,
+   "total_s": 3.79,
+   "checks": {
+    "type": true,
+    "buttons": true
+   },
+   "answer": "출입증 발급 수수료는 별도로 명시되어 있지 않습니다. \n\n항만상시출입증 발급을 위해서는 \"항만상시출입증발급신청서\"를 작성해야 합니다[3]."
+  },
+  {
+   "id": "t21",
+   "group": "team",
+   "question": "상시출입증 신청할 때 재직증명서가 필요한가요?",
+   "answer_type": "answer",
+   "top1_score": 0.629,
+   "top_docs": [
+    "YGPA-025",
+    "YGPA-024",
+    "YGPA-023",
+    "YGPA-003",
+    "LAW-001"
+   ],
+   "downloads": [
+    "YGPA-025"
+   ],
+   "port_mis": false,
+   "contacts": [
+    "항만출입증 담당자 (광양) 061-797-4434",
+    "항만출입증 담당자 (여수) 061-692-4336"
+   ],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 2,
+   "unsupported_numbers": [],
+   "first_token_s": 3.11,
+   "total_s": 4.16,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "buttons": true
+   },
+   "answer": "항만상시출입증을 신청할 때 재직증명서가 필요합니다[1]. \n\n1. 재직증명서(출입 신청자 증빙서류)를 첨부해야 합니다[1]"
+  },
+  {
+   "id": "t22",
+   "group": "team",
+   "question": "위험물 반입 신고는 Port-MIS에서 하나요?",
+   "answer_type": "answer",
+   "top1_score": 0.651,
+   "top_docs": [
+    "LAW-007",
+    "LAW-009",
+    "YGPA-031",
+    "YGPA-031",
+    "YGPA-032"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 1.45,
+   "total_s": 3.14,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "buttons": true
+   },
+   "answer": "Port-MIS는 항만시설 사용 신고나 입출항 신고와 관련된 규정에 언급된 시스템입니다. 위험물 반입 신고는 [1] 및 [2]에 따르면, 지방해양수산청장 또는 시·도지사에게 별도의 서류를 제출하는 절차로 규정되어 있습니다.  \n\n위험물 반입 신고는 Port-MIS를 통해 하지 않습니다[1][2]."
+  },
+  {
+   "id": "t23",
+   "group": "team",
+   "question": "출입증 신청하려고 하는데요",
+   "answer_type": "clarify",
+   "top1_score": 0.606,
+   "top_docs": [
+    "YGPA-025",
+    "LAW-008",
+    "YGPA-024",
+    "LAW-009",
+    "YGPA-023"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [
+    "항만상시출입증 신청",
+    "항만상시출입증 기간연장 신청",
+    "항만시설출입업체 등록 신청"
+   ],
+   "uncited_lines": 1,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 2.08,
+   "total_s": 3.2,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "buttons": true
+   },
+   "answer": "어느 경우의 출입증을 신청하려고 하시나요?"
+  },
+  {
+   "id": "t24",
+   "group": "team",
+   "question": "How do I get a port access pass?",
+   "answer_type": "answer",
+   "top1_score": 0.548,
+   "top_docs": [
+    "YGPA-025",
+    "YGPA-023",
+    "LAW-014",
+    "YGPA-039",
+    "LAW-008"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [
+    "항만출입증 담당자 (광양) 061-797-4434",
+    "항만출입증 담당자 (여수) 061-692-4336"
+   ],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 2,
+   "unsupported_numbers": [],
+   "first_token_s": 3.31,
+   "total_s": 5.29,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "To obtain a port access pass, you need to submit the \"Port Permanent Access Permit Application Form\" [1]. This form requires personal or company information, including name, birthdate, contact details, vehicle information (if applicable), and a commitment to follow security regulations.\n\n1. Fill out the \"Port Permanent Access Permit Application Form\" with all required information [1].\n2. Attach necessary documents such as a personal ID, company registration certificate, and proof of employment or vehicle ownership [1].\n3. Submit the completed application and documents to the relevant authority for approval [1]."
+  },
+  {
+   "id": "t25",
+   "group": "team",
+   "question": "담당부서를 찾고 싶어요.",
+   "answer_type": "clarify",
+   "top1_score": 0.542,
+   "top_docs": [
+    "ORG-006",
+    "LAW-002",
+    "ORG-013",
+    "ORG-005",
+    "LAW-014"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [
+    "기획조정실",
+    "AI디지털부",
+    "감사실"
+   ],
+   "uncited_lines": 1,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 0.79,
+   "total_s": 1.6,
+   "checks": {
+    "type": true,
+    "buttons": true
+   },
+   "answer": "어느 부서의 담당 업무를 확인하고 싶으신가요?"
+  }
+ ]
+}

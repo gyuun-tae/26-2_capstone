@@ -1,0 +1,96 @@
+{
+ "dataset": "dev_questions_team_v1.jsonl",
+ "index_version": "bge-m3-dense-aca808eb7b4e",
+ "run_at": "2026-10-04T07:31:19.082087+00:00",
+ "summary": {
+  "retrieval": "2/2",
+  "retrieval@1": "2/2",
+  "type": "2/2",
+  "buttons": "2/2",
+  "mention": "0/0",
+  "lead": "1/1",
+  "absent": "2/2",
+  "contact": "0/0",
+  "type_by_group": {
+   "team": "2/2"
+  },
+  "uncited_lines_total": 0,
+  "violations_total": 0,
+  "unsupported_numbers_total": 0,
+  "first_token_s": {
+   "mean": 3.99,
+   "median": 3.99,
+   "max": 6.86
+  }
+ },
+ "rows": [
+  {
+   "id": "t02",
+   "group": "team",
+   "question": "선박 입·출항 절차를 알려주세요.",
+   "answer_type": "clarify",
+   "top1_score": 0.68,
+   "top_docs": [
+    "LAW-009",
+    "LAW-008",
+    "YGPA-031",
+    "YGPA-031",
+    "YGPA-032"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [
+    "내항선 입·출항 절차",
+    "외항선 입·출항 절차"
+   ],
+   "uncited_lines": 1,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 6.86,
+   "total_s": 8.2,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "absent": true,
+    "lead": true,
+    "buttons": true
+   },
+   "answer": "선박의 입·출항 절차는 선박의 종류(내항선 또는 외항선)에 따라 달라집니다. 어느 선박의 입·출항 절차를 알고 싶으신가요?"
+  },
+  {
+   "id": "t09",
+   "group": "team",
+   "question": "입항 절차를 알려주세요.",
+   "answer_type": "answer",
+   "top1_score": 0.668,
+   "top_docs": [
+    "LAW-009",
+    "YGPA-031",
+    "LAW-008",
+    "YGPA-020",
+    "YGPA-031"
+   ],
+   "downloads": [],
+   "port_mis": true,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 1.12,
+   "total_s": 4.73,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "absent": true,
+    "buttons": true
+   },
+   "answer": "선박이 여수광양항에 입항하려면 입항 예정 24시간 전에 Port-MIS에 선박 관련 정보와 보안 정보를 입력해야 하며, 내용이 변경되면 즉시 수정하여 다시 입력해야 합니다[2].  \n\n1. 내항선은 별지 제1호서식에 따른 내항선 출입신고서를 제출해야 합니다[1].  \n2. 외항선은 별지 제2호서식에 따른 외항선 출입신고서와 승객 명부, 승무원 명부를 함께 제출해야 합니다[1].  \n3. 입항과 출항을 동시에 신고할 수 있습니다[1].  \n4. 입항 시 선박의 입출항 일시가 변경되면 지체 없이 관리청에 신고해야 합니다[1].  \n5. 선박이 입항 시 접안 또는 정박을 시작하면 즉시 항해상황을 항만교통관제센터에 무선으로 통보해야 합니다[5]."
+  }
+ ]
+}

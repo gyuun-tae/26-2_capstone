@@ -58,6 +58,7 @@ data: {"message_id": 42, "answer_type": "answer", "actions": [], "options": []}
 | `title`, `source_url` | 제목, 사이트 주소, "원문 보기" |
 | `locator` | 관련 항목 |
 | `date_status` + `published_at`/`updated_at` | 원문 날짜. `not_displayed`면 "원문 미표기" — 수집일로 채우지 않는다 |
+| `date_status: "official_api_current"` + `effective_at` | 법령·고시. "2026.02.27 시행 (2025.10.24 공포)" — 시행일이 지금 적용 기준 |
 | `snippet` | 원문 발췌 |
 | `fetched_at` | 자료 확인일 |
 

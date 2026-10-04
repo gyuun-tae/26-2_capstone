@@ -52,8 +52,8 @@ async def run_one(item: dict) -> dict:
     hits = []
     original = search.search
 
-    def recording(vector, k):  # 조립 코드가 실제로 받은 검색 결과를 기록 (unknown이면 sources가 비므로)
-        hits[:] = original(vector, k)
+    def recording(vector, k, question=""):  # 조립 코드가 실제로 받은 검색 결과를 기록 (unknown이면 sources가 비므로)
+        hits[:] = original(vector, k, question)
         return hits
 
     search.search = recording
@@ -85,6 +85,11 @@ async def run_one(item: dict) -> dict:
     if item["expect_docs"]:
         checks["retrieval"] = any(d in docs for d in item["expect_docs"])
         checks["retrieval@1"] = bool(docs) and docs[0] in item["expect_docs"]  # 1위가 기대 문서인가 (순서 품질)
+    if item.get("must_contact"):  # 이 이름이 들어간 연락처 버튼이 있어야 한다 (예: 부서 질문 → 그 부서 버튼)
+        labels = [f"{x.label} {x.phone}" for x in result.actions if x.type == "contact"]
+        checks["contact_btn"] = all(any(w in label for label in labels) for w in item["must_contact"])
+    if item.get("must_not_mention"):  # 답 어디에도 나오면 안 되는 말 (예: 일반 입항 절차에 통과선박 절차)
+        checks["absent"] = not any(w in text for w in item["must_not_mention"])
     if item.get("must_not_lead"):  # 답의 첫 문단(요약)에 나오면 안 되는 말 (예: 일반 입항 절차를 '통과선박'으로 시작)
         lead = text.strip().split("\n\n")[0]
         checks["lead"] = not any(w in lead for w in item["must_not_lead"])
@@ -110,7 +115,7 @@ def summarize(rows: list[dict]) -> dict:
     groups = sorted({r["group"] for r in rows})
     firsts = [r["first_token_s"] for r in rows]
     return {
-        "retrieval": rate("retrieval"), "retrieval@1": rate("retrieval@1"), "type": rate("type"), "buttons": rate("buttons"), "mention": rate("mention"), "lead": rate("lead"), "contact": rate("contact"),
+        "retrieval": rate("retrieval"), "retrieval@1": rate("retrieval@1"), "type": rate("type"), "buttons": rate("buttons"), "mention": rate("mention"), "lead": rate("lead"), "absent": rate("absent"), "contact_btn": rate("contact_btn"), "contact": rate("contact"),
         "type_by_group": {g: rate("type", [r for r in rows if r["group"] == g]) for g in groups},
         "uncited_lines_total": sum(r["uncited_lines"] for r in rows if r["answer_type"] == "answer"),
         "violations_total": sum(len(r["violations"]) for r in rows),

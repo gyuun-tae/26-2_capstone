@@ -34,7 +34,15 @@ export interface Source {
   /** 원문에 날짜가 없으면 null. 수집일로 채우지 않는다 */
   published_at: string | null
   updated_at: string | null
-  date_status: 'not_displayed' | 'page_updated' | 'conflicting' | 'unverified_attachment' | (string & {})
+  date_status:
+    | 'not_displayed'
+    | 'page_updated'
+    | 'conflicting'
+    | 'unverified_attachment'
+    | 'official_api_current'
+    | (string & {})
+  /** 법령·고시의 시행일 (date_status가 official_api_current일 때). 백엔드가 보내지 않으면 없음 */
+  effective_at?: string | null
   /** 수집 시각 */
   fetched_at: string | null
   snippet: string

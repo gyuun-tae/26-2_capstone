@@ -13,6 +13,9 @@ import numpy as np
 MODEL_ID = "BAAI/bge-m3"
 MAX_TOKENS = 8192  # BGE-M3 모델 카드의 최대 입력 길이. 넘으면 자르지 않고 멈춘다
 EXCLUDED_KINDS = {"historical_addendum"}  # 과거 부칙은 현재 안내 검색에서 기본 제외 (등록 계획)
+# 같은 내용을 더 자세히 담은 새 수집본이 있는 문서 → 대체 문서. 옛 페이지(단계 이름만 나열)가 1위로 올라와
+# 상세 표(기한·근거)를 가린다 (docs/handoff/25_org_hinterland.md)
+SUPERSEDED = {"YGPA-019": "YGPA-039", "YGPA-020": "YGPA-039"}
 INPUT_FORMAT = "{title}\\n{section_titles joined by ' > '}\\n\\n{text}"
 
 
@@ -36,11 +39,14 @@ def select(chunks: list[dict], policy: dict) -> tuple[list[dict], dict]:
     blocked = [c["chunk_id"] for c in chunks if is_blocked(c["source_url"], policy)]
     if blocked:
         raise ValueError(f"평가 전용 출처가 청크에 있습니다: {blocked[:5]}")
-    kept = [c for c in chunks if c.get("chunk_kind") not in EXCLUDED_KINDS]
+    kept = [c for c in chunks if c.get("chunk_kind") not in EXCLUDED_KINDS and c["doc_id"] not in SUPERSEDED]
     excluded: dict[str, int] = {}
     for c in chunks:
         if c.get("chunk_kind") in EXCLUDED_KINDS:
             excluded[c["chunk_kind"]] = excluded.get(c["chunk_kind"], 0) + 1
+        elif c["doc_id"] in SUPERSEDED:
+            key = f"superseded:{c['doc_id']}->{SUPERSEDED[c['doc_id']]}"
+            excluded[key] = excluded.get(key, 0) + 1
     return kept, excluded
 
 

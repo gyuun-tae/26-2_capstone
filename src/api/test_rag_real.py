@@ -40,7 +40,7 @@ def run(question, llm_pieces, hits=HITS, history=()):
 
     msgs = [*history, {"role": "user", "content": question}]
     with patch.object(gpu, "embed", fake_embed), patch.object(gpu, "chat_stream", fake_chat), \
-            patch.object(search, "search", lambda v, k: hits):
+            patch.object(search, "search", lambda v, k, q="": hits):
         body = c.post("/chat", json={"messages": msgs}).text
     return [(b.split("\n")[0].removeprefix("event: "), json.loads(b.split("\n")[1].removeprefix("data: ")))
             for b in body.strip().split("\n\n")]
@@ -145,6 +145,11 @@ run("체육시설", ['답[1]\n@@META {"type": "answer"}'], history=[
     {"role": "user", "content": "사용료가 얼마인가요?"}, {"role": "assistant", "content": "어느 시설인가요?"}])
 assert calls["embed"][-1] == "사용료가 얼마인가요?\n체육시설", calls["embed"][-1]
 assert "사용료가 얼마인가요?\n(앞 질문에 대한 사용자의 선택: 체육시설)" in calls["chat"][-1][-1]["content"]
+# 앞 답이 되묻기가 아니면 '이어지는 질문'으로 붙인다 (h26)
+run("담당 부서가 어디야?", ['답[1]\n@@META {"type": "answer"}'], history=[
+    {"role": "user", "content": "입주기업 모집 가장 최근이 언제야?"},
+    {"role": "assistant", "content": "확인한 공식 자료만으로는 답을 확정하기 어렵습니다."}])
+assert "입주기업 모집 가장 최근이 언제야?\n(이어지는 질문: 담당 부서가 어디야?)" in calls["chat"][-1][-1]["content"]
 
 # 7-2. 근거에 '※ … 제한' 공지가 있으면 질문 옆에 짚어 준다 (없으면 붙이지 않는다)
 notice = [{"chunk": html_text | {"chunk_id": "n1", "text": "※ 경보 해제 시까지 예약이 제한됩니다.\n예약 안내"}, "score": 0.7}]
@@ -202,7 +207,7 @@ from datetime import date  # noqa: E402
 text = "(11)2024년 12월 31일까지 광양항에 입출항하는 선박\n(12)2030년 1월 1일까지 …\n(13)2024년 2월 30일까지"
 assert prompt.expired_until(text, today=date(2026, 10, 3)) == ["2024년 12월 31일까지"]
 fee = dict(form, chunk_kind="table", section_titles=["【별표 2】 감면"], text=text)
-assert "기한 지난 조항 있음(2024년 12월 31일까지)" in prompt.evidence([{"chunk": fee, "score": 0.7}])
+assert "기한 지난 조항 있음(2024년 12월 31일까지 — 오늘 " in prompt.evidence([{"chunk": fee, "score": 0.7}])
 assert "기한 지난" not in prompt.evidence([{"chunk": html_text, "score": 0.7}])
 
 # 11. "[근거]에 … 포함되어 있지 않습니다"는 확인 불가로 본다 (u02). 보통 답은 해당 없음
@@ -215,5 +220,9 @@ def last_user(question):
     return prompt.build_messages([Message(role="user", content=question)], [{"chunk": html_text, "score": 0.7}])[-1]["content"]
 assert prompt.FOREIGN_NOTE in last_user("How do I get a port access pass?")
 assert prompt.FOREIGN_NOTE not in last_user("출입증 발급 신청은 어디서 하나요?")
+
+# 13. 대상이 한정된 문서(통과선박 지침·신청서)는 질문에 '통과'가 있을 때만 검색 후보
+assert search.excluded_docs("입항 절차를 알려주세요.") == ["YGPA-028", "YGPA-030"]
+assert search.excluded_docs("통과선박으로 인정받으려면?") == []
 
 print("OK")

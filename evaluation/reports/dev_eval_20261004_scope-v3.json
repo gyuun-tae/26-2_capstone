@@ -1,0 +1,123 @@
+{
+ "dataset": "dev_questions_v3.jsonl",
+ "index_version": "bge-m3-dense-aca808eb7b4e",
+ "run_at": "2026-10-04T07:31:52.402511+00:00",
+ "summary": {
+  "retrieval": "3/3",
+  "retrieval@1": "2/3",
+  "type": "3/3",
+  "buttons": "3/3",
+  "mention": "1/1",
+  "lead": "0/0",
+  "absent": "0/0",
+  "contact": "0/0",
+  "type_by_group": {
+   "answer": "2/2",
+   "hard": "1/1"
+  },
+  "uncited_lines_total": 0,
+  "violations_total": 0,
+  "unsupported_numbers_total": 0,
+  "first_token_s": {
+   "mean": 2.13,
+   "median": 1.58,
+   "max": 3.42
+  }
+ },
+ "rows": [
+  {
+   "id": "a16",
+   "group": "answer",
+   "question": "배 들어올 때 입항 신고는 어디서 해요?",
+   "answer_type": "answer",
+   "top1_score": 0.724,
+   "top_docs": [
+    "LAW-008",
+    "LAW-007",
+    "YGPA-031",
+    "YGPA-031",
+    "YGPA-032"
+   ],
+   "downloads": [],
+   "port_mis": true,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 3.42,
+   "total_s": 7.0,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": false,
+    "buttons": true
+   },
+   "answer": "무역항의 수상구역등에 출입하려는 선박의 선장은 대통령령으로 정하는 바에 따라 관리청에 신고하여야 합니다[2].  \n\n1. 선장은 입항예정 24시간 전 또는 사용예정 전에 선박관련정보와 선박보안정보 및 항만시설사용신청을 Port-MIS에 입력하여야 합니다[4].  \n2. 입항 시에는 「선박의 입항 및 출항 등에 관한 법률 시행령」 제2조 제1호 및 제2호에 따라 내항선출입신고서와 외항선 출입신고서를 입력할 수 있습니다[4].  \n3. 선박이 개항의 항계 내에 입출항을 위하여 이동하는 때에는 선장은 항만시설사용료 부과 기준이 되는 사항을 즉시 서해지방해양경찰청 여수항해상교통관제센터에 무선으로 통보하여야 합니다[3]."
+  },
+  {
+   "id": "a17",
+   "group": "answer",
+   "question": "통과선박으로 인정받으려면 언제까지 신청해야 돼요?",
+   "answer_type": "answer",
+   "top1_score": 0.725,
+   "top_docs": [
+    "YGPA-030",
+    "YGPA-028",
+    "YGPA-030",
+    "LAW-009",
+    "LAW-006"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 1.58,
+   "total_s": 2.33,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "buttons": true
+   },
+   "answer": "통과선박으로 인정받으려면 출항일로부터 7일 이내에 통과선박 인정 신청서를 제출해야 합니다[1]."
+  },
+  {
+   "id": "h02",
+   "group": "hard",
+   "question": "통과선박 인정신청은 출항하고 며칠 안에 내야 돼요?",
+   "answer_type": "answer",
+   "top1_score": 0.75,
+   "top_docs": [
+    "YGPA-030",
+    "YGPA-030",
+    "YGPA-028",
+    "LAW-008",
+    "LAW-009"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 1.4,
+   "total_s": 1.93,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "통과선박 인정 신청은 출항일로부터 7일 이내에 제출해야 합니다[1]."
+  }
+ ]
+}

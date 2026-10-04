@@ -72,6 +72,7 @@ def chunk_to_source(chunk: dict) -> Source:
         published_at=chunk.get("published_at") or None,  # 빈 문자열 → null. 수집일로 채우지 않는다
         updated_at=chunk.get("updated_at") or None,
         date_status=chunk["date_status"],
+        effective_at=chunk.get("effective_at") or None,
         fetched_at=chunk.get("fetched_at") or None,
         snippet=snippet_text(chunk),
     )

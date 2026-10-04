@@ -90,7 +90,11 @@ def main():
     catalog = {r["doc_id"]: r for r in csv.DictReader(
         (ROOT / "data/catalog/ygpa_document_candidates.csv").open(encoding="utf-8-sig"))}
     contacts = [main_phone(), *form_contacts(catalog), *facility_contacts(catalog)]
-    OUT.write_text(json.dumps({"generated_by": "scripts/21_extract_contacts.py", "contacts": contacts},
+    # 25번이 만든 배후단지 페이지·부서 버튼(page-·dept-)은 그대로 둔다
+    old = json.loads(OUT.read_text(encoding="utf-8"))["contacts"] if OUT.exists() else []
+    kept = [c for c in old if c["key"].startswith(("page-", "dept-"))]
+    OUT.write_text(json.dumps({"generated_by": "scripts/21_extract_contacts.py, scripts/25_collect_ygpa_org_hinterland.py (page-·dept- 항목)",
+                               "contacts": contacts + kept},
                               ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     for c in contacts:
         print(f"{c['label']:<28} {c['phone']}  문서 {c['doc_ids'] or '전체'}")

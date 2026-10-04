@@ -32,7 +32,8 @@ class Source(BaseModel):
     locator: str  # 화면에 보여줄 근거 위치 문구 (예: "3쪽 표 2")
     published_at: str | None  # 원문에 날짜가 없으면 None. 수집일로 채우지 않는다
     updated_at: str | None
-    date_status: str  # not_displayed / page_updated / conflicting / unverified_attachment
+    date_status: str  # not_displayed / page_updated / conflicting / unverified_attachment / official_api_current(법령·고시)
+    effective_at: str | None = None  # 법령·고시의 시행일 (국가법령정보 API). 그 밖의 문서는 None
     fetched_at: str | None  # 수집 시각
     snippet: str
 

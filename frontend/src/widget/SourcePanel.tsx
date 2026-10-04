@@ -2,27 +2,8 @@ import { ArrowUpRight, X } from 'lucide-react'
 import { useEffect, useRef } from 'react'
 import { sentencesCiting } from '../api/parseAnswer'
 import type { Source } from '../api/types'
+import { dateLabel, formatDate } from './dateLabel'
 import styles from './SourcePanel.module.css'
-
-const formatDate = (iso: string) => iso.slice(0, 10).replaceAll('-', '.')
-
-/** 원문 날짜 표시. 날짜가 없으면 수집일로 채우지 않고 "원문 미표기"로 둔다 (팀 규격) */
-function dateLabel(source: Source): string {
-  const published = source.published_at && formatDate(source.published_at)
-  const updated = source.updated_at && formatDate(source.updated_at)
-  switch (source.date_status) {
-    case 'not_displayed':
-      return '원문 미표기'
-    case 'page_updated':
-      return updated ? `${updated} (페이지 수정일)` : '원문 미표기'
-    case 'conflicting':
-      return `확인 필요 · 원문 날짜가 서로 다름${published ? ` (${published})` : ''}`
-    case 'unverified_attachment':
-      return published ? `${published} (첨부 날짜 미확인)` : '첨부 날짜 미확인'
-    default:
-      return updated ?? published ?? '원문 미표기'
-  }
-}
 
 function hostOf(url: string): string {
   try {

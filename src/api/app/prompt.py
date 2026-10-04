@@ -49,6 +49,7 @@ SYSTEM = """당신은 여수광양항만공사(YGPA)의 민원·항만 이용 �
 - actions: 아래 이름 중 사용자가 바로 해야 할 일과 직접 관련된 것만. 없으면 빈 목록
 """
 REMINDER = ("(대상이 여럿이면 되묻기 · 근거 번호는 문장·항목 맨 끝에 · 하위 목록·구분선 없이 · "
+            "절차 목록 항목에는 근거에 있는 기한·담당을 함께 · "
             "작성할 서식을 안내했으면 그 번호를 forms에 · 마지막 줄에 @@META)")
 SHORT_QUESTION = 15  # 이보다 짧은 질문(예: 되묻기에 고른 선택지)은 앞 질문과 합쳐서 본다
 UNKNOWN_PHRASE = "답을 확정하기 어렵습니다"  # 지시문 5번 문구. 본문이 이 문구면 정리 줄과 상관없이 unknown
@@ -62,7 +63,12 @@ def effective_question(messages) -> str:
     last = messages[-1].content.strip()
     previous = [m.content for m in messages[:-1] if m.role == "user"]
     if len(last) < SHORT_QUESTION and previous:
-        return f"{previous[-1]}\n(앞 질문에 대한 사용자의 선택: {last})"
+        # 앞 답이 되묻기(물음표로 끝남)였으면 선택지, 아니면 이어지는 질문 (h26: "담당 부서가 어디야?"를 선택지로 보면
+        # LLM이 앞 질문만 다시 답한다)
+        replied = next((m.content.strip() for m in reversed(messages[:-1]) if m.role == "assistant"), "")
+        if replied.endswith("?"):
+            return f"{previous[-1]}\n(앞 질문에 대한 사용자의 선택: {last})"
+        return f"{previous[-1]}\n(이어지는 질문: {last})"
     return last
 
 
@@ -103,7 +109,8 @@ def evidence(hits: list[dict]) -> str:
         text = "\n".join(line for line in c["text"].splitlines() if not META_LINE.match(line.strip()))
         text = text if len(text) <= limit else text[:limit] + " …(이하 생략)"
         expired = expired_until(text)
-        flag = f" · 기한 지난 조항 있음({', '.join(expired)})" if expired else ""
+        today = datetime.now(KST).date().isoformat()
+        flag = f" · 기한 지난 조항 있음({', '.join(expired)} — 오늘 {today} 기준 이미 지남)" if expired else ""
         blocks.append(f"[{i}] {c['title']} · {locator_text(c)}{when}{flag}\n{text.strip()}")
     return "\n\n".join(blocks)
 

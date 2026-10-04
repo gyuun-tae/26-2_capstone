@@ -43,7 +43,8 @@ law = chunk(
     text="제41조(항만시설의 사용)\n① 항만시설을 사용하려는 자는",
 )
 s = chunk_to_source(law)
-assert s.locator == "제41조(항만시설의 사용)" and s.published_at == "2026-02-27", s
+assert s.locator == "제41조(항만시설의 사용)" and s.published_at == "2026-02-27" and s.effective_at == "2026-02-27", s
+assert chunk_to_source(html_text).effective_at is None
 assert form_download(law, source_ref=1) is None
 
 # 서식만 다운로드 버튼이 생기고, URL은 청크의 원문 주소 그대로

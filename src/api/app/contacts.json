@@ -1,5 +1,5 @@
 {
- "generated_by": "scripts/21_extract_contacts.py",
+ "generated_by": "scripts/21_extract_contacts.py, scripts/25_collect_ygpa_org_hinterland.py (page-·dept- 항목)",
  "contacts": [
   {
    "key": "main",
@@ -124,6 +124,306 @@
    ],
    "source": "안내 페이지 본문",
    "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/comu/resv/faci/contPageDetail.do?conts_no=553FFE81A6344CD4987BD450219FDFF8"
+  },
+  {
+   "key": "page-YGPA-034",
+   "label": "물류단지부 (배후단지 담당)",
+   "phone": "061-797-4456",
+   "note": "광양항 배후단지 입주·임대",
+   "doc_ids": [
+    "YGPA-034"
+   ],
+   "source": "광양항 배후단지 입주정보 — 임대조건 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/gybe/mvin/mv01/contPageDetail.do?conts_no=100AE3FE95BF410B8DC1FDBF3A544797",
+   "fetched_on": "2026-10-04"
+  },
+  {
+   "key": "page-YGPA-035",
+   "label": "물류단지부 (배후단지 담당)",
+   "phone": "061-797-4456",
+   "note": "광양항 배후단지 입주·임대",
+   "doc_ids": [
+    "YGPA-035"
+   ],
+   "source": "광양항 배후단지 입주정보 — 입주자격 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/gybe/mvin/mv02/contPageDetail.do?conts_no=8613460E64A24FBA918BCDB0324B75BE",
+   "fetched_on": "2026-10-04"
+  },
+  {
+   "key": "page-YGPA-036",
+   "label": "물류단지부 (배후단지 담당)",
+   "phone": "061-797-4456",
+   "note": "광양항 배후단지 입주·임대",
+   "doc_ids": [
+    "YGPA-036"
+   ],
+   "source": "광양항 배후단지 입주정보 — 입주절차 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/gybe/mvin/mv03/contPageDetail.do?conts_no=CD4B5BF76A874E338C2426014ACF83B5",
+   "fetched_on": "2026-10-04"
+  },
+  {
+   "key": "page-YGPA-037",
+   "label": "물류단지부 (배후단지 담당)",
+   "phone": "061-797-4456",
+   "note": "광양항 배후단지 입주·임대",
+   "doc_ids": [
+    "YGPA-037"
+   ],
+   "source": "광양항 배후단지 입주정보 — 입주기업 선정기준 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/gybe/mvin/mv04/contPageDetail.do?conts_no=844CF4E513734286940C6E1E3D24B326",
+   "fetched_on": "2026-10-04"
+  },
+  {
+   "key": "page-YGPA-038",
+   "label": "물류단지부 (배후단지 담당)",
+   "phone": "061-797-4456",
+   "note": "광양항 배후단지 입주·임대",
+   "doc_ids": [
+    "YGPA-038"
+   ],
+   "source": "광양항 배후단지 입주정보 — 세제감면 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/gybe/mvin/mv05/contPageDetail.do?conts_no=D36403CD1A1C48E4ADA70DB154EF30FD",
+   "fetched_on": "2026-10-04"
+  },
+  {
+   "key": "page-YGPA-039",
+   "label": "물류단지부 (배후단지 담당)",
+   "phone": "061-797-4456",
+   "note": "광양항 배후단지 입주·임대",
+   "doc_ids": [
+    "YGPA-039"
+   ],
+   "source": "광양항 배후단지 맞춤형 입주지원 (전 기간) 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/gybe/mvsu/ms01/contPageDetail.do?conts_no=F0D3217ED281457C9D6F55854160CD76",
+   "fetched_on": "2026-10-04"
+  },
+  {
+   "key": "dept-ORG-001",
+   "label": "재난안전실",
+   "phone": "061-797-4480",
+   "note": "부서 업무 총괄",
+   "doc_ids": [
+    "ORG-001"
+   ],
+   "source": "조직 및 직원검색 (부서명·담당업무·전화)",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/ygpa/orga/ogch/orgaChartPage.do",
+   "fetched_on": "2026-10-04"
+  },
+  {
+   "key": "dept-ORG-002",
+   "label": "항만위원회",
+   "phone": "061-797-4313",
+   "note": "부서 대표",
+   "doc_ids": [
+    "ORG-002"
+   ],
+   "source": "조직 및 직원검색 (부서명·담당업무·전화)",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/ygpa/orga/ogch/orgaChartPage.do",
+   "fetched_on": "2026-10-04"
+  },
+  {
+   "key": "dept-ORG-005",
+   "label": "감사실",
+   "phone": "061-797-4400",
+   "note": "부서 업무 총괄",
+   "doc_ids": [
+    "ORG-005"
+   ],
+   "source": "조직 및 직원검색 (부서명·담당업무·전화)",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/ygpa/orga/ogch/orgaChartPage.do",
+   "fetched_on": "2026-10-04"
+  },
+  {
+   "key": "dept-ORG-006",
+   "label": "기획조정실",
+   "phone": "061-797-4320",
+   "note": "부서 업무 총괄",
+   "doc_ids": [
+    "ORG-006"
+   ],
+   "source": "조직 및 직원검색 (부서명·담당업무·전화)",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/ygpa/orga/ogch/orgaChartPage.do",
+   "fetched_on": "2026-10-04"
+  },
+  {
+   "key": "dept-ORG-007",
+   "label": "ESG경영실",
+   "phone": "061-797-4380",
+   "note": "부서 업무 총괄",
+   "doc_ids": [
+    "ORG-007"
+   ],
+   "source": "조직 및 직원검색 (부서명·담당업무·전화)",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/ygpa/orga/ogch/orgaChartPage.do",
+   "fetched_on": "2026-10-04"
+  },
+  {
+   "key": "dept-ORG-008",
+   "label": "경영지원부",
+   "phone": "061-797-4340",
+   "note": "부서 업무 총괄",
+   "doc_ids": [
+    "ORG-008"
+   ],
+   "source": "조직 및 직원검색 (부서명·담당업무·전화)",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/ygpa/orga/ogch/orgaChartPage.do",
+   "fetched_on": "2026-10-04"
+  },
+  {
+   "key": "dept-ORG-009",
+   "label": "재무회계부",
+   "phone": "061-797-4360",
+   "note": "부서 업무 총괄",
+   "doc_ids": [
+    "ORG-009"
+   ],
+   "source": "조직 및 직원검색 (부서명·담당업무·전화)",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/ygpa/orga/ogch/orgaChartPage.do",
+   "fetched_on": "2026-10-04"
+  },
+  {
+   "key": "dept-ORG-010",
+   "label": "물류전략실",
+   "phone": "061-797-4420",
+   "note": "부서 업무 총괄",
+   "doc_ids": [
+    "ORG-010"
+   ],
+   "source": "조직 및 직원검색 (부서명·담당업무·전화)",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/ygpa/orga/ogch/orgaChartPage.do",
+   "fetched_on": "2026-10-04"
+  },
+  {
+   "key": "dept-ORG-011",
+   "label": "물류단지부",
+   "phone": "061-797-4440",
+   "note": "부서 업무 총괄",
+   "doc_ids": [
+    "ORG-011"
+   ],
+   "source": "조직 및 직원검색 (부서명·담당업무·전화)",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/ygpa/orga/ogch/orgaChartPage.do",
+   "fetched_on": "2026-10-04"
+  },
+  {
+   "key": "dept-ORG-012",
+   "label": "글로벌마케팅부",
+   "phone": "061-797-4460",
+   "note": "부서 업무 총괄",
+   "doc_ids": [
+    "ORG-012"
+   ],
+   "source": "조직 및 직원검색 (부서명·담당업무·전화)",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/ygpa/orga/ogch/orgaChartPage.do",
+   "fetched_on": "2026-10-04"
+  },
+  {
+   "key": "dept-ORG-013",
+   "label": "AI디지털부",
+   "phone": "061-797-4470",
+   "note": "부서 업무 총괄",
+   "doc_ids": [
+    "ORG-013"
+   ],
+   "source": "조직 및 직원검색 (부서명·담당업무·전화)",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/ygpa/orga/ogch/orgaChartPage.do",
+   "fetched_on": "2026-10-04"
+  },
+  {
+   "key": "dept-ORG-014",
+   "label": "여수지사",
+   "phone": "061-797-4330",
+   "note": "부서 업무 총괄",
+   "doc_ids": [
+    "ORG-014"
+   ],
+   "source": "조직 및 직원검색 (부서명·담당업무·전화)",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/ygpa/orga/ogch/orgaChartPage.do",
+   "fetched_on": "2026-10-04"
+  },
+  {
+   "key": "dept-ORG-015",
+   "label": "스마트항만개발실",
+   "phone": "061-797-4510",
+   "note": "부서 업무 총괄",
+   "doc_ids": [
+    "ORG-015"
+   ],
+   "source": "조직 및 직원검색 (부서명·담당업무·전화)",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/ygpa/orga/ogch/orgaChartPage.do",
+   "fetched_on": "2026-10-04"
+  },
+  {
+   "key": "dept-ORG-016",
+   "label": "항만건설사업실",
+   "phone": "061-797-4520",
+   "note": "부서 업무 총괄",
+   "doc_ids": [
+    "ORG-016"
+   ],
+   "source": "조직 및 직원검색 (부서명·담당업무·전화)",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/ygpa/orga/ogch/orgaChartPage.do",
+   "fetched_on": "2026-10-04"
+  },
+  {
+   "key": "dept-ORG-017",
+   "label": "항만시설사업부",
+   "phone": "061-797-4530",
+   "note": "부서 업무 총괄",
+   "doc_ids": [
+    "ORG-017"
+   ],
+   "source": "조직 및 직원검색 (부서명·담당업무·전화)",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/ygpa/orga/ogch/orgaChartPage.do",
+   "fetched_on": "2026-10-04"
+  },
+  {
+   "key": "dept-ORG-018",
+   "label": "친환경항만사업부",
+   "phone": "061-797-4580",
+   "note": "부서 업무 총괄",
+   "doc_ids": [
+    "ORG-018"
+   ],
+   "source": "조직 및 직원검색 (부서명·담당업무·전화)",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/ygpa/orga/ogch/orgaChartPage.do",
+   "fetched_on": "2026-10-04"
+  },
+  {
+   "key": "dept-ORG-019",
+   "label": "여수엑스포해양복합사업단",
+   "phone": "061-797-4500",
+   "note": "부서 업무 총괄",
+   "doc_ids": [
+    "ORG-019"
+   ],
+   "source": "조직 및 직원검색 (부서명·담당업무·전화)",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/ygpa/orga/ogch/orgaChartPage.do",
+   "fetched_on": "2026-10-04"
+  },
+  {
+   "key": "dept-ORG-020",
+   "label": "해양복합전략실",
+   "phone": "061-797-4450",
+   "note": "부서 업무 총괄",
+   "doc_ids": [
+    "ORG-020"
+   ],
+   "source": "조직 및 직원검색 (부서명·담당업무·전화)",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/ygpa/orga/ogch/orgaChartPage.do",
+   "fetched_on": "2026-10-04"
+  },
+  {
+   "key": "dept-ORG-021",
+   "label": "해양복합운영부",
+   "phone": "061-797-4540",
+   "note": "부서 업무 총괄",
+   "doc_ids": [
+    "ORG-021"
+   ],
+   "source": "조직 및 직원검색 (부서명·담당업무·전화)",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/ygpa/orga/ogch/orgaChartPage.do",
+   "fetched_on": "2026-10-04"
   }
  ]
 }

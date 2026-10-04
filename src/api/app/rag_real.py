@@ -89,7 +89,7 @@ def answer(messages) -> Answer:
 
     async def tokens():
         vector = await gpu.embed(search_query(messages))
-        hits = await asyncio.to_thread(search.search, vector, int(os.getenv("RAG_K", K)))
+        hits = await asyncio.to_thread(search.search, vector, int(os.getenv("RAG_K", K)), search_query(messages))
         if not hits or (max(h["score"] for h in hits) < threshold and not term_match(search_query(messages), hits)):
             result.answer_type = "unknown"
             result.actions = [contacts.MAIN]
