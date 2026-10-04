@@ -90,12 +90,20 @@ def public_url(entry: dict, serial: str) -> str:
 
 
 def collect(entry: dict, found: dict, oc: str, root: Path = ROOT) -> Path:
-    params = {"target": entry["target"], ("MST" if entry["target"] == "law" else "ID"): found["serial"]}
+    if entry["target"] == "law":
+        # 같은 공포본(MST)이 단계별로 시행되기도 한다(예: 선박입출항법 2026-05-12 현행, 2026-11-13 시행 예정).
+        # target=law는 시행 예정분까지 반영한 본문을 줄 수 있어, 목록의 현행 시행일 기준 본문(eflaw)을 받는다
+        params = {"target": "eflaw", "MST": found["serial"], "efYd": found["effective_date"]}
+    else:
+        params = {"target": "admrul", "ID": found["serial"]}
     data, raw = get_json("lawService.do", params, oc)
     if oc in raw.decode("utf-8"):
         raise ValueError("원본에서 인증값을 지우지 못했습니다")
     if not (data.get("법령") or data.get("AdmRulService")):
         raise ValueError(f"{entry['doc_id']} 본문 응답 형식이 예상과 다릅니다: {list(data)[:5]}")
+    body_date = (data.get("법령") or {}).get("기본정보", {}).get("시행일자")
+    if body_date and body_date != found["effective_date"]:
+        raise ValueError(f"{entry['doc_id']} 본문 시행일 {body_date}이 현행 시행일 {found['effective_date']}과 다릅니다")
     fetched = datetime.now(timezone.utc)
     snapshot = fetched.strftime("%Y%m%dT%H%M%S%fZ")
     folder = root / "data/raw" / entry["doc_id"] / snapshot
@@ -124,7 +132,10 @@ def main():
     for entry in entries:
         found = find_current(entry, oc)
         last = latest_metadata(ROOT, entry["doc_id"])
-        changed = not last or last["serial"] != found["serial"]
+        # 버전 = 공포본 번호 + 현행 시행일 (단계별 시행이면 번호가 같아도 시행일이 바뀐다). 예전 방식(target=law)으로
+        # 받은 스냅샷은 시행 예정분이 섞였을 수 있어 다시 받는다
+        changed = (not last or last["serial"] != found["serial"] or last["effective_date"] != found["effective_date"]
+                   or (entry["target"] == "law" and last["api_request"].get("target") != "eflaw"))
         status = "변경" if last and changed else "신규" if changed else "그대로"
         line = f"{entry['doc_id']} {entry['name']} | 버전 {found['serial']} | 시행 {found['effective_date']} | {status}"
         if changed and args.download:
