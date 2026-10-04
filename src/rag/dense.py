@@ -4,6 +4,7 @@
 검색 결과 형식은 docs/contracts/rag_interface_proposal.md 1절: {"chunk": 청크 그대로, "score": 유사도}.
 """
 import hashlib
+from datetime import datetime, timedelta, timezone
 import json
 from pathlib import Path
 from urllib.parse import parse_qs, urlparse
@@ -16,6 +17,9 @@ EXCLUDED_KINDS = {"historical_addendum"}  # 과거 부칙은 현재 안내 검�
 # 같은 내용을 더 자세히 담은 새 수집본이 있는 문서 → 대체 문서. 옛 페이지(단계 이름만 나열)가 1위로 올라와
 # 상세 표(기한·근거)를 가린다 (docs/handoff/25_org_hinterland.md)
 SUPERSEDED = {"YGPA-019": "YGPA-039", "YGPA-020": "YGPA-039"}
+APPROVAL_LEDGER = "data/catalog/index_approvals.json"  # scripts/26_review_index_approval.py
+APPROVAL_VALID_DAYS = 30  # docs/contracts/index_approval_policy.md 유효 기간
+APPROVED = {"approved", "approved_with_notes"}
 INPUT_FORMAT = "{title}\\n{section_titles joined by ' > '}\\n\\n{text}"
 
 
@@ -32,6 +36,24 @@ def is_blocked(url: str, policy: dict) -> bool:
         return True
     query = parse_qs(u.query)
     return any(v in query.get(k, []) for k, values in policy.get("blocked_query_values", {}).items() for v in values)
+
+
+def apply_approvals(chunks: list[dict], ledger: dict, now: datetime | None = None) -> list[dict]:
+    """승인 기록을 청크에 반영한 사본. 기록의 본문 해시와 다르면(다시 수집·청킹됨) 승인하지 않는다.
+    승인 기록이 유효 기간을 넘었으면 멈춘다"""
+    checked = datetime.fromisoformat(ledger["checked_at"])
+    age = (now or datetime.now(timezone.utc)) - checked
+    if age > timedelta(days=APPROVAL_VALID_DAYS):
+        raise ValueError(f"승인 기록이 {age.days}일 지났습니다 (유효 {APPROVAL_VALID_DAYS}일). 26번을 다시 실행하세요")
+    out = []
+    for c in chunks:
+        d = ledger["chunks"].get(c["chunk_id"])
+        ok = bool(d) and d["status"] in APPROVED and d["chunk_text_sha256"] == c["chunk_text_sha256"]
+        status = d["status"] if ok else ("stale_approval" if d else "not_reviewed")
+        out.append({**c, "index_approved": ok, "review_status": status,
+                    "approval": {"policy_version": ledger["policy_version"], "checked_at": ledger["checked_at"],
+                                 "notes": d["notes"] if d else []}})
+    return out
 
 
 def select(chunks: list[dict], policy: dict) -> tuple[list[dict], dict]:

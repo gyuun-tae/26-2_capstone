@@ -1,4 +1,7 @@
-"""개발용 BGE-M3 dense 색인 생성. 승인 전 청크를 포함하므로 로컬 실험 전용이며 배포하지 않는다.
+"""BGE-M3 dense 색인 생성.
+
+기본은 개발용(승인 전 청크 포함). --approved-only면 승인 기록(data/catalog/index_approvals.json, 26번)에서
+승인된 청크만 넣는 서비스용 색인을 만든다 (docs/contracts/index_approval_policy.md).
 
 실행: .\\.venv\\Scripts\\python.exe -B .\\scripts\\16_build_index.py
 결과: data/index/<색인 버전>/vectors.npy, chunks.jsonl, manifest.json (Git 제외)
@@ -30,10 +33,21 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--revision", help="BGE-M3 커밋. 없으면 최신을 받고 실제 커밋을 기록")
     ap.add_argument("--batch-size", type=int, default=4)
+    ap.add_argument("--approved-only", action="store_true", help="승인 기록에서 승인된 청크만 (서비스용)")
     args = ap.parse_args()
 
     policy = json.loads((ROOT / "docs/contracts/data_separation_policy.json").read_text(encoding="utf-8"))
     chunks, excluded = dense.select(dense.load_chunks(ROOT), policy)
+    ledger = None
+    if args.approved_only:
+        ledger = json.loads((ROOT / dense.APPROVAL_LEDGER).read_text(encoding="utf-8"))
+        reviewed = dense.apply_approvals(chunks, ledger)
+        held = [c for c in reviewed if not c["index_approved"]]
+        for c in held:
+            excluded[f"not_approved:{c['review_status']}"] = excluded.get(f"not_approved:{c['review_status']}", 0) + 1
+        chunks = [c for c in reviewed if c["index_approved"]]
+        if held:
+            print(f"승인 안 된 청크 {len(held)}개 제외: {sorted({c['doc_id'] for c in held})[:10]}")
     model, revision = load_model(args.revision)
     print(f"청크 {len(chunks)}개 색인 (제외: {excluded}), 모델 {dense.MODEL_ID}@{revision[:12]}")
 
@@ -46,7 +60,9 @@ def main():
     manifest = {
         "index_version": version,
         "created_at": datetime.now(timezone.utc).isoformat(),
-        "purpose": "개발용 로컬 실험 — 승인 전(index_approved=false) 청크 포함, 배포 금지",
+        "purpose": ("서비스용 — 승인된 청크만" if ledger else "개발용 로컬 실험 — 승인 전(index_approved=false) 청크 포함"),
+        "approval": ({"ledger": dense.APPROVAL_LEDGER, "policy_version": ledger["policy_version"],
+                      "checked_at": ledger["checked_at"]} if ledger else None),
         "model_id": dense.MODEL_ID,
         "model_revision": revision,
         "dimension": int(vectors.shape[1]),

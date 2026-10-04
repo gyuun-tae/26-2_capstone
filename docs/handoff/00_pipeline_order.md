@@ -29,6 +29,7 @@
 | 23 | 법령·고시 조문·별표 청킹 | [실행 파일](../../scripts/23_chunk_laws.py) | [22_laws.md](22_laws.md#청킹-규칙-law-articles-v1) |
 | 24 | YGPA 사용료 규정 별표(보류분) 청킹 | [실행 파일](../../scripts/24_chunk_ygpa032_annex.py) | [22_laws.md](22_laws.md#ygpa-사용료-규정-별표-추가와-최종-설정-2026-10-03) |
 | 25 | 배후단지 입주 안내·부서별 담당업무 수집·청킹 | [실행 파일](../../scripts/25_collect_ygpa_org_hinterland.py) | [25_org_hinterland.md](25_org_hinterland.md) |
+| 26 | 색인 승인 검토 (현행성 재확인·승인 기록) | [실행 파일](../../scripts/26_review_index_approval.py) | [26_index_approval.md](26_index_approval.md) |
 
 08의 겹친 글자 후속 검토는 [보충 문서](08_restore_tables_remaining_controls.md)를 참고합니다. 테스트 파일은 unittest 발견 규칙인 `test_*.py`를 유지합니다. 숫자로 시작하는 실행 파일은 일반 import 문법에 맞지 않으므로 코드 내부는 명시적 `__import__`로 연결합니다. 처리 버전·청크 ID·출력 경로·원본 데이터는 바꾸지 않았습니다.
 
