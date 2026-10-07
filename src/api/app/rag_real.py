@@ -10,7 +10,7 @@ import re
 
 from pydantic import ValidationError
 
-from app import contacts, gpu, search
+from app import contacts, gpu, rerank, search
 from app.actions import ACTIONS
 from app.prompt import (NO_EVIDENCE, NO_EVIDENCE_MAX, SHORT_QUESTION, UNKNOWN_PHRASE, CitationFilter, ContactFilter, EvidenceWordFilter, Meta, MetaFilter, RuleLineFilter,
                         build_messages, parse_meta, violations)
@@ -88,9 +88,17 @@ def answer(messages) -> Answer:
     result = Answer(sources=[], tokens=None)
     threshold = float(os.getenv("UNKNOWN_THRESHOLD", DEFAULT_THRESHOLD))
 
+    k = int(os.getenv("RAG_K", K))
+    pools: dict[str, list[dict]] = {}  # 질문 → 재정렬할 후보 (재정렬을 켰을 때)
+
     async def find(query: str) -> list[dict]:
+        """벡터 순서 근거 k개 (확인 불가 판단용). 재정렬을 켜면 후보를 넉넉히 받아 pools에 둔다"""
         vector = await gpu.embed(query)
-        return await asyncio.to_thread(search.search, vector, int(os.getenv("RAG_K", K)), query)
+        if not rerank.enabled():
+            return await asyncio.to_thread(search.search, vector, k, query)
+        pool = await asyncio.to_thread(search.search, vector, 2 * rerank.candidates(), query, 2 * rerank.candidates())
+        pools[query] = pool
+        return rerank.by_vector(pool, k)
 
     def weak(hits: list[dict], query: str) -> bool:
         return not hits or (max(h["score"] for h in hits) < threshold and not term_match(query, hits))
@@ -108,6 +116,8 @@ def answer(messages) -> Answer:
             result.actions = [contacts.MAIN]
             yield UNKNOWN_TEXT
             return
+        if query in pools:  # 확인 불가가 아니면 근거 순서를 재정렬로 다시 정한다
+            hits = await rerank.rerank(query, pools[query], k)
 
         result.sources = [chunk_to_source(h["chunk"]) for h in hits]
         # 화면으로 나가기 전 거르기: 정리 줄(@@META) → 구분선 → 없는 근거 번호 → "[근거]" 이름표 → 근거에 없는 연락처

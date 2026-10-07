@@ -45,17 +45,28 @@ LIMIT :k
 """)
 
 
+def law_cap() -> int:
+    return int(os.getenv("RAG_MAX_LAW", MAX_LAW))  # 실험용 조정값
+
+
+def is_capped_law(chunk: dict) -> bool:
+    """법령 상한에 세는 청크: 법령·고시 조문·별표. 법령 서식은 세지 않는다 (SQL의 is_law와 같은 규칙)"""
+    return chunk["doc_id"].startswith("LAW-") and chunk.get("chunk_kind") != "whole_form"
+
+
 def excluded_docs(question: str) -> list[str]:
     return [doc for doc, words in SCOPED_DOCS.items() if not any(w in question for w in words)]
 
 
-def search(query_vector: list[float], k: int = 5, question: str = "") -> list[dict]:
+def search(query_vector: list[float], k: int = 5, question: str = "", max_law: int | None = None) -> list[dict]:
+    """max_law: 법령 상한을 바꿀 때 (재정렬 후보는 상한 없이 받고 재정렬 뒤에 상한을 건다, app/rerank.py)"""
     version = os.getenv("INDEX_VERSION")
     if not version:
         raise RuntimeError("INDEX_VERSION이 설정되지 않았습니다")
     q = "[" + ",".join(map(str, query_vector)) + "]"
     with engine.connect() as conn:
-        max_law = int(os.getenv("RAG_MAX_LAW", MAX_LAW))  # 실험용 조정값
+        if max_law is None:
+            max_law = law_cap()
         rows = conn.execute(SQL, {"q": q, "version": version, "per_doc": MAX_PER_DOC, "max_law": max_law, "k": k,
                                   "excluded": excluded_docs(question)}).all()
     return [{"chunk": chunk, "score": float(score)} for chunk, score in rows]

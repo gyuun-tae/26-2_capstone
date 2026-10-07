@@ -8,6 +8,7 @@ tmp = tempfile.mkdtemp()
 os.environ["DATABASE_URL"] = f"sqlite:///{tmp}/test.db"
 os.environ["CHROMA_PATH"] = f"{tmp}/chroma"
 os.environ["RAG_MODE"] = "real"
+os.environ["RAG_RERANK"] = "off"  # 재정렬은 test_rerank.py에서
 
 from fastapi.testclient import TestClient  # noqa: E402
 from sqlalchemy import select  # noqa: E402
@@ -40,7 +41,7 @@ def run(question, llm_pieces, hits=HITS, history=()):
 
     msgs = [*history, {"role": "user", "content": question}]
     with patch.object(gpu, "embed", fake_embed), patch.object(gpu, "chat_stream", fake_chat), \
-            patch.object(search, "search", lambda v, k, q="": hits(q) if callable(hits) else hits):
+            patch.object(search, "search", lambda v, k, q="", max_law=None: hits(q) if callable(hits) else hits):
         body = c.post("/chat", json={"messages": msgs}).text
     return [(b.split("\n")[0].removeprefix("event: "), json.loads(b.split("\n")[1].removeprefix("data: ")))
             for b in body.strip().split("\n\n")]

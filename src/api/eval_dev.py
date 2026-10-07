@@ -23,7 +23,7 @@ import statistics
 import time
 
 import try_real  # noqa: F401  (.env를 읽고 앱 모듈을 불러온다)
-from app import rag_real, search
+from app import rag_real, rerank, search
 from app.actions import PORT_MIS
 from app.prompt import CONTACT, uncited_lines, violations
 from app.schemas import Message
@@ -50,13 +50,21 @@ def unsupported_numbers(text: str, evidence: str) -> list[str]:
 
 async def run_one(item: dict) -> dict:
     hits = []
-    original = search.search
+    original, original_rerank = search.search, rerank.rerank
+    k = int(os.getenv("RAG_K", rag_real.K))
 
-    def recording(vector, k, question=""):  # 조립 코드가 실제로 받은 검색 결과를 기록 (unknown이면 sources가 비므로)
-        hits[:] = original(vector, k, question)
-        return hits
+    # 조립 코드가 실제로 쓴 근거를 기록 (unknown이면 sources가 비므로). 재정렬을 켜면 검색은 후보를 넉넉히 받으므로
+    # 그중 벡터 순서 k개를 기록하고(확인 불가 판단에 쓴 근거), 재정렬했으면 재정렬 결과로 바꾼다
+    def recording(vector, n, question="", max_law=None):
+        found = original(vector, n, question, max_law)
+        hits[:] = found if max_law is None else rerank.by_vector(found, k)
+        return found
 
-    search.search = recording
+    async def recording_rerank(query, pool, n):
+        hits[:] = await original_rerank(query, pool, n)
+        return list(hits)
+
+    search.search, rerank.rerank = recording, recording_rerank
     try:
         messages = [Message(**m) for m in item.get("history", [])] + [Message(role="user", content=item["question"])]
         start, first, pieces = time.perf_counter(), None, []
@@ -66,7 +74,7 @@ async def run_one(item: dict) -> dict:
             pieces.append(piece)
         total = time.perf_counter() - start
     finally:
-        search.search = original
+        search.search, rerank.rerank = original, original_rerank
 
     text = "".join(pieces)
     docs = [h["chunk"]["doc_id"] for h in hits]

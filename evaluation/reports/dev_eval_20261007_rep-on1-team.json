@@ -1,0 +1,164 @@
+{
+ "dataset": "dev_questions_team_v1.jsonl",
+ "index_version": "bge-m3-dense-2e26c2fc2e81",
+ "run_at": "2026-10-07T13:17:44.504802+00:00",
+ "summary": {
+  "retrieval": "3/3",
+  "retrieval@1": "1/3",
+  "type": "4/4",
+  "buttons": "4/4",
+  "mention": "1/1",
+  "lead": "0/0",
+  "absent": "0/0",
+  "contact_btn": "0/0",
+  "contact": "0/0",
+  "type_by_group": {
+   "team": "4/4"
+  },
+  "uncited_lines_total": 1,
+  "violations_total": 0,
+  "unsupported_numbers_total": 0,
+  "first_token_s": {
+   "mean": 2.91,
+   "median": 2.6,
+   "max": 4.6
+  }
+ },
+ "rows": [
+  {
+   "id": "t01",
+   "group": "team",
+   "question": "견학 신청은 어디서 하나요?",
+   "answer_type": "answer",
+   "top1_score": 0.542,
+   "top_docs": [
+    "YGPA-008",
+    "LAW-009",
+    "LAW-021",
+    "YGPA-005",
+    "YGPA-025"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [
+    "항만안내선 담당 061-797-4438"
+   ],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 1,
+   "unsupported_numbers": [],
+   "first_token_s": 4.6,
+   "total_s": 8.76,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "buttons": true
+   },
+   "answer": "※ 정부의 자원안보 위기 주의단계 경보 발령에 따라, 경보 해제 시까지 항만안내선 예약이 제한됩니다[1].\n\n항만안내선 견학 신청은 여수광양항만공사의 항만안내선 담당자에게 문의하여 신청하시면 됩니다[1].\n\n1. 견학 신청은 일반시민 누구나 가능하며, 미취학 아동의 경우 2명당 보호자 1명 동행이 필요합니다[1].\n2. 견학일정은 매주 화요일과 목요일이며, 시간대는 10:00 ~ 11:00, 14:00 ~ 15:00입니다[1].\n3. 견학 신청 후 예약 확정을 받아야 하며, 견학일정 5분 전까지 승선장소로 집결해야 합니다[1].\n4. 승선장소는 광양항 컨테이너 관용선부두(전라남도 광양시 컨부두로 336, 선원회관 옆)입니다[1]."
+  },
+  {
+   "id": "t04",
+   "group": "team",
+   "question": "광양항의 항만여건에 대해 알려줘",
+   "answer_type": "answer",
+   "top1_score": 0.648,
+   "top_docs": [
+    "YGPA-008",
+    "YGPA-012",
+    "YGPA-012",
+    "YGPA-017",
+    "YGPA-014"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [
+    "항만안내선 담당 061-797-4438"
+   ],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 1,
+   "unsupported_numbers": [],
+   "first_token_s": 1.82,
+   "total_s": 6.89,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": false,
+    "buttons": true
+   },
+   "answer": "※ 정부의 자원안보 위기 주의단계 경보 발령에 따라, 경보 해제 시까지 항만안내선 예약이 제한됨을 안내드립니다[1].\n\n광양항은 다양한 부두와 항만 관련 부지를 포함한 복합적인 항만 시설을 운영하고 있습니다. 부두별로 선석, 길이, 최저수심, 접안능력, 하역능력, 취급화물 등이 다르게 설정되어 있습니다[2][3].\n\n1. 현대제철부두는 철재 취급이 가능한 부두로, 최대 12,000 DWT의 선박이 접안할 수 있으며 하역능력은 연간 810천톤입니다[2].\n2. 율촌일반부두는 잡화 취급이 가능한 부두로, 최대 20,000 DWT의 선박이 접안할 수 있으며 하역능력은 연간 600천톤입니다[3].\n3. 항만 관련 부지의 총 면적은 616,448㎡이며, 동측과 서측으로 나뉘어 각 블록별 면적이 기록되어 있습니다[4].\n4. 컨테이너부두는 여수광양항만공사가 관리하는 케이슨식 부두로, 부두면적은 1,906천㎡이며, KIT와 GWCT가 운영 및 하역을 담당하고 있습니다[5]."
+  },
+  {
+   "id": "t18",
+   "group": "team",
+   "question": "출입증 분실하면 며칠 안에 경위서를 내야 하나요?",
+   "answer_type": "answer",
+   "top1_score": 0.524,
+   "top_docs": [
+    "YGPA-025",
+    "YGPA-022",
+    "LAW-015",
+    "LAW-012",
+    "LAW-009"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [
+    "항만출입증 담당자 (광양) 061-797-4434",
+    "항만출입증 담당자 (여수) 061-692-4336"
+   ],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 2,
+   "unsupported_numbers": [],
+   "first_token_s": 2.3,
+   "total_s": 3.23,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": false,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "출입증을 분실하였을 때는 즉시 신고하고 3일 이내에 분실 경위서 및 업체(단체) 대표의 확인서를 제출해야 합니다[1]."
+  },
+  {
+   "id": "t20",
+   "group": "team",
+   "question": "출입증 발급 수수료는 얼마인가요?",
+   "answer_type": "answer",
+   "top1_score": 0.604,
+   "top_docs": [
+    "LAW-021",
+    "LAW-009",
+    "YGPA-025",
+    "YGPA-032",
+    "YGPA-023"
+   ],
+   "downloads": [
+    "YGPA-025"
+   ],
+   "port_mis": false,
+   "contacts": [
+    "항만출입증 담당자 (광양) 061-797-4434",
+    "항만출입증 담당자 (여수) 061-692-4336"
+   ],
+   "options": [],
+   "uncited_lines": 1,
+   "violations": [],
+   "contacts_from_evidence": 2,
+   "unsupported_numbers": [],
+   "first_token_s": 2.91,
+   "total_s": 4.18,
+   "checks": {
+    "type": true,
+    "buttons": true
+   },
+   "answer": "출입증 발급 수수료는 별도로 명시되어 있지 않습니다. \n\n항만상시출입증 발급을 위해서는 \"항만상시출입증발급신청서\"[3]를 작성해야 하며, 관련 수수료는 별도로 기재되어 있지 않습니다."
+  }
+ ]
+}

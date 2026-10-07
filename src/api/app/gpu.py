@@ -1,4 +1,4 @@
-"""GPU 서버(관문) 호출: 질문 임베딩(BGE-M3)과 답변 생성(Qwen3-32B) 스트리밍.
+"""GPU 서버(관문) 호출: 질문 임베딩(BGE-M3), 검색 후보 재정렬(bge-reranker-v2-m3), 답변 생성(Qwen3-32B) 스트리밍.
 
 관문(infra/gpu_server/gateway.py)은 Cloudflare 임시 터널 때문에 스트리밍을 SSE 대신 NDJSON(한 줄에 JSON 하나)으로 보낸다.
 환경변수: GPU_URL(터널 주소), GPU_API_KEY(GPU 서버 ~/llm-serve/.api_key 내용)
@@ -13,6 +13,7 @@ import httpx
 
 EMBED_MODEL = "bge-m3"
 LLM_MODEL = "qwen3-32b"
+RERANK_MODEL = "bge-reranker"
 # 연결 5초, 다음 조각까지 최대 60초 (긴 근거를 읽는 첫 조각이 가장 오래 걸린다)
 TIMEOUT = httpx.Timeout(60, connect=5)
 
@@ -62,3 +63,18 @@ async def chat_stream(messages: list[dict], max_tokens: int, temperature: float)
             choice = json.loads(line)["choices"][0]
             if text := choice.get("delta", {}).get("content"):
                 yield text
+
+
+async def rerank(query: str, documents: list[str], timeout: float, truncate: int | None = None) -> list[float]:
+    """질문-문서 쌍 관련도(0~1, 문서 순서대로). 재정렬은 실패해도 벡터 순서로 대신하므로 짧게 기다린다"""
+    url, headers = _config()
+    body = {"model": RERANK_MODEL, "query": query, "documents": documents}
+    if truncate:
+        body["truncate_prompt_tokens"] = truncate
+    r = await _client().post(f"{url}/v1/rerank", headers=headers, json=body, timeout=timeout)
+    if r.status_code != 200:
+        raise GpuError(f"재정렬 실패 {r.status_code}")
+    scores = [0.0] * len(documents)
+    for item in r.json()["results"]:
+        scores[item["index"]] = float(item["relevance_score"])
+    return scores

@@ -31,6 +31,7 @@ R=https://raw.githubusercontent.com/gyuun-tae/26-2_capstone/main/infra/gpu_serve
 for f in start_qwen.sh start_bge.sh start_gateway.sh start_tunnel.sh gateway.py check_embedding.py check_gateway.py; do curl -fsSO $R/$f; done   # 스크립트 받기
 bash start_qwen.sh                 # 생성 (세션 qwen, 로그 vllm.log). READY가 나오면 준비 완료
 bash start_bge.sh                  # 임베딩 (세션 bge, 로그 bge.log)
+bash start_reranker.sh             # 재정렬 (세션 reranker, 로그 reranker.log). 선택 — API 기본은 RAG_RERANK=off (docs/handoff/28_rerank.md)
 tmux attach -t qwen                # 실행 화면 보기 (나올 때 Ctrl+B 다음 D)
 tmux kill-session -t qwen          # 끄기 (임베딩은 -t bge)
 ```
