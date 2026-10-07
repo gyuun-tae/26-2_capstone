@@ -12,7 +12,7 @@ from pydantic import ValidationError
 
 from app import contacts, gpu, search
 from app.actions import ACTIONS
-from app.prompt import (NO_EVIDENCE, NO_EVIDENCE_MAX, SHORT_QUESTION, UNKNOWN_PHRASE, CitationFilter, ContactFilter, Meta, MetaFilter, RuleLineFilter,
+from app.prompt import (NO_EVIDENCE, NO_EVIDENCE_MAX, SHORT_QUESTION, UNKNOWN_PHRASE, CitationFilter, ContactFilter, EvidenceWordFilter, Meta, MetaFilter, RuleLineFilter,
                         build_messages, parse_meta, violations)
 from app.rag import Answer
 from app.schemas import Action, Option
@@ -97,16 +97,17 @@ def answer(messages) -> Answer:
             return
 
         result.sources = [chunk_to_source(h["chunk"]) for h in hits]
-        # 화면으로 나가기 전 거르기: 정리 줄(@@META) → 구분선 → 없는 근거 번호 → 근거에 없는 연락처
-        meta, rules, cites, parts = MetaFilter(), RuleLineFilter(), CitationFilter(len(hits)), []
+        # 화면으로 나가기 전 거르기: 정리 줄(@@META) → 구분선 → 없는 근거 번호 → "[근거]" 이름표 → 근거에 없는 연락처
+        meta, rules, cites, words, parts = MetaFilter(), RuleLineFilter(), CitationFilter(len(hits)), EvidenceWordFilter(), []
         guard = ContactFilter("\n".join(h["chunk"]["text"] for h in hits))
         temperature = float(os.getenv("RAG_TEMPERATURE", TEMPERATURE))
         async for piece in gpu.chat_stream(build_messages(messages, hits), MAX_TOKENS, temperature):
             piece = piece.replace("。", ".")  # Qwen이 가끔 쓰는 중국식 마침표
-            if out := guard.feed(cites.feed(rules.feed(meta.feed(piece)))):
+            if out := guard.feed(words.feed(cites.feed(rules.feed(meta.feed(piece))))):
                 parts.append(out)
                 yield out
-        if out := guard.feed(cites.feed(rules.feed(meta.flush()) + rules.flush()) + cites.flush()) + guard.flush():
+        rest = cites.feed(rules.feed(meta.flush()) + rules.flush()) + cites.flush()
+        if out := guard.feed(words.feed(rest) + words.flush()) + guard.flush():
             parts.append(out)
             yield out
         if guard.masked:

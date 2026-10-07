@@ -53,8 +53,9 @@ REMINDER = ("(대상이 여럿이면 되묻기 · 근거 번호는 문장·항�
             "작성할 서식을 안내했으면 그 번호를 forms에 · 마지막 줄에 @@META)")
 SHORT_QUESTION = 15  # 이보다 짧은 질문(예: 되묻기에 고른 선택지)은 앞 질문과 합쳐서 본다
 UNKNOWN_PHRASE = "답을 확정하기 어렵습니다"  # 지시문 5번 문구. 본문이 이 문구면 정리 줄과 상관없이 unknown
-# 지시문 5번 문구 대신 "[근거]에 … 포함되어 있지 않습니다"처럼 쓰는 경우 (u02). 짧은 답에서만 본다
-NO_EVIDENCE = re.compile(r"근거\]?에[^.]{0,60}(포함되어 있지 않|없습니다)")
+# 지시문 5번 문구 대신 "[근거]에 … 포함되어 있지 않습니다"처럼 쓰는 경우 (u02). 짧은 답에서만 본다.
+# 화면에는 EvidenceWordFilter가 "[근거]"를 "확인한 공식 자료"로 바꿔 내보내므로 둘 다 잡는다
+NO_EVIDENCE = re.compile(r"(근거\]?|공식 자료)에[^.]{0,60}(포함되어 있지 않|없습니다)")
 NO_EVIDENCE_MAX = 200
 
 
@@ -307,6 +308,25 @@ class CitationFilter:
                 self.held = ""
                 out.append(self.feed(ch))
         return "".join(out)
+
+    def flush(self) -> str:
+        out, self.held = self.held, ""
+        return out
+
+
+class EvidenceWordFilter:
+    """지시문 속 이름표 "[근거]"가 답변에 그대로 나오면("[근거]에 따르면", "[근거]에 … 없습니다") 사용자가 이해하는 말로 바꾼다.
+    조각 경계에 걸친 경우를 위해 이름표의 앞부분과 같은 꼬리는 붙잡아 둔다"""
+    WORD, PLAIN = "[근거]", "확인한 공식 자료"
+
+    def __init__(self):
+        self.held = ""
+
+    def feed(self, text: str) -> str:
+        text = (self.held + text).replace(self.WORD, self.PLAIN)
+        keep = next((n for n in range(len(self.WORD) - 1, 0, -1) if text.endswith(self.WORD[:n])), 0)
+        self.held = text[len(text) - keep:] if keep else ""
+        return text[:len(text) - keep]
 
     def flush(self) -> str:
         out, self.held = self.held, ""

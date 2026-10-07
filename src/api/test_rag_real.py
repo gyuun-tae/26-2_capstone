@@ -214,6 +214,17 @@ assert "기한 지난" not in prompt.evidence([{"chunk": html_text, "score": 0.7
 assert prompt.NO_EVIDENCE.search("[근거]에 부산항 신항 컨테이너 터미널 운영사에 대한 정보는 포함되어 있지 않습니다.")
 assert not prompt.NO_EVIDENCE.search("접안료 및 정박료의 최저액은 3,000원입니다[1].")
 assert not prompt.NO_EVIDENCE.search("[근거]에 따르면 일정 규모 이상의 선박은 예선을 사용하도록 의무화되어 있습니다[1].")  # l04
+assert prompt.NO_EVIDENCE.search("확인한 공식 자료에 부산항 신항 운영사에 대한 정보는 포함되어 있지 않습니다.")
+assert not prompt.NO_EVIDENCE.search("확인한 공식 자료만으로는 답을 확정하기 어렵습니다.")
+
+# 11-1. "[근거]" 이름표는 화면에 내보내기 전에 바꾼다 (조각 경계에 걸쳐도)
+f = prompt.EvidenceWordFilter()
+assert "".join([f.feed("["), f.feed("근"), f.feed("거]에 따르면 [1]"), f.flush()]) == "확인한 공식 자료에 따르면 [1]"
+f = prompt.EvidenceWordFilter()
+assert f.feed("목록 [") + f.feed("근") + f.flush() == "목록 [근"
+ev = run("부산항 신항 운영사는?", ["[근거]에 부산항 신항 운영사 정보는 포함되어 있지 않습니다.", '@@META {"type": "answer"}'])
+shown = text_of(ev)
+assert "[근거]" not in shown and "확인한 공식 자료에" in shown and ev[-1][1]["answer_type"] == "unknown"
 
 # 12. 한글이 없는 질문에만 언어 안내를 붙인다 (t24)
 def last_user(question):
