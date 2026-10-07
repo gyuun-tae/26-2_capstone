@@ -8,6 +8,7 @@ import logging
 import os
 import re
 
+import httpx
 from pydantic import ValidationError
 
 from app import contacts, gpu, rerank, search
@@ -24,6 +25,10 @@ K = 5
 DEFAULT_THRESHOLD = 0.48
 MAX_TOKENS = 1024
 TEMPERATURE = 0.1  # 2026-10-02 dev 측정: 0.3과 지표 같음, 반복 실행 때 답이 더 일정
+# GPU 서버(터널·관문·모델)에 닿지 않을 때. 오류 화면 대신 안내와 대표전화를 보여 준다 (GPU를 끈 시간에도 사용자가 들어온다:
+# 2026-10-06 14:12·10-07 11:08 로그 88~96이 모두 ConnectError)
+GPU_DOWN_TEXT = ("지금은 답변 서버를 사용할 수 없어 질문에 답하지 못했습니다(점검 중이거나 운영 시간이 아닙니다). "
+                 "잠시 후 다시 질문해 주시거나, 급한 문의는 아래 대표전화로 연락해 주세요.")
 UNKNOWN_TEXT = "확인한 공식 자료만으로는 답을 확정하기 어렵습니다. 질문을 조금 더 구체적으로 써 주시거나, 아래 대표전화로 문의해 주세요."
 
 logger = logging.getLogger(__name__)
@@ -105,7 +110,16 @@ def answer(messages) -> Answer:
 
     async def tokens():
         query, follow_up = search_query(messages), False
-        hits = await find(query)
+        try:
+            hits = await find(query)  # 첫 GPU 호출(임베딩). 여기서 닿지 않으면 GPU 서버가 꺼진 것
+        except (httpx.TransportError, gpu.GpuError) as e:
+            if isinstance(e, gpu.GpuConfigError):
+                raise
+            logger.warning("GPU 서버에 닿지 않음: %s: %s", type(e).__name__, e)
+            result.actions = [contacts.MAIN]
+            result.error = "gpu_unavailable"
+            yield GPU_DOWN_TEXT
+            return
         # 혼자서는 근거가 약한 질문이 앞 대화에 이어지는 말일 수 있다 ("이 사이트에서 서식을 얻을 수 없는거야?").
         # 앞 질문을 붙여 한 번 더 찾고, 그래야 근거가 잡히면 이어지는 질문으로 답한다
         if weak(hits, query) and query != (joined := search_query(messages, follow_up=True)):

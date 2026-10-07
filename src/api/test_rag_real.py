@@ -11,6 +11,7 @@ os.environ["RAG_MODE"] = "real"
 os.environ["RAG_RERANK"] = "off"  # 재정렬은 test_rerank.py에서
 
 from fastapi.testclient import TestClient  # noqa: E402
+import httpx  # noqa: E402
 from sqlalchemy import select  # noqa: E402
 
 from app import gpu, prompt, rag_real, search  # noqa: E402
@@ -26,7 +27,7 @@ HITS = [{"chunk": html_text | {"chunk_id": "h1", "text": html_text["text"] + "\n
 calls = {"embed": [], "chat": []}
 
 
-def run(question, llm_pieces, hits=HITS, history=()):
+def run(question, llm_pieces, hits=HITS, history=(), embed=None):
     """가짜 임베딩·검색·생성으로 /chat을 호출해 [(이벤트, 데이터)]를 돌려준다"""
     async def fake_embed(text):
         calls["embed"].append(text)
@@ -40,7 +41,7 @@ def run(question, llm_pieces, hits=HITS, history=()):
             yield p
 
     msgs = [*history, {"role": "user", "content": question}]
-    with patch.object(gpu, "embed", fake_embed), patch.object(gpu, "chat_stream", fake_chat), \
+    with patch.object(gpu, "embed", embed or fake_embed), patch.object(gpu, "chat_stream", fake_chat), \
             patch.object(search, "search", lambda v, k, q="", max_law=None: hits(q) if callable(hits) else hits):
         body = c.post("/chat", json={"messages": msgs}).text
     return [(b.split("\n")[0].removeprefix("event: "), json.loads(b.split("\n")[1].removeprefix("data: ")))
@@ -66,6 +67,18 @@ assert "[1] 문서 · 신청자격 · 신청절차" in msgs[-1]["content"] and "
 with SessionLocal() as db:
     log = db.scalars(select(ChatLog).order_by(ChatLog.id.desc())).first()
     assert "@@META" not in log.answer and log.answer_type == "answer"
+
+# 1-1. GPU 서버에 닿지 않으면(터널 꺼짐·관문 502) 오류 화면 대신 안내 + 대표전화, 로그에 gpu_unavailable
+for failure in (httpx.ConnectError("[Errno -2] Name or service not known"), gpu.GpuError("임베딩 실패 502")):
+    async def down(text, failure=failure):
+        raise failure
+    ev = run("선박 입항 신고는 어떻게 하나요?", ["안 불림"], embed=down)
+    assert [e for e, _ in ev] == ["token", "sources", "done"], ev
+    assert text_of(ev) == rag_real.GPU_DOWN_TEXT and ev[1][1] == []
+    assert ev[-1][1]["answer_type"] == "answer" and [a["label"] for a in ev[-1][1]["actions"]] == ["여수광양항만공사 대표전화"]
+    with SessionLocal() as db:
+        log = db.scalars(select(ChatLog).order_by(ChatLog.id.desc())).first()
+        assert log.error == "gpu_unavailable" and log.answer == rag_real.GPU_DOWN_TEXT
 
 # 2. 서식 버튼은 LLM이 forms로 고르고 본문에도 인용한 서식 청크만. 인용만 됐거나 서식이 아니면 버튼 없음
 done = run("민원 신청 방법", ["회원가입 후 신청합니다[1].", '@@META {"type": "answer", "forms": [2]}'])[-1][1]

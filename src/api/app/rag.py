@@ -77,6 +77,7 @@ class Answer:
     answer_type: AnswerType = "answer"
     actions: list[Action] = field(default_factory=list)
     options: list[Option] = field(default_factory=list)
+    error: str | None = None  # 답은 보냈지만 로그에 남길 문제 (예: gpu_unavailable)
 
 
 def answer(messages: list[Message]) -> Answer:

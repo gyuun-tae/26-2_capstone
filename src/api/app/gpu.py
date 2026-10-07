@@ -22,6 +22,10 @@ class GpuError(RuntimeError):
     pass
 
 
+class GpuConfigError(GpuError):
+    """설정 누락 — 서버가 꺼진 것과 달리 배포 실수이므로 안내로 덮지 않고 오류로 드러낸다"""
+
+
 # 연결 재사용: 요청마다 새로 연결하면 터널(https) 연결 준비를 매번 다시 한다. 이벤트 루프마다 하나씩 둔다
 _clients: "weakref.WeakKeyDictionary[asyncio.AbstractEventLoop, httpx.AsyncClient]" = weakref.WeakKeyDictionary()
 
@@ -37,7 +41,7 @@ def _client() -> httpx.AsyncClient:
 def _config() -> tuple[str, dict]:
     url, key = os.getenv("GPU_URL", "").rstrip("/"), os.getenv("GPU_API_KEY", "")
     if not url or not key:
-        raise GpuError("GPU_URL·GPU_API_KEY가 설정되지 않았습니다")
+        raise GpuConfigError("GPU_URL·GPU_API_KEY가 설정되지 않았습니다")
     return url, {"Authorization": f"Bearer {key}"}
 
 
