@@ -1,10 +1,10 @@
 {
  "policy": "docs/contracts/index_approval_policy.md",
  "policy_version": "1.0",
- "checked_at": "2026-10-04T13:53:40.503736+00:00",
+ "checked_at": "2026-10-07T12:01:23.350076+00:00",
  "reviewer": "자료 담당 (26번 자동 검토)",
  "summary": {
-  "approved": 1182,
+  "approved": 1256,
   "approved_with_notes": 13,
   "excluded": 35
  },
@@ -31,7 +31,7 @@
     "detail": "현행 버전 288183·시행 20260713 확인"
    },
    "latest_snapshot": "20261004T125348391909Z",
-   "chunks": 47
+   "chunks": 68
   },
   "LAW-004": {
    "currentness": {
@@ -55,7 +55,7 @@
     "detail": "현행 버전 282713·시행 20260102 확인"
    },
    "latest_snapshot": "20261004T125352089659Z",
-   "chunks": 14
+   "chunks": 20
   },
   "LAW-007": {
    "currentness": {
@@ -79,7 +79,7 @@
     "detail": "현행 버전 266487·시행 20241113 확인"
    },
    "latest_snapshot": "20261004T125357542241Z",
-   "chunks": 50
+   "chunks": 69
   },
   "LAW-010": {
    "currentness": {
@@ -87,7 +87,7 @@
     "detail": "현행 버전 2100000284156·시행 20260821 확인"
    },
    "latest_snapshot": "20261003T061349247992Z",
-   "chunks": 38
+   "chunks": 42
   },
   "LAW-011": {
    "currentness": {
@@ -103,7 +103,7 @@
     "detail": "현행 버전 240831·시행 20220518 확인"
    },
    "latest_snapshot": "20261004T125401443246Z",
-   "chunks": 141
+   "chunks": 146
   },
   "LAW-013": {
    "currentness": {
@@ -127,7 +127,7 @@
     "detail": "현행 버전 278767·시행 20251001 확인"
    },
    "latest_snapshot": "20261004T125409829652Z",
-   "chunks": 16
+   "chunks": 23
   },
   "LAW-016": {
    "currentness": {
@@ -151,7 +151,7 @@
     "detail": "현행 버전 289507·시행 20260911 확인"
    },
    "latest_snapshot": "20261004T125413993959Z",
-   "chunks": 7
+   "chunks": 8
   },
   "LAW-019": {
    "currentness": {
@@ -175,12 +175,12 @@
     "detail": "현행 버전 288187·시행 20260713 확인"
    },
    "latest_snapshot": "20261004T125419366615Z",
-   "chunks": 33
+   "chunks": 44
   },
   "ORG-000": {
    "currentness": {
     "ok": true,
-    "detail": "조직도 부서 목록가 수집본과 같음"
+    "detail": "조직도 부서 목록: 수집본과 같음"
    },
    "latest_snapshot": "20261004T081301409762Z",
    "chunks": 1
@@ -188,7 +188,7 @@
   "ORG-001": {
    "currentness": {
     "ok": true,
-    "detail": "재난안전실 담당업무·전화가 수집본과 같음"
+    "detail": "재난안전실 담당업무·전화: 수집본과 같음"
    },
    "latest_snapshot": "20261004T081301409762Z",
    "chunks": 1
@@ -196,7 +196,7 @@
   "ORG-002": {
    "currentness": {
     "ok": true,
-    "detail": "항만위원회 담당업무·전화가 수집본과 같음"
+    "detail": "항만위원회 담당업무·전화: 수집본과 같음"
    },
    "latest_snapshot": "20261004T081301409762Z",
    "chunks": 1
@@ -204,7 +204,7 @@
   "ORG-005": {
    "currentness": {
     "ok": true,
-    "detail": "감사실 담당업무·전화가 수집본과 같음"
+    "detail": "감사실 담당업무·전화: 수집본과 같음"
    },
    "latest_snapshot": "20261004T081301409762Z",
    "chunks": 1
@@ -212,7 +212,7 @@
   "ORG-006": {
    "currentness": {
     "ok": true,
-    "detail": "기획조정실 담당업무·전화가 수집본과 같음"
+    "detail": "기획조정실 담당업무·전화: 수집본과 같음"
    },
    "latest_snapshot": "20261004T081301409762Z",
    "chunks": 1
@@ -220,7 +220,7 @@
   "ORG-007": {
    "currentness": {
     "ok": true,
-    "detail": "ESG경영실 담당업무·전화가 수집본과 같음"
+    "detail": "ESG경영실 담당업무·전화: 수집본과 같음"
    },
    "latest_snapshot": "20261004T081301409762Z",
    "chunks": 1
@@ -228,7 +228,7 @@
   "ORG-008": {
    "currentness": {
     "ok": true,
-    "detail": "경영지원부 담당업무·전화가 수집본과 같음"
+    "detail": "경영지원부 담당업무·전화: 수집본과 같음"
    },
    "latest_snapshot": "20261004T081301409762Z",
    "chunks": 1
@@ -236,7 +236,7 @@
   "ORG-009": {
    "currentness": {
     "ok": true,
-    "detail": "재무회계부 담당업무·전화가 수집본과 같음"
+    "detail": "재무회계부 담당업무·전화: 수집본과 같음"
    },
    "latest_snapshot": "20261004T081301409762Z",
    "chunks": 1
@@ -244,7 +244,7 @@
   "ORG-010": {
    "currentness": {
     "ok": true,
-    "detail": "물류전략실 담당업무·전화가 수집본과 같음"
+    "detail": "물류전략실 담당업무·전화: 수집본과 같음"
    },
    "latest_snapshot": "20261004T081301409762Z",
    "chunks": 1
@@ -252,7 +252,7 @@
   "ORG-011": {
    "currentness": {
     "ok": true,
-    "detail": "물류단지부 담당업무·전화가 수집본과 같음"
+    "detail": "물류단지부 담당업무·전화: 수집본과 같음"
    },
    "latest_snapshot": "20261004T081301409762Z",
    "chunks": 1
@@ -260,7 +260,7 @@
   "ORG-012": {
    "currentness": {
     "ok": true,
-    "detail": "글로벌마케팅부 담당업무·전화가 수집본과 같음"
+    "detail": "글로벌마케팅부 담당업무·전화: 수집본과 같음"
    },
    "latest_snapshot": "20261004T081301409762Z",
    "chunks": 1
@@ -268,7 +268,7 @@
   "ORG-013": {
    "currentness": {
     "ok": true,
-    "detail": "AI디지털부 담당업무·전화가 수집본과 같음"
+    "detail": "AI디지털부 담당업무·전화: 수집본과 같음"
    },
    "latest_snapshot": "20261004T081301409762Z",
    "chunks": 1
@@ -276,7 +276,7 @@
   "ORG-014": {
    "currentness": {
     "ok": true,
-    "detail": "여수지사 담당업무·전화가 수집본과 같음"
+    "detail": "여수지사 담당업무·전화: 수집본과 같음"
    },
    "latest_snapshot": "20261004T081301409762Z",
    "chunks": 1
@@ -284,7 +284,7 @@
   "ORG-015": {
    "currentness": {
     "ok": true,
-    "detail": "스마트항만개발실 담당업무·전화가 수집본과 같음"
+    "detail": "스마트항만개발실 담당업무·전화: 수집본과 같음"
    },
    "latest_snapshot": "20261004T081301409762Z",
    "chunks": 1
@@ -292,7 +292,7 @@
   "ORG-016": {
    "currentness": {
     "ok": true,
-    "detail": "항만건설사업실 담당업무·전화가 수집본과 같음"
+    "detail": "항만건설사업실 담당업무·전화: 수집본과 같음"
    },
    "latest_snapshot": "20261004T081301409762Z",
    "chunks": 1
@@ -300,7 +300,7 @@
   "ORG-017": {
    "currentness": {
     "ok": true,
-    "detail": "항만시설사업부 담당업무·전화가 수집본과 같음"
+    "detail": "항만시설사업부 담당업무·전화: 수집본과 같음"
    },
    "latest_snapshot": "20261004T081301409762Z",
    "chunks": 1
@@ -308,7 +308,7 @@
   "ORG-018": {
    "currentness": {
     "ok": true,
-    "detail": "친환경항만사업부 담당업무·전화가 수집본과 같음"
+    "detail": "친환경항만사업부 담당업무·전화: 수집본과 같음"
    },
    "latest_snapshot": "20261004T081301409762Z",
    "chunks": 1
@@ -316,7 +316,7 @@
   "ORG-019": {
    "currentness": {
     "ok": true,
-    "detail": "여수엑스포해양복합사업단 담당업무·전화가 수집본과 같음"
+    "detail": "여수엑스포해양복합사업단 담당업무·전화: 수집본과 같음"
    },
    "latest_snapshot": "20261004T081301409762Z",
    "chunks": 1
@@ -324,7 +324,7 @@
   "ORG-020": {
    "currentness": {
     "ok": true,
-    "detail": "해양복합전략실 담당업무·전화가 수집본과 같음"
+    "detail": "해양복합전략실 담당업무·전화: 수집본과 같음"
    },
    "latest_snapshot": "20261004T081301409762Z",
    "chunks": 1
@@ -332,7 +332,7 @@
   "ORG-021": {
    "currentness": {
     "ok": true,
-    "detail": "해양복합운영부 담당업무·전화가 수집본과 같음"
+    "detail": "해양복합운영부 담당업무·전화: 수집본과 같음"
    },
    "latest_snapshot": "20261004T081301409762Z",
    "chunks": 1
@@ -1979,10 +1979,22 @@
    "chunk_text_sha256": "77dab125e108fef3ce4295cd84a40dc54b6643b23809fa2140139a62d57a949c",
    "notes": []
   },
+  "LAW-003-1fcdc19ed8bafd7638a912af": {
+   "doc_id": "LAW-003",
+   "status": "approved",
+   "chunk_text_sha256": "c7c1d7be8fda78db9821fdad94d90224c0732d79ad15ffb7004302f4911ec6be",
+   "notes": []
+  },
   "LAW-003-25a7edd47e4edc1a210ac05f": {
    "doc_id": "LAW-003",
    "status": "approved",
    "chunk_text_sha256": "c76899a11cac62a2c44a4622dd36df8b9c488b73f2960b0b1434c65b7f773f6f",
+   "notes": []
+  },
+  "LAW-003-2e6551d1bfa3449fd0a7fd83": {
+   "doc_id": "LAW-003",
+   "status": "approved",
+   "chunk_text_sha256": "c46a9b0a5ab5f69a3d89abee8e6d947ee6144334644425b77cfa795ccbb43de0",
    "notes": []
   },
   "LAW-003-30440c716ff678582de114e7": {
@@ -1997,10 +2009,22 @@
    "chunk_text_sha256": "50de47843f2ea90a34b886c0ffa696a23e88a0c08e1d6e38d8d613dc7cd2902c",
    "notes": []
   },
+  "LAW-003-39850e8d7e3b996729e4ff05": {
+   "doc_id": "LAW-003",
+   "status": "approved",
+   "chunk_text_sha256": "699f581c3885d1bcf2d71a8b3847a5c9f87cea928aafc91638f0828ec5509289",
+   "notes": []
+  },
   "LAW-003-3ab67baa5296ea643d1d9ec8": {
    "doc_id": "LAW-003",
    "status": "approved",
    "chunk_text_sha256": "81b5dfefe97503edd760485d1d69f037fafd1e95f365fffe3f88bdf5f9889438",
+   "notes": []
+  },
+  "LAW-003-3ac1002d042dbd479882524c": {
+   "doc_id": "LAW-003",
+   "status": "approved",
+   "chunk_text_sha256": "8ad26f15eee486ac272f9e2df4c76f9a560ebf2a6ead1443fe4d5e50c244b664",
    "notes": []
   },
   "LAW-003-3cfd6c9e2f2add5cf119264b": {
@@ -2021,10 +2045,34 @@
    "chunk_text_sha256": "39df26c7ac67adb7ccfbd548bab78d60ca8c326760264b881acb20a5a65d0bca",
    "notes": []
   },
+  "LAW-003-420cc8f2cb181e939c273e1c": {
+   "doc_id": "LAW-003",
+   "status": "approved",
+   "chunk_text_sha256": "77116f5ee388a0824427212d7c3c3103f4bc2b402ae3c5aede200e075b400fcf",
+   "notes": []
+  },
   "LAW-003-42b11e7800f4550499414958": {
    "doc_id": "LAW-003",
    "status": "approved",
    "chunk_text_sha256": "c226b5d5e6d0ee7a39ae756a08e9228034b101443da9681f6b07575cbdb8d1ef",
+   "notes": []
+  },
+  "LAW-003-44755ddf39bea892c96e0e45": {
+   "doc_id": "LAW-003",
+   "status": "approved",
+   "chunk_text_sha256": "674afdf1a4a78f927cbd61bffa4ae46e019be315b567ddf71e84b67b6bf21e37",
+   "notes": []
+  },
+  "LAW-003-486f6280b62cbe583a22e285": {
+   "doc_id": "LAW-003",
+   "status": "approved",
+   "chunk_text_sha256": "00e929740cf29c5a6f1102932fc60e5ea0293f88e70c2231985766572511594a",
+   "notes": []
+  },
+  "LAW-003-512a801289dae161619c4ca9": {
+   "doc_id": "LAW-003",
+   "status": "approved",
+   "chunk_text_sha256": "425b2f8236f7eb59bcab88783186211763fcad579cd15b4d828794359b90aa90",
    "notes": []
   },
   "LAW-003-5916bc8356b4e16c4a5ad09e": {
@@ -2037,6 +2085,12 @@
    "doc_id": "LAW-003",
    "status": "approved",
    "chunk_text_sha256": "93692ef2337c81228bfe47774a4644253e2668a19dd67c028568808fd014a1e4",
+   "notes": []
+  },
+  "LAW-003-5c6bbc58bca0bb4d9f59feed": {
+   "doc_id": "LAW-003",
+   "status": "approved",
+   "chunk_text_sha256": "9c12054533b1d8aaa6a9699f03dd9cff039fb55ba7c5e9a27cbe6481e35361e5",
    "notes": []
   },
   "LAW-003-5deb76c8f58de464025cad4f": {
@@ -2105,10 +2159,40 @@
    "chunk_text_sha256": "36066904f0de75390ecefcf4c022e9f4d8f67dd90fdb8afa064a727ca60fd4a2",
    "notes": []
   },
+  "LAW-003-87e366d9c775033873f79870": {
+   "doc_id": "LAW-003",
+   "status": "approved",
+   "chunk_text_sha256": "de2203d758a6e22150c9b57aa92f722180d6bda638eb2f5b527b788568c3526a",
+   "notes": []
+  },
+  "LAW-003-8f1d3e86ae644221778c2fe5": {
+   "doc_id": "LAW-003",
+   "status": "approved",
+   "chunk_text_sha256": "f7026baa97da0d37def2536dd21ab2b89ac18d434e1228d8945673dcafe374fe",
+   "notes": []
+  },
+  "LAW-003-91a8176de6e1539425fb0f07": {
+   "doc_id": "LAW-003",
+   "status": "approved",
+   "chunk_text_sha256": "9660a2290a1ed1b8b34474baecf744506709b00338ff4c20051c34b5284d4563",
+   "notes": []
+  },
+  "LAW-003-926109674f162af0743f6207": {
+   "doc_id": "LAW-003",
+   "status": "approved",
+   "chunk_text_sha256": "fc0f68ed03cbf12c03bc0fd97cbe2f525ee629deb65a57e0a3f9879a1254c0b6",
+   "notes": []
+  },
   "LAW-003-942b8957cb53e097e802d0ce": {
    "doc_id": "LAW-003",
    "status": "approved",
    "chunk_text_sha256": "de3a8325fa73042e26539d218337ab793d07185bce2d832c14b3684085c5bdcc",
+   "notes": []
+  },
+  "LAW-003-9450855c9066f792953477cb": {
+   "doc_id": "LAW-003",
+   "status": "approved",
+   "chunk_text_sha256": "a762cf4f9144c96edb2ef297efe007d4df8697820f6a81d0615cdfd98785db9e",
    "notes": []
   },
   "LAW-003-9512fa230d3cff35ca634214": {
@@ -2127,6 +2211,12 @@
    "doc_id": "LAW-003",
    "status": "approved",
    "chunk_text_sha256": "9e563b77c5aa2c38691750fc2012e00bbe69d3d31d8f90c88b075ea464f68367",
+   "notes": []
+  },
+  "LAW-003-9dbf14293b9687b27e6e5310": {
+   "doc_id": "LAW-003",
+   "status": "approved",
+   "chunk_text_sha256": "4f82a808c718f901675b5df860990757c5557c89e1dcb7af27299e15a89af4a7",
    "notes": []
   },
   "LAW-003-abfd227530ec0c19cd5468c4": {
@@ -2183,10 +2273,34 @@
    "chunk_text_sha256": "a43a037653c11e34e620b584e082f6e91d280dc2d93e9f6105bddff35738cb9e",
    "notes": []
   },
+  "LAW-003-bfdacbb25ba537fbd682691b": {
+   "doc_id": "LAW-003",
+   "status": "approved",
+   "chunk_text_sha256": "e7dd110ae347429102830840bc00582e48139c6b5278a76c13627f436178a24d",
+   "notes": []
+  },
   "LAW-003-ca207959620a6e12a2a8ca2a": {
    "doc_id": "LAW-003",
    "status": "approved",
    "chunk_text_sha256": "fab231c69789bf1d4d8fd9e9a8c866000a6158d1b4d1a139635fcefec9603b35",
+   "notes": []
+  },
+  "LAW-003-d0c5f53c0044ee4139d8ada5": {
+   "doc_id": "LAW-003",
+   "status": "approved",
+   "chunk_text_sha256": "4f265577cfdf4776b2cb6e00ed2fbfd4890880f132cbc4b769f7399d0b3fb878",
+   "notes": []
+  },
+  "LAW-003-d36701b2ec119d211e02230a": {
+   "doc_id": "LAW-003",
+   "status": "approved",
+   "chunk_text_sha256": "a70a83c0cf035167727255a2cec29bdd5d12dc698f47236e693ecec9235e7d1c",
+   "notes": []
+  },
+  "LAW-003-dc38b7b5bbe4a131ca2dc2ab": {
+   "doc_id": "LAW-003",
+   "status": "approved",
+   "chunk_text_sha256": "2efab974036d7577f42f7b2f961037ab0319c28acd1573c97ca7567b9bcee79a",
    "notes": []
   },
   "LAW-003-e6bf6fd0339b8ebf68a39b38": {
@@ -2223,6 +2337,18 @@
    "doc_id": "LAW-003",
    "status": "approved",
    "chunk_text_sha256": "6f83f99ab01df4f3834ce6c1b5cd1606197efaf996bb930373e5313ff77d8d80",
+   "notes": []
+  },
+  "LAW-003-f10f19867fa0e51ed9d48ae1": {
+   "doc_id": "LAW-003",
+   "status": "approved",
+   "chunk_text_sha256": "0bef3861c8770b9cd92db2044a85521d115b78e9cdd3b81a41d4c8690cb89243",
+   "notes": []
+  },
+  "LAW-003-f94290c10f96cc1e3e1bb944": {
+   "doc_id": "LAW-003",
+   "status": "approved",
+   "chunk_text_sha256": "e1e956d40bbf5a0171f1f61ab62ea6382b82c7ea268142345a69b9ae08b6d407",
    "notes": []
   },
   "LAW-004-041018a020446f627c0b59fa": {
@@ -2783,6 +2909,12 @@
    "chunk_text_sha256": "faf9655c782c3560da3371715e87786fed465818a779a17da47e96deb9cd9361",
    "notes": []
   },
+  "LAW-006-0f963270be42762182e6aada": {
+   "doc_id": "LAW-006",
+   "status": "approved",
+   "chunk_text_sha256": "3577e40519db4a4d63574fdbc037a99626fff6cdf85445809f2c30d74cd51f92",
+   "notes": []
+  },
   "LAW-006-12a15dd7ff7722649a034646": {
    "doc_id": "LAW-006",
    "status": "approved",
@@ -2837,10 +2969,34 @@
    "chunk_text_sha256": "41f6efc02def102d7745d739dd07684d5f2a9d44694a08c93352021747c3611f",
    "notes": []
   },
+  "LAW-006-940f159f8bec0c67ae798357": {
+   "doc_id": "LAW-006",
+   "status": "approved",
+   "chunk_text_sha256": "2d65ad09b09f272803321b19c6d0eb8db3074a68e4a05b96d861a33724d56c50",
+   "notes": []
+  },
+  "LAW-006-99f2c72656be8d25e123889c": {
+   "doc_id": "LAW-006",
+   "status": "approved",
+   "chunk_text_sha256": "ca5d9d69f97788e549c7559d61a2dd8f98e02a4d97cfa64ff62d6865309ed964",
+   "notes": []
+  },
   "LAW-006-9eba46250285d0ad9319f458": {
    "doc_id": "LAW-006",
    "status": "approved",
    "chunk_text_sha256": "fc6f3b18f0d012a7b0b5dab817185c6b15a118ceea4e791c4a37cb4501446b0b",
+   "notes": []
+  },
+  "LAW-006-b9e6998363bac553fd1f7eec": {
+   "doc_id": "LAW-006",
+   "status": "approved",
+   "chunk_text_sha256": "71d99dee3097797bcf9cf21c4091de10dd481ac4c58db3e20e7393346e884341",
+   "notes": []
+  },
+  "LAW-006-bd03aff3384c5750cc7a2831": {
+   "doc_id": "LAW-006",
+   "status": "approved",
+   "chunk_text_sha256": "a56314999c008ab44d6549e934441d667eb7a0acf53ecd35ed16885e398b7abe",
    "notes": []
   },
   "LAW-006-e42ac9ad0291902fe92e7a1e": {
@@ -2853,6 +3009,12 @@
    "doc_id": "LAW-006",
    "status": "approved",
    "chunk_text_sha256": "7389739d91dec96205216cc893a839fc790d2875df60a2672d292e1887fbf439",
+   "notes": []
+  },
+  "LAW-006-eb6001d9f1dc1d4749607ce4": {
+   "doc_id": "LAW-006",
+   "status": "approved",
+   "chunk_text_sha256": "4b3bc7d6bbc06e0bf3eafd30d5c18e49c9ee7a0a7e7362a2a96b88bc9eca6c18",
    "notes": []
   },
   "LAW-006-f1332d255a6bac4e119a70d8": {
@@ -3437,6 +3599,18 @@
    "chunk_text_sha256": "dc34f6b79204b0f78a29b43301f501b0d091de5f49703759f5166df84677c024",
    "notes": []
   },
+  "LAW-009-1415dd76a407949aad871881": {
+   "doc_id": "LAW-009",
+   "status": "approved",
+   "chunk_text_sha256": "20384897e97d2b66fee205e6ad360482adf2bafad3a8b184cd87f2c7726caa6c",
+   "notes": []
+  },
+  "LAW-009-23707656b8e9833197d3212d": {
+   "doc_id": "LAW-009",
+   "status": "approved",
+   "chunk_text_sha256": "8f6f1297b90c2e4c13fb7ff4d3f6d8de95b293d719d22a42d3cedfa2f21ab772",
+   "notes": []
+  },
   "LAW-009-26ae4e731f041d9981480572": {
    "doc_id": "LAW-009",
    "status": "approved",
@@ -3459,6 +3633,18 @@
    "doc_id": "LAW-009",
    "status": "approved",
    "chunk_text_sha256": "a5d3b9ddc1f415a77dd3bd3796579cce0dd1d95cf3befdb70f045c2808367046",
+   "notes": []
+  },
+  "LAW-009-341eb0e4ce1db49cb3be2a49": {
+   "doc_id": "LAW-009",
+   "status": "approved",
+   "chunk_text_sha256": "9890b78d6fe324a0f5ef5c86256b3f5511f97751ed411406d56699c05c14b8c7",
+   "notes": []
+  },
+  "LAW-009-36c651fcea77c3b0611a3292": {
+   "doc_id": "LAW-009",
+   "status": "approved",
+   "chunk_text_sha256": "3e6cc75995e254a7e78d39c0c41e3b4bf5dd9cc69bd7dba8a7a02fb67b677e3e",
    "notes": []
   },
   "LAW-009-3d6445b9981a0427ef3c5e66": {
@@ -3485,6 +3671,12 @@
    "chunk_text_sha256": "6b29390559eec3ca25f3d823f98d7054b36ea48e3acaa212f8245ab44c6964c3",
    "notes": []
   },
+  "LAW-009-50ce0e34ecee370d25858811": {
+   "doc_id": "LAW-009",
+   "status": "approved",
+   "chunk_text_sha256": "e0e1c1315276c59702676fe718924b51ed919ac463fa121fdfa0fde083625028",
+   "notes": []
+  },
   "LAW-009-5114864282443dd3fa5d5631": {
    "doc_id": "LAW-009",
    "status": "approved",
@@ -3501,6 +3693,12 @@
    "doc_id": "LAW-009",
    "status": "approved",
    "chunk_text_sha256": "e58aaa3d301de92bda941713e5609c12ae7ae050036044cd9af8c887fc02d920",
+   "notes": []
+  },
+  "LAW-009-5b56c74c95f6c030b9f93b37": {
+   "doc_id": "LAW-009",
+   "status": "approved",
+   "chunk_text_sha256": "cef4051d18e478fe80b0982a2fb806c1e03c9d4916b4cba4706d1e475cf7693b",
    "notes": []
   },
   "LAW-009-5e786e53076045c4f7e903e9": {
@@ -3531,6 +3729,12 @@
    "doc_id": "LAW-009",
    "status": "approved",
    "chunk_text_sha256": "8c02f079b1be13987c1ff75a7c56e5f3cd38bb750465e7ddddae6854e83d271b",
+   "notes": []
+  },
+  "LAW-009-74918326fb5c66cd04b71818": {
+   "doc_id": "LAW-009",
+   "status": "approved",
+   "chunk_text_sha256": "65a2aab2fdcc75e19752dde85d9485a179d43b32539eed41ed3246d15f3b0928",
    "notes": []
   },
   "LAW-009-75768dd1f25266e57ef8c164": {
@@ -3569,6 +3773,12 @@
    "chunk_text_sha256": "5c42e39ecbf2dc0accc5e0c3f40024ee71350159e0655b9ee5c0aeafcc1b2903",
    "notes": []
   },
+  "LAW-009-8ccdbcacad46c74dc499085e": {
+   "doc_id": "LAW-009",
+   "status": "approved",
+   "chunk_text_sha256": "bcc7c99f1a5327b450a52cd150e17ba0dde67ae0f23bf134534709973ec950dd",
+   "notes": []
+  },
   "LAW-009-8e71d755ceee437b4bc7bf73": {
    "doc_id": "LAW-009",
    "status": "approved",
@@ -3585,6 +3795,24 @@
    "doc_id": "LAW-009",
    "status": "approved",
    "chunk_text_sha256": "7aaff829f87ec879a71fbe1c6caf57756503b67ba7e59480032a220c4de4b09e",
+   "notes": []
+  },
+  "LAW-009-95889ebb3fb20252eca6f584": {
+   "doc_id": "LAW-009",
+   "status": "approved",
+   "chunk_text_sha256": "657b99446eb8b9af9355b32eb74659d1e456bdd148080594f48ae805362c688a",
+   "notes": []
+  },
+  "LAW-009-97ceefbc5aaf0f808ec4d1c7": {
+   "doc_id": "LAW-009",
+   "status": "approved",
+   "chunk_text_sha256": "1517f809d06b3fa261c525587b281d9f31f8050cabb94ea3d9f5172dbbc66c69",
+   "notes": []
+  },
+  "LAW-009-9ba573ca7f00b50f8105f6d9": {
+   "doc_id": "LAW-009",
+   "status": "approved",
+   "chunk_text_sha256": "62e58dea39ad3abea413da1254eb827e8536f905b87f064a3dffd4a4f87eff6c",
    "notes": []
   },
   "LAW-009-9ca33c2adb7533ea8d08eb43": {
@@ -3617,10 +3845,22 @@
    "chunk_text_sha256": "2971f0ac6bf50a83cd2bef75cc52eb620eafcb357921099c3e361a4af330cb8b",
    "notes": []
   },
+  "LAW-009-b2e6fcf5a37a752344061df9": {
+   "doc_id": "LAW-009",
+   "status": "approved",
+   "chunk_text_sha256": "c2665a5c9deb21be2997a31a8a722e6fdb797870668f169bf46fd15bec495d1f",
+   "notes": []
+  },
   "LAW-009-b8c495fb558a521496bbdeb7": {
    "doc_id": "LAW-009",
    "status": "approved",
    "chunk_text_sha256": "df9d675fa026ab00f73453b26de8be0ae7c9a18157224aef3dff040d0f7b8e1a",
+   "notes": []
+  },
+  "LAW-009-bbc748e80f33fdcb0f513dfb": {
+   "doc_id": "LAW-009",
+   "status": "approved",
+   "chunk_text_sha256": "8c2fffc86c8331cb96931aa1f1bf22e8ed7ee7776a24a36875a4d09be1a666f9",
    "notes": []
   },
   "LAW-009-bed73db24003e2a7c19739e2": {
@@ -3633,6 +3873,18 @@
    "doc_id": "LAW-009",
    "status": "approved",
    "chunk_text_sha256": "4869ad3d59a012913a9e27d4e75846207a79c8894a060240572b3678383e91f8",
+   "notes": []
+  },
+  "LAW-009-c4936b517c23e89d61f4bd64": {
+   "doc_id": "LAW-009",
+   "status": "approved",
+   "chunk_text_sha256": "636f56e2696959393ff0263e3b518a00e6fdd4053d92b06d66482439aa032386",
+   "notes": []
+  },
+  "LAW-009-c6fe2444b18f4f9489eec715": {
+   "doc_id": "LAW-009",
+   "status": "approved",
+   "chunk_text_sha256": "7d70d37df587f52f88c9365a99e72b593afff0f078651f713e10fd9fde5b999d",
    "notes": []
   },
   "LAW-009-c8e2d9ee79c061498c8e92dd": {
@@ -3677,6 +3929,12 @@
    "chunk_text_sha256": "d55cc8bc870628035b9d9312f4dd3fc80fd26f254f024c361b7ed12aa7125540",
    "notes": []
   },
+  "LAW-009-d2cdb2c92e3bc8382f9b0152": {
+   "doc_id": "LAW-009",
+   "status": "approved",
+   "chunk_text_sha256": "774480c80d1899b14a59ab4b4ad6a118b2f374ad5773224e2f2729be06645b3e",
+   "notes": []
+  },
   "LAW-009-d6f98843bec075bfc9f829f7": {
    "doc_id": "LAW-009",
    "status": "approved",
@@ -3707,10 +3965,28 @@
    "chunk_text_sha256": "1386781f0677b46acb6c6dca77416000392203212ea2e56e395e6bb1d219bbe6",
    "notes": []
   },
+  "LAW-009-f176b8f5a419c55580c0b077": {
+   "doc_id": "LAW-009",
+   "status": "approved",
+   "chunk_text_sha256": "13572e4f379ee2a961f1103b73c94363e6bcc1883880fdfccb9d56fbd178efbd",
+   "notes": []
+  },
+  "LAW-009-f59120a0f22bdde05634f3af": {
+   "doc_id": "LAW-009",
+   "status": "approved",
+   "chunk_text_sha256": "f62b604ae2e39f26d20c03bac84d38bf29b4f07fd13b78c68e9f43d7ca3db39e",
+   "notes": []
+  },
   "LAW-009-f82efdf6b867cb7851c8e832": {
    "doc_id": "LAW-009",
    "status": "approved",
    "chunk_text_sha256": "dbcff9b09ed9fce3e9834a6fb1d4cc3a282b92346cf83714b41bab09182072b8",
+   "notes": []
+  },
+  "LAW-009-fe4bcf3d6c1cb8a6fb0bdfe7": {
+   "doc_id": "LAW-009",
+   "status": "approved",
+   "chunk_text_sha256": "9a4ba179348ba38209291498c687cab65c94e319971282a8edf0870163d3444b",
    "notes": []
   },
   "LAW-010-0324cd9294f1311898d07b3a": {
@@ -3735,6 +4011,12 @@
    "doc_id": "LAW-010",
    "status": "approved",
    "chunk_text_sha256": "bbffce21ae4ce22664c54708adeff4e0ea13c2ebba890f83ca9af50231df7cd1",
+   "notes": []
+  },
+  "LAW-010-2dc40e49259298fdcdb87cb6": {
+   "doc_id": "LAW-010",
+   "status": "approved",
+   "chunk_text_sha256": "ec2979d4d6c3862c29299770838be333a5d4d894dbc4d341d442a44710acda0a",
    "notes": []
   },
   "LAW-010-2f83011e319bffad3e842362": {
@@ -3771,6 +4053,12 @@
    "doc_id": "LAW-010",
    "status": "approved",
    "chunk_text_sha256": "0e0b68bdfc33450df70ff5221992e269146362c4b5941bbfc8677eb811a05459",
+   "notes": []
+  },
+  "LAW-010-4256dec38f208d0ab8feedf4": {
+   "doc_id": "LAW-010",
+   "status": "approved",
+   "chunk_text_sha256": "0b8ef2e98104be36408f7efb5d22edf7716bcfad55229f557e2ea76410fec10b",
    "notes": []
   },
   "LAW-010-4285dcd6930cd532c827e89c": {
@@ -3851,6 +4139,12 @@
    "chunk_text_sha256": "3318ece501020d21f54b28010ba4b617322b1c1dbf917d0d786eef10e7881ce7",
    "notes": []
   },
+  "LAW-010-8f7ad87a748158150a4a5ad7": {
+   "doc_id": "LAW-010",
+   "status": "approved",
+   "chunk_text_sha256": "510203f3d509689fc704883921f1f1f58d3039bd48d6ceeb3ec9b5a2deac96aa",
+   "notes": []
+  },
   "LAW-010-9075803faaca07480aa972e1": {
    "doc_id": "LAW-010",
    "status": "approved",
@@ -3909,6 +4203,12 @@
    "doc_id": "LAW-010",
    "status": "approved",
    "chunk_text_sha256": "57c9feedeb68cc7e836c83807259bdccb32d43d69d0b78a6500a5691ce9b2bf0",
+   "notes": []
+  },
+  "LAW-010-cb28b59748db83807555d321": {
+   "doc_id": "LAW-010",
+   "status": "approved",
+   "chunk_text_sha256": "05bcda0360d5b480f2f2d27018f10b7d6b372f9176faf57c431f0b45d199bd5f",
    "notes": []
   },
   "LAW-010-d3843f7b27b33af8c61ab597": {
@@ -4229,6 +4529,12 @@
    "chunk_text_sha256": "d384032ca4c67db9842ee8a077de48c7a3a3ccc5c9195bf0341c0fe02d4c4e9c",
    "notes": []
   },
+  "LAW-012-4d4867e659d8e939953ce564": {
+   "doc_id": "LAW-012",
+   "status": "approved",
+   "chunk_text_sha256": "3fdcd0253fa126376fe5f00d298a3667e3affb0e7b8f1f5f39627a7914fc194d",
+   "notes": []
+  },
   "LAW-012-4d8f49ac95741fe00999edf9": {
    "doc_id": "LAW-012",
    "status": "approved",
@@ -4325,6 +4631,12 @@
    "chunk_text_sha256": "65581548e6bbb675e001835a0dce1a1ab1693db6966a8e87e1f4eedc4b6fc7a1",
    "notes": []
   },
+  "LAW-012-69827bfe453abb96bd05f2f3": {
+   "doc_id": "LAW-012",
+   "status": "approved",
+   "chunk_text_sha256": "d555d5a8ab8be5f37281c382876d4f6fc0bce66e0d1dc41450b06c48ab1ba175",
+   "notes": []
+  },
   "LAW-012-6c58df563ba2978fafa605cb": {
    "doc_id": "LAW-012",
    "status": "approved",
@@ -4377,6 +4689,12 @@
    "doc_id": "LAW-012",
    "status": "approved",
    "chunk_text_sha256": "a8388381a586b8adda9b5164ac97d00120db0014b0c3b13b4c08d23dbfb7af50",
+   "notes": []
+  },
+  "LAW-012-76256446b23f0393778a3ecf": {
+   "doc_id": "LAW-012",
+   "status": "approved",
+   "chunk_text_sha256": "a1067820fbc505516dbba5d53b3e4849df5ff2b6dbf18e173c8c6f32f6b1d058",
    "notes": []
   },
   "LAW-012-78b3e6cdc799b4e5eda1e2d1": {
@@ -4557,6 +4875,12 @@
    "doc_id": "LAW-012",
    "status": "approved",
    "chunk_text_sha256": "5b630b103665c928c11dad74719f6f29402652d39d61b832c3fd20bcfd0bce3f",
+   "notes": []
+  },
+  "LAW-012-a8f9aaecca46961fbab6126b": {
+   "doc_id": "LAW-012",
+   "status": "approved",
+   "chunk_text_sha256": "34e9df58cfdf07813c3ae11579b8e5ff841bdf8c36f39257ec2ee899e632e6f0",
    "notes": []
   },
   "LAW-012-ab0f4d3b435239f0736d4dc7": {
@@ -4785,6 +5109,12 @@
    "doc_id": "LAW-012",
    "status": "approved",
    "chunk_text_sha256": "e97cf430606539a794c50236158a3d764d611c7690f507e936aa5aab17aeae68",
+   "notes": []
+  },
+  "LAW-012-f46d4fe425f74737038edc80": {
+   "doc_id": "LAW-012",
+   "status": "approved",
+   "chunk_text_sha256": "f9da4144814164ac2248210b8663793f4ffa24afd0143be1ad5d76a73c49db5b",
    "notes": []
   },
   "LAW-012-f4e27439e0157d339abf0d24": {
@@ -5609,6 +5939,12 @@
    "chunk_text_sha256": "db74b4efc55460ace42887a9468f425eaa3ab47442f5a96d4f2c2066ad638db6",
    "notes": []
   },
+  "LAW-015-0dae28cd22a98f6696e7f68b": {
+   "doc_id": "LAW-015",
+   "status": "approved",
+   "chunk_text_sha256": "fc999d13d8ac05b6ced9f1fc59c8d62406235d8a589852410496370d8a10709a",
+   "notes": []
+  },
   "LAW-015-104d096ebf5fa95548b3b869": {
    "doc_id": "LAW-015",
    "status": "approved",
@@ -5631,6 +5967,12 @@
    "doc_id": "LAW-015",
    "status": "approved",
    "chunk_text_sha256": "a07acc5b0315d0290523e332e226005ea3bc895d4e9dfc2123512d8bcb6e9ba8",
+   "notes": []
+  },
+  "LAW-015-35f27a3df37a5d918ec84886": {
+   "doc_id": "LAW-015",
+   "status": "approved",
+   "chunk_text_sha256": "34c294b36c0640afe78ec33c10935e127bdd89eef7fea802ca59aeef32e67707",
    "notes": []
   },
   "LAW-015-398ac082ce80f520fcef8d26": {
@@ -5657,6 +5999,12 @@
    "chunk_text_sha256": "9745c0b2b11383c129d96623f55dd132ce38e840342f801062c4757975280d31",
    "notes": []
   },
+  "LAW-015-8a4c98c9821c9fe8ede4fb2a": {
+   "doc_id": "LAW-015",
+   "status": "approved",
+   "chunk_text_sha256": "f82c3a587ff859b38c855db84a5d018ca817270f9a80611dce059e711e8b2647",
+   "notes": []
+  },
   "LAW-015-a787cafcfbd96f1f6f85af9c": {
    "doc_id": "LAW-015",
    "status": "approved",
@@ -5681,6 +6029,12 @@
    "chunk_text_sha256": "515306007b4868ef5d73a927de81bea7ab23cd15e4fc2ab87dacf132654d1d64",
    "notes": []
   },
+  "LAW-015-d043346d4b26c1f917b76adc": {
+   "doc_id": "LAW-015",
+   "status": "approved",
+   "chunk_text_sha256": "2cd5ff33fc0b14997c48bf511ebfbb8dc83d992508e277b3c0606712214c41e7",
+   "notes": []
+  },
   "LAW-015-d9691503814730ee2544b1f5": {
    "doc_id": "LAW-015",
    "status": "approved",
@@ -5693,10 +6047,28 @@
    "chunk_text_sha256": "e4e065a3a05e5d0c9034d25741abf7f8e4207f185f23b56e2de4a3bbbab52935",
    "notes": []
   },
+  "LAW-015-e602da3cbdc4fd81e86af281": {
+   "doc_id": "LAW-015",
+   "status": "approved",
+   "chunk_text_sha256": "281d3b793cd2d21e98c452adfef1d54637e098b0826659b0c4bbf73d7f6416aa",
+   "notes": []
+  },
+  "LAW-015-e76a1e7190b0ccb67b7b5afb": {
+   "doc_id": "LAW-015",
+   "status": "approved",
+   "chunk_text_sha256": "c2e6fd67be3644dd9e34089460b80dc33b62dc49c9ecb9c7da714de72896d6ef",
+   "notes": []
+  },
   "LAW-015-e78857218a4f36d05cfe9685": {
    "doc_id": "LAW-015",
    "status": "approved",
    "chunk_text_sha256": "37b02c5126ba04631c55d5fff864a77df8baf642a26cafc584aa2c223a534c62",
+   "notes": []
+  },
+  "LAW-015-e94873e7c890dbe1ec88ccb1": {
+   "doc_id": "LAW-015",
+   "status": "approved",
+   "chunk_text_sha256": "672ece03d2d09cfed3e4d9ef452cbe8f871203117a201ac33f49cb658b542313",
    "notes": []
   },
   "LAW-016-12765920e77c298d26334227": {
@@ -5949,6 +6321,12 @@
    "doc_id": "LAW-018",
    "status": "approved",
    "chunk_text_sha256": "7ef6cfcd31c9e71e28bab9e16747aac9050967935bd2896411cfab6e49c7d1f9",
+   "notes": []
+  },
+  "LAW-018-9a0c127241f252a7fd6ea43b": {
+   "doc_id": "LAW-018",
+   "status": "approved",
+   "chunk_text_sha256": "1d9bfa8721bc57dac64c4ebcf354a9cb797fb405b6432621b550a7ac6dd82a62",
    "notes": []
   },
   "LAW-018-b91f00fa977ae9f0fdd4b8a8": {
@@ -6533,6 +6911,12 @@
    "chunk_text_sha256": "9e795f78dc3835d545220833ad17d4c30c1ebf8f6b4f5fdd5f9cc52b904c40c3",
    "notes": []
   },
+  "LAW-021-2aed654c5066d8fbcbd0fde2": {
+   "doc_id": "LAW-021",
+   "status": "approved",
+   "chunk_text_sha256": "489ac0d3b239e954db7fdbda93f3258802f84dc8fb88b470d4e764260a6a3d57",
+   "notes": []
+  },
   "LAW-021-2d8ff76d97d0876264e930ee": {
    "doc_id": "LAW-021",
    "status": "approved",
@@ -6569,6 +6953,12 @@
    "chunk_text_sha256": "8407900433bfdbf8c55887a904bad87c0b7fd01374192ec2a54cbd350574fa78",
    "notes": []
   },
+  "LAW-021-4ed0514a09b85e61aeabf64c": {
+   "doc_id": "LAW-021",
+   "status": "approved",
+   "chunk_text_sha256": "c9b88dc37240d63739e998773ae5a2a4792d7b97a69a68cdc85a24c77d578bef",
+   "notes": []
+  },
   "LAW-021-540c6f0d2f84c762761149f2": {
    "doc_id": "LAW-021",
    "status": "approved",
@@ -6579,6 +6969,12 @@
    "doc_id": "LAW-021",
    "status": "approved",
    "chunk_text_sha256": "84077bf69a8014546acab103fced3c5eb9923c818559bcf4b079f08afea36d95",
+   "notes": []
+  },
+  "LAW-021-5b1496be310dd1c09dd9d377": {
+   "doc_id": "LAW-021",
+   "status": "approved",
+   "chunk_text_sha256": "e5cbe238c592be9a74f9a53f8abcd4daa5a3034bb4584d563ad435674c9ee5d6",
    "notes": []
   },
   "LAW-021-5be7917622c8dee6ac5d367a": {
@@ -6599,6 +6995,12 @@
    "chunk_text_sha256": "e7f681cd4692a655163de1372545da7572dc8838bc23c868b87ff61b7cab0893",
    "notes": []
   },
+  "LAW-021-5ff39c615bd7f945a4342882": {
+   "doc_id": "LAW-021",
+   "status": "approved",
+   "chunk_text_sha256": "1919c44ce0a25460604194874223952f472ff45febaa34edb894e5a1217c8d29",
+   "notes": []
+  },
   "LAW-021-65c4008dc759d62dc25f5cb2": {
    "doc_id": "LAW-021",
    "status": "approved",
@@ -6615,6 +7017,12 @@
    "doc_id": "LAW-021",
    "status": "approved",
    "chunk_text_sha256": "d73911749c257d24e4e0b258ffb4b367e601ff67e272d69f42bad5e5a0589d99",
+   "notes": []
+  },
+  "LAW-021-72a1000a4e57fcce84e8bc7e": {
+   "doc_id": "LAW-021",
+   "status": "approved",
+   "chunk_text_sha256": "7ffe1bbe536f5c336c86e034ee8072f01dfe4d8b16642b079639966f2a54e031",
    "notes": []
   },
   "LAW-021-76f8cea01bc96118c23ef83d": {
@@ -6647,10 +7055,22 @@
    "chunk_text_sha256": "5e9e4d68cea4e09fcfcfec0656c60c792d84c06c0de5af65ad7f017241e6ae41",
    "notes": []
   },
+  "LAW-021-af35b22818b5fd55e827c39c": {
+   "doc_id": "LAW-021",
+   "status": "approved",
+   "chunk_text_sha256": "925b04dbb3696c770f52892fd0c6ca78bc0eb33e2f4a62692d16d7c752c1bf21",
+   "notes": []
+  },
   "LAW-021-af59142195accc818030f978": {
    "doc_id": "LAW-021",
    "status": "approved",
    "chunk_text_sha256": "a22cdd93edd348a210cbba3f4a23c250de32bf453883f46fa2c1a0b9ce5d4b92",
+   "notes": []
+  },
+  "LAW-021-b11fe84784d574e2a66b6af7": {
+   "doc_id": "LAW-021",
+   "status": "approved",
+   "chunk_text_sha256": "c24ad1eb0ed8c79daf147f5649adf4aef9fad13b85c105e12eb612bc288bd71d",
    "notes": []
   },
   "LAW-021-c0c40e9f53c5f4da3d9ca5bd": {
@@ -6663,6 +7083,18 @@
    "doc_id": "LAW-021",
    "status": "approved",
    "chunk_text_sha256": "c9fe3e4f863095e807d1a83de72032c4f5f5c553837b114d01564b27829becc7",
+   "notes": []
+  },
+  "LAW-021-cb376a04bbce2d5064f0a929": {
+   "doc_id": "LAW-021",
+   "status": "approved",
+   "chunk_text_sha256": "10da6ab53d9c5fa7a18625b817526cb6b437ddf2aeb2b23904e4505ed0aebb57",
+   "notes": []
+  },
+  "LAW-021-ce6d49eddcf4b0bdd2e2cb9a": {
+   "doc_id": "LAW-021",
+   "status": "approved",
+   "chunk_text_sha256": "551fa7fdcbe581f5eb08126d6e459c41255c4571100b271445b104737152b2c7",
    "notes": []
   },
   "LAW-021-cfcbee1c7803429cc2727162": {
@@ -6681,6 +7113,18 @@
    "doc_id": "LAW-021",
    "status": "approved",
    "chunk_text_sha256": "ab2bbe663ee438a664a24c6cfc4c317f05003c212b25b8daefe10741a457b855",
+   "notes": []
+  },
+  "LAW-021-e287223f5647495dcb121955": {
+   "doc_id": "LAW-021",
+   "status": "approved",
+   "chunk_text_sha256": "4c070541ce3e9ffa735e245b46230e850a382b651df677687d4be00b76bc085a",
+   "notes": []
+  },
+  "LAW-021-e828a3e3bfe6b4c4e71bc8e7": {
+   "doc_id": "LAW-021",
+   "status": "approved",
+   "chunk_text_sha256": "b24e8ec97ac56b4af6719cdcfbee9ee8060a2a26d3d0940286802f0937186842",
    "notes": []
   },
   "LAW-021-f38e913e937464a9ed6ccbe8": {

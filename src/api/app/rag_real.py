@@ -50,11 +50,12 @@ def missing_date(question: str, text: str) -> bool:
     return bool(ASKS_DATE.search(question)) and not HAS_DATE.search(body)
 
 
-def search_query(messages) -> str:
-    """검색용 질문: 되묻기에 대한 짧은 답이면 앞 질문을 붙인다 (LLM에는 prompt.effective_question으로 같은 내용을 보낸다)"""
+def search_query(messages, follow_up: bool = False) -> str:
+    """검색용 질문: 되묻기에 대한 짧은 답이거나 이어지는 질문(follow_up)이면 앞 질문을 붙인다
+    (LLM에는 prompt.effective_question으로 같은 내용을 보낸다)"""
     last = messages[-1].content.strip()
     previous = [m.content for m in messages[:-1] if m.role == "user"]
-    return f"{previous[-1]}\n{last}" if len(last) < SHORT_QUESTION and previous else last
+    return f"{previous[-1]}\n{last}" if (follow_up or len(last) < SHORT_QUESTION) and previous else last
 
 
 def build_actions(meta: Meta, hits: list[dict], text: str) -> list[Action]:
@@ -87,10 +88,22 @@ def answer(messages) -> Answer:
     result = Answer(sources=[], tokens=None)
     threshold = float(os.getenv("UNKNOWN_THRESHOLD", DEFAULT_THRESHOLD))
 
+    async def find(query: str) -> list[dict]:
+        vector = await gpu.embed(query)
+        return await asyncio.to_thread(search.search, vector, int(os.getenv("RAG_K", K)), query)
+
+    def weak(hits: list[dict], query: str) -> bool:
+        return not hits or (max(h["score"] for h in hits) < threshold and not term_match(query, hits))
+
     async def tokens():
-        vector = await gpu.embed(search_query(messages))
-        hits = await asyncio.to_thread(search.search, vector, int(os.getenv("RAG_K", K)), search_query(messages))
-        if not hits or (max(h["score"] for h in hits) < threshold and not term_match(search_query(messages), hits)):
+        query, follow_up = search_query(messages), False
+        hits = await find(query)
+        # 혼자서는 근거가 약한 질문이 앞 대화에 이어지는 말일 수 있다 ("이 사이트에서 서식을 얻을 수 없는거야?").
+        # 앞 질문을 붙여 한 번 더 찾고, 그래야 근거가 잡히면 이어지는 질문으로 답한다
+        if weak(hits, query) and query != (joined := search_query(messages, follow_up=True)):
+            if not weak(retry := await find(joined), joined):
+                query, hits, follow_up = joined, retry, True
+        if weak(hits, query):
             result.answer_type = "unknown"
             result.actions = [contacts.MAIN]
             yield UNKNOWN_TEXT
@@ -101,7 +114,7 @@ def answer(messages) -> Answer:
         meta, rules, cites, words, parts = MetaFilter(), RuleLineFilter(), CitationFilter(len(hits)), EvidenceWordFilter(), []
         guard = ContactFilter("\n".join(h["chunk"]["text"] for h in hits))
         temperature = float(os.getenv("RAG_TEMPERATURE", TEMPERATURE))
-        async for piece in gpu.chat_stream(build_messages(messages, hits), MAX_TOKENS, temperature):
+        async for piece in gpu.chat_stream(build_messages(messages, hits, follow_up), MAX_TOKENS, temperature):
             piece = piece.replace("。", ".")  # Qwen이 가끔 쓰는 중국식 마침표
             if out := guard.feed(words.feed(cites.feed(rules.feed(meta.feed(piece))))):
                 parts.append(out)
@@ -123,7 +136,7 @@ def answer(messages) -> Answer:
             result.sources = []  # 답하지 못했으면 관련 없는 근거를 보여주지 않는다
         result.options = [Option(label=o) for o in parsed.options]
         result.actions = build_actions(parsed, hits, text)
-        if parsed.kind == "answer" and missing_date(search_query(messages), text):
+        if parsed.kind == "answer" and missing_date(query, text):
             yield DATE_NOTE  # 묻는 날짜는 없이 다른 내용(예: 절차)만 답한 경우. 지시문으로 고치면 다른 답이 흔들려 코드로 처리
             parts.append(DATE_NOTE)
             result.actions = [*result.actions, contacts.MAIN]

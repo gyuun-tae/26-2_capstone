@@ -4,6 +4,8 @@
 승인된 청크만 넣는 서비스용 색인을 만든다 (docs/contracts/index_approval_policy.md).
 
 실행: .\\.venv\\Scripts\\python.exe -B .\\scripts\\16_build_index.py
+      --reuse <색인 버전>: 임베딩 입력(제목·절 제목·본문)이 같은 청크는 그 색인의 벡터를 그대로 쓰고 새·바뀐 청크만
+      임베딩한다 (모델 revision도 그 색인 것으로 고정). CPU 전체 재임베딩은 오래 걸리고 메모리를 많이 쓴다.
 결과: data/index/<색인 버전>/vectors.npy, chunks.jsonl, manifest.json (Git 제외)
 """
 import argparse
@@ -34,7 +36,15 @@ def main():
     ap.add_argument("--revision", help="BGE-M3 커밋. 없으면 최신을 받고 실제 커밋을 기록")
     ap.add_argument("--batch-size", type=int, default=4)
     ap.add_argument("--approved-only", action="store_true", help="승인 기록에서 승인된 청크만 (서비스용)")
+    ap.add_argument("--reuse", help="벡터를 다시 쓸 기존 색인 버전 (data/index/<버전>)")
     args = ap.parse_args()
+    reuse = {}
+    if args.reuse:
+        old_vectors, old_chunks, old_manifest = dense.load(ROOT / "data/index" / args.reuse)
+        if args.revision and args.revision != old_manifest["model_revision"]:
+            raise SystemExit("--revision이 재사용 색인의 모델 revision과 다릅니다")
+        args.revision = old_manifest["model_revision"]
+        reuse = {dense.input_text(c): v for c, v in zip(old_chunks, old_vectors)}
 
     policy = json.loads((ROOT / "docs/contracts/data_separation_policy.json").read_text(encoding="utf-8"))
     chunks, excluded = dense.select(dense.load_chunks(ROOT), policy)
@@ -51,11 +61,13 @@ def main():
     model, revision = load_model(args.revision)
     print(f"청크 {len(chunks)}개 색인 (제외: {excluded}), 모델 {dense.MODEL_ID}@{revision[:12]}")
 
-    vectors, tokens = dense.build(
-        chunks,
-        encode=lambda texts: model.encode(texts, batch_size=args.batch_size, show_progress_bar=True),
-        count_tokens=lambda text: len(model.tokenizer(text)["input_ids"]),
-    )
+    def encode(texts):
+        new = [t for t in texts if t not in reuse]
+        print(f"재사용 {len(texts) - len(new)}개 · 새로 임베딩 {len(new)}개")
+        made = dict(zip(new, model.encode(new, batch_size=args.batch_size, show_progress_bar=True))) if new else {}
+        return [reuse[t] if t in reuse else made[t] for t in texts]
+
+    vectors, tokens = dense.build(chunks, encode=encode, count_tokens=lambda text: len(model.tokenizer(text)["input_ids"]))
     version = dense.index_version(revision, chunks)
     manifest = {
         "index_version": version,
@@ -74,6 +86,7 @@ def main():
         "chunk_count": len(chunks),
         "excluded": excluded,
         "approved_count": sum(bool(c.get("index_approved")) for c in chunks),
+        "reused_vectors_from": args.reuse,
         "chunks": [{"chunk_id": c["chunk_id"], "chunk_text_sha256": c["chunk_text_sha256"]} for c in chunks],
     }
     folder = ROOT / "data/index" / version

@@ -59,11 +59,11 @@ NO_EVIDENCE = re.compile(r"(근거\]?|공식 자료)에[^.]{0,60}(포함되어 �
 NO_EVIDENCE_MAX = 200
 
 
-def effective_question(messages) -> str:
-    """이번 질문. 되묻기에 대한 짧은 답이면 앞 질문과 합친다 (검색과 LLM에 같은 질문을 쓴다)"""
+def effective_question(messages, follow_up: bool = False) -> str:
+    """이번 질문. 되묻기에 대한 짧은 답이거나 이어지는 질문(follow_up)이면 앞 질문과 합친다 (검색과 LLM에 같은 질문을 쓴다)"""
     last = messages[-1].content.strip()
     previous = [m.content for m in messages[:-1] if m.role == "user"]
-    if len(last) < SHORT_QUESTION and previous:
+    if (follow_up or len(last) < SHORT_QUESTION) and previous:
         # 앞 답이 되묻기(물음표로 끝남)였으면 선택지, 아니면 이어지는 질문 (h26: "담당 부서가 어디야?"를 선택지로 보면
         # LLM이 앞 질문만 다시 답한다)
         replied = next((m.content.strip() for m in reversed(messages[:-1]) if m.role == "assistant"), "")
@@ -130,12 +130,12 @@ def notices(hits: list[dict]) -> list[tuple[int, str]]:
     return found
 
 
-def build_messages(messages, hits: list[dict]) -> list[dict]:
+def build_messages(messages, hits: list[dict], follow_up: bool = False) -> list[dict]:
     """지시문 + 최근 대화 + (근거 + 이번 질문). 근거는 이번 질문에만 붙인다"""
     history = [{"role": m.role, "content": m.content} for m in messages[:-1]][-HISTORY:]
     alert = "".join(f"\n(주의: 근거 [{i}]에 이용 제한 공지가 있습니다 — \"{line}\" 질문과 관련 있으면 첫 문장에서 알리세요)"
                     for i, line in notices(hits))
-    asked = effective_question(messages)
+    asked = effective_question(messages, follow_up)
     # 한글이 없는 질문(영어 등): 지시문 7번만으로는 한국어로 답하는 경우가 있어(t24) 질문 끝에 한 번 더 짚는다
     language = "" if HANGUL.search(asked) else f"\n{FOREIGN_NOTE}"
     question = f"[근거]\n{evidence(hits)}\n\n[질문]\n{asked}\n{alert}\n{REMINDER}{language}"

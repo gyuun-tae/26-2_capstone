@@ -40,7 +40,7 @@ def run(question, llm_pieces, hits=HITS, history=()):
 
     msgs = [*history, {"role": "user", "content": question}]
     with patch.object(gpu, "embed", fake_embed), patch.object(gpu, "chat_stream", fake_chat), \
-            patch.object(search, "search", lambda v, k, q="": hits):
+            patch.object(search, "search", lambda v, k, q="": hits(q) if callable(hits) else hits):
         body = c.post("/chat", json={"messages": msgs}).text
     return [(b.split("\n")[0].removeprefix("event: "), json.loads(b.split("\n")[1].removeprefix("data: ")))
             for b in body.strip().split("\n\n")]
@@ -78,6 +78,12 @@ assert done["actions"] == [], done  # [1]은 서식 청크가 아님, 숫자가 
 other = [{"chunk": form | {"chunk_id": "f1"}, "score": 0.6}]
 done = run("서식 있나요?", ["서식이 있습니다[1].", '@@META {"type": "answer", "actions": ["port_mis"], "forms": [1]}'], hits=other)[-1][1]
 assert [a["type"] for a in done["actions"]] == ["download"], done["actions"]
+# 법령 서식(scripts/27): 버튼 이름은 법령 이름이 아니라 서식 이름
+law_form = form | {"chunk_id": "lf1", "title": "선박입출항법 시행규칙", "form_title": "내항선 출입 신고서",
+                   "text": "[별지 제1호서식] 내항선 출입 신고서\n온라인 신청: 항만운영정보시스템(Port-MIS)에서도 신청할 수 있습니다."}
+done = run("출입 신고서 어디서 받아요?", ["내항선 출입 신고서를 씁니다[1].", '@@META {"type": "answer", "actions": ["port_mis"], "forms": [1]}'],
+           hits=[{"chunk": law_form, "score": 0.6}])[-1][1]
+assert [a["label"] for a in done["actions"]] == ["내항선 출입 신고서(HWP)", "Port-MIS 열기"], done["actions"]
 
 # 2-3. 정리 줄 항목을 본문 줄로 따로 적어도("forms: [1]") 화면에 나가지 않고, 뒤의 @@META를 읽는다. 중국식 마침표는 바꾼다
 ev = run("서식", ["서식이 있습니다[2]。\n", "forms: [2]\n", '@@META {"type": "answer", "forms": [2]}'])
@@ -150,6 +156,19 @@ run("담당 부서가 어디야?", ['답[1]\n@@META {"type": "answer"}'], histor
     {"role": "user", "content": "입주기업 모집 가장 최근이 언제야?"},
     {"role": "assistant", "content": "확인한 공식 자료만으로는 답을 확정하기 어렵습니다."}])
 assert "입주기업 모집 가장 최근이 언제야?\n(이어지는 질문: 담당 부서가 어디야?)" in calls["chat"][-1][-1]["content"]
+
+# 7-1-1. 긴 질문이라도 혼자서 근거가 약하면 앞 질문을 붙여 다시 찾고, 그래야 근거가 잡히면 이어지는 질문으로 답한다
+weak = [h | {"score": 0.4} for h in HITS]
+follow = [{"role": "user", "content": "출입 신고서는 어디서 볼 수 있어?"}, {"role": "assistant", "content": "관리청에 제출합니다[1]."}]
+ev = run("이 사이트에서 서식을 얻을 수 없는거야?", ['답[1]\n@@META {"type": "answer"}'],
+         hits=lambda q: HITS if "출입 신고서" in q else weak, history=follow)
+assert calls["embed"][-2:] == ["이 사이트에서 서식을 얻을 수 없는거야?", "출입 신고서는 어디서 볼 수 있어?\n이 사이트에서 서식을 얻을 수 없는거야?"]
+assert "(이어지는 질문: 이 사이트에서 서식을 얻을 수 없는거야?)" in calls["chat"][-1][-1]["content"]
+assert ev[-1][1]["answer_type"] == "answer"
+# 붙여도 약하면 LLM 없이 확인 불가
+n_chat = len(calls["chat"])
+ev = run("오늘 여수 날씨 어때요 알려 주세요?", ["안 불림"], hits=weak, history=follow)
+assert ev[-1][1]["answer_type"] == "unknown" and len(calls["chat"]) == n_chat
 
 # 7-2. 근거에 '※ … 제한' 공지가 있으면 질문 옆에 짚어 준다 (없으면 붙이지 않는다)
 notice = [{"chunk": html_text | {"chunk_id": "n1", "text": "※ 경보 해제 시까지 예약이 제한됩니다.\n예약 안내"}, "score": 0.7}]

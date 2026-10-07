@@ -29,8 +29,8 @@ def locator_text(chunk: dict) -> str:
         return " · ".join(titles) or "본문"
     if loc["kind"] == "html_table":
         return f"{titles[0]} 표" if titles else "표"
-    if loc["kind"] == "law_api":  # 법령·고시 조문 (scripts/23_chunk_laws.py)
-        return loc["article_label"]
+    if loc["kind"] == "law_api":  # 법령·고시 조문 (scripts/23_chunk_laws.py)·서식 (27)
+        return loc["article_label"] + (" · 서식 전체" if chunk.get("chunk_kind") == "whole_form" else "")
 
     kind = chunk.get("chunk_kind")
     if kind == "whole_form":
@@ -83,4 +83,5 @@ def form_download(chunk: dict, source_ref: int) -> Action | None:
     if chunk.get("chunk_kind") != "whole_form":
         return None
     fmt = "PDF" if _pdf_pages(chunk) else "HWP"
-    return Action(type="download", label=f"{chunk['title']}({fmt})", url=chunk["source_url"], source_ref=source_ref)
+    name = chunk.get("form_title") or chunk["title"]  # 법령 서식은 title이 법령 이름이라 서식 이름을 따로 둔다
+    return Action(type="download", label=f"{name}({fmt})", url=chunk["source_url"], source_ref=source_ref)

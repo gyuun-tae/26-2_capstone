@@ -5,6 +5,8 @@
 홍보관·항만안내선이 빠지면 LLM이 되물을 수 없다).
 법령·고시(doc_id LAW-…)는 k개 중 MAX_LAW개까지만 넣는다. 조문 수가 많아 YGPA 안내(Port-MIS·서식·연락처)를 밀어내기
 때문 (예: "입항 신고는 어디서" → 근거 5개가 모두 법령이 되어 Port-MIS 안내가 빠짐, docs/handoff/22_laws.md).
+법령 서식(chunk_kind whole_form, scripts/27)은 이 상한에 세지 않는다: 내려받을 서식이라 조문처럼 안내를 밀어내지 않고,
+세면 "출입 신고서 어디서 받아요?"에 서식이 조문 2개에 밀려 빠진다.
 적용 대상이 한정된 문서(SCOPED_DOCS)는 질문에 그 대상을 가리키는 말이 있을 때만 후보에 넣는다. 예: 통과선박 지침은
 "입항 절차"에도 1위로 올라와 LLM이 통과선박 절차를 일반 입항 절차처럼 답했다(팀원 로그 39·46·47·69, 지시문으로는 흔들림).
 문서당·법령 상한은 DB 안에서 적용하고 고른 k개의 청크 원문만 가져온다 (후보 원문을 모두 받으면 느리다).
@@ -29,9 +31,9 @@ SELECT c.chunk, 1 - r.dist AS score
 FROM (
     SELECT chunk_id, dist, is_law, row_number() OVER (PARTITION BY is_law ORDER BY dist, chunk_id) AS rg
     FROM (
-        SELECT chunk_id, dist, doc_id LIKE 'LAW-%' AS is_law,
+        SELECT chunk_id, dist, doc_id LIKE 'LAW-%' AND chunk_kind IS DISTINCT FROM 'whole_form' AS is_law,
                row_number() OVER (PARTITION BY doc_id ORDER BY dist, chunk_id) AS rn
-        FROM (SELECT chunk_id, doc_id, embedding <=> CAST(:q AS vector) AS dist
+        FROM (SELECT chunk_id, doc_id, chunk->>'chunk_kind' AS chunk_kind, embedding <=> CAST(:q AS vector) AS dist
               FROM rag_chunks WHERE index_version = :version AND NOT (doc_id = ANY(:excluded))) d
     ) p
     WHERE rn <= :per_doc
