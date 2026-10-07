@@ -1,4 +1,4 @@
-"""관문·터널 확인. 표준 라이브러리만 사용. 키 검사, 막힌 주소, 임베딩, 스트리밍(조금씩 도착하는지)을 본다.
+"""관문·터널 확인. 표준 라이브러리만 사용. 키 검사, 막힌 주소, 임베딩, 재정렬, 스트리밍(조금씩 도착하는지)을 본다.
 
 실행: python3 check_gateway.py [주소]   (주소를 안 주면 start_tunnel.sh가 저장한 tunnel_url, 그것도 없으면 http://127.0.0.1:8200)
 """
@@ -54,6 +54,16 @@ def main():
     with urllib.request.urlopen(request(base, "/v1/embeddings", {"model": "bge-m3", "input": ["선박 입항 신고 절차"]}), timeout=30) as r:
         dim = len(json.load(r)["data"][0]["embedding"])
     check("임베딩", dim == 1024, f"(크기 {dim}, {time.time() - start:.2f}초)")
+
+    # 재정렬: 관련 있는 글이 더 높은 점수, 후보 수 상한, 다른 모델 이름 거부
+    rerank = {"model": "bge-reranker", "query": "선박 입항 신고는 어디에 하나요?",
+              "documents": ["테니스장은 하루 2시간까지 예약할 수 있습니다.", "선박의 선장은 내항선 출입 신고서를 관리청에 제출하여야 한다."]}
+    start = time.time()
+    with urllib.request.urlopen(request(base, "/v1/rerank", rerank), timeout=30) as r:
+        scores = {x["index"]: x["relevance_score"] for x in json.load(r)["results"]}
+    check("재정렬", scores[1] > scores[0], f"(무관 {scores[0]:.3f} < 관련 {scores[1]:.3f}, {time.time() - start:.2f}초)")
+    check("재정렬 후보 수 상한", status(request(base, "/v1/rerank", {**rerank, "documents": ["x"] * 33})) == 400)
+    check("재정렬 다른 모델 거부", status(request(base, "/v1/rerank", {**rerank, "model": "bge-m3"})) == 400)
 
     start, arrivals, text = time.time(), [], []
     with urllib.request.urlopen(request(base, "/v1/chat/completions", {**chat, "stream": True}), timeout=120) as r:
