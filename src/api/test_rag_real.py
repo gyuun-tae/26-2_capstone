@@ -274,4 +274,36 @@ assert set(search.PASS_FORMS) <= set(search.excluded_docs("외항선 출입신�
 assert not set(search.PASS_FORMS) & set(search.excluded_docs("출입증을 잃어버렸는데 어떻게 재발급 받나요?"))
 assert not set(search.PASS_FORMS) & set(search.excluded_docs("출입증 말고 선박 출입 신고서는요?"))
 
+# 14. 답변 전 판정(RAG_GATE): 없음이면 생성 없이 확인 불가 + 대표전화, 판정이 실패하면 판정 없이 답한다
+import asyncio  # noqa: E402
+
+from app import gate  # noqa: E402
+
+
+def verdict(*pieces):
+    async def f(messages, max_tokens, temperature):
+        assert messages[0]["content"] == gate.SYSTEM and "[근거]\n[1]" in messages[1]["content"]
+        for p in pieces:
+            if isinstance(p, Exception):
+                raise p
+            yield p
+    return f
+
+
+msgs = [Message(role="user", content="해상 운임은 얼마예요?")]
+for pieces, expected in ((["없", "음"], False), (["있음"], True), ([gpu.GpuError("생성 실패 502")], True)):
+    with patch.object(gpu, "chat_stream", verdict(*pieces)):
+        assert asyncio.run(gate.answerable(msgs, HITS)) is expected, pieces
+
+os.environ["RAG_GATE"] = "on"
+async def say_no(messages, hits, follow_up=False):
+    return False
+before = len(calls["chat"])
+with patch.object(gate, "answerable", say_no):
+    ev = run("해상 운임은 얼마예요?", ["안 불림"])
+assert len(calls["chat"]) == before  # 답변 생성은 부르지 않는다
+assert ev[-1][1]["answer_type"] == "unknown" and ev[-1][1]["actions"][0]["type"] == "contact" and ev[-2][1] == []
+assert text_of(ev) == rag_real.UNKNOWN_TEXT
+del os.environ["RAG_GATE"]
+
 print("OK")

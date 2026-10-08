@@ -11,7 +11,7 @@ import re
 import httpx
 from pydantic import ValidationError
 
-from app import contacts, gpu, rerank, search
+from app import contacts, gate, gpu, rerank, search
 from app.actions import ACTIONS
 from app.prompt import (NO_EVIDENCE, NO_EVIDENCE_MAX, SHORT_QUESTION, UNKNOWN_PHRASE, CitationFilter, ContactFilter, EvidenceWordFilter, Meta, MetaFilter, RuleLineFilter,
                         build_messages, parse_meta, violations)
@@ -132,6 +132,11 @@ def answer(messages) -> Answer:
             return
         if query in pools:  # 확인 불가가 아니면 근거 순서를 재정렬로 다시 정한다
             hits = await rerank.rerank(query, pools[query], k)
+        if gate.enabled() and not await gate.answerable(messages, hits, follow_up):  # 점수는 넘었지만 근거가 주제를 다루지 않음
+            result.answer_type = "unknown"
+            result.actions = [contacts.MAIN]
+            yield UNKNOWN_TEXT
+            return
 
         result.sources = [chunk_to_source(h["chunk"]) for h in hits]
         # 화면으로 나가기 전 거르기: 정리 줄(@@META) → 구분선 → 없는 근거 번호 → "[근거]" 이름표 → 근거에 없는 연락처
