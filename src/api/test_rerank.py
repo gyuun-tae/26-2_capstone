@@ -36,6 +36,10 @@ def fake_rerank(scores):
 pool = [hit("LAW-1", 0.70), hit("LAW-2", 0.69), hit("LAW-3", 0.68), hit("LAW-9", 0.67, "whole_form"), hit("YGPA-1", 0.60),
         hit("YGPA-2", 0.59), hit("YGPA-3", 0.58)]
 assert ids(rerank.by_vector(pool, 5)) == ["LAW-1-0.7", "LAW-2-0.69", "LAW-9-0.67", "YGPA-1-0.6", "YGPA-2-0.59"]
+# 법령 서식은 서식끼리 MAX_FORM개까지 (w01: 다른 법령의 "신고서" 서식은 잡음)
+forms = [hit("LAW-9", 0.70, "whole_form"), hit("LAW-8", 0.69, "whole_form"), hit("LAW-7", 0.68, "whole_form"),
+         hit("YGPA-1", 0.60)]
+assert ids(rerank.by_vector(forms, 2)) == ["LAW-9-0.7", "YGPA-1-0.6"]
 
 # 2. 재정렬 점수와 벡터 점수 반반으로 순서를 다시 정한다. 앞 N개만 재정렬, 모자라면 나머지로 채운다
 os.environ["RAG_RERANK_N"] = "4"

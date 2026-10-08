@@ -1,0 +1,61 @@
+{
+ "dataset": "dev_questions_laws_v1.jsonl",
+ "index_version": "bge-m3-dense-2e26c2fc2e81",
+ "run_at": "2026-10-08T06:16:35.669083+00:00",
+ "summary": {
+  "retrieval": "1/1",
+  "retrieval@1": "1/1",
+  "type": "1/1",
+  "buttons": "1/1",
+  "mention": "1/1",
+  "lead": "0/0",
+  "absent": "0/0",
+  "contact_btn": "0/0",
+  "contact": "0/0",
+  "type_by_group": {
+   "law": "1/1"
+  },
+  "uncited_lines_total": 0,
+  "violations_total": 0,
+  "unsupported_numbers_total": 0,
+  "first_token_s": {
+   "mean": 1.91,
+   "median": 1.91,
+   "max": 1.91
+  }
+ },
+ "rows": [
+  {
+   "id": "l01",
+   "group": "law",
+   "question": "무역항 들어올 때 출입 신고 안 해도 되는 배도 있어요?",
+   "answer_type": "answer",
+   "top1_score": 0.685,
+   "top_docs": [
+    "LAW-007",
+    "LAW-008",
+    "YGPA-031",
+    "YGPA-027",
+    "YGPA-038"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 1.91,
+   "total_s": 4.77,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "네, 무역항의 수상구역에 출입할 때 출입 신고를 하지 않아도 되는 선박이 있습니다[1].\n\n1. 총톤수 5톤 미만의 선박[1]  \n2. 해양사고구조에 사용되는 선박[1]  \n3. 수상레저기구 중 국내항 간을 운항하는 모터보트 및 동력요트[1]  \n4. 어선안전조업 및 어선원의 안전·보건 증진 등에 관한 법률 제8조에 따른 출입항 신고 대상이 되는 어선[1]  \n5. 공공목적이나 항만 운영의 효율성을 위하여 해양수산부령으로 정하는 선박[1]"
+  }
+ ]
+}

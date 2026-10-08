@@ -1,0 +1,93 @@
+{
+ "dataset": "dev_questions_laws_v1.jsonl",
+ "index_version": "bge-m3-dense-2e26c2fc2e81",
+ "run_at": "2026-10-08T06:41:41.361013+00:00",
+ "summary": {
+  "retrieval": "2/2",
+  "retrieval@1": "2/2",
+  "type": "2/2",
+  "buttons": "2/2",
+  "mention": "2/2",
+  "lead": "0/0",
+  "absent": "0/0",
+  "contact_btn": "0/0",
+  "contact": "0/0",
+  "type_by_group": {
+   "law": "2/2"
+  },
+  "uncited_lines_total": 0,
+  "violations_total": 0,
+  "unsupported_numbers_total": 0,
+  "first_token_s": {
+   "mean": 2.76,
+   "median": 2.76,
+   "max": 3.76
+  }
+ },
+ "rows": [
+  {
+   "id": "l01",
+   "group": "law",
+   "question": "무역항 들어올 때 출입 신고 안 해도 되는 배도 있어요?",
+   "answer_type": "answer",
+   "top1_score": 0.685,
+   "top_docs": [
+    "LAW-007",
+    "LAW-008",
+    "YGPA-031",
+    "YGPA-027",
+    "YGPA-038"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 3.76,
+   "total_s": 6.62,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "네, 무역항의 수상구역에 출입할 때 출입 신고를 하지 않아도 되는 선박이 있습니다[1].\n\n1. 총톤수 5톤 미만의 선박[1]  \n2. 해양사고구조에 사용되는 선박[1]  \n3. 수상레저기구 중 국내항 간을 운항하는 모터보트 및 동력요트[1]  \n4. 어선안전조업 및 어선원의 안전·보건 증진 등에 관한 법률 제8조에 따른 출입항 신고 대상이 되는 어선[1]  \n5. 공공목적이나 항만 운영의 효율성을 위하여 해양수산부령으로 정하는 선박[1]"
+  },
+  {
+   "id": "l06",
+   "group": "law",
+   "question": "항만시설 전용사용 허가는 최대 몇 년까지 받을 수 있어요?",
+   "answer_type": "answer",
+   "top1_score": 0.678,
+   "top_docs": [
+    "LAW-010",
+    "LAW-010",
+    "LAW-006",
+    "LAW-003",
+    "YGPA-032"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 1.77,
+   "total_s": 2.38,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "항만시설 전용사용 허가는 최대 5년까지 받을 수 있습니다[4]."
+  }
+ ]
+}

@@ -268,5 +268,10 @@ assert prompt.FOREIGN_NOTE not in last_user("출입증 발급 신청은 어디�
 # 13. 대상이 한정된 문서(통과선박 지침·신청서)는 질문에 '통과'가 있을 때만 검색 후보
 assert search.excluded_docs("입항 절차를 알려주세요.") == ["YGPA-028", "YGPA-030"]
 assert search.excluded_docs("통과선박으로 인정받으려면?") == []
+# 선박 '출입 신고'를 물으면 사람·차량 출입증 서식은 후보에서 뺀다 (r10). 출입증을 함께 말하면 그대로 둔다
+assert set(search.PASS_FORMS) <= set(search.excluded_docs("출입 신고서의 구체적인 서식은 따로 볼 수 없는건가?"))
+assert set(search.PASS_FORMS) <= set(search.excluded_docs("외항선 출입신고서 양식은 어디서 받아요?"))
+assert not set(search.PASS_FORMS) & set(search.excluded_docs("출입증을 잃어버렸는데 어떻게 재발급 받나요?"))
+assert not set(search.PASS_FORMS) & set(search.excluded_docs("출입증 말고 선박 출입 신고서는요?"))
 
 print("OK")

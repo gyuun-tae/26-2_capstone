@@ -1,0 +1,163 @@
+{
+ "dataset": "dev_questions_team_v1.jsonl",
+ "index_version": "bge-m3-dense-2e26c2fc2e81",
+ "run_at": "2026-10-08T06:39:27.089204+00:00",
+ "summary": {
+  "retrieval": "3/3",
+  "retrieval@1": "2/3",
+  "type": "4/4",
+  "buttons": "4/4",
+  "mention": "1/1",
+  "lead": "1/1",
+  "absent": "1/1",
+  "contact_btn": "0/0",
+  "contact": "0/0",
+  "type_by_group": {
+   "team": "4/4"
+  },
+  "uncited_lines_total": 0,
+  "violations_total": 0,
+  "unsupported_numbers_total": 0,
+  "first_token_s": {
+   "mean": 2.31,
+   "median": 2.11,
+   "max": 3.46
+  }
+ },
+ "rows": [
+  {
+   "id": "t01",
+   "group": "team",
+   "question": "견학 신청은 어디서 하나요?",
+   "answer_type": "answer",
+   "top1_score": 0.564,
+   "top_docs": [
+    "LAW-009",
+    "YGPA-008",
+    "YGPA-005",
+    "YGPA-025",
+    "LAW-012"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [
+    "항만안내선 담당 061-797-4438"
+   ],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 1,
+   "unsupported_numbers": [],
+   "first_token_s": 3.46,
+   "total_s": 5.66,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": false,
+    "buttons": true
+   },
+   "answer": "※ 정부의 자원안보 위기 주의단계 경보 발령에 따라, 경보 해제 시까지 항만안내선 예약이 제한됩니다[2].\n\n항만안내선 견학 신청은 여수광양항만공사 항만안내선 담당자에게 문의하여 신청할 수 있습니다[2].\n\n1. 견학 신청 → 예약 확정 → 견학일정 5분 전까지 승선장소로 집결 → 경비초소 신원 확인 → 항만안내선 승선장으로 이동[2]"
+  },
+  {
+   "id": "t02",
+   "group": "team",
+   "question": "선박 입·출항 절차를 알려주세요.",
+   "answer_type": "answer",
+   "top1_score": 0.692,
+   "top_docs": [
+    "LAW-009",
+    "LAW-008",
+    "YGPA-031",
+    "YGPA-031",
+    "LAW-007"
+   ],
+   "downloads": [
+    "LAW-009"
+   ],
+   "port_mis": true,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 1.55,
+   "total_s": 5.75,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "absent": true,
+    "lead": true,
+    "buttons": true
+   },
+   "answer": "내항선의 입·출항 절차는 다음과 같습니다[1][2].\n\n1. 입항 또는 출항 전에 「내항선 출입 신고서」를 작성하고 제출합니다[1][2].\n2. 「내항선 출입 신고서」는 항만운영정보시스템(Port-MIS)을 통해 온라인으로 신청할 수 있습니다[1].\n3. 신고서 작성 시 입항 또는 출항 여부, 최초/변경/최종/취소 여부, 선박 제원, 입출항 일시, 선장 정보, 선사/대리점 정보, 계선장소, 화물명세, 승무원 및 승객 수 등을 기재합니다[1].\n4. 여수·광양항에 입출항하는 선박은 별도의 입출항 신고를 생략할 수 있는 경우가 있습니다[3].\n5. 선박이 입출항할 때는 선장(도선사 탑승 시 도선사)이 접안 및 정박 시각을 즉시 서해지방해양경찰청 여수항해상교통관제센터에 무선으로 통보해야 합니다[4]."
+  },
+  {
+   "id": "t03",
+   "group": "team",
+   "question": "필요한 신청 서식을 찾고 싶어요.",
+   "answer_type": "clarify",
+   "top1_score": 0.632,
+   "top_docs": [
+    "YGPA-001",
+    "LAW-021",
+    "YGPA-021",
+    "YGPA-003",
+    "LAW-021"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [
+    "민원신청서",
+    "항만운송관련사업 등록신청서",
+    "더드림스마트센터 이용신청서",
+    "실적증명서 신청서"
+   ],
+   "uncited_lines": 1,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 2.14,
+   "total_s": 3.22,
+   "checks": {
+    "type": true,
+    "buttons": true
+   },
+   "answer": "어느 신청의 서식을 찾고 계신가요?"
+  },
+  {
+   "id": "t16",
+   "group": "team",
+   "question": "위험물 컨테이너 반입 신고는 어떻게 하나요?",
+   "answer_type": "answer",
+   "top1_score": 0.734,
+   "top_docs": [
+    "LAW-009",
+    "LAW-007",
+    "LAW-009",
+    "YGPA-031",
+    "YGPA-023"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 2.08,
+   "total_s": 5.3,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "위험물 컨테이너를 무역항의 수상구역등으로 반입하려면 반입 24시간 전에 지방해양수산청장 또는 시·도지사에 서류를 제출해야 합니다[1].\n\n1. 별지 제10호서식의 위험물 반입신고서를 작성합니다[1]\n2. 별지 제11호서식의 위험물 일람표를 첨부합니다[1]\n3. 별지 제11호의2서식의 화물적부도를 첨부합니다(화물창이 두 개 이상인 탱커 및 탱크선에 해당하는 경우)[1]\n4. 신고서를 제출받은 지방해양수산청장 또는 시·도지사는 확인란에 날인하여 신고인에게 발급합니다[1]"
+  }
+ ]
+}

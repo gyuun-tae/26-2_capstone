@@ -37,13 +37,14 @@ def candidates() -> int:
 
 
 def select(hits: list[dict], k: int, key) -> list[dict]:
-    """key가 큰 순서로 법령 상한을 지키며 k개 (search.SQL과 같은 규칙: 법령 서식은 상한에 세지 않음)"""
-    out, laws, cap = [], 0, search.law_cap()
+    """key가 큰 순서로 법령 조문·법령 서식 상한을 지키며 k개 (search.SQL과 같은 규칙)"""
+    out, used, cap = [], {"law": 0, "form": 0}, {"law": search.law_cap(), "form": search.form_cap()}
     for h in sorted(hits, key=lambda h: -key(h)):
-        if search.is_capped_law(h["chunk"]):
-            if laws >= cap:
+        kind = search.kind(h["chunk"])
+        if kind in cap:
+            if used[kind] >= cap[kind]:
                 continue
-            laws += 1
+            used[kind] += 1
         out.append(h)
         if len(out) == k:
             break
