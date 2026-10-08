@@ -1,0 +1,164 @@
+{
+ "dataset": "dev_questions_v3.jsonl",
+ "index_version": "bge-m3-dense-2e26c2fc2e81",
+ "run_at": "2026-10-08T05:09:14.590853+00:00",
+ "summary": {
+  "retrieval": "1/1",
+  "retrieval@1": "1/1",
+  "type": "4/4",
+  "buttons": "4/4",
+  "mention": "2/2",
+  "lead": "0/0",
+  "absent": "0/0",
+  "contact_btn": "0/0",
+  "contact": "3/3",
+  "type_by_group": {
+   "clarify": "1/1",
+   "followup": "1/1",
+   "hard": "1/1",
+   "unknown": "1/1"
+  },
+  "uncited_lines_total": 0,
+  "violations_total": 0,
+  "unsupported_numbers_total": 0,
+  "first_token_s": {
+   "mean": 2.2,
+   "median": 2.54,
+   "max": 2.95
+  }
+ },
+ "rows": [
+  {
+   "id": "c03",
+   "group": "clarify",
+   "question": "예약은 어떻게 해요?",
+   "answer_type": "clarify",
+   "top1_score": 0.589,
+   "top_docs": [
+    "YGPA-005",
+    "YGPA-006",
+    "YGPA-005",
+    "YGPA-007",
+    "YGPA-001"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [
+    "체육시설",
+    "홍보관"
+   ],
+   "uncited_lines": 1,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 2.27,
+   "total_s": 2.89,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "buttons": true
+   },
+   "answer": "어느 시설의 예약을 알고 싶으신가요?"
+  },
+  {
+   "id": "u04",
+   "group": "unknown",
+   "question": "요즘 컨테이너 해상 운임 얼마나 해요?",
+   "answer_type": "unknown",
+   "top1_score": 0.636,
+   "top_docs": [
+    "YGPA-032",
+    "LAW-010",
+    "LAW-010",
+    "YGPA-032",
+    "YGPA-014"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [
+    "여수광양항만공사 대표전화 061-797-4300"
+   ],
+   "options": [],
+   "uncited_lines": 1,
+   "violations": [],
+   "contacts_from_evidence": 1,
+   "unsupported_numbers": [],
+   "first_token_s": 0.78,
+   "total_s": 1.61,
+   "checks": {
+    "type": true,
+    "contact": true,
+    "buttons": true
+   },
+   "answer": "확인한 공식 자료만으로는 답을 확정하기 어렵습니다. 담당 부서를 모르시면 아래 대표전화로 문의해 주세요."
+  },
+  {
+   "id": "h25",
+   "group": "hard",
+   "question": "입주기업 모집 가장 최근이 언제야?",
+   "answer_type": "unknown",
+   "top1_score": 0.564,
+   "top_docs": [
+    "LAW-014",
+    "LAW-014",
+    "YGPA-036",
+    "YGPA-039",
+    "YGPA-037"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [
+    "여수광양항만공사 대표전화 061-797-4300"
+   ],
+   "options": [],
+   "uncited_lines": 1,
+   "violations": [],
+   "contacts_from_evidence": 1,
+   "unsupported_numbers": [],
+   "first_token_s": 2.8,
+   "total_s": 3.64,
+   "checks": {
+    "type": true,
+    "mention": true,
+    "contact": true,
+    "buttons": true
+   },
+   "answer": "확인한 공식 자료만으로는 답을 확정하기 어렵습니다. 담당 부서를 모르시면 아래 대표전화로 문의해 주세요."
+  },
+  {
+   "id": "h26",
+   "group": "followup",
+   "question": "담당 부서가 어디야?",
+   "answer_type": "unknown",
+   "top1_score": 0.567,
+   "top_docs": [
+    "LAW-014",
+    "YGPA-039",
+    "LAW-014",
+    "YGPA-036",
+    "YGPA-023"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [
+    "여수광양항만공사 대표전화 061-797-4300"
+   ],
+   "options": [],
+   "uncited_lines": 2,
+   "violations": [],
+   "contacts_from_evidence": 1,
+   "unsupported_numbers": [],
+   "first_token_s": 2.95,
+   "total_s": 4.19,
+   "checks": {
+    "type": true,
+    "mention": true,
+    "contact": true,
+    "buttons": true
+   },
+   "answer": "확인한 공식 자료만으로는 답을 확정하기 어렵습니다. 담당 부서를 모르시면 아래 대표전화로 문의해 주세요.  \n담당 부서: 물류단지부 (전화 061-797-4456)"
+  }
+ ]
+}

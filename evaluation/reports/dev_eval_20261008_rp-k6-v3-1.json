@@ -1,0 +1,167 @@
+{
+ "dataset": "dev_questions_v3.jsonl",
+ "index_version": "bge-m3-dense-2e26c2fc2e81",
+ "run_at": "2026-10-08T05:10:49.615204+00:00",
+ "summary": {
+  "retrieval": "1/1",
+  "retrieval@1": "1/1",
+  "type": "3/4",
+  "buttons": "4/4",
+  "mention": "0/2",
+  "lead": "0/0",
+  "absent": "0/0",
+  "contact_btn": "0/0",
+  "contact": "1/1",
+  "type_by_group": {
+   "clarify": "1/1",
+   "followup": "1/1",
+   "hard": "1/1",
+   "unknown": "0/1"
+  },
+  "uncited_lines_total": 0,
+  "violations_total": 0,
+  "unsupported_numbers_total": 0,
+  "first_token_s": {
+   "mean": 2.71,
+   "median": 2.92,
+   "max": 3.7
+  }
+ },
+ "rows": [
+  {
+   "id": "c03",
+   "group": "clarify",
+   "question": "예약은 어떻게 해요?",
+   "answer_type": "clarify",
+   "top1_score": 0.589,
+   "top_docs": [
+    "YGPA-005",
+    "YGPA-006",
+    "YGPA-005",
+    "YGPA-007",
+    "YGPA-001",
+    "LAW-003"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [
+    "체육시설 예약",
+    "홍보관 예약"
+   ],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 2.44,
+   "total_s": 5.02,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "buttons": true
+   },
+   "answer": "※ 정부의 자원안보 위기 주의단계 경보 발령에 따라, 경보 해제 시까지 홍보관 예약이 제한됩니다[4].\n\n1. 체육시설 예약은 1계정 당 하루 최대 2시간, 1개 코트만 예약 가능합니다[2].\n2. 평일 사용은 당일 15시까지, 주말 사용은 사용예정일 직전 금요일 15시까지 예약 신청해야 합니다[3].\n3. 우천 시 사용이 금지되며, 우천 후 배수시간 3시간 후 사용 가능합니다[3]."
+  },
+  {
+   "id": "u04",
+   "group": "unknown",
+   "question": "요즘 컨테이너 해상 운임 얼마나 해요?",
+   "answer_type": "clarify",
+   "top1_score": 0.636,
+   "top_docs": [
+    "YGPA-032",
+    "LAW-010",
+    "LAW-010",
+    "YGPA-032",
+    "YGPA-014",
+    "YGPA-014"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [
+    "항만시설 사용료",
+    "광양항 컨테이너 부두 사용료"
+   ],
+   "uncited_lines": 1,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 1.28,
+   "total_s": 2.09,
+   "checks": {
+    "type": false,
+    "buttons": true
+   },
+   "answer": "어느 시설의 사용료를 알고 싶으신가요?"
+  },
+  {
+   "id": "h25",
+   "group": "hard",
+   "question": "입주기업 모집 가장 최근이 언제야?",
+   "answer_type": "answer",
+   "top1_score": 0.564,
+   "top_docs": [
+    "LAW-014",
+    "LAW-014",
+    "YGPA-036",
+    "YGPA-039",
+    "YGPA-037",
+    "YGPA-021"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [
+    "물류단지부 (배후단지 담당) 061-797-4456"
+   ],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 1,
+   "unsupported_numbers": [],
+   "first_token_s": 3.7,
+   "total_s": 10.92,
+   "checks": {
+    "type": true,
+    "mention": false,
+    "buttons": true
+   },
+   "answer": "광양항 배후단지 입주기업 모집의 가장 최근 기한은 공고기간입니다[3].\n\n1. 입주기업 모집 — 기한: 공고기간; 관련근거: 모집공고; 비고: 항만공사[3]\n2. 우선협상대상자 선정 — 기한: 〃; 관련근거: 평가 및 선정; 비고: 항만공사[3]\n3. 결격사유 조회 — 기한: 〃; 관련근거: 자유무역지역법 제12조; 비고: 관련기관 등[3]\n4. 입주계약 신청 — 기한: 〃; 관련근거: 자유무역지역법 시행령 제8조; 비고: 입주대상기업 → 항만공사[3]\n5. 입주계약 체결 — 기한: 입주계약 아내 받은 날부터 90일 이내; 관련근거: 자유무역지역법 제11조 자유무역지역법 시행령 제8조; 비고: 입주대상기업 ↔ 항만공사[3]\n6. 임대차계약 체결 — 기한: 입주계약 체결일로부터 60일 이내; 관련근거: 자유무역지역법 제13조; 비고: 입주대상기업 ↔ 항만공사[3]\n7. 건축허가 및 신고 — 기한: 임대차계약서 명시; 관련근거: 자유무역지역법 제14조 임대차계약서; 비고: 입주기업 → 여수청[3]\n8. 건축착공 — 기한: 사업계획서 명시; 관련근거: 건축법 제11조7항 임대차계약서; 비고: 입주기업[3]\n9. 영업개시 — 기한: -; 관련근거: 1종 항만배후단지 관리지침 제2조; 비고: 입주기업 → 항만공사[3]"
+  },
+  {
+   "id": "h26",
+   "group": "followup",
+   "question": "담당 부서가 어디야?",
+   "answer_type": "unknown",
+   "top1_score": 0.567,
+   "top_docs": [
+    "LAW-014",
+    "YGPA-039",
+    "LAW-014",
+    "YGPA-036",
+    "YGPA-023",
+    "YGPA-037"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [
+    "여수광양항만공사 대표전화 061-797-4300"
+   ],
+   "options": [],
+   "uncited_lines": 1,
+   "violations": [],
+   "contacts_from_evidence": 1,
+   "unsupported_numbers": [],
+   "first_token_s": 3.4,
+   "total_s": 4.68,
+   "checks": {
+    "type": true,
+    "mention": false,
+    "contact": true,
+    "buttons": true
+   },
+   "answer": "확인한 공식 자료만으로는 입주기업 모집의 가장 최근 시기와 담당 부서를 확정할 수 없습니다. 관련 정보는 모집 공고에 따라 달라질 수 있으며, 자세한 사항은 담당 부서에 문의하시기 바랍니다."
+  }
+ ]
+}

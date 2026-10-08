@@ -1,0 +1,129 @@
+{
+ "dataset": "dev_questions_real_v1.jsonl",
+ "index_version": "bge-m3-dense-2e26c2fc2e81",
+ "run_at": "2026-10-08T05:11:17.700931+00:00",
+ "summary": {
+  "retrieval": "2/2",
+  "retrieval@1": "0/2",
+  "type": "3/3",
+  "buttons": "3/3",
+  "mention": "1/2",
+  "lead": "0/0",
+  "absent": "0/1",
+  "contact_btn": "0/0",
+  "contact": "0/0",
+  "type_by_group": {
+   "real": "3/3"
+  },
+  "uncited_lines_total": 0,
+  "violations_total": 0,
+  "unsupported_numbers_total": 0,
+  "first_token_s": {
+   "mean": 3.37,
+   "median": 3.24,
+   "max": 3.65
+  }
+ },
+ "rows": [
+  {
+   "id": "r02",
+   "group": "real",
+   "question": "여수광양항에 위험물 컨테이너를 반입할 때 사전 승인 절차가 어떻게 되나요?",
+   "answer_type": "answer",
+   "top1_score": 0.682,
+   "top_docs": [
+    "YGPA-032",
+    "YGPA-032",
+    "YGPA-036",
+    "YGPA-031",
+    "YGPA-008",
+    "LAW-009"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 3.24,
+   "total_s": 5.63,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": false,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "위험물 컨테이너를 여수광양항에 반입하려는 경우, 사전에 지방해양수산청장 또는 시·도지사에게 위험물 반입신고서 등을 제출해야 합니다[6].\n\n1. 반입 24시간 전까지 별지 제10호서식의 위험물 반입신고서를 제출합니다[6].\n2. 별지 제11호서식의 위험물 일람표를 제출합니다[6].\n3. 별지 제11호의2서식의 화물적부도를 제출합니다[6]."
+  },
+  {
+   "id": "r03",
+   "group": "real",
+   "question": "Port-MIS 연계 오류가 발생했을 때 해결 절차나 문의처가 어디인가요?",
+   "answer_type": "answer",
+   "top1_score": 0.54,
+   "top_docs": [
+    "LAW-001",
+    "YGPA-023",
+    "LAW-007",
+    "YGPA-027",
+    "ORG-008",
+    "YGPA-025"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 3.65,
+   "total_s": 6.16,
+   "checks": {
+    "type": true,
+    "absent": false,
+    "buttons": true
+   },
+   "answer": "Port-MIS 연계 오류가 발생했을 때는 해양수산부장관에게 직접 문의해야 합니다[3].  \n\n1. 해양수산부장관에게 연계 오류 상황을 보고합니다[3].  \n2. 해양수산부장관은 중계망사업자 지정 등을 통해 문제를 해결하려 합니다[3].  \n\n해양수산부장관은 중계망사업자가 거짓이나 부정한 방법으로 지정받은 경우나 지도·감독을 위반한 경우 지정을 취소하거나 정지 명령을 내릴 수 있습니다[3]."
+  },
+  {
+   "id": "r10",
+   "group": "real",
+   "question": "출입 신고서의 구체적인 서식은 따로 볼 수 없는건가?",
+   "answer_type": "answer",
+   "top1_score": 0.588,
+   "top_docs": [
+    "YGPA-025",
+    "YGPA-023",
+    "LAW-007",
+    "LAW-009",
+    "LAW-008",
+    "LAW-009"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [
+    "항만출입증 담당자 (광양) 061-797-4434",
+    "항만출입증 담당자 (여수) 061-692-4336"
+   ],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 2,
+   "unsupported_numbers": [],
+   "first_token_s": 3.22,
+   "total_s": 6.43,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": false,
+    "mention": false,
+    "buttons": true
+   },
+   "answer": "출입 신고서의 구체적인 서식은 여수광양항만공사의 규정에 따라 별도로 작성됩니다. 항만상시출입증발급신청서[1]와 항만시설출입업체등록신청서[2]는 관련된 서식으로, 이들 서식은 공사의 행정 절차에 따라 제공됩니다. \n\n1. 항만상시출입증발급신청서는 인원 및 차량의 상시 출입을 위한 신청서로, 개인정보 수집·이용 및 제3자 제공 동의서와 함께 제출됩니다[1].\n2. 항만시설출입업체등록신청서는 업체(기관)의 항만시설 출입 등록을 위한 신청서로, 대표자 확인서와 사업자등록증 사본 등이 첨부됩니다[2]."
+  }
+ ]
+}

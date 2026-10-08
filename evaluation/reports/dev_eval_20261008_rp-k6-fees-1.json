@@ -1,0 +1,95 @@
+{
+ "dataset": "dev_questions_fees_v1.jsonl",
+ "index_version": "bge-m3-dense-2e26c2fc2e81",
+ "run_at": "2026-10-08T05:10:06.917942+00:00",
+ "summary": {
+  "retrieval": "2/2",
+  "retrieval@1": "2/2",
+  "type": "2/2",
+  "buttons": "2/2",
+  "mention": "2/2",
+  "lead": "0/0",
+  "absent": "0/0",
+  "contact_btn": "0/0",
+  "contact": "0/0",
+  "type_by_group": {
+   "fee": "2/2"
+  },
+  "uncited_lines_total": 0,
+  "violations_total": 0,
+  "unsupported_numbers_total": 0,
+  "first_token_s": {
+   "mean": 2.8,
+   "median": 2.8,
+   "max": 3.3
+  }
+ },
+ "rows": [
+  {
+   "id": "f02",
+   "group": "fee",
+   "question": "컨테이너 외항화물 화물입출항료는 얼마예요?",
+   "answer_type": "answer",
+   "top1_score": 0.774,
+   "top_docs": [
+    "YGPA-032",
+    "LAW-010",
+    "LAW-010",
+    "YGPA-032",
+    "LAW-006",
+    "YGPA-031"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 2.3,
+   "total_s": 3.44,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "컨테이너 외항화물의 화물입출항료는 2,742원/1TEU입니다[1][4]. 외항컨테이너화물에는 감면율(50%)이 적용됩니다[1][4]."
+  },
+  {
+   "id": "f04",
+   "group": "fee",
+   "question": "광양항 컨테이너 전용 외항선 입출항료 50% 감면 지금도 돼요?",
+   "answer_type": "answer",
+   "top1_score": 0.73,
+   "top_docs": [
+    "YGPA-032",
+    "YGPA-038",
+    "YGPA-032",
+    "LAW-010",
+    "LAW-010",
+    "YGPA-039"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 3.3,
+   "total_s": 7.2,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "확인한 공식 자료 2024년 12월 31일까지 적용되던 광양항에 입출항하는 컨테이너전용 외항선에 대한 50% 감면 조항은 이미 기한이 지났습니다[1][3]. 현재 적용되는 규정은 2026년 8월 21일에 시행된 「무역항 등의 항만시설 사용 및 사용료에 관한 규정」입니다[4]. 이 규정에 따르면, 2026년 12월 31일까지 특정 항만에 입출항하는 컨테이너전용 외항선에 대해 감면이 적용되지만, 광양항에 대한 50% 감면 조항은 포함되어 있지 않습니다[4].\n\n1. 2026년 12월 31일까지 적용되는 감면 대상은 「무역항 등의 항만시설 사용 및 사용료에 관한 규정」에 따라 달라집니다[4]."
+  }
+ ]
+}

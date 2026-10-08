@@ -1,0 +1,456 @@
+{
+ "dataset": "dev_questions_org_v1.jsonl",
+ "index_version": "bge-m3-dense-2e26c2fc2e81",
+ "run_at": "2026-10-08T05:06:57.476373+00:00",
+ "summary": {
+  "retrieval": "12/12",
+  "retrieval@1": "7/12",
+  "type": "12/12",
+  "buttons": "12/12",
+  "mention": "10/10",
+  "lead": "0/0",
+  "absent": "0/0",
+  "contact_btn": "5/5",
+  "contact": "0/0",
+  "type_by_group": {
+   "dept": "7/7",
+   "hinterland": "5/5"
+  },
+  "uncited_lines_total": 3,
+  "violations_total": 0,
+  "unsupported_numbers_total": 0,
+  "first_token_s": {
+   "mean": 2.24,
+   "median": 2.25,
+   "max": 3.65
+  }
+ },
+ "rows": [
+  {
+   "id": "o01",
+   "group": "hinterland",
+   "question": "배후단지 입주 절차를 알려주세요.",
+   "answer_type": "answer",
+   "top1_score": 0.701,
+   "top_docs": [
+    "YGPA-036",
+    "YGPA-039",
+    "LAW-003",
+    "LAW-001",
+    "LAW-001",
+    "YGPA-035"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [
+    "물류단지부 (배후단지 담당) 061-797-4456"
+   ],
+   "options": [],
+   "uncited_lines": 2,
+   "violations": [],
+   "contacts_from_evidence": 1,
+   "unsupported_numbers": [],
+   "first_token_s": 3.29,
+   "total_s": 10.48,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "contact_btn": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "광양항 배후단지 입주 절차는 다음과 같습니다.  \n\n1. 입주기업 모집 — 기한: 공고기간; 담당: 항만공사[1]  \n2. 우선협상대상자 선정 — 기한: 〃; 담당: 항만공사[1]  \n3. 결격사유 조회 — 기한: 〃; 담당: 관련기관 등[1]  \n4. 입주계약 신청 — 기한: 〃; 담당: 항만공사[1]  \n5. 입주계약 체결 — 기한: 입주계약 아내 받은 날부터 90일 이내; 담당: 항만공사[1]  \n6. 임대차계약 체결 — 기한: 입주계약 체결일로부터 60일 이내; 담당: 항만공사[1]  \n7. 건축허가 및 신고 — 기한: 임대차계약서 명시; 담당: 여수청[1]  \n8. 건축착공 — 기한: 사업계획서 명시; 담당: 입주기업[1]  \n9. 영업개시 — 기한: -; 담당: 항만공사[1]  \n\n작성할 서식:  \n- 자유무역지역 입주계약 신청서[2]  \n- 사업계획서[2]  \n- 결격사유 조회서[2]  \n- 개인정보 수집 및 활용 동의서[2]  \n- 국세 및 지방세 납세증명서[2]  \n- 해당 사업에 관한 인가·허가·면허·등록 등을 받았음을 증명하는 서류[2]  \n- 사업자등록증[2]  \n- 법인인감증명서[2]  \n- 외국인 투자기업인 경우「외국인투자촉진법」제2조제1항제4호에 해당함을 증명하는 서류[2]  \n- 기본증명서[2]  \n- 법인등기부등본[2]"
+  },
+  {
+   "id": "o02",
+   "group": "hinterland",
+   "question": "광양항 배후단지 임대료는 얼마예요?",
+   "answer_type": "answer",
+   "top1_score": 0.79,
+   "top_docs": [
+    "YGPA-034",
+    "YGPA-038",
+    "YGPA-036",
+    "YGPA-039",
+    "YGPA-037",
+    "YGPA-014"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [
+    "물류단지부 (배후단지 담당) 061-797-4456"
+   ],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 1,
+   "unsupported_numbers": [],
+   "first_token_s": 2.48,
+   "total_s": 6.44,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "광양항 배후단지 임대료는 입주기업의 업종에 따라 달라집니다[1].\n\n1. 「자유무역지역법」제10조에 따른 입주업종을 영위하는 기업은 ㎡ 당 177원/월이며, 공시지가×50/1,000 기준으로 ㎡ 당 700원/월 내외입니다[1].\n2. 「자유무역지역법」제10조제1항제6호에 따른 입주기업체의 사업을 지원하는 업종을 영위하는 기업은 ㎡ 당 258원/월입니다[1].\n3. 입주기업 중 당초 입주목적대로 이행하지 못하는 기업은 공시지가×50/1,000 기준으로 임대료가 적용됩니다[1].\n4. 외국인투자금액을 미화 500만불 이상 투자하는 경우 3년간 50% 임대료가 감면됩니다[1]."
+  },
+  {
+   "id": "o03",
+   "group": "hinterland",
+   "question": "배후단지 입주계약 신청할 때 내야 하는 서류가 뭐예요?",
+   "answer_type": "answer",
+   "top1_score": 0.709,
+   "top_docs": [
+    "LAW-003",
+    "LAW-003",
+    "LAW-001",
+    "YGPA-039",
+    "YGPA-036",
+    "YGPA-034"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [
+    "물류단지부 (배후단지 담당) 061-797-4456"
+   ],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 1,
+   "unsupported_numbers": [],
+   "first_token_s": 2.04,
+   "total_s": 5.66,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": false,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "광양항 배후단지 입주계약 신청 시 제출해야 하는 서류는 다음과 같습니다[4].\n\n1. 자유무역지역 입주계약 신청서(사업계획서상 내용을 정확히 작성)[4]  \n2. 사업계획서[1][4]  \n3. 결격사유 조회서(법 제12조)[4]  \n4. 개인정보 수집 및 활용 동의서[1][4]  \n5. 해당 사업에 관한 인가·허가·면허·등록 등을 받았음을 증명하는 서류[1][4]  \n6. 사업자등록증[4]  \n7. 법인인감증명서[4]  \n8. 외국인 투자기업인 경우「외국인투자촉진법」제2조제1항제4호에 해당함을 증명하는 서류[4]  \n9. 기본증명서(등록기준지 확인용)[4]  \n10. 법인등기부등본[4]"
+  },
+  {
+   "id": "o04",
+   "group": "hinterland",
+   "question": "배후단지 입주기업은 어떤 기준으로 선정해요?",
+   "answer_type": "answer",
+   "top1_score": 0.673,
+   "top_docs": [
+    "YGPA-037",
+    "LAW-001",
+    "LAW-001",
+    "YGPA-039",
+    "YGPA-036",
+    "YGPA-034"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [
+    "물류단지부 (배후단지 담당) 061-797-4456"
+   ],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 1,
+   "unsupported_numbers": [],
+   "first_token_s": 2.59,
+   "total_s": 8.09,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "광양항 배후단지 입주기업은 해양수산부 고시 제2026-24호에 따른 평가기준에 따라 총 100점 만점으로 평가하며, 가점을 더하여 순위별로 선정됩니다[1].\n\n1. 평가항목은 사업능력(10점), 사업 및 운영계획(60점), 투자 및 자금 조달 계획(25점), 건설계획(5점)입니다[1].\n2. 외국인 투자기업, 수출 제조기업, 우수물류기업 등은 가점(최대 5점)이 부여됩니다[1].\n3. 입주자격은 항만법 제69조에 따라 수출 제조업, 지식서비스산업, 도매업 등 특정 기준을 충족한 자에 한합니다[2].\n4. 입주계약 신청이 경합될 경우, 고부가가치 창출 기업, 수출액 기준 충족 기업 등은 우선입주 대상이 됩니다[3].\n5. 입주절차는 입주기업 모집 → 우선협상 → 입주계약 신청 → 입주계약 체결 → 임대차계약 체결 → 건축허가 및 신고 → 영업개시 순으로 진행됩니다[5].\n6. 제출 서식에는 자유무역지역 입주계약 신청서, 사업계획서, 결격사유 조회서 등이 포함됩니다[4]."
+  },
+  {
+   "id": "o05",
+   "group": "hinterland",
+   "question": "배후단지 입주하면 세금 감면 혜택이 있나요?",
+   "answer_type": "answer",
+   "top1_score": 0.693,
+   "top_docs": [
+    "YGPA-038",
+    "YGPA-039",
+    "LAW-001",
+    "YGPA-034",
+    "YGPA-036",
+    "LAW-013"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [
+    "물류단지부 (배후단지 담당) 061-797-4456"
+   ],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 1,
+   "unsupported_numbers": [],
+   "first_token_s": 2.3,
+   "total_s": 6.94,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "buttons": true
+   },
+   "answer": "광양항 배후단지에 입주하면 세금 감면 혜택이 있습니다. 입주기업은 관세, 주세, 개별소비세, 교통·에너지·환경세, 부가세 등 다양한 세제감면 혜택을 받을 수 있으며, 외국인투자기업은 추가로 법인세 및 소득세 감면을 받을 수 있습니다[1].\n\n1. 관세 면제 및 환급: 외국물품의 자유무역지역 반입시 관세면제, 내국물품의 자유무역지역 반입 및 국외반출시 관세환급[1]\n2. 부가세 영세율 적용: 주세, 개별소비세, 교통·에너지·환경세, 부가세 등이 영세율로 적용됩니다[1]\n3. 외국인투자기업 감면: 외국인투자기업은 법인세 및 소득세 감면 혜택을 받습니다[1]\n4. 지방세 감면: 취득세, 등록세는 50%~100% 감면, 재산세는 5년간 50% 감면[1]\n5. 외국인투자에 관계없이 입주기업 전원이 지방세 감면 혜택을 받습니다[1]"
+  },
+  {
+   "id": "o06",
+   "group": "dept",
+   "question": "담당부서를 찾고 싶어요.",
+   "answer_type": "clarify",
+   "top1_score": 0.542,
+   "top_docs": [
+    "ORG-006",
+    "LAW-002",
+    "ORG-013",
+    "ORG-005",
+    "LAW-007",
+    "ORG-008"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [
+    "기획조정실",
+    "AI디지털부",
+    "감사실",
+    "경영지원부"
+   ],
+   "uncited_lines": 2,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 0.96,
+   "total_s": 2.18,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "buttons": true
+   },
+   "answer": "어느 부서의 담당 업무를 알고 싶으신가요?  \n예: 기획조정실, AI디지털부, 감사실, 경영지원부 등"
+  },
+  {
+   "id": "o07",
+   "group": "dept",
+   "question": "항만 보안 담당 부서가 어디예요?",
+   "answer_type": "answer",
+   "top1_score": 0.594,
+   "top_docs": [
+    "LAW-017",
+    "LAW-001",
+    "ORG-001",
+    "ORG-000",
+    "YGPA-025",
+    "YGPA-023"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [
+    "재난안전실 061-797-4480"
+   ],
+   "options": [],
+   "uncited_lines": 1,
+   "violations": [],
+   "contacts_from_evidence": 1,
+   "unsupported_numbers": [],
+   "first_token_s": 3.65,
+   "total_s": 5.19,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": false,
+    "contact_btn": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "항만 보안은 여수광양항만공사 재난안전실 항만보안팀이 담당합니다[3].\n\n항만보안 관련 문의는 다음 전화번호로 하실 수 있습니다:\n1. 항만보안팀: 061-797-4486, 061-797-4487[3]"
+  },
+  {
+   "id": "o08",
+   "group": "dept",
+   "question": "배후단지 임대 문의는 어느 부서에 해야 해요?",
+   "answer_type": "answer",
+   "top1_score": 0.656,
+   "top_docs": [
+    "YGPA-005",
+    "YGPA-035",
+    "YGPA-036",
+    "YGPA-034",
+    "YGPA-039",
+    "LAW-001"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [
+    "물류단지부 (배후단지 담당) 061-797-4456"
+   ],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 1,
+   "unsupported_numbers": [],
+   "first_token_s": 1.85,
+   "total_s": 2.46,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": false,
+    "contact_btn": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "배후단지 임대 문의는 물류단지부에 하시면 됩니다[3][4][5]."
+  },
+  {
+   "id": "o09",
+   "group": "dept",
+   "question": "항만안내선은 어느 부서에서 담당해요?",
+   "answer_type": "answer",
+   "top1_score": 0.632,
+   "top_docs": [
+    "YGPA-008",
+    "LAW-019",
+    "LAW-002",
+    "LAW-021",
+    "YGPA-023",
+    "YGPA-031"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [
+    "항만안내선 담당 061-797-4438"
+   ],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 1,
+   "unsupported_numbers": [],
+   "first_token_s": 2.19,
+   "total_s": 3.49,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "※ 정부의 자원안보 위기 주의단계 경보 발령에 따라, 경보 해제 시까지 항만안내선 예약이 제한됩니다[1].\n\n항만안내선은 여수광양항만공사의 항만안내선 담당자에서 담당합니다[1]."
+  },
+  {
+   "id": "o10",
+   "group": "dept",
+   "question": "크루즈 관련 문의는 어느 부서로 하면 돼요?",
+   "answer_type": "answer",
+   "top1_score": 0.558,
+   "top_docs": [
+    "ORG-021",
+    "ORG-008",
+    "ORG-020",
+    "ORG-006",
+    "LAW-021",
+    "ORG-014"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [
+    "해양복합전략실 061-797-4450"
+   ],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 1,
+   "unsupported_numbers": [],
+   "first_token_s": 1.19,
+   "total_s": 2.71,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": false,
+    "contact_btn": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "해양복합전략실에서 해양관광 및 크루즈 활성화 업무를 담당하고 있습니다[3].  \n\n1. 해양복합전략실 업무 총괄: 061-797-4450[3]  \n2. 해양관광/크루즈 활성화 담당: 061-797-4457[3]"
+  },
+  {
+   "id": "o11",
+   "group": "dept",
+   "question": "채용이나 인사 담당 부서는 어디예요?",
+   "answer_type": "answer",
+   "top1_score": 0.522,
+   "top_docs": [
+    "ORG-008",
+    "LAW-004",
+    "ORG-006",
+    "ORG-013",
+    "YGPA-025",
+    "YGPA-023"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [
+    "경영지원부 061-797-4340"
+   ],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 1,
+   "unsupported_numbers": [],
+   "first_token_s": 2.68,
+   "total_s": 4.06,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "contact_btn": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "경영지원부에서 인사/교육 업무를 담당합니다[1].\n\n1. 인사/교육 담당 연락처는 061-797-4351, 061-797-4353, 061-797-4356입니다[1]"
+  },
+  {
+   "id": "o12",
+   "group": "dept",
+   "question": "항만 장비 유지보수는 어느 부서 담당이에요?",
+   "answer_type": "answer",
+   "top1_score": 0.603,
+   "top_docs": [
+    "LAW-001",
+    "LAW-001",
+    "YGPA-031",
+    "ORG-017",
+    "YGPA-031",
+    "LAW-003"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [
+    "항만시설사업부 061-797-4530"
+   ],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 1,
+   "unsupported_numbers": [],
+   "first_token_s": 1.61,
+   "total_s": 2.94,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": false,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "항만 장비 유지보수는 항만시설사업부의 담당입니다[4].\n\n1. 장비/기계 담당: 061-797-4545, 061-797-4546, 061-797-4547[4]"
+  }
+ ]
+}

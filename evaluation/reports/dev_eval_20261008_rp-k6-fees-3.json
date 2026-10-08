@@ -1,0 +1,98 @@
+{
+ "dataset": "dev_questions_fees_v1.jsonl",
+ "index_version": "bge-m3-dense-2e26c2fc2e81",
+ "run_at": "2026-10-08T05:11:51.804304+00:00",
+ "summary": {
+  "retrieval": "2/2",
+  "retrieval@1": "2/2",
+  "type": "1/2",
+  "buttons": "2/2",
+  "mention": "1/2",
+  "lead": "0/0",
+  "absent": "0/0",
+  "contact_btn": "0/0",
+  "contact": "1/1",
+  "type_by_group": {
+   "fee": "1/2"
+  },
+  "uncited_lines_total": 1,
+  "violations_total": 0,
+  "unsupported_numbers_total": 0,
+  "first_token_s": {
+   "mean": 3.27,
+   "median": 3.27,
+   "max": 4.18
+  }
+ },
+ "rows": [
+  {
+   "id": "f02",
+   "group": "fee",
+   "question": "컨테이너 외항화물 화물입출항료는 얼마예요?",
+   "answer_type": "answer",
+   "top1_score": 0.774,
+   "top_docs": [
+    "YGPA-032",
+    "LAW-010",
+    "LAW-010",
+    "YGPA-032",
+    "LAW-006",
+    "YGPA-031"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 1,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 2.37,
+   "total_s": 3.32,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": false,
+    "buttons": true
+   },
+   "answer": "194원/1TEU  \n- 외항입항 시 적용됩니다[1]  \n- 2026년 12월 31일까지 50% 감면율이 적용됩니다[3]"
+  },
+  {
+   "id": "f04",
+   "group": "fee",
+   "question": "광양항 컨테이너 전용 외항선 입출항료 50% 감면 지금도 돼요?",
+   "answer_type": "unknown",
+   "top1_score": 0.73,
+   "top_docs": [
+    "YGPA-032",
+    "YGPA-038",
+    "YGPA-032",
+    "LAW-010",
+    "LAW-010",
+    "YGPA-039"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [
+    "여수광양항만공사 대표전화 061-797-4300"
+   ],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 1,
+   "unsupported_numbers": [],
+   "first_token_s": 4.18,
+   "total_s": 5.69,
+   "checks": {
+    "type": false,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "contact": true,
+    "buttons": true
+   },
+   "answer": "광양항에 입출항하는 컨테이너전용 외항선에 대한 50% 감면 조항은 2024년 12월 31일까지 적용되었습니다. 현재는 해당 기한이 지났기 때문에 적용 여부를 확인한 공식 자료만으로는 확정적으로 답할 수 없습니다[1][3]."
+  }
+ ]
+}

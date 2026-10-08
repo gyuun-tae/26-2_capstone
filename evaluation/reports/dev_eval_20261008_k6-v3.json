@@ -1,0 +1,1964 @@
+{
+ "dataset": "dev_questions_v3.jsonl",
+ "index_version": "bge-m3-dense-2e26c2fc2e81",
+ "run_at": "2026-10-08T05:01:15.623812+00:00",
+ "summary": {
+  "retrieval": "48/48",
+  "retrieval@1": "38/48",
+  "type": "54/57",
+  "buttons": "57/57",
+  "mention": "22/24",
+  "lead": "0/0",
+  "absent": "0/0",
+  "contact_btn": "0/0",
+  "contact": "7/7",
+  "type_by_group": {
+   "answer": "19/19",
+   "clarify": "3/5",
+   "followup": "3/3",
+   "hard": "25/25",
+   "unknown": "4/5"
+  },
+  "uncited_lines_total": 6,
+  "violations_total": 0,
+  "unsupported_numbers_total": 0,
+  "first_token_s": {
+   "mean": 2.32,
+   "median": 2.3,
+   "max": 4.34
+  }
+ },
+ "rows": [
+  {
+   "id": "a01",
+   "group": "answer",
+   "question": "민원 신청하려면 회원가입 꼭 해야 돼요?",
+   "answer_type": "answer",
+   "top1_score": 0.678,
+   "top_docs": [
+    "YGPA-001",
+    "YGPA-003",
+    "YGPA-025",
+    "YGPA-023",
+    "LAW-021",
+    "LAW-010"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 4.13,
+   "total_s": 5.34,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "buttons": true
+   },
+   "answer": "민원신청은 회원가입 후 이용하실 수 있습니다[1].\n\n1. 업체 회원가입[1]\n2. 업체 회원 로그인[1]\n3. 신청서 작성[1]\n4. 신청서 검토[1]\n5. 신청서 완료[1]"
+  },
+  {
+   "id": "a02",
+   "group": "answer",
+   "question": "실적증명서 떼려면 어떻게 해요?",
+   "answer_type": "answer",
+   "top1_score": 0.644,
+   "top_docs": [
+    "YGPA-003",
+    "YGPA-004",
+    "YGPA-001",
+    "YGPA-021",
+    "YGPA-022",
+    "YGPA-025"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 2.7,
+   "total_s": 4.34,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "buttons": true
+   },
+   "answer": "실적증명서를 발급받으려면 업체회원으로 가입한 후, 실적증명서 발급 절차를 따라야 합니다[1].\n\n1. 업체 회원가입 및 로그인[1]\n2. 실적증명서 신청서 작성[1]\n3. 승인부서 검토 및 승인[1]\n4. 실적증명서 조회 및 인쇄[1]"
+  },
+  {
+   "id": "a03",
+   "group": "answer",
+   "question": "발급받을 수 있는 실적증명서 종류가 뭐가 있어요?",
+   "answer_type": "answer",
+   "top1_score": 0.705,
+   "top_docs": [
+    "YGPA-004",
+    "YGPA-003",
+    "YGPA-025",
+    "YGPA-021",
+    "LAW-006",
+    "YGPA-001"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 2.63,
+   "total_s": 5.47,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "buttons": true
+   },
+   "answer": "발급받을 수 있는 실적증명서 종류는 다음과 같습니다[1].\n\n1. 건설공사기성실적증명서[1]  \n2. 전기공사실적증명서[1]  \n3. 시설공사준공실적증명서[1]  \n4. 시공평가결과증명서[1]  \n5. 일반용역실적증명서[1]  \n6. 과업수행참여자(경력증명서)[1]  \n7. 설계등 용역 수행실적확인서[1]  \n8. 기술용역실적증명서[1]  \n9. 물품납품실적증명원[1]  \n10. 선급금 정산확인원[1]"
+  },
+  {
+   "id": "a04",
+   "group": "answer",
+   "question": "축구장 쓰려면 돈 내야 해요?",
+   "answer_type": "answer",
+   "top1_score": 0.661,
+   "top_docs": [
+    "YGPA-005",
+    "YGPA-005",
+    "YGPA-033",
+    "LAW-015",
+    "LAW-011",
+    "YGPA-032"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [
+    "체육시설 예약 문의 061-793-8270"
+   ],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 1,
+   "unsupported_numbers": [],
+   "first_token_s": 2.33,
+   "total_s": 4.17,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "buttons": true
+   },
+   "answer": "축구장은 평일 및 토·일요일 모두 주간 이용 시 무료개방입니다[1].\n\n1. 평일 또는 토·일요일 주간 이용 시에는 사용료가 없습니다[1].\n2. 체육시설을 전용으로 사용하려면, 평일 사용은 당일 15시까지, 주말 사용은 사용예정일 직전 금요일 15시까지 예약 신청해야 합니다[1]."
+  },
+  {
+   "id": "a05",
+   "group": "answer",
+   "question": "테니스장 하루에 몇 시간까지 예약할 수 있어요?",
+   "answer_type": "answer",
+   "top1_score": 0.681,
+   "top_docs": [
+    "YGPA-006",
+    "YGPA-005",
+    "YGPA-005",
+    "YGPA-033",
+    "YGPA-007",
+    "LAW-010"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 1.98,
+   "total_s": 3.05,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "buttons": true
+   },
+   "answer": "테니스장은 1계정 당 하루 최대 2시간까지 예약 가능합니다[1].\n\n1. 예약 시 1개 코트만 선택할 수 있으며, 코트 2개의 중복 예약은 불가합니다[1]"
+  },
+  {
+   "id": "a06",
+   "group": "answer",
+   "question": "홍보관 견학 몇 명부터 신청 가능해요?",
+   "answer_type": "answer",
+   "top1_score": 0.647,
+   "top_docs": [
+    "YGPA-007",
+    "YGPA-008",
+    "YGPA-021",
+    "YGPA-005",
+    "LAW-009",
+    "YGPA-006"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [
+    "홍보관 문의 061-797-4550"
+   ],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 1,
+   "unsupported_numbers": [],
+   "first_token_s": 2.14,
+   "total_s": 3.39,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "※ 정부의 자원안보 위기 주의단계 경보 발령에 따라, 경보 해제 시까지 홍보관 예약이 제한됨을 안내드립니다[1].\n\n홍보관 견학은 최소 10명 이상부터 신청 가능합니다[1]."
+  },
+  {
+   "id": "a07",
+   "group": "answer",
+   "question": "배 타고 항만 구경하는 프로그램 있어요?",
+   "answer_type": "answer",
+   "top1_score": 0.606,
+   "top_docs": [
+    "YGPA-008",
+    "LAW-001",
+    "LAW-010",
+    "YGPA-031",
+    "YGPA-032",
+    "YGPA-031"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [
+    "항만안내선 담당 061-797-4438"
+   ],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 1,
+   "unsupported_numbers": [],
+   "first_token_s": 2.45,
+   "total_s": 8.58,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "※ 정부의 자원안보 위기 주의단계 경보 발령에 따라, 경보 해제 시까지 항만안내선 예약이 제한됩니다[1].\n\n여수광양항만공사는 매주 화요일과 목요일에 항만을 공개하는 해상견학 프로그램을 운영합니다[1]. 광양항 컨테이너부두에서 출발해 묘도 항만재개발지역, 포스코 광양제철소 등을 돌아볼 수 있습니다[1].\n\n1. 견학일정은 매주 화요일과 목요일 10:00~11:00, 14:00~15:00입니다[1].\n2. 승선정원은 최소 17명, 최대 26명이며, 최소 인원이 충족되어야 운항됩니다[1].\n3. 일반시민 누구나 신청 가능하며, 미취학 아동은 2명당 보호자 1명이 동행해야 합니다[1].\n4. 견학 신청 → 예약 확정 → 견학일정 5분 전까지 승선장소로 집결 → 경비초소 신원 확인 → 항만안내선 승선장으로 이동하는 절차를 따릅니다[1].\n5. 승선장소는 광양항 컨테이너 관용선부두(전라남도 광양시 컨부두로 336, 선원회관 옆)입니다[1].\n6. 견학 시작 전 도착하지 않거나, 풍랑주의보 발효 등 기상 악화 시에는 선박 운항이 취소될 수 있습니다[1]."
+  },
+  {
+   "id": "a08",
+   "group": "answer",
+   "question": "금오도 가는 배는 어느 터미널에서 타요?",
+   "answer_type": "answer",
+   "top1_score": 0.583,
+   "top_docs": [
+    "YGPA-009",
+    "YGPA-009",
+    "LAW-010",
+    "YGPA-008",
+    "LAW-010",
+    "YGPA-027"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 3.72,
+   "total_s": 7.8,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "buttons": true
+   },
+   "answer": "여수연안여객선터미널에서 금오도로 가는 여객선이 운항됩니다[1][2].\n\n1. 금오도로 가는 여객선은 (유)한림해운과 ㈜신아해운 두 선사에서 운항합니다[1][2].\n2. (유)한림해운의 금오고속 페리호는 여수연안여객선터미널에서 출발하여 여천, 유송, 우학, 안도, 서고지, 역포 등 금오도 내 여러 기항지를 경유합니다[1].\n3. ㈜신아해운의 한려페리9호는 제도, 개도, 자봉도, 금오도(송고), 금오도(함구미) 등을 기항지로 운항합니다[2].\n4. 여객선의 출항 시각은 하계와 동계로 구분되며, 하계는 04.15~09.30, 동계는 10.01~04.15까지입니다[1][2]."
+  },
+  {
+   "id": "a09",
+   "group": "answer",
+   "question": "광양항 자동차 부두는 어느 회사가 운영해요?",
+   "answer_type": "answer",
+   "top1_score": 0.694,
+   "top_docs": [
+    "YGPA-015",
+    "YGPA-014",
+    "YGPA-016",
+    "YGPA-012",
+    "YGPA-012",
+    "YGPA-014"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 1.29,
+   "total_s": 1.87,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "buttons": true
+   },
+   "answer": "광양항 자동차 부두는 현대글로비스(주)가 운영합니다[1]."
+  },
+  {
+   "id": "a10",
+   "group": "answer",
+   "question": "광양항 철송장 하역능력이 얼마나 돼요?",
+   "answer_type": "answer",
+   "top1_score": 0.734,
+   "top_docs": [
+    "YGPA-018",
+    "YGPA-012",
+    "YGPA-012",
+    "YGPA-016",
+    "YGPA-014",
+    "YGPA-014"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 1.42,
+   "total_s": 2.28,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "buttons": true
+   },
+   "answer": "광양항 철송장의 하역능력은 동측철송장이 360천TEU, 서측철송장이 380천TEU입니다[1]."
+  },
+  {
+   "id": "a11",
+   "group": "answer",
+   "question": "배후단지에 입주하려면 어떤 회사여야 해요?",
+   "answer_type": "answer",
+   "top1_score": 0.657,
+   "top_docs": [
+    "LAW-001",
+    "LAW-001",
+    "YGPA-039",
+    "YGPA-036",
+    "YGPA-034",
+    "YGPA-035"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [
+    "물류단지부 (배후단지 담당) 061-797-4456"
+   ],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 1,
+   "unsupported_numbers": [],
+   "first_token_s": 2.16,
+   "total_s": 5.72,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": false,
+    "buttons": true
+   },
+   "answer": "광양항 배후단지에 입주하려면 다음 조건을 충족하는 회사여야 합니다[1][6].\n\n1. 수출 제조업종, 지식서비스산업, 도매업, 물품하역·운송·보관 사업 등 \"자유무역지역의 지정 및 운영에 관한 법률\" 제10조(입주자격)에 해당하는 자[6].\n2. \"항만법\" 제69조에 따라 1종 항만배후단지 입주자격을 갖춘 자[1].\n3. 외국인투자 비중 등 대통령령으로 정하는 기준을 충족하는 제조업을 영위하는 외국인투자기업[1].\n4. 수출입 비중 등 대통령령으로 정하는 기준을 충족하는 지식서비스산업을 영위하는 자[1].\n5. 수출입거래 비중 등 대통령령으로 정하는 기준을 충족하는 도매업을 하려는 자[1]."
+  },
+  {
+   "id": "a12",
+   "group": "answer",
+   "question": "자유무역지역 입주계약 할 때 내야 하는 서류 알려줘",
+   "answer_type": "answer",
+   "top1_score": 0.812,
+   "top_docs": [
+    "LAW-015",
+    "LAW-015",
+    "LAW-014",
+    "YGPA-039",
+    "YGPA-036",
+    "LAW-003"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [
+    "물류단지부 (배후단지 담당) 061-797-4456"
+   ],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 1,
+   "unsupported_numbers": [],
+   "first_token_s": 2.11,
+   "total_s": 5.85,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": false,
+    "buttons": true
+   },
+   "answer": "광양항 자유무역지역에 입주계약을 체결하려면 다음 서류를 제출해야 합니다[1][4].\n\n1. 자유무역지역 입주계약 신청서(사업계획서상 내용을 정확히 작성)[4]\n2. 사업계획서[1][4]\n3. 결격사유 조회서[4]\n4. 개인정보 수집 및 활용 동의서[1][4]\n5. 국세 및 지방세 납세증명서[4]\n6. 해당 사업에 관한 인가·허가·면허·등록 등을 받았음을 증명하는 서류[1][4]\n7. 사업자등록증[4]\n8. 법인인감증명서[4]\n9. 외국인 투자기업인 경우, 「외국인투자촉진법」 제2조제1항제4호에 해당함을 증명하는 서류[4]\n10. 기본증명서[4]\n11. 법인등기부등본[4]"
+  },
+  {
+   "id": "a13",
+   "group": "answer",
+   "question": "출입증 잃어버렸는데 뭐 써서 내야 돼요?",
+   "answer_type": "answer",
+   "top1_score": 0.591,
+   "top_docs": [
+    "YGPA-022",
+    "YGPA-025",
+    "YGPA-023",
+    "LAW-009",
+    "LAW-009",
+    "YGPA-024"
+   ],
+   "downloads": [
+    "YGPA-022"
+   ],
+   "port_mis": false,
+   "contacts": [
+    "항만출입증 담당자 (광양) 061-797-4434",
+    "항만출입증 담당자 (여수) 061-692-4336"
+   ],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 2,
+   "unsupported_numbers": [],
+   "first_token_s": 3.4,
+   "total_s": 6.16,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "buttons": true
+   },
+   "answer": "출입증을 분실한 경우, **출입증분실경위서**를 작성하여 제출해야 합니다[1].  \n\n1. 분실(훼손) 경위를 6하 원칙(언제, 어디서, 누구에 의해, 무엇이, 왜, 어떻게)에 따라 상세히 기재합니다[1]  \n2. 분실된 출입증의 구분(인원/차량), 번호, 차량번호 등을 정확히 입력합니다[1]  \n3. 본인의 책임을 인정하는 내용을 기재하고 서명 또는 인장을 찍습니다[1]  \n4. 상시출입증인 경우, 업체 대표자의 확인서를 함께 제출합니다[1]"
+  },
+  {
+   "id": "a14",
+   "group": "answer",
+   "question": "상시출입증 기간이 곧 끝나는데 연장은 어떻게 해요?",
+   "answer_type": "answer",
+   "top1_score": 0.631,
+   "top_docs": [
+    "YGPA-024",
+    "LAW-014",
+    "LAW-014",
+    "YGPA-025",
+    "LAW-006",
+    "YGPA-031"
+   ],
+   "downloads": [
+    "YGPA-024"
+   ],
+   "port_mis": false,
+   "contacts": [
+    "항만출입증 담당자 (광양) 061-797-4434",
+    "항만출입증 담당자 (여수) 061-692-4336"
+   ],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 2,
+   "unsupported_numbers": [],
+   "first_token_s": 2.63,
+   "total_s": 4.51,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "buttons": true
+   },
+   "answer": "항만상시출입증 기간연장을 신청하려면 \"항만상시출입증 기간연장 신청서\"를 작성하여 제출해야 합니다[1].\n\n1. \"항만상시출입증 기간연장 신청서\"를 작성합니다[1].\n2. 인원 및 차량 정보를 기재하고, 대표자 및 본인의 서명을 합니다[1].\n3. 여수광양항만공사에 제출합니다[1]."
+  },
+  {
+   "id": "a15",
+   "group": "answer",
+   "question": "항만에 드나드는 업체로 등록하려면 무슨 서류를 내요?",
+   "answer_type": "answer",
+   "top1_score": 0.67,
+   "top_docs": [
+    "LAW-021",
+    "LAW-019",
+    "YGPA-023",
+    "LAW-009",
+    "LAW-003",
+    "LAW-010"
+   ],
+   "downloads": [
+    "YGPA-023"
+   ],
+   "port_mis": false,
+   "contacts": [
+    "항만출입증 담당자 (광양) 061-797-4434",
+    "항만출입증 담당자 (여수) 061-692-4336"
+   ],
+   "options": [],
+   "uncited_lines": 1,
+   "violations": [],
+   "contacts_from_evidence": 2,
+   "unsupported_numbers": [],
+   "first_token_s": 2.75,
+   "total_s": 4.78,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": false,
+    "buttons": true
+   },
+   "answer": "항만에 드나드는 업체로 등록하려면 다음 서류를 제출해야 합니다.\n\n1. 항만시설출입업체등록신청서[3]  \n2. 대표자 확인서[3]  \n3. 업체(기관)의 사업자등록증(사본)[3]  \n4. 출입증 총괄 관리자 증빙서류(재직증명서 등)[3]  \n5. 개인정보 수집·이용 및 제3자 제공 동의서[3]"
+  },
+  {
+   "id": "a16",
+   "group": "answer",
+   "question": "배 들어올 때 입항 신고는 어디서 해요?",
+   "answer_type": "answer",
+   "top1_score": 0.724,
+   "top_docs": [
+    "LAW-008",
+    "LAW-007",
+    "LAW-009",
+    "YGPA-031",
+    "YGPA-031",
+    "YGPA-032"
+   ],
+   "downloads": [],
+   "port_mis": true,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 1.7,
+   "total_s": 4.79,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": false,
+    "buttons": true
+   },
+   "answer": "선박의 입항 신고는 항만운영정보시스템(Port-MIS)에서 하거나, 관리청에 서면 또는 전자적 방법으로 제출합니다[5][6].\n\n1. 입항 예정 24시간 전 또는 사용 예정 전에 Port-MIS에 선박 관련 정보와 보안 정보를 입력합니다[5].\n2. 입항 전에 「선박의 입항 및 출항 등에 관한 법률 시행령」 제2조 제1호 및 제2호에 따라 내항선 출입 신고서 또는 외항선 출입 신고서를 관리청에 제출합니다[1][2].\n3. 입항 시각과 관련한 정보는 즉시 서해지방해양경찰청 여수항해상교통관제센터에 무선으로 통보합니다[4]."
+  },
+  {
+   "id": "a17",
+   "group": "answer",
+   "question": "통과선박으로 인정받으려면 언제까지 신청해야 돼요?",
+   "answer_type": "answer",
+   "top1_score": 0.725,
+   "top_docs": [
+    "YGPA-030",
+    "YGPA-028",
+    "YGPA-030",
+    "LAW-009",
+    "LAW-009",
+    "LAW-006"
+   ],
+   "downloads": [
+    "YGPA-028"
+   ],
+   "port_mis": false,
+   "contacts": [
+    "입출항담당자 (광양) 061-797-4434",
+    "입출항담당자 (여수) 061-692-4336"
+   ],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 2,
+   "unsupported_numbers": [],
+   "first_token_s": 1.7,
+   "total_s": 3.45,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "buttons": true
+   },
+   "answer": "통과선박으로 인정받으려면 출항일로부터 7일 이내에 통과선박 인정 신청서를 제출해야 합니다[1].\n\n1. 출항일로부터 7일 이내에 〔별지3〕 통과선박 인정 신청서를 제출합니다[1]\n2. 인정 신청서를 제출할 때는 해당 통과사유에 맞는 증거서류를 첨부해야 합니다[1][2]"
+  },
+  {
+   "id": "a18",
+   "group": "answer",
+   "question": "더드림스마트센터 쓰고 싶은데 뭘 제출해야 해요?",
+   "answer_type": "answer",
+   "top1_score": 0.69,
+   "top_docs": [
+    "YGPA-021",
+    "LAW-015",
+    "LAW-010",
+    "LAW-006",
+    "YGPA-001",
+    "YGPA-027"
+   ],
+   "downloads": [
+    "YGPA-021"
+   ],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 3.0,
+   "total_s": 4.06,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "buttons": true
+   },
+   "answer": "더드림스마트센터를 이용하려면 다음 서류를 제출해야 합니다[1].\n\n1. 더드림스마트센터 이용 신청서[1]\n2. 개인정보 수집 및 이용 동의서[1]\n3. 사업계획서[1]"
+  },
+  {
+   "id": "a19",
+   "group": "answer",
+   "question": "항만안내선 타 보고 싶은데 어떻게 예약해요?",
+   "answer_type": "answer",
+   "top1_score": 0.696,
+   "top_docs": [
+    "YGPA-008",
+    "YGPA-007",
+    "LAW-021",
+    "LAW-005",
+    "YGPA-031",
+    "YGPA-025"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [
+    "항만안내선 담당 061-797-4438"
+   ],
+   "options": [],
+   "uncited_lines": 5,
+   "violations": [],
+   "contacts_from_evidence": 1,
+   "unsupported_numbers": [],
+   "first_token_s": 2.32,
+   "total_s": 4.48,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "※ 정부의 자원안보 위기 주의단계 경보 발령에 따라, 경보 해제 시까지 항만안내선 예약이 제한됩니다[1].\n\n항만안내선 예약 절차는 다음과 같습니다[1].\n\n1. 견학 신청서를 제출합니다.\n2. 예약 확정을 받습니다.\n3. 견학일정 5분 전까지 승선장소로 집결합니다.\n4. 경비초소에서 신원 확인을 받습니다.\n5. 항만안내선 승선장으로 이동합니다."
+  },
+  {
+   "id": "c01",
+   "group": "clarify",
+   "question": "사용료가 얼마예요?",
+   "answer_type": "clarify",
+   "top1_score": 0.631,
+   "top_docs": [
+    "LAW-010",
+    "YGPA-005",
+    "LAW-010",
+    "YGPA-032",
+    "YGPA-032",
+    "YGPA-005"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [
+    "항만시설 사용료",
+    "체육시설 사용료"
+   ],
+   "uncited_lines": 1,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 2.9,
+   "total_s": 3.62,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": false,
+    "buttons": true
+   },
+   "answer": "어느 시설의 사용료를 알고 싶으신가요?"
+  },
+  {
+   "id": "c02",
+   "group": "clarify",
+   "question": "출입증 신청하려고 하는데요",
+   "answer_type": "clarify",
+   "top1_score": 0.606,
+   "top_docs": [
+    "YGPA-025",
+    "LAW-008",
+    "YGPA-024",
+    "LAW-009",
+    "LAW-009",
+    "YGPA-023"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [
+    "상시출입증(인원/차량) 발급 신청",
+    "상시출입증 기간연장 신청",
+    "항만시설출입업체 등록 신청"
+   ],
+   "uncited_lines": 1,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 3.1,
+   "total_s": 4.32,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "buttons": true
+   },
+   "answer": "어느 경우의 출입증을 신청하려는지 확인 부탁드립니다."
+  },
+  {
+   "id": "c03",
+   "group": "clarify",
+   "question": "예약은 어떻게 해요?",
+   "answer_type": "answer",
+   "top1_score": 0.589,
+   "top_docs": [
+    "YGPA-005",
+    "YGPA-006",
+    "YGPA-005",
+    "YGPA-007",
+    "YGPA-001",
+    "LAW-003"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [
+    "홍보관 문의 061-797-4550"
+   ],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 1,
+   "unsupported_numbers": [],
+   "first_token_s": 1.06,
+   "total_s": 3.91,
+   "checks": {
+    "type": false,
+    "retrieval": true,
+    "retrieval@1": true,
+    "buttons": true
+   },
+   "answer": "※ 정부의 자원안보 위기 주의단계 경보 발령에 따라, 경보 해제 시까지 홍보관 예약이 제한됩니다[4].\n\n1. 온라인으로 예약합니다[4]\n2. 이용 신청은 최소 10명 이상, 최대 30명 이하 단체로 신청합니다[4]\n3. 예약은 매주 월~금요일 10:00 ~ 16:00 기간 내 가능하며, 약 30분이 소요됩니다[4]\n4. 홍보관은 토·일·공휴일에는 휴관됩니다[4]\n5. 예약 문의는 061-797-4550으로 하시기 바랍니다[4]"
+  },
+  {
+   "id": "c04",
+   "group": "clarify",
+   "question": "여객선터미널 위치 알려주세요",
+   "answer_type": "answer",
+   "top1_score": 0.658,
+   "top_docs": [
+    "YGPA-009",
+    "YGPA-010",
+    "YGPA-009",
+    "YGPA-008",
+    "YGPA-007",
+    "YGPA-027"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 2.3,
+   "total_s": 3.87,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "buttons": true
+   },
+   "answer": "여수연안여객선터미널과 여수엑스포여객선터미널의 위치는 다음과 같습니다[1][2].\n\n1. 여수연안여객선터미널: 전남 여수시 여객선터미널길 17[1]  \n2. 여수엑스포여객선터미널: 전남 여수시 엑스포대로 320-66[2]"
+  },
+  {
+   "id": "c05",
+   "group": "clarify",
+   "question": "부두 시설 규모가 어떻게 돼요?",
+   "answer_type": "answer",
+   "top1_score": 0.661,
+   "top_docs": [
+    "YGPA-014",
+    "LAW-002",
+    "YGPA-014",
+    "YGPA-012",
+    "YGPA-016",
+    "YGPA-012"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 1.45,
+   "total_s": 6.34,
+   "checks": {
+    "type": false,
+    "retrieval": true,
+    "retrieval@1": true,
+    "buttons": true
+   },
+   "answer": "광양항에는 여러 부두가 있으며, 각 부두의 규모는 다음과 같습니다[1][4][5][6].\n\n1. 광양항 컨테이너 부두 (9-12번선석)는 길이 1,150m, 최저수심 12-16m, 접안능력 4천(TEU)×2 2천(TEU)×2, 하역능력 112만TEU/년입니다[4]  \n2. 광양항 자동차부두 (5-8번선석)는 길이 1,150m, 최저수심 12-15m, 접안능력 50,000×2 20,000×2, 하역능력 12,080천톤/년입니다[4]  \n3. 광양항 하포일반부두는 부두면적 840천㎡, 부두형태가 잔교식 (1번선석), 케이슨식 (2번∼4번선석)입니다[5]  \n4. 광양항 시멘트부두 (1-5번선석)는 길이 800m, 최저수심 9m, 접안능력 10,000×5, 하역능력 7,560천톤/년입니다[6]"
+  },
+  {
+   "id": "u01",
+   "group": "unknown",
+   "question": "오늘 여수 날씨 어때요?",
+   "answer_type": "unknown",
+   "top1_score": 0.501,
+   "top_docs": [
+    "YGPA-009",
+    "YGPA-009",
+    "YGPA-011",
+    "YGPA-011",
+    "YGPA-033",
+    "ORG-014"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [
+    "여수광양항만공사 대표전화 061-797-4300"
+   ],
+   "options": [],
+   "uncited_lines": 1,
+   "violations": [],
+   "contacts_from_evidence": 1,
+   "unsupported_numbers": [],
+   "first_token_s": 2.15,
+   "total_s": 2.98,
+   "checks": {
+    "type": true,
+    "contact": true,
+    "buttons": true
+   },
+   "answer": "확인한 공식 자료만으로는 답을 확정하기 어렵습니다. 담당 부서를 모르시면 아래 대표전화로 문의해 주세요."
+  },
+  {
+   "id": "u02",
+   "group": "unknown",
+   "question": "부산항 신항 컨테이너 터미널 운영사는 어디예요?",
+   "answer_type": "unknown",
+   "top1_score": 0.539,
+   "top_docs": [
+    "LAW-010",
+    "LAW-010",
+    "YGPA-014",
+    "YGPA-032",
+    "YGPA-027",
+    "YGPA-015"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [
+    "여수광양항만공사 대표전화 061-797-4300"
+   ],
+   "options": [],
+   "uncited_lines": 1,
+   "violations": [],
+   "contacts_from_evidence": 1,
+   "unsupported_numbers": [],
+   "first_token_s": 3.34,
+   "total_s": 4.22,
+   "checks": {
+    "type": true,
+    "contact": true,
+    "buttons": true
+   },
+   "answer": "확인한 공식 자료만으로는 답을 확정하기 어렵습니다. 담당 부서를 모르시면 아래 대표전화로 문의해 주세요."
+  },
+  {
+   "id": "u03",
+   "group": "unknown",
+   "question": "항만공사 신입 채용 공고는 언제 나와요?",
+   "answer_type": "unknown",
+   "top1_score": 0.606,
+   "top_docs": [
+    "LAW-003",
+    "LAW-006",
+    "YGPA-008",
+    "LAW-006",
+    "LAW-003",
+    "YGPA-027"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [
+    "여수광양항만공사 대표전화 061-797-4300"
+   ],
+   "options": [],
+   "uncited_lines": 1,
+   "violations": [],
+   "contacts_from_evidence": 1,
+   "unsupported_numbers": [],
+   "first_token_s": 2.5,
+   "total_s": 3.05,
+   "checks": {
+    "type": true,
+    "contact": true,
+    "buttons": true
+   },
+   "answer": "확인한 공식 자료만으로는 답을 확정하기 어렵습니다. 담당 부서를 모르시면 아래 대표전화로 문의해 주세요."
+  },
+  {
+   "id": "u04",
+   "group": "unknown",
+   "question": "요즘 컨테이너 해상 운임 얼마나 해요?",
+   "answer_type": "clarify",
+   "top1_score": 0.636,
+   "top_docs": [
+    "YGPA-032",
+    "LAW-010",
+    "LAW-010",
+    "YGPA-032",
+    "YGPA-014",
+    "YGPA-014"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [
+    "항만시설 사용료",
+    "광양항 컨테이너 부두 사용료"
+   ],
+   "uncited_lines": 1,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 2.7,
+   "total_s": 3.52,
+   "checks": {
+    "type": false,
+    "buttons": true
+   },
+   "answer": "어느 시설의 사용료를 알고 싶으신가요?"
+  },
+  {
+   "id": "u05",
+   "group": "unknown",
+   "question": "점심 메뉴 추천해 주세요",
+   "answer_type": "unknown",
+   "top1_score": 0.438,
+   "top_docs": [
+    "YGPA-005",
+    "YGPA-005",
+    "YGPA-006",
+    "YGPA-021",
+    "LAW-012",
+    "YGPA-033"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [
+    "여수광양항만공사 대표전화 061-797-4300"
+   ],
+   "options": [],
+   "uncited_lines": 1,
+   "violations": [],
+   "contacts_from_evidence": 1,
+   "unsupported_numbers": [],
+   "first_token_s": 0.6,
+   "total_s": 0.6,
+   "checks": {
+    "type": true,
+    "contact": true,
+    "buttons": true
+   },
+   "answer": "확인한 공식 자료만으로는 답을 확정하기 어렵습니다. 질문을 조금 더 구체적으로 써 주시거나, 아래 대표전화로 문의해 주세요."
+  },
+  {
+   "id": "m01",
+   "group": "followup",
+   "question": "체육시설",
+   "answer_type": "answer",
+   "top1_score": 0.763,
+   "top_docs": [
+    "YGPA-005",
+    "YGPA-005",
+    "YGPA-033",
+    "LAW-010",
+    "LAW-010",
+    "YGPA-032"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [
+    "체육시설 예약 문의 061-793-8270"
+   ],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 1,
+   "unsupported_numbers": [],
+   "first_token_s": 3.75,
+   "total_s": 6.65,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "buttons": true
+   },
+   "answer": "테니스장의 사용료는 야간에 3,000원입니다[1]. 축구장은 평일 및 토·일요일 모두 무료개방입니다[2].\n\n1. 테니스장은 1시간당 1코트 기준으로 사용료가 산정됩니다[1]\n2. 축구장은 2시간 기준으로 사용료가 산정되지만, 평일 및 토·일요일 모두 무료개방입니다[2]\n3. 사용료는 이용기간에 따라 산출되며, 초과 사용 시 초과 시간당 사용료가 추가됩니다[3]\n4. 사용료 감면 신청은 가능하며, 감면 사유를 기재하여 신청할 수 있습니다[3]"
+  },
+  {
+   "id": "m02",
+   "group": "followup",
+   "question": "홍보관",
+   "answer_type": "answer",
+   "top1_score": 0.697,
+   "top_docs": [
+    "YGPA-007",
+    "YGPA-005",
+    "YGPA-005",
+    "YGPA-006",
+    "YGPA-033",
+    "YGPA-001"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [
+    "홍보관 문의 061-797-4550"
+   ],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 1,
+   "unsupported_numbers": [],
+   "first_token_s": 1.65,
+   "total_s": 4.69,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "※ 정부의 자원안보 위기 주의단계 경보 발령에 따라, 경보 해제 시까지 홍보관 예약이 제한됩니다[1].\n\n홍보관 예약은 온라인으로만 가능합니다[1].\n\n1. 공사 홈페이지 예약시스템을 통해 예약 신청합니다[1]\n2. 예약 시 10명 이상 30명 이하의 인원으로 신청합니다[1]\n3. 예약 가능한 시간은 매주 월~금요일 10:00 ~ 16:00이며, 약 30분이 소요됩니다[1]\n4. 예약 시에는 휴관일(토·일·공휴일)을 확인합니다[1]\n5. 예약 문의는 061-797-4550으로 연락합니다[1]"
+  },
+  {
+   "id": "h01",
+   "group": "hard",
+   "question": "테니스장 밤에 쓰면 얼마예요?",
+   "answer_type": "answer",
+   "top1_score": 0.649,
+   "top_docs": [
+    "YGPA-005",
+    "YGPA-005",
+    "YGPA-006",
+    "LAW-010",
+    "LAW-010",
+    "YGPA-033"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [
+    "체육시설 예약 문의 061-793-8270"
+   ],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 1,
+   "unsupported_numbers": [],
+   "first_token_s": 3.39,
+   "total_s": 4.52,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "테니스장의 야간 사용료는 3,000원입니다[1].\n\n1. 체육시설 예약 시 1계정당 하루 최대 2시간, 1개 코트만 예약 가능합니다[3]."
+  },
+  {
+   "id": "h02",
+   "group": "hard",
+   "question": "통과선박 인정신청은 출항하고 며칠 안에 내야 돼요?",
+   "answer_type": "answer",
+   "top1_score": 0.75,
+   "top_docs": [
+    "YGPA-030",
+    "YGPA-030",
+    "YGPA-028",
+    "LAW-009",
+    "LAW-009",
+    "LAW-008"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 1.79,
+   "total_s": 2.87,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "통과선박 인정 신청은 출항일로부터 7일 이내에 제출해야 합니다[1].\n\n1. 출항일로부터 7일 이내에 〔별지3〕 통과선박 인정 신청서를 제출[1]"
+  },
+  {
+   "id": "h03",
+   "group": "hard",
+   "question": "홍보관 몇시부터 몇시까지 볼수있어요",
+   "answer_type": "answer",
+   "top1_score": 0.694,
+   "top_docs": [
+    "YGPA-007",
+    "YGPA-005",
+    "YGPA-005",
+    "YGPA-006",
+    "YGPA-033",
+    "YGPA-008"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [
+    "홍보관 문의 061-797-4550"
+   ],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 1,
+   "unsupported_numbers": [],
+   "first_token_s": 2.23,
+   "total_s": 3.57,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "※ 정부의 자원안보 위기 주의단계 경보 발령에 따라, 경보 해제 시까지 홍보관 예약이 제한됩니다[1].\n\n홍보관은 매주 월~금요일 10:00 ~ 16:00까지 이용 가능합니다[1]."
+  },
+  {
+   "id": "h04",
+   "group": "hard",
+   "question": "동측 철송장 선로 몇개임?",
+   "answer_type": "answer",
+   "top1_score": 0.642,
+   "top_docs": [
+    "YGPA-018",
+    "LAW-012",
+    "LAW-010",
+    "YGPA-017",
+    "LAW-010",
+    "YGPA-012"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 1.87,
+   "total_s": 2.4,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "동측 철송장은 6개의 선로를 운영하고 있습니다[1]."
+  },
+  {
+   "id": "h05",
+   "group": "hard",
+   "question": "광양항 컨부두 13~16번 선석 수심 얼마?",
+   "answer_type": "answer",
+   "top1_score": 0.639,
+   "top_docs": [
+    "YGPA-012",
+    "YGPA-012",
+    "YGPA-014",
+    "YGPA-014",
+    "YGPA-016",
+    "YGPA-016"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 1.49,
+   "total_s": 2.19,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "광양항 컨테이너부두 13~16번 선석의 최저수심은 16m입니다[3]."
+  },
+  {
+   "id": "h06",
+   "group": "hard",
+   "question": "하포부두 운영사 어디에요",
+   "answer_type": "answer",
+   "top1_score": 0.549,
+   "top_docs": [
+    "YGPA-016",
+    "YGPA-016",
+    "LAW-019",
+    "YGPA-015",
+    "YGPA-014",
+    "LAW-021"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 1.12,
+   "total_s": 1.58,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "하포일반부두의 운영사는 세방(주)입니다[1]."
+  },
+  {
+   "id": "h07",
+   "group": "hard",
+   "question": "항만안내선 무슨 요일에 운항해요?",
+   "answer_type": "answer",
+   "top1_score": 0.655,
+   "top_docs": [
+    "YGPA-008",
+    "LAW-021",
+    "YGPA-009",
+    "YGPA-009",
+    "LAW-019",
+    "YGPA-007"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [
+    "항만안내선 담당 061-797-4438"
+   ],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 1,
+   "unsupported_numbers": [],
+   "first_token_s": 1.71,
+   "total_s": 3.96,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "※ 정부의 자원안보 위기 주의단계 경보 발령에 따라, 경보 해제 시까지 항만안내선 예약이 제한됩니다[1].\n\n항만안내선은 매주 화요일과 목요일에 운항합니다[1].\n\n1. 견학일정은 10:00 ~ 11:00, 14:00 ~ 15:00입니다[1].\n2. 승선정원은 최소 17명 ~ 최대 26명이며, 최소인원이 충족되어야 운항합니다[1]."
+  },
+  {
+   "id": "h08",
+   "group": "hard",
+   "question": "테니스장 하루에 3시간 예약할 수 있나요?",
+   "answer_type": "answer",
+   "top1_score": 0.662,
+   "top_docs": [
+    "YGPA-006",
+    "YGPA-005",
+    "YGPA-005",
+    "YGPA-033",
+    "YGPA-007",
+    "LAW-014"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 1.95,
+   "total_s": 3.18,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "하루에 3시간 테니스장을 예약할 수 없습니다. 1계정 당 하루 최대 2시간만 예약 가능합니다[1].\n\n1. 예약 시 1계정 당 하루 최대 2시간, 1개 코트만 예약 가능합니다[1]"
+  },
+  {
+   "id": "h09",
+   "group": "hard",
+   "question": "엑스포 여객선 터미널 주소가 어떻게 돼요?",
+   "answer_type": "answer",
+   "top1_score": 0.69,
+   "top_docs": [
+    "YGPA-010",
+    "YGPA-009",
+    "YGPA-009",
+    "YGPA-007",
+    "YGPA-008",
+    "YGPA-027"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 2.33,
+   "total_s": 2.99,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "여수엑스포여객선터미널의 주소는 전남 여수시 엑스포대로 320-66입니다[1]."
+  },
+  {
+   "id": "h10",
+   "group": "hard",
+   "question": "공컨테이너 장치장은 왜 만든 거예요?",
+   "answer_type": "answer",
+   "top1_score": 0.566,
+   "top_docs": [
+    "YGPA-017",
+    "YGPA-031",
+    "YGPA-031",
+    "LAW-002",
+    "LAW-012",
+    "YGPA-014"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 1.51,
+   "total_s": 2.67,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "광양항의 공컨테이너 장치장은 항만관련부지의 효율적 활용 및 공컨테이너 수급 불균형 해소, CY적체현상 해소를 통한 터미널 생산성 향상을 위해 조성되었습니다[1]."
+  },
+  {
+   "id": "h11",
+   "group": "hard",
+   "question": "배후단지 입주하려면 어떤 순서로 진행돼요?",
+   "answer_type": "answer",
+   "top1_score": 0.64,
+   "top_docs": [
+    "LAW-001",
+    "LAW-001",
+    "YGPA-036",
+    "YGPA-039",
+    "LAW-003",
+    "YGPA-035"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [
+    "물류단지부 (배후단지 담당) 061-797-4456"
+   ],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 1,
+   "unsupported_numbers": [],
+   "first_token_s": 1.99,
+   "total_s": 7.13,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": false,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "광양항 배후단지 입주 절차는 동·서측 배후단지와 세풍 배후단지로 구분되어 진행됩니다. 절차는 다음과 같습니다[3].\n\n1. 입주기업 모집 — 기한: 공고기간; 담당: 항만공사[3]\n2. 우선협상대상자 선정 — 기한: 공고기간; 담당: 항만공사[3]\n3. 결격사유 조회 — 기한: 공고기간; 담당: 관련기관 등[3]\n4. 입주계약 신청 — 기한: 공고기간; 담당: 입주대상기업 → 항만공사[3]\n5. 입주계약 체결 — 기한: 입주계약 아내 받은 날부터 90일 이내; 담당: 입주대상기업 ↔ 항만공사[3]\n6. 임대차계약 체결 — 기한: 입주계약 체결일로부터 60일 이내; 담당: 입주대상기업 ↔ 항만공사[3]\n7. 건축허가 및 신고 — 기한: 임대차계약서 명시; 담당: 입주기업 → 여수청[3]\n8. 건축착공 — 기한: 사업계획서 명시; 담당: 입주기업[3]\n9. 영업개시 — 기한: 없음; 담당: 입주기업 → 항만공사[3]"
+  },
+  {
+   "id": "h12",
+   "group": "hard",
+   "question": "항만시설 사용료 감면 조항이 두 개 겹치면 어떻게 적용돼요?",
+   "answer_type": "answer",
+   "top1_score": 0.673,
+   "top_docs": [
+    "LAW-010",
+    "LAW-010",
+    "YGPA-032",
+    "YGPA-032",
+    "YGPA-027",
+    "LAW-006"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 2.71,
+   "total_s": 3.69,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": false,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "제9조제5항에 따르면 항만시설사용료의 감면사유가 둘 이상 해당되는 경우, 감면율이 가장 높은 한 가지 사유만을 적용하여 감면합니다[2]."
+  },
+  {
+   "id": "h13",
+   "group": "hard",
+   "question": "배가 항계 안에서 움직일 때 어디에 보고해야 해요?",
+   "answer_type": "answer",
+   "top1_score": 0.619,
+   "top_docs": [
+    "YGPA-031",
+    "LAW-008",
+    "LAW-007",
+    "YGPA-031",
+    "YGPA-032",
+    "YGPA-029"
+   ],
+   "downloads": [],
+   "port_mis": true,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 2.31,
+   "total_s": 5.03,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "선박이 항계 안에서 움직일 때는 즉시 서해지방해양경찰청 여수항해상교통관제센터에 무선으로 통보해야 합니다[1].\n\n1. 선박이 접안시설에 접안하기 위해 계선주에 첫 계선줄을 묶기 시작한 시각과 접안시설에서 이안하기 위해 마지막 계선줄을 풀어낸 시각을 분 단위까지 통보합니다[1]\n2. 선박이 정박하기 위해 닻이 해저에 닿기 시작한 시각과 다른 장소로 이동하기 위해 닻이 해저를 벗어난 시각을 분 단위까지 통보합니다[1]"
+  },
+  {
+   "id": "h14",
+   "group": "hard",
+   "question": "항만 청소는 누가 책임지나요?",
+   "answer_type": "answer",
+   "top1_score": 0.671,
+   "top_docs": [
+    "YGPA-031",
+    "LAW-001",
+    "LAW-019",
+    "YGPA-031",
+    "YGPA-032",
+    "YGPA-023"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 1.77,
+   "total_s": 3.47,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "항만 청소는 구역별 관리주체의 책임 하에 실시해야 하며, 하역회사는 항만청소를 타인에게 위탁할 수 있습니다[1].  \n\n1. 항만청소는 구역별 관리주체가 책임지고 실시합니다[1].  \n2. 하역회사는 타인에게 항만청소를 위탁할 수 있으나, 위탁 내용을 사장에게 통보해야 합니다[1]."
+  },
+  {
+   "id": "h15",
+   "group": "hard",
+   "question": "출입즘 잃어버렸어요 어케해요",
+   "answer_type": "answer",
+   "top1_score": 0.507,
+   "top_docs": [
+    "YGPA-022",
+    "LAW-015",
+    "YGPA-005",
+    "YGPA-025",
+    "YGPA-023",
+    "LAW-012"
+   ],
+   "downloads": [
+    "YGPA-022"
+   ],
+   "port_mis": false,
+   "contacts": [
+    "항만출입증 담당자 (광양) 061-797-4434",
+    "항만출입증 담당자 (여수) 061-692-4336"
+   ],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 2,
+   "unsupported_numbers": [],
+   "first_token_s": 2.67,
+   "total_s": 4.92,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "buttons": true
+   },
+   "answer": "출입증을 분실한 경우, 3일 이내에 분실 경위서 및 업체(단체) 대표의 확인서를 제출해야 합니다[4].\n\n1. 분실 경위서를 작성합니다. 6하 원칙에 따라 분실 경위를 상세히 기재해야 하며, 책임을 지는 내용을 포함해야 합니다[1].\n2. 상시출입증의 경우, 업체 대표자의 확인서를 함께 제출해야 합니다[1].\n3. 분실 경위서와 확인서를 여수광양항만공사에 제출합니다[4]."
+  },
+  {
+   "id": "h16",
+   "group": "hard",
+   "question": "출입증 기한 지나기 전에 연장 신청하는 양식 있나요?",
+   "answer_type": "answer",
+   "top1_score": 0.661,
+   "top_docs": [
+    "YGPA-024",
+    "LAW-014",
+    "YGPA-025",
+    "LAW-009",
+    "LAW-015",
+    "LAW-009"
+   ],
+   "downloads": [
+    "YGPA-024"
+   ],
+   "port_mis": false,
+   "contacts": [
+    "항만출입증 담당자 (광양) 061-797-4434",
+    "항만출입증 담당자 (여수) 061-692-4336"
+   ],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 2,
+   "unsupported_numbers": [],
+   "first_token_s": 2.38,
+   "total_s": 4.09,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "buttons": true
+   },
+   "answer": "항만 상시출입증 기간이 지나기 전에 연장 신청할 수 있는 양식이 있습니다[1].\n\n1. 항만 상시출입증 기간연장 신청서를 작성합니다[1]  \n2. 인원 및 차량 정보를 기재하고, 대표자 및 본인 서명을 합니다[1]  \n3. 여수광양항만공사에 제출합니다[1]"
+  },
+  {
+   "id": "h17",
+   "group": "hard",
+   "question": "Port-MIS가 뭐예요?",
+   "answer_type": "answer",
+   "top1_score": 0.43,
+   "top_docs": [
+    "LAW-010",
+    "LAW-010",
+    "YGPA-031",
+    "YGPA-037",
+    "YGPA-031",
+    "YGPA-025"
+   ],
+   "downloads": [],
+   "port_mis": true,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 4.34,
+   "total_s": 5.84,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": false,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "Port-MIS는 무역항의 선박입항, 항만시설사용, 관제사항, 화물반출입, 사용료 부과·징수, 선박출항 등 항만운영 업무를 처리하기 위해 구축한 해운항만물류정보시스템을 말합니다[3]."
+  },
+  {
+   "id": "h18",
+   "group": "hard",
+   "question": "상시출입증 새로 발급할 때랑 기간 연장할 때 내는 서류가 달라요?",
+   "answer_type": "answer",
+   "top1_score": 0.626,
+   "top_docs": [
+    "YGPA-024",
+    "LAW-014",
+    "YGPA-025",
+    "LAW-014",
+    "LAW-012",
+    "LAW-009"
+   ],
+   "downloads": [
+    "YGPA-024",
+    "YGPA-025"
+   ],
+   "port_mis": false,
+   "contacts": [
+    "항만출입증 담당자 (광양) 061-797-4434",
+    "항만출입증 담당자 (여수) 061-692-4336"
+   ],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 2,
+   "unsupported_numbers": [],
+   "first_token_s": 1.89,
+   "total_s": 4.16,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "buttons": true
+   },
+   "answer": "항만상시출입증을 새로 발급받을 때와 기간 연장할 때 제출하는 서류는 다릅니다[1][3].\n\n1. **신규 발급 시**는 \"항만상시출입증발급신청서\"를 제출해야 하며, 재직증명서, 차량등록증 사본 또는 리스 계약서, 개인정보 수집·이용 및 제3자 제공 동의서 등이 필요합니다[3].\n2. **기간 연장 시**는 \"항만 상시출입증 기간연장 신청서\"를 제출하면 됩니다[1]."
+  },
+  {
+   "id": "h19",
+   "group": "hard",
+   "question": "주말에 테니스장 쓰려면 당일에 예약해도 돼요?",
+   "answer_type": "answer",
+   "top1_score": 0.636,
+   "top_docs": [
+    "YGPA-005",
+    "YGPA-005",
+    "YGPA-006",
+    "YGPA-033",
+    "LAW-010",
+    "LAW-010"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [
+    "체육시설 예약 문의 061-793-8270"
+   ],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 1,
+   "unsupported_numbers": [],
+   "first_token_s": 1.98,
+   "total_s": 3.59,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "주말에 체육시설을 사용하려면 사용예정일 직전 금요일 15시까지 예약 신청이 필요합니다[2].  \n\n1. 사용예정일 직전 금요일 15시까지 예약 신청을 해야 합니다[2]  \n2. 1계정 당 하루 최대 2시간, 1개 코트만 예약 가능합니다[3]"
+  },
+  {
+   "id": "h20",
+   "group": "hard",
+   "question": "사용료 제때 안 내면 어떻게 돼요?",
+   "answer_type": "answer",
+   "top1_score": 0.633,
+   "top_docs": [
+    "LAW-010",
+    "LAW-010",
+    "YGPA-032",
+    "YGPA-032",
+    "YGPA-005",
+    "YGPA-005"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 1.57,
+   "total_s": 2.59,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": false,
+    "buttons": true
+   },
+   "answer": "항만시설 사용료를 제때 납부하지 않으면 연체료가 징수됩니다[3].\n\n1. 연체료는 「국유재산법」 제73조를 준용하여 징수됩니다[3]."
+  },
+  {
+   "id": "h21",
+   "group": "hard",
+   "question": "더드림스마트센터 신청할 때 사업계획서도 내야 돼요?",
+   "answer_type": "answer",
+   "top1_score": 0.713,
+   "top_docs": [
+    "YGPA-021",
+    "LAW-013",
+    "LAW-015",
+    "LAW-003",
+    "LAW-015",
+    "LAW-003"
+   ],
+   "downloads": [
+    "YGPA-021"
+   ],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 2.44,
+   "total_s": 3.88,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "더드림스마트센터 이용 신청 시 사업계획서를 제출해야 합니다[1].\n\n1. 사업계획서에는 사업 개요, 사업화 계획, 인력확보 계획, 세부추진일정 등을 포함해야 합니다[1].\n2. 사업계획서는 별도로 제출해야 하며, 신청서와 함께 제출됩니다[1]."
+  },
+  {
+   "id": "h22",
+   "group": "hard",
+   "question": "광양항 작년 컨테이너 물동량이 얼마예요?",
+   "answer_type": "unknown",
+   "top1_score": 0.644,
+   "top_docs": [
+    "YGPA-012",
+    "YGPA-014",
+    "YGPA-012",
+    "YGPA-014",
+    "YGPA-018",
+    "YGPA-017"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [
+    "여수광양항만공사 대표전화 061-797-4300"
+   ],
+   "options": [],
+   "uncited_lines": 1,
+   "violations": [],
+   "contacts_from_evidence": 1,
+   "unsupported_numbers": [],
+   "first_token_s": 1.56,
+   "total_s": 2.06,
+   "checks": {
+    "type": true,
+    "contact": true,
+    "buttons": true
+   },
+   "answer": "확인한 공식 자료만으로는 답을 확정하기 어렵습니다. 담당 부서를 모르시면 아래 대표전화로 문의해 주세요."
+  },
+  {
+   "id": "h23",
+   "group": "hard",
+   "question": "항만공사 사장님 성함이 뭐예요?",
+   "answer_type": "unknown",
+   "top1_score": 0.563,
+   "top_docs": [
+    "LAW-004",
+    "LAW-004",
+    "LAW-003",
+    "YGPA-031",
+    "YGPA-023",
+    "YGPA-027"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [
+    "여수광양항만공사 대표전화 061-797-4300"
+   ],
+   "options": [],
+   "uncited_lines": 1,
+   "violations": [],
+   "contacts_from_evidence": 1,
+   "unsupported_numbers": [],
+   "first_token_s": 2.73,
+   "total_s": 3.56,
+   "checks": {
+    "type": true,
+    "contact": true,
+    "buttons": true
+   },
+   "answer": "확인한 공식 자료만으로는 답을 확정하기 어렵습니다. 담당 부서를 모르시면 아래 대표전화로 문의해 주세요."
+  },
+  {
+   "id": "h24",
+   "group": "hard",
+   "question": "여수항에 크루즈 배 대는 부두 있어요?",
+   "answer_type": "answer",
+   "top1_score": 0.625,
+   "top_docs": [
+    "YGPA-015",
+    "YGPA-014",
+    "YGPA-011",
+    "YGPA-016",
+    "YGPA-031",
+    "YGPA-008"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 1.64,
+   "total_s": 2.96,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": false,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "여수항의 크루즈부두는 선석 길이 500m, 최저수심 11m, 접안능력 15만GT 규모입니다[3].\n\n1. 크루즈부두는 여수항 시설현황에 따르면 별도로 기재되어 있습니다[3]."
+  },
+  {
+   "id": "h25",
+   "group": "hard",
+   "question": "입주기업 모집 가장 최근이 언제야?",
+   "answer_type": "answer",
+   "top1_score": 0.564,
+   "top_docs": [
+    "LAW-014",
+    "LAW-014",
+    "YGPA-036",
+    "YGPA-039",
+    "YGPA-037",
+    "YGPA-021"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [
+    "물류단지부 (배후단지 담당) 061-797-4456"
+   ],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 1,
+   "unsupported_numbers": [],
+   "first_token_s": 3.71,
+   "total_s": 10.95,
+   "checks": {
+    "type": true,
+    "mention": false,
+    "buttons": true
+   },
+   "answer": "광양항 배후단지 입주기업 모집의 가장 최근 기한은 공고기간입니다[3]. \n\n1. 입주기업 모집 — 기한: 공고기간; 관련근거: 모집공고; 비고: 항만공사[3]\n2. 우선협상대상자 선정 — 기한: 〃; 관련근거: 평가 및 선정; 비고: 항만공사[3]\n3. 결격사유 조회 — 기한: 〃; 관련근거: 자유무역지역법 제12조; 비고: 관련기관 등[3]\n4. 입주계약 신청 — 기한: 〃; 관련근거: 자유무역지역법 시행령 제8조; 비고: 입주대상기업 → 항만공사[3]\n5. 입주계약 체결 — 기한: 입주계약 아내 받은 날부터 90일 이내; 관련근거: 자유무역지역법 제11조 자유무역지역법 시행령 제8조; 비고: 입주대상기업 ↔ 항만공사[3]\n6. 임대차계약 체결 — 기한: 입주계약 체결일로부터 60일 이내; 관련근거: 자유무역지역법 제13조; 비고: 입주대상기업 ↔ 항만공사[3]\n7. 건축허가 및 신고 — 기한: 임대차계약서 명시; 관련근거: 자유무역지역법 제14조 임대차계약서; 비고: 입주기업 → 여수청[3]\n8. 건축착공 — 기한: 사업계획서 명시; 관련근거: 건축법 제11조7항 임대차계약서; 비고: 입주기업[3]\n9. 영업개시 — 기한: -; 관련근거: 1종 항만배후단지 관리지침 제2조; 비고: 입주기업 → 항만공사[3]"
+  },
+  {
+   "id": "h26",
+   "group": "followup",
+   "question": "담당 부서가 어디야?",
+   "answer_type": "unknown",
+   "top1_score": 0.567,
+   "top_docs": [
+    "LAW-014",
+    "YGPA-039",
+    "LAW-014",
+    "YGPA-036",
+    "YGPA-023",
+    "YGPA-037"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [
+    "여수광양항만공사 대표전화 061-797-4300"
+   ],
+   "options": [],
+   "uncited_lines": 1,
+   "violations": [],
+   "contacts_from_evidence": 1,
+   "unsupported_numbers": [],
+   "first_token_s": 3.33,
+   "total_s": 4.76,
+   "checks": {
+    "type": true,
+    "mention": false,
+    "contact": true,
+    "buttons": true
+   },
+   "answer": "확인한 공식 자료만으로는 입주기업 모집의 가장 최근 시기와 담당 부서를 확정할 수 없습니다. 관련 정보는 모집 공고나 최신 입주 절차에 따라 달라질 수 있으며, 이에 대한 구체적인 내용은 담당 부서에 문의하시기 바랍니다."
+  }
+ ]
+}
