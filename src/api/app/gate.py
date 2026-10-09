@@ -6,13 +6,13 @@
 그래서 LLM에 "있음/없음"만 따로 묻고, 없음이면 확인 불가로 보낸다.
 
 시간: 판정도 생성도 시간 대부분이 긴 근거를 읽는 데 쓰인다(각 약 1.3초). 같은 GPU에서 차례로 하면 첫 글자가 그만큼 늦고,
-동시에 해도 계산을 나눠 써 이득이 없다. 그래서 판정은 다른 GPU(0번)의 작은 모델(qwen3-8b)로 생성과 동시에 시작하고,
+동시에 해도 계산을 나눠 써 이득이 없다. 그래서 판정은 다른 GPU(0번)의 판정 모델(gate-llm, Qwen3-14B)로 생성과 동시에 시작하고,
 판정이 나올 때까지 생성 조각은 화면에 보내지 않고 모아 둔다 (hold). 없음이면 생성을 멈추고 버린다.
 기각 (docs/handoff/31_answer_gate.md): 근거를 청크당 400~1200자로 잘라 넘기기 — 빠르지만 답이 뒤쪽에 있는 질문을 막음(f05·l06·r01).
 판정 요청을 생성 요청과 앞부분이 같게 만들어 vLLM 계산 재사용 — 답변 지시문이 앞에 있으면 판정이 '있음'으로 기울어 u04·h22를 놓침.
 판정이 실패하거나 TIMEOUT을 넘기면 판정 없이 답한다 (판정 때문에 답이 막히지 않게).
 
-환경변수: RAG_GATE(on/off, 기본 off), RAG_GATE_MODEL(기본 qwen3-8b), RAG_GATE_CHARS(실험용: 청크당 글자 수, 기본 답변과 같음)
+환경변수: RAG_GATE(on/off, 기본 off), RAG_GATE_MODEL(기본 gate-llm), RAG_GATE_CHARS(실험용: 청크당 글자 수, 기본 답변과 같음)
 """
 import asyncio
 import logging
@@ -23,7 +23,7 @@ from app import gpu
 from app.prompt import effective_question, evidence
 
 TIMEOUT = 8.0  # 초
-MODEL = os.getenv("RAG_GATE_MODEL", "qwen3-8b")  # GPU 0번의 작은 모델 (infra/gpu_server/start_gate.sh). 답변 모델로 바꾸려면 qwen3-32b
+MODEL = os.getenv("RAG_GATE_MODEL", "gate-llm")  # GPU 0번의 판정 모델 (infra/gpu_server/start_gate.sh). 답변 모델로 판정하려면 qwen3-32b
 MAX_TOKENS = 12  # 모델이 "판정: **있음**"처럼 앞말을 붙이는 경우가 있어 여유를 둔다
 CHARS = int(os.getenv("RAG_GATE_CHARS", 0)) or None  # 판정에 넘기는 청크당 글자 수 (None: 답변과 같음)
 NO = "없음"

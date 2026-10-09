@@ -277,7 +277,7 @@ assert set(search.PASS_FORMS) <= set(search.excluded_docs("외항선 출입신�
 assert not set(search.PASS_FORMS) & set(search.excluded_docs("출입증을 잃어버렸는데 어떻게 재발급 받나요?"))
 assert not set(search.PASS_FORMS) & set(search.excluded_docs("출입증 말고 선박 출입 신고서는요?"))
 
-# 14. 답변 전 판정(RAG_GATE): 판정 모델(qwen3-8b)이 없음이면 확인 불가 + 대표전화, 판정이 실패하면 판정 없이 답한다
+# 14. 답변 전 판정(RAG_GATE): 판정 모델(gate-llm)이 없음이면 확인 불가 + 대표전화, 판정이 실패하면 판정 없이 답한다
 import asyncio  # noqa: E402
 
 from app import gate  # noqa: E402

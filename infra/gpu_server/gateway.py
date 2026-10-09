@@ -3,7 +3,7 @@
 - API 키(~/llm-serve/.api_key)가 맞아야 통과. vLLM은 /v1/... 만 키를 검사하므로 vLLM 포트를 직접 내보내지 않는다.
 - 허용: POST /v1/embeddings → BGE-M3(8101), POST /v1/chat/completions → Qwen(8100),
   POST /v1/rerank → 재정렬 bge-reranker-v2-m3(8102, start_reranker.sh), GET /health
-  /v1/chat/completions는 모델 이름으로 나눈다: qwen3-32b → 답변(8100), qwen3-8b → 답변 전 판정(8103, start_gate.sh)
+  /v1/chat/completions는 모델 이름으로 나눈다: qwen3-32b → 답변(8100), gate-llm → 답변 전 판정(8103, start_gate.sh)
 - Cloudflare 임시 터널은 SSE를 지원하지 않으므로, 스트리밍 답변은 SSE 대신 한 줄에 JSON 하나(NDJSON)로 보낸다.
 실행: start_gateway.sh (tmux 세션 gateway, 127.0.0.1:8200)
 """
@@ -20,7 +20,7 @@ KEY = os.getenv("GATEWAY_API_KEY") or (Path.home() / "llm-serve/.api_key").read_
 UPSTREAM = {  # (주소, 모델 이름) → vLLM
     ("/v1/embeddings", "bge-m3"): os.getenv("BGE_URL", "http://127.0.0.1:8101"),
     ("/v1/chat/completions", "qwen3-32b"): os.getenv("QWEN_URL", "http://127.0.0.1:8100"),
-    ("/v1/chat/completions", "qwen3-8b"): os.getenv("GATE_URL", "http://127.0.0.1:8103"),
+    ("/v1/chat/completions", "gate-llm"): os.getenv("GATE_URL", "http://127.0.0.1:8103"),
     ("/v1/rerank", "bge-reranker"): os.getenv("RERANKER_URL", "http://127.0.0.1:8102"),
 }
 MAX_BODY = 1_000_000  # 근거 5개 + 대화를 넣어도 수십 KB. 큰 요청으로 GPU를 붙잡지 못하게 막는다
@@ -55,7 +55,7 @@ async def health():
     """키 없이 열어 두되, 살아 있는지만 알려 준다. 재정렬·판정은 꺼져도 답변은 되므로(벡터 순서로, 판정 없이) 상태 코드에 넣지 않는다"""
     status = {}
     for name, key in (("bge", ("/v1/embeddings", "bge-m3")), ("qwen", ("/v1/chat/completions", "qwen3-32b")),
-                      ("reranker", ("/v1/rerank", "bge-reranker")), ("gate", ("/v1/chat/completions", "qwen3-8b"))):
+                      ("reranker", ("/v1/rerank", "bge-reranker")), ("gate", ("/v1/chat/completions", "gate-llm"))):
         try:
             status[name] = (await client.get(f"{UPSTREAM[key]}/health", timeout=3)).status_code == 200
         except httpx.HTTPError:

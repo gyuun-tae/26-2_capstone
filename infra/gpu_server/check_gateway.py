@@ -66,7 +66,7 @@ def main():
     check("재정렬 다른 모델 거부", status(request(base, "/v1/rerank", {**rerank, "model": "bge-m3"})) == 400)
 
     # 답변 전 판정 모델(start_gate.sh): 같은 주소에 모델 이름만 다르다. 꺼져 있으면 API는 판정 없이 답하므로 건너뛴다
-    gate = {**chat, "model": "qwen3-8b", "max_tokens": 12, "temperature": 0,
+    gate = {**chat, "model": "gate-llm", "max_tokens": 12, "temperature": 0,
             "messages": [{"role": "user", "content": "다음 질문이 항만에 관한 것이면 '있음', 아니면 '없음' 한 단어로만 답하세요: 오늘 서울 날씨 어때요?"}]}
     start = time.time()
     try:

@@ -54,7 +54,7 @@ async def embed(text: str) -> list[float]:
 
 
 async def chat_stream(messages: list[dict], max_tokens: int, temperature: float, model: str = LLM_MODEL) -> AsyncIterator[str]:
-    """답변 조각(content)을 차례로 내놓는다. Qwen3의 생각 과정 출력은 끈다. model: 답변 qwen3-32b, 판정 qwen3-8b"""
+    """답변 조각(content)을 차례로 내놓는다. Qwen3의 생각 과정 출력은 끈다. model: 답변 qwen3-32b, 판정 gate-llm"""
     url, headers = _config()
     body = {"model": model, "messages": messages, "stream": True, "max_tokens": max_tokens,
             "temperature": temperature, "chat_template_kwargs": {"enable_thinking": False}}
