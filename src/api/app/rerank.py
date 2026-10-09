@@ -13,7 +13,7 @@
 6/6 → 2/6, h12 필수 언급 3/3 → 0/3으로 나빠졌다 (관련 있어 보이는 청크가 위로 오면 LLM이 답하거나 되묻는다).
 다음 실험: 근거가 약한 질문은 벡터 순서 유지. docs/handoff/28_rerank.md
 
-환경변수: RAG_RERANK(on/off, 기본 off), RAG_RERANK_N(후보 수, 기본 10)
+환경변수: RAG_RERANK(on/off, 기본 off), RAG_RERANK_N(후보 수, 기본 10), RAG_RERANK_TRUNCATE(토큰 상한, 기본 512)
 """
 import logging
 import os
@@ -23,7 +23,7 @@ from app import gpu, search
 N = 10
 WEIGHT = 0.5  # 재정렬 점수 비중 (나머지는 벡터 점수)
 TIMEOUT = 5.0  # 초. 넘으면 벡터 순서로
-TRUNCATE = 512  # 질문+청크 토큰 상한. 실험과 같은 길이 (긴 조문·표 청크도 앞부분으로 관련도를 판단)
+TRUNCATE = 512  # 질문+청크 토큰 상한. 실험과 같은 길이 (긴 조문·표 청크도 앞부분으로 관련도를 판단). 실험용 RAG_RERANK_TRUNCATE
 
 logger = logging.getLogger(__name__)
 
@@ -60,7 +60,7 @@ async def rerank(query: str, pool: list[dict], k: int) -> list[dict]:
     """pool: 벡터 순서 후보(법령 상한 없이). 앞 candidates()개만 재정렬하고, 나머지는 모자랄 때 채우는 데만 쓴다"""
     head, rest = pool[:candidates()], pool[candidates():]
     try:
-        scores = await gpu.rerank(query, [h["chunk"]["text"] for h in head], TIMEOUT, TRUNCATE)
+        scores = await gpu.rerank(query, [h["chunk"]["text"] for h in head], TIMEOUT, int(os.getenv("RAG_RERANK_TRUNCATE", TRUNCATE)))
     except Exception as e:  # 재정렬이 안 되면 지금까지처럼 벡터 순서로
         logger.warning("재정렬 실패, 벡터 순서 사용: %s: %s", type(e).__name__, e)
         return by_vector(pool, k)

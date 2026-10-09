@@ -180,10 +180,21 @@ class Meta(NamedTuple):
     forms: list[int] = []  # 내려받을 서식의 근거 번호 (서식 청크인지는 조립 쪽에서 확인)
 
 
+def merge_pairs(pairs: list[tuple]) -> dict:
+    """같은 항목이 두 번 나오면 ("forms": [1], "forms": []) 목록은 합치고, 목록이 아니면 처음 값을 쓴다 (뒤 값이 덮어써 버튼이 사라지던 문제)"""
+    out = {}
+    for key, value in pairs:
+        if key not in out:
+            out[key] = value
+        elif isinstance(out[key], list) and isinstance(value, list):
+            out[key] = out[key] + value
+    return out
+
+
 def parse_meta(meta: str) -> Meta:
     """형식이 깨지면 일반 답변 (버튼 없음)"""
     try:  # 표식 뒤 첫 JSON 객체 ("forms: [1]" 같은 줄이 앞에 있어도 @@META {...}를 찾는다)
-        data, _ = json.JSONDecoder().raw_decode(meta[meta.index("{"):])
+        data, _ = json.JSONDecoder(object_pairs_hook=merge_pairs).raw_decode(meta[meta.index("{"):])
         if not isinstance(data, dict):
             return Meta()
     except ValueError:
@@ -191,7 +202,10 @@ def parse_meta(meta: str) -> Meta:
     kind = data.get("type") if data.get("type") in ("answer", "clarify", "unknown") else "answer"
     options = [o.strip() for o in data.get("options") or [] if isinstance(o, str) and 0 < len(o.strip()) <= 50]
     keys = [k for k in data.get("actions") or [] if isinstance(k, str) and k in ACTIONS]
-    forms = [n for n in data.get("forms") or [] if isinstance(n, int) and not isinstance(n, bool)]
+    # 번호를 문자로 적는 경우가 있다 ("forms": ["1"])
+    forms = [int(n) for n in data.get("forms") or []
+             if (isinstance(n, int) and not isinstance(n, bool)) or (isinstance(n, str) and n.strip().isdigit())]
+    forms = list(dict.fromkeys(forms))
     if kind == "clarify" and not options:  # 선택지 없는 되묻기 = 유형을 잘못 적은 일반 답변
         kind = "answer"
     return Meta(kind, options[:MAX_OPTIONS] if kind == "clarify" else [], keys, forms)

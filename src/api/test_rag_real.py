@@ -108,6 +108,12 @@ assert text_of(ev) == "서식이 있습니다[2].", repr(text_of(ev))
 assert [a["type"] for a in ev[-1][1]["actions"]] == ["download"], ev[-1][1]
 assert prompt.parse_meta(' {"type": "clarify", "options": ["a", "b"]} 뒤에 글').kind == "clarify"
 assert prompt.parse_meta(" [1, 2]").kind == "answer"
+# 실제 Qwen 출력 (10/10 a13·w01): 번호를 문자로, 같은 항목을 두 번 → 서식 버튼이 사라지던 경우
+assert prompt.parse_meta(' {"type": "answer", "actions": [], "forms": ["1"]}').forms == [1]
+assert prompt.parse_meta(' {"type": "answer", "forms": [1], "forms": ["1"]}').forms == [1]
+assert prompt.parse_meta(' {"type": "answer", "actions": ["port_mis"], "forms": [1], "forms": []}').forms == [1]
+assert prompt.parse_meta(' {"type": "answer", "forms": [true, "x", 2]}').forms == [2]
+assert prompt.parse_meta(' {"type": "unknown", "type": "answer"}').kind == "unknown"
 
 # 2-4. 날짜를 물었는데 답에 날짜·요일·숫자가 없으면 끝에 안내 + 대표전화. 날짜가 있으면 붙이지 않는다
 ev = run("입주기업 모집 가장 최근이 언제야?", ["모집 절차는 모집, 선정, 계약 순입니다[1].", '@@META {"type": "answer"}'])
