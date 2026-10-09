@@ -33,7 +33,10 @@ def run(question, llm_pieces, hits=HITS, history=(), embed=None):
         calls["embed"].append(text)
         return [0.1] * 1024
 
-    async def fake_chat(messages, max_tokens, temperature):
+    async def fake_chat(messages, max_tokens, temperature, model=gpu.LLM_MODEL):
+        if model != gpu.LLM_MODEL:  # 판정은 이 시험의 답변 조각을 받지 않는다 (판정 시험은 아래 14번)
+            yield "있음"
+            return
         calls["chat"].append(messages)
         for p in llm_pieces:
             if isinstance(p, Exception):
@@ -274,14 +277,15 @@ assert set(search.PASS_FORMS) <= set(search.excluded_docs("외항선 출입신�
 assert not set(search.PASS_FORMS) & set(search.excluded_docs("출입증을 잃어버렸는데 어떻게 재발급 받나요?"))
 assert not set(search.PASS_FORMS) & set(search.excluded_docs("출입증 말고 선박 출입 신고서는요?"))
 
-# 14. 답변 전 판정(RAG_GATE): 없음이면 생성 없이 확인 불가 + 대표전화, 판정이 실패하면 판정 없이 답한다
+# 14. 답변 전 판정(RAG_GATE): 판정 모델(qwen3-8b)이 없음이면 확인 불가 + 대표전화, 판정이 실패하면 판정 없이 답한다
 import asyncio  # noqa: E402
 
 from app import gate  # noqa: E402
 
 
 def verdict(*pieces):
-    async def f(messages, max_tokens, temperature):
+    async def f(messages, max_tokens, temperature, model=gpu.LLM_MODEL):
+        assert model == gate.MODEL
         assert messages[0]["content"] == gate.SYSTEM and "[근거]\n[1]" in messages[1]["content"]
         for p in pieces:
             if isinstance(p, Exception):
@@ -296,14 +300,47 @@ for pieces, expected in ((["없", "음"], False), (["있음"], True), ([gpu.GpuE
         assert asyncio.run(gate.answerable(msgs, HITS)) is expected, pieces
 
 os.environ["RAG_GATE"] = "on"
-async def say_no(messages, hits, follow_up=False):
-    return False
-before = len(calls["chat"])
-with patch.object(gate, "answerable", say_no):
-    ev = run("해상 운임은 얼마예요?", ["안 불림"])
-assert len(calls["chat"]) == before  # 답변 생성은 부르지 않는다
-assert ev[-1][1]["answer_type"] == "unknown" and ev[-1][1]["actions"][0]["type"] == "contact" and ev[-2][1] == []
-assert text_of(ev) == rag_real.UNKNOWN_TEXT
+def judge(ok, delay=0.0):
+    async def f(messages, hits, follow_up=False):
+        await asyncio.sleep(delay)
+        return ok
+    return f
+
+
+# 판정과 생성은 함께 시작한다. 없음이면 생성한 답은 화면에 하나도 나가지 않는다 (판정이 늦어도)
+for delay in (0.0, 0.05):
+    with patch.object(gate, "answerable", judge(False, delay)):
+        ev = run("해상 운임은 얼마예요?", ["버려질 ", "답 [1]"])
+    assert ev[-1][1]["answer_type"] == "unknown" and ev[-1][1]["actions"][0]["type"] == "contact" and ev[-2][1] == []
+    assert text_of(ev) == rag_real.UNKNOWN_TEXT, text_of(ev)
+# 판정에 넘기는 근거는 기본으로 답변과 같은 길이, gate.CHARS를 정하면 그만큼만 (실험용)
+long_hits = [{**HITS[0], "chunk": {**HITS[0]["chunk"], "text": "가" * 2000}}]
+assert gate.CHARS is None and "가" * 2000 in gate.build(msgs, long_hits)[1]["content"]
+with patch.object(gate, "CHARS", 400):
+    assert "가" * 400 + " …(이하 생략)" in gate.build(msgs, long_hits)[1]["content"]
+# 있음이면 판정 전에 모아 둔 조각부터 순서대로 전부 나간다 (생성이 판정보다 먼저 끝나도)
+with patch.object(gate, "answerable", judge(True, 0.05)):
+    ev = run("부두 사용료는요?", ["첫 ", "조각 ", "끝 [1]"])
+assert text_of(ev) == "첫 조각 끝 [1]" and ev[-1][1]["answer_type"] == "answer"
+
+
+async def slow_pieces():
+    for p in ("가", "나", "다"):
+        await asyncio.sleep(0.02)
+        yield p
+
+
+async def collect(ok, delay):
+    return [p async for p in gate.hold(slow_pieces(), lambda: judge(ok, delay)(None, None))]
+
+assert asyncio.run(collect(True, 0.03)) == ["가", "나", "다"]  # 판정이 생성 중간에 나와도 빠짐·중복 없음
+assert asyncio.run(collect(True, 0.0)) == ["가", "나", "다"]
+for delay in (0.0, 0.01, 0.03):  # 0.0: 첫 조각을 받는 중에 판정이 나옴 → 받던 조각을 취소하고 스트림을 닫아야 한다
+    try:
+        asyncio.run(collect(False, delay))
+        raise AssertionError("Blocked가 나야 함")
+    except gate.Blocked:
+        pass
 del os.environ["RAG_GATE"]
 
 print("OK")

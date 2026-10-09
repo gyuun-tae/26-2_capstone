@@ -99,13 +99,14 @@ def expired_until(text: str, today: date | None = None) -> list[str]:
     return found
 
 
-def evidence(hits: list[dict]) -> str:
+def evidence(hits: list[dict], limit: int | None = None) -> str:
+    """번호 붙인 근거 글. limit: 청크당 글자 수 (기본 RAG_CHUNK_CHARS)"""
+    limit = limit or int(os.getenv("RAG_CHUNK_CHARS", CHUNK_CHARS))  # 실험용 조정값
     blocks = []
     for i, h in enumerate(hits, 1):
         c = h["chunk"]
         when = f" (수정일 {c['updated_at']})" if c.get("updated_at") else ""
         when = f" (시행 {c['effective_at']})" if c.get("effective_at") else when  # 법령·고시
-        limit = int(os.getenv("RAG_CHUNK_CHARS", CHUNK_CHARS))  # 실험용 조정값
         # 처리 과정에서 붙인 설명 줄(표 번호 YGPA-…-T001, 좌표 안내)은 빼고 보낸다: 답에 내부 번호가 새어 나오고 읽을 양만 는다
         text = "\n".join(line for line in c["text"].splitlines() if not META_LINE.match(line.strip()))
         text = text if len(text) <= limit else text[:limit] + " …(이하 생략)"

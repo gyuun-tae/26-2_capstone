@@ -132,22 +132,27 @@ def answer(messages) -> Answer:
             return
         if query in pools:  # 확인 불가가 아니면 근거 순서를 재정렬로 다시 정한다
             hits = await rerank.rerank(query, pools[query], k)
-        if gate.enabled() and not await gate.answerable(messages, hits, follow_up):  # 점수는 넘었지만 근거가 주제를 다루지 않음
-            result.answer_type = "unknown"
-            result.actions = [contacts.MAIN]
-            yield UNKNOWN_TEXT
-            return
 
         result.sources = [chunk_to_source(h["chunk"]) for h in hits]
         # 화면으로 나가기 전 거르기: 정리 줄(@@META) → 구분선 → 없는 근거 번호 → "[근거]" 이름표 → 근거에 없는 연락처
         meta, rules, cites, words, parts = MetaFilter(), RuleLineFilter(), CitationFilter(len(hits)), EvidenceWordFilter(), []
         guard = ContactFilter("\n".join(h["chunk"]["text"] for h in hits))
         temperature = float(os.getenv("RAG_TEMPERATURE", TEMPERATURE))
-        async for piece in gpu.chat_stream(build_messages(messages, hits, follow_up), MAX_TOKENS, temperature):
-            piece = piece.replace("。", ".")  # Qwen이 가끔 쓰는 중국식 마침표
-            if out := guard.feed(words.feed(cites.feed(rules.feed(meta.feed(piece))))):
-                parts.append(out)
-                yield out
+        stream = gpu.chat_stream(build_messages(messages, hits, follow_up), MAX_TOKENS, temperature)
+        if gate.enabled():  # 점수는 넘었지만 근거가 주제를 다루지 않는지 판정. 판정이 나올 때까지 생성 조각은 모아 둔다
+            stream = gate.hold(stream, lambda: gate.answerable(messages, hits, follow_up))
+        try:
+            async for piece in stream:
+                piece = piece.replace("。", ".")  # Qwen이 가끔 쓰는 중국식 마침표
+                if out := guard.feed(words.feed(cites.feed(rules.feed(meta.feed(piece))))):
+                    parts.append(out)
+                    yield out
+        except gate.Blocked:
+            result.sources = []
+            result.answer_type = "unknown"
+            result.actions = [contacts.MAIN]
+            yield UNKNOWN_TEXT
+            return
         rest = cites.feed(rules.feed(meta.flush()) + rules.flush()) + cites.flush()
         if out := guard.feed(words.feed(rest) + words.flush()) + guard.flush():
             parts.append(out)

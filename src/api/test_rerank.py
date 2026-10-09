@@ -72,7 +72,7 @@ async def fake_embed(text):
     return [0.1] * 1024
 
 
-async def fake_chat(messages, max_tokens, temperature):
+async def fake_chat(messages, max_tokens, temperature, model=None):
     yield '답[1]\n@@META {"type": "answer"}'
 
 

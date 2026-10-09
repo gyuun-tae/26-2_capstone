@@ -53,10 +53,10 @@ async def embed(text: str) -> list[float]:
     return r.json()["data"][0]["embedding"]
 
 
-async def chat_stream(messages: list[dict], max_tokens: int, temperature: float) -> AsyncIterator[str]:
-    """답변 조각(content)을 차례로 내놓는다. Qwen3의 생각 과정 출력은 끈다."""
+async def chat_stream(messages: list[dict], max_tokens: int, temperature: float, model: str = LLM_MODEL) -> AsyncIterator[str]:
+    """답변 조각(content)을 차례로 내놓는다. Qwen3의 생각 과정 출력은 끈다. model: 답변 qwen3-32b, 판정 qwen3-8b"""
     url, headers = _config()
-    body = {"model": LLM_MODEL, "messages": messages, "stream": True, "max_tokens": max_tokens,
+    body = {"model": model, "messages": messages, "stream": True, "max_tokens": max_tokens,
             "temperature": temperature, "chat_template_kwargs": {"enable_thinking": False}}
     async with _client().stream("POST", f"{url}/v1/chat/completions", headers=headers, json=body) as r:
         if r.status_code != 200:
