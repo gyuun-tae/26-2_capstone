@@ -16,11 +16,11 @@ from app import gpu
 from app.prompt import effective_question, evidence
 
 TIMEOUT = 8.0  # 초
-MAX_TOKENS = 4
+MAX_TOKENS = 12  # 모델이 "판정: **있음**"처럼 앞말을 붙이는 경우가 있어 여유를 둔다
 NO = "없음"
 
 SYSTEM = """당신은 검색된 [근거]가 사용자 [질문]의 주제를 다루는지 판정합니다. 질문에 답하지 말고 판정만 하세요.
-- 있음: 근거 중 하나라도 질문이 묻는 대상·제도·절차·시설에 대한 정보를 담고 있다. 일부만 있어도, 질문이 모호해서 되물어야 해도 있음.
+- 있음: 근거 중 하나라도 질문이 묻는 대상·제도·절차·시설에 대한 정보를 담고 있다. 일부만 있어도, 질문이 모호해서 되물어야 해도, 근거의 기한이 지났거나 답이 "안 된다"여도 있음.
 - 없음: 근거가 질문의 대상을 다루지 않고 비슷한 낱말만 겹친다. 예: 다른 항만(부산항 등)에 관한 질문, 근거에 없는 제도·요금·수치·날씨를 묻는 질문.
 반드시 "있음" 또는 "없음" 한 단어로만 답하세요."""
 
@@ -49,4 +49,6 @@ async def answerable(messages, hits: list[dict], follow_up: bool = False) -> boo
     if NO in verdict:
         logger.info("답변 전 판정: 근거 없음 → 확인 불가")
         return False
+    if "있음" not in verdict:
+        logger.warning("답변 전 판정이 있음/없음이 아님, 판정 없이 답함: %r", verdict)
     return True
