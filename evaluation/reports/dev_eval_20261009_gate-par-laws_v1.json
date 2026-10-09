@@ -1,0 +1,498 @@
+{
+ "dataset": "dev_questions_laws_v1.jsonl",
+ "index_version": "bge-m3-dense-2e26c2fc2e81",
+ "run_at": "2026-10-09T12:47:05.162662+00:00",
+ "summary": {
+  "retrieval": "15/15",
+  "retrieval@1": "12/15",
+  "type": "15/15",
+  "buttons": "15/15",
+  "mention": "8/8",
+  "lead": "0/0",
+  "absent": "0/0",
+  "contact_btn": "0/0",
+  "contact": "0/0",
+  "type_by_group": {
+   "law": "15/15"
+  },
+  "uncited_lines_total": 0,
+  "violations_total": 0,
+  "unsupported_numbers_total": 0,
+  "first_token_s": {
+   "mean": 3.04,
+   "median": 2.6,
+   "max": 6.48
+  }
+ },
+ "rows": [
+  {
+   "id": "l01",
+   "group": "law",
+   "question": "무역항 들어올 때 출입 신고 안 해도 되는 배도 있어요?",
+   "answer_type": "answer",
+   "top1_score": 0.685,
+   "top_docs": [
+    "LAW-007",
+    "LAW-008",
+    "YGPA-031",
+    "YGPA-027",
+    "YGPA-038"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 6.48,
+   "total_s": 9.35,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "네, 무역항의 수상구역에 출입할 때 출입 신고를 하지 않아도 되는 선박이 있습니다[1].\n\n1. 총톤수 5톤 미만의 선박[1]  \n2. 해양사고구조에 사용되는 선박[1]  \n3. 수상레저기구 중 국내항 간을 운항하는 모터보트 및 동력요트[1]  \n4. 어선안전조업 및 어선원의 안전·보건 증진 등에 관한 법률 제8조에 따른 출입항 신고 대상이 되는 어선[1]  \n5. 공공목적이나 항만 운영의 효율성을 위하여 해양수산부령으로 정하는 선박[1]"
+  },
+  {
+   "id": "l02",
+   "group": "law",
+   "question": "위험물 실은 배가 항구에 들어오려면 뭘 해야 돼요?",
+   "answer_type": "answer",
+   "top1_score": 0.706,
+   "top_docs": [
+    "LAW-009",
+    "LAW-007",
+    "YGPA-031",
+    "YGPA-031",
+    "YGPA-032"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 2.63,
+   "total_s": 5.14,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "위험물을 실은 선박이 무역항의 수상구역등으로 들어오려면, 반입 24시간 전에 위험물 반입신고서, 위험물 일람표, 화물적부도를 지방해양수산청장 또는 시·도지사에 제출해야 합니다[1].\n\n1. 별지 제10호서식의 위험물 반입신고서를 제출합니다[1]\n2. 별지 제11호서식의 위험물 일람표를 제출합니다[1]\n3. 별지 제11호의2서식의 화물적부도를 제출합니다[1]"
+  },
+  {
+   "id": "l03",
+   "group": "law",
+   "question": "항구 안에서 배 용접 수리해도 되나요?",
+   "answer_type": "answer",
+   "top1_score": 0.633,
+   "top_docs": [
+    "LAW-007",
+    "LAW-012",
+    "YGPA-031",
+    "YGPA-031",
+    "LAW-021"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 2.35,
+   "total_s": 5.13,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "무역항의 수상구역 등에서 불꽃이나 열이 발생하는 용접 등의 방법으로 선박을 수리하려면 관리청의 허가를 받아야 합니다[1].  \n\n1. 총톤수 20톤 이상의 선박은 관리청의 허가를 받아야 하며, 위험구역 밖에서는 신고를 해야 합니다[1].  \n2. 화재·폭발 등을 일으킬 우려가 있는 방식으로 수리하거나, 수리작업자의 자격이 부적절한 경우, 안전 조치가 미흡한 경우 등은 허가되지 않습니다[1].  \n3. 수리 중인 선박은 관리청이 지정한 장소에 정박하거나 계류해야 합니다[1]."
+  },
+  {
+   "id": "l04",
+   "group": "law",
+   "question": "예선은 꼭 써야 하는 건가요?",
+   "answer_type": "answer",
+   "top1_score": 0.567,
+   "top_docs": [
+    "LAW-007",
+    "LAW-007",
+    "YGPA-033",
+    "YGPA-005",
+    "YGPA-005"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 4.17,
+   "total_s": 5.82,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "buttons": true
+   },
+   "answer": "선박의 입항 및 출항 등에 관한 법률 제23조에 따르면, 관리청은 항만시설 보호와 선박 안전 확보를 위해 일정 규모 이상의 선박에 대해 예선 사용을 의무화할 수 있습니다[1].\n\n1. 관리청은 예선사용기준을 정하여 해당 규모의 선박이 적절한 예선을 사용하도록 할 수 있습니다[1]."
+  },
+  {
+   "id": "l05",
+   "group": "law",
+   "question": "항만시설을 쓰려면 어떤 방법들이 있어요?",
+   "answer_type": "answer",
+   "top1_score": 0.734,
+   "top_docs": [
+    "LAW-005",
+    "LAW-001",
+    "YGPA-032",
+    "YGPA-032",
+    "YGPA-031"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 2.56,
+   "total_s": 4.55,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": false,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "항만시설을 사용하려면 공사로부터 사용승낙을 받거나, 사용계약 또는 임대차계약을 체결하거나, 또는 공사에 신고하는 방법이 있습니다[1][2].\n\n1. 공사로부터 사용승낙을 받습니다[1][2]\n2. 공사와 사용계약 또는 임대차계약을 체결합니다[1][2]\n3. 공사에 대한 신고를 합니다(여객 또는 화물의 입항·출항을 위하여 항만시설을 사용하는 경우만 해당)[1][2]"
+  },
+  {
+   "id": "l06",
+   "group": "law",
+   "question": "항만시설 전용사용 허가는 최대 몇 년까지 받을 수 있어요?",
+   "answer_type": "answer",
+   "top1_score": 0.669,
+   "top_docs": [
+    "LAW-010",
+    "LAW-003",
+    "YGPA-032",
+    "LAW-006",
+    "YGPA-027"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 4.04,
+   "total_s": 4.8,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "항만시설 전용사용 허가는 최대 5년 이내의 기간을 정하여 허가받을 수 있습니다[1]."
+  },
+  {
+   "id": "l07",
+   "group": "law",
+   "question": "임대계약자한테 사용 승낙 받았으면 언제까지 신고해야 돼요?",
+   "answer_type": "answer",
+   "top1_score": 0.738,
+   "top_docs": [
+    "YGPA-032",
+    "LAW-010",
+    "YGPA-032",
+    "LAW-002",
+    "LAW-015"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 2.17,
+   "total_s": 4.11,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": false,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "임대계약자가 항만시설의 사용을 승낙하면, 그 사용을 승낙한 날부터 14일 이내에 사장에게 신고해야 합니다[1][2].\n\n1. 사용승낙 신고는 임대계약자가 사용을 승낙한 날로부터 14일 이내에 이루어져야 합니다[1][2].\n2. 신고 내용에는 피승낙자의 인적사항, 사용 항만시설의 규모, 사용승낙기간 및 목적, 사용료 등이 포함됩니다[1][2]."
+  },
+  {
+   "id": "l08",
+   "group": "law",
+   "question": "항만공사는 법적으로 어떤 사업을 할 수 있어요?",
+   "answer_type": "answer",
+   "top1_score": 0.678,
+   "top_docs": [
+    "LAW-004",
+    "LAW-002"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 1.48,
+   "total_s": 5.8,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "buttons": true
+   },
+   "answer": "YGPA는 항만공사법 제8조에 따라 다양한 사업을 수행할 수 있습니다[1].\n\n1. 항만시설의 신설, 개축, 유지, 보수, 준설 및 항만 관리·운영 사업[1]  \n2. 항만배후단지개발사업[1]  \n3. 항만재개발사업[1]  \n4. 마리나항만시설의 조성 및 관리·운영 사업[1]  \n5. 물류시설운영업[1]  \n6. 국가 또는 지방자치단체로부터 위탁받은 항만 관련 사업[1]  \n7. 재생에너지 설비 및 수소에너지 설비의 설치 및 관리·운영 사업[1]  \n8. 항만 관련 조사·연구, 기술개발 및 인력양성 사업[1]  \n9. 항만구역 외 근린생활시설 및 복리시설 건설·운영 사업[1]  \n10. 남북 간 항만 교류 및 협력사업[1]  \n11. 여수세계박람회 사후활용 관련 사업[1]  \n12. 외국 항만 조성 및 관리·운영 사업[1]  \n13. 부대사업의 직접시행, 출자 또는 출연[1]"
+  },
+  {
+   "id": "l09",
+   "group": "law",
+   "question": "항만공사가 받을 수 있는 사용료랑 임대료에는 뭐가 있어요?",
+   "answer_type": "answer",
+   "top1_score": 0.75,
+   "top_docs": [
+    "LAW-011",
+    "LAW-011",
+    "YGPA-032",
+    "YGPA-032",
+    "LAW-006"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 2.6,
+   "total_s": 8.49,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "buttons": true
+   },
+   "answer": "항만공사가 징수할 수 있는 사용료 및 임대료는 선박료, 화물료, 여객터미널이용료, 항만시설 전용사용료, 부두시설 임대료, 하역장비 임대료, 창고시설 임대료, 컨테이너 조작장 임대료, 항만배후단지 임대료, 항만시설 외의 토지·건물 등에 대한 임대료 등이 있습니다[1][2].\n\n1. 사용료가. 선박료: 선박입출항료, 접안료, 정박료, 계선료나. 화물료: 화물입출항료, 화물체화료다. 여객터미널이용료: 국제여객터미널이용료, 연안(종합)여객터미널이용료라. 항만시설 전용사용료: 창고 및 야적장사용료, 건물 및 부지 등의 사용료, 사일로·냉장창고 등 특수창고의 사용료, 에이프런사용료, 수역점용료[1]\n2. 임대료가. 부두시설 임대료나. 하역장비 임대료다. 창고시설 임대료라. 컨테이너 조작장 임대료마. 항만배후단지 임대료: 배후단지 임대료 및 건물·창고 임대료바. 항만시설 외의 토지·건물 등에 대한 임대료[1]\n3. 특정한 경우(예: 전용부두 운영 등)에는 임대료로 징수할 수 있습니다[2]"
+  },
+  {
+   "id": "l10",
+   "group": "law",
+   "question": "항만시설 사용료 감면받을 수 있는 경우가 있나요?",
+   "answer_type": "answer",
+   "top1_score": 0.758,
+   "top_docs": [
+    "LAW-010",
+    "YGPA-032",
+    "LAW-005",
+    "YGPA-032",
+    "YGPA-038"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 3.78,
+   "total_s": 10.12,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "buttons": true
+   },
+   "answer": "항만시설 사용료의 전부 또는 일부를 면제받을 수 있는 경우가 있습니다[1][2][3][4].\n\n1. 국가 또는 지방자치단체가 행정목적을 위하여 항만시설을 사용하는 경우[3]\n2. 외국의 군함, 행정선, 탐사선, 실습선 등이 사용하는 경우[3]\n3. 선박의 수리를 위하여 항만시설을 사용하는 경우[3]\n4. 해운 및 항만 관련 비영리법인이 항만시설을 사용하는 경우[1][3]\n5. 선원 및 항만근로자의 후생복지 증진을 위하여 항만시설을 사용하는 경우[3]\n6. 어민들의 사업수행을 위하여 수산업협동조합이 항만시설을 사용하는 경우[3]\n7. 항만시설공사 시행을 위하여 항만시설을 사용하는 경우[3]\n8. 항만개발사업의 시행자가 항만시설을 사용하는 경우[3]\n9. 항만의 개발, 관리, 운영을 위하여 필요하다고 인정하는 경우[3]\n10. 군함, 관공선, 해양사고 피하기 위해 기항한 선박, 통과선박, 환자 발생으로 긴급 입항한 선박 등이 항만시설을 사용하는 경우[2][4]\n11. 2024년 12월 31일까지 육상전원공급장치를 이용하는 외항선[4] (기한 지난 조항 있음)\n12. LNG 연료를 사용하는 내항화물선, 연안컨테이너전용선, 연안화물선 등 특정 조건에 해당하는 선박[2][4]\n13. 항만 내 친환경 선박연료 공급 실증사업을 수행하는 선박[2][4]"
+  },
+  {
+   "id": "l11",
+   "group": "law",
+   "question": "여수광양항만공사 관할 구역이 어디까지예요?",
+   "answer_type": "answer",
+   "top1_score": 0.627,
+   "top_docs": [
+    "LAW-005",
+    "YGPA-031",
+    "YGPA-015",
+    "YGPA-014",
+    "ORG-000"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 3.22,
+   "total_s": 3.86,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "여수광양항만공사의 관할 구역은 여수항과 광양항의 항만구역입니다[1][2]."
+  },
+  {
+   "id": "l12",
+   "group": "law",
+   "question": "정박지 말고 아무 데나 배 세워도 돼요?",
+   "answer_type": "answer",
+   "top1_score": 0.537,
+   "top_docs": [
+    "YGPA-031",
+    "LAW-008",
+    "LAW-007",
+    "YGPA-031",
+    "YGPA-032"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 1.98,
+   "total_s": 3.85,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": false,
+    "buttons": true
+   },
+   "answer": "무역항의 수상구역 등에 정박하려는 선박은 지정된 정박구역 또는 정박지에 정박해야 합니다. 다만, 해양사고를 피하기 위한 경우 등 해양수산부령으로 정하는 사유가 있는 경우에는 예외로 할 수 있습니다[3].  \n\n1. 정박구역 또는 정박지를 지정받아 정박해야 합니다[3].  \n2. 해양사고를 피하기 위한 사유가 있는 경우에만 예외적으로 정박 가능합니다[3]."
+  },
+  {
+   "id": "l13",
+   "group": "law",
+   "question": "항로에 배를 정박해도 되나요?",
+   "answer_type": "answer",
+   "top1_score": 0.704,
+   "top_docs": [
+    "LAW-007",
+    "LAW-007",
+    "YGPA-031",
+    "YGPA-031"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 1.63,
+   "total_s": 4.07,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "항로에 선박을 정박하거나 정류시키는 것은 일반적으로 금지되어 있습니다[1]. 다만, 특정한 사유가 있는 경우 예외로 허용될 수 있습니다[2].\n\n1. 해양사고를 피하기 위해 필요할 경우[2]\n2. 선박의 고장이나 그 밖의 사유로 조종이 불가능한 경우[2]\n3. 인명 구조나 급박한 위험을 피하기 위한 구조 활동이 필요한 경우[2]\n4. 허가를 받은 공사 또는 작업에 사용하는 경우[2]\n\n위의 예외 사유가 해당된다면, 관리청에 신고해야 합니다[1][2]."
+  },
+  {
+   "id": "l14",
+   "group": "law",
+   "question": "항만에 폐기물 버리면 어떻게 돼요?",
+   "answer_type": "answer",
+   "top1_score": 0.639,
+   "top_docs": [
+    "LAW-007",
+    "LAW-001",
+    "YGPA-031",
+    "YGPA-031",
+    "YGPA-032"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 1.65,
+   "total_s": 5.36,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "buttons": true
+   },
+   "answer": "항만의 수상구역이나 주변에 폐기물을 버리면 관리청의 조치를 받게 됩니다[1][2].\n\n1. 무역항의 수상구역이나 주변 10킬로미터 이내에 흙, 돌, 나무, 어구 등 폐기물을 버리는 행위는 금지됩니다[1].  \n2. 석탄, 돌, 벽돌 등 흩어지기 쉬운 물건을 하역할 때는 수면에 떨어지지 않도록 조치해야 합니다[1].  \n3. 인체 유해성 물질, 토석, 쓰레기 등을 버리는 행위는 항만의 깊이나 사용에 지장을 줄 우려가 있어 금지됩니다[2].  \n4. 폐기물이나 물건을 수면에 버린 경우, 관리청은 이를 제거할 것을 명할 수 있습니다[1].  \n\n항만 내 청결 유지와 공해 방지에 대한 책임은 항만시설을 이용하는 자에게 있습니다[3][4]."
+  },
+  {
+   "id": "l15",
+   "group": "law",
+   "question": "선박입출항료는 얼마예요?",
+   "answer_type": "answer",
+   "top1_score": 0.718,
+   "top_docs": [
+    "LAW-010",
+    "YGPA-032",
+    "LAW-010",
+    "YGPA-032",
+    "YGPA-031"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 4.84,
+   "total_s": 6.06,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "buttons": true
+   },
+   "answer": "선박입출항료는 1회 입항 또는 출항 시 1톤당 135원입니다[1]."
+  }
+ ]
+}

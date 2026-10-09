@@ -1,0 +1,63 @@
+{
+ "dataset": "dev_questions_forms_v1.jsonl",
+ "index_version": "bge-m3-dense-2e26c2fc2e81",
+ "run_at": "2026-10-09T15:25:05.716685+00:00",
+ "summary": {
+  "retrieval": "1/1",
+  "retrieval@1": "0/1",
+  "type": "1/1",
+  "buttons": "1/1",
+  "mention": "1/1",
+  "lead": "0/0",
+  "absent": "0/0",
+  "contact_btn": "0/0",
+  "contact": "0/0",
+  "type_by_group": {
+   "forms": "1/1"
+  },
+  "uncited_lines_total": 0,
+  "violations_total": 0,
+  "unsupported_numbers_total": 0,
+  "first_token_s": {
+   "mean": 3.3,
+   "median": 3.3,
+   "max": 3.3
+  }
+ },
+ "rows": [
+  {
+   "id": "w01",
+   "group": "forms",
+   "question": "출입 신고서는 어디서 볼 수 있어?",
+   "answer_type": "answer",
+   "top1_score": 0.61,
+   "top_docs": [
+    "LAW-007",
+    "LAW-008",
+    "LAW-009",
+    "YGPA-036",
+    "YGPA-032"
+   ],
+   "downloads": [
+    "LAW-009"
+   ],
+   "port_mis": true,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 3.3,
+   "total_s": 4.88,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": false,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "출입 신고서는 국가법령정보센터에서 내려받을 수 있습니다[3].\n\n1. 국가법령정보센터에서 「선박의 입항 및 출항 등에 관한 법률 시행규칙」 별지 제1호서식을 확인합니다[3]\n2. 항만운영정보시스템(Port-MIS)에서도 신청할 수 있습니다[3]"
+  }
+ ]
+}

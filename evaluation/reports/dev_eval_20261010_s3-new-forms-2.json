@@ -1,0 +1,61 @@
+{
+ "dataset": "dev_questions_forms_v1.jsonl",
+ "index_version": "bge-m3-dense-2e26c2fc2e81",
+ "run_at": "2026-10-09T15:53:55.148026+00:00",
+ "summary": {
+  "retrieval": "1/1",
+  "retrieval@1": "1/1",
+  "type": "1/1",
+  "buttons": "0/1",
+  "mention": "0/1",
+  "lead": "0/0",
+  "absent": "0/0",
+  "contact_btn": "0/0",
+  "contact": "0/0",
+  "type_by_group": {
+   "forms": "1/1"
+  },
+  "uncited_lines_total": 0,
+  "violations_total": 0,
+  "unsupported_numbers_total": 0,
+  "first_token_s": {
+   "mean": 3.42,
+   "median": 3.42,
+   "max": 3.42
+  }
+ },
+ "rows": [
+  {
+   "id": "w01",
+   "group": "forms",
+   "question": "출입 신고서는 어디서 볼 수 있어?",
+   "answer_type": "answer",
+   "top1_score": 0.58,
+   "top_docs": [
+    "LAW-009",
+    "LAW-008",
+    "LAW-010",
+    "YGPA-036",
+    "YGPA-032"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 3.42,
+   "total_s": 5.12,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": false,
+    "buttons": false
+   },
+   "answer": "내항선 출입 신고서는 국가법령정보센터에서 서식 파일(HWP)을 내려받을 수 있습니다[1].\n\n1. 국가법령정보센터에 접속합니다[1]\n2. 「선박의 입항 및 출항 등에 관한 법률 시행규칙」 별지 제1호서식을 검색합니다[1]\n3. 서식 파일을 다운로드하여 확인합니다[1]"
+  }
+ ]
+}

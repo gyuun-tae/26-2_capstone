@@ -9,11 +9,10 @@
 확인 불가 판단은 여기서 하지 않는다 — 각 근거의 "score"는 그대로 벡터 유사도로 두고, 재정렬 점수는 "rerank"에 따로 둔다.
 재정렬이 꺼져 있거나 실패하면 벡터 순서 그대로 (답변은 계속된다).
 
-기본은 끔: 같은 질문 3회 반복 측정에서 1위 정답은 15/39 → 30/39로 좋아졌지만, 확인 불가여야 할 질문(u02·u04)이
-6/6 → 2/6, h12 필수 언급 3/3 → 0/3으로 나빠졌다 (관련 있어 보이는 청크가 위로 오면 LLM이 답하거나 되묻는다).
-다음 실험: 근거가 약한 질문은 벡터 순서 유지. docs/handoff/28_rerank.md
+기본은 끔: 재정렬만 켜면 확인 불가여야 할 질문(u02·u04)이 6/6 → 2/6으로 흔들린다 (docs/handoff/28_rerank.md).
+답변 전 판정(app/gate.py, RAG_GATE)과 함께 켜면 이 문제가 없다 — 켤 때는 둘 다 (docs/handoff/31_answer_gate.md).
 
-환경변수: RAG_RERANK(on/off, 기본 off), RAG_RERANK_N(후보 수, 기본 10), RAG_RERANK_TRUNCATE(토큰 상한, 기본 512)
+환경변수: RAG_RERANK(on/off, 기본 off), RAG_RERANK_N(후보 수, 기본 10), RAG_RERANK_TRUNCATE(토큰 상한, 기본 1024)
 """
 import logging
 import os
@@ -23,7 +22,7 @@ from app import gpu, search
 N = 10
 WEIGHT = 0.5  # 재정렬 점수 비중 (나머지는 벡터 점수)
 TIMEOUT = 5.0  # 초. 넘으면 벡터 순서로
-TRUNCATE = 512  # 질문+청크 토큰 상한. 실험과 같은 길이 (긴 조문·표 청크도 앞부분으로 관련도를 판단). 실험용 RAG_RERANK_TRUNCATE
+TRUNCATE = 1024  # 질문+청크 토큰 상한. 512는 긴 조문 끝의 정답 문장을 못 봄 (h12, docs/handoff/31_answer_gate.md)
 
 logger = logging.getLogger(__name__)
 

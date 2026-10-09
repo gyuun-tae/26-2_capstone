@@ -1,0 +1,96 @@
+{
+ "dataset": "dev_questions_v3.jsonl",
+ "index_version": "bge-m3-dense-2e26c2fc2e81",
+ "run_at": "2026-10-09T15:25:27.880983+00:00",
+ "summary": {
+  "retrieval": "2/2",
+  "retrieval@1": "2/2",
+  "type": "2/2",
+  "buttons": "1/2",
+  "mention": "0/1",
+  "lead": "0/0",
+  "absent": "0/0",
+  "contact_btn": "0/0",
+  "contact": "0/0",
+  "type_by_group": {
+   "answer": "1/1",
+   "hard": "1/1"
+  },
+  "uncited_lines_total": 0,
+  "violations_total": 0,
+  "unsupported_numbers_total": 0,
+  "first_token_s": {
+   "mean": 2.33,
+   "median": 2.33,
+   "max": 2.89
+  }
+ },
+ "rows": [
+  {
+   "id": "a13",
+   "group": "answer",
+   "question": "출입증 잃어버렸는데 뭐 써서 내야 돼요?",
+   "answer_type": "answer",
+   "top1_score": 0.591,
+   "top_docs": [
+    "YGPA-022",
+    "YGPA-025",
+    "YGPA-023",
+    "YGPA-024",
+    "LAW-009"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [
+    "항만출입증 담당자 (광양) 061-797-4434",
+    "항만출입증 담당자 (여수) 061-692-4336"
+   ],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 2,
+   "unsupported_numbers": [],
+   "first_token_s": 2.89,
+   "total_s": 6.13,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "buttons": false
+   },
+   "answer": "출입증을 분실한 경우, 「출입증분실경위서」를 작성하여 제출해야 합니다[1].  \n\n1. 분실(훼손) 경위를 6하 원칙(6W: What, When, Where, Who, Why, How)에 따라 상세히 기재합니다[1]  \n2. 분실된 출입증의 구분(인원/차량), 번호, 차량번호 등을 정확히 입력합니다[1]  \n3. 본인의 관리 부주의로 인한 문제에 대해 책임을 지겠다는 내용을 기재합니다[1]  \n4. 상시출입증인 경우, 업체 대표자의 확인서를 함께 제출해야 합니다[1]  \n5. 분실 경위서 작성 후 3일 이내에 신고하고 관련 서류를 제출해야 합니다[2]"
+  },
+  {
+   "id": "h12",
+   "group": "hard",
+   "question": "항만시설 사용료 감면 조항이 두 개 겹치면 어떻게 적용돼요?",
+   "answer_type": "answer",
+   "top1_score": 0.653,
+   "top_docs": [
+    "YGPA-032",
+    "LAW-010",
+    "YGPA-032",
+    "LAW-005",
+    "LAW-006"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 1.76,
+   "total_s": 5.08,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": false,
+    "buttons": true
+   },
+   "answer": "확인한 공식 자료 제8조[1]와 제10조[2]는 항만시설사용료 감면 절차에 관한 규정으로, 각각 여수광양항만공사와 무역항 등에 적용됩니다. 두 규정이 겹치는 경우는 해당 항만의 관할 기관과 법적 근거에 따라 적용됩니다[1][2]. \n\n1. 여수광양항만공사 관할 내에서는 감면 등에 대한 의견을 사장에게 제출해야 하며, 사장은 항만위원회 의결을 거쳐 감면 여부를 결정할 수 있습니다[1].\n2. 무역항 등은 감면 등에 대한 의견을 해당 항만관리청에 제출해야 하며, 항만관리청은 해양수산부장관에게 제출할 수 있습니다. 해양수산부장관은 항만시설사용료 조정자문위원회의 의견을 들어 감면 여부를 결정할 수 있습니다[2]."
+  }
+ ]
+}

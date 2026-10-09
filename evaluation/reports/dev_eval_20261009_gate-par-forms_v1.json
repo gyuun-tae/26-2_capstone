@@ -1,0 +1,293 @@
+{
+ "dataset": "dev_questions_forms_v1.jsonl",
+ "index_version": "bge-m3-dense-2e26c2fc2e81",
+ "run_at": "2026-10-09T12:52:16.094633+00:00",
+ "summary": {
+  "retrieval": "8/8",
+  "retrieval@1": "8/8",
+  "type": "8/8",
+  "buttons": "7/8",
+  "mention": "1/2",
+  "lead": "0/0",
+  "absent": "0/0",
+  "contact_btn": "0/0",
+  "contact": "0/0",
+  "type_by_group": {
+   "forms": "8/8"
+  },
+  "uncited_lines_total": 0,
+  "violations_total": 0,
+  "unsupported_numbers_total": 0,
+  "first_token_s": {
+   "mean": 3.98,
+   "median": 4.0,
+   "max": 5.99
+  }
+ },
+ "rows": [
+  {
+   "id": "w01",
+   "group": "forms",
+   "question": "출입 신고서는 어디서 볼 수 있어?",
+   "answer_type": "answer",
+   "top1_score": 0.58,
+   "top_docs": [
+    "LAW-009",
+    "LAW-008",
+    "LAW-010",
+    "YGPA-036",
+    "YGPA-032"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 4.84,
+   "total_s": 6.5,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": false,
+    "buttons": false
+   },
+   "answer": "내항선 출입 신고서는 국가법령정보센터에서 서식 파일(HWP)을 내려받을 수 있습니다[1].\n\n1. 국가법령정보센터에 접속합니다[1]\n2. 「선박의 입항 및 출항 등에 관한 법률 시행규칙」 별지 제1호서식을 검색합니다[1]\n3. 서식 파일을 다운로드하여 확인합니다[1]"
+  },
+  {
+   "id": "w02",
+   "group": "forms",
+   "question": "이 사이트에서 서식을 얻을 수 없는거야?",
+   "answer_type": "answer",
+   "top1_score": 0.561,
+   "top_docs": [
+    "LAW-009",
+    "LAW-008",
+    "LAW-007",
+    "YGPA-027",
+    "YGPA-001"
+   ],
+   "downloads": [
+    "LAW-009"
+   ],
+   "port_mis": true,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 3.97,
+   "total_s": 5.67,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "출입 신고서는 국가법령정보센터에서 내려받을 수 있으며, 항만운영정보시스템(Port-MIS)에서도 신청할 수 있습니다[1]. \n\n1. 국가법령정보센터에서 서식 파일(HWP)을 내려받아 작성합니다[1].  \n2. 항만운영정보시스템(Port-MIS)을 통해 온라인으로 신청합니다[1]."
+  },
+  {
+   "id": "w03",
+   "group": "forms",
+   "question": "외항선 출입신고서 양식은 어디서 받아요?",
+   "answer_type": "answer",
+   "top1_score": 0.729,
+   "top_docs": [
+    "LAW-009",
+    "LAW-008",
+    "YGPA-027",
+    "LAW-008",
+    "YGPA-036"
+   ],
+   "downloads": [
+    "LAW-009"
+   ],
+   "port_mis": true,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 4.03,
+   "total_s": 5.19,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "buttons": true
+   },
+   "answer": "외항선 출입 신고서 양식은 국가법령정보센터에서 내려받을 수 있습니다[1]. 온라인 신청도 항만운영정보시스템(Port-MIS)을 통해 할 수 있습니다[1]."
+  },
+  {
+   "id": "w04",
+   "group": "forms",
+   "question": "위험물 반입신고서 서식 있어요?",
+   "answer_type": "answer",
+   "top1_score": 0.647,
+   "top_docs": [
+    "LAW-009",
+    "LAW-009",
+    "LAW-007",
+    "YGPA-031",
+    "YGPA-031"
+   ],
+   "downloads": [
+    "LAW-009"
+   ],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 2.24,
+   "total_s": 4.56,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "buttons": true
+   },
+   "answer": "확인한 공식 자료에 따르면, 위험물 반입신고서 서식은 국가법령정보센터에서 내려받을 수 있습니다[1].\n\n1. 「선박의 입항 및 출항 등에 관한 법률 시행규칙」 별지 제10호서식을 사용합니다[1].\n2. 서식 작성 시 반입 24시간 전에 지방해양수산청장 또는 시·도지사에 제출해야 합니다[2].\n3. 위험물 반입신고서 외에도 위험물 일람표와 화물적부도를 함께 제출해야 할 수 있습니다[2]."
+  },
+  {
+   "id": "w05",
+   "group": "forms",
+   "question": "항구에서 배를 수리하려면 무슨 서류를 내야 해요?",
+   "answer_type": "answer",
+   "top1_score": 0.686,
+   "top_docs": [
+    "LAW-009",
+    "LAW-009",
+    "LAW-021"
+   ],
+   "downloads": [
+    "LAW-009"
+   ],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 2.38,
+   "total_s": 4.55,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "buttons": true
+   },
+   "answer": "항구에서 배를 수리하려면 선박수리 허가신청서·신고서와 작업계획서, 작업자의 자격증 사본을 제출해야 합니다[1][2].\n\n1. 별지 제17호서식에 따른 선박수리 허가신청서·신고서를 작성합니다[1][2]\n2. 작업계획서(취급장비 명세를 포함)를 첨부합니다[1][2]\n3. 해당 작업에 필요한 작업자의 자격증 사본 1부를 첨부합니다[1][2]"
+  },
+  {
+   "id": "w06",
+   "group": "forms",
+   "question": "항만시설 사용신고서 양식을 받을 수 있나요?",
+   "answer_type": "answer",
+   "top1_score": 0.72,
+   "top_docs": [
+    "LAW-010",
+    "LAW-006",
+    "YGPA-032",
+    "YGPA-027",
+    "LAW-003"
+   ],
+   "downloads": [
+    "LAW-010"
+   ],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 3.97,
+   "total_s": 5.38,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "buttons": true
+   },
+   "answer": "항만시설 사용신고서 양식은 국가법령정보센터에서 내려받을 수 있습니다[1].\n\n1. 「무역항 등의 항만시설 사용 및 사용료에 관한 규정」 별지 제2호서식을 확인합니다[1]\n2. 해당 서식 파일(HWP)을 국가법령정보센터에서 다운로드합니다[1]"
+  },
+  {
+   "id": "w07",
+   "group": "forms",
+   "question": "자유무역지역 입주계약 신청서 양식은 어디 있어요?",
+   "answer_type": "answer",
+   "top1_score": 0.749,
+   "top_docs": [
+    "LAW-015",
+    "LAW-015",
+    "YGPA-039",
+    "LAW-014",
+    "YGPA-027"
+   ],
+   "downloads": [
+    "LAW-015"
+   ],
+   "port_mis": false,
+   "contacts": [
+    "물류단지부 (배후단지 담당) 061-797-4456"
+   ],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 1,
+   "unsupported_numbers": [],
+   "first_token_s": 4.43,
+   "total_s": 6.88,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "buttons": true
+   },
+   "answer": "자유무역지역 입주계약 신청서 양식은 국가법령정보센터에서 내려받을 수 있습니다[1].\n\n1. 「자유무역지역의 지정 및 운영에 관한 법률 시행규칙」 별지 제1호서식을 사용합니다[1]\n2. 신청서는 입주계약 또는 입주변경계약을 신청할 때 사용하며, 처리기간은 7일입니다[1][2]\n3. 첨부서류로는 사업계획서, 외국인투자기업 증명서류, 인가·허가·면허·등록 증명서류 등이 필요합니다[1][2][3]"
+  },
+  {
+   "id": "w08",
+   "group": "forms",
+   "question": "선용품공급업 신고할 때 쓰는 서식이 뭐예요?",
+   "answer_type": "answer",
+   "top1_score": 0.697,
+   "top_docs": [
+    "LAW-021",
+    "LAW-021",
+    "LAW-019",
+    "YGPA-027",
+    "YGPA-029"
+   ],
+   "downloads": [
+    "LAW-021"
+   ],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 5.99,
+   "total_s": 8.82,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "buttons": true
+   },
+   "answer": "선용품공급업 신고 시 사용하는 서식은 「항만운송사업법 시행규칙」 별지 제14호의2서식인 **선용품공급업신고서**입니다[1][2].  \n\n이 서식은 국가법령정보센터에서 내려받을 수 있습니다[1].  \n\n1. 신고서 작성 시 처리기간은 6일입니다[1].  \n2. 제출 시 필요한 서류에는 정관(법인인 경우), 재산 상태를 기재한 서류, 주민등록표 초본(개인인 경우) 등이 있습니다[1][2].  \n3. 주민등록표 초본 확인에 동의하지 않는 경우, 직접 해당 서류를 제출해야 합니다[1]."
+  }
+ ]
+}

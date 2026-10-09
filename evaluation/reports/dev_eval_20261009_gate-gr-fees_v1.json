@@ -1,0 +1,221 @@
+{
+ "dataset": "dev_questions_fees_v1.jsonl",
+ "index_version": "bge-m3-dense-2e26c2fc2e81",
+ "run_at": "2026-10-09T12:26:11.003970+00:00",
+ "summary": {
+  "retrieval": "6/6",
+  "retrieval@1": "5/6",
+  "type": "6/6",
+  "buttons": "6/6",
+  "mention": "6/6",
+  "lead": "0/0",
+  "absent": "0/0",
+  "contact_btn": "0/0",
+  "contact": "0/0",
+  "type_by_group": {
+   "fee": "6/6"
+  },
+  "uncited_lines_total": 1,
+  "violations_total": 0,
+  "unsupported_numbers_total": 0,
+  "first_token_s": {
+   "mean": 5.13,
+   "median": 5.05,
+   "max": 6.39
+  }
+ },
+ "rows": [
+  {
+   "id": "f01",
+   "group": "fee",
+   "question": "여수광양항에 일반화물 외항선으로 들어올 때 화물입출항료가 1톤당 얼마예요?",
+   "answer_type": "answer",
+   "top1_score": 0.817,
+   "top_docs": [
+    "YGPA-032",
+    "YGPA-032",
+    "LAW-010",
+    "LAW-010",
+    "YGPA-031"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 6.39,
+   "total_s": 7.22,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "일반화물 외항선으로 여수광양항에 입항할 때 화물입출항료는 1톤당 194원입니다[1]."
+  },
+  {
+   "id": "f02",
+   "group": "fee",
+   "question": "컨테이너 외항화물 화물입출항료는 얼마예요?",
+   "answer_type": "answer",
+   "top1_score": 0.774,
+   "top_docs": [
+    "YGPA-032",
+    "YGPA-032",
+    "LAW-010",
+    "LAW-010",
+    "LAW-006"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 4.41,
+   "total_s": 5.65,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "컨테이너 외항화물의 화물입항료는 2,742원/1TEU입니다[1][2]  \n화물출항료는 2,742원/1TEU의 50% 감면율이 적용됩니다[1][2]"
+  },
+  {
+   "id": "f03",
+   "group": "fee",
+   "question": "크루즈선은 선박입출항료 감면받을 수 있어요?",
+   "answer_type": "answer",
+   "top1_score": 0.654,
+   "top_docs": [
+    "LAW-010",
+    "YGPA-032",
+    "YGPA-032",
+    "LAW-010",
+    "YGPA-038"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 1,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 5.43,
+   "total_s": 9.56,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": false,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "크루즈선은 특정 조건을 만족하면 선박입출항료의 감면을 받을 수 있습니다.  \n\n1. 2026년 12월 31일까지 국내 항만에 15시 이전에 입항하여 다음 날 15시 이후 출항하는 국제유람선(크루즈선)은 50% 감면[1].  \n2. 1개 항차 내에 국내 항만에 2회 이상 기항하는 국제유람선(크루즈선)은 50% 감면[1].  \n3. 국내 항만을 모항으로 하는 국제유람선(크루즈선)은 50% 감면[1].  \n4. 여수항, 광양항에 입출항하는 국제유람선(크루즈선)은 30% 감면[2].  \n5. 2024년 12월 31일까지 여수광양항에 15시 이전에 입항하여 다음 날 15시 이후 출항하는 국제유람선(크루즈선)은 30% 감면[2]."
+  },
+  {
+   "id": "f04",
+   "group": "fee",
+   "question": "광양항 컨테이너 전용 외항선 입출항료 50% 감면 지금도 돼요?",
+   "answer_type": "answer",
+   "top1_score": 0.73,
+   "top_docs": [
+    "YGPA-032",
+    "YGPA-032",
+    "LAW-010",
+    "LAW-010",
+    "YGPA-038"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 5.62,
+   "total_s": 8.25,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "2024년 12월 31일까지 광양항에 입출항하는 컨테이너전용 외항선에 대해 입출항료 50% 감면이 적용되었습니다[1]. 그러나 해당 감면 조항의 기한은 이미 지났으며, 현재까지도 적용되는지는 추가 확인이 필요합니다[1]. \n\n2026년 12월 31일까지 적용되는 감면 대상에는 광양항에 입출항하는 컨테이너전용 외항선이 포함되지 않았습니다[3]. 따라서 현재 해당 감면이 적용되는지 여부는 여수광양항만공사에 직접 문의해 확인하시기 바랍니다."
+  },
+  {
+   "id": "f05",
+   "group": "fee",
+   "question": "접안료 최저액이 얼마예요?",
+   "answer_type": "answer",
+   "top1_score": 0.508,
+   "top_docs": [
+    "YGPA-032",
+    "LAW-010",
+    "YGPA-012",
+    "YGPA-012",
+    "YGPA-011"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 4.28,
+   "total_s": 4.88,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "접안료 및 정박료의 최저액은 3,000원입니다[1][2]."
+  },
+  {
+   "id": "f06",
+   "group": "fee",
+   "question": "항만 창고 쓰면 외항화물은 1㎡에 한 달 얼마예요?",
+   "answer_type": "answer",
+   "top1_score": 0.716,
+   "top_docs": [
+    "YGPA-032",
+    "LAW-010",
+    "YGPA-032",
+    "LAW-010",
+    "YGPA-034"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 4.68,
+   "total_s": 5.36,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "창고(상옥) 외항화물은 1㎡당 1개월에 1,029원입니다[1]."
+  }
+ ]
+}

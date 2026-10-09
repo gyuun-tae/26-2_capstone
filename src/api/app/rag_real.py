@@ -12,7 +12,7 @@ import httpx
 from pydantic import ValidationError
 
 from app import contacts, gate, gpu, rerank, search
-from app.actions import ACTIONS
+from app.actions import ACTIONS, PORT_MIS
 from app.prompt import (NO_EVIDENCE, NO_EVIDENCE_MAX, SHORT_QUESTION, UNKNOWN_PHRASE, CitationFilter, ContactFilter, EvidenceWordFilter, Meta, MetaFilter, RuleLineFilter,
                         build_messages, parse_meta, violations)
 from app.rag import Answer
@@ -63,6 +63,9 @@ def search_query(messages, follow_up: bool = False) -> str:
     return f"{previous[-1]}\n{last}" if (follow_up or len(last) < SHORT_QUESTION) and previous else last
 
 
+ONLINE_PORT_MIS = "온라인 신청: 항만운영정보시스템(Port-MIS)"  # scripts/27 법령 서식 청크의 안내 줄
+
+
 def build_actions(meta: Meta, hits: list[dict], text: str) -> list[Action]:
     """확인 불가: 대표전화. 되묻기: 없음.
     답변: LLM이 '작성·제출할 서식'으로 고르고 본문에도 인용한 서식 청크의 다운로드 버튼 + 고정 링크 + 인용한 문서의 담당 연락처.
@@ -85,6 +88,9 @@ def build_actions(meta: Meta, hits: list[dict], text: str) -> list[Action]:
     # 고정 링크는 근거에 그 서비스가 실제로 나올 때만 (LLM이 관련 없는 질문에 고르는 것을 막는다)
     evidence = " ".join(h["chunk"]["text"] for h in hits).lower()
     links = [ACTIONS[k][0] for k in dict.fromkeys(meta.keys) if ACTIONS[k][2] in evidence]
+    # 인용한 서식에 "온라인 신청: …Port-MIS" 안내가 있으면 LLM이 고르지 않아도 Port-MIS 링크 (w01: 재정렬로 서식이 [1]이 되면 자주 빠뜨림)
+    if PORT_MIS not in links and any(ONLINE_PORT_MIS in hits[i - 1]["chunk"]["text"] for i in cited if 1 <= i <= len(hits)):
+        links.append(PORT_MIS)
     cited_docs = [hits[i - 1]["chunk"]["doc_id"] for i in dict.fromkeys(order) if 1 <= i <= len(hits)]
     return actions + links + contacts.for_docs(cited_docs)
 

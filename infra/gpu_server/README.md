@@ -1,4 +1,4 @@
-# GPU 서버 — LLM(Qwen3-32B)·임베딩(BGE-M3) 서빙
+# GPU 서버 — LLM(Qwen3-32B)·임베딩(BGE-M3)·재정렬·판정(Qwen3-14B) 서빙
 
 실행 방식 B: Render(API·조립) + Neon(로그·벡터) + **GPU 서버(임베딩·답변 생성)**. 이 문서는 GPU 서버에서 답변 생성(Qwen3-32B)과 임베딩(BGE-M3) 모델을 켜는 방법이다.
 
@@ -8,8 +8,8 @@
 | 하드웨어 | RTX 5090 × 2 (각 32GB, Blackwell sm120), RAM 123GB, 디스크 800GB |
 | 소프트웨어 | Python 3.12, uv, vLLM 0.30.0, PyTorch 2.13.0+cu130 (`~/llm-serve/.venv`) |
 | 모델 | 생성 `Qwen/Qwen3-32B-AWQ` (4bit, 이름 `qwen3-32b`) · 임베딩 `BAAI/bge-m3` @ `5617a9f6` (이름 `bge-m3`) |
-| GPU 배정 | 1번 = Qwen3-32B, 0번 = BGE-M3 |
-| 주소 | 생성 `127.0.0.1:8100`, 임베딩 `127.0.0.1:8101` (서버 안에서만 접속). 외부(Render)는 관문 `127.0.0.1:8200` → 터널 주소로만 접속 |
+| GPU 배정 | 1번 = Qwen3-32B, 0번 = BGE-M3(0.20) + 재정렬(0.10) + 판정 Qwen3-14B(0.55) |
+| 주소 | 생성 `127.0.0.1:8100`, 임베딩 `127.0.0.1:8101`, 재정렬 `8102`, 판정 `8103` (서버 안에서만 접속). 외부(Render)는 관문 `127.0.0.1:8200` → 터널 주소로만 접속 |
 | 인증 | `~/llm-serve/.api_key` (권한 600). 내용을 저장소·채팅에 올리지 않는다 |
 
 ## 처음 설치 (관리자 권한 불필요, 홈 폴더 안)
@@ -28,10 +28,11 @@ hf download Qwen/Qwen3-32B-AWQ
 ```bash
 cd ~/llm-serve
 R=https://raw.githubusercontent.com/gyuun-tae/26-2_capstone/main/infra/gpu_server
-for f in start_qwen.sh start_bge.sh start_gateway.sh start_tunnel.sh gateway.py check_embedding.py check_gateway.py; do curl -fsSO $R/$f; done   # 스크립트 받기
+for f in start_qwen.sh start_bge.sh start_reranker.sh start_gate.sh start_gateway.sh start_tunnel.sh gateway.py check_embedding.py check_gateway.py; do curl -fsSO $R/$f; done   # 스크립트 받기
 bash start_qwen.sh                 # 생성 (세션 qwen, 로그 vllm.log). READY가 나오면 준비 완료
 bash start_bge.sh                  # 임베딩 (세션 bge, 로그 bge.log)
 bash start_reranker.sh             # 재정렬 (세션 reranker, 로그 reranker.log). 선택 — API 기본은 RAG_RERANK=off (docs/handoff/28_rerank.md)
+bash start_gate.sh                 # 답변 전 판정 Qwen3-14B (세션 gate, 로그 gate.log). 선택 — API 기본은 RAG_GATE=off, 켤 땐 재정렬과 함께 (docs/handoff/31_answer_gate.md)
 tmux attach -t qwen                # 실행 화면 보기 (나올 때 Ctrl+B 다음 D)
 tmux kill-session -t qwen          # 끄기 (임베딩은 -t bge)
 ```

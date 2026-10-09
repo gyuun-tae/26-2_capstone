@@ -1,0 +1,64 @@
+{
+ "dataset": "dev_questions_v3.jsonl",
+ "index_version": "bge-m3-dense-2e26c2fc2e81",
+ "run_at": "2026-10-09T12:39:17.079019+00:00",
+ "summary": {
+  "retrieval": "1/1",
+  "retrieval@1": "1/1",
+  "type": "1/1",
+  "buttons": "1/1",
+  "mention": "0/0",
+  "lead": "0/0",
+  "absent": "0/0",
+  "contact_btn": "0/0",
+  "contact": "0/0",
+  "type_by_group": {
+   "followup": "1/1"
+  },
+  "uncited_lines_total": 0,
+  "violations_total": 0,
+  "unsupported_numbers_total": 0,
+  "first_token_s": {
+   "mean": 6.26,
+   "median": 6.26,
+   "max": 6.26
+  }
+ },
+ "rows": [
+  {
+   "id": "m01",
+   "group": "followup",
+   "question": "체육시설",
+   "answer_type": "answer",
+   "top1_score": 0.763,
+   "top_docs": [
+    "YGPA-005",
+    "YGPA-005",
+    "YGPA-033",
+    "LAW-010",
+    "LAW-010"
+   ],
+   "downloads": [
+    "YGPA-033"
+   ],
+   "port_mis": false,
+   "contacts": [
+    "체육시설 예약 문의 061-793-8270"
+   ],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 1,
+   "unsupported_numbers": [],
+   "first_token_s": 6.26,
+   "total_s": 8.68,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "buttons": true
+   },
+   "answer": "테니스장의 사용료는 평일 및 토·일요일의 야간 이용 시 1시간당 3,000원입니다[1].  \n평일 주간 및 토·일요일 주간 이용은 무료개방입니다[1].\n\n1. 체육시설 이용 신청서를 작성합니다[3]\n2. 사용료를 KEB하나은행 289-910015-18504 여수광양항만관리 주식회사 계좌에 입금합니다[3]\n3. 입금 후 이용 신청서를 제출합니다[3]"
+  }
+ ]
+}

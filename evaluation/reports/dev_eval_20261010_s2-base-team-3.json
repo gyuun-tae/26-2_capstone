@@ -1,0 +1,64 @@
+{
+ "dataset": "dev_questions_team_v1.jsonl",
+ "index_version": "bge-m3-dense-2e26c2fc2e81",
+ "run_at": "2026-10-09T15:26:04.895456+00:00",
+ "summary": {
+  "retrieval": "0/0",
+  "retrieval@1": "0/0",
+  "type": "1/1",
+  "buttons": "0/1",
+  "mention": "0/0",
+  "lead": "0/0",
+  "absent": "0/0",
+  "contact_btn": "0/0",
+  "contact": "0/0",
+  "type_by_group": {
+   "team": "1/1"
+  },
+  "uncited_lines_total": 1,
+  "violations_total": 0,
+  "unsupported_numbers_total": 0,
+  "first_token_s": {
+   "mean": 2.06,
+   "median": 2.06,
+   "max": 2.06
+  }
+ },
+ "rows": [
+  {
+   "id": "t20",
+   "group": "team",
+   "question": "출입증 발급 수수료는 얼마인가요?",
+   "answer_type": "answer",
+   "top1_score": 0.604,
+   "top_docs": [
+    "LAW-021",
+    "LAW-009",
+    "YGPA-025",
+    "YGPA-032",
+    "YGPA-023"
+   ],
+   "downloads": [
+    "YGPA-025",
+    "YGPA-023"
+   ],
+   "port_mis": false,
+   "contacts": [
+    "항만출입증 담당자 (광양) 061-797-4434",
+    "항만출입증 담당자 (여수) 061-692-4336"
+   ],
+   "options": [],
+   "uncited_lines": 1,
+   "violations": [],
+   "contacts_from_evidence": 2,
+   "unsupported_numbers": [],
+   "first_token_s": 2.06,
+   "total_s": 3.6,
+   "checks": {
+    "type": true,
+    "buttons": false
+   },
+   "answer": "출입증 발급 수수료는 별도로 명시되어 있지 않습니다. \n\n항만상시출입증을 발급받기 위해서는 \"항만상시출입증발급신청서\"[3]를 작성해야 합니다.  \n항만시설출입업체 등록을 위해서는 \"항만시설출입업체등록신청서\"[5]를 작성해야 합니다."
+  }
+ ]
+}

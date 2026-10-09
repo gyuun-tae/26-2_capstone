@@ -1,0 +1,97 @@
+{
+ "dataset": "dev_questions_real_v1.jsonl",
+ "index_version": "bge-m3-dense-2e26c2fc2e81",
+ "run_at": "2026-10-09T12:35:30.849608+00:00",
+ "summary": {
+  "retrieval": "1/2",
+  "retrieval@1": "1/2",
+  "type": "1/2",
+  "buttons": "2/2",
+  "mention": "0/1",
+  "lead": "0/0",
+  "absent": "0/0",
+  "contact_btn": "0/0",
+  "contact": "1/1",
+  "type_by_group": {
+   "real": "1/2"
+  },
+  "uncited_lines_total": 0,
+  "violations_total": 0,
+  "unsupported_numbers_total": 0,
+  "first_token_s": {
+   "mean": 3.04,
+   "median": 3.04,
+   "max": 3.56
+  }
+ },
+ "rows": [
+  {
+   "id": "r02",
+   "group": "real",
+   "question": "여수광양항에 위험물 컨테이너를 반입할 때 사전 승인 절차가 어떻게 되나요?",
+   "answer_type": "unknown",
+   "top1_score": 0.682,
+   "top_docs": [
+    "YGPA-032",
+    "YGPA-032",
+    "YGPA-036",
+    "YGPA-031",
+    "YGPA-008"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [
+    "여수광양항만공사 대표전화 061-797-4300"
+   ],
+   "options": [],
+   "uncited_lines": 1,
+   "violations": [],
+   "contacts_from_evidence": 1,
+   "unsupported_numbers": [],
+   "first_token_s": 3.56,
+   "total_s": 4.71,
+   "checks": {
+    "type": false,
+    "retrieval": false,
+    "retrieval@1": false,
+    "mention": false,
+    "contact": true,
+    "buttons": true
+   },
+   "answer": "확인한 공식 자료에 사전 승인 절차에 대한 내용은 포함되어 있지 않습니다. 확인한 공식 자료만으로는 답을 확정하기 어렵습니다. 담당 부서를 모르시면 아래 대표전화로 문의해 주세요."
+  },
+  {
+   "id": "r06",
+   "group": "real",
+   "question": "광양항 배후단지 입주 절차와 제출서류, 담당부서를 알려주세요.",
+   "answer_type": "answer",
+   "top1_score": 0.777,
+   "top_docs": [
+    "YGPA-035",
+    "YGPA-039",
+    "YGPA-036",
+    "YGPA-034",
+    "YGPA-038"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [
+    "물류단지부 (배후단지 담당) 061-797-4456"
+   ],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 1,
+   "unsupported_numbers": [],
+   "first_token_s": 2.53,
+   "total_s": 11.09,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "buttons": true
+   },
+   "answer": "광양항 배후단지 입주 절차는 입주기업 모집부터 영업개시까지 여러 단계로 구성되어 있으며, 제출 서류와 담당 부서도 명확히 정해져 있습니다[3].\n\n1. 입주기업 모집 — 기한: 공고기간; 담당: 항만공사[3]\n2. 우선협상대상자 선정 — 기한: 〃; 담당: 항만공사[3]\n3. 결격사유 조회 — 기한: 〃; 담당: 관련기관 등[3]\n4. 입주계약 신청 — 기한: 〃; 담당: 입주대상기업 → 항만공사[3]\n5. 입주계약 체결 — 기한: 입주계약 아내 받은 날부터 90일 이내; 담당: 입주대상기업 ↔ 항만공사[3]\n6. 임대차계약 체결 — 기한: 입주계약 체결일로부터 60일 이내; 담당: 입주대상기업 ↔ 항만공사[3]\n7. 건축허가 및 신고 — 기한: 임대차계약서 명시; 담당: 입주기업 → 여수청[3]\n8. 건축착공 — 기한: 사업계획서 명시; 담당: 입주기업[3]\n9. 영업개시 — 기한: -; 담당: 입주기업 → 항만공사[3]\n\n제출 서류는 다음과 같습니다[2]:\n1. 자유무역지역 입주계약 신청서[2]\n2. 사업계획서[2]\n3. 결격사유 조회서[2]\n4. 개인정보동의 수집 및 활용동의서[2]\n5. 국세 및 지방세 납세증명서[2]\n6. 해당 사업에 관한 인가·허가·면허·등록 등을 받았음을 증명하는 서류[2]\n7. 사업자등록증[2]\n8. 법인인감증명서[2]\n9. 외국인 투자기업인 경우「외국인투자촉진법」제2조제1항제4호에 해당함을 증명하는 서류[2]\n10. 기본증명서[2]\n11. 법인등기부등본[2]\n\n담당 부서는 물류단지부이며, 전화번호는 061-797-4456입니다[1][2][3]."
+  }
+ ]
+}

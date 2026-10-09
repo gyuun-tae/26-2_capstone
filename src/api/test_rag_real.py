@@ -101,6 +101,13 @@ law_form = form | {"chunk_id": "lf1", "title": "선박입출항법 시행규칙"
 done = run("출입 신고서 어디서 받아요?", ["내항선 출입 신고서를 씁니다[1].", '@@META {"type": "answer", "actions": ["port_mis"], "forms": [1]}'],
            hits=[{"chunk": law_form, "score": 0.6}])[-1][1]
 assert [a["label"] for a in done["actions"]] == ["내항선 출입 신고서(HWP)", "Port-MIS 열기"], done["actions"]
+# 그 서식을 인용하면 LLM이 port_mis를 고르지 않아도 Port-MIS 링크 (w01). 인용하지 않으면 붙이지 않는다
+done = run("출입 신고서 어디서 받아요?", ["국가법령정보센터에서 받습니다[1].", '@@META {"type": "answer", "actions": [], "forms": []}'],
+           hits=[{"chunk": law_form, "score": 0.6}])[-1][1]
+assert [a["label"] for a in done["actions"]] == ["Port-MIS 열기"], done["actions"]
+done = run("출입 신고서 어디서 받아요?", ["다른 근거입니다[2].", '@@META {"type": "answer", "actions": [], "forms": []}'],
+           hits=[{"chunk": law_form, "score": 0.6}, {"chunk": form | {"chunk_id": "f2"}, "score": 0.6}])[-1][1]
+assert "Port-MIS 열기" not in [a["label"] for a in done["actions"]], done["actions"]
 
 # 2-3. 정리 줄 항목을 본문 줄로 따로 적어도("forms: [1]") 화면에 나가지 않고, 뒤의 @@META를 읽는다. 중국식 마침표는 바꾼다
 ev = run("서식", ["서식이 있습니다[2]。\n", "forms: [2]\n", '@@META {"type": "answer", "forms": [2]}'])

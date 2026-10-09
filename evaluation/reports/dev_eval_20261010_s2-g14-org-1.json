@@ -1,0 +1,63 @@
+{
+ "dataset": "dev_questions_org_v1.jsonl",
+ "index_version": "bge-m3-dense-2e26c2fc2e81",
+ "run_at": "2026-10-09T15:24:49.351283+00:00",
+ "summary": {
+  "retrieval": "1/1",
+  "retrieval@1": "1/1",
+  "type": "1/1",
+  "buttons": "1/1",
+  "mention": "0/1",
+  "lead": "0/0",
+  "absent": "0/0",
+  "contact_btn": "0/0",
+  "contact": "0/0",
+  "type_by_group": {
+   "dept": "1/1"
+  },
+  "uncited_lines_total": 0,
+  "violations_total": 0,
+  "unsupported_numbers_total": 0,
+  "first_token_s": {
+   "mean": 3.75,
+   "median": 3.75,
+   "max": 3.75
+  }
+ },
+ "rows": [
+  {
+   "id": "o09",
+   "group": "dept",
+   "question": "항만안내선은 어느 부서에서 담당해요?",
+   "answer_type": "answer",
+   "top1_score": 0.632,
+   "top_docs": [
+    "YGPA-008",
+    "LAW-020",
+    "LAW-019",
+    "LAW-021",
+    "YGPA-023"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [
+    "항만안내선 담당 061-797-4438"
+   ],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 1,
+   "unsupported_numbers": [],
+   "first_token_s": 3.75,
+   "total_s": 5.25,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": false,
+    "buttons": true
+   },
+   "answer": "※ 정부의 자원안보 위기 주의단계 경보 발령에 따라, 경보 해제 시까지 항만안내선 예약이 제한됩니다[1].\n\n항만안내선은 여수광양항만공사에서 운영하며, 담당 부서의 연락처는 061-797-4438입니다[1]."
+  }
+ ]
+}

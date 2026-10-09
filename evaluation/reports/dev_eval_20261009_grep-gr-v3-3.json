@@ -1,0 +1,270 @@
+{
+ "dataset": "dev_questions_v3.jsonl",
+ "index_version": "bge-m3-dense-2e26c2fc2e81",
+ "run_at": "2026-10-09T12:38:24.214317+00:00",
+ "summary": {
+  "retrieval": "5/5",
+  "retrieval@1": "5/5",
+  "type": "7/7",
+  "buttons": "7/7",
+  "mention": "0/1",
+  "lead": "0/0",
+  "absent": "0/0",
+  "contact_btn": "0/0",
+  "contact": "2/2",
+  "type_by_group": {
+   "answer": "1/1",
+   "clarify": "2/2",
+   "hard": "2/2",
+   "unknown": "2/2"
+  },
+  "uncited_lines_total": 0,
+  "violations_total": 0,
+  "unsupported_numbers_total": 0,
+  "first_token_s": {
+   "mean": 3.44,
+   "median": 2.88,
+   "max": 7.0
+  }
+ },
+ "rows": [
+  {
+   "id": "a13",
+   "group": "answer",
+   "question": "출입증 잃어버렸는데 뭐 써서 내야 돼요?",
+   "answer_type": "answer",
+   "top1_score": 0.591,
+   "top_docs": [
+    "YGPA-022",
+    "YGPA-025",
+    "YGPA-023",
+    "YGPA-024",
+    "LAW-009"
+   ],
+   "downloads": [
+    "YGPA-022"
+   ],
+   "port_mis": false,
+   "contacts": [
+    "항만출입증 담당자 (광양) 061-797-4434",
+    "항만출입증 담당자 (여수) 061-692-4336"
+   ],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 2,
+   "unsupported_numbers": [],
+   "first_token_s": 7.0,
+   "total_s": 9.77,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "buttons": true
+   },
+   "answer": "출입증을 분실한 경우, 「출입증분실경위서」를 작성하여 제출해야 합니다[1].  \n\n1. 분실(훼손) 경위를 6하 원칙(6W: What, When, Where, Who, Why, How)에 따라 상세히 기재합니다[1]  \n2. 분실된 출입증의 구분(인원/차량), 번호, 차량번호 등을 정확히 입력합니다[1]  \n3. 본인의 관리 부주의로 인한 문제에 대해 책임을 지겠다는 내용을 기재합니다[1]  \n4. 상시출입증인 경우, 업체 대표자의 확인서를 함께 제출합니다[1]"
+  },
+  {
+   "id": "c04",
+   "group": "clarify",
+   "question": "여객선터미널 위치 알려주세요",
+   "answer_type": "clarify",
+   "top1_score": 0.658,
+   "top_docs": [
+    "YGPA-009",
+    "YGPA-010",
+    "YGPA-009",
+    "LAW-021",
+    "YGPA-008"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [
+    "여수연안여객선터미널",
+    "여수엑스포여객선터미널"
+   ],
+   "uncited_lines": 2,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 2.43,
+   "total_s": 5.42,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "buttons": true
+   },
+   "answer": "여수에 있는 여객선터미널은 여수연안여객선터미널과 여수엑스포여객선터미널이 있습니다.  \n\n1. **여수연안여객선터미널**은 전남 여수시 여객선터미널길 17에 위치하고, 연락처는 061-810-0121~4입니다[1].  \n2. **여수엑스포여객선터미널**은 전남 여수시 엑스포대로 320-66에 위치하고, 연락처는 061-810-0150~5입니다[2].  \n\n어느 터미널에 대한 정보를 더 자세히 알고 싶으신가요?"
+  },
+  {
+   "id": "c05",
+   "group": "clarify",
+   "question": "부두 시설 규모가 어떻게 돼요?",
+   "answer_type": "clarify",
+   "top1_score": 0.622,
+   "top_docs": [
+    "YGPA-016",
+    "YGPA-014",
+    "YGPA-015",
+    "YGPA-011",
+    "YGPA-011"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [
+    "광양항 하포일반부두",
+    "광양항 컨테이너 부두",
+    "광양항 자동차 부두",
+    "여수항 크루즈부두"
+   ],
+   "uncited_lines": 1,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 1.42,
+   "total_s": 2.66,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "buttons": true
+   },
+   "answer": "어느 부두의 시설 규모를 알고 싶으신가요?"
+  },
+  {
+   "id": "u02",
+   "group": "unknown",
+   "question": "부산항 신항 컨테이너 터미널 운영사는 어디예요?",
+   "answer_type": "unknown",
+   "top1_score": 0.509,
+   "top_docs": [
+    "YGPA-014",
+    "LAW-010",
+    "LAW-005",
+    "YGPA-032",
+    "YGPA-027"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [
+    "여수광양항만공사 대표전화 061-797-4300"
+   ],
+   "options": [],
+   "uncited_lines": 1,
+   "violations": [],
+   "contacts_from_evidence": 1,
+   "unsupported_numbers": [],
+   "first_token_s": 2.85,
+   "total_s": 2.85,
+   "checks": {
+    "type": true,
+    "contact": true,
+    "buttons": true
+   },
+   "answer": "확인한 공식 자료만으로는 답을 확정하기 어렵습니다. 질문을 조금 더 구체적으로 써 주시거나, 아래 대표전화로 문의해 주세요."
+  },
+  {
+   "id": "u04",
+   "group": "unknown",
+   "question": "요즘 컨테이너 해상 운임 얼마나 해요?",
+   "answer_type": "unknown",
+   "top1_score": 0.636,
+   "top_docs": [
+    "YGPA-032",
+    "LAW-010",
+    "LAW-010",
+    "YGPA-032",
+    "YGPA-014"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [
+    "여수광양항만공사 대표전화 061-797-4300"
+   ],
+   "options": [],
+   "uncited_lines": 1,
+   "violations": [],
+   "contacts_from_evidence": 1,
+   "unsupported_numbers": [],
+   "first_token_s": 2.88,
+   "total_s": 2.88,
+   "checks": {
+    "type": true,
+    "contact": true,
+    "buttons": true
+   },
+   "answer": "확인한 공식 자료만으로는 답을 확정하기 어렵습니다. 질문을 조금 더 구체적으로 써 주시거나, 아래 대표전화로 문의해 주세요."
+  },
+  {
+   "id": "h12",
+   "group": "hard",
+   "question": "항만시설 사용료 감면 조항이 두 개 겹치면 어떻게 적용돼요?",
+   "answer_type": "answer",
+   "top1_score": 0.653,
+   "top_docs": [
+    "YGPA-032",
+    "LAW-010",
+    "YGPA-032",
+    "LAW-005",
+    "LAW-006"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 3.27,
+   "total_s": 6.61,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": false,
+    "buttons": true
+   },
+   "answer": "확인한 공식 자료 제8조[1]와 제10조[2]는 항만시설사용료의 감면 절차에 관한 규정으로, 각각 여수광양항만공사와 무역항 등에 적용됩니다. 두 규정이 겹치는 경우는 해당 항만의 관할 기관과 법적 근거에 따라 적용됩니다[1][2]. \n\n1. 여수광양항만공사 관할 내에서는 감면 등에 대한 의견을 사장에게 제출해야 하며, 사장은 항만위원회 의결을 거쳐 감면 여부를 결정할 수 있습니다[1].\n2. 무역항 등은 감면 등에 대한 의견을 해당 항만관리청에 제출해야 하며, 항만관리청은 해양수산부장관에게 제출할 수 있습니다. 해양수산부장관은 항만시설사용료 조정자문위원회의 의견을 들어 감면 여부를 결정할 수 있습니다[2]."
+  },
+  {
+   "id": "h15",
+   "group": "hard",
+   "question": "출입즘 잃어버렸어요 어케해요",
+   "answer_type": "answer",
+   "top1_score": 0.507,
+   "top_docs": [
+    "YGPA-022",
+    "LAW-015",
+    "YGPA-025",
+    "YGPA-005",
+    "YGPA-023"
+   ],
+   "downloads": [
+    "YGPA-022"
+   ],
+   "port_mis": false,
+   "contacts": [
+    "항만출입증 담당자 (광양) 061-797-4434",
+    "항만출입증 담당자 (여수) 061-692-4336"
+   ],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 2,
+   "unsupported_numbers": [],
+   "first_token_s": 4.2,
+   "total_s": 6.63,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "buttons": true
+   },
+   "answer": "출입증을 분실하셨다면, 3일 이내에 분실 경위서 및 업체(단체) 대표의 확인서를 제출하셔야 합니다[3].  \n\n1. 분실(훼손) 경위서를 작성합니다. 6W 원칙(What, When, Where, Who, Why, How)에 따라 분실 경위를 상세히 기재합니다[1].  \n2. 상시출입증의 경우, 업체 대표자의 확인서를 함께 제출해야 합니다[1].  \n3. 분실 경위서와 확인서를 여수광양항만공사에 제출합니다[1][3]."
+  }
+ ]
+}

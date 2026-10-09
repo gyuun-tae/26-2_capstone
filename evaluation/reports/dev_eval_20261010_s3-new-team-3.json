@@ -1,0 +1,61 @@
+{
+ "dataset": "dev_questions_team_v1.jsonl",
+ "index_version": "bge-m3-dense-2e26c2fc2e81",
+ "run_at": "2026-10-09T15:55:29.184310+00:00",
+ "summary": {
+  "retrieval": "0/0",
+  "retrieval@1": "0/0",
+  "type": "1/1",
+  "buttons": "1/1",
+  "mention": "0/0",
+  "lead": "0/0",
+  "absent": "0/0",
+  "contact_btn": "0/0",
+  "contact": "1/1",
+  "type_by_group": {
+   "team": "1/1"
+  },
+  "uncited_lines_total": 0,
+  "violations_total": 0,
+  "unsupported_numbers_total": 0,
+  "first_token_s": {
+   "mean": 4.26,
+   "median": 4.26,
+   "max": 4.26
+  }
+ },
+ "rows": [
+  {
+   "id": "t20",
+   "group": "team",
+   "question": "출입증 발급 수수료는 얼마인가요?",
+   "answer_type": "unknown",
+   "top1_score": 0.583,
+   "top_docs": [
+    "YGPA-025",
+    "LAW-021",
+    "LAW-009",
+    "YGPA-023",
+    "YGPA-032"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [
+    "여수광양항만공사 대표전화 061-797-4300"
+   ],
+   "options": [],
+   "uncited_lines": 1,
+   "violations": [],
+   "contacts_from_evidence": 1,
+   "unsupported_numbers": [],
+   "first_token_s": 4.26,
+   "total_s": 5.77,
+   "checks": {
+    "type": true,
+    "contact": true,
+    "buttons": true
+   },
+   "answer": "항만상시출입증 발급 수수료는 별도로 명시되어 있지 않습니다[1]. \n\n항만시설출입업체 등록 수수료는 별도로 명시되어 있지 않습니다[4].\n\n확인한 공식 자료만으로는 답을 확정하기 어렵습니다. 담당 부서를 모르시면 아래 대표전화로 문의해 주세요."
+  }
+ ]
+}
