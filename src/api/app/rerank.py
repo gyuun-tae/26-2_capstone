@@ -59,7 +59,7 @@ async def rerank(query: str, pool: list[dict], k: int) -> list[dict]:
     """pool: 벡터 순서 후보(법령 상한 없이). 앞 candidates()개만 재정렬하고, 나머지는 모자랄 때 채우는 데만 쓴다"""
     head, rest = pool[:candidates()], pool[candidates():]
     try:
-        scores = await gpu.rerank(query, [h["chunk"]["text"] for h in head], TIMEOUT, int(os.getenv("RAG_RERANK_TRUNCATE", TRUNCATE)))
+        scores = await gpu.rerank(query, [h.get("part") or h["chunk"]["text"] for h in head], TIMEOUT, int(os.getenv("RAG_RERANK_TRUNCATE", TRUNCATE)))
     except Exception as e:  # 재정렬이 안 되면 지금까지처럼 벡터 순서로
         logger.warning("재정렬 실패, 벡터 순서 사용: %s: %s", type(e).__name__, e)
         return by_vector(pool, k)

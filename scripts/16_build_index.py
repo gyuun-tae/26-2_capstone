@@ -6,6 +6,7 @@
 실행: .\\.venv\\Scripts\\python.exe -B .\\scripts\\16_build_index.py
       --reuse <색인 버전>: 임베딩 입력(제목·절 제목·본문)이 같은 청크는 그 색인의 벡터를 그대로 쓰고 새·바뀐 청크만
       임베딩한다 (모델 revision도 그 색인 것으로 고정). CPU 전체 재임베딩은 오래 걸리고 메모리를 많이 쓴다.
+      --parts: 긴 조문을 항 단위 자식 청크로도 색인한다 (검색에서 자식이 걸리면 부모를 넘김, src/rag/parts.py)
 결과: data/index/<색인 버전>/vectors.npy, chunks.jsonl, manifest.json (Git 제외)
 """
 import argparse
@@ -16,7 +17,7 @@ import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
-from rag import dense  # noqa: E402
+from rag import dense, parts  # noqa: E402
 
 
 def load_model(revision=None):
@@ -37,6 +38,7 @@ def main():
     ap.add_argument("--batch-size", type=int, default=4)
     ap.add_argument("--approved-only", action="store_true", help="승인 기록에서 승인된 청크만 (서비스용)")
     ap.add_argument("--reuse", help="벡터를 다시 쓸 기존 색인 버전 (data/index/<버전>)")
+    ap.add_argument("--parts", action="store_true", help="긴 조문의 항 단위 자식 청크도 색인 (승인된 부모에서만)")
     args = ap.parse_args()
     reuse = {}
     if args.reuse:
@@ -58,6 +60,10 @@ def main():
         chunks = [c for c in reviewed if c["index_approved"]]
         if held:
             print(f"승인 안 된 청크 {len(held)}개 제외: {sorted({c['doc_id'] for c in held})[:10]}")
+    parents = len(chunks)
+    if args.parts:
+        chunks = parts.add(chunks)
+        print(f"자식 청크 {len(chunks) - parents}개 추가 (부모 {len({c['parent_chunk_id'] for c in chunks if c.get('parent_chunk_id')})}개)")
     model, revision = load_model(args.revision)
     print(f"청크 {len(chunks)}개 색인 (제외: {excluded}), 모델 {dense.MODEL_ID}@{revision[:12]}")
 
@@ -84,6 +90,8 @@ def main():
         "max_tokens": dense.MAX_TOKENS,
         "tokens": {"max": max(tokens), "mean": round(sum(tokens) / len(tokens), 1)},
         "chunk_count": len(chunks),
+        "parts": ({"count": len(chunks) - parents, "min_chars": parts.MIN_CHARS, "kinds": sorted(parts.KINDS)}
+                  if args.parts else None),
         "excluded": excluded,
         "approved_count": sum(bool(c.get("index_approved")) for c in chunks),
         "reused_vectors_from": args.reuse,

@@ -32,26 +32,34 @@ SCOPED_DOCS = {
     "YGPA-030": ("통과",),  # 여수항ㆍ광양항 통과선박 운영 지침
 }
 
-# 거리 → 문서별 순위(rn) → 문서당 상한 → 종류별 순위(rg) → 법령 조문·법령 서식 상한 → 상위 k개만 청크 원문과 합친다.
-# 종류(kind): law = 법령 조문·별표, form = 법령 서식, other = 그 밖. 청크 수백 개라 전체 비교
+# 거리 → 자식 청크(항 단위, src/rag/parts.py)는 부모 조문으로 합침(unit, 가장 가까운 거리) → 문서별 순위(rn) → 문서당 상한
+# → 종류별 순위(rg) → 법령 조문·법령 서식 상한 → 상위 k개만 부모 청크 원문과 합친다. 자식이 걸렸으면 그 항(part)도 돌려준다.
+# 종류(kind): law = 법령 조문·별표, form = 법령 서식, other = 그 밖. 청크 수천 개라 전체 비교
 SQL = text("""
-SELECT c.chunk, 1 - r.dist AS score
+SELECT c.chunk, 1 - r.dist AS score, r.part
 FROM (
-    SELECT chunk_id, dist, kind, row_number() OVER (PARTITION BY kind ORDER BY dist, chunk_id) AS rg
+    SELECT unit, dist, kind, part, row_number() OVER (PARTITION BY kind ORDER BY dist, unit) AS rg
     FROM (
-        SELECT chunk_id, dist, kind, row_number() OVER (PARTITION BY doc_id ORDER BY dist, chunk_id) AS rn
-        FROM (SELECT chunk_id, doc_id, embedding <=> CAST(:q AS vector) AS dist,
-                     CASE WHEN doc_id NOT LIKE 'LAW-%' THEN 'other'
-                          WHEN chunk->>'chunk_kind' = 'whole_form' THEN 'form' ELSE 'law' END AS kind
-              FROM rag_chunks WHERE index_version = :version AND NOT (doc_id = ANY(:excluded))) d
+        SELECT unit, dist, kind, part, row_number() OVER (PARTITION BY doc_id ORDER BY dist, unit) AS rn
+        FROM (
+            SELECT DISTINCT ON (unit) unit, doc_id, dist, kind, part
+            FROM (SELECT COALESCE(chunk->>'parent_chunk_id', chunk_id) AS unit, doc_id,
+                         embedding <=> CAST(:q AS vector) AS dist,
+                         CASE WHEN doc_id NOT LIKE 'LAW-%' THEN 'other'
+                              WHEN chunk->>'chunk_kind' = 'whole_form' THEN 'form' ELSE 'law' END AS kind,
+                         CASE WHEN chunk->>'parent_chunk_id' IS NOT NULL THEN chunk->>'text' END AS part
+                  FROM rag_chunks WHERE index_version = :version AND NOT (doc_id = ANY(:excluded))) d
+            ORDER BY unit, dist
+        ) u
     ) p
     WHERE rn <= :per_doc
 ) r
-JOIN rag_chunks c ON c.index_version = :version AND c.chunk_id = r.chunk_id
+JOIN rag_chunks c ON c.index_version = :version AND c.chunk_id = r.unit
 WHERE r.kind = 'other' OR (r.kind = 'law' AND r.rg <= :max_law) OR (r.kind = 'form' AND r.rg <= :max_form)
-ORDER BY r.dist, r.chunk_id
+ORDER BY r.dist, r.unit
 LIMIT :k
 """)
+
 
 
 def law_cap() -> int:
@@ -97,4 +105,5 @@ def search(query_vector: list[float], k: int = 5, question: str = "", max_law: i
             max_law = law_cap()
         rows = conn.execute(SQL, {"q": q, "version": version, "per_doc": MAX_PER_DOC, "max_law": max_law,
                                   "max_form": max_form, "k": k, "excluded": excluded_docs(question)}).all()
-    return [{"chunk": chunk, "score": float(score)} for chunk, score in rows]
+    # part: 자식(항)이 걸렸을 때 그 항 글 — 재정렬은 부모 전체 대신 이것을 읽는다 (app/rerank.py)
+    return [{"chunk": chunk, "score": float(score)} | ({"part": part} if part else {}) for chunk, score, part in rows]
