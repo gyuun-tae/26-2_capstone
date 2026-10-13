@@ -105,6 +105,17 @@ assert [a["label"] for a in done["actions"]] == ["내항선 출입 신고서(HWP
 done = run("출입 신고서 어디서 받아요?", ["국가법령정보센터에서 받습니다[1].", '@@META {"type": "answer", "actions": [], "forms": []}'],
            hits=[{"chunk": law_form, "score": 0.6}])[-1][1]
 assert [a["label"] for a in done["actions"]] == ["Port-MIS 열기"], done["actions"]
+# 본문이 Port-MIS를 빠뜨렸으면 안내 한 문장을 덧붙인다 (그 서식 번호로). 이미 말했으면 덧붙이지 않는다
+ev = run("출입 신고서 어디서 받아요?", ["국가법령정보센터에서 받습니다[1].", '@@META {"type": "answer", "actions": [], "forms": []}'],
+         hits=[{"chunk": law_form, "score": 0.6}])
+assert text_of(ev) == "국가법령정보센터에서 받습니다[1]." + rag_real.PORT_MIS_NOTE.format(n=1), text_of(ev)
+ev = run("출입 신고서 어디서 받아요?", ["Port-MIS에서도 신청할 수 있습니다[1].", '@@META {"type": "answer", "actions": [], "forms": []}'],
+         hits=[{"chunk": law_form, "score": 0.6}])
+assert text_of(ev) == "Port-MIS에서도 신청할 수 있습니다[1].", text_of(ev)
+# "작성할 서식: [2]" 줄(지시문 요약을 옮겨 적은 것)은 화면에 나가지 않고 인용으로 세지 않는다 (h11)
+ev = run("배후단지 입주 순서는?", ["입주 절차는 다음과 같습니다[1].\n", "\n작성할 서식: [2]\n", '@@META {"type": "answer", "actions": [], "forms": [2]}'],
+         hits=[{"chunk": form | {"chunk_id": "f4"}, "score": 0.6}, {"chunk": form | {"chunk_id": "f3"}, "score": 0.6}])
+assert text_of(ev).strip() == "입주 절차는 다음과 같습니다[1]." and not [a for a in ev[-1][1]["actions"] if a["type"] == "download"], ev
 done = run("출입 신고서 어디서 받아요?", ["다른 근거입니다[2].", '@@META {"type": "answer", "actions": [], "forms": []}'],
            hits=[{"chunk": law_form, "score": 0.6}, {"chunk": form | {"chunk_id": "f2"}, "score": 0.6}])[-1][1]
 assert "Port-MIS 열기" not in [a["label"] for a in done["actions"]], done["actions"]

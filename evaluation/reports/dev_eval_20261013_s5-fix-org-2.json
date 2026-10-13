@@ -1,0 +1,64 @@
+{
+ "dataset": "dev_questions_org_v1.jsonl",
+ "index_version": "bge-m3-dense-2e26c2fc2e81",
+ "run_at": "2026-10-13T02:15:18.125497+00:00",
+ "summary": {
+  "retrieval": "1/1",
+  "retrieval@1": "1/1",
+  "type": "1/1",
+  "buttons": "1/1",
+  "mention": "0/0",
+  "lead": "0/0",
+  "absent": "0/0",
+  "contact_btn": "0/0",
+  "contact": "0/0",
+  "type_by_group": {
+   "dept": "1/1"
+  },
+  "uncited_lines_total": 0,
+  "violations_total": 0,
+  "unsupported_numbers_total": 0,
+  "first_token_s": {
+   "mean": 2.88,
+   "median": 2.88,
+   "max": 2.88
+  }
+ },
+ "rows": [
+  {
+   "id": "o06",
+   "group": "dept",
+   "question": "담당부서를 찾고 싶어요.",
+   "answer_type": "clarify",
+   "top1_score": 0.542,
+   "top_docs": [
+    "ORG-006",
+    "LAW-002",
+    "ORG-013",
+    "ORG-005",
+    "LAW-007"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [
+    "기획조정실",
+    "AI디지털부",
+    "감사실"
+   ],
+   "uncited_lines": 1,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 2.88,
+   "total_s": 3.48,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "buttons": true
+   },
+   "answer": "어느 부서를 찾고 계십니까?"
+  }
+ ]
+}

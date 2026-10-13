@@ -64,6 +64,15 @@ def search_query(messages, follow_up: bool = False) -> str:
 
 
 ONLINE_PORT_MIS = "온라인 신청: 항만운영정보시스템(Port-MIS)"  # scripts/27 법령 서식 청크의 안내 줄
+PORT_MIS_NOTE = "\n\n온라인 신청은 항만운영정보시스템(Port-MIS)에서도 할 수 있습니다[{n}]."
+
+
+def online_port_mis_ref(hits: list[dict], text: str) -> int | None:
+    """본문이 인용한 근거 중 Port-MIS 온라인 신청 안내가 있는 첫 근거 번호"""
+    for n in dict.fromkeys(int(m) for m in re.findall(r"\[(\d+)\]", text)):
+        if 1 <= n <= len(hits) and ONLINE_PORT_MIS in hits[n - 1]["chunk"]["text"]:
+            return n
+    return None
 
 
 def build_actions(meta: Meta, hits: list[dict], text: str) -> list[Action]:
@@ -89,7 +98,7 @@ def build_actions(meta: Meta, hits: list[dict], text: str) -> list[Action]:
     evidence = " ".join(h["chunk"]["text"] for h in hits).lower()
     links = [ACTIONS[k][0] for k in dict.fromkeys(meta.keys) if ACTIONS[k][2] in evidence]
     # 인용한 서식에 "온라인 신청: …Port-MIS" 안내가 있으면 LLM이 고르지 않아도 Port-MIS 링크 (w01: 재정렬로 서식이 [1]이 되면 자주 빠뜨림)
-    if PORT_MIS not in links and any(ONLINE_PORT_MIS in hits[i - 1]["chunk"]["text"] for i in cited if 1 <= i <= len(hits)):
+    if PORT_MIS not in links and online_port_mis_ref(hits, text):
         links.append(PORT_MIS)
     cited_docs = [hits[i - 1]["chunk"]["doc_id"] for i in dict.fromkeys(order) if 1 <= i <= len(hits)]
     return actions + links + contacts.for_docs(cited_docs)
@@ -180,6 +189,11 @@ def answer(messages) -> Answer:
             yield DATE_NOTE  # 묻는 날짜는 없이 다른 내용(예: 절차)만 답한 경우. 지시문으로 고치면 다른 답이 흔들려 코드로 처리
             parts.append(DATE_NOTE)
             result.actions = [*result.actions, contacts.MAIN]
+        if parsed.kind == "answer" and "Port-MIS" not in text and (n := online_port_mis_ref(hits, text)):
+            # 인용한 서식에 온라인 신청 안내가 있는데 본문이 빠뜨린 경우 (w01: 재정렬로 서식이 [1]이 되면 자주 빠뜨림)
+            note = PORT_MIS_NOTE.format(n=n)
+            yield note
+            parts.append(note)
         if found := violations(text, len(hits)):
             logger.warning("답변 규칙 위반 %s (1위 %s)", found, hits[0]["chunk"]["chunk_id"])
 

@@ -1,0 +1,232 @@
+{
+ "dataset": "dev_questions_v3.jsonl",
+ "index_version": "bge-m3-dense-2e26c2fc2e81",
+ "run_at": "2026-10-13T02:14:54.337967+00:00",
+ "summary": {
+  "retrieval": "6/6",
+  "retrieval@1": "5/6",
+  "type": "5/6",
+  "buttons": "6/6",
+  "mention": "1/1",
+  "lead": "0/0",
+  "absent": "0/0",
+  "contact_btn": "0/0",
+  "contact": "0/0",
+  "type_by_group": {
+   "clarify": "4/5",
+   "hard": "1/1"
+  },
+  "uncited_lines_total": 2,
+  "violations_total": 0,
+  "unsupported_numbers_total": 0,
+  "first_token_s": {
+   "mean": 2.42,
+   "median": 1.84,
+   "max": 5.45
+  }
+ },
+ "rows": [
+  {
+   "id": "c01",
+   "group": "clarify",
+   "question": "사용료가 얼마예요?",
+   "answer_type": "clarify",
+   "top1_score": 0.618,
+   "top_docs": [
+    "LAW-010",
+    "LAW-010",
+    "YGPA-005",
+    "YGPA-032",
+    "YGPA-032"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [
+    "선박입출항료",
+    "접안료",
+    "정박료",
+    "화물입출항료"
+   ],
+   "uncited_lines": 1,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 5.45,
+   "total_s": 6.33,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": false,
+    "buttons": true
+   },
+   "answer": "어느 항만시설의 사용료를 알고 싶으신가요?"
+  },
+  {
+   "id": "c02",
+   "group": "clarify",
+   "question": "출입증 신청하려고 하는데요",
+   "answer_type": "clarify",
+   "top1_score": 0.606,
+   "top_docs": [
+    "YGPA-025",
+    "YGPA-024",
+    "YGPA-023",
+    "LAW-009",
+    "LAW-009"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [
+    "항만상시출입증 신청",
+    "항만상시출입증 기간연장 신청",
+    "항만시설출입업체 등록 신청"
+   ],
+   "uncited_lines": 1,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 1.22,
+   "total_s": 2.34,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "buttons": true
+   },
+   "answer": "어느 경우의 출입증을 신청하려고 하시나요?"
+  },
+  {
+   "id": "c03",
+   "group": "clarify",
+   "question": "예약은 어떻게 해요?",
+   "answer_type": "clarify",
+   "top1_score": 0.557,
+   "top_docs": [
+    "YGPA-007",
+    "YGPA-005",
+    "YGPA-006",
+    "YGPA-005",
+    "YGPA-008"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [
+    "홍보관 예약",
+    "체육시설 예약",
+    "항만안내선 예약"
+   ],
+   "uncited_lines": 1,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 1.95,
+   "total_s": 3.38,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "buttons": true
+   },
+   "answer": "※ 정부의 자원안보 위기 주의단계 경보 발령에 따라, 경보 해제 시까지 홍보관[1]과 항만안내선[5] 예약이 제한됩니다.\n\n어느 시설의 예약을 알고 싶으신가요?"
+  },
+  {
+   "id": "c04",
+   "group": "clarify",
+   "question": "여객선터미널 위치 알려주세요",
+   "answer_type": "answer",
+   "top1_score": 0.658,
+   "top_docs": [
+    "YGPA-009",
+    "YGPA-010",
+    "YGPA-009",
+    "LAW-021",
+    "YGPA-008"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 1,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 1.73,
+   "total_s": 3.37,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "buttons": true
+   },
+   "answer": "여수에 위치한 여객선터미널은 여수연안여객선터미널과 여수엑스포여객선터미널이 있습니다.\n\n1. 여수연안여객선터미널은 전남 여수시 여객선터미널길 17에 있습니다[1]\n2. 여수엑스포여객선터미널은 전남 여수시 엑스포대로 320-66에 있습니다[2]"
+  },
+  {
+   "id": "c05",
+   "group": "clarify",
+   "question": "부두 시설 규모가 어떻게 돼요?",
+   "answer_type": "answer",
+   "top1_score": 0.622,
+   "top_docs": [
+    "YGPA-016",
+    "YGPA-014",
+    "YGPA-015",
+    "LAW-002",
+    "YGPA-011"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 1,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 1.43,
+   "total_s": 4.34,
+   "checks": {
+    "type": false,
+    "retrieval": true,
+    "retrieval@1": true,
+    "buttons": true
+   },
+   "answer": "광양항과 여수항의 부두 시설 규모는 다음과 같습니다.\n\n1. 광양항 하포일반부두는 부두면적이 840천㎡이며, 잔교식과 케이슨식 형태로 구성되어 있습니다[1].  \n2. 광양항 컨테이너 부두는 부두면적이 1,906천㎡이며, 케이슨식 형태로 운영되고 있습니다[2].  \n3. 광양항 자동차 부두는 부두면적이 809천㎡이며, 케이슨식 형태로 운영되고 있습니다[3].  \n4. 여수항 크루즈부두는 길이 500m, 최저수심 11m, 접안능력 15만GT로 구성되어 있습니다[5]."
+  },
+  {
+   "id": "h11",
+   "group": "hard",
+   "question": "배후단지 입주하려면 어떤 순서로 진행돼요?",
+   "answer_type": "answer",
+   "top1_score": 0.608,
+   "top_docs": [
+    "YGPA-039",
+    "YGPA-036",
+    "LAW-001",
+    "YGPA-037",
+    "LAW-003"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [
+    "물류단지부 (배후단지 담당) 061-797-4456"
+   ],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 1,
+   "unsupported_numbers": [],
+   "first_token_s": 2.73,
+   "total_s": 5.53,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "광양항 배후단지 입주 절차는 다음과 같습니다[1][2].\n\n1. 입주기업 모집 공고 확인 및 신청[1][2]\n2. 우선협상대상자 선정[1][2]\n3. 결격사유 조회[1][2]\n4. 입주계약 신청[1][2]\n5. 입주계약 체결 (입주계약 아내 받은 날부터 90일 이내)[1][2]\n6. 임대차계약 체결 (입주계약 체결일로부터 60일 이내)[1][2]\n7. 건축허가 및 신고[1][2]\n8. 건축착공[1][2]\n9. 영업개시[1][2]"
+  }
+ ]
+}

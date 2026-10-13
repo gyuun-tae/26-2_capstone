@@ -1,0 +1,98 @@
+{
+ "dataset": "dev_questions_team_v1.jsonl",
+ "index_version": "bge-m3-dense-2e26c2fc2e81",
+ "run_at": "2026-10-13T02:14:13.012548+00:00",
+ "summary": {
+  "retrieval": "1/1",
+  "retrieval@1": "1/1",
+  "type": "2/2",
+  "buttons": "2/2",
+  "mention": "0/0",
+  "lead": "0/0",
+  "absent": "0/0",
+  "contact_btn": "0/0",
+  "contact": "0/0",
+  "type_by_group": {
+   "team": "2/2"
+  },
+  "uncited_lines_total": 0,
+  "violations_total": 0,
+  "unsupported_numbers_total": 0,
+  "first_token_s": {
+   "mean": 2.56,
+   "median": 2.56,
+   "max": 3.97
+  }
+ },
+ "rows": [
+  {
+   "id": "t03",
+   "group": "team",
+   "question": "필요한 신청 서식을 찾고 싶어요.",
+   "answer_type": "clarify",
+   "top1_score": 0.632,
+   "top_docs": [
+    "YGPA-001",
+    "LAW-015",
+    "YGPA-005",
+    "YGPA-021",
+    "LAW-021"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [
+    "항만운송사업 등록신청서",
+    "자유무역지역 입주계약 신청서",
+    "체육시설 사용 신청서",
+    "더드림스마트센터 이용 신청서"
+   ],
+   "uncited_lines": 1,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 3.97,
+   "total_s": 5.18,
+   "checks": {
+    "type": true,
+    "buttons": true
+   },
+   "answer": "어느 시설이나 사업의 신청 서식을 찾고 계신가요?"
+  },
+  {
+   "id": "t23",
+   "group": "team",
+   "question": "출입증 신청하려고 하는데요",
+   "answer_type": "clarify",
+   "top1_score": 0.606,
+   "top_docs": [
+    "YGPA-025",
+    "YGPA-024",
+    "YGPA-023",
+    "LAW-009",
+    "LAW-009"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [
+    "상시출입증(인원/차량) 신청",
+    "기간연장 신청",
+    "업체 등록 신청"
+   ],
+   "uncited_lines": 1,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 1.15,
+   "total_s": 2.17,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "buttons": true
+   },
+   "answer": "어느 유형의 출입증을 신청하려는지 확인 부탁드립니다."
+  }
+ ]
+}
