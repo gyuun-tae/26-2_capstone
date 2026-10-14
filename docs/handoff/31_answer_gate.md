@@ -126,3 +126,18 @@
 1. GPU 서버: `bash start_gate.sh` (처음엔 모델 약 9GB 받기) → `bash start_gateway.sh` → `python3 check_gateway.py`에 "판정 모델 OK"
 2. Render Environment: `RAG_GATE=on`, `RAG_RERANK=on` → Manual Deploy (재정렬 길이는 기본 1024)
 3. 끄기: 위 두 값을 지우거나 off. 판정 모델만 꺼져도 답변은 계속된다(판정 없이 답함, 로그 경고)
+
+## 실서비스 적용 (2026-10-14)
+
+10/14 팀 회의에서 켜기로 결정 → Render `RAG_GATE=on`, `RAG_RERANK=on` 배포 (색인 `bge-m3-dense-c8f1fc61affe`).
+관문 `/health` `{"bge":true,"qwen":true,"reranker":true,"gate":true}`. Render로 확인한 질문:
+
+| 질문 | 결과 |
+|---|---|
+| 위험물 컨테이너 반입 사전 승인 절차 | 답변, 근거 1위 LAW-012 (끔에서는 확인 불가) |
+| 감면 조항이 두 개 겹치면 | "감면율이 가장 높은 한 가지 사유만", 근거 1위 LAW-010 |
+| u02 부산항 신항 터미널 운영사 · u04 해상 운임 · 출입증 발급 수수료 | 확인 불가 + 대표전화 |
+| "부산항 운영사 알려줘" (u02를 줄인 말) | "부산항만공사" — 항만공사법 시행령 근거로 판정 통과. 실사용 질문으로 다시 볼 것 |
+
+첫 글자 1.4~4.0초. **운영**: GPU를 켤 때 qwen·bge·reranker·gate 4개 모두 필요. gate만 꺼지고 재정렬이 살아 있으면
+10/7의 "확인 불가 대신 답하기"가 다시 나오므로 `/health`의 `gate`를 확인한다.
