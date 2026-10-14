@@ -129,7 +129,7 @@
 
 ## 실서비스 적용 (2026-10-14)
 
-10/14 팀 회의에서 켜기로 결정 → Render `RAG_GATE=on`, `RAG_RERANK=on` 배포 (색인 `bge-m3-dense-c8f1fc61affe`).
+10/14 회의 전 팀 의견으로 켜기로 정리 → Render `RAG_GATE=on`, `RAG_RERANK=on` 배포 (색인 `bge-m3-dense-c8f1fc61affe`).
 관문 `/health` `{"bge":true,"qwen":true,"reranker":true,"gate":true}`. Render로 확인한 질문:
 
 | 질문 | 결과 |
