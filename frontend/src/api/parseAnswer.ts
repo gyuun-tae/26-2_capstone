@@ -71,6 +71,14 @@ export function plainText(text: string): string {
   return text.replace(CITE, '').replace(/\*\*/g, '').replace(/\s+([.,!?])/g, '$1').trim()
 }
 
+/** 답변 복사용 글: 굵게 표시를 빼고, 인용 번호가 가리키는 참고자료 제목·주소를 뒤에 붙인다 */
+export function copyText(text: string, sources: { title: string; source_url: string }[]): string {
+  const body = text.replace(/\*\*/g, '').trim()
+  if (sources.length === 0) return body
+  const refs = sources.map((s, i) => `[${i + 1}] ${s.title}${s.source_url ? ` ${s.source_url}` : ''}`)
+  return `${body}\n\n참고자료\n${refs.join('\n')}`
+}
+
 /** 근거 패널의 "이 근거가 뒷받침하는 답변": 답변에서 [n]이 붙은 문장만 모은다 */
 export function sentencesCiting(text: string, n: number): string[] {
   const marker = `[${n}]`

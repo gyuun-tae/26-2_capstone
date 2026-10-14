@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { hasSteps, parseAnswer, parseInline, sentencesCiting } from './parseAnswer'
+import { copyText, hasSteps, parseAnswer, parseInline, sentencesCiting } from './parseAnswer'
 
 describe('parseInline', () => {
   it('굵게와 인용 번호를 나눈다', () => {
@@ -45,5 +45,21 @@ describe('sentencesCiting', () => {
     expect(sentencesCiting(text, 1)).toEqual(['등록을 먼저 확인합니다.', '사용자 등록 여부 확인'])
     expect(sentencesCiting(text, 2)).toEqual(['서식은 따로 있어요.'])
     expect(sentencesCiting(text, 3)).toEqual([])
+  })
+})
+
+describe('copyText', () => {
+  it('굵게 표시를 빼고 참고자료 제목·주소를 번호대로 붙인다', () => {
+    const sources = [
+      { title: '항만시설 사용 규정', source_url: 'https://www.ygpa.or.kr/a' },
+      { title: '출입 신고서', source_url: '' },
+    ]
+    expect(copyText('**출입증**은 연장 신청합니다[1][2].', sources)).toBe(
+      '출입증은 연장 신청합니다[1][2].\n\n참고자료\n[1] 항만시설 사용 규정 https://www.ygpa.or.kr/a\n[2] 출입 신고서',
+    )
+  })
+
+  it('근거가 없으면 본문만', () => {
+    expect(copyText('대표전화로 문의해 주세요.', [])).toBe('대표전화로 문의해 주세요.')
   })
 })

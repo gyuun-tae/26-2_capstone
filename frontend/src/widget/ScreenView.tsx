@@ -1,6 +1,6 @@
-import { ChevronLeft, ChevronRight, CircleAlert, RotateCw, SearchX, ThumbsDown, ThumbsUp } from 'lucide-react'
-import { Fragment, type ReactNode } from 'react'
-import { hasSteps, parseAnswer, type Block, type Inline } from '../api/parseAnswer'
+import { Check, ChevronLeft, ChevronRight, CircleAlert, Copy, RotateCw, SearchX, ThumbsDown, ThumbsUp } from 'lucide-react'
+import { Fragment, useEffect, useState, type ReactNode } from 'react'
+import { copyText, hasSteps, parseAnswer, type Block, type Inline } from '../api/parseAnswer'
 import type { Action, ClarifyOption } from '../api/types'
 import type { Screen } from './useChat'
 import { splitActions } from './actions'
@@ -296,32 +296,80 @@ function AnswerContent({ screen, activeCitationId, onSelect, onOpenCitation, onR
   return (
     <>
       {body}
-      {screen.status === 'success' && type !== 'clarify' && <Feedback value={screen.feedback} onRate={onRate} />}
+      {screen.status === 'success' && type !== 'clarify' && (
+        <Feedback
+          value={screen.feedback}
+          onRate={onRate}
+          copy={type === 'answer' ? copyText(screen.text, screen.sources) : undefined}
+        />
+      )}
     </>
   )
 }
 
+interface FeedbackProps {
+  value?: 'up' | 'down'
+  onRate: (rating: 'up' | 'down') => void
+  /** 실제 답변일 때만: 참고용 안내와 복사 버튼을 함께 보여준다 */
+  copy?: string
+}
+
 /** 답변마다 받는 짧은 피드백. 무엇이 부족했는지 개선 근거로 쓴다 */
-function Feedback({ value, onRate }: { value?: 'up' | 'down'; onRate: (rating: 'up' | 'down') => void }) {
-  if (value) {
-    return (
-      <p className={styles.feedbackDone} role="status">
-        의견을 보냈어요. 고맙습니다.
-      </p>
-    )
-  }
+function Feedback({ value, onRate, copy }: FeedbackProps) {
   return (
-    <div className={styles.feedback}>
-      <span className={styles.feedbackLabel}>답변이 도움이 되었나요?</span>
-      <button type="button" className={styles.feedbackButton} onClick={() => onRate('up')}>
-        <ThumbsUp size={16} aria-hidden="true" />
-        도움돼요
-      </button>
-      <button type="button" className={styles.feedbackButton} onClick={() => onRate('down')}>
-        <ThumbsDown size={16} aria-hidden="true" />
-        아쉬워요
-      </button>
+    <div className={styles.feedbackArea}>
+      {copy !== undefined && (
+        <p className={styles.disclaimer}>
+          AI가 공개 자료를 정리한 참고용 안내예요. 신청·납부 전에는 참고자료의 공식 원문을 확인해 주세요.
+        </p>
+      )}
+      <div className={styles.feedback}>
+        {value ? (
+          <p className={styles.feedbackDone} role="status">
+            의견을 보냈어요. 고맙습니다.
+          </p>
+        ) : (
+          <>
+            <span className={styles.feedbackLabel}>답변이 도움이 되었나요?</span>
+            <button type="button" className={styles.feedbackButton} onClick={() => onRate('up')}>
+              <ThumbsUp size={16} aria-hidden="true" />
+              도움돼요
+            </button>
+            <button type="button" className={styles.feedbackButton} onClick={() => onRate('down')}>
+              <ThumbsDown size={16} aria-hidden="true" />
+              아쉬워요
+            </button>
+          </>
+        )}
+        {copy !== undefined && <CopyButton text={copy} />}
+      </div>
     </div>
+  )
+}
+
+/** 답변을 메일·메신저에 붙여 넣을 수 있게 복사. 결과는 2초 동안 버튼 글자로 알린다 */
+function CopyButton({ text }: { text: string }) {
+  const [state, setState] = useState<'idle' | 'done' | 'failed'>('idle')
+  useEffect(() => {
+    if (state === 'idle') return
+    const timer = setTimeout(() => setState('idle'), 2000)
+    return () => clearTimeout(timer)
+  }, [state])
+
+  const copy = async () => {
+    try {
+      await navigator.clipboard.writeText(text)
+      setState('done')
+    } catch {
+      setState('failed')
+    }
+  }
+
+  return (
+    <button type="button" className={styles.feedbackButton} onClick={copy}>
+      {state === 'done' ? <Check size={16} aria-hidden="true" /> : <Copy size={16} aria-hidden="true" />}
+      <span aria-live="polite">{state === 'done' ? '복사했어요' : state === 'failed' ? '복사하지 못했어요' : '복사'}</span>
+    </button>
   )
 }
 

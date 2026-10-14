@@ -24,6 +24,25 @@
   line-height: 1.5;
 }
 
+.scope {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin: 0 0 18px;
+  padding: 10px 12px;
+  border-radius: var(--radius-md);
+  background: var(--color-surface-muted);
+  color: var(--color-text-secondary);
+  font-size: var(--fs-sm);
+  line-height: 1.5;
+}
+
+.scope svg {
+  flex: none;
+  margin-top: 2px;
+  color: var(--color-text-tertiary);
+}
+
 .sectionTitle {
   margin: 0 0 10px;
   font-size: var(--fs-lg);

@@ -1,4 +1,4 @@
-import { ArrowUpRight, ChevronRight } from 'lucide-react'
+import { ArrowUpRight, ChevronRight, Info } from 'lucide-react'
 import { EXAMPLE_QUESTIONS, TASKS } from './tasks'
 import { Mascot } from './ui'
 import styles from './WelcomeView.module.css'
@@ -22,6 +22,14 @@ export function WelcomeView({ onAsk }: WelcomeViewProps) {
           </p>
         </div>
       </div>
+
+      {/* 답하는 범위를 먼저 밝혀 자료 밖 질문(다른 항만·운임 시세)을 줄인다 */}
+      <p className={styles.scope}>
+        <Info size={16} aria-hidden="true" />
+        <span>
+          여수광양항만공사 공개 자료와 관련 법령에서 찾아 답해요. 다른 항만·선사 정보나 운임 시세는 안내하지 않아요.
+        </span>
+      </p>
 
       <section aria-labelledby="ygpa-tasks-title">
         <h4 id="ygpa-tasks-title" className={`${styles.sectionTitle} ${styles.accent}`}>
