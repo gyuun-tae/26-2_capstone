@@ -1,0 +1,285 @@
+{
+ "dataset": "dev_questions_laws2_v1.jsonl",
+ "index_version": "bge-m3-dense-4c3a848b8c5d",
+ "run_at": "2026-11-02T09:00:22.334911+00:00",
+ "summary": {
+  "retrieval": "8/8",
+  "retrieval@1": "7/8",
+  "type": "8/8",
+  "buttons": "8/8",
+  "mention": "5/5",
+  "lead": "0/0",
+  "absent": "0/0",
+  "contact_btn": "0/0",
+  "contact": "0/0",
+  "type_by_group": {
+   "law2": "8/8"
+  },
+  "uncited_lines_total": 0,
+  "violations_total": 0,
+  "unsupported_numbers_total": 0,
+  "first_token_s": {
+   "mean": 1.22,
+   "median": 1.17,
+   "max": 1.73
+  }
+ },
+ "rows": [
+  {
+   "id": "m01",
+   "group": "law2",
+   "question": "항만하역 사업을 하려면 어디에 등록해야 돼요?",
+   "answer_type": "answer",
+   "top1_score": 0.72,
+   "top_docs": [
+    "LAW-019",
+    "LAW-019",
+    "LAW-003",
+    "YGPA-031"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 1.16,
+   "total_s": 3.27,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "항만하역 사업을 하려면 관리청에 등록해야 합니다[1][2].\n\n1. 등록 신청서와 사업계획서 등을 첨부하여 관리청에 제출합니다[2]\n2. 항만별·업종별로 등록해야 하며, 사용하려는 장비 목록이 포함되어야 합니다[2]\n3. 등록 후 사업계획 변경이 필요한 경우, 변경신고를 해야 합니다[2]\n4. 항만하역사업은 이용자별·취급화물별 또는 항만시설별로 구분하여 등록할 수 있습니다[1]"
+  },
+  {
+   "id": "m02",
+   "group": "law2",
+   "question": "하역 요금은 마음대로 정해도 되나요?",
+   "answer_type": "answer",
+   "top1_score": 0.607,
+   "top_docs": [
+    "LAW-019",
+    "LAW-021",
+    "LAW-021",
+    "YGPA-031",
+    "YGPA-031"
+   ],
+   "downloads": [
+    "LAW-021"
+   ],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 1.07,
+   "total_s": 3.55,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "항만하역사업자는 해양수산부령에 따라 운임 및 요금을 정하고 관리청의 인가를 받아야 하며, 마음대로 정할 수 없습니다[1]. 변경을 원할 경우에도 동일한 절차가 적용됩니다[1].\n\n1. 별지 제9호서식의 항만하역운임 및 요금 인가(변경인가) 신청서를 제출합니다[2][3].\n2. 운임 및 요금의 산출기초, 세부내역, 수입·지출 예산서 등을 첨부합니다[2].\n3. 변경 신청 시에는 운임 및 요금의 신·구 대조표를 함께 제출합니다[2]."
+  },
+  {
+   "id": "m03",
+   "group": "law2",
+   "question": "항만하역사업자가 세워야 하는 안전관리계획이 있나요?",
+   "answer_type": "answer",
+   "top1_score": 0.751,
+   "top_docs": [
+    "LAW-016",
+    "LAW-017",
+    "YGPA-031",
+    "YGPA-031",
+    "YGPA-128"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 1.19,
+   "total_s": 3.77,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "항만하역사업자는 항만안전특별법 제9조에 따라 자체안전관리계획을 수립하고 관리청의 승인을 받아야 합니다[1].  \n\n1. 자체안전관리계획에는 안전관리 전담조직 운영, 하역작업별 작업기준, 안전점검계획, 악천후 대비 조치 등이 포함되어야 합니다[2].  \n2. 자체안전관리계획은 항만하역사업을 시작하기 전까지 관리청의 승인을 받아야 하며, 변경 시에도 변경승인을 받아야 합니다[2].  \n3. 관리청은 자체안전관리계획의 이행 여부를 확인하고, 필요 시 시정조치를 명할 수 있습니다[1]."
+  },
+  {
+   "id": "m04",
+   "group": "law2",
+   "question": "항만 작업자 안전교육은 누가 해야 해요?",
+   "answer_type": "answer",
+   "top1_score": 0.694,
+   "top_docs": [
+    "LAW-017",
+    "LAW-016",
+    "YGPA-128",
+    "YGPA-130",
+    "YGPA-129"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 1.46,
+   "total_s": 3.8,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "항만운송 참여자가 항만운송 종사자에게 안전교육을 실시해야 합니다[2].  \n\n1. 항만운송 참여자는 작업내용과 안전규칙, 항만에서의 위험요소 등에 대한 안전교육을 실시해야 합니다[2].  \n2. 안전교육은 「항만운송사업법」 제27조의4에 따른 교육훈련기관(안전교육실시기관)이 실시합니다[1].  \n3. 안전교육실시기관은 매년 12월 31일까지 해양수산부장관에게 안전교육계획을 통보해야 합니다[1]."
+  },
+  {
+   "id": "m05",
+   "group": "law2",
+   "question": "자유무역지역에는 어떤 업체가 입주할 수 있어요?",
+   "answer_type": "answer",
+   "top1_score": 0.712,
+   "top_docs": [
+    "LAW-015",
+    "LAW-013",
+    "MOF-3989",
+    "LAW-015",
+    "YGPA-171"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 1.73,
+   "total_s": 6.3,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": false,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "자유무역지역에 입주할 수 있는 자는 수출을 주목적으로 하는 제조업종, 외국인투자기업, 물류 관련 기업 등 특정 기준을 충족하는 자입니다[2].\n\n1. 수출을 주목적으로 하는 제조업종의 사업을 하려는 자로 수출 비중 등이 대통령령 기준을 충족하는 자[2]  \n2. 수출을 주목적으로 하려는 국내복귀기업으로 복귀 이전 총매출액 대비 대한민국 수출액 비중 등이 대통령령 기준을 충족하는 자[2]  \n3. 외국인투자기업으로 외국인투자비중 및 수출비중 등이 대통령령 기준을 충족하는 자[2]  \n4. 수출입거래를 주목적으로 하는 도매업종의 사업을 하려는 자로 수출입거래 비중 등이 대통령령 기준을 충족하는 자[2]  \n5. 물품의 하역, 운송, 보관, 전시 등 물류 관련 사업을 하려는 자[2]  \n6. 입주기업체의 사업을 지원하는 업종으로 대통령령이 정하는 자[2]  \n7. 대통령령으로 정하는 공공기관 및 국가기관[2]"
+  },
+  {
+   "id": "m06",
+   "group": "law2",
+   "question": "선박에 위험물을 실어도 되는 경우가 정해져 있나요?",
+   "answer_type": "answer",
+   "top1_score": 0.737,
+   "top_docs": [
+    "LAW-012",
+    "LAW-012",
+    "YGPA-031",
+    "YGPA-031",
+    "YGPA-B198-2449E51A"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 0.78,
+   "total_s": 2.24,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "buttons": true
+   },
+   "answer": "선박에 위험물을 반입할 수 있는 경우는 법령에서 정해져 있습니다[1].\n\n1. 위험물을 운송하거나 저장하기 위해 선박에 반입하는 경우[1]\n2. 해양수산부장관이 정하는 위험물을 선장의 허가를 받아 반입하는 경우[1]\n3. 법령으로 정하는 다른 경우[1]"
+  },
+  {
+   "id": "m07",
+   "group": "law2",
+   "question": "자유무역지역 입주계약은 누구랑 해요?",
+   "answer_type": "answer",
+   "top1_score": 0.732,
+   "top_docs": [
+    "LAW-013",
+    "LAW-015",
+    "YGPA-171",
+    "YGPA-036",
+    "YGPA-039"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [
+    "물류단지부 (배후단지 담당) 061-797-4456"
+   ],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 1,
+   "unsupported_numbers": [],
+   "first_token_s": 1.64,
+   "total_s": 7.4,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "buttons": true
+   },
+   "answer": "자유무역지역에 입주하여 사업을 하려는 자는 여수광양항만공사와 입주계약을 체결하여야 합니다[1].  \n\n1. 입주계약을 체결할 때 관리권자(여수광양항만공사)는 외국인투자기업, 신성장동력산업 기술을 수반하는 사업자, 수출을 주목적으로 하는 사업자와 우선적으로 계약을 체결할 수 있습니다[1].  \n2. 입주계약을 체결하는 경우에는 입주 목적 달성을 위한 조건이 붙일 수 있으며, 이는 공공의 이익 증진을 위한 최소한도에 한합니다[1].  \n3. 농림축산물을 원재료로 사용하는 제조업종·가공업종의 사업자는 물품관리체계를 갖추고 세관장과 사전 협의를 해야 합니다[1].  \n4. 입주계약을 체결하려는 자는 결격사유 조회, 사업계획서, 인가·허가·면허·등록 증명서, 사업자등록증, 법인인감증명서 등을 제출해야 합니다[5].  \n5. 입주계약은 입주계약 신청서를 제출하고, 90일 이내에 여수광양항만공사와 계약을 체결해야 합니다[4].  \n6. 입주계약 체결 후 60일 이내에 임대차계약을 체결해야 하며, 건축허가 및 신고, 착공, 영업개시 등의 절차를 진행합니다[4]."
+  },
+  {
+   "id": "m08",
+   "group": "law2",
+   "question": "부두운영회사는 어떻게 선정해요?",
+   "answer_type": "answer",
+   "top1_score": 0.74,
+   "top_docs": [
+    "LAW-021",
+    "LAW-021",
+    "YGPA-B198-87749D4E",
+    "YGPA-B198-45723154",
+    "YGPA-031"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 0.72,
+   "total_s": 3.94,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "buttons": true
+   },
+   "answer": "항만시설운영자는 부두운영회사를 선정하기 위해 선정계획을 수립하고 공고해야 하며, 선정기준에 따라 적합한 회사를 선정합니다[1][2].\n\n1. 항만시설운영자는 부두운영계약을 체결하려면 항만시설 개장 6개월 전까지 부두운영회사 선정계획을 공고해야 합니다[1].\n2. 선정계획에는 계약 대상 항만시설, 계약기간 및 임대료, 참여 방법, 선정기준 등이 포함됩니다[1].\n3. 부두운영회사의 선정기준에는 임대료 지급 능력, 화물 유치 능력, 투자 능력, 재무구조의 건전성이 포함됩니다[2].\n4. 부두운영계약 체결 전, 항만시설운영자는 해양수산부장관과 협의할 수 있습니다[1]."
+  }
+ ]
+}

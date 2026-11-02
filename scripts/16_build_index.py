@@ -7,6 +7,8 @@
       --reuse <색인 버전>: 임베딩 입력(제목·절 제목·본문)이 같은 청크는 그 색인의 벡터를 그대로 쓰고 새·바뀐 청크만
       임베딩한다 (모델 revision도 그 색인 것으로 고정). CPU 전체 재임베딩은 오래 걸리고 메모리를 많이 쓴다.
       --parts: 긴 조문을 항 단위 자식 청크로도 색인한다 (검색에서 자식이 걸리면 부모를 넘김, src/rag/parts.py)
+      --gpu: 새 청크를 GPU 서버의 BGE-M3(같은 revision 고정, infra/gpu_server/start_bge.sh)로 임베딩한다. 이 PC에는
+      토크나이저만 올린다. .env의 GPU_URL·GPU_API_KEY 사용. 로컬과 코사인 0.99999 이상 일치 (check_embedding.py)
 결과: data/index/<색인 버전>/vectors.npy, chunks.jsonl, manifest.json (Git 제외)
 """
 import argparse
@@ -32,6 +34,39 @@ def load_model(revision=None):
     return model, path.name
 
 
+def gpu_encoder(revision):
+    """GPU 서버(관문)로 임베딩. 서버 모델 revision은 start_bge.sh에 고정된 값과 같아야 한다"""
+    import httpx
+    from huggingface_hub import snapshot_download
+    from transformers import AutoTokenizer
+
+    served = "5617a9f61b028005a4858fdac845db406aefb181"  # infra/gpu_server/start_bge.sh REVISION
+    if revision and revision != served:
+        raise SystemExit(f"GPU 서버 BGE-M3 revision({served[:12]})과 요청 revision({revision[:12]})이 다릅니다")
+    env = dict(line.split("=", 1) for line in (ROOT / ".env").read_text(encoding="utf-8-sig").splitlines() if "=" in line and not line.startswith("#"))
+    url, key = env["GPU_URL"].strip().rstrip("/"), env["GPU_API_KEY"].strip()
+    cached = Path.home() / ".cache/huggingface/hub/models--BAAI--bge-m3/snapshots" / served
+    path = cached if (cached / "tokenizer.json").exists() else Path(snapshot_download(
+        dense.MODEL_ID, revision=served, allow_patterns=["*.json", "*.model", "tokenizer*", "sentencepiece*"]))
+
+    class Remote:
+        tokenizer = AutoTokenizer.from_pretrained(str(path))
+
+        def encode(self, texts, batch_size=8, show_progress_bar=False):
+            out = []
+            with httpx.Client(timeout=120) as client:
+                for i in range(0, len(texts), 8):
+                    r = client.post(f"{url}/v1/embeddings", headers={"Authorization": f"Bearer {key}"},
+                                    json={"model": "bge-m3", "input": texts[i:i + 8]})
+                    r.raise_for_status()
+                    out += [d["embedding"] for d in sorted(r.json()["data"], key=lambda d: d["index"])]
+                    if i % 200 == 0:
+                        print(f"  GPU 임베딩 {i + len(texts[i:i + 8])}/{len(texts)}", flush=True)
+            return out
+
+    return Remote(), served
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--revision", help="BGE-M3 커밋. 없으면 최신을 받고 실제 커밋을 기록")
@@ -39,6 +74,7 @@ def main():
     ap.add_argument("--approved-only", action="store_true", help="승인 기록에서 승인된 청크만 (서비스용)")
     ap.add_argument("--reuse", help="벡터를 다시 쓸 기존 색인 버전 (data/index/<버전>)")
     ap.add_argument("--parts", action="store_true", help="긴 조문의 항 단위 자식 청크도 색인 (승인된 부모에서만)")
+    ap.add_argument("--gpu", action="store_true", help="새 청크를 GPU 서버 BGE-M3로 임베딩 (이 PC는 토크나이저만)")
     args = ap.parse_args()
     reuse = {}
     if args.reuse:
@@ -64,11 +100,14 @@ def main():
     if args.parts:
         chunks = parts.add(chunks)
         print(f"자식 청크 {len(chunks) - parents}개 추가 (부모 {len({c['parent_chunk_id'] for c in chunks if c.get('parent_chunk_id')})}개)")
-    model, revision = load_model(args.revision)
+    if args.gpu:
+        model, revision = gpu_encoder(args.revision)
+    else:
+        model, revision = load_model(args.revision)
     print(f"청크 {len(chunks)}개 색인 (제외: {excluded}), 모델 {dense.MODEL_ID}@{revision[:12]}")
 
     def encode(texts):
-        new = [t for t in texts if t not in reuse]
+        new = list(dict.fromkeys(t for t in texts if t not in reuse))
         print(f"재사용 {len(texts) - len(new)}개 · 새로 임베딩 {len(new)}개")
         made = dict(zip(new, model.encode(new, batch_size=args.batch_size, show_progress_bar=True))) if new else {}
         return [reuse[t] if t in reuse else made[t] for t in texts]

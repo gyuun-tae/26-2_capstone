@@ -1,0 +1,66 @@
+{
+ "dataset": "dev_questions_team_v1.jsonl",
+ "index_version": "bge-m3-dense-236b5830fab6",
+ "run_at": "2026-11-02T08:50:39.540011+00:00",
+ "summary": {
+  "retrieval": "1/1",
+  "retrieval@1": "0/1",
+  "type": "1/1",
+  "buttons": "1/1",
+  "mention": "1/1",
+  "lead": "0/0",
+  "absent": "0/0",
+  "contact_btn": "0/0",
+  "contact": "0/0",
+  "type_by_group": {
+   "team": "1/1"
+  },
+  "uncited_lines_total": 1,
+  "violations_total": 0,
+  "unsupported_numbers_total": 0,
+  "first_token_s": {
+   "mean": 0.43,
+   "median": 0.43,
+   "max": 0.43
+  }
+ },
+ "rows": [
+  {
+   "id": "t24",
+   "group": "team",
+   "question": "How do I get a port access pass?",
+   "answer_type": "answer",
+   "top1_score": 0.561,
+   "top_docs": [
+    "YGPA-315",
+    "MOF-3881",
+    "YGPA-025",
+    "YGPA-150",
+    "YGPA-023"
+   ],
+   "downloads": [
+    "YGPA-025"
+   ],
+   "port_mis": false,
+   "contacts": [
+    "항만출입증 담당자 (광양) 061-797-4434",
+    "항만출입증 담당자 (여수) 061-692-4336"
+   ],
+   "options": [],
+   "uncited_lines": 1,
+   "violations": [],
+   "contacts_from_evidence": 2,
+   "unsupported_numbers": [],
+   "first_token_s": 0.43,
+   "total_s": 2.26,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": false,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "To obtain a port access pass, you need to follow the application procedure outlined below:\n\n1. Complete the user registration before submitting the application (ID and password registration) [3].\n2. Submit the \"Port Access Permit Application Form\" [3].\n3. Provide the required documents, including a personal guarantee, employment verification, and consent for personal information collection and use [3].\n4. The application will be processed, and upon approval, the port access pass will be issued [3]."
+  }
+ ]
+}

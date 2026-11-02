@@ -1,0 +1,63 @@
+{
+ "dataset": "dev_questions_org_v1.jsonl",
+ "index_version": "bge-m3-dense-4c3a848b8c5d",
+ "run_at": "2026-11-02T09:06:09.058956+00:00",
+ "summary": {
+  "retrieval": "1/1",
+  "retrieval@1": "0/1",
+  "type": "1/1",
+  "buttons": "1/1",
+  "mention": "1/1",
+  "lead": "0/0",
+  "absent": "0/0",
+  "contact_btn": "0/0",
+  "contact": "0/0",
+  "type_by_group": {
+   "dept": "1/1"
+  },
+  "uncited_lines_total": 0,
+  "violations_total": 0,
+  "unsupported_numbers_total": 0,
+  "first_token_s": {
+   "mean": 1.27,
+   "median": 1.27,
+   "max": 1.27
+  }
+ },
+ "rows": [
+  {
+   "id": "o12",
+   "group": "dept",
+   "question": "항만 장비 유지보수는 어느 부서 담당이에요?",
+   "answer_type": "answer",
+   "top1_score": 0.588,
+   "top_docs": [
+    "YGPA-031",
+    "ORG-017",
+    "LAW-001",
+    "LAW-001",
+    "YGPA-031"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [
+    "항만시설사업부 061-797-4530"
+   ],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 1,
+   "unsupported_numbers": [],
+   "first_token_s": 1.27,
+   "total_s": 2.82,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": false,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "항만 장비 유지보수는 항만시설사업부의 장비/기계 담당이 맡고 있습니다[2].\n\n1. 장비/기계 관련 문의 및 유지보수 담당: 061-797-4545, 061-797-4546, 061-797-4547[2]"
+  }
+ ]
+}

@@ -424,6 +424,1914 @@
    "source": "조직 및 직원검색 (부서명·담당업무·전화)",
    "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/ygpa/orga/ogch/orgaChartPage.do",
    "fetched_on": "2026-10-04"
+  },
+  {
+   "key": "site-YGPA-106",
+   "label": "AI디지털부",
+   "phone": "061-797-4474",
+   "note": "부가정보 — CCTV 운영관리 방침",
+   "doc_ids": [
+    "YGPA-106"
+   ],
+   "source": "부가정보 — CCTV 운영관리 방침 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/addi/cctv/contPageDetail.do?conts_no=9B6FB7CC314A446582EB9C4A38B954B5",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-107",
+   "label": "AI디지털부",
+   "phone": "061-797-4474",
+   "note": "부가정보 — 이용안내",
+   "doc_ids": [
+    "YGPA-107"
+   ],
+   "source": "부가정보 — 이용안내 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/addi/oper/contPageDetail.do?conts_no=6E81FB2C535448A9ACDC33B84BCA01F3",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-108",
+   "label": "AI디지털부",
+   "phone": "061-797-4474",
+   "note": "부가정보 — 개인정보처리방침 — 개인정보처리방침",
+   "doc_ids": [
+    "YGPA-108"
+   ],
+   "source": "부가정보 — 개인정보처리방침 — 개인정보처리방침 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/addi/pers/plan/contPageDetail.do?conts_no=3FB82B5729A74C858334C2FE6BA09342",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-109",
+   "label": "AI디지털부",
+   "phone": "061-797-4474",
+   "note": "부가정보 — 개인정보처리방침 — 개인정보열람 청구방법 및 절차",
+   "doc_ids": [
+    "YGPA-109"
+   ],
+   "source": "부가정보 — 개인정보처리방침 — 개인정보열람 청구방법 및 절차 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/addi/pers/read/contPageDetail.do?conts_no=C9C04D732DBE4F75A5DC9E78960699C6",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-110",
+   "label": "경영지원부",
+   "phone": "061-797-4353",
+   "note": "국민소통 — 인재채용 — 임원임명 목표제",
+   "doc_ids": [
+    "YGPA-110"
+   ],
+   "source": "국민소통 — 인재채용 — 임원임명 목표제 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/comu/recr/exgo/contPageDetail.do?conts_no=0533DC6E74C04F88B78DEA78A74AACEC",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-111",
+   "label": "경영지원부",
+   "phone": "061-797-4353",
+   "note": "국민소통 — 인재채용 — 채용안내",
+   "doc_ids": [
+    "YGPA-111"
+   ],
+   "source": "국민소통 — 인재채용 — 채용안내 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/comu/recr/rcgu/contPageDetail.do?conts_no=E37F98E2D2CB4C20BDEE5DB248E4C4C4",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-112",
+   "label": "경영지원부",
+   "phone": "061-797-4356",
+   "note": "국민소통 — 인재채용 — 인재상",
+   "doc_ids": [
+    "YGPA-112"
+   ],
+   "source": "국민소통 — 인재채용 — 인재상 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/comu/recr/tytl/contPageDetail.do?conts_no=7B23A865775841069B53952180DCC7C6",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-113",
+   "label": "경영지원부",
+   "phone": "061-797-4343",
+   "note": "시설이용예약 — 국제회의장 예약 — 소개",
+   "doc_ids": [
+    "YGPA-113"
+   ],
+   "source": "시설이용예약 — 국제회의장 예약 — 소개 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/comu/resv/meet/contPageDetail.do?conts_no=04996BB1E62E460085E128CDC3534B16",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-114",
+   "label": "ESG경영실",
+   "phone": "061-797-4372",
+   "note": "ESG경영 — 고객헌장 — 고객헌장",
+   "doc_ids": [
+    "YGPA-114"
+   ],
+   "source": "ESG경영 — 고객헌장 — 고객헌장 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/esgm/chrt/ch01/contPageDetail.do?conts_no=41904B3C9D0C48D693A4C08ADC32D673",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-115",
+   "label": "ESG경영실",
+   "phone": "061-797-4372",
+   "note": "ESG경영 — 고객헌장 — 서비스신조",
+   "doc_ids": [
+    "YGPA-115"
+   ],
+   "source": "ESG경영 — 고객헌장 — 서비스신조 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/esgm/chrt/ch02/contPageDetail.do?conts_no=997D7004A0F5436EA8119CDD55AD24D4",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-116",
+   "label": "ESG경영실",
+   "phone": "061-797-4372",
+   "note": "ESG경영 — 고객헌장 — 고객응대지침서",
+   "doc_ids": [
+    "YGPA-116"
+   ],
+   "source": "ESG경영 — 고객헌장 — 고객응대지침서 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/esgm/chrt/ch03/contPageDetail.do?conts_no=C8F55DAA5FCB4DF5A3B4EC0EA9C96A8B",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-117",
+   "label": "ESG경영실",
+   "phone": "061-797-4372",
+   "note": "ESG경영 — 고객헌장 — 동반성장 이행헌장",
+   "doc_ids": [
+    "YGPA-117"
+   ],
+   "source": "ESG경영 — 고객헌장 — 동반성장 이행헌장 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/esgm/chrt/ch04/contPageDetail.do?conts_no=AD33DBC5AF7D4892AC729074C754DB97",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-118",
+   "label": "감사실",
+   "phone": "061-797-4405",
+   "note": "윤리경영 — 청렴백년대계 — 청렴백년대계",
+   "doc_ids": [
+    "YGPA-118"
+   ],
+   "source": "윤리경영 — 청렴백년대계 — 청렴백년대계 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/esgm/ethi/upwi/up01/contPageDetail.do?conts_no=3E370AC2EC664C3E89B0798D66641149",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-119",
+   "label": "감사실",
+   "phone": "061-797-4405",
+   "note": "윤리경영 — 청렴백년대계 — 청렴계약 및 윤리서약",
+   "doc_ids": [
+    "YGPA-119"
+   ],
+   "source": "윤리경영 — 청렴백년대계 — 청렴계약 및 윤리서약 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/esgm/ethi/upwi/up02/contPageDetail.do?conts_no=57A837B8F22A41FDB728C9A455324578",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-120",
+   "label": "감사실",
+   "phone": "061-797-4405",
+   "note": "윤리경영 — YGPA윤리경영 — 윤리헌장",
+   "doc_ids": [
+    "YGPA-120"
+   ],
+   "source": "윤리경영 — YGPA윤리경영 — 윤리헌장 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/esgm/ethi/yget/et01/contPageDetail.do?conts_no=E93D545E7E134540B978B3F1FABD26D3",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-121",
+   "label": "감사실",
+   "phone": "061-797-4405",
+   "note": "윤리경영 — YGPA윤리경영 — 윤리강령",
+   "doc_ids": [
+    "YGPA-121"
+   ],
+   "source": "윤리경영 — YGPA윤리경영 — 윤리강령 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/esgm/ethi/yget/et02/contPageDetail.do?conts_no=AE583B930593405C98259D956842A6EC",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-122",
+   "label": "감사실",
+   "phone": "061-797-4405",
+   "note": "윤리경영 — YGPA윤리경영 — 임직원 행동강령",
+   "doc_ids": [
+    "YGPA-122"
+   ],
+   "source": "윤리경영 — YGPA윤리경영 — 임직원 행동강령 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/esgm/ethi/yget/et03/contPageDetail.do?conts_no=83A9CB00225E42FA94BA066B2C760C28",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-123",
+   "label": "감사실",
+   "phone": "061-797-4405",
+   "note": "윤리경영 — YGPA윤리경영 — 임원직무청렴계약규정",
+   "doc_ids": [
+    "YGPA-123"
+   ],
+   "source": "윤리경영 — YGPA윤리경영 — 임원직무청렴계약규정 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/esgm/ethi/yget/et04/contPageDetail.do?conts_no=9054F30373324BD2B61ED25A2B8A3D1A",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-124",
+   "label": "감사실",
+   "phone": "061-797-4403",
+   "note": "ESG경영 — 인권경영 — 인권경영 헌장",
+   "doc_ids": [
+    "YGPA-124"
+   ],
+   "source": "ESG경영 — 인권경영 — 인권경영 헌장 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/esgm/humn/huct/contPageDetail.do?conts_no=EC5F4B71183B45C98C839E697C606970",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-125",
+   "label": "재난안전실",
+   "phone": "061-797-4489",
+   "note": "ESG경영 — 안전보건경영 — 안전보건경영인증서",
+   "doc_ids": [
+    "YGPA-125"
+   ],
+   "source": "ESG경영 — 안전보건경영 — 안전보건경영인증서 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/esgm/safe/cert/contPageDetail.do?conts_no=C71CEF2D199F4DCD81D4B78861D6A679",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-126",
+   "label": "재난안전실",
+   "phone": "061-797-4483",
+   "note": "안전보건경영 — 안전신고센터 — 안전신고",
+   "doc_ids": [
+    "YGPA-126"
+   ],
+   "source": "안전보건경영 — 안전신고센터 — 안전신고 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/esgm/safe/dclr/dc01/contPageDetail.do?conts_no=FF668458F9A2490EB003D311A4AB3AE8",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-127",
+   "label": "재난안전실",
+   "phone": "061-797-4483",
+   "note": "안전보건경영 — 안전신고센터 — 작업중지요청제",
+   "doc_ids": [
+    "YGPA-127"
+   ],
+   "source": "안전보건경영 — 안전신고센터 — 작업중지요청제 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/esgm/safe/dclr/dc02/contPageDetail.do?conts_no=5E29321470A24702859C5C1F8A1116FA",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-128",
+   "label": "재난안전실",
+   "phone": "061-797-4483",
+   "note": "안전보건경영 — 안전보건경영방침 — 안전보건경영방침",
+   "doc_ids": [
+    "YGPA-128"
+   ],
+   "source": "안전보건경영 — 안전보건경영방침 — 안전보건경영방침 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/esgm/safe/heal/he01/contPageDetail.do?conts_no=54B512D151784390A982FC91AEAC9B62",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-129",
+   "label": "재난안전실",
+   "phone": "061-797-4483",
+   "note": "안전보건경영 — 안전보건경영방침 — 안전보건경영방침",
+   "doc_ids": [
+    "YGPA-129"
+   ],
+   "source": "안전보건경영 — 안전보건경영방침 — 안전보건경영방침 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/esgm/safe/heal/he01/contPageDetail.do?conts_no=BABC7A3F04DA47C7A775392F437CD6E3",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-130",
+   "label": "재난안전실",
+   "phone": "061-797-4483",
+   "note": "안전보건경영 — 안전보건경영방침 — 핵심 안전수칙",
+   "doc_ids": [
+    "YGPA-130"
+   ],
+   "source": "안전보건경영 — 안전보건경영방침 — 핵심 안전수칙 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/esgm/safe/heal/he02/contPageDetail.do?conts_no=5DE015BFF5A142D89B2EF059B969651C",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-131",
+   "label": "재난안전실",
+   "phone": "061-797-4483",
+   "note": "안전보건경영 — 안전보건경영방침 — 항만안전 10대 필수 안전수칙",
+   "doc_ids": [
+    "YGPA-131"
+   ],
+   "source": "안전보건경영 — 안전보건경영방침 — 항만안전 10대 필수 안전수칙 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/esgm/safe/heal/he03/contPageDetail.do?conts_no=937B13A7D13C40C5AB7F6DCBDD1EE0DC",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-132",
+   "label": "ESG경영실",
+   "phone": "061-797-4384",
+   "note": "ESG경영 — 이해관계자 참여",
+   "doc_ids": [
+    "YGPA-132"
+   ],
+   "source": "ESG경영 — 이해관계자 참여 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/esgm/stak/contPageDetail.do?conts_no=2390298452984115AB07F275691D18A9",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-133",
+   "label": "ESG경영실",
+   "phone": "061-797-4384",
+   "note": "ESG경영 — 전략 및 체계 — 추진조직",
+   "doc_ids": [
+    "YGPA-133"
+   ],
+   "source": "ESG경영 — 전략 및 체계 — 추진조직 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/esgm/stsy/prog/contPageDetail.do?conts_no=9446DFB3D29442399BF97A6B809C572C",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-134",
+   "label": "ESG경영실",
+   "phone": "061-797-4384",
+   "note": "ESG경영 — 전략 및 체계 — 추진체계",
+   "doc_ids": [
+    "YGPA-134"
+   ],
+   "source": "ESG경영 — 전략 및 체계 — 추진체계 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/esgm/stsy/prsy/contPageDetail.do?conts_no=001CA32F35C7470D9AFDB3D8A05112F9",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-135",
+   "label": "ESG경영실",
+   "phone": "061-797-4384",
+   "note": "ESG경영 — 전략 및 체계 — 추진체계",
+   "doc_ids": [
+    "YGPA-135"
+   ],
+   "source": "ESG경영 — 전략 및 체계 — 추진체계 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/esgm/stsy/prsy/contPageDetail.do?conts_no=5F3F8374FDB14F628625A7F8F38B10C2",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-136",
+   "label": "기획조정실",
+   "phone": "061-797-4327",
+   "note": "열린경영 — 사업실명제 — 정보",
+   "doc_ids": [
+    "YGPA-136"
+   ],
+   "source": "열린경영 — 사업실명제 — 정보 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/info/bsrl/bs01/contPageDetail.do?conts_no=7DB3520BFBBC4DD8B3D1B465161929A8",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-137",
+   "label": "ESG경영실",
+   "phone": "061-797-4364",
+   "note": "정보공개 — 계약정보공개 — 입찰안내",
+   "doc_ids": [
+    "YGPA-137"
+   ],
+   "source": "정보공개 — 계약정보공개 — 입찰안내 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/info/inop/ctrt/ctra/contPageDetail.do?conts_no=3DAA20A1CA374929A38C9A27334A5059",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-138",
+   "label": "경영지원부",
+   "phone": "061-797-4343",
+   "note": "열린경영 — 정보공개제도 — 법령·지침·서식",
+   "doc_ids": [
+    "YGPA-138"
+   ],
+   "source": "열린경영 — 정보공개제도 — 법령·지침·서식 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/info/insy/acfm/contPageDetail.do?conts_no=BCDDB7594A2A47C8A888F14637CCF233",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-139",
+   "label": "경영지원부",
+   "phone": "061-797-4343",
+   "note": "열린경영 — 정보공개제도 — 정보공개제도 안내",
+   "doc_ids": [
+    "YGPA-139"
+   ],
+   "source": "열린경영 — 정보공개제도 — 정보공개제도 안내 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/info/insy/ingu/contPageDetail.do?conts_no=67262F9416E34B1EB385EEA52E47FCEE",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-140",
+   "label": "경영지원부",
+   "phone": "061-797-4343",
+   "note": "열린경영 — 정보공개제도 — 정보공개방법",
+   "doc_ids": [
+    "YGPA-140"
+   ],
+   "source": "열린경영 — 정보공개제도 — 정보공개방법 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/info/insy/inme/contPageDetail.do?conts_no=EFE6104EE5E4429D89E8B26148B4E990",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-141",
+   "label": "경영지원부",
+   "phone": "061-797-4343",
+   "note": "열린경영 — 정보공개제도 — 정보공개청구 절차",
+   "doc_ids": [
+    "YGPA-141"
+   ],
+   "source": "열린경영 — 정보공개제도 — 정보공개청구 절차 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/info/insy/inpr/contPageDetail.do?conts_no=4260BC2644254836A01310F8A65279A4",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-142",
+   "label": "물류전략실",
+   "phone": "061-797-4430",
+   "note": "열린경영 — 경영공시",
+   "doc_ids": [
+    "YGPA-142"
+   ],
+   "source": "열린경영 — 경영공시 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/info/mgdi/contPageDetail.do?conts_no=456C64AE7CAE4F47ADC12E80E9DAB9F8",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-143",
+   "label": "AI디지털부",
+   "phone": "061-797-4472",
+   "note": "열린경영 — 공공데이터 개방 — 공공데이터 제공 안내",
+   "doc_ids": [
+    "YGPA-143"
+   ],
+   "source": "열린경영 — 공공데이터 개방 — 공공데이터 제공 안내 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/info/puda/dals/contPageDetail.do?conts_no=06B56C704B9049639D2B9BF017B4D843",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-144",
+   "label": "글로벌마케팅부",
+   "phone": "061-797-4467",
+   "note": "공공데이터 개방 — 선박·화물실적통계 — 선박입출항실적통계",
+   "doc_ids": [
+    "YGPA-144"
+   ],
+   "source": "공공데이터 개방 — 선박·화물실적통계 — 선박입출항실적통계 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/info/puda/prst/pr01/contPageDetail.do?conts_no=9987FE04E3D54939ACDF7E8F171FD442",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-145",
+   "label": "글로벌마케팅부",
+   "phone": "061-797-4467",
+   "note": "공공데이터 개방 — 선박·화물실적통계 — 화물처리실적통계",
+   "doc_ids": [
+    "YGPA-145"
+   ],
+   "source": "공공데이터 개방 — 선박·화물실적통계 — 화물처리실적통계 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/info/puda/prst/pr02/contPageDetail.do?conts_no=D0E471E340204659A9F73211FBFF5816",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-146",
+   "label": "글로벌마케팅부",
+   "phone": "061-797-4467",
+   "note": "공공데이터 개방 — 선박·화물실적통계 — 컨테이너처리실적통계",
+   "doc_ids": [
+    "YGPA-146"
+   ],
+   "source": "공공데이터 개방 — 선박·화물실적통계 — 컨테이너처리실적통계 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/info/puda/prst/pr03/contPageDetail.do?conts_no=FA343F08B5354AE1A55278688EA62726",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-147",
+   "label": "ESG경영실",
+   "phone": "061-797-4384",
+   "note": "민원서비스 — 적극행정 — 적극행정 칭찬海",
+   "doc_ids": [
+    "YGPA-147"
+   ],
+   "source": "민원서비스 — 적극행정 — 적극행정 칭찬海 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/mwse/actv/atpr/contPageDetail.do?conts_no=0D66DDC2796F49988396ABC95F1A1AD4",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-148",
+   "label": "ESG경영실",
+   "phone": "061-797-4384",
+   "note": "민원서비스 — 적극행정 — 소극행정신고센터",
+   "doc_ids": [
+    "YGPA-148"
+   ],
+   "source": "민원서비스 — 적극행정 — 소극행정신고센터 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/mwse/actv/pasi/contPageDetail.do?conts_no=264C2A2B3CEC475BA8813E96BA54C248",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-149",
+   "label": "감사실",
+   "phone": "061-797-4403",
+   "note": "민원서비스 — 통합신고센터 — 오프라인신고",
+   "doc_ids": [
+    "YGPA-149"
+   ],
+   "source": "민원서비스 — 통합신고센터 — 오프라인신고 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/mwse/dclr/ofdc/contPageDetail.do?conts_no=7ED3F68E7CC84864995F91A4353AB896",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-150",
+   "label": "여수지사",
+   "phone": "061-797-4346",
+   "note": "Port-MIS — 항만시설 이용안내 — 항만시설 이용절차",
+   "doc_ids": [
+    "YGPA-150"
+   ],
+   "source": "Port-MIS — 항만시설 이용안내 — 항만시설 이용절차 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/mwse/pmis/pmpr/contPageDetail.do?conts_no=B7992C8ED2D74DAC88CD2EBAC113ACB3",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-151",
+   "label": "물류전략실",
+   "phone": "061-797-4426",
+   "note": "민원서비스 — 규제개혁 — 기업성장응답센터 소개",
+   "doc_ids": [
+    "YGPA-151"
+   ],
+   "source": "민원서비스 — 규제개혁 — 기업성장응답센터 소개 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/mwse/regu/bsrq/contPageDetail.do?conts_no=410157923C2C45B78D379C1D33AE175C",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-152",
+   "label": "물류전략실",
+   "phone": "061-797-4426",
+   "note": "민원서비스 — 규제개혁 — 기업민원보고서비스헌장",
+   "doc_ids": [
+    "YGPA-152"
+   ],
+   "source": "민원서비스 — 규제개혁 — 기업민원보고서비스헌장 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/mwse/regu/bssr/contPageDetail.do?conts_no=9F5B80ECD87C48EE94F80E8CC9D697C7",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-153",
+   "label": "물류전략실",
+   "phone": "061-797-4426",
+   "note": "민원서비스 — 규제개혁 — 규제애로신고",
+   "doc_ids": [
+    "YGPA-153"
+   ],
+   "source": "민원서비스 — 규제개혁 — 규제애로신고 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/mwse/regu/reer/contPageDetail.do?conts_no=E9BC56633BA04BB0BBFE3188C6DFACAA",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-154",
+   "label": "경영지원부",
+   "phone": "061-797-4343",
+   "note": "민원서비스 — 신문고 — 국민신문고",
+   "doc_ids": [
+    "YGPA-154"
+   ],
+   "source": "민원서비스 — 신문고 — 국민신문고 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/mwse/sinm/csin/contPageDetail.do?conts_no=8C2E09E991964033AA77A6CE90B1D396",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-155",
+   "label": "경영지원부",
+   "phone": "061-797-4343",
+   "note": "민원서비스 — 신문고 — 국민신문고 나의 민원",
+   "doc_ids": [
+    "YGPA-155"
+   ],
+   "source": "민원서비스 — 신문고 — 국민신문고 나의 민원 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/mwse/sinm/mysi/contPageDetail.do?conts_no=A68FCE0373F04D89BB61DED4EA96E108",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-156",
+   "label": "해양복합운영부",
+   "phone": "061-797-4565",
+   "note": "항만운영 — 여수세계박람회장 — 시설현황",
+   "doc_ids": [
+    "YGPA-156"
+   ],
+   "source": "항만운영 — 여수세계박람회장 — 시설현황 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/expo/exde/contPageDetail.do?conts_no=7BFF5600438C474BA400D9B410155AF6",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-157",
+   "label": "해양복합전략실",
+   "phone": "061-797-4455",
+   "note": "항만운영 — 여수세계박람회장 — 일반현황",
+   "doc_ids": [
+    "YGPA-157"
+   ],
+   "source": "항만운영 — 여수세계박람회장 — 일반현황 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/expo/geex/contPageDetail.do?conts_no=E9EA4DAFFEB549D994508180739E85B5",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-158",
+   "label": "물류단지부",
+   "phone": "061-797-4443",
+   "note": "광양항 배후단지 — 근린시설 — 근린시설 총괄",
+   "doc_ids": [
+    "YGPA-158"
+   ],
+   "source": "광양항 배후단지 — 근린시설 — 근린시설 총괄 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/gybe/cmfa/cm01/contPageDetail.do?conts_no=E1FC8F0AC9AB490A8B981C3AD420DEAA",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-159",
+   "label": "물류단지부",
+   "phone": "061-797-4443",
+   "note": "광양항 배후단지 — 근린시설 — 서측배후단지 근린공원",
+   "doc_ids": [
+    "YGPA-159"
+   ],
+   "source": "광양항 배후단지 — 근린시설 — 서측배후단지 근린공원 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/gybe/cmfa/cm02/contPageDetail.do?conts_no=BB6F1293BA3F4C3197F1FBBD6BF9144A",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-160",
+   "label": "물류단지부",
+   "phone": "061-797-4452",
+   "note": "광양항 배후단지 — 근린시설 — 동측배후단지 근린공원",
+   "doc_ids": [
+    "YGPA-160"
+   ],
+   "source": "광양항 배후단지 — 근린시설 — 동측배후단지 근린공원 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/gybe/cmfa/cm03/contPageDetail.do?conts_no=609B5ED254554262BCA535193713FEB6",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-161",
+   "label": "물류단지부",
+   "phone": "061-797-4443",
+   "note": "광양항 배후단지 — 근린시설 — 체육시설(테니스장)",
+   "doc_ids": [
+    "YGPA-161"
+   ],
+   "source": "광양항 배후단지 — 근린시설 — 체육시설(테니스장) 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/gybe/cmfa/cm04/contPageDetail.do?conts_no=F577EEF20BC6419DAD189A7E2044D16D",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-162",
+   "label": "물류단지부",
+   "phone": "061-797-4443",
+   "note": "광양항 배후단지 — 근린시설 — 체육시설(축구장 등)",
+   "doc_ids": [
+    "YGPA-162"
+   ],
+   "source": "광양항 배후단지 — 근린시설 — 체육시설(축구장 등) 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/gybe/cmfa/cm05/contPageDetail.do?conts_no=4760D19DDD9C46AE9353EF2CB6795FA4",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-163",
+   "label": "물류전략실",
+   "phone": "061-797-4430",
+   "note": "광양항 배후단지 — 근린시설 — 광양항 해양공원",
+   "doc_ids": [
+    "YGPA-163"
+   ],
+   "source": "광양항 배후단지 — 근린시설 — 광양항 해양공원 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/gybe/cmfa/cm06/contPageDetail.do?conts_no=3518200EFB6942B1A8C8DF7DD56E43A2",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-164",
+   "label": "물류단지부",
+   "phone": "061-797-4456",
+   "note": "광양항 배후단지 — 단지조성현황 — 단지현황",
+   "doc_ids": [
+    "YGPA-164"
+   ],
+   "source": "광양항 배후단지 — 단지조성현황 — 단지현황 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/gybe/cmpx/cm01/contPageDetail.do?conts_no=A9F95144D5B4427C81A08F1532549135",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-165",
+   "label": "물류단지부",
+   "phone": "061-797-4456",
+   "note": "광양항 배후단지 — 단지조성현황 — 동측배후단지",
+   "doc_ids": [
+    "YGPA-165"
+   ],
+   "source": "광양항 배후단지 — 단지조성현황 — 동측배후단지 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/gybe/cmpx/cm02/contPageDetail.do?conts_no=8163399BAB5440FC82A29D7719CC8D72",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-166",
+   "label": "물류단지부",
+   "phone": "061-797-4456",
+   "note": "광양항 배후단지 — 단지조성현황 — 서측배후단지",
+   "doc_ids": [
+    "YGPA-166"
+   ],
+   "source": "광양항 배후단지 — 단지조성현황 — 서측배후단지 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/gybe/cmpx/cm03/contPageDetail.do?conts_no=804BC3044AFE434E91DB94E27D040DF7",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-167",
+   "label": "물류단지부",
+   "phone": "061-797-4456",
+   "note": "광양항 배후단지 — 단지조성현황 — 세풍배후단지",
+   "doc_ids": [
+    "YGPA-167"
+   ],
+   "source": "광양항 배후단지 — 단지조성현황 — 세풍배후단지 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/gybe/cmpx/cm04/contPageDetail.do?conts_no=0867090929EC43C7BE7230A26FA2C888",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-168",
+   "label": "물류단지부",
+   "phone": "061-797-4456",
+   "note": "광양항 배후단지 — 단지조성현황 — 세풍배후단지",
+   "doc_ids": [
+    "YGPA-168"
+   ],
+   "source": "광양항 배후단지 — 단지조성현황 — 세풍배후단지 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/gybe/cmpx/cm04/contPageDetail.do?conts_no=27E310C56C084A3A94D7BB2C6C96233D",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-169",
+   "label": "물류단지부",
+   "phone": "061-797-4456",
+   "note": "항만운영 — 광양항 배후단지 — 개발현황",
+   "doc_ids": [
+    "YGPA-169"
+   ],
+   "source": "항만운영 — 광양항 배후단지 — 개발현황 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/gybe/devm/contPageDetail.do?conts_no=C85FEA838A1A4FAAB683E46FB11D28FD",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-170",
+   "label": "물류단지부",
+   "phone": "061-797-4456",
+   "note": "광양항 배후단지 — 일반현황 — 개념",
+   "doc_ids": [
+    "YGPA-170"
+   ],
+   "source": "광양항 배후단지 — 일반현황 — 개념 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/gybe/genl/ge01/contPageDetail.do?conts_no=A7A1B42D82CC4187B2480534B871EE77",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-171",
+   "label": "물류단지부",
+   "phone": "061-797-4456",
+   "note": "광양항 배후단지 — 일반현황 — 자유무역지역",
+   "doc_ids": [
+    "YGPA-171"
+   ],
+   "source": "광양항 배후단지 — 일반현황 — 자유무역지역 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/gybe/genl/ge02/contPageDetail.do?conts_no=8318A583C8954866A586BAAE8C9D0043",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-172",
+   "label": "물류단지부",
+   "phone": "061-797-4456",
+   "note": "광양항 배후단지 — 물류인프라 — 황금물류센터",
+   "doc_ids": [
+    "YGPA-172"
+   ],
+   "source": "광양항 배후단지 — 물류인프라 — 황금물류센터 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/gybe/ifra/if01/contPageDetail.do?conts_no=3145D97190A94CA280AE977FC9BD25AE",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-173",
+   "label": "물류단지부",
+   "phone": "061-797-4456",
+   "note": "광양항 배후단지 — 물류인프라 — 냉동냉장창고",
+   "doc_ids": [
+    "YGPA-173"
+   ],
+   "source": "광양항 배후단지 — 물류인프라 — 냉동냉장창고 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/gybe/ifra/if02/contPageDetail.do?conts_no=07E9034631E9473BB473C01A877356B7",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-174",
+   "label": "물류단지부",
+   "phone": "061-797-4456",
+   "note": "광양항 배후단지 — 물류인프라 — 국제물류센터",
+   "doc_ids": [
+    "YGPA-174"
+   ],
+   "source": "광양항 배후단지 — 물류인프라 — 국제물류센터 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/gybe/ifra/if03/contPageDetail.do?conts_no=913AFCB39E434EC382A932E39D152491",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-175",
+   "label": "물류단지부",
+   "phone": "061-797-4456",
+   "note": "광양항 배후단지 — 물류인프라 — 위험물창고",
+   "doc_ids": [
+    "YGPA-175"
+   ],
+   "source": "광양항 배후단지 — 물류인프라 — 위험물창고 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/gybe/ifra/if04/contPageDetail.do?conts_no=ED4B36C59156402B9564F1CCF6C41E8D",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-176",
+   "label": "물류단지부",
+   "phone": "061-797-4456",
+   "note": "광양항 배후단지 — 물류인프라 — FTZ운영건물",
+   "doc_ids": [
+    "YGPA-176"
+   ],
+   "source": "광양항 배후단지 — 물류인프라 — FTZ운영건물 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/gybe/ifra/if05/contPageDetail.do?conts_no=BEAFF6760CE74EF181891B13D281E30B",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-177",
+   "label": "물류단지부",
+   "phone": "061-797-4456",
+   "note": "광양항 배후단지 — 입주현황 — 동측배후단지",
+   "doc_ids": [
+    "YGPA-177"
+   ],
+   "source": "광양항 배후단지 — 입주현황 — 동측배후단지 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/gybe/mvst/contPageDetail.do?conts_no=565A12BAB3D24B9E88C50C6EF7E78761",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-178",
+   "label": "물류단지부",
+   "phone": "061-797-4456",
+   "note": "광양항 배후단지 — 입주현황 — 동측배후단지",
+   "doc_ids": [
+    "YGPA-178"
+   ],
+   "source": "광양항 배후단지 — 입주현황 — 동측배후단지 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/gybe/mvst/mv01/contPageDetail.do?conts_no=EC40A3F5BDBC45B48B6AD900670F7437",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-179",
+   "label": "물류단지부",
+   "phone": "061-797-4456",
+   "note": "광양항 배후단지 — 입주현황 — 동측 3단계",
+   "doc_ids": [
+    "YGPA-179"
+   ],
+   "source": "광양항 배후단지 — 입주현황 — 동측 3단계 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/gybe/mvst/mv02/contPageDetail.do?conts_no=713504EB7C0642ADBD92180C0E319BA9",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-180",
+   "label": "물류단지부",
+   "phone": "061-797-4456",
+   "note": "광양항 배후단지 — 입주현황 — 서측배후단지",
+   "doc_ids": [
+    "YGPA-180"
+   ],
+   "source": "광양항 배후단지 — 입주현황 — 서측배후단지 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/gybe/mvst/mv04/contPageDetail.do?conts_no=00E6ED1920324DBDA434D83FC62D81EA",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-181",
+   "label": "물류단지부",
+   "phone": "061-797-4456",
+   "note": "광양항 배후단지 — 입주현황 — 세풍배후단지",
+   "doc_ids": [
+    "YGPA-181"
+   ],
+   "source": "광양항 배후단지 — 입주현황 — 세풍배후단지 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/gybe/mvst/mv05/contPageDetail.do?conts_no=D723884E1A944EF7B70FF61859118C70",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-182",
+   "label": "물류단지부",
+   "phone": "061-797-4456",
+   "note": "광양항 배후단지 — 입주지원 — 입주개시",
+   "doc_ids": [
+    "YGPA-182"
+   ],
+   "source": "광양항 배후단지 — 입주지원 — 입주개시 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/gybe/mvsu/ms04/contPageDetail.do?conts_no=84E130D105A74711907FD283E37202AC",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-183",
+   "label": "물류단지부",
+   "phone": "061-797-4456",
+   "note": "광양항 배후단지 — 입주지원 — 사업확장",
+   "doc_ids": [
+    "YGPA-183"
+   ],
+   "source": "광양항 배후단지 — 입주지원 — 사업확장 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/gybe/mvsu/ms05/contPageDetail.do?conts_no=678F6A6DCEDF40EB94943E48811C54A4",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-184",
+   "label": "물류단지부",
+   "phone": "061-797-4456",
+   "note": "광양항 배후단지 — 입주지원 — 기관별 지원 내용(종합)",
+   "doc_ids": [
+    "YGPA-184"
+   ],
+   "source": "광양항 배후단지 — 입주지원 — 기관별 지원 내용(종합) 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/gybe/mvsu/ms06/contPageDetail.do?conts_no=C9AED27A7277446E891632531E01827A",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-185",
+   "label": "글로벌마케팅부",
+   "phone": "061-797-4461",
+   "note": "광양항 운영정보 — 광양항 인센티브 제도 — 지급",
+   "doc_ids": [
+    "YGPA-185"
+   ],
+   "source": "광양항 운영정보 — 광양항 인센티브 제도 — 지급 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/gymg/incn/in01/contPageDetail.do?conts_no=D48FD4615B504CA4B8A3305F8A021A19",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-186",
+   "label": "물류전략실",
+   "phone": "061-797-4432",
+   "note": "광양항 운영정보 — 광양항 인센티브 제도 — 감면",
+   "doc_ids": [
+    "YGPA-186"
+   ],
+   "source": "광양항 운영정보 — 광양항 인센티브 제도 — 감면 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/gymg/incn/in02/contPageDetail.do?conts_no=38950B1EB5BB49DE8B5CE50E1B14C4B4",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-187",
+   "label": "글로벌마케팅부",
+   "phone": "061-797-4464",
+   "note": "항만운영 — 광양항 운영정보 — 항만운영정보",
+   "doc_ids": [
+    "YGPA-187"
+   ],
+   "source": "항만운영 — 광양항 운영정보 — 항만운영정보 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/gymg/ptmg/contPageDetail.do?conts_no=73B3FFE3C070422FB2275D4D8A47FD11",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-188",
+   "label": "스마트항만개발실",
+   "phone": "061-797-4512",
+   "note": "항만운영 — 광양항 — 개발현황",
+   "doc_ids": [
+    "YGPA-188"
+   ],
+   "source": "항만운영 — 광양항 — 개발현황 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/gypt/devm/contPageDetail.do?conts_no=BF03F9B710384D718A9A673F6B4BE1C6",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-189",
+   "label": "물류전략실",
+   "phone": "061-797-4475",
+   "note": "광양항 광양지역 — 율촌일반 부두 — 소개",
+   "doc_ids": [
+    "YGPA-189"
+   ],
+   "source": "광양항 광양지역 — 율촌일반 부두 — 소개 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/gypt/faci/gygy/fa55/contPageDetail.do?conts_no=F179BE3E596D43268D79AF9CA26DAAE7",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-190",
+   "label": "물류전략실",
+   "phone": "061-797-4475",
+   "note": "광양항 광양지역 — 현대제철부두 — 소개",
+   "doc_ids": [
+    "YGPA-190"
+   ],
+   "source": "광양항 광양지역 — 현대제철부두 — 소개 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/gypt/faci/gygy/fa56/contPageDetail.do?conts_no=88E9485851B74018B4C737836E74F0DF",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-191",
+   "label": "물류전략실",
+   "phone": "061-797-4475",
+   "note": "광양항 광양지역 — 한라IMS 전용부두 — 소개",
+   "doc_ids": [
+    "YGPA-191"
+   ],
+   "source": "광양항 광양지역 — 한라IMS 전용부두 — 소개 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/gypt/faci/gygy/fa57/contPageDetail.do?conts_no=15AE0BB0EA1F4A1FB57672675074E4F3",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-192",
+   "label": "물류전략실",
+   "phone": "061-797-4475",
+   "note": "광양항 광양지역 — 한화오션에코텍 전용부두 — 소개",
+   "doc_ids": [
+    "YGPA-192"
+   ],
+   "source": "광양항 광양지역 — 한화오션에코텍 전용부두 — 소개 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/gypt/faci/gygy/fa58/contPageDetail.do?conts_no=4BD08CCBC86342788978CC1D3910D9EC",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-193",
+   "label": "물류전략실",
+   "phone": "061-797-4475",
+   "note": "광양항 광양지역 — 한화오션에코텍 전용부두 — 소개",
+   "doc_ids": [
+    "YGPA-193"
+   ],
+   "source": "광양항 광양지역 — 한화오션에코텍 전용부두 — 소개 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/gypt/faci/gygy/fa58/contPageDetail.do?conts_no=6A14ABA4B62C4076928A3E2C312ED6E7",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-194",
+   "label": "물류전략실",
+   "phone": "061-797-4475",
+   "note": "광양항 광양지역 — 현대스틸 전용부두 — 소개",
+   "doc_ids": [
+    "YGPA-194"
+   ],
+   "source": "광양항 광양지역 — 현대스틸 전용부두 — 소개 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/gypt/faci/gygy/fa59/contPageDetail.do?conts_no=3FAA95514F4D4243BD8EFE169A60CAC9",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-195",
+   "label": "물류전략실",
+   "phone": "061-797-4475",
+   "note": "광양항 광양지역 — 중마 일반 부두 — 소개",
+   "doc_ids": [
+    "YGPA-195"
+   ],
+   "source": "광양항 광양지역 — 중마 일반 부두 — 소개 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/gypt/faci/gygy/fa60/contPageDetail.do?conts_no=33EA7CE4AE864276810901B04CB5A690",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-196",
+   "label": "물류전략실",
+   "phone": "061-797-4475",
+   "note": "광양항 광양지역 — 관리 부두 — 소개",
+   "doc_ids": [
+    "YGPA-196"
+   ],
+   "source": "광양항 광양지역 — 관리 부두 — 소개 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/gypt/faci/gygy/fa61/contPageDetail.do?conts_no=5FA27775259E43F7B4DA7DB3252C78B9",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-197",
+   "label": "물류전략실",
+   "phone": "061-797-4475",
+   "note": "광양항 광양지역 — 후판 RO-RO 부두 — 소개",
+   "doc_ids": [
+    "YGPA-197"
+   ],
+   "source": "광양항 광양지역 — 후판 RO-RO 부두 — 소개 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/gypt/faci/gygy/fa62/contPageDetail.do?conts_no=09909B90BED149B5B12E13058C1BFD9A",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-198",
+   "label": "물류전략실",
+   "phone": "061-797-4475",
+   "note": "광양항 광양지역 — 고철 부두 — 소개",
+   "doc_ids": [
+    "YGPA-198"
+   ],
+   "source": "광양항 광양지역 — 고철 부두 — 소개 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/gypt/faci/gygy/fa63/contPageDetail.do?conts_no=29CCE47E7F984ADAADDD288F7B313F2A",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-199",
+   "label": "물류전략실",
+   "phone": "061-797-4475",
+   "note": "광양항 광양지역 — 제품 부두 — 소개",
+   "doc_ids": [
+    "YGPA-199"
+   ],
+   "source": "광양항 광양지역 — 제품 부두 — 소개 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/gypt/faci/gygy/fa64/contPageDetail.do?conts_no=AD6DA598D8DA481C8BA1B3C810915FA3",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-200",
+   "label": "물류전략실",
+   "phone": "061-797-4475",
+   "note": "광양항 광양지역 — RO-RO 부두 — 소개",
+   "doc_ids": [
+    "YGPA-200"
+   ],
+   "source": "광양항 광양지역 — RO-RO 부두 — 소개 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/gypt/faci/gygy/fa65/contPageDetail.do?conts_no=F1DC54E8EB90445EB4F452090C561272",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-201",
+   "label": "물류전략실",
+   "phone": "061-797-4475",
+   "note": "광양항 광양지역 — CTS 및 원료부두 — 소개",
+   "doc_ids": [
+    "YGPA-201"
+   ],
+   "source": "광양항 광양지역 — CTS 및 원료부두 — 소개 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/gypt/faci/gygy/fa66/contPageDetail.do?conts_no=D3FA5A5DB89D485F98EED764B784B5E0",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-202",
+   "label": "물류전략실",
+   "phone": "061-797-4475",
+   "note": "광양항 광양지역 — LNG부두 — 소개",
+   "doc_ids": [
+    "YGPA-202"
+   ],
+   "source": "광양항 광양지역 — LNG부두 — 소개 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/gypt/faci/gygy/fa67/contPageDetail.do?conts_no=5723F163FD5742C2990914ED7B0828AE",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-203",
+   "label": "물류전략실",
+   "phone": "061-797-4475",
+   "note": "광양항 광양지역 — 시멘트부두 — 소개",
+   "doc_ids": [
+    "YGPA-203"
+   ],
+   "source": "광양항 광양지역 — 시멘트부두 — 소개 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/gypt/faci/gygy/fa68/contPageDetail.do?conts_no=7CE47B7318B147AE99B427B77290B2AA",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-204",
+   "label": "물류전략실",
+   "phone": "061-797-4475",
+   "note": "광양항 광양지역 — 태인부두 — 소개",
+   "doc_ids": [
+    "YGPA-204"
+   ],
+   "source": "광양항 광양지역 — 태인부두 — 소개 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/gypt/faci/gygy/fa69/contPageDetail.do?conts_no=743EAF2303BA4009865B80B884A5A925",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-205",
+   "label": "여수지사",
+   "phone": "061-797-4331",
+   "note": "광양항 여천지역 — OKYC부두 — 소개",
+   "doc_ids": [
+    "YGPA-205"
+   ],
+   "source": "광양항 여천지역 — OKYC부두 — 소개 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/gypt/faci/gyyc/fa02/contPageDetail.do?conts_no=33E334752BB04136A118773A015D3119",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-206",
+   "label": "여수지사",
+   "phone": "061-797-4331",
+   "note": "광양항 여천지역 — U-1 입출하 부두 — 소개",
+   "doc_ids": [
+    "YGPA-206"
+   ],
+   "source": "광양항 여천지역 — U-1 입출하 부두 — 소개 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/gypt/faci/gyyc/fa03/contPageDetail.do?conts_no=AFCEDEB2883D4C6BBF8821478BF9823D",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-207",
+   "label": "여수지사",
+   "phone": "061-797-4331",
+   "note": "광양항 여천지역 — 원유 부두 — 소개",
+   "doc_ids": [
+    "YGPA-207"
+   ],
+   "source": "광양항 여천지역 — 원유 부두 — 소개 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/gypt/faci/gyyc/fa04/contPageDetail.do?conts_no=D7BF9176244B400C8AFE5E308DBE558F",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-208",
+   "label": "여수지사",
+   "phone": "061-797-4338",
+   "note": "광양항 여천지역 — 사포1부두 — 소개",
+   "doc_ids": [
+    "YGPA-208"
+   ],
+   "source": "광양항 여천지역 — 사포1부두 — 소개 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/gypt/faci/gyyc/fa05/contPageDetail.do?conts_no=6F8C48B9714D4E35AFEC5CC2E6C35C4D",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-209",
+   "label": "여수지사",
+   "phone": "061-797-4338",
+   "note": "광양항 여천지역 — 사포2부두 — 소개",
+   "doc_ids": [
+    "YGPA-209"
+   ],
+   "source": "광양항 여천지역 — 사포2부두 — 소개 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/gypt/faci/gyyc/fa06/contPageDetail.do?conts_no=F8CBF522EFD545C0B60063BEF428FE03",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-210",
+   "label": "여수지사",
+   "phone": "061-797-4331",
+   "note": "광양항 여천지역 — E1가스부두 — 소개",
+   "doc_ids": [
+    "YGPA-210"
+   ],
+   "source": "광양항 여천지역 — E1가스부두 — 소개 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/gypt/faci/gyyc/fa07/contPageDetail.do?conts_no=63F705BCC2274D3C8523D1B9EBAEE7D9",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-211",
+   "label": "여수지사",
+   "phone": "061-797-4331",
+   "note": "광양항 여천지역 — LPG부두 — 소개",
+   "doc_ids": [
+    "YGPA-211"
+   ],
+   "source": "광양항 여천지역 — LPG부두 — 소개 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/gypt/faci/gyyc/fa08/contPageDetail.do?conts_no=922297939D6C4F62A552146DF542BC88",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-212",
+   "label": "여수지사",
+   "phone": "061-797-4332",
+   "note": "광양항 여천지역 — 낙포부두 — 소개",
+   "doc_ids": [
+    "YGPA-212"
+   ],
+   "source": "광양항 여천지역 — 낙포부두 — 소개 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/gypt/faci/gyyc/fa09/contPageDetail.do?conts_no=C16BF49BD41243B0A1D8A51DE9F32454",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-213",
+   "label": "여수지사",
+   "phone": "061-797-4332",
+   "note": "광양항 여천지역 — GS칼텍스 제3제품부두 — 소개",
+   "doc_ids": [
+    "YGPA-213"
+   ],
+   "source": "광양항 여천지역 — GS칼텍스 제3제품부두 — 소개 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/gypt/faci/gyyc/fa10/contPageDetail.do?conts_no=87D042B9DC95436EA0F40376C579676F",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-214",
+   "label": "여수지사",
+   "phone": "061-797-4332",
+   "note": "광양항 여천지역 — 여천일반부두 — 소개",
+   "doc_ids": [
+    "YGPA-214"
+   ],
+   "source": "광양항 여천지역 — 여천일반부두 — 소개 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/gypt/faci/gyyc/fa11/contPageDetail.do?conts_no=79403A885FA34C5BB6AD708CC5B3EC10",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-215",
+   "label": "여수지사",
+   "phone": "061-797-4332",
+   "note": "광양항 여천지역 — 낙포석탄부두 — 소개",
+   "doc_ids": [
+    "YGPA-215"
+   ],
+   "source": "광양항 여천지역 — 낙포석탄부두 — 소개 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/gypt/faci/gyyc/fa12/contPageDetail.do?conts_no=D67D4FE4956C4AC69F999A59582F0B22",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-216",
+   "label": "여수지사",
+   "phone": "061-797-4334",
+   "note": "광양항 여천지역 — 석탄부두 — 소개",
+   "doc_ids": [
+    "YGPA-216"
+   ],
+   "source": "광양항 여천지역 — 석탄부두 — 소개 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/gypt/faci/gyyc/fa13/contPageDetail.do?conts_no=7E1EDEEDD364441D9F2A3974A736E50D",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-217",
+   "label": "여수지사",
+   "phone": "061-797-4334",
+   "note": "광양항 여천지역 — LG-VCM부두 — 소개",
+   "doc_ids": [
+    "YGPA-217"
+   ],
+   "source": "광양항 여천지역 — LG-VCM부두 — 소개 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/gypt/faci/gyyc/fa14/contPageDetail.do?conts_no=8964E822676D4E678756778882E81A78",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-218",
+   "label": "여수지사",
+   "phone": "061-797-4334",
+   "note": "광양항 여천지역 — GS칼텍스 제1제품부두 — 소개",
+   "doc_ids": [
+    "YGPA-218"
+   ],
+   "source": "광양항 여천지역 — GS칼텍스 제1제품부두 — 소개 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/gypt/faci/gyyc/fa15/contPageDetail.do?conts_no=00C9128DA9E74EA1B91867A261F92D4A",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-219",
+   "label": "여수지사",
+   "phone": "061-797-4334",
+   "note": "광양항 여천지역 — 코스모스부두 — 소개",
+   "doc_ids": [
+    "YGPA-219"
+   ],
+   "source": "광양항 여천지역 — 코스모스부두 — 소개 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/gypt/faci/gyyc/fa16/contPageDetail.do?conts_no=0744BD0B33574475812B71F75F714E56",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-220",
+   "label": "여수지사",
+   "phone": "061-797-4334",
+   "note": "광양항 여천지역 — 삼남부두 — 소개",
+   "doc_ids": [
+    "YGPA-220"
+   ],
+   "source": "광양항 여천지역 — 삼남부두 — 소개 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/gypt/faci/gyyc/fa17/contPageDetail.do?conts_no=777A2836921D4BA1A4EFD2B299F34AD2",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-221",
+   "label": "여수지사",
+   "phone": "061-797-4334",
+   "note": "광양항 여천지역 — GS칼텍스 제2제품부두 — 소개",
+   "doc_ids": [
+    "YGPA-221"
+   ],
+   "source": "광양항 여천지역 — GS칼텍스 제2제품부두 — 소개 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/gypt/faci/gyyc/fa18/contPageDetail.do?conts_no=ADD22BFCBA284746AE9A89FB956D51C8",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-222",
+   "label": "여수지사",
+   "phone": "061-797-4334",
+   "note": "광양항 여천지역 — 석탄부두 — 소개",
+   "doc_ids": [
+    "YGPA-222"
+   ],
+   "source": "광양항 여천지역 — 석탄부두 — 소개 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/gypt/faci/gyyc/fa19/contPageDetail.do?conts_no=5D8360EFAC6A4AED80FAEDFD39ABEABC",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-223",
+   "label": "여수지사",
+   "phone": "061-797-4334",
+   "note": "광양항 여천지역 — 중흥부두 — 소개",
+   "doc_ids": [
+    "YGPA-223"
+   ],
+   "source": "광양항 여천지역 — 중흥부두 — 소개 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/gypt/faci/gyyc/fa20/contPageDetail.do?conts_no=6BAE1F6A2DC5424D8F71ABCDC1826981",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-224",
+   "label": "여수지사",
+   "phone": "061-797-4334",
+   "note": "광양항 여천지역 — 제2중흥부두 — 소개",
+   "doc_ids": [
+    "YGPA-224"
+   ],
+   "source": "광양항 여천지역 — 제2중흥부두 — 소개 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/gypt/faci/gyyc/fa21/contPageDetail.do?conts_no=918F8A69991C4934946EC20C0A9C90FB",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-225",
+   "label": "여수지사",
+   "phone": "061-797-4334",
+   "note": "광양항 여천지역 — 석유화학부두 — 소개",
+   "doc_ids": [
+    "YGPA-225"
+   ],
+   "source": "광양항 여천지역 — 석유화학부두 — 소개 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/gypt/faci/gyyc/fa22/contPageDetail.do?conts_no=16F735B4748C40B1B931DDE8068092BB",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-226",
+   "label": "여수지사",
+   "phone": "061-797-4334",
+   "note": "광양항 여천지역 — LG화학제품부두 — 소개",
+   "doc_ids": [
+    "YGPA-226"
+   ],
+   "source": "광양항 여천지역 — LG화학제품부두 — 소개 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/gypt/faci/gyyc/fa23/contPageDetail.do?conts_no=37F8EE886DA049CBA1D9B403857B514D",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-227",
+   "label": "여수지사",
+   "phone": "061-797-4334",
+   "note": "광양항 여천지역 — 제2석유화학부두 — 소개",
+   "doc_ids": [
+    "YGPA-227"
+   ],
+   "source": "광양항 여천지역 — 제2석유화학부두 — 소개 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/gypt/faci/gyyc/fa24/contPageDetail.do?conts_no=8B2002D8D4F744058EBEF64D0EDE2C26",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-228",
+   "label": "물류전략실",
+   "phone": "061-797-4475",
+   "note": "항만운영 — 광양항 — 일반현황",
+   "doc_ids": [
+    "YGPA-228"
+   ],
+   "source": "항만운영 — 광양항 — 일반현황 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/gypt/genl/contPageDetail.do?conts_no=CF936E77BB6943798A96E9B664F7825F",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-229",
+   "label": "물류전략실",
+   "phone": "061-797-4475",
+   "note": "항만운영 — 광양항 — 연혁",
+   "doc_ids": [
+    "YGPA-229"
+   ],
+   "source": "항만운영 — 광양항 — 연혁 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/gypt/hist/contPageDetail.do?conts_no=66D1EA163ED845478D376A2F7131A325",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-230",
+   "label": "AI디지털부",
+   "phone": "061-797-4474",
+   "note": "지식정보 — 지식창고 E-book — 항만",
+   "doc_ids": [
+    "YGPA-230"
+   ],
+   "source": "지식정보 — 지식창고 E-book — 항만 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/know/ebok/eb01/contPageDetail.do?conts_no=9CD3E488308041D78DDB13A8CF9CCBCA",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-231",
+   "label": "AI디지털부",
+   "phone": "061-797-4474",
+   "note": "지식정보 — 지식창고 E-book — 컨테이너",
+   "doc_ids": [
+    "YGPA-231"
+   ],
+   "source": "지식정보 — 지식창고 E-book — 컨테이너 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/know/ebok/eb02/contPageDetail.do?conts_no=5CA977216C3E4FABA19ED7007D8725B6",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-232",
+   "label": "AI디지털부",
+   "phone": "061-797-4474",
+   "note": "지식정보 — 지식창고 E-book — 종합물류 정보망",
+   "doc_ids": [
+    "YGPA-232"
+   ],
+   "source": "지식정보 — 지식창고 E-book — 종합물류 정보망 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/know/ebok/eb03/contPageDetail.do?conts_no=A5CD5E2D4E6A4B2CB9C83AD2D130D693",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-233",
+   "label": "AI디지털부",
+   "phone": "061-797-4474",
+   "note": "지식정보 — 지식창고 E-book — 기타현황",
+   "doc_ids": [
+    "YGPA-233"
+   ],
+   "source": "지식정보 — 지식창고 E-book — 기타현황 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/know/ebok/eb04/contPageDetail.do?conts_no=FA6A3297F8C442568D7481EA2E2B281B",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-234",
+   "label": "AI디지털부",
+   "phone": "061-797-4474",
+   "note": "지식정보 — 지식창고 E-book — 지식창고 표목차",
+   "doc_ids": [
+    "YGPA-234"
+   ],
+   "source": "지식정보 — 지식창고 E-book — 지식창고 표목차 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/know/ebok/eb05/contPageDetail.do?conts_no=314F968FFC144C429BD302D1353A5AF4",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-235",
+   "label": "AI디지털부",
+   "phone": "061-797-4474",
+   "note": "지식정보 — 지식창고 E-book — 컨테이너 부두건설",
+   "doc_ids": [
+    "YGPA-235"
+   ],
+   "source": "지식정보 — 지식창고 E-book — 컨테이너 부두건설 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/know/ebok/eb06/contPageDetail.do?conts_no=61F83A86FAF649048A56E0C53FAEFA93",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-236",
+   "label": "AI디지털부",
+   "phone": "061-797-4474",
+   "note": "지식정보 — 지식창고 E-book — 항만건설사례",
+   "doc_ids": [
+    "YGPA-236"
+   ],
+   "source": "지식정보 — 지식창고 E-book — 항만건설사례 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/know/ebok/eb07/contPageDetail.do?conts_no=479BF1C60A584D3197E7A02E5F54A1FA",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-237",
+   "label": "AI디지털부",
+   "phone": "061-797-4474",
+   "note": "지식정보 — 지식창고 E-book — 해양항만 꾸림정보",
+   "doc_ids": [
+    "YGPA-237"
+   ],
+   "source": "지식정보 — 지식창고 E-book — 해양항만 꾸림정보 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/know/ebok/eb08/contPageDetail.do?conts_no=E8F42AA95B054FBA817798B61592C0AC",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-238",
+   "label": "AI디지털부",
+   "phone": "061-797-4474",
+   "note": "지식정보 — U-Port (RFID) — 유비쿼터스",
+   "doc_ids": [
+    "YGPA-238"
+   ],
+   "source": "지식정보 — U-Port (RFID) — 유비쿼터스 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/know/rfid/rf01/contPageDetail.do?conts_no=0891A7E33B4242489B1352412219328E",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-239",
+   "label": "AI디지털부",
+   "phone": "061-797-4474",
+   "note": "지식정보 — U-Port (RFID) — RFID란",
+   "doc_ids": [
+    "YGPA-239"
+   ],
+   "source": "지식정보 — U-Port (RFID) — RFID란 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/know/rfid/rf02/contPageDetail.do?conts_no=C29FC112A4E74264B664BC763D71E589",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-240",
+   "label": "AI디지털부",
+   "phone": "061-797-4474",
+   "note": "지식정보 — U-Port (RFID) — RFID 동작원리",
+   "doc_ids": [
+    "YGPA-240"
+   ],
+   "source": "지식정보 — U-Port (RFID) — RFID 동작원리 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/know/rfid/rf03/contPageDetail.do?conts_no=F632D18C7B6044D3B372E313A3CD2824",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-241",
+   "label": "물류전략실",
+   "phone": "061-797-4475",
+   "note": "항만운영 — 여수광양항 지도 — 여수광양항항세도",
+   "doc_ids": [
+    "YGPA-241"
+   ],
+   "source": "항만운영 — 여수광양항 지도 — 여수광양항항세도 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/maps/mp02/contPageDetail.do?conts_no=6AB00878CCE84CB8905B5379CA1D7C9C",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-242",
+   "label": "여수지사",
+   "phone": "061-797-4348",
+   "note": "항만운영 — 여객선터미널 — 여수연안여객선터미널 관리·운영 현황",
+   "doc_ids": [
+    "YGPA-242"
+   ],
+   "source": "항만운영 — 여객선터미널 — 여수연안여객선터미널 관리·운영 현황 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/term/ccop/contPageDetail.do?conts_no=9810BE1916894E8F8E631F07EA2794AA",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-243",
+   "label": "여수지사",
+   "phone": "061-797-4348",
+   "note": "항만운영 — 여객선터미널 — 여수연안여객선터미널",
+   "doc_ids": [
+    "YGPA-243"
+   ],
+   "source": "항만운영 — 여객선터미널 — 여수연안여객선터미널 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/term/cstt/contPageDetail.do?conts_no=5EA8540BD23A4DDCA4F7DF34C6C7FF15",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-244",
+   "label": "여수지사",
+   "phone": "061-797-4348",
+   "note": "항만운영 — 여객선터미널 — 여수연안여객선터미널",
+   "doc_ids": [
+    "YGPA-244"
+   ],
+   "source": "항만운영 — 여객선터미널 — 여수연안여객선터미널 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/term/cstt/contPageDetail.do?conts_no=EBD31CA0E16340AA928010653AA47335",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-245",
+   "label": "여수지사",
+   "phone": "061-797-4348",
+   "note": "항만운영 — 여수항 — 개발현황",
+   "doc_ids": [
+    "YGPA-245"
+   ],
+   "source": "항만운영 — 여수항 — 개발현황 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/yspt/devm/contPageDetail.do?conts_no=8FF6A34E07FC426D82DC75491B1DE9C2",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-246",
+   "label": "여수지사",
+   "phone": "061-797-4348",
+   "note": "시설현황 — 종화동소형선부두 — 소개",
+   "doc_ids": [
+    "YGPA-246"
+   ],
+   "source": "시설현황 — 종화동소형선부두 — 소개 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/yspt/faci/fa02/contPageDetail.do?conts_no=090C39F362F64580A6ECB5A0DB51BFB9",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-247",
+   "label": "여수지사",
+   "phone": "061-797-4348",
+   "note": "시설현황 — 중앙동소형선부두 — 소개",
+   "doc_ids": [
+    "YGPA-247"
+   ],
+   "source": "시설현황 — 중앙동소형선부두 — 소개 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/yspt/faci/fa03/contPageDetail.do?conts_no=DDFB7ADC45D04CAAAF727E2FE5B68C95",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-248",
+   "label": "여수지사",
+   "phone": "061-797-4348",
+   "note": "시설현황 — 남산동소형선부두 — 소개",
+   "doc_ids": [
+    "YGPA-248"
+   ],
+   "source": "시설현황 — 남산동소형선부두 — 소개 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/yspt/faci/fa04/contPageDetail.do?conts_no=A99CAB182F134874A71451C95651ED98",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-249",
+   "label": "여수지사",
+   "phone": "061-797-4348",
+   "note": "시설현황 — 여수연안여객선터미널 — 소개",
+   "doc_ids": [
+    "YGPA-249"
+   ],
+   "source": "시설현황 — 여수연안여객선터미널 — 소개 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/yspt/faci/fa05/contPageDetail.do?conts_no=FE0B7AAA04124B4FA4057417D0DD74D2",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-250",
+   "label": "여수지사",
+   "phone": "061-797-4337",
+   "note": "시설현황 — 여수엑스포여객선터미널 — 소개",
+   "doc_ids": [
+    "YGPA-250"
+   ],
+   "source": "시설현황 — 여수엑스포여객선터미널 — 소개 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/yspt/faci/fa06/contPageDetail.do?conts_no=F71A1FBE89EA49C9995EB2EB2D8EDAB1",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-251",
+   "label": "여수지사",
+   "phone": "061-797-4348",
+   "note": "시설현황 — 우두리소형선부두 — 소개",
+   "doc_ids": [
+    "YGPA-251"
+   ],
+   "source": "시설현황 — 우두리소형선부두 — 소개 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/yspt/faci/fa07/contPageDetail.do?conts_no=0C5C6DF4F46F4E77A491F03DA1141BAC",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-252",
+   "label": "여수지사",
+   "phone": "061-797-4348",
+   "note": "항만운영 — 여수항 — 일반현황",
+   "doc_ids": [
+    "YGPA-252"
+   ],
+   "source": "항만운영 — 여수항 — 일반현황 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/yspt/gerl/contPageDetail.do?conts_no=0D525556DD6B47169E54CD018216BE5B",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-253",
+   "label": "여수지사",
+   "phone": "061-797-4348",
+   "note": "항만운영 — 여수항 — 연혁",
+   "doc_ids": [
+    "YGPA-253"
+   ],
+   "source": "항만운영 — 여수항 — 연혁 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/port/yspt/hist/contPageDetail.do?conts_no=047895305BFF4E458F77CC06354E51A3",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-254",
+   "label": "AI디지털부",
+   "phone": "061-797-4474",
+   "note": "YGPA — 오시는 길 — 본사/홍보관",
+   "doc_ids": [
+    "YGPA-254"
+   ],
+   "source": "YGPA — 오시는 길 — 본사/홍보관 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/ygpa/dire/publ/contPageDetail.do?conts_no=70F38CAE02004A75B0C474C40CC8C77E",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-255",
+   "label": "AI디지털부",
+   "phone": "061-797-4474",
+   "note": "YGPA — 오시는 길 — 여수지사",
+   "doc_ids": [
+    "YGPA-255"
+   ],
+   "source": "YGPA — 오시는 길 — 여수지사 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/ygpa/dire/ysbs/contPageDetail.do?conts_no=3CCDA1D35DF74CD18A72282B014B594F",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-256",
+   "label": "AI디지털부",
+   "phone": "061-797-4474",
+   "note": "YGPA — 오시는 길 — 여수지사",
+   "doc_ids": [
+    "YGPA-256"
+   ],
+   "source": "YGPA — 오시는 길 — 여수지사 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/ygpa/dire/ysbs/contPageDetail.do?conts_no=90588E319CD94204B8972E7C99FF542F",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-257",
+   "label": "AI디지털부",
+   "phone": "061-797-4474",
+   "note": "YGPA — 오시는 길 — 여수엑스포해양복합사업단",
+   "doc_ids": [
+    "YGPA-257"
+   ],
+   "source": "YGPA — 오시는 길 — 여수엑스포해양복합사업단 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/ygpa/dire/ysep/contPageDetail.do?conts_no=89DC32F9F9E14CB2836C04E06D3F9C70",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-258",
+   "label": "경영지원부",
+   "phone": "061-797-4358",
+   "note": "홍보자료 — CI/캐릭터 — CI",
+   "doc_ids": [
+    "YGPA-258"
+   ],
+   "source": "홍보자료 — CI/캐릭터 — CI 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/ygpa/prom/cich/ci01/contPageDetail.do?conts_no=73CF9B8C97DE49EB9BF4BC6CF3BB3BA2",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-259",
+   "label": "경영지원부",
+   "phone": "061-797-4358",
+   "note": "홍보자료 — CI/캐릭터 — 캐릭터",
+   "doc_ids": [
+    "YGPA-259"
+   ],
+   "source": "홍보자료 — CI/캐릭터 — 캐릭터 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/ygpa/prom/cich/ci02/contPageDetail.do?conts_no=D96BAB6A8E284C6AAB47F1D046321D2F",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-260",
+   "label": "기획조정실",
+   "phone": "061-797-4325",
+   "note": "YGPA — 항만위원회",
+   "doc_ids": [
+    "YGPA-260"
+   ],
+   "source": "YGPA — 항만위원회 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/ygpa/ptcm/contPageDetail.do?conts_no=712A83D95A3C491BBE579EF4858ABD1A",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-261",
+   "label": "AI디지털부",
+   "phone": "061-797-4474",
+   "note": "YGPA — 유관기관",
+   "doc_ids": [
+    "YGPA-261"
+   ],
+   "source": "YGPA — 유관기관 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/ygpa/rela/contPageDetail.do?conts_no=6C7A633019554C64852A358D9B28094F",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-262",
+   "label": "기획조정실",
+   "phone": "061-797-4322",
+   "note": "YGPA — 미션과 비전",
+   "doc_ids": [
+    "YGPA-262"
+   ],
+   "source": "YGPA — 미션과 비전 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/ygpa/vist/contPageDetail.do?conts_no=00D87E2FCDA741CD81623AEC8DD46404",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-263",
+   "label": "경영지원부",
+   "phone": "061-797-4358",
+   "note": "YGPA — 최고경영자 — 인사말",
+   "doc_ids": [
+    "YGPA-263"
+   ],
+   "source": "YGPA — 최고경영자 — 인사말 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/ygpa/yceo/iceo/contPageDetail.do?conts_no=917AE48B418447AF87BB47F1BF140103",
+   "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-264",
+   "label": "경영지원부",
+   "phone": "061-797-4358",
+   "note": "YGPA — 최고경영자 — 인사말",
+   "doc_ids": [
+    "YGPA-264"
+   ],
+   "source": "YGPA — 최고경영자 — 인사말 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/ygpa/yceo/iceo/contPageDetail.do?conts_no=A61A4D0CF017433C9E0602E8B10D9B15",
+   "fetched_on": "2026-11-02"
   }
  ]
 }

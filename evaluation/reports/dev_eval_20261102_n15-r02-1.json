@@ -1,0 +1,61 @@
+{
+ "dataset": "dev_questions_real_v1.jsonl",
+ "index_version": "bge-m3-dense-4c3a848b8c5d",
+ "run_at": "2026-11-02T09:06:05.275684+00:00",
+ "summary": {
+  "retrieval": "0/1",
+  "retrieval@1": "0/1",
+  "type": "1/1",
+  "buttons": "1/1",
+  "mention": "0/1",
+  "lead": "0/0",
+  "absent": "0/0",
+  "contact_btn": "0/0",
+  "contact": "0/0",
+  "type_by_group": {
+   "real": "1/1"
+  },
+  "uncited_lines_total": 0,
+  "violations_total": 0,
+  "unsupported_numbers_total": 0,
+  "first_token_s": {
+   "mean": 3.89,
+   "median": 3.89,
+   "max": 3.89
+  }
+ },
+ "rows": [
+  {
+   "id": "r02",
+   "group": "real",
+   "question": "여수광양항에 위험물 컨테이너를 반입할 때 사전 승인 절차가 어떻게 되나요?",
+   "answer_type": "answer",
+   "top1_score": 0.687,
+   "top_docs": [
+    "MOF-3990",
+    "MOF-3855",
+    "MOF-3988",
+    "MOF-3989",
+    "MOF-3853"
+   ],
+   "downloads": [],
+   "port_mis": true,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 3.89,
+   "total_s": 5.55,
+   "checks": {
+    "type": true,
+    "retrieval": false,
+    "retrieval@1": false,
+    "mention": false,
+    "buttons": true
+   },
+   "answer": "광양항에 위험물 컨테이너를 반입할 때는 사전에 위험물 반입 신고 절차를 거쳐야 합니다. 이는 항만 내 안전을 위해 필수적인 절차입니다[2].\n\n1. 위험물 반입 신고를 하되, 위험물 일람표를 첨부하여 제출합니다[2]."
+  }
+ ]
+}

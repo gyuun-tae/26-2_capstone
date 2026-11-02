@@ -1,0 +1,284 @@
+{
+ "dataset": "dev_questions_laws3_v1.jsonl",
+ "index_version": "bge-m3-dense-0727bde3f179",
+ "run_at": "2026-11-02T10:15:47.240380+00:00",
+ "summary": {
+  "retrieval": "8/8",
+  "retrieval@1": "8/8",
+  "type": "8/8",
+  "buttons": "8/8",
+  "mention": "8/8",
+  "lead": "0/0",
+  "absent": "0/0",
+  "contact_btn": "0/0",
+  "contact": "0/0",
+  "type_by_group": {
+   "laws3": "8/8"
+  },
+  "uncited_lines_total": 0,
+  "violations_total": 0,
+  "unsupported_numbers_total": 0,
+  "first_token_s": {
+   "mean": 1.68,
+   "median": 1.71,
+   "max": 2.32
+  }
+ },
+ "rows": [
+  {
+   "id": "n01",
+   "group": "laws3",
+   "question": "도선 요청을 받은 도선사가 도선을 거절할 수 있나요?",
+   "answer_type": "answer",
+   "top1_score": 0.685,
+   "top_docs": [
+    "LAW-025",
+    "LAW-025",
+    "MOF-3868",
+    "MOF-3867",
+    "YGPA-031"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 2.17,
+   "total_s": 3.98,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "도선 요청을 받은 도선사가 도선을 거절할 수 있는 경우는 제한되어 있습니다[1].\n\n1. 다른 법령에 따라 선박의 운항이 제한된 경우[1]\n2. 천재지변이나 그 밖의 불가항력으로 인하여 도선업무의 수행이 현저히 곤란한 경우[1]\n3. 해당 도선업무의 수행이 도선약관에 맞지 아니한 경우[1]"
+  },
+  {
+   "id": "n02",
+   "group": "laws3",
+   "question": "국제항해선박 보안심사에는 어떤 종류가 있나요?",
+   "answer_type": "answer",
+   "top1_score": 0.732,
+   "top_docs": [
+    "LAW-022",
+    "LAW-024",
+    "MOF-3921",
+    "MOF-3923",
+    "MOF-3924"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 1.68,
+   "total_s": 5.91,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "국제항해선박 보안심사는 최초보안심사, 갱신보안심사, 중간보안심사, 임시선박보안심사, 특별선박보안심사가 있습니다[1].\n\n1. 최초보안심사는 국제선박보안증서를 처음으로 교부받을 때 행하는 심사입니다[1]\n2. 갱신보안심사는 국제선박보안증서의 유효기간이 만료되기 전에 해양수산부령으로 정하는 시기에 행하는 심사입니다[1]\n3. 중간보안심사는 최초보안심사와 갱신보안심사 사이 또는 갱신보안심사와 갱신보안심사 사이에 해양수산부령으로 정하는 시기에 행하는 심사입니다[1]\n4. 임시선박보안심사는 국제항해선박을 임시로 항해에 사용하려는 경우에 행하는 심사입니다[1]\n5. 특별선박보안심사는 보안사건이 발생하는 등 해양수산부령으로 정하는 사유가 있는 경우에 실시할 수 있는 심사입니다[1]"
+  },
+  {
+   "id": "n03",
+   "group": "laws3",
+   "question": "선박보안기록부에는 무엇을 기록해야 하나요?",
+   "answer_type": "answer",
+   "top1_score": 0.712,
+   "top_docs": [
+    "LAW-024",
+    "LAW-022",
+    "YGPA-031",
+    "MOF-3930",
+    "LAW-009"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 1.46,
+   "total_s": 4.56,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "선박보안기록부에는 보안교육·훈련, 보안사건·침해, 보안등급, 보안과 관련된 통신기록, 내부보안심사 결과, 선박보안평가서 및 계획서 검토, 보안장비 유지·시험 등의 내용을 기록해야 합니다[1].\n\n1. 보안교육 및 훈련 내용 기록[1]  \n2. 발생한 보안사건 또는 보안침해 기록[1]  \n3. 선박의 보안등급 기록[1]  \n4. 보안과 관련된 통신기록 기록[1]  \n5. 내부보안심사 결과와 조치 기록[1]  \n6. 선박보안평가서와 선박보안계획서의 검토 및 보완 기록[1]  \n7. 보안장비의 유지, 교정 및 시험 기록[1]"
+  },
+  {
+   "id": "n04",
+   "group": "laws3",
+   "question": "선박 폐기물을 바다에 배출할 때 지켜야 할 기준이 있나요?",
+   "answer_type": "answer",
+   "top1_score": 0.726,
+   "top_docs": [
+    "LAW-032",
+    "LAW-032",
+    "YGPA-032",
+    "YGPA-031",
+    "YGPA-032"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 1.74,
+   "total_s": 5.41,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "선박으로부터 오염물질을 해양에 배출하는 것은 금지되어 있으나, 특정 조건에 따라 배출이 허용됩니다. 이 경우 해양수산부령이 정하는 해역과 처리기준 및 방법을 준수해야 합니다[1].\n\n1. 선박의 항해 및 정박 중 발생하는 폐기물을 배출하려면 해양수산부령이 정하는 해역에서 해양수산부령이 정하는 처리기준 및 방법에 따라 배출해야 합니다[1].\n2. 폐기물을 배출할 때는 해양수산부장관의 승인을 받은 배출률을 준수해야 하며, 배출한 장소와 배출량 등을 기관일지에 기재해야 합니다[2].\n3. 오염물질이 부득이하게 배출되는 경우(선박 또는 해양시설등의 안전확보, 손상, 오염사고 등)에도 해양수산부령이 정하는 방법에 따라 배출해야 합니다[1]."
+  },
+  {
+   "id": "n05",
+   "group": "laws3",
+   "question": "선박이 안전한 속력을 정할 때 무엇을 고려해야 하나요?",
+   "answer_type": "answer",
+   "top1_score": 0.739,
+   "top_docs": [
+    "LAW-031",
+    "LAW-007",
+    "YGPA-031",
+    "YGPA-131",
+    "YGPA-031"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 0.83,
+   "total_s": 4.7,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "선박이 안전한 속력을 정할 때는 여러 요소를 고려해야 합니다[1].\n\n1. 시계의 상태를 고려해야 합니다[1]\n2. 해상교통량의 밀도를 고려해야 합니다[1]\n3. 선박의 정지거리, 선회성능, 그 밖의 조종성능을 고려해야 합니다[1]\n4. 야간의 경우에는 항해에 지장을 주는 불빛의 유무를 고려해야 합니다[1]\n5. 바람, 해면 및 조류의 상태와 항해상 위험의 근접상태를 고려해야 합니다[1]\n6. 선박의 흘수와 수심과의 관계를 고려해야 합니다[1]\n7. 레이더의 특성 및 성능을 고려해야 합니다[1]\n8. 해면상태, 기상, 그 밖의 장애요인이 레이더 탐지에 미치는 영향을 고려해야 합니다[1]\n9. 레이더로 탐지한 선박의 수, 위치 및 동향을 고려해야 합니다[1]"
+  },
+  {
+   "id": "n06",
+   "group": "laws3",
+   "question": "국가물류기본계획은 얼마마다 수립하나요?",
+   "answer_type": "answer",
+   "top1_score": 0.773,
+   "top_docs": [
+    "LAW-033",
+    "LAW-033",
+    "YGPA-F30DEF4FE97",
+    "YGPA-017",
+    "YGPA-188"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 2.32,
+   "total_s": 2.77,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "국가물류기본계획은 5년마다 수립됩니다[1]."
+  },
+  {
+   "id": "n07",
+   "group": "laws3",
+   "question": "항만재개발사업 규제 특례는 다른 법보다 우선 적용되나요?",
+   "answer_type": "answer",
+   "top1_score": 0.801,
+   "top_docs": [
+    "LAW-030",
+    "LAW-016",
+    "YGPA-031",
+    "YGPA-032"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 1.05,
+   "total_s": 2.04,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "항만재개발사업에 적용되는 규제 특례는 다른 법률의 규정보다 우선하여 적용됩니다. 다만, 다른 법률에서 이 규제의 내용보다 완화된 규정이 있으면 그 법률에서 정하는 바에 따릅니다[1]."
+  },
+  {
+   "id": "n08",
+   "group": "laws3",
+   "question": "도선료는 어디에서 협의해서 정하나요?",
+   "answer_type": "answer",
+   "top1_score": 0.645,
+   "top_docs": [
+    "LAW-026",
+    "LAW-025",
+    "MOF-3869",
+    "MOF-3868",
+    "MOF-3869"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 2.18,
+   "total_s": 3.76,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "도선료는 중앙협의회와 지방협의회에서 협의하여 정합니다[1].  \n\n1. 중앙협의회는 도선료 및 도선선료의 결정 사항을 협의합니다[1].  \n2. 지방협의회는 관할 도선구의 도선료 및 도선선료의 산정 사항을 협의합니다[1]."
+  }
+ ]
+}

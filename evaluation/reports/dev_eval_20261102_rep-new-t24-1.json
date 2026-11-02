@@ -1,0 +1,67 @@
+{
+ "dataset": "dev_questions_team_v1.jsonl",
+ "index_version": "bge-m3-dense-236b5830fab6",
+ "run_at": "2026-11-02T08:50:20.126869+00:00",
+ "summary": {
+  "retrieval": "1/1",
+  "retrieval@1": "0/1",
+  "type": "1/1",
+  "buttons": "0/1",
+  "mention": "1/1",
+  "lead": "0/0",
+  "absent": "0/0",
+  "contact_btn": "0/0",
+  "contact": "0/0",
+  "type_by_group": {
+   "team": "1/1"
+  },
+  "uncited_lines_total": 1,
+  "violations_total": 0,
+  "unsupported_numbers_total": 0,
+  "first_token_s": {
+   "mean": 2.79,
+   "median": 2.79,
+   "max": 2.79
+  }
+ },
+ "rows": [
+  {
+   "id": "t24",
+   "group": "team",
+   "question": "How do I get a port access pass?",
+   "answer_type": "answer",
+   "top1_score": 0.561,
+   "top_docs": [
+    "YGPA-315",
+    "MOF-3881",
+    "YGPA-025",
+    "YGPA-150",
+    "YGPA-023"
+   ],
+   "downloads": [
+    "YGPA-025",
+    "YGPA-023"
+   ],
+   "port_mis": true,
+   "contacts": [
+    "항만출입증 담당자 (광양) 061-797-4434",
+    "항만출입증 담당자 (여수) 061-692-4336"
+   ],
+   "options": [],
+   "uncited_lines": 1,
+   "violations": [],
+   "contacts_from_evidence": 2,
+   "unsupported_numbers": [],
+   "first_token_s": 2.79,
+   "total_s": 7.23,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": false,
+    "mention": true,
+    "buttons": false
+   },
+   "answer": "To obtain a port access pass, you need to follow the procedures outlined below:\n\n1. Complete the user registration process on Port-MIS (ID and Password registration) [1].\n2. If the vessel information is not registered, submit a vessel information report (new or amended) [1].\n3. Check the vessel's entry and exit history to confirm the voyage [1].\n4. Submit a port entry report (initial, amended, or final) [1].\n5. If there is cargo to be discharged, submit a consolidated cargo report and a port facility usage report [1].\n6. If there is no cargo to be discharged, submit a port facility usage application [1].\n7. Submit a port exit report (initial, amended, or final) [1].\n8. If there is cargo to be loaded, submit a consolidated cargo report and a port facility usage report [1].\n9. If there is no cargo to be loaded, submit a port exit report (initial, amended, or final) [1].\n\nFor the application of a permanent port access pass for personnel or vehicles, you must complete the \"Port Access Permit Application for Personnel and Vehicles\" form [3].\n\nFor the registration of a company or organization to access the port, you must complete the \"Port Access Company Registration Application\" form [5]."
+  }
+ ]
+}

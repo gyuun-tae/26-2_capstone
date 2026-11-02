@@ -30,6 +30,18 @@
     {"doc_id": "LAW-018", "name": "항만안전특별법 시행규칙", "target": "law", "tier": 2},
     {"doc_id": "LAW-019", "name": "항만운송사업법", "target": "law", "tier": 2},
     {"doc_id": "LAW-020", "name": "항만운송사업법 시행령", "target": "law", "tier": 2},
-    {"doc_id": "LAW-021", "name": "항만운송사업법 시행규칙", "target": "law", "tier": 2}
+    {"doc_id": "LAW-021", "name": "항만운송사업법 시행규칙", "target": "law", "tier": 2},
+    {"doc_id": "LAW-022", "name": "국제항해선박 및 항만시설의 보안에 관한 법률", "target": "law", "tier": 3},
+    {"doc_id": "LAW-023", "name": "국제항해선박 및 항만시설의 보안에 관한 법률 시행령", "target": "law", "tier": 3},
+    {"doc_id": "LAW-024", "name": "국제항해선박 및 항만시설의 보안에 관한 법률 시행규칙", "target": "law", "tier": 3},
+    {"doc_id": "LAW-025", "name": "도선법", "target": "law", "tier": 3},
+    {"doc_id": "LAW-026", "name": "도선법 시행령", "target": "law", "tier": 3},
+    {"doc_id": "LAW-027", "name": "도선법 시행규칙", "target": "law", "tier": 3},
+    {"doc_id": "LAW-028", "name": "신항만건설 촉진법", "target": "law", "tier": 3},
+    {"doc_id": "LAW-029", "name": "신항만건설 촉진법 시행령", "target": "law", "tier": 3},
+    {"doc_id": "LAW-030", "name": "항만 재개발 및 주변지역 발전에 관한 법률", "target": "law", "tier": 3},
+    {"doc_id": "LAW-031", "name": "해상교통안전법", "target": "law", "tier": 3},
+    {"doc_id": "LAW-032", "name": "해양환경관리법", "target": "law", "tier": 3},
+    {"doc_id": "LAW-033", "name": "물류정책기본법", "target": "law", "tier": 3}
   ]
 }

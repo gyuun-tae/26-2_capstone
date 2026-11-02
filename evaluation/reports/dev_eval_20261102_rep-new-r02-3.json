@@ -1,0 +1,61 @@
+{
+ "dataset": "dev_questions_real_v1.jsonl",
+ "index_version": "bge-m3-dense-236b5830fab6",
+ "run_at": "2026-11-02T08:50:47.787528+00:00",
+ "summary": {
+  "retrieval": "0/1",
+  "retrieval@1": "0/1",
+  "type": "1/1",
+  "buttons": "1/1",
+  "mention": "0/1",
+  "lead": "0/0",
+  "absent": "0/0",
+  "contact_btn": "0/0",
+  "contact": "0/0",
+  "type_by_group": {
+   "real": "1/1"
+  },
+  "uncited_lines_total": 0,
+  "violations_total": 0,
+  "unsupported_numbers_total": 0,
+  "first_token_s": {
+   "mean": 0.48,
+   "median": 0.48,
+   "max": 0.48
+  }
+ },
+ "rows": [
+  {
+   "id": "r02",
+   "group": "real",
+   "question": "여수광양항에 위험물 컨테이너를 반입할 때 사전 승인 절차가 어떻게 되나요?",
+   "answer_type": "answer",
+   "top1_score": 0.687,
+   "top_docs": [
+    "MOF-3990",
+    "MOF-3855",
+    "MOF-3988",
+    "MOF-3989",
+    "MOF-3859"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 0.48,
+   "total_s": 3.21,
+   "checks": {
+    "type": true,
+    "retrieval": false,
+    "retrieval@1": false,
+    "mention": false,
+    "buttons": true
+   },
+   "answer": "광양항에 위험물 컨테이너를 반입할 때는 사전에 여수지방해양수산청의 승인을 받아야 합니다[2].  \n\n1. 기상악화 등의 사유로 항계 안에서의 위험물 하역이 부적당하다고 인정될 경우, 하역을 금지 또는 중지할 수 있습니다[2].  \n2. 항계 밖의 지정된 장소에서 위험물을 하역하는 선박은 이를 항계 안에 있는 선박으로 간주됩니다[2].  \n3. 위험물의 하역은 「개항직서법」 제22조에 따라 승인을 받은 경우에만 가능합니다[2]."
+  }
+ ]
+}

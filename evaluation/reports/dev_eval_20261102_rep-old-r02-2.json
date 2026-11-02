@@ -1,0 +1,61 @@
+{
+ "dataset": "dev_questions_real_v1.jsonl",
+ "index_version": "bge-m3-dense-c8f1fc61affe",
+ "run_at": "2026-11-02T08:49:36.114149+00:00",
+ "summary": {
+  "retrieval": "1/1",
+  "retrieval@1": "0/1",
+  "type": "1/1",
+  "buttons": "1/1",
+  "mention": "1/1",
+  "lead": "0/0",
+  "absent": "0/0",
+  "contact_btn": "0/0",
+  "contact": "0/0",
+  "type_by_group": {
+   "real": "1/1"
+  },
+  "uncited_lines_total": 0,
+  "violations_total": 0,
+  "unsupported_numbers_total": 0,
+  "first_token_s": {
+   "mean": 0.58,
+   "median": 0.58,
+   "max": 0.58
+  }
+ },
+ "rows": [
+  {
+   "id": "r02",
+   "group": "real",
+   "question": "여수광양항에 위험물 컨테이너를 반입할 때 사전 승인 절차가 어떻게 되나요?",
+   "answer_type": "answer",
+   "top1_score": 0.615,
+   "top_docs": [
+    "LAW-012",
+    "YGPA-032",
+    "LAW-009",
+    "YGPA-023",
+    "YGPA-025"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 0.58,
+   "total_s": 3.39,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": false,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "위험물 컨테이너를 여수광양항에 반입하려면 사전에 반입 신고 절차를 따라야 합니다[3].\n\n1. 반입 24시간 전에 위험물 반입신고서, 위험물 일람표, 화물적부도를 제출해야 합니다[3].\n2. 신고서는 지방해양수산청장 또는 시·도지사에게 제출해야 하며, 확인란에 날인을 받아야 합니다[3].\n3. 위험물 컨테이너 및 용기는 해양수산부장관이 점검할 수 있으며, 점검 항목 및 방법은 고시된 규정에 따릅니다[1]."
+  }
+ ]
+}

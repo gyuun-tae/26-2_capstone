@@ -16,7 +16,10 @@ MAX_TOKENS = 8192  # BGE-M3 모델 카드의 최대 입력 길이. 넘으면 자
 EXCLUDED_KINDS = {"historical_addendum"}  # 과거 부칙은 현재 안내 검색에서 기본 제외 (등록 계획)
 # 같은 내용을 더 자세히 담은 새 수집본이 있는 문서 → 대체 문서. 옛 페이지(단계 이름만 나열)가 1위로 올라와
 # 상세 표(기한·근거)를 가린다 (docs/handoff/25_org_hinterland.md)
-SUPERSEDED = {"YGPA-019": "YGPA-039", "YGPA-020": "YGPA-039"}
+# 더 자세하거나 현행인 수집본으로 대체된 문서. MOF-3857~3859는 여수지방해양수산청 사이트에 옮겨 둔 사용료 고시 사본으로
+# 발행일이 없고 지난 기한 조항(2021년)이 남아 있어, 법령정보센터 현행본(LAW-010)과 겹쳐 되묻기를 일으킨다 (fees f04)
+SUPERSEDED = {"YGPA-019": "YGPA-039", "YGPA-020": "YGPA-039",
+              "MOF-3857": "LAW-010", "MOF-3858": "LAW-010", "MOF-3859": "LAW-010"}
 APPROVAL_LEDGER = "data/catalog/index_approvals.json"  # scripts/26_review_index_approval.py
 APPROVAL_VALID_DAYS = 30  # docs/contracts/index_approval_policy.md 유효 기간
 APPROVED = {"approved", "approved_with_notes"}

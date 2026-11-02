@@ -131,6 +131,9 @@ def notices(hits: list[dict]) -> list[tuple[int, str]]:
     return found
 
 
+RELATIVE_TIME = re.compile(r"작년|지난해|올해|금년|이번 ?달|지난 ?달|전월|내년|최근|요즘")
+
+
 def build_messages(messages, hits: list[dict], follow_up: bool = False) -> list[dict]:
     """지시문 + 최근 대화 + (근거 + 이번 질문). 근거는 이번 질문에만 붙인다"""
     history = [{"role": m.role, "content": m.content} for m in messages[:-1]][-HISTORY:]
@@ -139,6 +142,13 @@ def build_messages(messages, hits: list[dict], follow_up: bool = False) -> list[
     asked = effective_question(messages, follow_up)
     # 한글이 없는 질문(영어 등): 지시문 7번만으로는 한국어로 답하는 경우가 있어(t24) 질문 끝에 한 번 더 짚는다
     language = "" if HANGUL.search(asked) else f"\n{FOREIGN_NOTE}"
+    # "작년"·"올해" 같은 상대 날짜는 오늘 기준으로 풀게 한다 (h22: 2026년에 "작년"을 2024년 열로 읽음)
+    # 날짜만 알려 주면 표의 마지막 열보다 한 해 앞을 '작년'으로 읽는 경우가 있어 연도를 직접 풀어 준다
+    if RELATIVE_TIME.search(asked):
+        today = datetime.now(KST).date()
+        last_month = (today.replace(day=1) - timedelta(days=1))
+        alert += (f"\n(오늘은 {today.isoformat()}입니다. 질문의 '작년·지난해'는 {today.year - 1}년, '올해·금년'은 {today.year}년, "
+                  f"'지난달'은 {last_month.year}년 {last_month.month}월입니다. 근거 표에서 그 연도·월의 값을 쓰세요)")
     question = f"[근거]\n{evidence(hits)}\n\n[질문]\n{asked}\n{alert}\n{REMINDER}{language}"
     return [{"role": "system", "content": system_prompt()}, *history, {"role": "user", "content": question}]
 

@@ -1,0 +1,67 @@
+{
+ "dataset": "dev_questions_team_v1.jsonl",
+ "index_version": "bge-m3-dense-c8f1fc61affe",
+ "run_at": "2026-11-02T08:49:57.819900+00:00",
+ "summary": {
+  "retrieval": "1/1",
+  "retrieval@1": "1/1",
+  "type": "1/1",
+  "buttons": "1/1",
+  "mention": "1/1",
+  "lead": "0/0",
+  "absent": "0/0",
+  "contact_btn": "0/0",
+  "contact": "0/0",
+  "type_by_group": {
+   "team": "1/1"
+  },
+  "uncited_lines_total": 0,
+  "violations_total": 0,
+  "unsupported_numbers_total": 0,
+  "first_token_s": {
+   "mean": 0.45,
+   "median": 0.45,
+   "max": 0.45
+  }
+ },
+ "rows": [
+  {
+   "id": "t24",
+   "group": "team",
+   "question": "How do I get a port access pass?",
+   "answer_type": "answer",
+   "top1_score": 0.548,
+   "top_docs": [
+    "YGPA-025",
+    "YGPA-023",
+    "LAW-014",
+    "LAW-008",
+    "YGPA-039"
+   ],
+   "downloads": [
+    "YGPA-025",
+    "YGPA-023"
+   ],
+   "port_mis": false,
+   "contacts": [
+    "항만출입증 담당자 (광양) 061-797-4434",
+    "항만출입증 담당자 (여수) 061-692-4336"
+   ],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 2,
+   "unsupported_numbers": [],
+   "first_token_s": 0.45,
+   "total_s": 3.26,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "To obtain a port access pass, you need to submit the \"Port Permanent Access Permit Application Form\" [1]. This form requires personal and vehicle information, as well as a commitment to follow security and safety regulations. \n\n1. Fill out the application form with required details such as name, birthdate, vehicle information, and purpose of access [1].\n2. Submit the form along with supporting documents like a work certification letter, vehicle registration copy, and a personal information consent form [1].\n3. The application must be submitted to the Yosu-Gwangyang Port Authority for approval [1].\n\nIf you are applying on behalf of a company, you also need to submit the \"Port Facility Access Company Registration Application Form\" [2]. This includes company details, representative information, and documents proving business legitimacy."
+  }
+ ]
+}

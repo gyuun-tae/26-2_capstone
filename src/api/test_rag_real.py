@@ -282,9 +282,17 @@ f = prompt.EvidenceWordFilter()
 assert "".join([f.feed("["), f.feed("근"), f.feed("거]에 따르면 [1]"), f.flush()]) == "확인한 공식 자료에 따르면 [1]"
 f = prompt.EvidenceWordFilter()
 assert f.feed("목록 [") + f.feed("근") + f.flush() == "목록 [근"
-ev = run("부산항 신항 운영사는?", ["[근거]에 부산항 신항 운영사 정보는 포함되어 있지 않습니다.", '@@META {"type": "answer"}'])
+ev = run("신항 운영사는?", ["[근거]에 신항 운영사 정보는 포함되어 있지 않습니다.", '@@META {"type": "answer"}'])
 shown = text_of(ev)
 assert "[근거]" not in shown and "확인한 공식 자료에" in shown and ev[-1][1]["answer_type"] == "unknown"
+
+# 11-2. 다른 항만만 묻는 질문은 LLM을 부르지 않고 확인 불가 (u02). 여수·광양과 비교하는 질문은 그대로
+assert rag_real.other_port_only("부산항 신항 컨테이너 터미널 운영사는 어디예요?")
+assert rag_real.other_port_only("인천항 사용료 알려줘")
+assert not rag_real.other_port_only("부산항과 광양항 물동량 비교해줘")
+assert not rag_real.other_port_only("광양항 사용료 알려줘")
+ev = run("부산항 신항 운영사는?", ["이 줄은 나오면 안 됨"])
+assert ev[-1][1]["answer_type"] == "unknown" and "이 줄은" not in text_of(ev)
 
 # 12. 한글이 없는 질문에만 언어 안내를 붙인다 (t24)
 def last_user(question):

@@ -12,14 +12,14 @@
 기본은 끔: 재정렬만 켜면 확인 불가여야 할 질문(u02·u04)이 6/6 → 2/6으로 흔들린다 (docs/handoff/28_rerank.md).
 답변 전 판정(app/gate.py, RAG_GATE)과 함께 켜면 이 문제가 없다 — 켤 때는 둘 다 (docs/handoff/31_answer_gate.md).
 
-환경변수: RAG_RERANK(on/off, 기본 off), RAG_RERANK_N(후보 수, 기본 10), RAG_RERANK_TRUNCATE(토큰 상한, 기본 1024)
+환경변수: RAG_RERANK(on/off, 기본 off), RAG_RERANK_N(후보 수, 기본 15), RAG_RERANK_TRUNCATE(토큰 상한, 기본 1024)
 """
 import logging
 import os
 
 from app import gpu, search
 
-N = 10
+N = 15  # 2026-11-02 10→15: 자료가 늘어(색인 4c3a848b8c5d) 정답 문서가 11~15위에 있는 질문이 생김 (o12, docs/handoff/33). 새 묶음 25/25·부서 언급 10/10
 WEIGHT = 0.5  # 재정렬 점수 비중 (나머지는 벡터 점수)
 TIMEOUT = 5.0  # 초. 넘으면 벡터 순서로
 TRUNCATE = 1024  # 질문+청크 토큰 상한. 512는 긴 조문 끝의 정답 문장을 못 봄 (h12, docs/handoff/31_answer_gate.md)

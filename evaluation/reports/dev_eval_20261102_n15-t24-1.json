@@ -1,0 +1,61 @@
+{
+ "dataset": "dev_questions_team_v1.jsonl",
+ "index_version": "bge-m3-dense-4c3a848b8c5d",
+ "run_at": "2026-11-02T09:06:18.585034+00:00",
+ "summary": {
+  "retrieval": "1/1",
+  "retrieval@1": "0/1",
+  "type": "1/1",
+  "buttons": "0/1",
+  "mention": "1/1",
+  "lead": "0/0",
+  "absent": "0/0",
+  "contact_btn": "0/0",
+  "contact": "0/0",
+  "type_by_group": {
+   "team": "1/1"
+  },
+  "uncited_lines_total": 1,
+  "violations_total": 0,
+  "unsupported_numbers_total": 0,
+  "first_token_s": {
+   "mean": 2.78,
+   "median": 2.78,
+   "max": 2.78
+  }
+ },
+ "rows": [
+  {
+   "id": "t24",
+   "group": "team",
+   "question": "How do I get a port access pass?",
+   "answer_type": "answer",
+   "top1_score": 0.561,
+   "top_docs": [
+    "YGPA-315",
+    "MOF-3881",
+    "YGPA-025",
+    "YGPA-150",
+    "YGPA-023"
+   ],
+   "downloads": [],
+   "port_mis": true,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 1,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 2.78,
+   "total_s": 8.56,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": false,
+    "mention": true,
+    "buttons": false
+   },
+   "answer": "To get a port access pass, you need to follow the application procedure outlined in the relevant documents. Here is the process:\n\n1. Complete the user registration before submitting the application (ID and password registration) [1].\n2. If the vessel information is not registered, submit a vessel information report (new or amended) [1].\n3. If the vessel information is already registered, check the vessel's entry and exit history (voyage confirmation) [1].\n4. For ocean-going ships, submit the initial or amended port entry report [1].\n5. If there is cargo to be discharged, submit the integrated cargo report and port facility usage report [1].\n6. If there is no cargo to be discharged, submit the port facility usage application [1].\n7. Submit the final port entry report for ocean-going ships [1].\n8. If there is cargo to be loaded, submit the integrated cargo report and port facility usage report [1].\n9. If there is no cargo to be loaded, submit the initial, amended, or final port departure report for ocean-going ships [1].\n10. For coastal ships, submit the initial or amended port entry report [1].\n11. If there is cargo to be discharged, submit the integrated cargo report and port facility usage report [1].\n12. If there is no cargo to be discharged, submit the port facility usage application [1].\n13. Submit the final port entry report for coastal ships [1].\n14. If there is cargo to be loaded, submit the integrated cargo report and port facility usage report [1].\n15. If there is no cargo to be loaded, submit the initial, amended, or final port departure report for coastal ships [1]."
+  }
+ ]
+}

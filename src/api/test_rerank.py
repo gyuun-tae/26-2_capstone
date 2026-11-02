@@ -85,7 +85,7 @@ f = fake_rerank({"LAW-1": 0.1, "LAW-2": 0.9, "LAW-3": 0.95, "LAW-9": 0.8, "YGPA-
 with patch.object(gpu, "embed", fake_embed), patch.object(gpu, "chat_stream", fake_chat), \
         patch.object(search, "search", fake_search), patch.object(gpu, "rerank", f):
     result, _ = asyncio.run(run("선박 입항 신고는 어떻게 하나요?"))
-assert calls == [(20, 20)], calls
+assert calls == [(2 * rerank.N, 2 * rerank.N)], calls  # 후보 2N개 (N은 rerank.N, 2026-11-02 15)
 assert [s.chunk_id for s in result.sources][:3] == ["LAW-3-0.68", "YGPA-1-0.6", "LAW-2-0.69"], [s.chunk_id for s in result.sources]
 
 # 5. 확인 불가(벡터 1위가 기준 미만)면 재정렬을 부르지 않는다

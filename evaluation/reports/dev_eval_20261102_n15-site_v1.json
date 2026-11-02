@@ -1,0 +1,846 @@
+{
+ "dataset": "dev_questions_site_v1.jsonl",
+ "index_version": "bge-m3-dense-4c3a848b8c5d",
+ "run_at": "2026-11-02T09:09:36.949992+00:00",
+ "summary": {
+  "retrieval": "25/25",
+  "retrieval@1": "20/25",
+  "type": "25/25",
+  "buttons": "25/25",
+  "mention": "22/22",
+  "lead": "0/0",
+  "absent": "0/0",
+  "contact_btn": "0/0",
+  "contact": "0/0",
+  "type_by_group": {
+   "foreign": "5/5",
+   "hinterland": "3/3",
+   "org": "1/1",
+   "pilot": "3/3",
+   "port": "8/8",
+   "safety": "5/5"
+  },
+  "uncited_lines_total": 2,
+  "violations_total": 0,
+  "unsupported_numbers_total": 0,
+  "first_token_s": {
+   "mean": 1.79,
+   "median": 1.68,
+   "max": 3.33
+  }
+ },
+ "rows": [
+  {
+   "id": "s01",
+   "group": "pilot",
+   "question": "강제도선 대상이 되는 선박 기준이 어떻게 되나요?",
+   "answer_type": "answer",
+   "top1_score": 0.607,
+   "top_docs": [
+    "MOF-3867",
+    "LAW-020",
+    "LAW-009",
+    "YGPA-031",
+    "MOF-3868"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 3.33,
+   "total_s": 6.57,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "입출항하는 선박은 원칙적으로 도선사용이 의무화 되어 있습니다[1]  \n강제도선 대상이 되는 선박은 다음과 같습니다[1]:\n\n1. 대한민국 선박이 아닌 선박으로서 총톤수 500톤 이상의 선박[1]  \n2. 국제항해에 취항하는 대한민국 선박으로서 총톤수 500톤 이상의 선박[1]  \n3. 국제항해에 취항하지 아니하는 대한민국 선박으로서 총톤수 2천톤 이상의 선박. 다만, 부선(艀船)인 경우에는 예선결합부선 (압항부선)에 한하되, 이 경우의 총톤수는 부선과 예선의 총톤수를 합하여 산정한다[1]"
+  },
+  {
+   "id": "s02",
+   "group": "pilot",
+   "question": "도선 신청은 몇 시간 전에 해야 하나요?",
+   "answer_type": "answer",
+   "top1_score": 0.574,
+   "top_docs": [
+    "MOF-3867",
+    "MOF-3868",
+    "YGPA-031",
+    "MOF-3869",
+    "MOF-3868"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 2.27,
+   "total_s": 3.19,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "도선을 이용하고자 하는 분은 도선사협회 여수지회로 전화 또는 무선으로 **도선사용 5시간 전에 신청**하여야 합니다[1]."
+  },
+  {
+   "id": "s03",
+   "group": "pilot",
+   "question": "예선을 꼭 써야 하는 선박은 몇 톤부터인가요?",
+   "answer_type": "answer",
+   "top1_score": 0.648,
+   "top_docs": [
+    "MOF-3863",
+    "MOF-3863",
+    "LAW-007",
+    "MOF-3867",
+    "MOF-3864"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 2.6,
+   "total_s": 5.38,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "예선을 꼭 사용해야 하는 선박은 총톤수 1,500톤 이상인 선박입니다. 위험화물 취급선박의 경우 1,000톤 이상부터 예선사용 대상이 됩니다[2].\n\n1. 총톤수 1,500톤 이상의 선박은 예선사용 대상입니다[2]\n2. 위험화물 취급선박은 총톤수 1,000톤 이상부터 예선사용 대상입니다[2]\n3. 선박의 구조 (압항부선, 자동화설비장치 등)로 보아 예선사용이 필요하지 않은 선박은 예선사용 대상에서 제외됩니다[2]"
+  },
+  {
+   "id": "s04",
+   "group": "safety",
+   "question": "여수항 구항 해역에서는 몇 노트 이하로 다녀야 하나요?",
+   "answer_type": "answer",
+   "top1_score": 0.599,
+   "top_docs": [
+    "MOF-3855",
+    "MOF-3877",
+    "MOF-3876",
+    "YGPA-252",
+    "MOF-3836"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 2.37,
+   "total_s": 3.0,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "여수항 구항지역 해역을 운항하는 선박은 너울에 의한 피해가 없도록 8노트 이하의 안전한 속력으로 항행하여야 합니다[1]."
+  },
+  {
+   "id": "s05",
+   "group": "safety",
+   "question": "묘도수도 교행 금지구간 적용 대상 선박은?",
+   "answer_type": "answer",
+   "top1_score": 0.611,
+   "top_docs": [
+    "MOF-3876",
+    "MOF-3868",
+    "MOF-3855",
+    "YGPA-008",
+    "MOF-3868"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 2.51,
+   "total_s": 3.84,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "묘도수도 교행 금지구간의 적용 대상 선박은 예부선 결합선 및 총톤수 500톤 이상의 선박입니다[1].\n\n1. 예부선 결합선[1]\n2. 총톤수 500톤 이상의 선박[1]"
+  },
+  {
+   "id": "s06",
+   "group": "safety",
+   "question": "항만국통제가 무슨 제도예요?",
+   "answer_type": "answer",
+   "top1_score": 0.59,
+   "top_docs": [
+    "MOF-3922",
+    "YGPA-B198-C9851D42",
+    "LAW-002",
+    "LAW-014",
+    "YGPA-B198-A2800E2D"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 1.85,
+   "total_s": 3.91,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "항만국통제는 항만국이 자국의 관할 항만에 입항하는 외국적 선박을 대상으로 국제 협약에서 정한 안전기준의 미달 여부를 점검하여 출항정지 등 필요한 조치를 취하는 제도입니다[1].\n\n항만국통제의 목적은 외국적 기준미달선에 의한 해양 사고로부터 연안국의 해양 환경을 보호하고 해상에서의 인명과 재산을 보호하는 것입니다[1]."
+  },
+  {
+   "id": "s07",
+   "group": "safety",
+   "question": "ISPS 코드가 적용되는 화물선 기준은 무엇인가요?",
+   "answer_type": "answer",
+   "top1_score": 0.699,
+   "top_docs": [
+    "MOF-3923",
+    "MOF-3924",
+    "LAW-012",
+    "LAW-014",
+    "YGPA-031"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 1.42,
+   "total_s": 2.78,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "ISPS 코드는 총톤수 500톤 이상의 국제항해 화물선에 적용됩니다[1].\n\n1. ISPS 코드 적용 대상은 국제항해 취항 여객선, 총톤수 500톤 이상 화물선 및 이동식 해상구조물입니다[1]."
+  },
+  {
+   "id": "s08",
+   "group": "safety",
+   "question": "위험물 컨테이너 점검(CIP)은 무엇을 확인하나요?",
+   "answer_type": "answer",
+   "top1_score": 0.756,
+   "top_docs": [
+    "MOF-3924",
+    "LAW-012",
+    "LAW-012",
+    "YGPA-B198-5858C923",
+    "MOF-3930"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 1.52,
+   "total_s": 4.13,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "위험물 컨테이너 점검(CIP)은 국제해상인명안전협약(SOLAS)에 근거하여 해상운송 위험물 컨테이너의 수송안전성 여부를 확인하는 활동입니다[1]. 주요 확인 사항은 다음과 같습니다[1]:\n\n1. 컨테이너 자체의 안전성 여부[1]\n2. 컨테이너 외부 표시 및 위험물 표찰의 적정성[1]\n3. 위험물 용기의 형식승인 및 검사 여부[1]\n4. 적재 방법 및 고박 적정성[1]\n5. 위험화물간 격리 적재 여부[1]"
+  },
+  {
+   "id": "s09",
+   "group": "port",
+   "question": "광양항 선박에서 쓸 수 있는 무료 인터넷이 있나요?",
+   "answer_type": "answer",
+   "top1_score": 0.727,
+   "top_docs": [
+    "MOF-3880",
+    "MOF-3881",
+    "YGPA-228",
+    "YGPA-185",
+    "YGPA-189"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 2.29,
+   "total_s": 5.68,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "광양항 프리넷(GP FreeNet)은 광양항·여수항에 입출항하는 모든 선박에서 무료로 인터넷을 이용할 수 있도록 Wi-Fi 기반의 해상 무선 네트워크 서비스입니다[1].\n\n1. 무선랜 장치(Wi-Fi)가 부착된 스마트폰, 노트북 등을 이용하여 무선 네트워크 검색을 하여 'GP FreeNet'을 연결하고 브라우저를 실행합니다[2].\n2. 인트로 화면이 나타나면 등록된 사용자 계정으로 사용자 인증을 합니다[2].\n3. PORT-MIS 사용자 계정을 이용할 수 있으며, 등록되지 않은 사용자는 회원등록절차를 통해 사용자 등록한 후 사용할 수 있습니다[2].\n4. 선박에 무선브릿지(CPE 등) 장착을 권고합니다[2]."
+  },
+  {
+   "id": "s10",
+   "group": "port",
+   "question": "태풍 비상단계 때 재해대책본부 총괄반은 무슨 일을 하나요?",
+   "answer_type": "answer",
+   "top1_score": 0.553,
+   "top_docs": [
+    "MOF-3930",
+    "MOF-3932",
+    "MOF-3931",
+    "YGPA-F029E8E711F",
+    "YGPA-F029E8E711F"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 2.66,
+   "total_s": 7.4,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": false,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "태풍 비상단계 때 재해대책본부 총괄반은 방재업무 전반의 통제 및 조정을 수행합니다[2]. 기상정보를 입수, 분석, 전파하고 기록을 유지하며, 재해대책본부 근무자에게 근무명령을 내립니다[2]. 근무명령 후 각 반별 근무자 변경은 자체 조정 후 총괄반에 통보해야 합니다[2]. 재해대책본부 운영을 지시 및 통제하고, 각 반의 조치사항을 취합하며 상황 보고를 수행합니다[2]. 해양수산부 및 여수시 재해대책본부의 통보사항을 전파하고 일일보고를 합니다[2].\n\n1. 방재업무 전반의 통제 및 조정 수행[2]  \n2. 기상정보 입수, 분석, 전파 및 기록 유지[2]  \n3. 근무명령 발령 및 근무자 변경 통보[2]  \n4. 재해대책본부 운영 지시 및 통제[2]  \n5. 상황 보고(정기보고, 수시보고) 수행[2]  \n6. 통보사항 전파 및 일일보고 실시[2]"
+  },
+  {
+   "id": "s11",
+   "group": "port",
+   "question": "D-1 정박지는 어떤 선박이 이용하나요?",
+   "answer_type": "answer",
+   "top1_score": 0.489,
+   "top_docs": [
+    "MOF-3837",
+    "YGPA-031",
+    "LAW-007",
+    "YGPA-031",
+    "MOF-3867"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 1.5,
+   "total_s": 1.68,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "D-1 정박지는 흘수 16m 이상 선박이 이용합니다[1]."
+  },
+  {
+   "id": "s12",
+   "group": "port",
+   "question": "기상이 나쁠 때 도선사 승선구역은 어디에 표시되어 있나요?",
+   "answer_type": "answer",
+   "top1_score": 0.471,
+   "top_docs": [
+    "MOF-3837",
+    "MOF-3867",
+    "MOF-3868",
+    "YGPA-031",
+    "MOF-3869"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 1.68,
+   "total_s": 3.53,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "기상 악화 시 도선 승선구역은 항로상 입출항선박에 한하여 적용되며, 항만시설(선석, 정박지)에서의 승하선의 경우에는 적용하지 않습니다[2].  \n\n기상 악화 시 도선 승선구역은 항로상 입출항선박에 한하여 적용되며, 항만시설(선석, 정박지)에서의 승하선의 경우에는 적용하지 않습니다[2]."
+  },
+  {
+   "id": "s13",
+   "group": "hinterland",
+   "question": "황금물류센터에는 어떤 회사가 입주해 있나요?",
+   "answer_type": "answer",
+   "top1_score": 0.56,
+   "top_docs": [
+    "YGPA-172",
+    "YGPA-178",
+    "MOF-3990",
+    "YGPA-180",
+    "MOF-3989"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [
+    "물류단지부 061-797-4456"
+   ],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 1,
+   "unsupported_numbers": [],
+   "first_token_s": 2.48,
+   "total_s": 2.94,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "황금물류센터에는 세방광양국제물류㈜, ㈜한진, HAM, 동원로엑스㈜가 입주해 있습니다[2]."
+  },
+  {
+   "id": "s14",
+   "group": "hinterland",
+   "question": "위험물창고는 몇 류까지 저장할 수 있나요?",
+   "answer_type": "answer",
+   "top1_score": 0.511,
+   "top_docs": [
+    "YGPA-175",
+    "MOF-3990",
+    "LAW-012",
+    "LAW-012",
+    "YGPA-B198-2449E51A"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [
+    "물류단지부 061-797-4456"
+   ],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 1,
+   "unsupported_numbers": [],
+   "first_token_s": 0.97,
+   "total_s": 1.58,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "광양항 인근 위험물창고는 1류에서 9류까지 저장할 수 있습니다[1]."
+  },
+  {
+   "id": "s15",
+   "group": "hinterland",
+   "question": "광양항 배후단지 전체 면적은 얼마나 되나요?",
+   "answer_type": "answer",
+   "top1_score": 0.771,
+   "top_docs": [
+    "YGPA-164",
+    "YGPA-166",
+    "YGPA-169",
+    "YGPA-165",
+    "YGPA-167"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [
+    "물류단지부 061-797-4456"
+   ],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 1,
+   "unsupported_numbers": [],
+   "first_token_s": 0.98,
+   "total_s": 3.05,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "광양항 배후단지 전체 면적은 4,403,345㎡입니다[1].\n\n1. 동측배후단지 면적은 1,939,313㎡입니다[1]\n2. 서측배후단지 면적은 1,934,954㎡입니다[1]\n3. 북측배후단지 면적은 106,712㎡입니다[1]\n4. 세풍배후단지 면적은 406,483㎡입니다[1]"
+  },
+  {
+   "id": "s16",
+   "group": "org",
+   "question": "항만위원회는 어떤 역할을 하나요?",
+   "answer_type": "answer",
+   "top1_score": 0.66,
+   "top_docs": [
+    "LAW-004",
+    "YGPA-260",
+    "LAW-005",
+    "YGPA-B198-637F991F",
+    "YGPA-B198-C9851D42"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [
+    "기획조정실 061-797-4325"
+   ],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 1,
+   "unsupported_numbers": [],
+   "first_token_s": 1.02,
+   "total_s": 3.28,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": false,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "항만위원회는 여수광양항만공사의 최고 의사결정기구로, 경영진에 대한 견제 및 감시와 정책 결정 등을 수행합니다[2].\n\n1. 경영목표·예산·자금계획·사업계획 및 운영계획 등을 심의·의결합니다[1][2]  \n2. 항만시설의 임대료 및 사용료 기준 설정, 내규의 제정 및 변경 등을 심의합니다[1][2]  \n3. 위원장이 필요하다고 인정하거나 재적위원 1/3 이상의 요구가 있을 경우 회의를 소집합니다[2]"
+  },
+  {
+   "id": "s17",
+   "group": "port",
+   "question": "여수연안여객선터미널 주차장은 몇 면인가요?",
+   "answer_type": "answer",
+   "top1_score": 0.713,
+   "top_docs": [
+    "YGPA-249",
+    "YGPA-242",
+    "YGPA-250",
+    "YGPA-009",
+    "YGPA-245"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [
+    "여수지사 061-797-4348"
+   ],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 1,
+   "unsupported_numbers": [],
+   "first_token_s": 1.66,
+   "total_s": 2.15,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": false,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "여수연안여객선터미널 주차장은 154면입니다[2]."
+  },
+  {
+   "id": "s18",
+   "group": "port",
+   "question": "제품 부두의 운영사는 어디인가요?",
+   "answer_type": "clarify",
+   "top1_score": 0.543,
+   "top_docs": [
+    "YGPA-199",
+    "YGPA-226",
+    "YGPA-014",
+    "YGPA-015",
+    "YGPA-016"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [
+    "광양시 금호동 제품 부두",
+    "여수시 중흥동 LG화학제품부두"
+   ],
+   "uncited_lines": 2,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 0.65,
+   "total_s": 2.62,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "광양항의 제품 부두는 두 곳이 있으며, 각각 다른 운영사를 두고 있습니다.  \n\n1. 광양시 금호동에 위치한 제품 부두는 포스코(주)가 운영합니다[1].  \n2. 여수시 중흥동에 위치한 LG화학제품부두는 LG화학이 운영합니다[2].  \n\n어느 제품 부두에 대한 정보를 확인하시겠습니까?"
+  },
+  {
+   "id": "s19",
+   "group": "port",
+   "question": "도선사 승하선구역 위치를 알고 싶어요",
+   "answer_type": "answer",
+   "top1_score": 0.537,
+   "top_docs": [
+    "MOF-3867",
+    "MOF-3868",
+    "MOF-3869",
+    "YGPA-031",
+    "YGPA-243"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 2.0,
+   "total_s": 4.14,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "도선사 승하선구역은 여수항과 광양항의 특정 해역에 설정되어 있습니다[1]. 구체적인 위치는 다음과 같습니다:\n\n1. 제1도선구역은 항로 남동쪽 끝에 있습니다[1]\n2. 제2도선구역은 대형동부표 남동쪽 항로 옆에 있습니다[1]\n3. 제3도선구역은 대형동부표 북쪽 항계 입구에 있습니다[1]\n\nD-2 정박지는 제2도선구역 남쪽에 위치합니다[1]."
+  },
+  {
+   "id": "s20",
+   "group": "port",
+   "question": "RFID 동작 원리를 항만 쪽에서 어떻게 설명하나요?",
+   "answer_type": "answer",
+   "top1_score": 0.659,
+   "top_docs": [
+    "YGPA-238",
+    "YGPA-240",
+    "YGPA-239",
+    "YGPA-B198-EC636A91",
+    "LAW-001"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [
+    "AI디지털부 061-797-4474"
+   ],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 1,
+   "unsupported_numbers": [],
+   "first_token_s": 1.93,
+   "total_s": 6.54,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": false,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "RFID는 Radio Frequency IDentification의 약자로, 무선 주파수를 이용하여 칩을 내장한 태그, 레이블, 카드 등에 저장된 데이터를 리더에서 자동 인식하는 기술입니다[3]. \n\nRFID 동작 원리는 태그와 리더로 구성되며, 리더는 안테나를 이용하여 태그에 읽기와 쓰기가 가능하도록 합니다[2]. 교환된 정보는 ONS(Object Name Service)를 통해 인터넷에 연결됩니다[2]. \n\n항만에서는 RFID를 기반으로 한 유비쿼터스 항만 시스템(u-Port)을 통해 화물의 실시간 경로 추적과 통합물류정보시스템, GPS, 모바일 물류 단말기 등을 활용하여 정보를 전송합니다[1]. \n\nRFID 리더기는 항만 내에서 GPS 리더기와 상호작용하며, 화물에 부착된 RFID 태그를 인식하여 항만물류 시스템으로 송신합니다[1]. \n\n이 시스템은 화물의 입출항, 운송, 입고/반출, 컨테이너 게이트에서의 작업 등을 실시간으로 관리할 수 있도록 설계되어 있습니다[1]."
+  },
+  {
+   "id": "e01",
+   "group": "foreign",
+   "question": "How long is the lease term for the Gwangyang Port hinterland?",
+   "answer_type": "answer",
+   "top1_score": 0.71,
+   "top_docs": [
+    "YGPA-300",
+    "YGPA-410",
+    "YGPA-310",
+    "YGPA-510",
+    "YGPA-314"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 1.41,
+   "total_s": 2.01,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": false,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "The lease term for the Gwangyang Port hinterland is 50 years [1][3][4]."
+  },
+  {
+   "id": "e02",
+   "group": "foreign",
+   "question": "What are the qualifications to move into the hinterland complex?",
+   "answer_type": "answer",
+   "top1_score": 0.518,
+   "top_docs": [
+    "YGPA-311",
+    "YGPA-312",
+    "YGPA-300",
+    "YGPA-313",
+    "YGPA-302"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 0.91,
+   "total_s": 2.36,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "buttons": true
+   },
+   "answer": "The qualifications to move into the hinterland complex are as follows: companies running the businesses stipulated in Article 10(1)1 or Article 10(1)5 of the 'Act on designation and management of free trade zones', or in Article 7(1) or Article 7(5) of 'Enforcement decree of the act on designation and management of free trade zones' [1]."
+  },
+  {
+   "id": "e03",
+   "group": "foreign",
+   "question": "Where is the head office of Yeosu Gwangyang Port Authority?",
+   "answer_type": "answer",
+   "top1_score": 0.604,
+   "top_docs": [
+    "YGPA-316",
+    "YGPA-317",
+    "YGPA-323",
+    "YGPA-300",
+    "YGPA-324"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 1,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 1.38,
+   "total_s": 3.09,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "The head office of Yeosu Gwangyang Port Authority is located in Gwangyang City and Yeosu-si.  \n\n1. Gwangyang City Headquarter: World Marine Center, 465 Hangman-daero, Gwangyang City, Jeollanamdo [1]  \n2. Yeosu-si Office: 10 Bongye 4 Road, Yeosu-si, Jeollanam-do (1st floor) [2]"
+  },
+  {
+   "id": "e04",
+   "group": "foreign",
+   "question": "光陽港背後団地の入居手順を教えてください",
+   "answer_type": "answer",
+   "top1_score": 0.766,
+   "top_docs": [
+    "YGPA-412",
+    "YGPA-400",
+    "YGPA-413",
+    "YGPA-410",
+    "YGPA-409"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 1,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 1.83,
+   "total_s": 7.66,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "buttons": true
+   },
+   "answer": "光陽港背後団地の入居手順は以下の通りです.\n\n1. 優先交渉相手を選定 — 關聯根據: 入居企業選定の告示[1]  \n2. 入居相手企業の選定 — 關聯根據: 選定した後、入居許可のご案內[1]  \n3. 入居許可 — 期限: 入居許可のご案內の日から90日以内; 關聯根據: 「1種 港灣背後丹地 管理指針」第17条[1]  \n4. 賃貸借契約締結 — 期限: 入居許可の日から60日以内- 賃貸料を納付; 關聯根據: 「1種 港灣背後丹地 管理指針」第17条２[1]  \n5. 建築許可 — 期限: 入居許可の日から180日以内; 關聯根據: 「自由貿易地域の指定及び運営に関する法律」第13条[1]  \n6. 建築着工 — 期限: 建築許可の日から１年以内又は事業計画書明示其間; 關聯根據: 「建築法」第11条第7項 (建築許可履行條件)及び 賃貸借契約(入居許可履行條件)[1]  \n7. 事業開始 — 期限: 非管理廳港灣工事 施行許可日 又は 貨物最初處理日; 關聯根據: 「1種 港灣背後丹地 管理指針」第2条[1]"
+  },
+  {
+   "id": "e05",
+   "group": "foreign",
+   "question": "光阳港腹地园区有哪些税收优惠?",
+   "answer_type": "answer",
+   "top1_score": 0.78,
+   "top_docs": [
+    "YGPA-514",
+    "YGPA-414",
+    "YGPA-500",
+    "YGPA-510",
+    "YGPA-504"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 1.48,
+   "total_s": 2.85,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "buttons": true
+   },
+   "answer": "光阳港腹地园区的税收优惠如下[1][2].\n\n1. 关税减免或退还[1][2]\n2. 酒税、个别消费税、交通·能源·环保税、增值税为零税率[1][2]\n3. 企业所得税和个人所得税根据外商投资额度比率减免[1][2]\n4. 取得税、注册税、资产税减免[1][2]"
+  }
+ ]
+}

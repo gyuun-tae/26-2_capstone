@@ -1,0 +1,1880 @@
+{
+ "version": "1.0",
+ "created_at": "2026-11-02T07:00:34.695718+00:00",
+ "rule": "공개 메뉴 전체에서 아래 제외 규칙만 뺀다. FAQ 내용을 보고 고르지 않는다.",
+ "page_skip_pattern": "/memb/|/faqs/|bbs_no=230\\b|srchListPage|RegistForm|rsvtCalendar|rsvtListPage|fileDownLoad|/info/bein/in\\d\\d/|/orga/|/addi/copy|/comu/wbpp|/comu/ctpp|ListPage|List\\.do|Page\\.do|\\.(pdf|hwp|zip|jpg|png)$",
+ "boards": {
+  "198": {
+   "name": "용어사전",
+   "limit": 290,
+   "files": false
+  },
+  "184": {
+   "name": "월별 물동량 처리실적",
+   "limit": 13,
+   "files": true
+  },
+  "426": {
+   "name": "화물 주요 통계",
+   "limit": 3,
+   "files": true
+  },
+  "340": {
+   "name": "컨테이너 서비스 현황",
+   "limit": 2,
+   "files": true
+  },
+  "186": {
+   "name": "여천 선석 운영 방침",
+   "limit": 3,
+   "files": true
+  },
+  "396": {
+   "name": "주요 규제 개선 사례",
+   "limit": 8,
+   "files": false
+  },
+  "397": {
+   "name": "기업 애로 처리 실적",
+   "limit": 20,
+   "files": false
+  },
+  "386": {
+   "name": "적극행정 우수사례",
+   "limit": 9,
+   "files": false
+  },
+  "195": {
+   "name": "보도해명",
+   "limit": 19,
+   "files": false
+  },
+  "373": {
+   "name": "중소기업 지원 프로그램",
+   "limit": 20,
+   "files": false
+  },
+  "536": {
+   "name": "공공기술나눔",
+   "limit": 5,
+   "files": false
+  },
+  "515": {
+   "name": "안전경영책임보고서",
+   "limit": 1,
+   "files": true
+  },
+  "378": {
+   "name": "인권경영 이행지침",
+   "limit": 1,
+   "files": true
+  },
+  "516": {
+   "name": "재난위기 대응매뉴얼",
+   "limit": 1,
+   "files": true
+  },
+  "189": {
+   "name": "재난 안전 자료실",
+   "limit": 10,
+   "files": true
+  },
+  "180": {
+   "name": "CEO와의 대화",
+   "limit": 7,
+   "files": false
+  },
+  "511": {
+   "name": "발간물",
+   "limit": 1,
+   "files": true
+  },
+  "512": {
+   "name": "지속가능경영보고서",
+   "limit": 2,
+   "files": true
+  },
+  "416": {
+   "name": "카드뉴스",
+   "limit": 35,
+   "files": false
+  },
+  "191": {
+   "name": "공지사항",
+   "limit": 30,
+   "files": false
+  },
+  "213": {
+   "name": "공사뉴스",
+   "limit": 40,
+   "files": false
+  },
+  "182": {
+   "name": "부서별 주요계획",
+   "limit": 3,
+   "files": true
+  }
+ },
+ "boards_excluded": {
+  "230": "FAQ, 최종평가 전용",
+  "177·356·520": "사용자 글 게시판",
+  "409": "403 응답, 우회하지 않음",
+  "사전정보공표·경영공시 세부": "업무추진비·계약·재무 등 행정 공시. 항만 이용 안내와 무관하고 양이 많아 검색을 흐림",
+  "535·188 선석·정박지": "매일 바뀌는 현황. 색인하면 곧 틀린 정보가 됨",
+  "275·391 공고·채용": "기한이 짧은 공고"
+ },
+ "pages": [
+  {
+   "doc_id": "YGPA-100",
+   "kind": "page",
+   "path": "/hmpg/cplx/abut/cnst/contPageDetail.do?conts_no=8DB47AE405564E5C824085B875169B25",
+   "lang": "ko",
+   "title": "사업내용 — 공사추진현황"
+  },
+  {
+   "doc_id": "YGPA-101",
+   "kind": "page",
+   "path": "/hmpg/cplx/abut/infr/contPageDetail.do?conts_no=969133BB055547F8A5590D0E12BAB25F",
+   "lang": "ko",
+   "title": "사업내용 — 인프라계획"
+  },
+  {
+   "doc_id": "YGPA-102",
+   "kind": "page",
+   "path": "/hmpg/cplx/abut/intr/contPageDetail.do?conts_no=1231D0C84FFD46F4A0B2AD663735ECFD",
+   "lang": "ko",
+   "title": "사업내용 — 사업배경 및 목적"
+  },
+  {
+   "doc_id": "YGPA-103",
+   "kind": "page",
+   "path": "/hmpg/cplx/abut/land/contPageDetail.do?conts_no=E442AFDC8A844E78A1A0702201E0870F",
+   "lang": "ko",
+   "title": "사업내용 — 토지이용계획"
+  },
+  {
+   "doc_id": "YGPA-104",
+   "kind": "page",
+   "path": "/hmpg/cplx/info/area/contPageDetail.do?conts_no=8D26F3B096064ACB8D7DA7C97B8712B9",
+   "lang": "ko",
+   "title": "분양정보 — 사업세부구역"
+  },
+  {
+   "doc_id": "YGPA-105",
+   "kind": "page",
+   "path": "/hmpg/cplx/info/prcs/contPageDetail.do?conts_no=DDE9B7B5848141F68A2FC686952C60F9",
+   "lang": "ko",
+   "title": "분양정보 — 분양절차 및 방식"
+  },
+  {
+   "doc_id": "YGPA-106",
+   "kind": "page",
+   "path": "/hmpg/ygpa/addi/cctv/contPageDetail.do?conts_no=9B6FB7CC314A446582EB9C4A38B954B5",
+   "lang": "ko",
+   "title": "부가정보 — CCTV 운영관리 방침"
+  },
+  {
+   "doc_id": "YGPA-107",
+   "kind": "page",
+   "path": "/hmpg/ygpa/addi/oper/contPageDetail.do?conts_no=6E81FB2C535448A9ACDC33B84BCA01F3",
+   "lang": "ko",
+   "title": "부가정보 — 이용안내"
+  },
+  {
+   "doc_id": "YGPA-108",
+   "kind": "page",
+   "path": "/hmpg/ygpa/addi/pers/plan/contPageDetail.do?conts_no=3FB82B5729A74C858334C2FE6BA09342",
+   "lang": "ko",
+   "title": "부가정보 — 개인정보처리방침 — 개인정보처리방침"
+  },
+  {
+   "doc_id": "YGPA-109",
+   "kind": "page",
+   "path": "/hmpg/ygpa/addi/pers/read/contPageDetail.do?conts_no=C9C04D732DBE4F75A5DC9E78960699C6",
+   "lang": "ko",
+   "title": "부가정보 — 개인정보처리방침 — 개인정보열람 청구방법 및 절차"
+  },
+  {
+   "doc_id": "YGPA-110",
+   "kind": "page",
+   "path": "/hmpg/ygpa/comu/recr/exgo/contPageDetail.do?conts_no=0533DC6E74C04F88B78DEA78A74AACEC",
+   "lang": "ko",
+   "title": "국민소통 — 인재채용 — 임원임명 목표제"
+  },
+  {
+   "doc_id": "YGPA-111",
+   "kind": "page",
+   "path": "/hmpg/ygpa/comu/recr/rcgu/contPageDetail.do?conts_no=E37F98E2D2CB4C20BDEE5DB248E4C4C4",
+   "lang": "ko",
+   "title": "국민소통 — 인재채용 — 채용안내"
+  },
+  {
+   "doc_id": "YGPA-112",
+   "kind": "page",
+   "path": "/hmpg/ygpa/comu/recr/tytl/contPageDetail.do?conts_no=7B23A865775841069B53952180DCC7C6",
+   "lang": "ko",
+   "title": "국민소통 — 인재채용 — 인재상"
+  },
+  {
+   "doc_id": "YGPA-113",
+   "kind": "page",
+   "path": "/hmpg/ygpa/comu/resv/meet/contPageDetail.do?conts_no=04996BB1E62E460085E128CDC3534B16",
+   "lang": "ko",
+   "title": "시설이용예약 — 국제회의장 예약 — 소개"
+  },
+  {
+   "doc_id": "YGPA-114",
+   "kind": "page",
+   "path": "/hmpg/ygpa/esgm/chrt/ch01/contPageDetail.do?conts_no=41904B3C9D0C48D693A4C08ADC32D673",
+   "lang": "ko",
+   "title": "ESG경영 — 고객헌장 — 고객헌장"
+  },
+  {
+   "doc_id": "YGPA-115",
+   "kind": "page",
+   "path": "/hmpg/ygpa/esgm/chrt/ch02/contPageDetail.do?conts_no=997D7004A0F5436EA8119CDD55AD24D4",
+   "lang": "ko",
+   "title": "ESG경영 — 고객헌장 — 서비스신조"
+  },
+  {
+   "doc_id": "YGPA-116",
+   "kind": "page",
+   "path": "/hmpg/ygpa/esgm/chrt/ch03/contPageDetail.do?conts_no=C8F55DAA5FCB4DF5A3B4EC0EA9C96A8B",
+   "lang": "ko",
+   "title": "ESG경영 — 고객헌장 — 고객응대지침서"
+  },
+  {
+   "doc_id": "YGPA-117",
+   "kind": "page",
+   "path": "/hmpg/ygpa/esgm/chrt/ch04/contPageDetail.do?conts_no=AD33DBC5AF7D4892AC729074C754DB97",
+   "lang": "ko",
+   "title": "ESG경영 — 고객헌장 — 동반성장 이행헌장"
+  },
+  {
+   "doc_id": "YGPA-118",
+   "kind": "page",
+   "path": "/hmpg/ygpa/esgm/ethi/upwi/up01/contPageDetail.do?conts_no=3E370AC2EC664C3E89B0798D66641149",
+   "lang": "ko",
+   "title": "윤리경영 — 청렴백년대계 — 청렴백년대계"
+  },
+  {
+   "doc_id": "YGPA-119",
+   "kind": "page",
+   "path": "/hmpg/ygpa/esgm/ethi/upwi/up02/contPageDetail.do?conts_no=57A837B8F22A41FDB728C9A455324578",
+   "lang": "ko",
+   "title": "윤리경영 — 청렴백년대계 — 청렴계약 및 윤리서약"
+  },
+  {
+   "doc_id": "YGPA-120",
+   "kind": "page",
+   "path": "/hmpg/ygpa/esgm/ethi/yget/et01/contPageDetail.do?conts_no=E93D545E7E134540B978B3F1FABD26D3",
+   "lang": "ko",
+   "title": "윤리경영 — YGPA윤리경영 — 윤리헌장"
+  },
+  {
+   "doc_id": "YGPA-121",
+   "kind": "page",
+   "path": "/hmpg/ygpa/esgm/ethi/yget/et02/contPageDetail.do?conts_no=AE583B930593405C98259D956842A6EC",
+   "lang": "ko",
+   "title": "윤리경영 — YGPA윤리경영 — 윤리강령"
+  },
+  {
+   "doc_id": "YGPA-122",
+   "kind": "page",
+   "path": "/hmpg/ygpa/esgm/ethi/yget/et03/contPageDetail.do?conts_no=83A9CB00225E42FA94BA066B2C760C28",
+   "lang": "ko",
+   "title": "윤리경영 — YGPA윤리경영 — 임직원 행동강령"
+  },
+  {
+   "doc_id": "YGPA-123",
+   "kind": "page",
+   "path": "/hmpg/ygpa/esgm/ethi/yget/et04/contPageDetail.do?conts_no=9054F30373324BD2B61ED25A2B8A3D1A",
+   "lang": "ko",
+   "title": "윤리경영 — YGPA윤리경영 — 임원직무청렴계약규정"
+  },
+  {
+   "doc_id": "YGPA-124",
+   "kind": "page",
+   "path": "/hmpg/ygpa/esgm/humn/huct/contPageDetail.do?conts_no=EC5F4B71183B45C98C839E697C606970",
+   "lang": "ko",
+   "title": "ESG경영 — 인권경영 — 인권경영 헌장"
+  },
+  {
+   "doc_id": "YGPA-125",
+   "kind": "page",
+   "path": "/hmpg/ygpa/esgm/safe/cert/contPageDetail.do?conts_no=C71CEF2D199F4DCD81D4B78861D6A679",
+   "lang": "ko",
+   "title": "ESG경영 — 안전보건경영 — 안전보건경영인증서"
+  },
+  {
+   "doc_id": "YGPA-126",
+   "kind": "page",
+   "path": "/hmpg/ygpa/esgm/safe/dclr/dc01/contPageDetail.do?conts_no=FF668458F9A2490EB003D311A4AB3AE8",
+   "lang": "ko",
+   "title": "안전보건경영 — 안전신고센터 — 안전신고"
+  },
+  {
+   "doc_id": "YGPA-127",
+   "kind": "page",
+   "path": "/hmpg/ygpa/esgm/safe/dclr/dc02/contPageDetail.do?conts_no=5E29321470A24702859C5C1F8A1116FA",
+   "lang": "ko",
+   "title": "안전보건경영 — 안전신고센터 — 작업중지요청제"
+  },
+  {
+   "doc_id": "YGPA-128",
+   "kind": "page",
+   "path": "/hmpg/ygpa/esgm/safe/heal/he01/contPageDetail.do?conts_no=54B512D151784390A982FC91AEAC9B62",
+   "lang": "ko",
+   "title": "안전보건경영 — 안전보건경영방침 — 안전보건경영방침"
+  },
+  {
+   "doc_id": "YGPA-129",
+   "kind": "page",
+   "path": "/hmpg/ygpa/esgm/safe/heal/he01/contPageDetail.do?conts_no=BABC7A3F04DA47C7A775392F437CD6E3",
+   "lang": "ko",
+   "title": "안전보건경영 — 안전보건경영방침 — 안전보건경영방침"
+  },
+  {
+   "doc_id": "YGPA-130",
+   "kind": "page",
+   "path": "/hmpg/ygpa/esgm/safe/heal/he02/contPageDetail.do?conts_no=5DE015BFF5A142D89B2EF059B969651C",
+   "lang": "ko",
+   "title": "안전보건경영 — 안전보건경영방침 — 핵심 안전수칙"
+  },
+  {
+   "doc_id": "YGPA-131",
+   "kind": "page",
+   "path": "/hmpg/ygpa/esgm/safe/heal/he03/contPageDetail.do?conts_no=937B13A7D13C40C5AB7F6DCBDD1EE0DC",
+   "lang": "ko",
+   "title": "안전보건경영 — 안전보건경영방침 — 항만안전 10대 필수 안전수칙"
+  },
+  {
+   "doc_id": "YGPA-132",
+   "kind": "page",
+   "path": "/hmpg/ygpa/esgm/stak/contPageDetail.do?conts_no=2390298452984115AB07F275691D18A9",
+   "lang": "ko",
+   "title": "ESG경영 — 이해관계자 참여"
+  },
+  {
+   "doc_id": "YGPA-133",
+   "kind": "page",
+   "path": "/hmpg/ygpa/esgm/stsy/prog/contPageDetail.do?conts_no=9446DFB3D29442399BF97A6B809C572C",
+   "lang": "ko",
+   "title": "ESG경영 — 전략 및 체계 — 추진조직"
+  },
+  {
+   "doc_id": "YGPA-134",
+   "kind": "page",
+   "path": "/hmpg/ygpa/esgm/stsy/prsy/contPageDetail.do?conts_no=001CA32F35C7470D9AFDB3D8A05112F9",
+   "lang": "ko",
+   "title": "ESG경영 — 전략 및 체계 — 추진체계"
+  },
+  {
+   "doc_id": "YGPA-135",
+   "kind": "page",
+   "path": "/hmpg/ygpa/esgm/stsy/prsy/contPageDetail.do?conts_no=5F3F8374FDB14F628625A7F8F38B10C2",
+   "lang": "ko",
+   "title": "ESG경영 — 전략 및 체계 — 추진체계"
+  },
+  {
+   "doc_id": "YGPA-136",
+   "kind": "page",
+   "path": "/hmpg/ygpa/info/bsrl/bs01/contPageDetail.do?conts_no=7DB3520BFBBC4DD8B3D1B465161929A8",
+   "lang": "ko",
+   "title": "열린경영 — 사업실명제 — 정보"
+  },
+  {
+   "doc_id": "YGPA-137",
+   "kind": "page",
+   "path": "/hmpg/ygpa/info/inop/ctrt/ctra/contPageDetail.do?conts_no=3DAA20A1CA374929A38C9A27334A5059",
+   "lang": "ko",
+   "title": "정보공개 — 계약정보공개 — 입찰안내"
+  },
+  {
+   "doc_id": "YGPA-138",
+   "kind": "page",
+   "path": "/hmpg/ygpa/info/insy/acfm/contPageDetail.do?conts_no=BCDDB7594A2A47C8A888F14637CCF233",
+   "lang": "ko",
+   "title": "열린경영 — 정보공개제도 — 법령·지침·서식"
+  },
+  {
+   "doc_id": "YGPA-139",
+   "kind": "page",
+   "path": "/hmpg/ygpa/info/insy/ingu/contPageDetail.do?conts_no=67262F9416E34B1EB385EEA52E47FCEE",
+   "lang": "ko",
+   "title": "열린경영 — 정보공개제도 — 정보공개제도 안내"
+  },
+  {
+   "doc_id": "YGPA-140",
+   "kind": "page",
+   "path": "/hmpg/ygpa/info/insy/inme/contPageDetail.do?conts_no=EFE6104EE5E4429D89E8B26148B4E990",
+   "lang": "ko",
+   "title": "열린경영 — 정보공개제도 — 정보공개방법"
+  },
+  {
+   "doc_id": "YGPA-141",
+   "kind": "page",
+   "path": "/hmpg/ygpa/info/insy/inpr/contPageDetail.do?conts_no=4260BC2644254836A01310F8A65279A4",
+   "lang": "ko",
+   "title": "열린경영 — 정보공개제도 — 정보공개청구 절차"
+  },
+  {
+   "doc_id": "YGPA-142",
+   "kind": "page",
+   "path": "/hmpg/ygpa/info/mgdi/contPageDetail.do?conts_no=456C64AE7CAE4F47ADC12E80E9DAB9F8",
+   "lang": "ko",
+   "title": "열린경영 — 경영공시"
+  },
+  {
+   "doc_id": "YGPA-143",
+   "kind": "page",
+   "path": "/hmpg/ygpa/info/puda/dals/contPageDetail.do?conts_no=06B56C704B9049639D2B9BF017B4D843",
+   "lang": "ko",
+   "title": "열린경영 — 공공데이터 개방 — 공공데이터 제공 안내"
+  },
+  {
+   "doc_id": "YGPA-144",
+   "kind": "page",
+   "path": "/hmpg/ygpa/info/puda/prst/pr01/contPageDetail.do?conts_no=9987FE04E3D54939ACDF7E8F171FD442",
+   "lang": "ko",
+   "title": "공공데이터 개방 — 선박·화물실적통계 — 선박입출항실적통계"
+  },
+  {
+   "doc_id": "YGPA-145",
+   "kind": "page",
+   "path": "/hmpg/ygpa/info/puda/prst/pr02/contPageDetail.do?conts_no=D0E471E340204659A9F73211FBFF5816",
+   "lang": "ko",
+   "title": "공공데이터 개방 — 선박·화물실적통계 — 화물처리실적통계"
+  },
+  {
+   "doc_id": "YGPA-146",
+   "kind": "page",
+   "path": "/hmpg/ygpa/info/puda/prst/pr03/contPageDetail.do?conts_no=FA343F08B5354AE1A55278688EA62726",
+   "lang": "ko",
+   "title": "공공데이터 개방 — 선박·화물실적통계 — 컨테이너처리실적통계"
+  },
+  {
+   "doc_id": "YGPA-147",
+   "kind": "page",
+   "path": "/hmpg/ygpa/mwse/actv/atpr/contPageDetail.do?conts_no=0D66DDC2796F49988396ABC95F1A1AD4",
+   "lang": "ko",
+   "title": "민원서비스 — 적극행정 — 적극행정 칭찬海"
+  },
+  {
+   "doc_id": "YGPA-148",
+   "kind": "page",
+   "path": "/hmpg/ygpa/mwse/actv/pasi/contPageDetail.do?conts_no=264C2A2B3CEC475BA8813E96BA54C248",
+   "lang": "ko",
+   "title": "민원서비스 — 적극행정 — 소극행정신고센터"
+  },
+  {
+   "doc_id": "YGPA-149",
+   "kind": "page",
+   "path": "/hmpg/ygpa/mwse/dclr/ofdc/contPageDetail.do?conts_no=7ED3F68E7CC84864995F91A4353AB896",
+   "lang": "ko",
+   "title": "민원서비스 — 통합신고센터 — 오프라인신고"
+  },
+  {
+   "doc_id": "YGPA-150",
+   "kind": "page",
+   "path": "/hmpg/ygpa/mwse/pmis/pmpr/contPageDetail.do?conts_no=B7992C8ED2D74DAC88CD2EBAC113ACB3",
+   "lang": "ko",
+   "title": "Port-MIS — 항만시설 이용안내 — 항만시설 이용절차"
+  },
+  {
+   "doc_id": "YGPA-151",
+   "kind": "page",
+   "path": "/hmpg/ygpa/mwse/regu/bsrq/contPageDetail.do?conts_no=410157923C2C45B78D379C1D33AE175C",
+   "lang": "ko",
+   "title": "민원서비스 — 규제개혁 — 기업성장응답센터 소개"
+  },
+  {
+   "doc_id": "YGPA-152",
+   "kind": "page",
+   "path": "/hmpg/ygpa/mwse/regu/bssr/contPageDetail.do?conts_no=9F5B80ECD87C48EE94F80E8CC9D697C7",
+   "lang": "ko",
+   "title": "민원서비스 — 규제개혁 — 기업민원보고서비스헌장"
+  },
+  {
+   "doc_id": "YGPA-153",
+   "kind": "page",
+   "path": "/hmpg/ygpa/mwse/regu/reer/contPageDetail.do?conts_no=E9BC56633BA04BB0BBFE3188C6DFACAA",
+   "lang": "ko",
+   "title": "민원서비스 — 규제개혁 — 규제애로신고"
+  },
+  {
+   "doc_id": "YGPA-154",
+   "kind": "page",
+   "path": "/hmpg/ygpa/mwse/sinm/csin/contPageDetail.do?conts_no=8C2E09E991964033AA77A6CE90B1D396",
+   "lang": "ko",
+   "title": "민원서비스 — 신문고 — 국민신문고"
+  },
+  {
+   "doc_id": "YGPA-155",
+   "kind": "page",
+   "path": "/hmpg/ygpa/mwse/sinm/mysi/contPageDetail.do?conts_no=A68FCE0373F04D89BB61DED4EA96E108",
+   "lang": "ko",
+   "title": "민원서비스 — 신문고 — 국민신문고 나의 민원"
+  },
+  {
+   "doc_id": "YGPA-156",
+   "kind": "page",
+   "path": "/hmpg/ygpa/port/expo/exde/contPageDetail.do?conts_no=7BFF5600438C474BA400D9B410155AF6",
+   "lang": "ko",
+   "title": "항만운영 — 여수세계박람회장 — 시설현황"
+  },
+  {
+   "doc_id": "YGPA-157",
+   "kind": "page",
+   "path": "/hmpg/ygpa/port/expo/geex/contPageDetail.do?conts_no=E9EA4DAFFEB549D994508180739E85B5",
+   "lang": "ko",
+   "title": "항만운영 — 여수세계박람회장 — 일반현황"
+  },
+  {
+   "doc_id": "YGPA-158",
+   "kind": "page",
+   "path": "/hmpg/ygpa/port/gybe/cmfa/cm01/contPageDetail.do?conts_no=E1FC8F0AC9AB490A8B981C3AD420DEAA",
+   "lang": "ko",
+   "title": "광양항 배후단지 — 근린시설 — 근린시설 총괄"
+  },
+  {
+   "doc_id": "YGPA-159",
+   "kind": "page",
+   "path": "/hmpg/ygpa/port/gybe/cmfa/cm02/contPageDetail.do?conts_no=BB6F1293BA3F4C3197F1FBBD6BF9144A",
+   "lang": "ko",
+   "title": "광양항 배후단지 — 근린시설 — 서측배후단지 근린공원"
+  },
+  {
+   "doc_id": "YGPA-160",
+   "kind": "page",
+   "path": "/hmpg/ygpa/port/gybe/cmfa/cm03/contPageDetail.do?conts_no=609B5ED254554262BCA535193713FEB6",
+   "lang": "ko",
+   "title": "광양항 배후단지 — 근린시설 — 동측배후단지 근린공원"
+  },
+  {
+   "doc_id": "YGPA-161",
+   "kind": "page",
+   "path": "/hmpg/ygpa/port/gybe/cmfa/cm04/contPageDetail.do?conts_no=F577EEF20BC6419DAD189A7E2044D16D",
+   "lang": "ko",
+   "title": "광양항 배후단지 — 근린시설 — 체육시설(테니스장)"
+  },
+  {
+   "doc_id": "YGPA-162",
+   "kind": "page",
+   "path": "/hmpg/ygpa/port/gybe/cmfa/cm05/contPageDetail.do?conts_no=4760D19DDD9C46AE9353EF2CB6795FA4",
+   "lang": "ko",
+   "title": "광양항 배후단지 — 근린시설 — 체육시설(축구장 등)"
+  },
+  {
+   "doc_id": "YGPA-163",
+   "kind": "page",
+   "path": "/hmpg/ygpa/port/gybe/cmfa/cm06/contPageDetail.do?conts_no=3518200EFB6942B1A8C8DF7DD56E43A2",
+   "lang": "ko",
+   "title": "광양항 배후단지 — 근린시설 — 광양항 해양공원"
+  },
+  {
+   "doc_id": "YGPA-164",
+   "kind": "page",
+   "path": "/hmpg/ygpa/port/gybe/cmpx/cm01/contPageDetail.do?conts_no=A9F95144D5B4427C81A08F1532549135",
+   "lang": "ko",
+   "title": "광양항 배후단지 — 단지조성현황 — 단지현황"
+  },
+  {
+   "doc_id": "YGPA-165",
+   "kind": "page",
+   "path": "/hmpg/ygpa/port/gybe/cmpx/cm02/contPageDetail.do?conts_no=8163399BAB5440FC82A29D7719CC8D72",
+   "lang": "ko",
+   "title": "광양항 배후단지 — 단지조성현황 — 동측배후단지"
+  },
+  {
+   "doc_id": "YGPA-166",
+   "kind": "page",
+   "path": "/hmpg/ygpa/port/gybe/cmpx/cm03/contPageDetail.do?conts_no=804BC3044AFE434E91DB94E27D040DF7",
+   "lang": "ko",
+   "title": "광양항 배후단지 — 단지조성현황 — 서측배후단지"
+  },
+  {
+   "doc_id": "YGPA-167",
+   "kind": "page",
+   "path": "/hmpg/ygpa/port/gybe/cmpx/cm04/contPageDetail.do?conts_no=0867090929EC43C7BE7230A26FA2C888",
+   "lang": "ko",
+   "title": "광양항 배후단지 — 단지조성현황 — 세풍배후단지"
+  },
+  {
+   "doc_id": "YGPA-168",
+   "kind": "page",
+   "path": "/hmpg/ygpa/port/gybe/cmpx/cm04/contPageDetail.do?conts_no=27E310C56C084A3A94D7BB2C6C96233D",
+   "lang": "ko",
+   "title": "광양항 배후단지 — 단지조성현황 — 세풍배후단지"
+  },
+  {
+   "doc_id": "YGPA-169",
+   "kind": "page",
+   "path": "/hmpg/ygpa/port/gybe/devm/contPageDetail.do?conts_no=C85FEA838A1A4FAAB683E46FB11D28FD",
+   "lang": "ko",
+   "title": "항만운영 — 광양항 배후단지 — 개발현황"
+  },
+  {
+   "doc_id": "YGPA-170",
+   "kind": "page",
+   "path": "/hmpg/ygpa/port/gybe/genl/ge01/contPageDetail.do?conts_no=A7A1B42D82CC4187B2480534B871EE77",
+   "lang": "ko",
+   "title": "광양항 배후단지 — 일반현황 — 개념"
+  },
+  {
+   "doc_id": "YGPA-171",
+   "kind": "page",
+   "path": "/hmpg/ygpa/port/gybe/genl/ge02/contPageDetail.do?conts_no=8318A583C8954866A586BAAE8C9D0043",
+   "lang": "ko",
+   "title": "광양항 배후단지 — 일반현황 — 자유무역지역"
+  },
+  {
+   "doc_id": "YGPA-172",
+   "kind": "page",
+   "path": "/hmpg/ygpa/port/gybe/ifra/if01/contPageDetail.do?conts_no=3145D97190A94CA280AE977FC9BD25AE",
+   "lang": "ko",
+   "title": "광양항 배후단지 — 물류인프라 — 황금물류센터"
+  },
+  {
+   "doc_id": "YGPA-173",
+   "kind": "page",
+   "path": "/hmpg/ygpa/port/gybe/ifra/if02/contPageDetail.do?conts_no=07E9034631E9473BB473C01A877356B7",
+   "lang": "ko",
+   "title": "광양항 배후단지 — 물류인프라 — 냉동냉장창고"
+  },
+  {
+   "doc_id": "YGPA-174",
+   "kind": "page",
+   "path": "/hmpg/ygpa/port/gybe/ifra/if03/contPageDetail.do?conts_no=913AFCB39E434EC382A932E39D152491",
+   "lang": "ko",
+   "title": "광양항 배후단지 — 물류인프라 — 국제물류센터"
+  },
+  {
+   "doc_id": "YGPA-175",
+   "kind": "page",
+   "path": "/hmpg/ygpa/port/gybe/ifra/if04/contPageDetail.do?conts_no=ED4B36C59156402B9564F1CCF6C41E8D",
+   "lang": "ko",
+   "title": "광양항 배후단지 — 물류인프라 — 위험물창고"
+  },
+  {
+   "doc_id": "YGPA-176",
+   "kind": "page",
+   "path": "/hmpg/ygpa/port/gybe/ifra/if05/contPageDetail.do?conts_no=BEAFF6760CE74EF181891B13D281E30B",
+   "lang": "ko",
+   "title": "광양항 배후단지 — 물류인프라 — FTZ운영건물"
+  },
+  {
+   "doc_id": "YGPA-177",
+   "kind": "page",
+   "path": "/hmpg/ygpa/port/gybe/mvst/contPageDetail.do?conts_no=565A12BAB3D24B9E88C50C6EF7E78761",
+   "lang": "ko",
+   "title": "광양항 배후단지 — 입주현황 — 동측배후단지"
+  },
+  {
+   "doc_id": "YGPA-178",
+   "kind": "page",
+   "path": "/hmpg/ygpa/port/gybe/mvst/mv01/contPageDetail.do?conts_no=EC40A3F5BDBC45B48B6AD900670F7437",
+   "lang": "ko",
+   "title": "광양항 배후단지 — 입주현황 — 동측배후단지"
+  },
+  {
+   "doc_id": "YGPA-179",
+   "kind": "page",
+   "path": "/hmpg/ygpa/port/gybe/mvst/mv02/contPageDetail.do?conts_no=713504EB7C0642ADBD92180C0E319BA9",
+   "lang": "ko",
+   "title": "광양항 배후단지 — 입주현황 — 동측 3단계"
+  },
+  {
+   "doc_id": "YGPA-180",
+   "kind": "page",
+   "path": "/hmpg/ygpa/port/gybe/mvst/mv04/contPageDetail.do?conts_no=00E6ED1920324DBDA434D83FC62D81EA",
+   "lang": "ko",
+   "title": "광양항 배후단지 — 입주현황 — 서측배후단지"
+  },
+  {
+   "doc_id": "YGPA-181",
+   "kind": "page",
+   "path": "/hmpg/ygpa/port/gybe/mvst/mv05/contPageDetail.do?conts_no=D723884E1A944EF7B70FF61859118C70",
+   "lang": "ko",
+   "title": "광양항 배후단지 — 입주현황 — 세풍배후단지"
+  },
+  {
+   "doc_id": "YGPA-182",
+   "kind": "page",
+   "path": "/hmpg/ygpa/port/gybe/mvsu/ms04/contPageDetail.do?conts_no=84E130D105A74711907FD283E37202AC",
+   "lang": "ko",
+   "title": "광양항 배후단지 — 입주지원 — 입주개시"
+  },
+  {
+   "doc_id": "YGPA-183",
+   "kind": "page",
+   "path": "/hmpg/ygpa/port/gybe/mvsu/ms05/contPageDetail.do?conts_no=678F6A6DCEDF40EB94943E48811C54A4",
+   "lang": "ko",
+   "title": "광양항 배후단지 — 입주지원 — 사업확장"
+  },
+  {
+   "doc_id": "YGPA-184",
+   "kind": "page",
+   "path": "/hmpg/ygpa/port/gybe/mvsu/ms06/contPageDetail.do?conts_no=C9AED27A7277446E891632531E01827A",
+   "lang": "ko",
+   "title": "광양항 배후단지 — 입주지원 — 기관별 지원 내용(종합)"
+  },
+  {
+   "doc_id": "YGPA-185",
+   "kind": "page",
+   "path": "/hmpg/ygpa/port/gymg/incn/in01/contPageDetail.do?conts_no=D48FD4615B504CA4B8A3305F8A021A19",
+   "lang": "ko",
+   "title": "광양항 운영정보 — 광양항 인센티브 제도 — 지급"
+  },
+  {
+   "doc_id": "YGPA-186",
+   "kind": "page",
+   "path": "/hmpg/ygpa/port/gymg/incn/in02/contPageDetail.do?conts_no=38950B1EB5BB49DE8B5CE50E1B14C4B4",
+   "lang": "ko",
+   "title": "광양항 운영정보 — 광양항 인센티브 제도 — 감면"
+  },
+  {
+   "doc_id": "YGPA-187",
+   "kind": "page",
+   "path": "/hmpg/ygpa/port/gymg/ptmg/contPageDetail.do?conts_no=73B3FFE3C070422FB2275D4D8A47FD11",
+   "lang": "ko",
+   "title": "항만운영 — 광양항 운영정보 — 항만운영정보"
+  },
+  {
+   "doc_id": "YGPA-188",
+   "kind": "page",
+   "path": "/hmpg/ygpa/port/gypt/devm/contPageDetail.do?conts_no=BF03F9B710384D718A9A673F6B4BE1C6",
+   "lang": "ko",
+   "title": "항만운영 — 광양항 — 개발현황"
+  },
+  {
+   "doc_id": "YGPA-189",
+   "kind": "page",
+   "path": "/hmpg/ygpa/port/gypt/faci/gygy/fa55/contPageDetail.do?conts_no=F179BE3E596D43268D79AF9CA26DAAE7",
+   "lang": "ko",
+   "title": "광양항 광양지역 — 율촌일반 부두 — 소개"
+  },
+  {
+   "doc_id": "YGPA-190",
+   "kind": "page",
+   "path": "/hmpg/ygpa/port/gypt/faci/gygy/fa56/contPageDetail.do?conts_no=88E9485851B74018B4C737836E74F0DF",
+   "lang": "ko",
+   "title": "광양항 광양지역 — 현대제철부두 — 소개"
+  },
+  {
+   "doc_id": "YGPA-191",
+   "kind": "page",
+   "path": "/hmpg/ygpa/port/gypt/faci/gygy/fa57/contPageDetail.do?conts_no=15AE0BB0EA1F4A1FB57672675074E4F3",
+   "lang": "ko",
+   "title": "광양항 광양지역 — 한라IMS 전용부두 — 소개"
+  },
+  {
+   "doc_id": "YGPA-192",
+   "kind": "page",
+   "path": "/hmpg/ygpa/port/gypt/faci/gygy/fa58/contPageDetail.do?conts_no=4BD08CCBC86342788978CC1D3910D9EC",
+   "lang": "ko",
+   "title": "광양항 광양지역 — 한화오션에코텍 전용부두 — 소개"
+  },
+  {
+   "doc_id": "YGPA-193",
+   "kind": "page",
+   "path": "/hmpg/ygpa/port/gypt/faci/gygy/fa58/contPageDetail.do?conts_no=6A14ABA4B62C4076928A3E2C312ED6E7",
+   "lang": "ko",
+   "title": "광양항 광양지역 — 한화오션에코텍 전용부두 — 소개"
+  },
+  {
+   "doc_id": "YGPA-194",
+   "kind": "page",
+   "path": "/hmpg/ygpa/port/gypt/faci/gygy/fa59/contPageDetail.do?conts_no=3FAA95514F4D4243BD8EFE169A60CAC9",
+   "lang": "ko",
+   "title": "광양항 광양지역 — 현대스틸 전용부두 — 소개"
+  },
+  {
+   "doc_id": "YGPA-195",
+   "kind": "page",
+   "path": "/hmpg/ygpa/port/gypt/faci/gygy/fa60/contPageDetail.do?conts_no=33EA7CE4AE864276810901B04CB5A690",
+   "lang": "ko",
+   "title": "광양항 광양지역 — 중마 일반 부두 — 소개"
+  },
+  {
+   "doc_id": "YGPA-196",
+   "kind": "page",
+   "path": "/hmpg/ygpa/port/gypt/faci/gygy/fa61/contPageDetail.do?conts_no=5FA27775259E43F7B4DA7DB3252C78B9",
+   "lang": "ko",
+   "title": "광양항 광양지역 — 관리 부두 — 소개"
+  },
+  {
+   "doc_id": "YGPA-197",
+   "kind": "page",
+   "path": "/hmpg/ygpa/port/gypt/faci/gygy/fa62/contPageDetail.do?conts_no=09909B90BED149B5B12E13058C1BFD9A",
+   "lang": "ko",
+   "title": "광양항 광양지역 — 후판 RO-RO 부두 — 소개"
+  },
+  {
+   "doc_id": "YGPA-198",
+   "kind": "page",
+   "path": "/hmpg/ygpa/port/gypt/faci/gygy/fa63/contPageDetail.do?conts_no=29CCE47E7F984ADAADDD288F7B313F2A",
+   "lang": "ko",
+   "title": "광양항 광양지역 — 고철 부두 — 소개"
+  },
+  {
+   "doc_id": "YGPA-199",
+   "kind": "page",
+   "path": "/hmpg/ygpa/port/gypt/faci/gygy/fa64/contPageDetail.do?conts_no=AD6DA598D8DA481C8BA1B3C810915FA3",
+   "lang": "ko",
+   "title": "광양항 광양지역 — 제품 부두 — 소개"
+  },
+  {
+   "doc_id": "YGPA-200",
+   "kind": "page",
+   "path": "/hmpg/ygpa/port/gypt/faci/gygy/fa65/contPageDetail.do?conts_no=F1DC54E8EB90445EB4F452090C561272",
+   "lang": "ko",
+   "title": "광양항 광양지역 — RO-RO 부두 — 소개"
+  },
+  {
+   "doc_id": "YGPA-201",
+   "kind": "page",
+   "path": "/hmpg/ygpa/port/gypt/faci/gygy/fa66/contPageDetail.do?conts_no=D3FA5A5DB89D485F98EED764B784B5E0",
+   "lang": "ko",
+   "title": "광양항 광양지역 — CTS 및 원료부두 — 소개"
+  },
+  {
+   "doc_id": "YGPA-202",
+   "kind": "page",
+   "path": "/hmpg/ygpa/port/gypt/faci/gygy/fa67/contPageDetail.do?conts_no=5723F163FD5742C2990914ED7B0828AE",
+   "lang": "ko",
+   "title": "광양항 광양지역 — LNG부두 — 소개"
+  },
+  {
+   "doc_id": "YGPA-203",
+   "kind": "page",
+   "path": "/hmpg/ygpa/port/gypt/faci/gygy/fa68/contPageDetail.do?conts_no=7CE47B7318B147AE99B427B77290B2AA",
+   "lang": "ko",
+   "title": "광양항 광양지역 — 시멘트부두 — 소개"
+  },
+  {
+   "doc_id": "YGPA-204",
+   "kind": "page",
+   "path": "/hmpg/ygpa/port/gypt/faci/gygy/fa69/contPageDetail.do?conts_no=743EAF2303BA4009865B80B884A5A925",
+   "lang": "ko",
+   "title": "광양항 광양지역 — 태인부두 — 소개"
+  },
+  {
+   "doc_id": "YGPA-205",
+   "kind": "page",
+   "path": "/hmpg/ygpa/port/gypt/faci/gyyc/fa02/contPageDetail.do?conts_no=33E334752BB04136A118773A015D3119",
+   "lang": "ko",
+   "title": "광양항 여천지역 — OKYC부두 — 소개"
+  },
+  {
+   "doc_id": "YGPA-206",
+   "kind": "page",
+   "path": "/hmpg/ygpa/port/gypt/faci/gyyc/fa03/contPageDetail.do?conts_no=AFCEDEB2883D4C6BBF8821478BF9823D",
+   "lang": "ko",
+   "title": "광양항 여천지역 — U-1 입출하 부두 — 소개"
+  },
+  {
+   "doc_id": "YGPA-207",
+   "kind": "page",
+   "path": "/hmpg/ygpa/port/gypt/faci/gyyc/fa04/contPageDetail.do?conts_no=D7BF9176244B400C8AFE5E308DBE558F",
+   "lang": "ko",
+   "title": "광양항 여천지역 — 원유 부두 — 소개"
+  },
+  {
+   "doc_id": "YGPA-208",
+   "kind": "page",
+   "path": "/hmpg/ygpa/port/gypt/faci/gyyc/fa05/contPageDetail.do?conts_no=6F8C48B9714D4E35AFEC5CC2E6C35C4D",
+   "lang": "ko",
+   "title": "광양항 여천지역 — 사포1부두 — 소개"
+  },
+  {
+   "doc_id": "YGPA-209",
+   "kind": "page",
+   "path": "/hmpg/ygpa/port/gypt/faci/gyyc/fa06/contPageDetail.do?conts_no=F8CBF522EFD545C0B60063BEF428FE03",
+   "lang": "ko",
+   "title": "광양항 여천지역 — 사포2부두 — 소개"
+  },
+  {
+   "doc_id": "YGPA-210",
+   "kind": "page",
+   "path": "/hmpg/ygpa/port/gypt/faci/gyyc/fa07/contPageDetail.do?conts_no=63F705BCC2274D3C8523D1B9EBAEE7D9",
+   "lang": "ko",
+   "title": "광양항 여천지역 — E1가스부두 — 소개"
+  },
+  {
+   "doc_id": "YGPA-211",
+   "kind": "page",
+   "path": "/hmpg/ygpa/port/gypt/faci/gyyc/fa08/contPageDetail.do?conts_no=922297939D6C4F62A552146DF542BC88",
+   "lang": "ko",
+   "title": "광양항 여천지역 — LPG부두 — 소개"
+  },
+  {
+   "doc_id": "YGPA-212",
+   "kind": "page",
+   "path": "/hmpg/ygpa/port/gypt/faci/gyyc/fa09/contPageDetail.do?conts_no=C16BF49BD41243B0A1D8A51DE9F32454",
+   "lang": "ko",
+   "title": "광양항 여천지역 — 낙포부두 — 소개"
+  },
+  {
+   "doc_id": "YGPA-213",
+   "kind": "page",
+   "path": "/hmpg/ygpa/port/gypt/faci/gyyc/fa10/contPageDetail.do?conts_no=87D042B9DC95436EA0F40376C579676F",
+   "lang": "ko",
+   "title": "광양항 여천지역 — GS칼텍스 제3제품부두 — 소개"
+  },
+  {
+   "doc_id": "YGPA-214",
+   "kind": "page",
+   "path": "/hmpg/ygpa/port/gypt/faci/gyyc/fa11/contPageDetail.do?conts_no=79403A885FA34C5BB6AD708CC5B3EC10",
+   "lang": "ko",
+   "title": "광양항 여천지역 — 여천일반부두 — 소개"
+  },
+  {
+   "doc_id": "YGPA-215",
+   "kind": "page",
+   "path": "/hmpg/ygpa/port/gypt/faci/gyyc/fa12/contPageDetail.do?conts_no=D67D4FE4956C4AC69F999A59582F0B22",
+   "lang": "ko",
+   "title": "광양항 여천지역 — 낙포석탄부두 — 소개"
+  },
+  {
+   "doc_id": "YGPA-216",
+   "kind": "page",
+   "path": "/hmpg/ygpa/port/gypt/faci/gyyc/fa13/contPageDetail.do?conts_no=7E1EDEEDD364441D9F2A3974A736E50D",
+   "lang": "ko",
+   "title": "광양항 여천지역 — 석탄부두 — 소개"
+  },
+  {
+   "doc_id": "YGPA-217",
+   "kind": "page",
+   "path": "/hmpg/ygpa/port/gypt/faci/gyyc/fa14/contPageDetail.do?conts_no=8964E822676D4E678756778882E81A78",
+   "lang": "ko",
+   "title": "광양항 여천지역 — LG-VCM부두 — 소개"
+  },
+  {
+   "doc_id": "YGPA-218",
+   "kind": "page",
+   "path": "/hmpg/ygpa/port/gypt/faci/gyyc/fa15/contPageDetail.do?conts_no=00C9128DA9E74EA1B91867A261F92D4A",
+   "lang": "ko",
+   "title": "광양항 여천지역 — GS칼텍스 제1제품부두 — 소개"
+  },
+  {
+   "doc_id": "YGPA-219",
+   "kind": "page",
+   "path": "/hmpg/ygpa/port/gypt/faci/gyyc/fa16/contPageDetail.do?conts_no=0744BD0B33574475812B71F75F714E56",
+   "lang": "ko",
+   "title": "광양항 여천지역 — 코스모스부두 — 소개"
+  },
+  {
+   "doc_id": "YGPA-220",
+   "kind": "page",
+   "path": "/hmpg/ygpa/port/gypt/faci/gyyc/fa17/contPageDetail.do?conts_no=777A2836921D4BA1A4EFD2B299F34AD2",
+   "lang": "ko",
+   "title": "광양항 여천지역 — 삼남부두 — 소개"
+  },
+  {
+   "doc_id": "YGPA-221",
+   "kind": "page",
+   "path": "/hmpg/ygpa/port/gypt/faci/gyyc/fa18/contPageDetail.do?conts_no=ADD22BFCBA284746AE9A89FB956D51C8",
+   "lang": "ko",
+   "title": "광양항 여천지역 — GS칼텍스 제2제품부두 — 소개"
+  },
+  {
+   "doc_id": "YGPA-222",
+   "kind": "page",
+   "path": "/hmpg/ygpa/port/gypt/faci/gyyc/fa19/contPageDetail.do?conts_no=5D8360EFAC6A4AED80FAEDFD39ABEABC",
+   "lang": "ko",
+   "title": "광양항 여천지역 — 석탄부두 — 소개"
+  },
+  {
+   "doc_id": "YGPA-223",
+   "kind": "page",
+   "path": "/hmpg/ygpa/port/gypt/faci/gyyc/fa20/contPageDetail.do?conts_no=6BAE1F6A2DC5424D8F71ABCDC1826981",
+   "lang": "ko",
+   "title": "광양항 여천지역 — 중흥부두 — 소개"
+  },
+  {
+   "doc_id": "YGPA-224",
+   "kind": "page",
+   "path": "/hmpg/ygpa/port/gypt/faci/gyyc/fa21/contPageDetail.do?conts_no=918F8A69991C4934946EC20C0A9C90FB",
+   "lang": "ko",
+   "title": "광양항 여천지역 — 제2중흥부두 — 소개"
+  },
+  {
+   "doc_id": "YGPA-225",
+   "kind": "page",
+   "path": "/hmpg/ygpa/port/gypt/faci/gyyc/fa22/contPageDetail.do?conts_no=16F735B4748C40B1B931DDE8068092BB",
+   "lang": "ko",
+   "title": "광양항 여천지역 — 석유화학부두 — 소개"
+  },
+  {
+   "doc_id": "YGPA-226",
+   "kind": "page",
+   "path": "/hmpg/ygpa/port/gypt/faci/gyyc/fa23/contPageDetail.do?conts_no=37F8EE886DA049CBA1D9B403857B514D",
+   "lang": "ko",
+   "title": "광양항 여천지역 — LG화학제품부두 — 소개"
+  },
+  {
+   "doc_id": "YGPA-227",
+   "kind": "page",
+   "path": "/hmpg/ygpa/port/gypt/faci/gyyc/fa24/contPageDetail.do?conts_no=8B2002D8D4F744058EBEF64D0EDE2C26",
+   "lang": "ko",
+   "title": "광양항 여천지역 — 제2석유화학부두 — 소개"
+  },
+  {
+   "doc_id": "YGPA-228",
+   "kind": "page",
+   "path": "/hmpg/ygpa/port/gypt/genl/contPageDetail.do?conts_no=CF936E77BB6943798A96E9B664F7825F",
+   "lang": "ko",
+   "title": "항만운영 — 광양항 — 일반현황"
+  },
+  {
+   "doc_id": "YGPA-229",
+   "kind": "page",
+   "path": "/hmpg/ygpa/port/gypt/hist/contPageDetail.do?conts_no=66D1EA163ED845478D376A2F7131A325",
+   "lang": "ko",
+   "title": "항만운영 — 광양항 — 연혁"
+  },
+  {
+   "doc_id": "YGPA-230",
+   "kind": "page",
+   "path": "/hmpg/ygpa/port/know/ebok/eb01/contPageDetail.do?conts_no=9CD3E488308041D78DDB13A8CF9CCBCA",
+   "lang": "ko",
+   "title": "지식정보 — 지식창고 E-book — 항만"
+  },
+  {
+   "doc_id": "YGPA-231",
+   "kind": "page",
+   "path": "/hmpg/ygpa/port/know/ebok/eb02/contPageDetail.do?conts_no=5CA977216C3E4FABA19ED7007D8725B6",
+   "lang": "ko",
+   "title": "지식정보 — 지식창고 E-book — 컨테이너"
+  },
+  {
+   "doc_id": "YGPA-232",
+   "kind": "page",
+   "path": "/hmpg/ygpa/port/know/ebok/eb03/contPageDetail.do?conts_no=A5CD5E2D4E6A4B2CB9C83AD2D130D693",
+   "lang": "ko",
+   "title": "지식정보 — 지식창고 E-book — 종합물류 정보망"
+  },
+  {
+   "doc_id": "YGPA-233",
+   "kind": "page",
+   "path": "/hmpg/ygpa/port/know/ebok/eb04/contPageDetail.do?conts_no=FA6A3297F8C442568D7481EA2E2B281B",
+   "lang": "ko",
+   "title": "지식정보 — 지식창고 E-book — 기타현황"
+  },
+  {
+   "doc_id": "YGPA-234",
+   "kind": "page",
+   "path": "/hmpg/ygpa/port/know/ebok/eb05/contPageDetail.do?conts_no=314F968FFC144C429BD302D1353A5AF4",
+   "lang": "ko",
+   "title": "지식정보 — 지식창고 E-book — 지식창고 표목차"
+  },
+  {
+   "doc_id": "YGPA-235",
+   "kind": "page",
+   "path": "/hmpg/ygpa/port/know/ebok/eb06/contPageDetail.do?conts_no=61F83A86FAF649048A56E0C53FAEFA93",
+   "lang": "ko",
+   "title": "지식정보 — 지식창고 E-book — 컨테이너 부두건설"
+  },
+  {
+   "doc_id": "YGPA-236",
+   "kind": "page",
+   "path": "/hmpg/ygpa/port/know/ebok/eb07/contPageDetail.do?conts_no=479BF1C60A584D3197E7A02E5F54A1FA",
+   "lang": "ko",
+   "title": "지식정보 — 지식창고 E-book — 항만건설사례"
+  },
+  {
+   "doc_id": "YGPA-237",
+   "kind": "page",
+   "path": "/hmpg/ygpa/port/know/ebok/eb08/contPageDetail.do?conts_no=E8F42AA95B054FBA817798B61592C0AC",
+   "lang": "ko",
+   "title": "지식정보 — 지식창고 E-book — 해양항만 꾸림정보"
+  },
+  {
+   "doc_id": "YGPA-238",
+   "kind": "page",
+   "path": "/hmpg/ygpa/port/know/rfid/rf01/contPageDetail.do?conts_no=0891A7E33B4242489B1352412219328E",
+   "lang": "ko",
+   "title": "지식정보 — U-Port (RFID) — 유비쿼터스"
+  },
+  {
+   "doc_id": "YGPA-239",
+   "kind": "page",
+   "path": "/hmpg/ygpa/port/know/rfid/rf02/contPageDetail.do?conts_no=C29FC112A4E74264B664BC763D71E589",
+   "lang": "ko",
+   "title": "지식정보 — U-Port (RFID) — RFID란"
+  },
+  {
+   "doc_id": "YGPA-240",
+   "kind": "page",
+   "path": "/hmpg/ygpa/port/know/rfid/rf03/contPageDetail.do?conts_no=F632D18C7B6044D3B372E313A3CD2824",
+   "lang": "ko",
+   "title": "지식정보 — U-Port (RFID) — RFID 동작원리"
+  },
+  {
+   "doc_id": "YGPA-241",
+   "kind": "page",
+   "path": "/hmpg/ygpa/port/maps/mp02/contPageDetail.do?conts_no=6AB00878CCE84CB8905B5379CA1D7C9C",
+   "lang": "ko",
+   "title": "항만운영 — 여수광양항 지도 — 여수광양항항세도"
+  },
+  {
+   "doc_id": "YGPA-242",
+   "kind": "page",
+   "path": "/hmpg/ygpa/port/term/ccop/contPageDetail.do?conts_no=9810BE1916894E8F8E631F07EA2794AA",
+   "lang": "ko",
+   "title": "항만운영 — 여객선터미널 — 여수연안여객선터미널 관리·운영 현황"
+  },
+  {
+   "doc_id": "YGPA-243",
+   "kind": "page",
+   "path": "/hmpg/ygpa/port/term/cstt/contPageDetail.do?conts_no=5EA8540BD23A4DDCA4F7DF34C6C7FF15",
+   "lang": "ko",
+   "title": "항만운영 — 여객선터미널 — 여수연안여객선터미널"
+  },
+  {
+   "doc_id": "YGPA-244",
+   "kind": "page",
+   "path": "/hmpg/ygpa/port/term/cstt/contPageDetail.do?conts_no=EBD31CA0E16340AA928010653AA47335",
+   "lang": "ko",
+   "title": "항만운영 — 여객선터미널 — 여수연안여객선터미널"
+  },
+  {
+   "doc_id": "YGPA-245",
+   "kind": "page",
+   "path": "/hmpg/ygpa/port/yspt/devm/contPageDetail.do?conts_no=8FF6A34E07FC426D82DC75491B1DE9C2",
+   "lang": "ko",
+   "title": "항만운영 — 여수항 — 개발현황"
+  },
+  {
+   "doc_id": "YGPA-246",
+   "kind": "page",
+   "path": "/hmpg/ygpa/port/yspt/faci/fa02/contPageDetail.do?conts_no=090C39F362F64580A6ECB5A0DB51BFB9",
+   "lang": "ko",
+   "title": "시설현황 — 종화동소형선부두 — 소개"
+  },
+  {
+   "doc_id": "YGPA-247",
+   "kind": "page",
+   "path": "/hmpg/ygpa/port/yspt/faci/fa03/contPageDetail.do?conts_no=DDFB7ADC45D04CAAAF727E2FE5B68C95",
+   "lang": "ko",
+   "title": "시설현황 — 중앙동소형선부두 — 소개"
+  },
+  {
+   "doc_id": "YGPA-248",
+   "kind": "page",
+   "path": "/hmpg/ygpa/port/yspt/faci/fa04/contPageDetail.do?conts_no=A99CAB182F134874A71451C95651ED98",
+   "lang": "ko",
+   "title": "시설현황 — 남산동소형선부두 — 소개"
+  },
+  {
+   "doc_id": "YGPA-249",
+   "kind": "page",
+   "path": "/hmpg/ygpa/port/yspt/faci/fa05/contPageDetail.do?conts_no=FE0B7AAA04124B4FA4057417D0DD74D2",
+   "lang": "ko",
+   "title": "시설현황 — 여수연안여객선터미널 — 소개"
+  },
+  {
+   "doc_id": "YGPA-250",
+   "kind": "page",
+   "path": "/hmpg/ygpa/port/yspt/faci/fa06/contPageDetail.do?conts_no=F71A1FBE89EA49C9995EB2EB2D8EDAB1",
+   "lang": "ko",
+   "title": "시설현황 — 여수엑스포여객선터미널 — 소개"
+  },
+  {
+   "doc_id": "YGPA-251",
+   "kind": "page",
+   "path": "/hmpg/ygpa/port/yspt/faci/fa07/contPageDetail.do?conts_no=0C5C6DF4F46F4E77A491F03DA1141BAC",
+   "lang": "ko",
+   "title": "시설현황 — 우두리소형선부두 — 소개"
+  },
+  {
+   "doc_id": "YGPA-252",
+   "kind": "page",
+   "path": "/hmpg/ygpa/port/yspt/gerl/contPageDetail.do?conts_no=0D525556DD6B47169E54CD018216BE5B",
+   "lang": "ko",
+   "title": "항만운영 — 여수항 — 일반현황"
+  },
+  {
+   "doc_id": "YGPA-253",
+   "kind": "page",
+   "path": "/hmpg/ygpa/port/yspt/hist/contPageDetail.do?conts_no=047895305BFF4E458F77CC06354E51A3",
+   "lang": "ko",
+   "title": "항만운영 — 여수항 — 연혁"
+  },
+  {
+   "doc_id": "YGPA-254",
+   "kind": "page",
+   "path": "/hmpg/ygpa/ygpa/dire/publ/contPageDetail.do?conts_no=70F38CAE02004A75B0C474C40CC8C77E",
+   "lang": "ko",
+   "title": "YGPA — 오시는 길 — 본사/홍보관"
+  },
+  {
+   "doc_id": "YGPA-255",
+   "kind": "page",
+   "path": "/hmpg/ygpa/ygpa/dire/ysbs/contPageDetail.do?conts_no=3CCDA1D35DF74CD18A72282B014B594F",
+   "lang": "ko",
+   "title": "YGPA — 오시는 길 — 여수지사"
+  },
+  {
+   "doc_id": "YGPA-256",
+   "kind": "page",
+   "path": "/hmpg/ygpa/ygpa/dire/ysbs/contPageDetail.do?conts_no=90588E319CD94204B8972E7C99FF542F",
+   "lang": "ko",
+   "title": "YGPA — 오시는 길 — 여수지사"
+  },
+  {
+   "doc_id": "YGPA-257",
+   "kind": "page",
+   "path": "/hmpg/ygpa/ygpa/dire/ysep/contPageDetail.do?conts_no=89DC32F9F9E14CB2836C04E06D3F9C70",
+   "lang": "ko",
+   "title": "YGPA — 오시는 길 — 여수엑스포해양복합사업단"
+  },
+  {
+   "doc_id": "YGPA-258",
+   "kind": "page",
+   "path": "/hmpg/ygpa/ygpa/prom/cich/ci01/contPageDetail.do?conts_no=73CF9B8C97DE49EB9BF4BC6CF3BB3BA2",
+   "lang": "ko",
+   "title": "홍보자료 — CI/캐릭터 — CI"
+  },
+  {
+   "doc_id": "YGPA-259",
+   "kind": "page",
+   "path": "/hmpg/ygpa/ygpa/prom/cich/ci02/contPageDetail.do?conts_no=D96BAB6A8E284C6AAB47F1D046321D2F",
+   "lang": "ko",
+   "title": "홍보자료 — CI/캐릭터 — 캐릭터"
+  },
+  {
+   "doc_id": "YGPA-260",
+   "kind": "page",
+   "path": "/hmpg/ygpa/ygpa/ptcm/contPageDetail.do?conts_no=712A83D95A3C491BBE579EF4858ABD1A",
+   "lang": "ko",
+   "title": "YGPA — 항만위원회"
+  },
+  {
+   "doc_id": "YGPA-261",
+   "kind": "page",
+   "path": "/hmpg/ygpa/ygpa/rela/contPageDetail.do?conts_no=6C7A633019554C64852A358D9B28094F",
+   "lang": "ko",
+   "title": "YGPA — 유관기관"
+  },
+  {
+   "doc_id": "YGPA-262",
+   "kind": "page",
+   "path": "/hmpg/ygpa/ygpa/vist/contPageDetail.do?conts_no=00D87E2FCDA741CD81623AEC8DD46404",
+   "lang": "ko",
+   "title": "YGPA — 미션과 비전"
+  },
+  {
+   "doc_id": "YGPA-263",
+   "kind": "page",
+   "path": "/hmpg/ygpa/ygpa/yceo/iceo/contPageDetail.do?conts_no=917AE48B418447AF87BB47F1BF140103",
+   "lang": "ko",
+   "title": "YGPA — 최고경영자 — 인사말"
+  },
+  {
+   "doc_id": "YGPA-264",
+   "kind": "page",
+   "path": "/hmpg/ygpa/ygpa/yceo/iceo/contPageDetail.do?conts_no=A61A4D0CF017433C9E0602E8B10D9B15",
+   "lang": "ko",
+   "title": "YGPA — 최고경영자 — 인사말"
+  },
+  {
+   "doc_id": "YGPA-300",
+   "kind": "page",
+   "path": "/hmpg/engl/gyhl/hlgs/contPageDetail.do?conts_no=11DC403C7D354F8B85C1F7E2D287F7F0",
+   "lang": "en",
+   "title": "Hinterland — General Status"
+  },
+  {
+   "doc_id": "YGPA-301",
+   "kind": "page",
+   "path": "/hmpg/engl/gyhl/htcp/cpst/contPageDetail.do?conts_no=8E3B8DFD3A424FC1808959BE70633763",
+   "lang": "en",
+   "title": "Hinterland — Port Complex — Status"
+  },
+  {
+   "doc_id": "YGPA-302",
+   "kind": "page",
+   "path": "/hmpg/engl/gyhl/htcp/east/contPageDetail.do?conts_no=747C301B2FB9433385413EBB3B82275D",
+   "lang": "en",
+   "title": "Hinterland — Port Complex — East Hinterland"
+  },
+  {
+   "doc_id": "YGPA-303",
+   "kind": "page",
+   "path": "/hmpg/engl/gyhl/htcp/west/contPageDetail.do?conts_no=4A678F9351BA49EA9EFEC31F8F4E9084",
+   "lang": "en",
+   "title": "Hinterland — Port Complex — West Hinterland"
+  },
+  {
+   "doc_id": "YGPA-304",
+   "kind": "page",
+   "path": "/hmpg/engl/gyhl/htdv/contPageDetail.do?conts_no=B316EF020C9E4F0EB8FA36C381453BED",
+   "lang": "en",
+   "title": "Hinterland — Development"
+  },
+  {
+   "doc_id": "YGPA-305",
+   "kind": "page",
+   "path": "/hmpg/engl/gyhl/htlg/lg01/contPageDetail.do?conts_no=55DE993CDE2346DDA499D63AAD6AC31E",
+   "lang": "en",
+   "title": "Hinterland — Logistics Infra — Gold Logistics Center"
+  },
+  {
+   "doc_id": "YGPA-306",
+   "kind": "page",
+   "path": "/hmpg/engl/gyhl/htlg/lg02/contPageDetail.do?conts_no=DF299F0F1B98467E909661DB33F97223",
+   "lang": "en",
+   "title": "Hinterland — Logistics Infra — Cold Storage"
+  },
+  {
+   "doc_id": "YGPA-307",
+   "kind": "page",
+   "path": "/hmpg/engl/gyhl/htlg/lg03/contPageDetail.do?conts_no=62692B6ECA6541C5B67C5FC1FCF6B657",
+   "lang": "en",
+   "title": "Hinterland — Logistics Infra — International Logistics Center"
+  },
+  {
+   "doc_id": "YGPA-308",
+   "kind": "page",
+   "path": "/hmpg/engl/gyhl/htlg/lg04/contPageDetail.do?conts_no=D4304CC8F95346FE93F0201380E707F2",
+   "lang": "en",
+   "title": "Hinterland — Logistics Infra — Dangerous Article Warehouse"
+  },
+  {
+   "doc_id": "YGPA-309",
+   "kind": "page",
+   "path": "/hmpg/engl/gyhl/htlg/lg05/contPageDetail.do?conts_no=7C0658ADD3524EAB9F3CAD4E0E5ACDA1",
+   "lang": "en",
+   "title": "Hinterland — Logistics Infra — FTZ Administration Building"
+  },
+  {
+   "doc_id": "YGPA-310",
+   "kind": "page",
+   "path": "/hmpg/engl/gyhl/htrt/rt01/contPageDetail.do?conts_no=7554FE6F2F504C24AF52DEC0629FEDDF",
+   "lang": "en",
+   "title": "Hinterland — Rental Information — Terms and Conditions"
+  },
+  {
+   "doc_id": "YGPA-311",
+   "kind": "page",
+   "path": "/hmpg/engl/gyhl/htrt/rt02/contPageDetail.do?conts_no=4AABAED6B96F4D58AAA2537E436FED65",
+   "lang": "en",
+   "title": "Hinterland — Rental Information — Qualification"
+  },
+  {
+   "doc_id": "YGPA-312",
+   "kind": "page",
+   "path": "/hmpg/engl/gyhl/htrt/rt03/contPageDetail.do?conts_no=52711C2A9700490CBC7504F4C5C836BF",
+   "lang": "en",
+   "title": "Hinterland — Rental Information — Procedures"
+  },
+  {
+   "doc_id": "YGPA-313",
+   "kind": "page",
+   "path": "/hmpg/engl/gyhl/htrt/rt04/contPageDetail.do?conts_no=755ED9DFBD854AB5A3F861D65BBAB7C3",
+   "lang": "en",
+   "title": "Hinterland — Rental Information — Tenants Selection"
+  },
+  {
+   "doc_id": "YGPA-314",
+   "kind": "page",
+   "path": "/hmpg/engl/gyhl/htrt/rt05/contPageDetail.do?conts_no=9544627FCD3B4DFC8AC3AFB0C9E12648",
+   "lang": "en",
+   "title": "Hinterland — Rental Information — Tax Incentives"
+  },
+  {
+   "doc_id": "YGPA-315",
+   "kind": "page",
+   "path": "/hmpg/engl/pmis/prus/contPageDetail.do?conts_no=AA89A4EE70784CAFAB436C60F8DDC575",
+   "lang": "en",
+   "title": "Port-MIS — Process of Use"
+  },
+  {
+   "doc_id": "YGPA-316",
+   "kind": "page",
+   "path": "/hmpg/engl/ygpa/ctct/ct01/contPageDetail.do?conts_no=536C2FE5B900433596A88B94E859830E",
+   "lang": "en",
+   "title": "YGPA — Contact Us — Headquarter"
+  },
+  {
+   "doc_id": "YGPA-317",
+   "kind": "page",
+   "path": "/hmpg/engl/ygpa/ctct/ct02/contPageDetail.do?conts_no=0107DF5C3B294E58A8BDD3F742FD7E31",
+   "lang": "en",
+   "title": "YGPA — Contact Us — Yeosu Office"
+  },
+  {
+   "doc_id": "YGPA-318",
+   "kind": "page",
+   "path": "/hmpg/engl/ygpa/rtst/contPageDetail.do?conts_no=9EA8DE319B0849B78D30DBDE721918A8",
+   "lang": "en",
+   "title": "YGPA — Related Sites"
+  },
+  {
+   "doc_id": "YGPA-319",
+   "kind": "page",
+   "path": "/hmpg/engl/ygpa/ygci/contPageDetail.do?conts_no=8B8CB929B1A14E7A8FDB29618E651E5B",
+   "lang": "en",
+   "title": "YGPA — CI Overview"
+  },
+  {
+   "doc_id": "YGPA-320",
+   "kind": "page",
+   "path": "/hmpg/engl/ygpa/ygog/contPageDetail.do?conts_no=C34C52176A034433BBBF24E9329BE506",
+   "lang": "en",
+   "title": "YGPA — Organization"
+  },
+  {
+   "doc_id": "YGPA-321",
+   "kind": "page",
+   "path": "/hmpg/engl/ygpt/gypt/gydp/contPageDetail.do?conts_no=AB8BAE0C14EB4AB38CC72EAD065C64BB",
+   "lang": "en",
+   "title": "About Port — Gwangyang Port — Development Project"
+  },
+  {
+   "doc_id": "YGPA-322",
+   "kind": "page",
+   "path": "/hmpg/engl/ygpt/gypt/gygr/contPageDetail.do?conts_no=AFFD54F3DC4640169410B2AECDC8CD39",
+   "lang": "en",
+   "title": "About Port — Gwangyang Port — Gwangyang Region"
+  },
+  {
+   "doc_id": "YGPA-323",
+   "kind": "page",
+   "path": "/hmpg/engl/ygpt/gypt/gygs/contPageDetail.do?conts_no=57E0ED12254A40A88727DF1F2987813A",
+   "lang": "en",
+   "title": "About Port — Gwangyang Port — General Status"
+  },
+  {
+   "doc_id": "YGPA-324",
+   "kind": "page",
+   "path": "/hmpg/engl/ygpt/gypt/gyyr/contPageDetail.do?conts_no=C0037D4CA584429CB276B80FE1031354",
+   "lang": "en",
+   "title": "About Port — Gwangyang Port — Yeosu Region"
+  },
+  {
+   "doc_id": "YGPA-325",
+   "kind": "page",
+   "path": "/hmpg/engl/ygpt/yspt/ysds/contPageDetail.do?conts_no=A22AD559DB9642249A73E1B75C36C2CB",
+   "lang": "en",
+   "title": "About Port — Yeosu Port — Development Status"
+  },
+  {
+   "doc_id": "YGPA-326",
+   "kind": "page",
+   "path": "/hmpg/engl/ygpt/yspt/ysgs/contPageDetail.do?conts_no=2EF6ED02231E4B2CBF32D87AAE2FB77E",
+   "lang": "en",
+   "title": "About Port — Yeosu Port — General Status"
+  },
+  {
+   "doc_id": "YGPA-400",
+   "kind": "page",
+   "path": "/hmpg/japn/gyhl/hlgs/contPageDetail.do?conts_no=C08434F2486444EBB73891BDFE438C77",
+   "lang": "ja",
+   "title": "光陽港背後団地 — 一般現況"
+  },
+  {
+   "doc_id": "YGPA-401",
+   "kind": "page",
+   "path": "/hmpg/japn/gyhl/htcp/cpst/contPageDetail.do?conts_no=FC6B84A53DAE486A957FB567F7782F08",
+   "lang": "ja",
+   "title": "光陽港背後団地 — 団地造成の現況 — 一般現況"
+  },
+  {
+   "doc_id": "YGPA-402",
+   "kind": "page",
+   "path": "/hmpg/japn/gyhl/htcp/east/contPageDetail.do?conts_no=214956C3504549A19AE7DDD2D6866586",
+   "lang": "ja",
+   "title": "光陽港背後団地 — 団地造成の現況 — 東側背後団地"
+  },
+  {
+   "doc_id": "YGPA-403",
+   "kind": "page",
+   "path": "/hmpg/japn/gyhl/htcp/west/contPageDetail.do?conts_no=4F7CD1EB610045F083D2AC1DB3EBDD7B",
+   "lang": "ja",
+   "title": "光陽港背後団地 — 団地造成の現況 — 西側背後団地"
+  },
+  {
+   "doc_id": "YGPA-404",
+   "kind": "page",
+   "path": "/hmpg/japn/gyhl/htdv/contPageDetail.do?conts_no=A66EB4B2A923486987B2E30AD629CB85",
+   "lang": "ja",
+   "title": "光陽港背後団地 — 背後敷地開発"
+  },
+  {
+   "doc_id": "YGPA-405",
+   "kind": "page",
+   "path": "/hmpg/japn/gyhl/htlg/lg01/contPageDetail.do?conts_no=0CB8BB90BC994D39ACE225ABC6E73D1C",
+   "lang": "ja",
+   "title": "光陽港背後団地 — 物流インフラ — 黄金物流センター"
+  },
+  {
+   "doc_id": "YGPA-406",
+   "kind": "page",
+   "path": "/hmpg/japn/gyhl/htlg/lg02/contPageDetail.do?conts_no=4CB300ED24E44BC6945CDB9853B0F5B1",
+   "lang": "ja",
+   "title": "光陽港背後団地 — 物流インフラ — 冷凍冷蔵倉庫"
+  },
+  {
+   "doc_id": "YGPA-407",
+   "kind": "page",
+   "path": "/hmpg/japn/gyhl/htlg/lg03/contPageDetail.do?conts_no=88DE4CB9330940479BF93F68A0BAB85E",
+   "lang": "ja",
+   "title": "光陽港背後団地 — 物流インフラ — 国際物流センター"
+  },
+  {
+   "doc_id": "YGPA-408",
+   "kind": "page",
+   "path": "/hmpg/japn/gyhl/htlg/lg04/contPageDetail.do?conts_no=29D72E16605D4549BE9C4C9719037027",
+   "lang": "ja",
+   "title": "光陽港背後団地 — 物流インフラ — 危険物倉庫"
+  },
+  {
+   "doc_id": "YGPA-409",
+   "kind": "page",
+   "path": "/hmpg/japn/gyhl/htlg/lg05/contPageDetail.do?conts_no=B02AD8F502994F449A89EB1D89A1213A",
+   "lang": "ja",
+   "title": "光陽港背後団地 — 物流インフラ — FTZ運営建物"
+  },
+  {
+   "doc_id": "YGPA-410",
+   "kind": "page",
+   "path": "/hmpg/japn/gyhl/htrt/rt01/contPageDetail.do?conts_no=B582943066694ED7B0D440DC869B9322",
+   "lang": "ja",
+   "title": "光陽港背後団地 — 賃貸情報 — 賃貸条件"
+  },
+  {
+   "doc_id": "YGPA-411",
+   "kind": "page",
+   "path": "/hmpg/japn/gyhl/htrt/rt02/contPageDetail.do?conts_no=7D7B4375925540BB8C85AD62402CD5AC",
+   "lang": "ja",
+   "title": "光陽港背後団地 — 賃貸情報 — 入居資格"
+  },
+  {
+   "doc_id": "YGPA-412",
+   "kind": "page",
+   "path": "/hmpg/japn/gyhl/htrt/rt03/contPageDetail.do?conts_no=138A9C87B1E54E72B1E4A6692844359C",
+   "lang": "ja",
+   "title": "光陽港背後団地 — 賃貸情報 — 入居手順"
+  },
+  {
+   "doc_id": "YGPA-413",
+   "kind": "page",
+   "path": "/hmpg/japn/gyhl/htrt/rt04/contPageDetail.do?conts_no=24654BC36B9D414E87B77D199A49A0DA",
+   "lang": "ja",
+   "title": "光陽港背後団地 — 賃貸情報 — 入居企業選定基準"
+  },
+  {
+   "doc_id": "YGPA-414",
+   "kind": "page",
+   "path": "/hmpg/japn/gyhl/htrt/rt05/contPageDetail.do?conts_no=E7197196434740039228DF2CF76CF962",
+   "lang": "ja",
+   "title": "光陽港背後団地 — 賃貸情報 — 税制優遇措置"
+  },
+  {
+   "doc_id": "YGPA-415",
+   "kind": "page",
+   "path": "/hmpg/japn/pmis/prus/contPageDetail.do?conts_no=F0C466FF862C4422A032EA3ABF5D88E1",
+   "lang": "ja",
+   "title": "Port-MIS — 利用の流れ"
+  },
+  {
+   "doc_id": "YGPA-416",
+   "kind": "page",
+   "path": "/hmpg/japn/ygpa/ctct/ct01/contPageDetail.do?conts_no=E6415A86D49D44A1B2247B8194E517A8",
+   "lang": "ja",
+   "title": "YGPA — 交通アクセス — 本社"
+  },
+  {
+   "doc_id": "YGPA-417",
+   "kind": "page",
+   "path": "/hmpg/japn/ygpa/ctct/ct02/contPageDetail.do?conts_no=4804A94F7130474F8C84797FE61AB0CE",
+   "lang": "ja",
+   "title": "YGPA — 交通アクセス — 麗水事業所"
+  },
+  {
+   "doc_id": "YGPA-418",
+   "kind": "page",
+   "path": "/hmpg/japn/ygpa/rtst/contPageDetail.do?conts_no=DEB61F1CBDC94A91B999F0E331094947",
+   "lang": "ja",
+   "title": "YGPA — 関係 ウェブサイト"
+  },
+  {
+   "doc_id": "YGPA-419",
+   "kind": "page",
+   "path": "/hmpg/japn/ygpa/ygci/contPageDetail.do?conts_no=3B22669CD6DC4AAC912D3DA41852F7CE",
+   "lang": "ja",
+   "title": "YGPA — CI紹介"
+  },
+  {
+   "doc_id": "YGPA-420",
+   "kind": "page",
+   "path": "/hmpg/japn/ygpa/ygog/contPageDetail.do?conts_no=A09CFFA0AD1040F0AA45D88A2FBAFE0B",
+   "lang": "ja",
+   "title": "YGPA — 組織図"
+  },
+  {
+   "doc_id": "YGPA-421",
+   "kind": "page",
+   "path": "/hmpg/japn/ygpt/gypt/gydp/contPageDetail.do?conts_no=0BDE6707A611405FAD580A69CB500B2D",
+   "lang": "ja",
+   "title": "麗水光陽港 — 光陽港 — 開発事業"
+  },
+  {
+   "doc_id": "YGPA-422",
+   "kind": "page",
+   "path": "/hmpg/japn/ygpt/gypt/gygr/contPageDetail.do?conts_no=B65E654D7C394B9E854CE509A664923E",
+   "lang": "ja",
+   "title": "麗水光陽港 — 光陽港 — 光陽地域"
+  },
+  {
+   "doc_id": "YGPA-423",
+   "kind": "page",
+   "path": "/hmpg/japn/ygpt/gypt/gygs/contPageDetail.do?conts_no=1AC2D107874141E190BB67A34019528B",
+   "lang": "ja",
+   "title": "麗水光陽港 — 光陽港 — 一般現況"
+  },
+  {
+   "doc_id": "YGPA-424",
+   "kind": "page",
+   "path": "/hmpg/japn/ygpt/gypt/gyyr/contPageDetail.do?conts_no=30A659DF2C6D47CE82C6FCEECA09AE83",
+   "lang": "ja",
+   "title": "麗水光陽港 — 光陽港 — 麗水地域"
+  },
+  {
+   "doc_id": "YGPA-425",
+   "kind": "page",
+   "path": "/hmpg/japn/ygpt/yspt/ysds/contPageDetail.do?conts_no=DC42E4B80F844465855D65D20358E4E1",
+   "lang": "ja",
+   "title": "麗水光陽港 — 麗水港 — 開発現況"
+  },
+  {
+   "doc_id": "YGPA-426",
+   "kind": "page",
+   "path": "/hmpg/japn/ygpt/yspt/ysgs/contPageDetail.do?conts_no=B5064D5917394543895F409E31D002E8",
+   "lang": "ja",
+   "title": "麗水光陽港 — 麗水港 — 一般現況"
+  },
+  {
+   "doc_id": "YGPA-500",
+   "kind": "page",
+   "path": "/hmpg/chin/gyhl/hlgs/contPageDetail.do?conts_no=774DB22ADDB34C119465AE9ADE93D3EA",
+   "lang": "zh",
+   "title": "光阳港腹地园区 — 一般现况"
+  },
+  {
+   "doc_id": "YGPA-501",
+   "kind": "page",
+   "path": "/hmpg/chin/gyhl/htcp/cpst/contPageDetail.do?conts_no=A584E201F19247879A747545115C008C",
+   "lang": "zh",
+   "title": "光阳港腹地园区 — 园区建设现况 — 园区现况"
+  },
+  {
+   "doc_id": "YGPA-502",
+   "kind": "page",
+   "path": "/hmpg/chin/gyhl/htcp/east/contPageDetail.do?conts_no=B299D07F3A2A450BBBACA07784AB53F6",
+   "lang": "zh",
+   "title": "光阳港腹地园区 — 园区建设现况 — 东侧腹地园区"
+  },
+  {
+   "doc_id": "YGPA-503",
+   "kind": "page",
+   "path": "/hmpg/chin/gyhl/htcp/west/contPageDetail.do?conts_no=B7E3A263D47944749A8153898A3530C1",
+   "lang": "zh",
+   "title": "光阳港腹地园区 — 园区建设现况 — 西侧腹地园区"
+  },
+  {
+   "doc_id": "YGPA-504",
+   "kind": "page",
+   "path": "/hmpg/chin/gyhl/htdv/contPageDetail.do?conts_no=4E76B4F878DF4A2C9EA077CA6F8B152A",
+   "lang": "zh",
+   "title": "光阳港腹地园区 — 腹地园区开发"
+  },
+  {
+   "doc_id": "YGPA-505",
+   "kind": "page",
+   "path": "/hmpg/chin/gyhl/htlg/lg01/contPageDetail.do?conts_no=6789C6C791804DC593701FE30D4393E6",
+   "lang": "zh",
+   "title": "光阳港腹地园区 — 物流基地 — 黄金物流中心"
+  },
+  {
+   "doc_id": "YGPA-506",
+   "kind": "page",
+   "path": "/hmpg/chin/gyhl/htlg/lg02/contPageDetail.do?conts_no=62CA8CD7EA494FCBABEB33A831523AC2",
+   "lang": "zh",
+   "title": "光阳港腹地园区 — 物流基地 — 冷冻冷藏仓库"
+  },
+  {
+   "doc_id": "YGPA-507",
+   "kind": "page",
+   "path": "/hmpg/chin/gyhl/htlg/lg03/contPageDetail.do?conts_no=5CAC54041310448AB0EE30C3F9F14923",
+   "lang": "zh",
+   "title": "光阳港腹地园区 — 物流基地 — 国际物流中心"
+  },
+  {
+   "doc_id": "YGPA-508",
+   "kind": "page",
+   "path": "/hmpg/chin/gyhl/htlg/lg04/contPageDetail.do?conts_no=C2E20B6DB7E04251BA229030C500B60C",
+   "lang": "zh",
+   "title": "光阳港腹地园区 — 物流基地 — 危险物品仓库"
+  },
+  {
+   "doc_id": "YGPA-509",
+   "kind": "page",
+   "path": "/hmpg/chin/gyhl/htlg/lg05/contPageDetail.do?conts_no=157B4ECB6FC14485B1EA20E4E72CB4A8",
+   "lang": "zh",
+   "title": "光阳港腹地园区 — 物流基地 — FTZ经营管理楼"
+  },
+  {
+   "doc_id": "YGPA-510",
+   "kind": "page",
+   "path": "/hmpg/chin/gyhl/htrt/rt01/contPageDetail.do?conts_no=B5A32D58310948A0A232D00EE1031B3C",
+   "lang": "zh",
+   "title": "光阳港腹地园区 — 租赁信息 — 租凭条件"
+  },
+  {
+   "doc_id": "YGPA-511",
+   "kind": "page",
+   "path": "/hmpg/chin/gyhl/htrt/rt02/contPageDetail.do?conts_no=7966E1DEB2914F17A419E1B875AFFA63",
+   "lang": "zh",
+   "title": "光阳港腹地园区 — 租赁信息 — 入住条件"
+  },
+  {
+   "doc_id": "YGPA-512",
+   "kind": "page",
+   "path": "/hmpg/chin/gyhl/htrt/rt03/contPageDetail.do?conts_no=35D6D35134D146E58AA23B124A7A8F44",
+   "lang": "zh",
+   "title": "光阳港腹地园区 — 租赁信息 — 入住次序"
+  },
+  {
+   "doc_id": "YGPA-513",
+   "kind": "page",
+   "path": "/hmpg/chin/gyhl/htrt/rt04/contPageDetail.do?conts_no=CD325BF51A1642D0830D5082D93105BF",
+   "lang": "zh",
+   "title": "光阳港腹地园区 — 租赁信息 — 入住企业选定基准"
+  },
+  {
+   "doc_id": "YGPA-514",
+   "kind": "page",
+   "path": "/hmpg/chin/gyhl/htrt/rt05/contPageDetail.do?conts_no=5A00464E37D3423EBCFACBABE51C096C",
+   "lang": "zh",
+   "title": "光阳港腹地园区 — 租赁信息 — 税收优惠"
+  },
+  {
+   "doc_id": "YGPA-515",
+   "kind": "page",
+   "path": "/hmpg/chin/pmis/prus/contPageDetail.do?conts_no=91ADF83333EC480B921E0ED6B67BA4E0",
+   "lang": "zh",
+   "title": "Port-MIS — 利用程序"
+  },
+  {
+   "doc_id": "YGPA-516",
+   "kind": "page",
+   "path": "/hmpg/chin/ygpa/ctct/ct01/contPageDetail.do?conts_no=766127F81B5D4AA6BCBCABBE8D4AF591",
+   "lang": "zh",
+   "title": "YGPA — 来访路线 — 本社"
+  },
+  {
+   "doc_id": "YGPA-517",
+   "kind": "page",
+   "path": "/hmpg/chin/ygpa/ctct/ct02/contPageDetail.do?conts_no=33221B95254B4B998F25C1D0EE37CDEB",
+   "lang": "zh",
+   "title": "YGPA — 来访路线 — 丽水事业所"
+  },
+  {
+   "doc_id": "YGPA-518",
+   "kind": "page",
+   "path": "/hmpg/chin/ygpa/rtst/contPageDetail.do?conts_no=0BC6AFD3240B4F198AC88A086247E82C",
+   "lang": "zh",
+   "title": "YGPA — 相关网站"
+  },
+  {
+   "doc_id": "YGPA-519",
+   "kind": "page",
+   "path": "/hmpg/chin/ygpa/ygci/contPageDetail.do?conts_no=9F7D133E3A204C2BBE01B48ABAD0956C",
+   "lang": "zh",
+   "title": "YGPA — CI介绍"
+  },
+  {
+   "doc_id": "YGPA-520",
+   "kind": "page",
+   "path": "/hmpg/chin/ygpa/ygog/contPageDetail.do?conts_no=0A059B89A6F14C078F89B3A5F79FA13B",
+   "lang": "zh",
+   "title": "YGPA — 组织图"
+  },
+  {
+   "doc_id": "YGPA-521",
+   "kind": "page",
+   "path": "/hmpg/chin/ygpt/gypt/gydp/contPageDetail.do?conts_no=E319CAFB974043B9AF0C188BBD35B87E",
+   "lang": "zh",
+   "title": "丽水光阳港 — 光阳港 — 开发项目"
+  },
+  {
+   "doc_id": "YGPA-522",
+   "kind": "page",
+   "path": "/hmpg/chin/ygpt/gypt/gygr/contPageDetail.do?conts_no=143DCD878D554338A261D3A366990AF9",
+   "lang": "zh",
+   "title": "丽水光阳港 — 光阳港 — 光阳地区"
+  },
+  {
+   "doc_id": "YGPA-523",
+   "kind": "page",
+   "path": "/hmpg/chin/ygpt/gypt/gygs/contPageDetail.do?conts_no=6F351D0363D549C9B9B93C7EA96AD782",
+   "lang": "zh",
+   "title": "丽水光阳港 — 光阳港 — 一般现况"
+  },
+  {
+   "doc_id": "YGPA-524",
+   "kind": "page",
+   "path": "/hmpg/chin/ygpt/gypt/gyyr/contPageDetail.do?conts_no=39E7CFD513EF404E89F560601BF4A38F",
+   "lang": "zh",
+   "title": "丽水光阳港 — 光阳港 — 丽水地区"
+  },
+  {
+   "doc_id": "YGPA-525",
+   "kind": "page",
+   "path": "/hmpg/chin/ygpt/yspt/ysds/contPageDetail.do?conts_no=BE7827B2C4B745C79A400996B2AA7B77",
+   "lang": "zh",
+   "title": "丽水光阳港 — 丽水港 — 开发现况"
+  },
+  {
+   "doc_id": "YGPA-526",
+   "kind": "page",
+   "path": "/hmpg/chin/ygpt/yspt/ysgs/contPageDetail.do?conts_no=260535D78E1444689203F83EFDCA66C9",
+   "lang": "zh",
+   "title": "丽水光阳港 — 丽水港 — 一般现况"
+  }
+ ],
+ "page_failures": [
+  {
+   "url": "/hmpg/ygpa/info/puda/grst/contPageDetail.do?conts_no=BF23D5DA200043098A2C89DCFE905EC6",
+   "reason": "조회 실패 HTTPError: HTTP Error 404: Not Found"
+  },
+  {
+   "url": "/hmpg/ygpa/info/puda/wind/contPageDetail.do?conts_no=0C67AEE8E44641B484D153C0DA4F9F6A",
+   "reason": "조회 실패 HTTPError: HTTP Error 404: Not Found"
+  },
+  {
+   "url": "/hmpg/ygpa/port/gymg/sola/contPageDetail.do?conts_no=C1BB66172C14424F845D3352C3E2BF2A",
+   "reason": "조회 실패 HTTPError: HTTP Error 404: Not Found"
+  },
+  {
+   "url": "/hmpg/ygpa/port/gypt/befa/contPageDetail.do?conts_no=5EFA1DDBB92B4AA096286F04B0A3DD53",
+   "reason": "조회 실패 HTTPError: HTTP Error 404: Not Found"
+  },
+  {
+   "url": "/hmpg/ygpa/port/gypt/faci/fa01/contPageDetail.do?conts_no=A2100D9CE1294A4BB0A5CBEF440F5D27",
+   "reason": "조회 실패 HTTPError: HTTP Error 404: Not Found"
+  },
+  {
+   "url": "/hmpg/ygpa/port/maps/mp01/contPageDetail.do?conts_no=5964D59228C7419EBDBBEA8F7874AB87",
+   "reason": "조회 실패 HTTPError: HTTP Error 404: Not Found"
+  },
+  {
+   "url": "/hmpg/ygpa/port/gybe/mvst/mv03/contPageDetail.do?conts_no=41462C68C62A404FA4A18F51F99BA71A",
+   "reason": "조회 실패 HTTPError: HTTP Error 404: Not Found"
+  }
+ ]
+}

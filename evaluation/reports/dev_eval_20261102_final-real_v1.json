@@ -1,0 +1,361 @@
+{
+ "dataset": "dev_questions_real_v1.jsonl",
+ "index_version": "bge-m3-dense-236b5830fab6",
+ "run_at": "2026-11-02T08:43:10.394218+00:00",
+ "summary": {
+  "retrieval": "7/8",
+  "retrieval@1": "6/8",
+  "type": "10/10",
+  "buttons": "10/10",
+  "mention": "6/7",
+  "lead": "0/0",
+  "absent": "3/3",
+  "contact_btn": "0/0",
+  "contact": "2/2",
+  "type_by_group": {
+   "real": "10/10"
+  },
+  "uncited_lines_total": 5,
+  "violations_total": 0,
+  "unsupported_numbers_total": 0,
+  "first_token_s": {
+   "mean": 1.93,
+   "median": 1.56,
+   "max": 3.29
+  }
+ },
+ "rows": [
+  {
+   "id": "r01",
+   "group": "real",
+   "question": "기상 악화로 입항이 지연되었을 때 지체료나 정박료가 면제되는 조건이 있나요?",
+   "answer_type": "answer",
+   "top1_score": 0.611,
+   "top_docs": [
+    "LAW-010",
+    "LAW-010",
+    "MOF-3859",
+    "MOF-3859",
+    "YGPA-032"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 1,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 3.29,
+   "total_s": 5.03,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "기상 악화로 인한 입항 지연 시, 정박료가 면제되는 조건이 있습니다.  \n\n1. 기상악화로 인한 통제선박 및 그 밖에 항만특성상 해당선박 운항사업자의 귀책사유 없이 정박한 선박 중 지방해양수산청이 지정한 선박은 정박료가 면제됩니다[1]."
+  },
+  {
+   "id": "r02",
+   "group": "real",
+   "question": "여수광양항에 위험물 컨테이너를 반입할 때 사전 승인 절차가 어떻게 되나요?",
+   "answer_type": "answer",
+   "top1_score": 0.687,
+   "top_docs": [
+    "MOF-3990",
+    "MOF-3855",
+    "MOF-3988",
+    "MOF-3989",
+    "MOF-3859"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 3.03,
+   "total_s": 6.56,
+   "checks": {
+    "type": true,
+    "retrieval": false,
+    "retrieval@1": false,
+    "mention": false,
+    "buttons": true
+   },
+   "answer": "광양항에 위험물 컨테이너를 반입할 때는 사전에 여수지방해양수산청장의 승인을 받아야 합니다[2].  \n\n기상악화 등의 사유로 항계 안에서의 위험물 하역이 부적당하다고 인정될 경우, 하역을 금지 또는 중지하게 하거나 항계 밖의 일정한 장소를 지정하여 하역하게 할 수 있습니다[2].  \n\n항계 밖의 지정된 장소에서 위험물을 하역하는 선박은 이를 항계 안에 있는 선박으로 봅니다[2].  \n\n1. 여수지방해양수산청에 위험물 하역 계획을 신고합니다[2].  \n2. 기상악화 등 사유로 항계 내 하역이 부적당하다고 판단되면, 항계 밖의 지정된 장소에서 하역하도록 지정받습니다[2]."
+  },
+  {
+   "id": "r03",
+   "group": "real",
+   "question": "Port-MIS 연계 오류가 발생했을 때 해결 절차나 문의처가 어디인가요?",
+   "answer_type": "unknown",
+   "top1_score": 0.562,
+   "top_docs": [
+    "MOF-3881",
+    "YGPA-150",
+    "YGPA-B198-C536F709",
+    "YGPA-151",
+    "YGPA-146"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [
+    "여수광양항만공사 대표전화 061-797-4300"
+   ],
+   "options": [],
+   "uncited_lines": 1,
+   "violations": [],
+   "contacts_from_evidence": 1,
+   "unsupported_numbers": [],
+   "first_token_s": 1.24,
+   "total_s": 2.05,
+   "checks": {
+    "type": true,
+    "absent": true,
+    "contact": true,
+    "buttons": true
+   },
+   "answer": "확인한 공식 자료만으로는 답을 확정하기 어렵습니다. 담당 부서를 모르시면 아래 대표전화로 문의해 주세요."
+  },
+  {
+   "id": "r04",
+   "group": "real",
+   "question": "홍보관 견학 신청은 개인도 가능한가요, 아니면 단체만 되나요?",
+   "answer_type": "answer",
+   "top1_score": 0.61,
+   "top_docs": [
+    "YGPA-007",
+    "YGPA-008",
+    "YGPA-005",
+    "YGPA-254",
+    "YGPA-021"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [
+    "홍보관 문의 061-797-4550"
+   ],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 1,
+   "unsupported_numbers": [],
+   "first_token_s": 1.61,
+   "total_s": 3.07,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "※ 정부의 자원안보 위기 주의단계 경보 발령에 따라, 경보 해제 시까지 홍보관 예약이 제한됩니다[1].\n\n홍보관 예약은 단체로만 가능합니다. 최소 10명 이상, 최대 30명 이하의 인원이 동시에 관람할 수 있습니다[1]."
+  },
+  {
+   "id": "r05",
+   "group": "real",
+   "question": "여수광양항만공사에서 신규 입주기업 대상으로 제공하는 '블루카본 친환경 항만 인센티브 특별 감면 50%' 신청 조건과 서식이 어떻게 되나요?",
+   "answer_type": "unknown",
+   "top1_score": 0.688,
+   "top_docs": [
+    "YGPA-039",
+    "MOF-3989",
+    "YGPA-032",
+    "YGPA-185",
+    "YGPA-186"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [
+    "여수광양항만공사 대표전화 061-797-4300"
+   ],
+   "options": [],
+   "uncited_lines": 1,
+   "violations": [],
+   "contacts_from_evidence": 1,
+   "unsupported_numbers": [],
+   "first_token_s": 1.12,
+   "total_s": 1.12,
+   "checks": {
+    "type": true,
+    "contact": true,
+    "buttons": true
+   },
+   "answer": "확인한 공식 자료만으로는 답을 확정하기 어렵습니다. 질문을 조금 더 구체적으로 써 주시거나, 아래 대표전화로 문의해 주세요."
+  },
+  {
+   "id": "r06",
+   "group": "real",
+   "question": "광양항 배후단지 입주 절차와 제출서류, 담당부서를 알려주세요.",
+   "answer_type": "answer",
+   "top1_score": 0.768,
+   "top_docs": [
+    "YGPA-039",
+    "YGPA-035",
+    "YGPA-036",
+    "YGPA-184",
+    "YGPA-183"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [
+    "물류단지부 (배후단지 담당) 061-797-4456"
+   ],
+   "options": [],
+   "uncited_lines": 2,
+   "violations": [],
+   "contacts_from_evidence": 1,
+   "unsupported_numbers": [],
+   "first_token_s": 2.21,
+   "total_s": 8.1,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "buttons": true
+   },
+   "answer": "광양항 배후단지 입주 절차와 제출 서류, 담당 부서는 다음과 같습니다.\n\n1. 입주기업 모집[3]  \n2. 우선협상대상자 선정[3]  \n3. 결격사유 조회[3]  \n4. 입주계약 신청[3]  \n5. 입주계약 체결[3]  \n6. 임대차계약 체결[3]  \n7. 건축허가 및 신고[3]  \n8. 건축착공[3]  \n9. 영업개시[3]  \n\n제출 서류는 다음과 같습니다.  \n1. 자유무역지역 입주계약 신청서[1]  \n2. 사업계획서[1]  \n3. 결격사유 조회서[1]  \n4. 개인정보동의 수집 및 활용동의서[1]  \n5. 국세 및 지방세 납세증명서[1]  \n6. 해당 사업에 관한 인가·허가·면허·등록 등을 받았음을 증명하는 서류[1]  \n7. 사업자등록증[1]  \n8. 법인인감증명서[1]  \n9. 외국인 투자기업인 경우「외국인투자촉진법」제2조제1항제4호에 해당함을 증명하는 서류[1]  \n10. 기본증명서[1]  \n11. 법인등기부등본[1]  \n\n담당 부서는 물류단지부이며, 전화번호는 061-797-4456입니다[1][2][3]."
+  },
+  {
+   "id": "r07",
+   "group": "real",
+   "question": "내항선 입·출항 절차",
+   "answer_type": "answer",
+   "top1_score": 0.704,
+   "top_docs": [
+    "LAW-009",
+    "LAW-008",
+    "LAW-009",
+    "MOF-3853",
+    "YGPA-031"
+   ],
+   "downloads": [
+    "LAW-009"
+   ],
+   "port_mis": true,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 1,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 1.46,
+   "total_s": 4.48,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "absent": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "내항선의 입항 및 출항 절차는 다음과 같습니다.\n\n1. 입항 전에 내항선 출입신고서를 제출합니다[1][2]  \n2. 입항 목적, 선박 제원, 승객 및 승무원 명부 등을 기재합니다[3]  \n3. 입항 후 정박지나 선석에 도착하면 CIQ 기관의 승선심사를 받습니다[4]  \n4. 출항 전에 출항 일시와 관련 정보를 변경하거나 최종 신고합니다[1][4]  \n5. 입출항 시 정박지, 선석 등 항내시설 간 이동 보고를 합니다[4][5]  \n6. 접안 또는 정박 시각을 항만교통관제센터에 즉시 통보합니다[5]  \n\n\n\n온라인 신청은 항만운영정보시스템(Port-MIS)에서도 할 수 있습니다[3]."
+  },
+  {
+   "id": "r08",
+   "group": "real",
+   "question": "외항선 입·출항 절차",
+   "answer_type": "answer",
+   "top1_score": 0.682,
+   "top_docs": [
+    "LAW-008",
+    "MOF-3853",
+    "LAW-009",
+    "YGPA-032",
+    "LAW-009"
+   ],
+   "downloads": [],
+   "port_mis": true,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 1.47,
+   "total_s": 4.75,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "absent": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "외항선의 입항 및 출항 절차는 선장이 입항 전과 출항 전에 관련 서류를 제출하는 것으로 시작됩니다[1][2].\n\n1. 입항 전에 외항선 출입 신고서를 작성하고, 승객 명부와 승무원 명부를 첨부하여 관리청에 제출합니다[1][3]\n2. 출항 전에도 외항선 출입 신고서를 작성하고, 승객 명부와 승무원 명부를 첨부하여 관리청에 제출합니다[1][3]\n3. 입항 후에는 항내시설간 도착 및 이동보고를 하며, 정박지 또는 선석접안 후 CIQ기관의 승선심사를 받습니다[2]\n4. 출항 전에는 항내시설간 도착 및 이동보고를 합니다[2]"
+  },
+  {
+   "id": "r09",
+   "group": "real",
+   "question": "외항선",
+   "answer_type": "answer",
+   "top1_score": 0.687,
+   "top_docs": [
+    "MOF-3853",
+    "LAW-008",
+    "YGPA-150",
+    "LAW-009",
+    "YGPA-031"
+   ],
+   "downloads": [],
+   "port_mis": true,
+   "contacts": [
+    "여수지사 061-797-4346"
+   ],
+   "options": [],
+   "uncited_lines": 1,
+   "violations": [],
+   "contacts_from_evidence": 1,
+   "unsupported_numbers": [],
+   "first_token_s": 1.52,
+   "total_s": 8.57,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": false,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "외항선의 입항 절차는 다음과 같습니다.\n\n1. 신규선박제원등록을 합니다[1]  \n2. 선박입항신고(최초, 변경)를 제출하고, 선원/승객명부를 첨부합니다[1]  \n3. 선박보안정보를 통보합니다[1]  \n4. 무전검역신청을 합니다[1]  \n5. 위험물 반입 신고와 위험물일람표를 첨부합니다[1]  \n6. 도선신청(도선사, 예선, 강취방 배정)을 합니다[1]  \n7. 항만시설 사용신청(정박지, 선석)을 합니다[1]  \n8. 통합화물신고(반입)를 합니다[1]  \n9. 선박입항신고(최종)를 제출하고, 선원/승객명부를 첨부합니다[1]  \n10. 대기정박지 도착보고를 합니다[1]  \n11. 도선사 승선을 합니다[1]  \n12. 입항 시 항내시설간 도착 및 이동보고(정박지, 선석)를 합니다[1]  \n13. 정박지 또는 선석접안 후 CIQ기관 승선심사를 받습니다[1]  \n\nPort-MIS 시스템을 통해 신고 전 사용자 등록을 하고, 선박제원등록 여부를 확인한 후 입출항 이력조회(항차 확인)를 진행합니다[3]  \n양하화물 여부에 따라 통합화물신고와 항만시설사용신고를 진행합니다[3]  \n\n입항 전에 외항선 출입 신고서를 관리청에 제출해야 하며, 승객 명부와 승무원 명부를 첨부해야 합니다[4]  \n입항예정 24시간 전 또는 사용예정 전에 Port-MIS에 선박관련정보와 선박보안정보 및 항만시설사용신청을 입력해야 합니다[5]"
+  },
+  {
+   "id": "r10",
+   "group": "real",
+   "question": "출입 신고서의 구체적인 서식은 따로 볼 수 없는건가?",
+   "answer_type": "answer",
+   "top1_score": 0.578,
+   "top_docs": [
+    "LAW-009",
+    "LAW-008",
+    "LAW-007",
+    "YGPA-150",
+    "YGPA-027"
+   ],
+   "downloads": [
+    "LAW-009"
+   ],
+   "port_mis": true,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 2.33,
+   "total_s": 4.45,
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "출입 신고서는 「선박의 입항 및 출항 등에 관한 법률 시행규칙」 별지 제1호서식입니다. 서식 파일은 국가법령정보센터에서 내려받을 수 있습니다[1]. 온라인 신청은 항만운영정보시스템(Port-MIS)에서도 할 수 있습니다[1].\n\n1. 서식은 국가법령정보센터에서 확인할 수 있습니다[1].\n2. Port-MIS를 통해 온라인으로 신청할 수 있습니다[1]."
+  }
+ ]
+}

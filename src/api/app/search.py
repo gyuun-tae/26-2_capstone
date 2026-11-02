@@ -48,7 +48,8 @@ FROM (
                          CASE WHEN doc_id NOT LIKE 'LAW-%' THEN 'other'
                               WHEN chunk->>'chunk_kind' = 'whole_form' THEN 'form' ELSE 'law' END AS kind,
                          CASE WHEN chunk->>'parent_chunk_id' IS NOT NULL THEN chunk->>'text' END AS part
-                  FROM rag_chunks WHERE index_version = :version AND NOT (doc_id = ANY(:excluded))) d
+                  FROM rag_chunks WHERE index_version = :version AND NOT (doc_id = ANY(:excluded))
+                    AND (:foreign OR COALESCE(chunk->>'language', 'ko') = 'ko')) d
             ORDER BY unit, dist
         ) u
     ) p
@@ -84,6 +85,12 @@ def is_capped_law(chunk: dict) -> bool:
 
 PASS_FORMS = ("YGPA-022", "YGPA-023", "YGPA-024", "YGPA-025")  # 출입증 분실경위서·출입업체 등록·기간연장·발급 신청서
 VESSEL_REPORT = re.compile(r"출입\s*신고")
+HANGUL = re.compile(r"[가-힣]")
+
+
+def is_foreign(question: str) -> bool:
+    """한글이 없는 질문이면 영·일·중 안내 페이지도 후보로. 한국어 질문에는 외국어 청크를 넣지 않는다 (같은 내용의 번역본이 자리만 차지)"""
+    return bool(question.strip()) and not HANGUL.search(question)
 
 
 def excluded_docs(question: str) -> list[str]:
@@ -104,6 +111,7 @@ def search(query_vector: list[float], k: int = 5, question: str = "", max_law: i
         if max_law is None:
             max_law = law_cap()
         rows = conn.execute(SQL, {"q": q, "version": version, "per_doc": MAX_PER_DOC, "max_law": max_law,
-                                  "max_form": max_form, "k": k, "excluded": excluded_docs(question)}).all()
+                                  "max_form": max_form, "k": k, "excluded": excluded_docs(question),
+                                  "foreign": is_foreign(question)}).all()
     # part: 자식(항)이 걸렸을 때 그 항 글 — 재정렬은 부모 전체 대신 이것을 읽는다 (app/rerank.py)
     return [{"chunk": chunk, "score": float(score)} | ({"part": part} if part else {}) for chunk, score, part in rows]

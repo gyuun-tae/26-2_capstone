@@ -1,0 +1,157 @@
+{
+ "dataset": "dev_questions_v3.jsonl",
+ "index_version": "bge-m3-dense-236b5830fab6",
+ "run_at": "2026-11-02T08:38:26.029466+00:00",
+ "summary": {
+  "retrieval": "1/1",
+  "retrieval@1": "1/1",
+  "type": "2/4",
+  "buttons": "4/4",
+  "mention": "0/0",
+  "lead": "0/0",
+  "absent": "0/0",
+  "contact_btn": "0/0",
+  "contact": "2/2",
+  "type_by_group": {
+   "clarify": "0/1",
+   "hard": "0/1",
+   "unknown": "2/2"
+  },
+  "uncited_lines_total": 0,
+  "violations_total": 0,
+  "unsupported_numbers_total": 0,
+  "first_token_s": {
+   "mean": 1.73,
+   "median": 1.55,
+   "max": 3.8
+  }
+ },
+ "rows": [
+  {
+   "id": "c03",
+   "group": "clarify",
+   "question": "예약은 어떻게 해요?",
+   "answer_type": "answer",
+   "top1_score": 0.557,
+   "top_docs": [
+    "YGPA-007",
+    "YGPA-113",
+    "YGPA-005",
+    "YGPA-006",
+    "YGPA-005"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [
+    "홍보관 문의 061-797-4550"
+   ],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 1,
+   "unsupported_numbers": [],
+   "first_token_s": 1.62,
+   "total_s": 4.53,
+   "checks": {
+    "type": false,
+    "retrieval": true,
+    "retrieval@1": true,
+    "buttons": true
+   },
+   "answer": "※ 정부의 자원안보 위기 주의단계 경보 발령에 따라, 경보 해제 시까지 홍보관 예약이 제한됩니다[1].\n\n예약은 온라인으로만 가능합니다[1].\n\n1. 홍보관 예약은 온라인으로 신청합니다[1]\n2. 예약 시 최소 10명 이상, 최대 30명 이하의 인원으로 신청합니다[1]\n3. 관람은 매주 월~금요일 10:00 ~ 16:00(약 30분 소요)에 가능하며, 토·일·공휴일은 휴관입니다[1]\n4. 기타 문의는 061-797-4550으로 하시기 바랍니다[1]"
+  },
+  {
+   "id": "u02",
+   "group": "unknown",
+   "question": "부산항 신항 컨테이너 터미널 운영사는 어디예요?",
+   "answer_type": "unknown",
+   "top1_score": 0.618,
+   "top_docs": [
+    "YGPA-B198-187B6CC9",
+    "YGPA-B198-F89D3B37",
+    "MOF-3985",
+    "YGPA-B198-D18BC5F7",
+    "YGPA-B198-A7C4927D"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [
+    "여수광양항만공사 대표전화 061-797-4300"
+   ],
+   "options": [],
+   "uncited_lines": 1,
+   "violations": [],
+   "contacts_from_evidence": 1,
+   "unsupported_numbers": [],
+   "first_token_s": 0.04,
+   "total_s": 0.04,
+   "checks": {
+    "type": true,
+    "contact": true,
+    "buttons": true
+   },
+   "answer": "확인한 공식 자료만으로는 답을 확정하기 어렵습니다. 질문을 조금 더 구체적으로 써 주시거나, 아래 대표전화로 문의해 주세요."
+  },
+  {
+   "id": "u04",
+   "group": "unknown",
+   "question": "요즘 컨테이너 해상 운임 얼마나 해요?",
+   "answer_type": "unknown",
+   "top1_score": 0.636,
+   "top_docs": [
+    "YGPA-032",
+    "MOF-3859",
+    "MOF-3869",
+    "LAW-010",
+    "LAW-010"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [
+    "여수광양항만공사 대표전화 061-797-4300"
+   ],
+   "options": [],
+   "uncited_lines": 1,
+   "violations": [],
+   "contacts_from_evidence": 1,
+   "unsupported_numbers": [],
+   "first_token_s": 1.48,
+   "total_s": 1.48,
+   "checks": {
+    "type": true,
+    "contact": true,
+    "buttons": true
+   },
+   "answer": "확인한 공식 자료만으로는 답을 확정하기 어렵습니다. 질문을 조금 더 구체적으로 써 주시거나, 아래 대표전화로 문의해 주세요."
+  },
+  {
+   "id": "h22",
+   "group": "hard",
+   "question": "광양항 작년 컨테이너 물동량이 얼마예요?",
+   "answer_type": "answer",
+   "top1_score": 0.706,
+   "top_docs": [
+    "YGPA-FF69BBC4909",
+    "MOF-3839",
+    "YGPA-FF69BBC4909",
+    "YGPA-FD21DBEEC27",
+    "YGPA-F6892C186A1"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 3.8,
+   "total_s": 4.63,
+   "checks": {
+    "type": false,
+    "buttons": true
+   },
+   "answer": "광양항 2024년 컨테이너 물동량은 2,010,050.25 TEU입니다[2]."
+  }
+ ]
+}

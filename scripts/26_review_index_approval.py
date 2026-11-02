@@ -10,6 +10,7 @@ import argparse
 import hashlib
 import importlib.util
 import json
+import re
 import sys
 import time
 from collections import Counter
@@ -22,9 +23,9 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 from rag import dense  # noqa: E402
 
-POLICY_VERSION = "1.0"
+POLICY_VERSION = "1.1"
 LEDGER = ROOT / "data/catalog/index_approvals.json"
-ALLOWED_HOSTS = {"www.ygpa.or.kr", "www.law.go.kr"}
+ALLOWED_HOSTS = {"www.ygpa.or.kr", "www.law.go.kr", "yeosu.mof.go.kr"}
 USER_AGENT = "YGPA-Capstone/0.2"
 # 정책 5번 표: 표시 → 승인 시 붙일 주의 문구 (None이면 주의 없이 승인)
 FLAG_RULES = {
@@ -36,6 +37,8 @@ FLAG_RULES = {
     "time_sensitive_schedule_confirm_with_operator": "일정 공지 — 운영자 확인 필요",
     "temporary_reservation_restriction_included": "예약 제한 공지 — 답변 첫 문장에서 안내",
     "manual_transcription_checked_against_pdf": "원본 PDF와 대조해 옮겨 적은 표",
+    "ocr_text_unverified": "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요",
+    "time_sensitive_notice": "게시일 기준 내용 — 지금도 유효한지 확인 필요",
 }
 
 
@@ -86,8 +89,18 @@ def check_page(snap: Path, c25) -> tuple[bool, str]:
     def body(html: str) -> str | None:
         text = c25.html_text(html)
         start, end = text.find("X(Twitter)"), text.find("담당자 만족도 평가")
-        return text[start + len("X(Twitter)"):end].strip() if 0 <= start < end else None
+        if 0 <= start < end:
+            body = text[start + len("X(Twitter)"):end].strip()
+            # 게시글: 조회수와 이전·다음 글 목록은 볼 때마다 바뀌므로 비교에서 뺀다
+            body = re.sub(r"(?m)^조회수\s*:\s*[\d,]+$", "", body)
+            return re.split(r"\n목록\n(?:이전 ?글|다음 ?글)", body)[0].strip()
+        return load_module("c29", "29_process_site.py").page_text(html)[0] or None  # 외국어 페이지
 
+    if snap.parent.name.startswith("MOF-"):  # 해양수산청 페이지는 본문 영역만 저장해 둔다
+        mof = load_module("c28", "28_collect_site.py")
+        old = c25.html_text((snap / "source.html").read_text(encoding="utf-8", errors="replace"))
+        new = c25.html_text(mof.mof_slice(fetch(url).decode("utf-8", errors="replace")))
+        return (True, "오늘 받은 페이지 본문이 수집본과 같음") if old == new else (False, "페이지 본문이 바뀜 (다시 수집)")
     old = body((snap / "source.html").read_text(encoding="utf-8", errors="replace"))
     new = body(fetch(url).decode("utf-8", errors="replace"))
     if old is None or new is None:
@@ -165,7 +178,9 @@ def decide(chunk: dict, doc_check: tuple[bool, str] | None, latest: str | None, 
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--offline", action="store_true")
+    ap.add_argument("--merge", action="store_true", help="이미 승인 기록에 있는 문서는 그대로 두고 새 문서만 검토. 법령 API 없이 가능하고 기존 checked_at(유효 기간)을 유지한다")
     args = ap.parse_args()
+    previous = json.loads(LEDGER.read_text(encoding="utf-8")) if args.merge else None
 
     policy = json.loads((ROOT / "docs/contracts/data_separation_policy.json").read_text(encoding="utf-8"))
     chunks = dense.load_chunks(ROOT)
@@ -180,6 +195,10 @@ def main():
 
     documents, decisions = {}, {}
     for doc_id, doc_chunks in sorted(by_doc.items()):
+        if previous and doc_id in previous["documents"] and all(previous["chunks"].get(c["chunk_id"], {}).get("status") in ("approved", "approved_with_notes", "excluded") and previous["chunks"][c["chunk_id"]]["chunk_text_sha256"] == c["chunk_text_sha256"] for c in doc_chunks):
+            documents[doc_id] = previous["documents"][doc_id]
+            decisions.update({c["chunk_id"]: previous["chunks"][c["chunk_id"]] for c in doc_chunks if c["chunk_id"] in previous["chunks"]})
+            continue
         snap = latest_snapshot(doc_id)
         check = None
         if not args.offline and snap and not all(c["doc_id"] in dense.SUPERSEDED or c.get("chunk_kind") in dense.EXCLUDED_KINDS
@@ -211,7 +230,7 @@ def main():
         return
     LEDGER.write_text(json.dumps({
         "policy": "docs/contracts/index_approval_policy.md", "policy_version": POLICY_VERSION,
-        "checked_at": datetime.now(timezone.utc).isoformat(), "reviewer": "자료 담당 (26번 자동 검토)",
+        "checked_at": previous["checked_at"] if previous else datetime.now(timezone.utc).isoformat(), "reviewer": "자료 담당 (26번 자동 검토)",
         "summary": summary, "documents": documents, "chunks": decisions,
     }, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     print(f"저장: {LEDGER.relative_to(ROOT)}")

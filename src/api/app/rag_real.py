@@ -104,6 +104,16 @@ def build_actions(meta: Meta, hits: list[dict], text: str) -> list[Action]:
     return actions + links + contacts.for_docs(cited_docs)
 
 
+# 다른 항만만 묻는 질문 (u02 "부산항 신항 컨테이너 터미널 운영사는?"). 공식 용어사전 등에 다른 항만 이야기가 있어
+# 벡터 점수·판정을 통과하지만, 이 챗봇은 여수광양항 안내만 한다. 여수·광양을 함께 말하면(비교 질문) 막지 않는다
+OTHER_PORT = re.compile(r"(부산|인천|울산|평택|당진|포항|목포|군산|마산|동해|대산|제주|싱가포르|상하이|로테르담)\s*(신?항|항만|터미널|부두)")
+OUR_PORT = re.compile(r"여수|광양|여천|율촌|묘도|YGPA|여수광양")
+
+
+def other_port_only(question: str) -> bool:
+    return bool(OTHER_PORT.search(question)) and not OUR_PORT.search(question)
+
+
 def answer(messages) -> Answer:
     result = Answer(sources=[], tokens=None)
     threshold = float(os.getenv("UNKNOWN_THRESHOLD", DEFAULT_THRESHOLD))
@@ -140,7 +150,7 @@ def answer(messages) -> Answer:
         if weak(hits, query) and query != (joined := search_query(messages, follow_up=True)):
             if not weak(retry := await find(joined), joined):
                 query, hits, follow_up = joined, retry, True
-        if weak(hits, query):
+        if weak(hits, query) or other_port_only(query):
             result.answer_type = "unknown"
             result.actions = [contacts.MAIN]
             yield UNKNOWN_TEXT

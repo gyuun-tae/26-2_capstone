@@ -1,0 +1,65 @@
+{
+ "dataset": "dev_questions_team_v1.jsonl",
+ "index_version": "bge-m3-dense-0727bde3f179",
+ "run_at": "2026-11-02T10:15:53.239511+00:00",
+ "summary": {
+  "retrieval": "0/1",
+  "retrieval@1": "0/1",
+  "type": "1/1",
+  "buttons": "0/1",
+  "mention": "0/0",
+  "lead": "0/0",
+  "absent": "0/0",
+  "contact_btn": "0/0",
+  "contact": "0/0",
+  "type_by_group": {
+   "team": "1/1"
+  },
+  "uncited_lines_total": 0,
+  "violations_total": 0,
+  "unsupported_numbers_total": 0,
+  "first_token_s": {
+   "mean": 2.01,
+   "median": 2.01,
+   "max": 2.01
+  }
+ },
+ "rows": [
+  {
+   "id": "t07",
+   "group": "team",
+   "question": "항만시설 사용료는 어떻게 확인하나요?",
+   "answer_type": "answer",
+   "top1_score": 0.734,
+   "top_docs": [
+    "LAW-001",
+    "LAW-011",
+    "LAW-006",
+    "YGPA-B198-5FAEE64C",
+    "YGPA-027"
+   ],
+   "downloads": [
+    "LAW-006"
+   ],
+   "port_mis": false,
+   "contacts": [
+    "입출항/항만사용허가 담당자 (광양) 061-797-4434",
+    "입출항/항만사용허가 담당자 (여수) 061-692-4336"
+   ],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 2,
+   "unsupported_numbers": [],
+   "first_token_s": 2.01,
+   "total_s": 4.74,
+   "checks": {
+    "type": true,
+    "retrieval": false,
+    "retrieval@1": false,
+    "buttons": false
+   },
+   "answer": "항만시설 사용료는 항만공사가 정한 요율에 따라 선박입출항료, 접안료, 정박료, 계선료, 화물입출항료, 여객터미널이용료 등으로 구분됩니다[2]. 사용료의 종류와 요율은 대통령령 및 항만공사 규정에 따라 정해집니다[1].\n\n1. 항만공사가 정한 사용료 요율은 해양수산부장관에게 신고해야 합니다[2][5].\n2. 항만시설 사용자는 항만시설 사용신고서를 작성하여 사용료를 신고해야 합니다[3].\n3. 사용료 징수 대상 시설은 별표 1에 따라 정해집니다[2]."
+  }
+ ]
+}

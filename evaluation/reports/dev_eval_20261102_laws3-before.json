@@ -1,0 +1,288 @@
+{
+ "dataset": "dev_questions_laws3_v1.jsonl",
+ "index_version": "bge-m3-dense-4c3a848b8c5d",
+ "run_at": "2026-11-02T10:15:12.810979+00:00",
+ "summary": {
+  "retrieval": "0/8",
+  "retrieval@1": "0/8",
+  "type": "7/8",
+  "buttons": "8/8",
+  "mention": "4/8",
+  "lead": "0/0",
+  "absent": "0/0",
+  "contact_btn": "0/0",
+  "contact": "1/1",
+  "type_by_group": {
+   "laws3": "7/8"
+  },
+  "uncited_lines_total": 0,
+  "violations_total": 0,
+  "unsupported_numbers_total": 0,
+  "first_token_s": {
+   "mean": 2.12,
+   "median": 1.98,
+   "max": 3.64
+  }
+ },
+ "rows": [
+  {
+   "id": "n01",
+   "group": "laws3",
+   "question": "도선 요청을 받은 도선사가 도선을 거절할 수 있나요?",
+   "answer_type": "answer",
+   "top1_score": 0.524,
+   "top_docs": [
+    "MOF-3868",
+    "LAW-007",
+    "MOF-3867",
+    "MOF-3868",
+    "MOF-3869"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 3.64,
+   "total_s": 5.7,
+   "checks": {
+    "type": true,
+    "retrieval": false,
+    "retrieval@1": false,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "도선 요청을 받은 도선사는 예선업자의 준수사항에 따라 예선의 사용 요청을 거절할 수 있는 경우가 있습니다[2].  \n\n1. 다른 법령에 따라 선박의 운항이 제한된 경우[2]  \n2. 천재지변이나 그 밖의 불가항력적인 사유로 예선업무를 수행하기가 매우 어려운 경우[2]  \n3. 예선운영협의회에서 정하는 정당한 사유가 있는 경우[2]"
+  },
+  {
+   "id": "n02",
+   "group": "laws3",
+   "question": "국제항해선박 보안심사에는 어떤 종류가 있나요?",
+   "answer_type": "answer",
+   "top1_score": 0.587,
+   "top_docs": [
+    "MOF-3921",
+    "MOF-3923",
+    "MOF-3924",
+    "MOF-3922",
+    "LAW-012"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 2.08,
+   "total_s": 5.87,
+   "checks": {
+    "type": true,
+    "retrieval": false,
+    "retrieval@1": false,
+    "mention": false,
+    "buttons": true
+   },
+   "answer": "국제항해선박 보안심사는 다음과 같은 종류가 있습니다[2].\n\n1. 최초인증심사: 안전관리체제의 수립·시행에 관한 사항을 확인하기 위해 처음으로 하는 심사[2]  \n2. 갱신인증심사: 선박보안증서의 유효기간이 만료되기 전에 행하는 심사[2]  \n3. 중간인증심사: 최초인증심사와 갱신인증심사 사이에 행하는 심사[2]  \n4. 임시인증심사: 새로운 종류의 선박을 추가하거나 신설한 사업장 또는 개조 등으로 선종이 변경되거나 신규로 도입한 선박이 최초인증심사를 받기 전에 임시로 선박을 운항하기 위해 하는 심사[2]  \n5. 수시인증심사: 선박의 해양사고 및 외국항에서의 항행정지 예방 등을 위해 선박 또는 사업장에 대해 행하는 심사[2]"
+  },
+  {
+   "id": "n03",
+   "group": "laws3",
+   "question": "선박보안기록부에는 무엇을 기록해야 하나요?",
+   "answer_type": "answer",
+   "top1_score": 0.595,
+   "top_docs": [
+    "YGPA-031",
+    "LAW-012",
+    "LAW-007",
+    "MOF-3853",
+    "MOF-3930"
+   ],
+   "downloads": [],
+   "port_mis": true,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 1.73,
+   "total_s": 3.92,
+   "checks": {
+    "type": true,
+    "retrieval": false,
+    "retrieval@1": false,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "선박보안기록부에는 선박관련정보와 선박보안정보를 기록해야 합니다[1].\n\n1. 선박의 입항예정 24시간 전 또는 사용예정 전에 Port-MIS에 선박관련정보와 선박보안정보를 입력해야 합니다[1]\n2. 입력 내용이 변경된 경우에는 지체 없이 수정하여 다시 입력해야 합니다[1]\n3. 선박관련정보와 선박보안정보는 내항선출입신고서와 외항선 출입신고서로 입력할 수 있습니다[1]"
+  },
+  {
+   "id": "n04",
+   "group": "laws3",
+   "question": "선박 폐기물을 바다에 배출할 때 지켜야 할 기준이 있나요?",
+   "answer_type": "answer",
+   "top1_score": 0.659,
+   "top_docs": [
+    "LAW-007",
+    "LAW-021",
+    "YGPA-032",
+    "YGPA-031",
+    "YGPA-032"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 1.89,
+   "total_s": 3.69,
+   "checks": {
+    "type": true,
+    "retrieval": false,
+    "retrieval@1": false,
+    "mention": false,
+    "buttons": true
+   },
+   "answer": "무역항의 수상구역이나 수상구역 밖 10킬로미터 이내의 수면에 선박의 안전운항을 해칠 우려가 있는 흙, 돌, 나무, 어구 등 폐기물을 버리면 안 됩니다[1].  \n\n1. 폐기물을 수면에 버리는 행위는 법을 위반한 것으로, 관리청은 폐기물 제거를 명할 수 있습니다[1]."
+  },
+  {
+   "id": "n05",
+   "group": "laws3",
+   "question": "선박이 안전한 속력을 정할 때 무엇을 고려해야 하나요?",
+   "answer_type": "answer",
+   "top1_score": 0.643,
+   "top_docs": [
+    "LAW-007",
+    "MOF-3855",
+    "YGPA-031",
+    "YGPA-031",
+    "LAW-007"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 1.22,
+   "total_s": 5.05,
+   "checks": {
+    "type": true,
+    "retrieval": false,
+    "retrieval@1": false,
+    "mention": false,
+    "buttons": true
+   },
+   "answer": "선박이 안전한 속력을 정할 때는 다른 선박에 위험을 주지 않는 수준을 고려해야 합니다[1].  \n\n1. 무역항의 수상구역등에서 항행하는 선박은 해양경찰청장이 요청한 항행 최고속력을 준수해야 합니다[1].  \n2. 여수항 구항지역 해역을 운항하는 선박은 너울에 의한 피해가 없도록 8노트 이하의 속력으로 항행해야 합니다[2].  \n3. 항로를 항행하는 거대선의 진로를 피하여 안전한 속력으로 운항해야 합니다[2].  \n4. 광양항 목도와 소당도 사이의 좁은 수로에서는 선박 간 상호 교신 후 선속을 조정하여 안전한 속력으로 교행할 수 있도록 해야 합니다[2].  \n5. 여수·광양항을 항행하는 선박은 「여수·광양항 선박교통안전규정」 제5조에서 정하는 안전한 속력으로 항행해야 합니다[3]."
+  },
+  {
+   "id": "n06",
+   "group": "laws3",
+   "question": "국가물류기본계획은 얼마마다 수립하나요?",
+   "answer_type": "unknown",
+   "top1_score": 0.586,
+   "top_docs": [
+    "LAW-016",
+    "LAW-001",
+    "YGPA-188",
+    "YGPA-F30DEF4FE97",
+    "YGPA-017"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [
+    "여수광양항만공사 대표전화 061-797-4300"
+   ],
+   "options": [],
+   "uncited_lines": 1,
+   "violations": [],
+   "contacts_from_evidence": 1,
+   "unsupported_numbers": [],
+   "first_token_s": 0.94,
+   "total_s": 0.94,
+   "checks": {
+    "type": false,
+    "retrieval": false,
+    "retrieval@1": false,
+    "mention": false,
+    "contact": true,
+    "buttons": true
+   },
+   "answer": "확인한 공식 자료만으로는 답을 확정하기 어렵습니다. 질문을 조금 더 구체적으로 써 주시거나, 아래 대표전화로 문의해 주세요."
+  },
+  {
+   "id": "n07",
+   "group": "laws3",
+   "question": "항만재개발사업 규제 특례는 다른 법보다 우선 적용되나요?",
+   "answer_type": "answer",
+   "top1_score": 0.601,
+   "top_docs": [
+    "LAW-016",
+    "LAW-001",
+    "YGPA-031",
+    "YGPA-032",
+    "YGPA-027"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 3.08,
+   "total_s": 4.48,
+   "checks": {
+    "type": true,
+    "retrieval": false,
+    "retrieval@1": false,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "항만재개발사업 규제 특례는 일반적으로 다른 법률보다 우선 적용되나, 「산업안전보건법」에서 따로 정하고 있는 사항은 제외됩니다[1].\n\n항만재개발사업의 시행자는 관리청이 되며, 관리청이 아닌 자가 시행하려면 허가를 받아야 합니다[2]."
+  },
+  {
+   "id": "n08",
+   "group": "laws3",
+   "question": "도선료는 어디에서 협의해서 정하나요?",
+   "answer_type": "answer",
+   "top1_score": 0.601,
+   "top_docs": [
+    "MOF-3869",
+    "MOF-3868",
+    "LAW-019",
+    "LAW-008",
+    "MOF-3869"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 2.39,
+   "total_s": 4.17,
+   "checks": {
+    "type": true,
+    "retrieval": false,
+    "retrieval@1": false,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "도선료는 중앙협의회와 지방협의회에서 협의하여 정합니다[4].\n\n1. 중앙협의회는 예선 사용료의 산정 및 결정, 예선의 수급조절, 서비스평가 방법 등을 협의합니다[4]\n2. 지방협의회는 예선의 사용방법, 사용 절차, 사용 기준 설정, 항만별 예선운영 사항 등을 협의합니다[4]"
+  }
+ ]
+}

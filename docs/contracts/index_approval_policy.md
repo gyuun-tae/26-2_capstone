@@ -1,4 +1,4 @@
-# 색인 승인 기준 (v1.0)
+# 색인 승인 기준 (v1.1)
 
 결정일: 2026-10-04. 결정: 자료 담당. 실행: [`scripts/26_review_index_approval.py`](../../scripts/26_review_index_approval.py) → 승인 기록 [`data/catalog/index_approvals.json`](../../data/catalog/index_approvals.json).
 
@@ -15,7 +15,7 @@
 
 ## 기준
 
-1. **출처**: 출처 URL이 `www.ygpa.or.kr` 또는 `www.law.go.kr`이고, FAQ(최종평가 전용, `data_separation_policy.json`) 경로가 아니다. FAQ면 `excluded`이고 색인 만들기를 멈춘다.
+1. **출처**: 출처 URL이 `www.ygpa.or.kr`, `www.law.go.kr` 또는 `yeosu.mof.go.kr`(여수지방해양수산청, v1.1 추가)이고, FAQ(최종평가 전용, `data_separation_policy.json`) 경로가 아니다. FAQ면 `excluded`이고 색인 만들기를 멈춘다.
 2. **제외 대상 아님**: 과거 부칙(`historical_addendum`), 더 자세한 새 수집본으로 대체된 문서(`dense.SUPERSEDED`)는 `excluded`.
 3. **무결성**: 본문이 비어 있지 않고, `chunk_text_sha256`이 본문 해시와 같고, 청크가 그 문서의 **최신 수집본**에서 만들어졌다.
 4. **현행성 재확인** (승인 실행 시점에 공식 출처를 다시 조회)
@@ -37,6 +37,8 @@
    | `time_limited_items` | 승인(주의) | "…까지" 기한이 있는 조항. 지난 기한은 답변 단계(`prompt.expired_until`)에서 표시 |
    | `time_sensitive_schedule_confirm_with_operator`, `temporary_reservation_restriction_included` | 승인(주의) | 일정·예약 제한 공지. 답변 첫 문장에서 안내(지시문 8번) |
    | `manual_transcription_checked_against_pdf` | 승인(주의) | 원본 PDF와 대조해 옮겨 적은 표 |
+   | `ocr_text_unverified` | 승인(주의) | 이미지에서 자동으로 읽은 글자. 품질 기준(29번 `good_ocr`)을 넘긴 글만 쓰고 본문에 표시 |
+   | `time_sensitive_notice` | 승인(주의) | 공지·뉴스 등 게시일 기준 내용. 본문 첫 줄에 게시일 |
    | `historical_provision_not_current_rule` | 제외 | 과거 부칙 |
    | `date_status: conflicting` | 승인(주의) | 페이지 날짜 표시가 서로 다를 뿐, 본문은 4번에서 오늘 원문과 같음을 확인 |
 

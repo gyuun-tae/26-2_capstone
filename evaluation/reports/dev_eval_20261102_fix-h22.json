@@ -1,0 +1,58 @@
+{
+ "dataset": "dev_questions_v3.jsonl",
+ "index_version": "bge-m3-dense-236b5830fab6",
+ "run_at": "2026-11-02T08:38:57.185514+00:00",
+ "summary": {
+  "retrieval": "0/0",
+  "retrieval@1": "0/0",
+  "type": "0/1",
+  "buttons": "1/1",
+  "mention": "0/0",
+  "lead": "0/0",
+  "absent": "0/0",
+  "contact_btn": "0/0",
+  "contact": "0/0",
+  "type_by_group": {
+   "hard": "0/1"
+  },
+  "uncited_lines_total": 0,
+  "violations_total": 0,
+  "unsupported_numbers_total": 0,
+  "first_token_s": {
+   "mean": 0.58,
+   "median": 0.58,
+   "max": 0.58
+  }
+ },
+ "rows": [
+  {
+   "id": "h22",
+   "group": "hard",
+   "question": "광양항 작년 컨테이너 물동량이 얼마예요?",
+   "answer_type": "answer",
+   "top1_score": 0.706,
+   "top_docs": [
+    "YGPA-FF69BBC4909",
+    "MOF-3839",
+    "YGPA-FF69BBC4909",
+    "YGPA-FD21DBEEC27",
+    "YGPA-F6892C186A1"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 0.58,
+   "total_s": 3.44,
+   "checks": {
+    "type": false,
+    "buttons": true
+   },
+   "answer": "광양항의 2025년 컨테이너 물동량은 총 2,058,952 TEU입니다[2].\n\n1. 수출입 물동량은 1,804,502 TEU로, 총 물동량의 87.57%를 차지합니다[5].\n2. 수입 물동량은 915,663 TEU입니다[2].\n3. 수출 물동량은 888,840 TEU입니다[2].\n4. 환적 물동량은 248,704 TEU로, 총 물동량의 12.33%를 차지합니다[5]."
+  }
+ ]
+}

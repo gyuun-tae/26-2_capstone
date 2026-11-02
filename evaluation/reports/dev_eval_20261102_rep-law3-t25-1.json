@@ -1,0 +1,62 @@
+{
+ "dataset": "dev_questions_team_v1.jsonl",
+ "index_version": "bge-m3-dense-0727bde3f179",
+ "run_at": "2026-11-02T10:16:04.181427+00:00",
+ "summary": {
+  "retrieval": "0/0",
+  "retrieval@1": "0/0",
+  "type": "0/1",
+  "buttons": "1/1",
+  "mention": "0/0",
+  "lead": "0/0",
+  "absent": "0/0",
+  "contact_btn": "0/0",
+  "contact": "0/0",
+  "type_by_group": {
+   "team": "0/1"
+  },
+  "uncited_lines_total": 1,
+  "violations_total": 0,
+  "unsupported_numbers_total": 0,
+  "first_token_s": {
+   "mean": 0.85,
+   "median": 0.85,
+   "max": 0.85
+  }
+ },
+ "rows": [
+  {
+   "id": "t25",
+   "group": "team",
+   "question": "담당부서를 찾고 싶어요.",
+   "answer_type": "answer",
+   "top1_score": 0.613,
+   "top_docs": [
+    "YGPA-154",
+    "YGPA-155",
+    "YGPA-112",
+    "YGPA-107",
+    "YGPA-109"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [
+    "경영지원부 061-797-4343",
+    "경영지원부 061-797-4356",
+    "AI디지털부 061-797-4474"
+   ],
+   "options": [],
+   "uncited_lines": 1,
+   "violations": [],
+   "contacts_from_evidence": 3,
+   "unsupported_numbers": [],
+   "first_token_s": 0.85,
+   "total_s": 3.17,
+   "checks": {
+    "type": false,
+    "buttons": true
+   },
+   "answer": "다음은 YGPA 홈페이지에서 확인할 수 있는 담당 부서입니다.\n\n1. 민원서비스 관련: 경영지원부 (전화 061-797-4343)[1][2]  \n2. 인재채용 관련: 경영지원부 (전화 061-797-4356)[3]  \n3. 홈페이지 이용 관련: AI디지털부 (전화 061-797-4474)[4]  \n4. 개인정보 열람 청구 관련: AI디지털부 (전화 061-797-4474)[5]"
+  }
+ ]
+}
