@@ -22,7 +22,7 @@ import time
 import zipfile
 from datetime import datetime, timezone
 from pathlib import Path
-from urllib.error import HTTPError
+from urllib.error import HTTPError, URLError
 from urllib.parse import urlencode, urljoin, urlparse
 from urllib.request import HTTPRedirectHandler, Request, build_opener
 
@@ -102,7 +102,15 @@ def fetch(path: str, data: dict | None = None) -> tuple[bytes, str, str]:
         headers["X-Requested-With"] = "XMLHttpRequest"
     for _ in range(2):
         try:
-            with OPENER.open(Request(urljoin(HOST, path), data=body, headers=headers), timeout=60) as r:
+            for attempt in range(3):  # 2026-11-02 이 PC에서 DNS 조회가 잠깐씩 실패함(getaddrinfo) → 잠시 뒤 다시
+                try:
+                    r = OPENER.open(Request(urljoin(HOST, path), data=body, headers=headers), timeout=60)
+                    break
+                except URLError as e:
+                    if isinstance(e, HTTPError) or attempt == 2:
+                        raise
+                    time.sleep(10 * (attempt + 1))
+            with r:
                 raw = r.read()
                 time.sleep(0.7)
                 return raw, path, r.headers.get("Content-Disposition", "")

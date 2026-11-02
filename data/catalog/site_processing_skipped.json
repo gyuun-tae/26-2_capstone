@@ -172,6 +172,10 @@
 "형식 미지원 .png"
 ],
 [
+"YGPA-F2BA9FD1FE4",
+"형식 미지원 .jpg"
+],
+[
 "YGPA-F2F2BE824BB",
 "짧은 조각 비율 83% (인포그래픽 추출 잡음)"
 ],
@@ -182,6 +186,10 @@
 [
 "YGPA-F396DA4A573",
 "형식 미지원 .jpg"
+],
+[
+"YGPA-F3A5B488235",
+"추출 글자 없음"
 ],
 [
 "YGPA-F42362B6AA0",
@@ -196,12 +204,24 @@
 "형식 미지원 .jpg"
 ],
 [
+"YGPA-F7E785E2522",
+"형식 미지원 .hwpx"
+],
+[
 "YGPA-F88098E632B",
 "NotOleFileError: not an OLE2 structured storage file"
 ],
 [
+"YGPA-F966F2EDB4E",
+"형식 미지원 .jpg"
+],
+[
 "YGPA-F977FC5E0F1",
 "형식 미지원 .hwpx"
+],
+[
+"YGPA-F9FF2D39DB5",
+"형식 미지원 .jpg"
 ],
 [
 "YGPA-FA07F58F7AC",
@@ -220,7 +240,23 @@
 "형식 미지원 .hwpx"
 ],
 [
+"YGPA-FE361054774",
+"형식 미지원 .hwpx"
+],
+[
+"YGPA-FE47F68878B",
+"짧은 조각 비율 84% (인포그래픽 추출 잡음)"
+],
+[
 "YGPA-FED51B936CD",
 "NotOleFileError: not an OLE2 structured storage file"
+],
+[
+"YGPA-FFA23EC2601",
+"형식 미지원 .hwpx"
+],
+[
+"YGPA-FFD4D3BBF47",
+"짧은 조각 비율 70% (인포그래픽 추출 잡음)"
 ]
 ]
