@@ -193,12 +193,16 @@ def main():
     policy = load_policy()
     rows = load_candidates(policy)
 
+    import sys
+    only = sys.argv[1:]  # 문서를 지정하면 그 문서만 (03번과 같은 방식)
     targets = [
         row for row in rows
-        if row["doc_id"] != SKIP_DOC_ID
+        if row["doc_id"] != SKIP_DOC_ID and (not only or row["doc_id"] in only)
     ]
 
-    if len(targets) != 19:
+    if only and len(targets) != len(set(only)):
+        raise ValueError(f"목록에 없는 문서: {set(only) - {r['doc_id'] for r in targets}}")
+    if not only and len(targets) != 19:
         raise ValueError(
             f"처리 대상이 19건이 아닙니다: {len(targets)}건"
         )

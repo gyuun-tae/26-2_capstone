@@ -22,7 +22,7 @@ def load_policy():
     return json.loads(path.read_text(encoding="utf-8"))
 
 
-def load_candidates(policy):
+def load_candidates(policy, only=None):
     catalog_path = ROOT / policy["catalog_path"]
 
     with catalog_path.open(
@@ -30,6 +30,13 @@ def load_candidates(policy):
         newline="",
     ) as file:
         rows = list(csv.DictReader(file))
+
+    # 문서를 지정하면 그 문서만 다시 수집한다 (승인 검토에서 '페이지 본문이 바뀜'으로 보류된 문서)
+    if only:
+        targets = [row for row in rows if row["doc_id"] in only]
+        if len(targets) != len(set(only)):
+            raise ValueError(f"목록에 없는 문서: {set(only) - {r['doc_id'] for r in targets}}")
+        return rows, targets
 
     targets = [
         row for row in rows
@@ -270,8 +277,9 @@ def collect_one(session, row, policy, candidate_urls, robots_cache, batch_id):
 
 
 def main():
+    import sys
     policy = load_policy()
-    rows, targets = load_candidates(policy)
+    rows, targets = load_candidates(policy, sys.argv[1:])
 
     candidate_urls = {
         row["source_url"]

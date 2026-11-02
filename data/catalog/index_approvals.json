@@ -1,12 +1,12 @@
 {
  "policy": "docs/contracts/index_approval_policy.md",
  "policy_version": "1.1",
- "checked_at": "2026-10-13T07:27:18.846841+00:00",
+ "checked_at": "2026-11-02T13:21:11.871479+00:00",
  "reviewer": "자료 담당 (26번 자동 검토)",
  "summary": {
-  "approved": 2770,
+  "approved": 2763,
   "approved_with_notes": 98,
-  "excluded": 35
+  "excluded": 42
  },
  "documents": {
   "LAW-001": {
@@ -362,26 +362,17 @@
    "chunks": 1
   },
   "MOF-3857": {
-   "currentness": {
-    "ok": true,
-    "detail": "오늘 받은 페이지 본문이 수집본과 같음"
-   },
+   "currentness": null,
    "latest_snapshot": "20261102T070422264564Z",
    "chunks": 2
   },
   "MOF-3858": {
-   "currentness": {
-    "ok": true,
-    "detail": "오늘 받은 페이지 본문이 수집본과 같음"
-   },
+   "currentness": null,
    "latest_snapshot": "20261102T070728392875Z",
    "chunks": 2
   },
   "MOF-3859": {
-   "currentness": {
-    "ok": true,
-    "detail": "오늘 받은 페이지 본문이 수집본과 같음"
-   },
+   "currentness": null,
    "latest_snapshot": "20261102T070728392875Z",
    "chunks": 3
   },
@@ -830,7 +821,7 @@
     "ok": true,
     "detail": "여수엑스포해양복합사업단 담당업무·전화: 수집본과 같음"
    },
-   "latest_snapshot": "20261004T081301409762Z",
+   "latest_snapshot": "20261102T132617932443Z",
    "chunks": 1
   },
   "ORG-020": {
@@ -902,7 +893,7 @@
     "ok": true,
     "detail": "오늘 받은 페이지 본문이 수집본과 같음"
    },
-   "latest_snapshot": "20260923T065728052233Z",
+   "latest_snapshot": "20261102T132728363240Z",
    "chunks": 1
   },
   "YGPA-009": {
@@ -16839,45 +16830,59 @@
   },
   "MOF-3857-9ac98120c8a1af4b864bcaab": {
    "doc_id": "MOF-3857",
-   "status": "approved",
+   "status": "excluded",
    "chunk_text_sha256": "ed425768c2de37360224ebf30142065f5ec2bb902c764710c28686ee8c281a9a",
-   "notes": []
+   "notes": [
+    "LAW-010로 대체됨"
+   ]
   },
   "MOF-3857-ec05fffaba1fdc3c90cf807d": {
    "doc_id": "MOF-3857",
-   "status": "approved",
+   "status": "excluded",
    "chunk_text_sha256": "3a2326b92d8bac0e9ef0a645d8606d27a0e40c145847af1d5ce424174f3ccbbe",
-   "notes": []
+   "notes": [
+    "LAW-010로 대체됨"
+   ]
   },
   "MOF-3858-6c0162658fffa684d3dc2395": {
    "doc_id": "MOF-3858",
-   "status": "approved",
+   "status": "excluded",
    "chunk_text_sha256": "f571e30d8c49e72d3e85ee971fc854adbb57ca991e35253d8a8d02d3b80de34e",
-   "notes": []
+   "notes": [
+    "LAW-010로 대체됨"
+   ]
   },
   "MOF-3858-f289bdbfc81d6375afd1f370": {
    "doc_id": "MOF-3858",
-   "status": "approved",
+   "status": "excluded",
    "chunk_text_sha256": "5cb798c301e67c8f78aef5baaadb5d853f0bfb9605102fc4ba2f1288a3e09d86",
-   "notes": []
+   "notes": [
+    "LAW-010로 대체됨"
+   ]
   },
   "MOF-3859-9b2b786f7a70df2f0293849c": {
    "doc_id": "MOF-3859",
-   "status": "approved",
+   "status": "excluded",
    "chunk_text_sha256": "70371eeb3bd5ac48add9bf37ccf839aa581fb849afebff6ab9ea6bfbccd0399d",
-   "notes": []
+   "notes": [
+    "LAW-010로 대체됨"
+   ]
   },
   "MOF-3859-d8f8d1eddbed13e777ec43cb": {
    "doc_id": "MOF-3859",
-   "status": "approved",
+   "status": "excluded",
    "chunk_text_sha256": "2c85efc04636d5b164dca9a9a20be6d8b26df9e8e5ba8dee1e8075ae3b21b6cb",
-   "notes": []
+   "notes": [
+    "LAW-010로 대체됨"
+   ]
   },
   "MOF-3859-ef92b3d53b9b9da3b70dc3b8": {
    "doc_id": "MOF-3859",
-   "status": "approved",
+   "status": "excluded",
    "chunk_text_sha256": "c15b26b05f5fe39e16dd1ecb78ec130cf4cc058b432f03aaef7f379affd7099d",
-   "notes": []
+   "notes": [
+    "LAW-010로 대체됨"
+   ]
   },
   "MOF-3863-521c0a3f95b0b90a5748d716": {
    "doc_id": "MOF-3863",
@@ -17270,7 +17275,7 @@
   "ORG-019-12297147e59af3749151ffa2": {
    "doc_id": "ORG-019",
    "status": "approved",
-   "chunk_text_sha256": "d9a84f8393c8fcb3c85f47f10cb76f10682b4915585d98cb5c1e603d354deae6",
+   "chunk_text_sha256": "b1a1ea689bf957b70ca2c53afb031c137b983500833280980713b0b6961954b8",
    "notes": []
   },
   "ORG-020-99818ad3488c3038cdffe20b": {
@@ -17379,10 +17384,10 @@
     "예약 제한 공지 — 답변 첫 문장에서 안내"
    ]
   },
-  "YGPA-008-ca7afa9be992953e9f4591d7": {
+  "YGPA-008-9fa1e9c4925f8b60bacdd37b": {
    "doc_id": "YGPA-008",
    "status": "approved_with_notes",
-   "chunk_text_sha256": "b98111db1b6cbbbc901e36b5ef4801b5364f17649f7cd5f24aa08d3f7c031796",
+   "chunk_text_sha256": "5b196711e94967bf5fcfbe4326e47e32a38f42929ee6e3c04e5bbab9fc1686dc",
    "notes": [
     "예약 제한 공지 — 답변 첫 문장에서 안내"
    ]
