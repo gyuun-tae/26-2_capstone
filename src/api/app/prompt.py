@@ -9,6 +9,7 @@ import re
 from datetime import date, datetime, timedelta, timezone
 from typing import NamedTuple
 
+from app import lang
 from app.actions import ACTIONS
 from app.sources import META_LINE, locator_text
 
@@ -77,9 +78,10 @@ def system_prompt() -> str:
     return SYSTEM + "".join(f'  - "{key}": {desc}\n' for key, (_, desc, _) in ACTIONS.items())
 
 
-HANGUL = re.compile(r"[가-힣]")
 FOREIGN_NOTE = ("(The question is not in Korean. Write the answer and the options in the same language as the question. "
                 "Keep the [n] citations and the @@META line as instructed.)")
+# 대화 언어를 알면 이름으로 짚는다 — 한자만 쓴 일본어 질문을 중국어로 답하지 않게 (V3)
+LANGUAGE_NAMES = {"en": "English", "ja": "Japanese", "zh": "Simplified Chinese"}
 KST = timezone(timedelta(hours=9))
 UNTIL = re.compile(r"(\d{4})년\s*(\d{1,2})월\s*(\d{1,2})일\s*까지")
 
@@ -134,14 +136,17 @@ def notices(hits: list[dict]) -> list[tuple[int, str]]:
 RELATIVE_TIME = re.compile(r"작년|지난해|올해|금년|이번 ?달|지난 ?달|전월|내년|최근|요즘")
 
 
-def build_messages(messages, hits: list[dict], follow_up: bool = False) -> list[dict]:
+def build_messages(messages, hits: list[dict], follow_up: bool = False, language: str | None = None) -> list[dict]:
     """지시문 + 최근 대화 + (근거 + 이번 질문). 근거는 이번 질문에만 붙인다"""
     history = [{"role": m.role, "content": m.content} for m in messages[:-1]][-HISTORY:]
     alert = "".join(f"\n(주의: 근거 [{i}]에 이용 제한 공지가 있습니다 — \"{line}\" 질문과 관련 있으면 첫 문장에서 알리세요)"
                     for i, line in notices(hits))
     asked = effective_question(messages, follow_up)
     # 한글이 없는 질문(영어 등): 지시문 7번만으로는 한국어로 답하는 경우가 있어(t24) 질문 끝에 한 번 더 짚는다
-    language = "" if HANGUL.search(asked) else f"\n{FOREIGN_NOTE}"
+    # language: rag_real이 정한 대화 언어 (화면에서 영어를 고르고 "TEU"만 친 경우도 영어). 없으면 질문으로 판단
+    korean = lang.is_korean(asked) if language is None else language == "ko"
+    named = LANGUAGE_NAMES.get(language or "")
+    language = "" if korean else f"\n{FOREIGN_NOTE}" + (f" (Answer in {named}.)" if named else "")
     # "작년"·"올해" 같은 상대 날짜는 오늘 기준으로 풀게 한다 (h22: 2026년에 "작년"을 2024년 열로 읽음)
     # 날짜만 알려 주면 표의 마지막 열보다 한 해 앞을 '작년'으로 읽는 경우가 있어 연도를 직접 풀어 준다
     if RELATIVE_TIME.search(asked):

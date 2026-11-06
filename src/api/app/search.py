@@ -21,6 +21,7 @@ import re
 
 from sqlalchemy import text
 
+from app import lang
 from app.db import engine
 
 MAX_PER_DOC = 2
@@ -85,12 +86,12 @@ def is_capped_law(chunk: dict) -> bool:
 
 PASS_FORMS = ("YGPA-022", "YGPA-023", "YGPA-024", "YGPA-025")  # 출입증 분실경위서·출입업체 등록·기간연장·발급 신청서
 VESSEL_REPORT = re.compile(r"출입\s*신고")
-HANGUL = re.compile(r"[가-힣]")
 
 
 def is_foreign(question: str) -> bool:
     """한글이 없는 질문이면 영·일·중 안내 페이지도 후보로. 한국어 질문에는 외국어 청크를 넣지 않는다 (같은 내용의 번역본이 자리만 차지)"""
-    return bool(question.strip()) and not HANGUL.search(question)
+    # 판별은 app/lang.py — 한글이 섞인 영어 질문("How do I get a 출입증?")도 외국어
+    return bool(question.strip()) and not lang.is_korean(question)
 
 
 def excluded_docs(question: str) -> list[str]:

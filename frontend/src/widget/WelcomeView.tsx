@@ -1,4 +1,6 @@
 import { ArrowUpRight, ChevronRight, Info } from 'lucide-react'
+import { useContext } from 'react'
+import { LangContext, STRINGS } from './i18n'
 import { EXAMPLE_QUESTIONS, TASKS } from './tasks'
 import { Mascot } from './ui'
 import styles from './WelcomeView.module.css'
@@ -9,16 +11,18 @@ interface WelcomeViewProps {
 
 /** WF-01 시작 화면 (Figma 02_Homepage_Welcome_Open) */
 export function WelcomeView({ onAsk }: WelcomeViewProps) {
+  const lang = useContext(LangContext)
+  const t = STRINGS[lang]
   return (
     <div className={styles.welcome}>
       <div className={styles.hero}>
         <Mascot size={52} />
         <div>
-          <h3 className={styles.heading}>어떤 업무가 필요하신가요?</h3>
+          <h3 className={styles.heading}>{t.welcomeHeading}</h3>
           <p className={styles.sub}>
-            업무 카드를 선택하거나
+            {t.welcomeSub[0]}
             <br />
-            직접 질문해보세요.
+            {t.welcomeSub[1]}
           </p>
         </div>
       </div>
@@ -26,14 +30,12 @@ export function WelcomeView({ onAsk }: WelcomeViewProps) {
       {/* 답하는 범위를 먼저 밝혀 자료 밖 질문(다른 항만·운임 시세)을 줄인다 */}
       <p className={styles.scope}>
         <Info size={16} aria-hidden="true" />
-        <span>
-          여수광양항만공사 공개 자료와 관련 법령에서 찾아 답해요. 다른 항만·선사 정보나 운임 시세는 안내하지 않아요.
-        </span>
+        <span>{t.scope}</span>
       </p>
 
       <section aria-labelledby="ygpa-tasks-title">
         <h4 id="ygpa-tasks-title" className={`${styles.sectionTitle} ${styles.accent}`}>
-          업무 바로 찾기
+          {t.tasksTitle}
         </h4>
         <ul className={styles.grid}>
           {TASKS.map((task) => {
@@ -43,11 +45,11 @@ export function WelcomeView({ onAsk }: WelcomeViewProps) {
                 <span className={styles.taskIcon}>
                   <Icon size={18} strokeWidth={2} aria-hidden="true" />
                 </span>
-                <span className={styles.taskLabel}>{task.label}</span>
+                <span className={styles.taskLabel}>{task.label[lang]}</span>
                 {task.kind === 'link' && (
                   <>
                     <ArrowUpRight size={18} aria-hidden="true" />
-                    <span className="sr-only">(새 탭)</span>
+                    <span className="sr-only">{t.newTab}</span>
                   </>
                 )}
               </>
@@ -59,7 +61,7 @@ export function WelcomeView({ onAsk }: WelcomeViewProps) {
                     {content}
                   </a>
                 ) : (
-                  <button type="button" className={styles.task} onClick={() => onAsk(task.question)}>
+                  <button type="button" className={styles.task} onClick={() => onAsk(task.question[lang])}>
                     {content}
                   </button>
                 )}
@@ -71,10 +73,10 @@ export function WelcomeView({ onAsk }: WelcomeViewProps) {
 
       <section aria-labelledby="ygpa-examples-title">
         <h4 id="ygpa-examples-title" className={styles.sectionTitle}>
-          이렇게 질문해보세요
+          {t.examplesTitle}
         </h4>
         <ul className={styles.examples}>
-          {EXAMPLE_QUESTIONS.map((q) => (
+          {EXAMPLE_QUESTIONS[lang].map((q) => (
             <li key={q}>
               <button type="button" className={styles.example} onClick={() => onAsk(q)}>
                 <span>{q}</span>

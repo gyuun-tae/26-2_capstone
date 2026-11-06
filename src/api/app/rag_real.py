@@ -12,7 +12,7 @@ import time
 import httpx
 from pydantic import ValidationError
 
-from app import contacts, gate, gpu, rerank, search
+from app import contacts, gate, gpu, lang, rerank, search
 from app.actions import ACTIONS, PORT_MIS
 from app.prompt import (NO_EVIDENCE, NO_EVIDENCE_MAX, SHORT_QUESTION, UNKNOWN_PHRASE, CitationFilter, ContactFilter, EvidenceWordFilter, Meta, MetaFilter, RuleLineFilter,
                         build_messages, parse_meta, violations)
@@ -28,9 +28,9 @@ MAX_TOKENS = 1024
 TEMPERATURE = 0.1  # 2026-10-02 dev 측정: 0.3과 지표 같음, 반복 실행 때 답이 더 일정
 # GPU 서버(터널·관문·모델)에 닿지 않을 때. 오류 화면 대신 안내와 대표전화를 보여 준다 (GPU를 끈 시간에도 사용자가 들어온다:
 # 2026-10-06 14:12·10-07 11:08 로그 88~96이 모두 ConnectError)
-GPU_DOWN_TEXT = ("지금은 답변 서버를 사용할 수 없어 질문에 답하지 못했습니다(점검 중이거나 운영 시간이 아닙니다). "
-                 "잠시 후 다시 질문해 주시거나, 급한 문의는 아래 대표전화로 연락해 주세요.")
-UNKNOWN_TEXT = "확인한 공식 자료만으로는 답을 확정하기 어렵습니다. 질문을 조금 더 구체적으로 써 주시거나, 아래 대표전화로 문의해 주세요."
+# 고정 문구는 질문 언어별로 app/lang.py에 있다. 아래 이름은 한국어 문구 (테스트·다른 모듈 호환)
+GPU_DOWN_TEXT = lang.TEXT["gpu_down"]["ko"]
+UNKNOWN_TEXT = lang.TEXT["unknown"]["ko"]
 
 logger = logging.getLogger(__name__)
 
@@ -47,7 +47,7 @@ def term_match(query: str, hits: list[dict]) -> bool:
 
 ASKS_DATE = re.compile(r"언제|날짜|며칠|몇\s*월|몇\s*년")
 HAS_DATE = re.compile(r"\d|[월화수목금토일]요일|매주|매월|매년|평일|주말|공휴일")
-DATE_NOTE = "\n\n질문하신 날짜·시기는 확인한 공식 자료에 없습니다. 아래 대표전화로 확인해 주세요."
+DATE_NOTE = lang.TEXT["date_note"]["ko"]
 
 
 def missing_date(question: str, text: str) -> bool:
@@ -65,7 +65,21 @@ def search_query(messages, follow_up: bool = False) -> str:
 
 
 ONLINE_PORT_MIS = "온라인 신청: 항만운영정보시스템(Port-MIS)"  # scripts/27 법령 서식 청크의 안내 줄
-PORT_MIS_NOTE = "\n\n온라인 신청은 항만운영정보시스템(Port-MIS)에서도 할 수 있습니다[{n}]."
+PORT_MIS_NOTE = lang.TEXT["port_mis_note"]["ko"]
+
+
+def localize(actions: list[Action], language: str) -> list[Action]:
+    """대표전화·Port-MIS 버튼 글을 질문 언어로. 부서·서식 이름은 공식 한국어 이름 그대로 둔다"""
+    if language == "ko":
+        return actions
+    out = []
+    for a in actions:
+        if a == contacts.MAIN:
+            a = a.model_copy(update={"label": lang.text("main_label", language), "note": lang.text("main_note", language)})
+        elif a == PORT_MIS:
+            a = a.model_copy(update={"label": lang.text("port_mis_label", language), "note": lang.text("login_needed", language)})
+        out.append(a)
+    return out
 
 
 def online_port_mis_ref(hits: list[dict], text: str) -> int | None:
@@ -126,12 +140,13 @@ async def timed(pieces, timings: dict[str, float]):
         timings["total_s"] = round(time.perf_counter() - start, 2)
 
 
-def answer(messages) -> Answer:
+def answer(messages, hint: str | None = None) -> Answer:
     result = Answer(sources=[], tokens=None)
     threshold = float(os.getenv("UNKNOWN_THRESHOLD", DEFAULT_THRESHOLD))
 
     k = int(os.getenv("RAG_K", K))
     pools: dict[str, list[dict]] = {}  # 질문 → 재정렬할 후보 (재정렬을 켰을 때)
+    language = lang.of_messages(messages, hint)  # 고정 문구·버튼 글·답변 언어 안내 (hint = 화면에서 고른 언어)
 
     def add_time(name: str, start: float):
         """단계 시간 누적 (이어지는 질문이면 임베딩·검색을 두 번 한다). 측정 전용 — 동작에 쓰지 않는다"""
@@ -165,7 +180,7 @@ def answer(messages) -> Answer:
             logger.warning("GPU 서버에 닿지 않음: %s: %s", type(e).__name__, e)
             result.actions = [contacts.MAIN]
             result.error = "gpu_unavailable"
-            yield GPU_DOWN_TEXT
+            yield lang.text("gpu_down", language)
             return
         # 혼자서는 근거가 약한 질문이 앞 대화에 이어지는 말일 수 있다 ("이 사이트에서 서식을 얻을 수 없는거야?").
         # 앞 질문을 붙여 한 번 더 찾고, 그래야 근거가 잡히면 이어지는 질문으로 답한다
@@ -175,7 +190,7 @@ def answer(messages) -> Answer:
         if weak(hits, query) or other_port_only(query):
             result.answer_type = "unknown"
             result.actions = [contacts.MAIN]
-            yield UNKNOWN_TEXT
+            yield lang.text("unknown", language)
             return
         if query in pools:  # 확인 불가가 아니면 근거 순서를 재정렬로 다시 정한다
             start = time.perf_counter()
@@ -187,7 +202,7 @@ def answer(messages) -> Answer:
         meta, rules, cites, words, parts = MetaFilter(), RuleLineFilter(), CitationFilter(len(hits)), EvidenceWordFilter(), []
         guard = ContactFilter("\n".join(h["chunk"]["text"] for h in hits))
         temperature = float(os.getenv("RAG_TEMPERATURE", TEMPERATURE))
-        stream = gpu.chat_stream(build_messages(messages, hits, follow_up), MAX_TOKENS, temperature)
+        stream = gpu.chat_stream(build_messages(messages, hits, follow_up, language), MAX_TOKENS, temperature)
         if gate.enabled():  # 점수는 넘었지만 근거가 주제를 다루지 않는지 판정. 판정이 나올 때까지 생성 조각은 모아 둔다
             async def judge() -> bool:
                 start = time.perf_counter()
@@ -208,7 +223,7 @@ def answer(messages) -> Answer:
             result.sources = []
             result.answer_type = "unknown"
             result.actions = [contacts.MAIN]
-            yield UNKNOWN_TEXT
+            yield lang.text("unknown", language)
             return
         add_time("llm_s", llm_start)
         rest = cites.feed(rules.feed(meta.flush()) + rules.flush()) + cites.flush()
@@ -229,16 +244,22 @@ def answer(messages) -> Answer:
         result.options = [Option(label=o) for o in parsed.options]
         result.actions = build_actions(parsed, hits, text)
         if parsed.kind == "answer" and missing_date(query, text):
-            yield DATE_NOTE  # 묻는 날짜는 없이 다른 내용(예: 절차)만 답한 경우. 지시문으로 고치면 다른 답이 흔들려 코드로 처리
-            parts.append(DATE_NOTE)
+            note = lang.text("date_note", language)
+            yield note  # 묻는 날짜는 없이 다른 내용(예: 절차)만 답한 경우. 지시문으로 고치면 다른 답이 흔들려 코드로 처리
+            parts.append(note)
             result.actions = [*result.actions, contacts.MAIN]
         if parsed.kind == "answer" and "Port-MIS" not in text and (n := online_port_mis_ref(hits, text)):
             # 인용한 서식에 온라인 신청 안내가 있는데 본문이 빠뜨린 경우 (w01: 재정렬로 서식이 [1]이 되면 자주 빠뜨림)
-            note = PORT_MIS_NOTE.format(n=n)
+            note = lang.text("port_mis_note", language).format(n=n)
             yield note
             parts.append(note)
         if found := violations(text, len(hits)):
             logger.warning("답변 규칙 위반 %s (1위 %s)", found, hits[0]["chunk"]["chunk_id"])
 
-    result.tokens = timed(tokens(), result.timings)
+    async def localized():
+        async for piece in tokens():
+            yield piece
+        result.actions = localize(result.actions, language)
+
+    result.tokens = timed(localized(), result.timings)
     return result

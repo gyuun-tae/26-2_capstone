@@ -57,7 +57,7 @@ async def chat(req: ChatRequest):
     (FE는 done 또는 error를 받아야 로딩을 멈출 수 있다)"""
     question = req.messages[-1].content
     try:
-        result = rag.answer(req.messages)
+        result = rag.answer(req.messages, req.language)
         parts = []
         async for text in result.tokens:
             parts.append(text)

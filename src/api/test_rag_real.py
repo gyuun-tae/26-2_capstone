@@ -384,4 +384,55 @@ for delay in (0.0, 0.01, 0.03):  # 0.0: 첫 조각을 받는 중에 판정이 �
         pass
 del os.environ["RAG_GATE"]
 
+# 15. 다국어 (V3): 고정 문구·대표전화·Port-MIS 버튼은 질문 언어로, 부서·서식 이름은 한국어 그대로
+from app import lang
+assert lang.detect("출입증 발급 신청은 어디서 하나요?") == "ko"
+assert lang.detect("Port-MIS가 뭐예요?") == "ko"            # 영문 약어 + 한국어
+assert lang.detect("How do I get a 출입증?") == "en"         # 영어 + 한국어 단어 하나
+assert lang.detect("麗水事業所の電話番号を教えてください") == "ja"
+assert lang.detect("丽水光阳港湾公社的组织结构是怎样的?") == "zh"
+assert lang.detect("Port-MIS") is None and lang.detect("1") is None and lang.detect("네") is None
+assert lang.of_messages([Message(role="user", content="How do I get a port access pass?"),
+                         Message(role="assistant", content="Which one?"), Message(role="user", content="1")]) == "en"
+assert lang.of_messages([Message(role="user", content="TEU")]) == "ko"
+assert search.is_foreign("How do I get a 출입증?") and not search.is_foreign("Port-MIS가 뭐예요?")
+assert prompt.FOREIGN_NOTE in last_user("How do I get a 출입증?")
+assert prompt.FOREIGN_NOTE not in last_user("TEU")
+
+ev = run("What is the weather today?", ["부르면 안 됨"], hits=[{"chunk": html_text, "score": 0.40}])
+assert text_of(ev) == lang.TEXT["unknown"]["en"], text_of(ev)
+main = ev[-1][1]["actions"]
+assert [(a["label"], a["phone"]) for a in main] == [("Yeosu Gwangyang Port Authority (main line)", "061-797-4300")], main
+ev = run("今日の天気はどうですか?", ["부르면 안 됨"], hits=[{"chunk": html_text, "score": 0.40}])
+assert text_of(ev) == lang.TEXT["unknown"]["ja"] and ev[-1][1]["actions"][0]["label"] == "麗水光陽港湾公社 代表電話"
+for failure in (httpx.ConnectError("down"),):
+    async def down(text, failure=failure):
+        raise failure
+    ev = run("丽水港的客运码头在哪里?", ["안 불림"], embed=down)
+    assert text_of(ev) == lang.TEXT["gpu_down"]["zh"] and ev[-1][1]["actions"][0]["label"] == "丽水光阳港湾公社 代表电话"
+ev = run("Where do I get the entry report form?", ["You get it from the national law center[1].", '@@META {"type": "answer", "actions": [], "forms": []}'],
+         hits=[{"chunk": law_form, "score": 0.7}])
+assert text_of(ev).endswith(lang.TEXT["port_mis_note"]["en"].format(n=1)), text_of(ev)
+assert [a["label"] for a in ev[-1][1]["actions"]] == ["Open Port-MIS"], ev[-1][1]["actions"]
+# 화면에서 고른 언어(hint)는 질문만으로 판단이 안 될 때만: "TEU"만 쳐도 영어 화면이면 영어
+assert lang.of_messages([Message(role="user", content="TEU")], "en") == "en"
+assert lang.of_messages([Message(role="user", content="TEU 뜻이 뭐예요?")], "en") == "ko"  # 질문 언어 우선
+assert lang.of_messages([Message(role="user", content="TEU")], "fr") == "ko"  # 모르는 값은 무시
+assert lang.of_messages([Message(role="user", content="港湾施設使用料")], "ja") == "ja"  # 한자만: 일본어 화면이면 일본어
+assert lang.of_messages([Message(role="user", content="港湾施設使用料")]) == "zh"
+assert lang.of_messages([Message(role="user", content="港湾施設使用料はいくらですか")], "zh") == "ja"  # 가나가 있으면 일본어
+ja_note = prompt.build_messages([Message(role="user", content="港湾施設使用料")], [{"chunk": html_text, "score": 0.7}], language="ja")[-1]["content"]
+assert "Answer in Japanese" in ja_note
+async def down_en(text):
+    raise httpx.ConnectError("down")
+with patch.object(gpu, "embed", down_en):
+    body = c.post("/chat", json={"messages": [{"role": "user", "content": "TEU"}], "language": "en"}).text
+assert lang.TEXT["gpu_down"]["en"].split(",")[0] in body, body[:300]
+assert c.post("/chat", json={"messages": [{"role": "user", "content": "TEU"}], "language": "xx"}).status_code == 422
+korean = prompt.build_messages([Message(role="user", content="TEU")], [{"chunk": html_text, "score": 0.7}], language="en")[-1]["content"]
+assert prompt.FOREIGN_NOTE in korean
+# 한국어 질문은 그대로
+ev = run("오늘 날씨 어때?", ["부르면 안 됨"], hits=[{"chunk": html_text, "score": 0.40}])
+assert text_of(ev) == rag_real.UNKNOWN_TEXT and ev[-1][1]["actions"][0]["label"] == "여수광양항만공사 대표전화"
+
 print("OK")

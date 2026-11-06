@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useReducer, useRef } from 'react'
 import { sendFeedback, streamChat } from '../api/client'
-import type { ChatMessage, ClarifyOption, DoneEvent, Source } from '../api/types'
+import type { ChatMessage, ChatRequest, ClarifyOption, DoneEvent, Source } from '../api/types'
 
 /**
  * Figma 흐름은 채팅 로그가 아니라 "한 화면에 질문 하나"를 쌓는 구조다.
@@ -97,17 +97,21 @@ export interface ChatResult {
 
 interface UseChatOptions {
   onResponse?: (result: ChatResult) => void
+  /** 화면 언어. 요청에 힌트로 보낸다 (답변 언어는 질문 언어 우선) */
+  language?: ChatRequest['language']
 }
 
-export function useChat({ onResponse }: UseChatOptions = {}) {
+export function useChat({ onResponse, language }: UseChatOptions = {}) {
   const [state, dispatch] = useReducer(reducer, { stack: [] })
   const stateRef = useRef(state)
   const controllerRef = useRef<AbortController | null>(null)
   const onResponseRef = useRef(onResponse)
+  const languageRef = useRef(language)
 
   useEffect(() => {
     stateRef.current = state
     onResponseRef.current = onResponse
+    languageRef.current = language
   })
 
   const abortInFlight = () => {
@@ -121,7 +125,7 @@ export function useChat({ onResponse }: UseChatOptions = {}) {
     controllerRef.current = controller
     let text = ''
     streamChat(
-      { messages: screen.messages },
+      { messages: screen.messages, ...(languageRef.current ? { language: languageRef.current } : {}) },
       {
         signal: controller.signal,
         onToken: (chunk) => {

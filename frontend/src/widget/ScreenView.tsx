@@ -4,11 +4,13 @@ import { copyText, hasSteps, parseAnswer, type Block, type Inline } from '../api
 import type { Action, ClarifyOption } from '../api/types'
 import type { Screen } from './useChat'
 import { splitActions } from './actions'
+import { useStrings } from './i18n'
+import { PORT_MIS_URL } from './tasks'
 import { ActionLink, CitationChip, ContactCard, Mascot } from './ui'
 import styles from './ScreenView.module.css'
 
-const PORT_MIS: Action = { type: 'link', label: 'Port-MIS', url: 'https://portmis.go.kr/' }
-const YGPA_HOME: Action = { type: 'link', label: 'YGPA 홈페이지', url: 'https://www.ygpa.or.kr/' }
+const PORT_MIS: Action = { type: 'link', label: 'Port-MIS', url: PORT_MIS_URL }
+const YGPA_HOME_URL = 'https://www.ygpa.or.kr/'
 
 interface ScreenViewProps {
   screen: Screen
@@ -24,6 +26,7 @@ interface ScreenViewProps {
 
 export function ScreenView(props: ScreenViewProps) {
   const { screen, backLabel, onBack } = props
+  const t = useStrings()
   const busy = screen.status === 'loading' || screen.status === 'streaming'
   return (
     <article className={styles.screen} aria-busy={busy}>
@@ -32,12 +35,12 @@ export function ScreenView(props: ScreenViewProps) {
           <ChevronLeft size={18} aria-hidden="true" />
           {backLabel}
         </button>
-        {screen.selectionLabel && <span className={styles.meta}>선택한 안내 · {screen.selectionLabel}</span>}
+        {screen.selectionLabel && <span className={styles.meta}>{t.selected} · {screen.selectionLabel}</span>}
       </div>
 
       <div className={styles.userRow}>
         <p className={styles.userBubble}>
-          <span className="sr-only">내 질문: </span>
+          <span className="sr-only">{t.myQuestion}</span>
           {screen.question}
         </p>
       </div>
@@ -142,6 +145,7 @@ const citesIn = (block: Block): number[] =>
 // ── 답변 본문 ──────────────────────────────────────
 
 function AnswerContent({ screen, activeCitationId, onSelect, onOpenCitation, onRewrite, onRate }: ScreenViewProps) {
+  const t = useStrings()
   const blocks = parseAnswer(screen.text)
   const type = screen.done?.answer_type
   const streaming = screen.status === 'streaming'
@@ -162,10 +166,10 @@ function AnswerContent({ screen, activeCitationId, onSelect, onOpenCitation, onR
         <section className={styles.notice} aria-labelledby={`${screen.key}-notice`}>
           <p className={styles.noticeLabel}>
             <SearchX size={16} aria-hidden="true" />
-            확인 가능한 근거 부족
+            {t.unknownLabel}
           </p>
           <h3 id={`${screen.key}-notice`} className={styles.answerTitle}>
-            확인할 근거가 부족해요
+            {t.unknownTitle}
           </h3>
           {blocks.map((b, i) => (
             <BlockView key={i} block={b} cite={cite} />
@@ -183,7 +187,7 @@ function AnswerContent({ screen, activeCitationId, onSelect, onOpenCitation, onR
             <ActionLink key={i} action={a} />
           ))}
           <button type="button" className={styles.textButton} onClick={onRewrite}>
-            질문 구체화하기
+            {t.rewrite}
           </button>
         </div>
       </div>
@@ -199,7 +203,7 @@ function AnswerContent({ screen, activeCitationId, onSelect, onOpenCitation, onR
       <>
         {summary && (
           <section className={`${styles.summaryCard} ${summaryActive ? styles.summaryActive : ''}`}>
-            <p className={styles.summaryLabel}>한눈에 보기</p>
+            <p className={styles.summaryLabel}>{t.summary}</p>
             <p className={styles.summaryText}>
               <Inlines inlines={summary.inlines} cite={cite} />
             </p>
@@ -208,7 +212,7 @@ function AnswerContent({ screen, activeCitationId, onSelect, onOpenCitation, onR
         {afterSummary.map((block, i) =>
           i === stepsIndex && block.kind === 'ol' ? (
             <section key={i} className={styles.section}>
-              <h4 className={styles.sectionTitle}>진행 순서</h4>
+              <h4 className={styles.sectionTitle}>{t.steps}</h4>
               <ol className={styles.steps}>
                 {block.items.map((item, n) => (
                   <li key={n} className={styles.step}>
@@ -252,7 +256,7 @@ function AnswerContent({ screen, activeCitationId, onSelect, onOpenCitation, onR
         </div>
 
         {type === 'clarify' && (screen.done?.options?.length ?? 0) > 0 && (
-          <ul className={styles.options} aria-label="선택지">
+          <ul className={styles.options} aria-label={t.options}>
             {screen.done!.options!.map((option) => (
               <li key={option.label}>
                 <button type="button" className={styles.optionButton} onClick={() => onSelect(option)}>
@@ -286,7 +290,7 @@ function AnswerContent({ screen, activeCitationId, onSelect, onOpenCitation, onR
         )}
         {screen.status === 'success' && screen.sources.length > 0 && (
           <button type="button" className={styles.refLink} onClick={(e) => onOpenCitation(1, e.currentTarget)}>
-            참고자료 {screen.sources.length}건
+            {t.references(screen.sources.length)}
           </button>
         )}
       </div>
@@ -300,7 +304,7 @@ function AnswerContent({ screen, activeCitationId, onSelect, onOpenCitation, onR
         <Feedback
           value={screen.feedback}
           onRate={onRate}
-          copy={type === 'answer' ? copyText(screen.text, screen.sources) : undefined}
+          copy={type === 'answer' ? copyText(screen.text, screen.sources, t.referencesShort) : undefined}
         />
       )}
     </>
@@ -316,28 +320,29 @@ interface FeedbackProps {
 
 /** 답변마다 받는 짧은 피드백. 무엇이 부족했는지 개선 근거로 쓴다 */
 function Feedback({ value, onRate, copy }: FeedbackProps) {
+  const t = useStrings()
   return (
     <div className={styles.feedbackArea}>
       {copy !== undefined && (
         <p className={styles.disclaimer}>
-          AI가 공개 자료를 정리한 참고용 안내예요. 신청·납부 전에는 참고자료의 공식 원문을 확인해 주세요.
+          {t.disclaimer}
         </p>
       )}
       <div className={styles.feedback}>
         {value ? (
           <p className={styles.feedbackDone} role="status">
-            의견을 보냈어요. 고맙습니다.
+            {t.feedbackDone}
           </p>
         ) : (
           <>
-            <span className={styles.feedbackLabel}>답변이 도움이 되었나요?</span>
+            <span className={styles.feedbackLabel}>{t.feedbackAsk}</span>
             <button type="button" className={styles.feedbackButton} onClick={() => onRate('up')}>
               <ThumbsUp size={16} aria-hidden="true" />
-              도움돼요
+              {t.feedbackUp}
             </button>
             <button type="button" className={styles.feedbackButton} onClick={() => onRate('down')}>
               <ThumbsDown size={16} aria-hidden="true" />
-              아쉬워요
+              {t.feedbackDown}
             </button>
           </>
         )}
@@ -349,6 +354,7 @@ function Feedback({ value, onRate, copy }: FeedbackProps) {
 
 /** 답변을 메일·메신저에 붙여 넣을 수 있게 복사. 결과는 2초 동안 버튼 글자로 알린다 */
 function CopyButton({ text }: { text: string }) {
+  const t = useStrings()
   const [state, setState] = useState<'idle' | 'done' | 'failed'>('idle')
   useEffect(() => {
     if (state === 'idle') return
@@ -368,18 +374,19 @@ function CopyButton({ text }: { text: string }) {
   return (
     <button type="button" className={styles.feedbackButton} onClick={copy}>
       {state === 'done' ? <Check size={16} aria-hidden="true" /> : <Copy size={16} aria-hidden="true" />}
-      <span aria-live="polite">{state === 'done' ? '복사했어요' : state === 'failed' ? '복사하지 못했어요' : '복사'}</span>
+      <span aria-live="polite">{state === 'done' ? t.copied : state === 'failed' ? t.copyFailed : t.copy}</span>
     </button>
   )
 }
 
 /** WF-02 처리 중 — 첫 글자가 오기 전까지. 기술 용어 대신 사용자가 이해할 수 있는 작업 상태 */
 function Loading() {
+  const t = useStrings()
   return (
     <div className={styles.loading} role="status">
       <Mascot size={44} />
       <p className={styles.loadingText}>
-        관련 YGPA 안내자료와 규정을 확인하고 있어요
+        {t.loading}
         <span className={styles.dots} aria-hidden="true">
           <span />
           <span />
@@ -392,22 +399,23 @@ function Loading() {
 
 /** WF-07 기술 오류 — 질문은 보관하고, 재시도와 공식 메뉴 fallback을 준다 */
 function TechnicalError({ message, onRetry }: { message?: string; onRetry: () => void }) {
+  const t = useStrings()
   return (
     <div className={styles.error} role="alert">
       <p className={styles.errorTitle}>
         <CircleAlert size={18} aria-hidden="true" />
-        답변을 불러오지 못했습니다
+        {t.errorTitle}
       </p>
-      <p className={styles.errorText}>입력하신 질문은 그대로 보관했습니다. 잠시 후 다시 시도해 주세요.</p>
+      <p className={styles.errorText}>{t.errorText}</p>
       {message && <p className={styles.errorDetail}>{message}</p>}
       <button type="button" className={styles.retry} onClick={onRetry}>
         <RotateCw size={16} aria-hidden="true" />
-        다시 시도
+        {t.retry}
       </button>
-      <p className={styles.errorText}>업무가 급한 경우 YGPA 공식 메뉴를 이용해 주세요.</p>
+      <p className={styles.errorText}>{t.errorFallback}</p>
       <div className={styles.actionRow}>
         <ActionLink action={PORT_MIS} />
-        <ActionLink action={YGPA_HOME} />
+        <ActionLink action={{ type: 'link', label: t.ygpaHome, url: YGPA_HOME_URL }} />
       </div>
     </div>
   )
@@ -421,17 +429,18 @@ interface ActionBarProps {
 
 /** 절차형 답변 하단 고정 "다음 단계" 바 (Figma 05) */
 export function ActionBar({ links, hasSources, onOpenReferences }: ActionBarProps) {
+  const t = useStrings()
   if (links.length === 0 && !hasSources) return null
   return (
     <div className={styles.actionBar}>
-      <span className={styles.actionBarLabel}>다음 단계</span>
+      <span className={styles.actionBarLabel}>{t.nextStep}</span>
       <div className={styles.actionBarButtons}>
         {links.map((action, i) => (
           <ActionLink key={i} action={action} variant={i === 0 ? 'primary' : 'secondary'} />
         ))}
         {hasSources && (
           <button type="button" className={styles.secondaryButton} onClick={(e) => onOpenReferences(e.currentTarget)}>
-            참고자료
+            {t.referencesShort}
           </button>
         )}
       </div>

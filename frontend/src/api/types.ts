@@ -14,6 +14,8 @@ export interface ChatMessage {
 /** POST /chat — 창이 열린 뒤의 대화. 마지막은 이번 질문(user). 최대 20개 */
 export interface ChatRequest {
   messages: ChatMessage[]
+  /** 화면 언어 (V3, 선택). 답변 언어는 질문 언어가 우선이고, 질문만으로 알 수 없을 때("TEU")만 쓰인다 */
+  language?: 'ko' | 'en' | 'ja' | 'zh'
 }
 
 /** PUT /messages/{message_id}/feedback */

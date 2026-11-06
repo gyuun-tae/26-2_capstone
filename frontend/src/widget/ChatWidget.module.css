@@ -120,6 +120,26 @@
   background: var(--color-surface-sunken);
 }
 
+/* 화면 언어 선택 (한국어 / English / 日本語 / 中文) */
+.langSelect {
+  min-height: 36px;
+  max-width: 96px;
+  padding: 0 6px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  color: var(--color-text-secondary);
+  font: inherit;
+  font-size: var(--fs-md);
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color var(--duration-fast);
+}
+
+.langSelect:hover {
+  background: var(--color-surface-muted);
+}
+
 .collapseButton {
   display: inline-flex;
   align-items: center;

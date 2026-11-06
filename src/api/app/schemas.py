@@ -12,6 +12,9 @@ class Message(BaseModel):
 class ChatRequest(BaseModel):
     # 창이 열린 뒤의 대화 전체. 마지막이 이번 질문. 최근 10턴(20개)까지만 받는다.
     messages: list[Message] = Field(min_length=1, max_length=20)
+    # 화면에서 고른 언어 (V3, 선택 사항). 답변 언어는 질문 언어가 우선이고, 이 값은 "TEU"·"1"처럼
+    # 질문만으로 언어를 알 수 없을 때만 쓴다. 보내지 않으면 지금처럼 질문으로만 판단
+    language: Literal["ko", "en", "ja", "zh"] | None = None
 
     @model_validator(mode="after")
     def last_is_question(self):

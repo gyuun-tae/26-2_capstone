@@ -4,6 +4,7 @@ import { hasSteps, parseAnswer } from '../api/parseAnswer'
 import type { AnswerType, ClarifyOption } from '../api/types'
 import { Composer } from './Composer'
 import { HelpDialog } from './HelpDialog'
+import { LANG_NAMES, LangContext, STRINGS, initialLang, type UiLang } from './i18n'
 import { ResizeHandles, type PanelSize } from './ResizeHandles'
 import { ActionBar, ScreenView } from './ScreenView'
 import { SourcePanel } from './SourcePanel'
@@ -22,13 +23,6 @@ const RESIZE_LIMITS: Record<Mode, { minWidth: number; minHeight: number }> = {
 }
 const WIDGET_GAP = 24
 
-// 답변이 끝났을 때 스크린리더에 알릴 문구
-const ANNOUNCEMENT: Record<AnswerType, string> = {
-  answer: '답변을 불러왔습니다.',
-  clarify: '답변에 필요한 조건을 골라 주세요.',
-  unknown: '확인할 근거가 부족하다는 안내가 도착했습니다.',
-}
-
 /**
  * 홈페이지 우측 하단 런처 → 440px 컴팩트 패널 → 확장 업무 화면(+근거 패널).
  * 간단한 문의는 컴팩트에서 끝내고, 근거 확인·절차형 답변은 확장 화면으로 보낸다.
@@ -39,6 +33,9 @@ export function ChatWidget() {
   const [citationId, setCitationId] = useState<number | null>(null)
   const [helpOpen, setHelpOpen] = useState(false)
   const [announcement, setAnnouncement] = useState('')
+  // 화면 언어 (한·영·일·중). 답변 언어는 질문 언어를 따르고, 이 값은 백엔드에 힌트로만 간다
+  const [lang, setLang] = useState<UiLang>(initialLang)
+  const t = STRINGS[lang]
   // 사용자가 조절한 크기. null이면 기본 크기(tokens.css). 모드별로 따로 기억한다
   const [sizes, setSizes] = useState<Record<Mode, PanelSize | null>>({ compact: null, expanded: null })
 
@@ -50,10 +47,12 @@ export function ChatWidget() {
   const wasOpenRef = useRef(false)
 
   const chat = useChat({
+    language: lang,
     onResponse: ({ done, text }) => {
       // 절차형 답변(번호 목록)은 요약 카드 + 진행 순서가 보이도록 확장 화면으로 보낸다
       if (done.answer_type === 'answer' && hasSteps(parseAnswer(text))) setMode('expanded')
-      setAnnouncement(ANNOUNCEMENT[done.answer_type] ?? ANNOUNCEMENT.answer)
+      const announce: Record<AnswerType, string> = t.announce
+      setAnnouncement(announce[done.answer_type] ?? announce.answer)
     },
   })
   const { current, previous } = chat
@@ -119,7 +118,7 @@ export function ChatWidget() {
   }
 
   const busy = current?.status === 'loading' || current?.status === 'streaming'
-  const backLabel = previous ? '이전 안내' : '전체 업무 보기'
+  const backLabel = previous ? t.backPrevious : t.backAll
   const showActionBar =
     current?.status === 'success' && current.done?.answer_type === 'answer' && hasSteps(parseAnswer(current.text))
   const actionLinks = splitActions(current?.done?.actions).links
@@ -133,8 +132,8 @@ export function ChatWidget() {
         type="button"
         className={styles.launcher}
         onClick={() => setOpen(true)}
-        aria-label="YGPA AI 업무도우미 열기"
-        title="AI 업무도우미"
+        aria-label={t.launcherLabel}
+        title={t.launcherTitle}
       >
         <Mascot size={46} />
       </button>
@@ -142,7 +141,9 @@ export function ChatWidget() {
   }
 
   return (
+    <LangContext.Provider value={lang}>
     <section
+      lang={lang}
       ref={panelRef}
       className={`${styles.panel} ${mode === 'expanded' ? styles.expanded : ''}`}
       style={panelStyle}
@@ -161,25 +162,39 @@ export function ChatWidget() {
       />
       <header className={styles.header}>
         <h2 id="ygpa-chat-title" className={styles.title}>
-          <span className={styles.brand}>YGPA</span> AI 업무도우미
+          <span className={styles.brand}>YGPA</span> {t.title}
         </h2>
         <div className={styles.headerActions}>
+          {/* 화면 언어 (한·영·일·중). 헤더가 좁아 버튼 넷 대신 기본 선택 목록 — 키보드·스크린리더 그대로 동작 */}
+          <select
+            className={styles.langSelect}
+            value={lang}
+            onChange={(e) => setLang(e.target.value as UiLang)}
+            aria-label={t.langLabel}
+            title={t.langLabel}
+          >
+            {(Object.keys(LANG_NAMES) as UiLang[]).map((code) => (
+              <option key={code} value={code} lang={code}>
+                {LANG_NAMES[code]}
+              </option>
+            ))}
+          </select>
           {mode === 'compact' ? (
             <button
               type="button"
               className={`${styles.iconButton} ${styles.desktopOnly}`}
               onClick={() => setMode('expanded')}
-              aria-label="크게 보기"
+              aria-label={t.expand}
             >
               <ArrowUpRight size={20} aria-hidden="true" />
             </button>
           ) : (
             <>
               <button type="button" className={`${styles.textLink} ${styles.desktopOnly}`} onClick={() => setHelpOpen(true)}>
-                이용안내
+                {t.help}
               </button>
               <button type="button" className={`${styles.collapseButton} ${styles.desktopOnly}`} onClick={collapse}>
-                작게 보기
+                {t.collapse}
                 <ArrowDownLeft size={18} aria-hidden="true" />
               </button>
             </>
@@ -189,7 +204,7 @@ export function ChatWidget() {
             type="button"
             className={`${styles.iconButton} ${mode === 'expanded' ? styles.mobileOnly : ''}`}
             onClick={close}
-            aria-label="업무도우미 닫기"
+            aria-label={t.close}
           >
             <X size={20} aria-hidden="true" />
           </button>
@@ -230,9 +245,9 @@ export function ChatWidget() {
           <footer className={styles.footer}>
             <Composer busy={busy} onSubmit={ask} inputRef={composerRef} />
             <div className={styles.footerRow}>
-              <p className={styles.privacy}>개인정보는 입력하지 마세요.</p>
+              <p className={styles.privacy}>{t.privacy}</p>
               <button type="button" className={styles.textLink} onClick={() => setHelpOpen(true)}>
-                이용안내
+                {t.help}
               </button>
             </div>
           </footer>
@@ -254,5 +269,6 @@ export function ChatWidget() {
       </p>
       <HelpDialog open={helpOpen} onClose={() => setHelpOpen(false)} />
     </section>
+    </LangContext.Provider>
   )
 }

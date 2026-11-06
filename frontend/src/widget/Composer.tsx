@@ -1,5 +1,6 @@
 import { ArrowUp } from 'lucide-react'
 import { useState, type FormEvent, type KeyboardEvent, type Ref } from 'react'
+import { useStrings } from './i18n'
 import styles from './Composer.module.css'
 
 interface ComposerProps {
@@ -9,6 +10,7 @@ interface ComposerProps {
 }
 
 export function Composer({ busy, onSubmit, inputRef }: ComposerProps) {
+  const t = useStrings()
   const [value, setValue] = useState('')
   const canSend = value.trim().length > 0 && !busy
 
@@ -34,20 +36,20 @@ export function Composer({ busy, onSubmit, inputRef }: ComposerProps) {
   return (
     <form className={styles.composer} onSubmit={handleSubmit}>
       <label htmlFor="ygpa-composer" className="sr-only">
-        질문 입력
+        {t.composerLabel}
       </label>
       <textarea
         id="ygpa-composer"
         ref={inputRef}
         className={styles.input}
         rows={1}
-        placeholder="무엇을 도와드릴까요?"
+        placeholder={t.composerPlaceholder}
         value={value}
         maxLength={500}
         onChange={(e) => setValue(e.target.value)}
         onKeyDown={handleKeyDown}
       />
-      <button type="submit" className={styles.send} disabled={!canSend} aria-label="질문 보내기">
+      <button type="submit" className={styles.send} disabled={!canSend} aria-label={t.send}>
         <ArrowUp size={20} aria-hidden="true" />
       </button>
     </form>

@@ -1,6 +1,7 @@
 import { ArrowUpRight, Download, Phone } from 'lucide-react'
 import type { MouseEvent } from 'react'
 import type { Action } from '../api/types'
+import { useStrings } from './i18n'
 import styles from './ui.module.css'
 
 const MASCOT_SRC = `${import.meta.env.BASE_URL}assets/guidongi-face.svg`
@@ -19,12 +20,13 @@ interface CitationChipProps {
 }
 
 export function CitationChip({ id, active = false, pending = false, onOpen }: CitationChipProps) {
+  const t = useStrings()
   return (
     <button
       type="button"
       className={styles.chip}
       aria-pressed={active}
-      aria-label={pending ? `근거 자료 ${id} 불러오는 중` : `근거 자료 ${id} 보기`}
+      aria-label={pending ? t.citeLoading(id) : t.citeOpen(id)}
       disabled={pending}
       onClick={(e: MouseEvent<HTMLButtonElement>) => onOpen(id, e.currentTarget)}
     >
@@ -41,13 +43,14 @@ interface ActionLinkProps {
 
 /** 외부 링크·서식 다운로드는 새 탭으로 열고, 스크린리더에 새 탭임을 알린다. */
 export function ActionLink({ action, variant = 'secondary', block = false }: ActionLinkProps) {
+  const t = useStrings()
   const className = [styles.button, variant === 'primary' ? styles.primary : styles.secondary, block ? styles.block : ''].join(' ')
   const Icon = action.type === 'download' ? Download : ArrowUpRight
   return (
     <a className={className} href={action.url ?? undefined} target="_blank" rel="noopener noreferrer">
       {action.label}
       <Icon size={18} aria-hidden="true" />
-      <span className="sr-only">(새 탭)</span>
+      <span className="sr-only">{t.newTab}</span>
     </a>
   )
 }

@@ -1,7 +1,7 @@
 """AI 팀 RAG 파이프라인과의 접점. 기본은 가짜(mock) 답변, 환경변수 RAG_MODE=real이면 실제 검색·생성(app/rag_real.py).
 
 AI 팀과 합의할 인터페이스:
-    answer(messages) -> Answer
+    answer(messages, language=None) -> Answer
     - sources: 검색된 근거 목록 (없으면 빈 목록). 순서가 곧 인용 번호 [1], [2] ...
     - tokens: 답변 조각을 차례로 내놓는 async iterator
       답변 서식(v0.2): 요약 한두 문장 → 빈 줄 → "1." 번호 목록. 근거를 쓴 문장 끝에 [n]
@@ -82,11 +82,11 @@ class Answer:
     timings: dict[str, float] = field(default_factory=dict)
 
 
-def answer(messages: list[Message]) -> Answer:
+def answer(messages: list[Message], language: str | None = None) -> Answer:
     if os.getenv("RAG_MODE", "mock") == "real":
         from app import rag_real  # 실제 모드에서만 GPU·검색 모듈을 쓴다
 
-        return rag_real.answer(messages)
+        return rag_real.answer(messages, language)
     return mock_answer(messages)
 
 
