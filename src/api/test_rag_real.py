@@ -70,6 +70,10 @@ assert "[1] 문서 · 신청자격 · 신청절차" in msgs[-1]["content"] and "
 with SessionLocal() as db:
     log = db.scalars(select(ChatLog).order_by(ChatLog.id.desc())).first()
     assert "@@META" not in log.answer and log.answer_type == "answer"
+    # 단계별 시간은 측정용으로 로그에만 남는다 (화면 이벤트에는 없음). 거친 단계만, 재정렬·판정은 꺼져 있어 없음
+    assert set(log.timings) == {"embed_s", "search_s", "llm_s", "first_token_s", "total_s"}, log.timings
+    assert all(isinstance(v, float) and v >= 0 for v in log.timings.values()) and log.timings["total_s"] >= log.timings["first_token_s"]
+    assert "timings" not in ev[-1][1]
 
 # 1-1. GPU 서버에 닿지 않으면(터널 꺼짐·관문 502) 오류 화면 대신 안내 + 대표전화, 로그에 gpu_unavailable
 for failure in (httpx.ConnectError("[Errno -2] Name or service not known"), gpu.GpuError("임베딩 실패 502")):
@@ -82,6 +86,7 @@ for failure in (httpx.ConnectError("[Errno -2] Name or service not known"), gpu.
     with SessionLocal() as db:
         log = db.scalars(select(ChatLog).order_by(ChatLog.id.desc())).first()
         assert log.error == "gpu_unavailable" and log.answer == rag_real.GPU_DOWN_TEXT
+        assert set(log.timings) == {"first_token_s", "total_s"}, log.timings  # 임베딩에서 실패: 끝난 단계 없음
 
 # 2. 서식 버튼은 LLM이 forms로 고르고 본문에도 인용한 서식 청크만. 인용만 됐거나 서식이 아니면 버튼 없음
 done = run("민원 신청 방법", ["회원가입 후 신청합니다[1].", '@@META {"type": "answer", "forms": [2]}'])[-1][1]
@@ -159,6 +164,8 @@ n = len(calls["chat"])
 ev = run("오늘 날씨 어때?", ["부르면 안 됨"], hits=[{"chunk": html_text, "score": 0.40}])
 assert ev[-1][1]["answer_type"] == "unknown" and ev[-2][1] == [] and len(calls["chat"]) == n
 assert text_of(ev) == rag_real.UNKNOWN_TEXT
+with SessionLocal() as db:  # 생성 전에 끝남: 임베딩·검색(앞 질문이 없어 재검색 없음)만
+    assert set(db.scalars(select(ChatLog).order_by(ChatLog.id.desc())).first().timings) == {"embed_s", "search_s", "first_token_s", "total_s"}
 assert run("x", ["부르면 안 됨"], hits=[])[-1][1]["answer_type"] == "unknown"
 # 점수가 낮아도 질문의 영문 용어가 근거에 그대로 있으면 LLM이 판단한다 (의미 검색이 약어 질문에 약함)
 term = [{"chunk": html_text | {"text": "Port-MIS란 해운항만물류정보시스템을 말한다."}, "score": 0.41}]
@@ -345,6 +352,8 @@ for delay in (0.0, 0.05):
         ev = run("해상 운임은 얼마예요?", ["버려질 ", "답 [1]"])
     assert ev[-1][1]["answer_type"] == "unknown" and ev[-1][1]["actions"][0]["type"] == "contact" and ev[-2][1] == []
     assert text_of(ev) == rag_real.UNKNOWN_TEXT, text_of(ev)
+    with SessionLocal() as db:  # 판정이 막아도 판정·생성 시간은 남는다
+        assert {"gate_s", "llm_s"} <= set(db.scalars(select(ChatLog).order_by(ChatLog.id.desc())).first().timings)
 # 판정에 넘기는 근거는 기본으로 답변과 같은 길이, gate.CHARS를 정하면 그만큼만 (실험용)
 long_hits = [{**HITS[0], "chunk": {**HITS[0]["chunk"], "text": "가" * 2000}}]
 assert gate.CHARS is None and "가" * 2000 in gate.build(msgs, long_hits)[1]["content"]

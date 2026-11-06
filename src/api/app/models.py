@@ -20,3 +20,5 @@ class ChatLog(Base):
     # answer / clarify / unknown / error. 이 열이 생기기 전의 로그는 None
     answer_type: Mapped[str | None]
     error: Mapped[str | None] = mapped_column(Text)  # 실패한 대화의 오류 종류 (예: RuntimeError)
+    # 단계별 걸린 시간(초): embed_s·search_s·rerank_s·gate_s·llm_s·first_token_s·total_s (거친 단계만). 이 열 전·mock은 None
+    timings: Mapped[dict | None] = mapped_column(JSON)

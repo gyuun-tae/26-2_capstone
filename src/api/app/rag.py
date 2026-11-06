@@ -78,6 +78,8 @@ class Answer:
     actions: list[Action] = field(default_factory=list)
     options: list[Option] = field(default_factory=list)
     error: str | None = None  # 답은 보냈지만 로그에 남길 문제 (예: gpu_unavailable)
+    # 단계별 걸린 시간(초). 동작에는 쓰지 않고 로그·측정에만 남긴다 (실제 모드만, app/rag_real.py)
+    timings: dict[str, float] = field(default_factory=dict)
 
 
 def answer(messages: list[Message]) -> Answer:

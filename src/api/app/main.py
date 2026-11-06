@@ -77,6 +77,7 @@ async def chat(req: ChatRequest):
                 sources=sources,
                 answer_type=result.answer_type,
                 error=result.error,
+                timings=result.timings or None,
             )
             db.add(log)
             db.commit()

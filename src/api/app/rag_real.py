@@ -7,6 +7,7 @@ import asyncio
 import logging
 import os
 import re
+import time
 
 import httpx
 from pydantic import ValidationError
@@ -114,6 +115,17 @@ def other_port_only(question: str) -> bool:
     return bool(OTHER_PORT.search(question)) and not OUR_PORT.search(question)
 
 
+async def timed(pieces, timings: dict[str, float]):
+    """답변 조각은 그대로 넘기고 첫 조각까지(first_token_s)·끝까지(total_s) 걸린 시간만 적는다"""
+    start = time.perf_counter()
+    try:
+        async for piece in pieces:
+            timings.setdefault("first_token_s", round(time.perf_counter() - start, 2))
+            yield piece
+    finally:
+        timings["total_s"] = round(time.perf_counter() - start, 2)
+
+
 def answer(messages) -> Answer:
     result = Answer(sources=[], tokens=None)
     threshold = float(os.getenv("UNKNOWN_THRESHOLD", DEFAULT_THRESHOLD))
@@ -121,14 +133,24 @@ def answer(messages) -> Answer:
     k = int(os.getenv("RAG_K", K))
     pools: dict[str, list[dict]] = {}  # 질문 → 재정렬할 후보 (재정렬을 켰을 때)
 
+    def add_time(name: str, start: float):
+        """단계 시간 누적 (이어지는 질문이면 임베딩·검색을 두 번 한다). 측정 전용 — 동작에 쓰지 않는다"""
+        result.timings[name] = round(result.timings.get(name, 0) + time.perf_counter() - start, 2)
+
     async def find(query: str) -> list[dict]:
         """벡터 순서 근거 k개 (확인 불가 판단용). 재정렬을 켜면 후보를 넉넉히 받아 pools에 둔다"""
+        start = time.perf_counter()
         vector = await gpu.embed(query)
-        if not rerank.enabled():
-            return await asyncio.to_thread(search.search, vector, k, query)
-        pool = await asyncio.to_thread(search.search, vector, 2 * rerank.candidates(), query, 2 * rerank.candidates())
-        pools[query] = pool
-        return rerank.by_vector(pool, k)
+        add_time("embed_s", start)
+        start = time.perf_counter()
+        try:
+            if not rerank.enabled():
+                return await asyncio.to_thread(search.search, vector, k, query)
+            pool = await asyncio.to_thread(search.search, vector, 2 * rerank.candidates(), query, 2 * rerank.candidates())
+            pools[query] = pool
+            return rerank.by_vector(pool, k)
+        finally:
+            add_time("search_s", start)
 
     def weak(hits: list[dict], query: str) -> bool:
         return not hits or (max(h["score"] for h in hits) < threshold and not term_match(query, hits))
@@ -156,7 +178,9 @@ def answer(messages) -> Answer:
             yield UNKNOWN_TEXT
             return
         if query in pools:  # 확인 불가가 아니면 근거 순서를 재정렬로 다시 정한다
+            start = time.perf_counter()
             hits = await rerank.rerank(query, pools[query], k)
+            add_time("rerank_s", start)
 
         result.sources = [chunk_to_source(h["chunk"]) for h in hits]
         # 화면으로 나가기 전 거르기: 정리 줄(@@META) → 구분선 → 없는 근거 번호 → "[근거]" 이름표 → 근거에 없는 연락처
@@ -165,7 +189,14 @@ def answer(messages) -> Answer:
         temperature = float(os.getenv("RAG_TEMPERATURE", TEMPERATURE))
         stream = gpu.chat_stream(build_messages(messages, hits, follow_up), MAX_TOKENS, temperature)
         if gate.enabled():  # 점수는 넘었지만 근거가 주제를 다루지 않는지 판정. 판정이 나올 때까지 생성 조각은 모아 둔다
-            stream = gate.hold(stream, lambda: gate.answerable(messages, hits, follow_up))
+            async def judge() -> bool:
+                start = time.perf_counter()
+                try:
+                    return await gate.answerable(messages, hits, follow_up)
+                finally:
+                    add_time("gate_s", start)
+            stream = gate.hold(stream, judge)
+        llm_start = time.perf_counter()  # 생성(판정과 동시)을 시작해 마지막 조각을 받을 때까지
         try:
             async for piece in stream:
                 piece = piece.replace("。", ".")  # Qwen이 가끔 쓰는 중국식 마침표
@@ -173,11 +204,13 @@ def answer(messages) -> Answer:
                     parts.append(out)
                     yield out
         except gate.Blocked:
+            add_time("llm_s", llm_start)
             result.sources = []
             result.answer_type = "unknown"
             result.actions = [contacts.MAIN]
             yield UNKNOWN_TEXT
             return
+        add_time("llm_s", llm_start)
         rest = cites.feed(rules.feed(meta.flush()) + rules.flush()) + cites.flush()
         if out := guard.feed(words.feed(rest) + words.flush()) + guard.flush():
             parts.append(out)
@@ -207,5 +240,5 @@ def answer(messages) -> Answer:
         if found := violations(text, len(hits)):
             logger.warning("답변 규칙 위반 %s (1위 %s)", found, hits[0]["chunk"]["chunk_id"])
 
-    result.tokens = tokens()
+    result.tokens = timed(tokens(), result.timings)
     return result

@@ -112,7 +112,7 @@ async def run_one(item: dict) -> dict:
             "top1_score": round(hits[0]["score"], 3) if hits else None, "top_docs": docs, "downloads": downloads,
             "port_mis": port_mis, "contacts": contacts, "options": [o.label for o in result.options], "uncited_lines": len(uncited_lines(text)),
             "violations": found, "contacts_from_evidence": len(contacts) - len(unverified), "unsupported_numbers": numbers,
-            "first_token_s": round(first or total, 2), "total_s": round(total, 2), "checks": checks, "answer": text.strip()}
+            "first_token_s": round(first or total, 2), "total_s": round(total, 2), "timings": result.timings, "checks": checks, "answer": text.strip()}
 
 
 def summarize(rows: list[dict]) -> dict:

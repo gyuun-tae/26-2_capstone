@@ -62,7 +62,7 @@ async def run_one(item: dict) -> dict:
                         for i, s in enumerate(result.sources, 1)],
             "searched": [f"{h['chunk']['doc_id']} {h['chunk']['title']} ({h['score']:.3f})" for h in hits],
             "buttons": [f"{a.type}: {a.label}" for a in result.actions], "options": [o.label for o in result.options],
-            "first_token_s": round(first or total, 2), "total_s": round(total, 2)}
+            "first_token_s": round(first or total, 2), "total_s": round(total, 2), "timings": result.timings}
 
 
 async def main():
