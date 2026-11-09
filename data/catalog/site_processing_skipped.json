@@ -8,8 +8,8 @@
 "본문 거의 없음"
 ],
 [
-"YGPA-104",
-"본문 거의 없음"
+"YGPA-150",
+"목차 줄 비율 78%"
 ],
 [
 "YGPA-230",
@@ -42,14 +42,6 @@
 [
 "YGPA-237",
 "목차 줄 비율 95%"
-],
-[
-"YGPA-415",
-"본문 거의 없음"
-],
-[
-"YGPA-515",
-"본문 거의 없음"
 ],
 [
 "YGPA-B198-126CF1F6",
@@ -172,16 +164,44 @@
 "형식 미지원 .png"
 ],
 [
+"YGPA-F1CE731BA7C",
+"ModuleNotFoundError: No module named 'requests'"
+],
+[
 "YGPA-F2BA9FD1FE4",
 "형식 미지원 .jpg"
+],
+[
+"YGPA-F2CAD7BA140",
+"ModuleNotFoundError: No module named 'requests'"
+],
+[
+"YGPA-F2E94CCC79B",
+"ModuleNotFoundError: No module named 'requests'"
 ],
 [
 "YGPA-F2F2BE824BB",
 "짧은 조각 비율 83% (인포그래픽 추출 잡음)"
 ],
 [
+"YGPA-F30332B5D48",
+"ModuleNotFoundError: No module named 'requests'"
+],
+[
+"YGPA-F30DEF4FE97",
+"ModuleNotFoundError: No module named 'requests'"
+],
+[
+"YGPA-F3518D9D33B",
+"ModuleNotFoundError: No module named 'requests'"
+],
+[
 "YGPA-F364566097F",
-"짧은 조각 비율 66% (인포그래픽 추출 잡음)"
+"ModuleNotFoundError: No module named 'requests'"
+],
+[
+"YGPA-F395D97D71D",
+"ModuleNotFoundError: No module named 'requests'"
 ],
 [
 "YGPA-F396DA4A573",
@@ -200,6 +220,30 @@
 "형식 미지원 .jpg"
 ],
 [
+"YGPA-F57902D4B22",
+"ModuleNotFoundError: No module named 'requests'"
+],
+[
+"YGPA-F5F89E84668",
+"ModuleNotFoundError: No module named 'requests'"
+],
+[
+"YGPA-F63237A4BD2",
+"ModuleNotFoundError: No module named 'requests'"
+],
+[
+"YGPA-F663C7A6D26",
+"ModuleNotFoundError: No module named 'requests'"
+],
+[
+"YGPA-F68012A8183",
+"ModuleNotFoundError: No module named 'requests'"
+],
+[
+"YGPA-F6A783B47E5",
+"ModuleNotFoundError: No module named 'requests'"
+],
+[
 "YGPA-F7614BDA517",
 "형식 미지원 .jpg"
 ],
@@ -208,8 +252,16 @@
 "형식 미지원 .hwpx"
 ],
 [
+"YGPA-F878E558A06",
+"ModuleNotFoundError: No module named 'requests'"
+],
+[
 "YGPA-F88098E632B",
-"NotOleFileError: not an OLE2 structured storage file"
+"ModuleNotFoundError: No module named 'requests'"
+],
+[
+"YGPA-F909810A80A",
+"ModuleNotFoundError: No module named 'requests'"
 ],
 [
 "YGPA-F966F2EDB4E",
@@ -233,11 +285,35 @@
 ],
 [
 "YGPA-FAC66C3BF17",
-"NotOleFileError: not an OLE2 structured storage file"
+"ModuleNotFoundError: No module named 'requests'"
 ],
 [
 "YGPA-FB7E4518E59",
 "형식 미지원 .hwpx"
+],
+[
+"YGPA-FBFBDCABE0F",
+"ModuleNotFoundError: No module named 'requests'"
+],
+[
+"YGPA-FD10941EC7A",
+"ModuleNotFoundError: No module named 'requests'"
+],
+[
+"YGPA-FD92EE41ACD",
+"ModuleNotFoundError: No module named 'requests'"
+],
+[
+"YGPA-FDB9F409161",
+"ModuleNotFoundError: No module named 'requests'"
+],
+[
+"YGPA-FDC52CB592B",
+"ModuleNotFoundError: No module named 'requests'"
+],
+[
+"YGPA-FDD11E3B933",
+"ModuleNotFoundError: No module named 'requests'"
 ],
 [
 "YGPA-FE361054774",
@@ -249,7 +325,7 @@
 ],
 [
 "YGPA-FED51B936CD",
-"NotOleFileError: not an OLE2 structured storage file"
+"ModuleNotFoundError: No module named 'requests'"
 ],
 [
 "YGPA-FFA23EC2601",

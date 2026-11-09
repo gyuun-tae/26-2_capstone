@@ -7,6 +7,7 @@
 - 여러 문서에 반복되는 탭 메뉴·안내 줄은 뺀다
 - 이미지: alt 글자 + OCR. 품질 기준을 넘긴 글만 쓰고, review_flags에 ocr_text_unverified를 남긴다.
   사람이 원본과 대조해 옮긴 글은 data/catalog/image_transcripts.json이 OCR보다 우선한다
+  글자 이미지는 VLM이 옮긴 글(data/processed/vlm_accepted.json, 31번 --split)이 OCR보다 우선하고 vlm_text_unverified 표시 (2026-11-09)
 - 첨부: PDF(글자 없는 쪽만 OCR), HWP, XLSX
 - 게시글: 게시일을 본문 첫 줄에 적고 time_sensitive_notice 표시
 - 페이지 아래 담당 부서·전화는 연락처 버튼(contacts.json의 site- 항목)으로
@@ -28,6 +29,7 @@ VERSION = "site-pages-v1"
 MAX_CHARS = 2500
 CACHE = ROOT / "data/processed/ocr_cache.json"
 TRANSCRIPTS = ROOT / "data/catalog/image_transcripts.json"
+VLM = ROOT / "data/processed/vlm_accepted.json"  # 31번 --split의 auto (글자 이미지를 VLM이 옮긴 글, 2026-11-09). 없으면 OCR만 쓴다
 CONTACTS = ROOT / "src/api/app/contacts.json"
 PUBLISHER = "여수광양항만공사"
 TAIL = re.compile(r"\n(이전글|다음글|이전 글|다음 글|목록)\n")
@@ -126,12 +128,17 @@ def pack(title: str, text: str) -> list[str]:
     return parts
 
 
-def make_chunks(meta: dict, snap: str, text: str, kind: str, flags: list[str]) -> list[dict]:
+def make_chunks(meta: dict, snap: str, text: str, kind: str, flags: list[str], images: list[str] = ()) -> list[dict]:
+    """images: VLM이 옮긴 이미지 글. 이미지마다 따로 청크로 만든다 — 카드뉴스 여러 장을 본문 한 청크에 합치면
+    주제가 흐려져 검색 점수가 떨어졌다 (2026-11-09, 크루즈 카드뉴스 7장 → 터미널이용료 질문이 5위 밖)"""
     # 줄 구분으로 읽히는 특수 문자(U+2028 등)가 있으면 chunks.jsonl을 splitlines()로 읽을 때 한 청크가 둘로 갈라진다
-    text = re.sub(r"[\u2028\u2029\x0b\x0c\x1c-\x1e\x85]", "\n", text)
+    clean = lambda t: re.sub(r"[\u2028\u2029\x0b\x0c\x1c-\x1e\x85]", "\n", t)
     title = meta["title"]
     out = []
-    for i, part in enumerate(pack(title, text), 1):
+    sections = [(p, flags) for p in pack(title, clean(text))] if text.strip() else []
+    for n, image in enumerate(images, 1):
+        sections += [(p, [*flags, "vlm_text_unverified"]) for p in pack(f"{title} (이미지 {n})", clean(image))]
+    for i, (part, part_flags) in enumerate(sections, 1):
         out.append(dict(
             doc_id=meta["doc_id"], document_version=meta.get("source_sha256", ""), source_snapshot=snap, extraction_version=VERSION,
             text_sha256=sha(part), title=title, source_url=meta["source_url"], parent_source_url=meta.get("parent_source_url", meta["source_url"]),
@@ -141,7 +148,7 @@ def make_chunks(meta: dict, snap: str, text: str, kind: str, flags: list[str]) -
             language=meta.get("lang", "ko"), chunk_id=f"{meta['doc_id']}-" + sha(f"{VERSION}|{meta['doc_id']}|{i}")[:24],
             chunking_version=VERSION, section_titles=[title], text=part, chunk_text_sha256=sha(part), chunk_kind=kind,
             source_locator={"kind": "processed_text"}, review_status="draft_pending_chunk_review", index_approved=False,
-            review_flags=["currentness_not_verified", *flags]))
+            review_flags=["currentness_not_verified", *part_flags]))
     return out
 
 
@@ -257,6 +264,7 @@ def main():
     args = ap.parse_args()
     ocr = Ocr(not args.no_ocr)
     manual = json.loads(TRANSCRIPTS.read_text(encoding="utf-8")) if TRANSCRIPTS.exists() else {}
+    vlm = json.loads(VLM.read_text(encoding="utf-8")) if VLM.exists() else {}
     docs = []
     for folder in sorted([*(ROOT / "data/raw").glob("YGPA-*"), *(ROOT / "data/raw").glob("MOF-*")]):
         snaps = sorted(p for p in folder.iterdir() if p.is_dir())
@@ -333,7 +341,7 @@ def main():
         repeated = line_docs.get(meta.get("lang", "ko"), Counter())
         # 표 머리글은 여러 문서에 같아도 값의 뜻을 알려 주므로 남긴다
         lines = [x for x in body.splitlines() if repeated[x] < 5 or len(x) >= 60 or "|" in x or "—" in x]
-        extra = []
+        extra, images = [], []
         for im in meta.get("images", []):
             key = im.get("sha256")
             if not key or key in seen_images or image_docs[key] >= 3:
@@ -346,6 +354,11 @@ def main():
             # 사진 설명 alt는 검색 잡음이고, 다른 항만 이름이 적힌 alt는 사이트 오타라 쓰지 않는다
             if len(alt) >= 15 and not re.search(r"사진|모습|전경|바라본|이미지|미리보기|인천항|경인항", alt):
                 extra.append(alt)
+            # 우선순위: 사람 전사 > VLM(글자 이미지만, 지도·도면은 31번이 걸러 냄) > OCR
+            if key in vlm:
+                images.append("(이미지 내용을 AI가 글로 옮긴 것이므로 숫자·이름은 원문 확인 필요)\n" + vlm[key]["text"])
+                stats["vlm_images"] += 1
+                continue
             if meta.get("lang", "ko") == "ko" and im.get("file") and (snap / im["file"]).exists():
                 read = ocr.read((snap / im["file"]).read_bytes(), key)
                 if good_ocr(read) and read not in body:
@@ -353,6 +366,12 @@ def main():
                     if "ocr_text_unverified" not in flags:
                         flags.append("ocr_text_unverified")
                     stats["ocr_images"] += 1
+        # 이미지별 청크는 게시글(카드뉴스·공고 — 이미지가 곧 본문)만. 안내 페이지는 본문에 합친다: 페이지 흐름도 이미지가
+        # 따로 청크가 되면 같은 내용이 여러 자리를 차지해 정의 문서(h17 Port-MIS)·다른 문서(t24)를 밀어냈다 (2026-11-09)
+        if kind != "notice":
+            extra, images = extra + images, []
+            if any("AI가 글로 옮긴" in x for x in extra) and "vlm_text_unverified" not in flags:
+                flags.append("vlm_text_unverified")
         text = "\n".join(lines + extra).strip()
         # 게시판(용어사전·공지)의 담당자는 게시판 관리 부서라 업무 담당이 아니다 (org o07·o12: 용어마다 'AI디지털부'가 붙어 부서 질문을 모두 AI디지털부로 답함)
         if contact and kind == "web_page":
@@ -360,14 +379,14 @@ def main():
             contacts.append({"key": f"site-{doc_id}", "label": contact["dept"], "phone": contact["phone"], "note": meta["title"][:40],
                              "doc_ids": [doc_id], "source": f"{meta['title'][:40]} 페이지 담당자 안내", "source_url": meta["source_url"],
                              "fetched_on": meta["fetched_at"][:10]})
-        if len(re.sub(r"\s", "", text)) < 30:
+        if len(re.sub(r"\s", "", text + "".join(images))) < 30:
             skipped.append((doc_id, "본문 거의 없음"))
             continue
         # 페이지에는 목차 기준만 쓴다 (업체 목록 같은 짧은 줄 표는 정상 내용, MOF-4157)
         if reason := ("목차 페이지" if "목차" in meta["title"] else "".join(r for r in [low_quality(text)] if r.startswith("목차"))):
             skipped.append((doc_id, reason))
             continue
-        save(meta, name, text, chunks := make_chunks(meta, name, text, kind, flags))
+        save(meta, name, "\n".join([text, *images]).strip(), chunks := make_chunks(meta, name, text, kind, flags, images))
         stats[kind] += 1
         stats["chunks"] += len(chunks)
     ocr.save()

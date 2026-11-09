@@ -396,6 +396,10 @@ assert lang.of_messages([Message(role="user", content="How do I get a port acces
                          Message(role="assistant", content="Which one?"), Message(role="user", content="1")]) == "en"
 assert lang.of_messages([Message(role="user", content="TEU")]) == "ko"
 assert search.is_foreign("How do I get a 출입증?") and not search.is_foreign("Port-MIS가 뭐예요?")
+assert search.chunk_languages("How do I get a port access pass?") == ["ko", "en"]
+assert search.chunk_languages("Port-MIS가 뭐예요?") == ["ko"]
+assert search.chunk_languages("麗水事業所の電話番号を教えてください") == ["ko", "ja"]
+assert set(search.chunk_languages("丽水光阳港湾公社的组织结构是怎样的?")) == {"ko", "zh", "ja"}
 assert prompt.FOREIGN_NOTE in last_user("How do I get a 출입증?")
 assert prompt.FOREIGN_NOTE not in last_user("TEU")
 

@@ -3,7 +3,8 @@
 - API 키(~/llm-serve/.api_key)가 맞아야 통과. vLLM은 /v1/... 만 키를 검사하므로 vLLM 포트를 직접 내보내지 않는다.
 - 허용: POST /v1/embeddings → BGE-M3(8101), POST /v1/chat/completions → Qwen(8100),
   POST /v1/rerank → 재정렬 bge-reranker-v2-m3(8102, start_reranker.sh), GET /health
-  /v1/chat/completions는 모델 이름으로 나눈다: qwen3-32b → 답변(8100), gate-llm → 답변 전 판정(8103, start_gate.sh)
+  /v1/chat/completions는 모델 이름으로 나눈다: qwen3-32b → 답변(8100), gate-llm → 답변 전 판정(8103, start_gate.sh),
+  vlm → 이미지 글 옮기기(8104, start_vlm.sh — 색인 만들 때만 켬, scripts/31_vlm_drafts.py)
 - Cloudflare 임시 터널은 SSE를 지원하지 않으므로, 스트리밍 답변은 SSE 대신 한 줄에 JSON 하나(NDJSON)로 보낸다.
 실행: start_gateway.sh (tmux 세션 gateway, 127.0.0.1:8200)
 """
@@ -21,9 +22,11 @@ UPSTREAM = {  # (주소, 모델 이름) → vLLM
     ("/v1/embeddings", "bge-m3"): os.getenv("BGE_URL", "http://127.0.0.1:8101"),
     ("/v1/chat/completions", "qwen3-32b"): os.getenv("QWEN_URL", "http://127.0.0.1:8100"),
     ("/v1/chat/completions", "gate-llm"): os.getenv("GATE_URL", "http://127.0.0.1:8103"),
+    ("/v1/chat/completions", "vlm"): os.getenv("VLM_URL", "http://127.0.0.1:8104"),
     ("/v1/rerank", "bge-reranker"): os.getenv("RERANKER_URL", "http://127.0.0.1:8102"),
 }
 MAX_BODY = 1_000_000  # 근거 5개 + 대화를 넣어도 수십 KB. 큰 요청으로 GPU를 붙잡지 못하게 막는다
+MAX_BODY_VLM = 4_000_000  # vlm만: 이미지 한 장(base64)을 담는다. 31번 스크립트가 2.5MB 이하로 줄여 보낸다
 MAX_TOKENS = 2048  # 답변 길이 상한
 MAX_DOCUMENTS = 32  # 재정렬 한 번에 받는 후보 수 상한 (보통 10개)
 
@@ -70,12 +73,14 @@ async def forward(request: Request):
     if not hmac.compare_digest(request.headers.get("authorization", ""), f"Bearer {KEY}"):
         raise HTTPException(401, "API 키가 필요합니다")
     raw = await request.body()
-    if len(raw) > MAX_BODY:
+    if len(raw) > MAX_BODY_VLM:
         raise HTTPException(413, "요청이 너무 큽니다")
     try:
         body = json.loads(raw)
     except ValueError:
         raise HTTPException(400, "JSON 형식이 아닙니다")
+    if len(raw) > MAX_BODY and body.get("model") != "vlm":
+        raise HTTPException(413, "요청이 너무 큽니다")
     path = request.url.path
     body = check_body(path, body)
     upstream = httpx.Request("POST", UPSTREAM[path, body["model"]] + path, json=body, headers={"Authorization": f"Bearer {KEY}"})

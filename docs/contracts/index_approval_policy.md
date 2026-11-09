@@ -38,6 +38,7 @@
    | `time_sensitive_schedule_confirm_with_operator`, `temporary_reservation_restriction_included` | 승인(주의) | 일정·예약 제한 공지. 답변 첫 문장에서 안내(지시문 8번) |
    | `manual_transcription_checked_against_pdf` | 승인(주의) | 원본 PDF와 대조해 옮겨 적은 표 |
    | `ocr_text_unverified` | 승인(주의) | 이미지에서 자동으로 읽은 글자. 품질 기준(29번 `good_ocr`)을 넘긴 글만 쓰고 본문에 표시 |
+   | `vlm_text_unverified` | 승인(주의) | 이미지 내용을 VLM(Qwen3-VL-8B)이 옮긴 글. 글자 이미지만(지도·도면·반복으로 잘린 것은 31번 `--split`이 제외) 본문에 표시. 2026-11-09 추가 |
    | `time_sensitive_notice` | 승인(주의) | 공지·뉴스 등 게시일 기준 내용. 본문 첫 줄에 게시일 |
    | `historical_provision_not_current_rule` | 제외 | 과거 부칙 |
    | `date_status: conflicting` | 승인(주의) | 페이지 날짜 표시가 서로 다를 뿐, 본문은 4번에서 오늘 원문과 같음을 확인 |

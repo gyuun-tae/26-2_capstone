@@ -38,6 +38,7 @@ FLAG_RULES = {
     "temporary_reservation_restriction_included": "예약 제한 공지 — 답변 첫 문장에서 안내",
     "manual_transcription_checked_against_pdf": "원본 PDF와 대조해 옮겨 적은 표",
     "ocr_text_unverified": "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요",
+    "vlm_text_unverified": "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요",
     "time_sensitive_notice": "게시일 기준 내용 — 지금도 유효한지 확인 필요",
 }
 

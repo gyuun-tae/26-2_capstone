@@ -1,0 +1,105 @@
+{
+ "note": "V3 VLM 시험 이미지 (2026-11-09). 미디어 질문(evaluation/datasets/dev_questions_media_v1.jsonl) 근거 이미지 + 종류별(도면·절차·카드뉴스·화면·외국어·사진) 대표. FAQ는 보지 않고 골랐다. d05·d06 항세도는 이미 사람 전사가 있어 대조군으로만 넣는다. f04(YGPA-520)는 이미지가 없어 제외.",
+ "images": [
+  {
+   "sha256": "b1b35ed72b3300768481a254a148469da85e083a11f41e88169f24aea4cb203e",
+   "doc_id": "YGPA-241",
+   "why": "대조군: 항세도(YGPA-241) — 사람 전사와 비교해 VLM 정확도 측정 (d05~d08 근거)"
+  },
+  {
+   "sha256": "699c9a4913773faddab19ec9d7a802388a4bc3fa4be085311b555a5287a26dc5",
+   "doc_id": "MOF-3835",
+   "why": "도면: 광양항 부두 배치도(MOF-3835) — alt에 수치가 있어 대조 가능"
+  },
+  {
+   "sha256": "0bc6f4256a083375d88f3d2ac5ed4499e622bf6cd261b88c454b83a05bd90c2f",
+   "doc_id": "MOF-3836",
+   "why": "도면: 여수항 항만시설현황 큰 지도(MOF-3836, 현재 글 없음)"
+  },
+  {
+   "sha256": "15a98793d662e9db9677c3f75c153693b5f1716c177313c4d481c37b497d33fa",
+   "doc_id": "MOF-3877",
+   "why": "도면: 여수구역 교통안전특정해역 지도(MOF-3877, 현재 글 없음)"
+  },
+  {
+   "sha256": "9cd134fbb0b314f8d2a44b4fa62a4a871c2ce9e89c0a354ca15cdb8cf2c97597",
+   "doc_id": "YGPA-165",
+   "why": "도면: 동측배후단지 조성 현황 지도(YGPA-165, 현재 글 없음)"
+  },
+  {
+   "sha256": "6a88f56d975c4e45a61791a11912f69b1cd6d8e5adefec2dfb41bf7c5ad26433",
+   "doc_id": "YGPA-188",
+   "why": "도면: 광양항 계획평면도 4407×2950(YGPA-188) — 줄였을 때 글자 판독 확인"
+  },
+  {
+   "sha256": "8e0f877106dd575d92b0f8696c35fe764ab25a7924c10111f761986d13e5c5dd",
+   "doc_id": "YGPA-104",
+   "why": "도면: 배후단지 사업세부구역(YGPA-104, 현재 글 없음)"
+  },
+  {
+   "sha256": "87e6d963cbbcf6ec7e476347cd2b63957e403af798b15f639c4e46962b726937",
+   "doc_id": "YGPA-105",
+   "why": "절차: 배후단지 분양절차(YGPA-105) — 미디어 질문 i03 놓침"
+  },
+  {
+   "sha256": "f96d709aea9c3ee798e0ba7e3a42c887f7c6123706be6bb8821a46d509b422c7",
+   "doc_id": "MOF-3853",
+   "why": "절차: 외항선 입출항 절차(MOF-3853) — i01"
+  },
+  {
+   "sha256": "7108410f01be72f4c1cb40f67e72b3349fa349d73c4190eefe33c4823d30b433",
+   "doc_id": "YGPA-150",
+   "why": "흐름도: Port-MIS 이용절차(YGPA-150) — i02"
+  },
+  {
+   "sha256": "b4b599aefce4e1f34f263f2c7073598ba6cc6b657c77c63dc4638e08a8789a37",
+   "doc_id": "YGPA-141",
+   "why": "절차: 정보공개 처리 단계(YGPA-141) — i04"
+  },
+  {
+   "sha256": "e68b4f268d5f074aeae3c7e48ec3cf3ae3e69b37d9cb9addfffbf3e6c24b2be0",
+   "doc_id": "YGPA-130",
+   "why": "카드: 핵심안전수칙(YGPA-130) — i05, 글자 많음"
+  },
+  {
+   "sha256": "f1424cae7e2e1d2ec306f9a4cd449c8af5c18000e48cd0df175d855f72df5266",
+   "doc_id": "YGPA-B416-6C5B0FA3",
+   "why": "카드뉴스: 저속운항 항비 감면(B416-6C5B) — i06, OCR 숫자 깨짐·현재 글 없음"
+  },
+  {
+   "sha256": "0d76cda4be74e9afafd6ce711b6b0992bf5b316c5047bdbfff303bfdfa0e54f0",
+   "doc_id": "YGPA-B416-7ADEF4D7",
+   "why": "카드뉴스: 크루즈(B416-7ADE) — i07·i08, 현재 글 없음"
+  },
+  {
+   "sha256": "72164810b67f24098573f74c9e9edfe912f4b25d2324a23c4da14f906caf44c1",
+   "doc_id": "YGPA-B416-888157EB",
+   "why": "카드뉴스: 세척·수리장 모집 공고(B416-8881) — i10 날짜"
+  },
+  {
+   "sha256": "2d8065753e52cef3055c0aefb3792a54994011ba451073cd49ac3cbadd70d629",
+   "doc_id": "MOF-3881",
+   "why": "화면 캡처: 광양항 프리넷 연결(MOF-3881) — 현재 글 없음"
+  },
+  {
+   "sha256": "27137084c98eab0bc7eacb5531678a53289cb1ed80258f9a4d524c93a5d734cf",
+   "doc_id": "YGPA-521",
+   "why": "외국어: 중국어 페이지 광양항 계획평면도(YGPA-521)"
+  },
+  {
+   "sha256": "155195009ae466114038d478eee3f233c97c470cfe07a24df56a66eb1d6a0951",
+   "doc_id": "YGPA-415",
+   "why": "외국어: 일본어 Port-MIS 흐름도(YGPA-415)"
+  },
+  {
+   "sha256": "545d8b3a66435ff74242aaa28c88bd101ea5d0faa147cc61bb09e924fc16c3d4",
+   "doc_id": "YGPA-195",
+   "why": "사진: 중마 일반부두 전경 — '정보 없음'이 나와야 함"
+  },
+  {
+   "sha256": "629e5fb43ee7d6c7d8c9529185615f5a5ace3c3ce93b9f5babb9a981c6f4c27f",
+   "doc_id": "YGPA-B213-6DEEDCB2",
+   "why": "사진: 공사뉴스 8192×5464 — '정보 없음'이 나와야 함, 큰 이미지 줄이기 확인"
+  }
+ ]
+}

@@ -4,8 +4,8 @@
  "checked_at": "2026-11-02T13:21:11.871479+00:00",
  "reviewer": "자료 담당 (26번 자동 검토)",
  "summary": {
-  "approved": 2834,
-  "approved_with_notes": 334,
+  "approved": 2797,
+  "approved_with_notes": 666,
   "excluded": 42
  },
  "documents": {
@@ -454,7 +454,7 @@
     "detail": "오늘 받은 페이지 본문이 수집본과 같음"
    },
    "latest_snapshot": "20261102T070728392875Z",
-   "chunks": 1
+   "chunks": 2
   },
   "MOF-3905": {
    "currentness": {
@@ -558,7 +558,7 @@
     "detail": "오늘 받은 페이지 본문이 수집본과 같음"
    },
    "latest_snapshot": "20261102T070422264564Z",
-   "chunks": 1
+   "chunks": 2
   },
   "MOF-3923": {
    "currentness": {
@@ -1146,6 +1146,14 @@
    "latest_snapshot": "20261102T070045930779Z",
    "chunks": 1
   },
+  "YGPA-104": {
+   "currentness": {
+    "ok": true,
+    "detail": "오늘 받은 페이지 본문이 수집본과 같음"
+   },
+   "latest_snapshot": "20261102T070045930779Z",
+   "chunks": 1
+  },
   "YGPA-105": {
    "currentness": {
     "ok": true,
@@ -1176,7 +1184,7 @@
     "detail": "오늘 받은 페이지 본문이 수집본과 같음"
    },
    "latest_snapshot": "20261102T070045930779Z",
-   "chunks": 9
+   "chunks": 10
   },
   "YGPA-109": {
    "currentness": {
@@ -1312,7 +1320,7 @@
     "detail": "오늘 받은 페이지 본문이 수집본과 같음"
    },
    "latest_snapshot": "20261102T070045930779Z",
-   "chunks": 1
+   "chunks": 2
   },
   "YGPA-126": {
    "currentness": {
@@ -1512,7 +1520,7 @@
     "detail": "오늘 받은 페이지 본문이 수집본과 같음"
    },
    "latest_snapshot": "20261102T070045930779Z",
-   "chunks": 1
+   "chunks": 3
   },
   "YGPA-151": {
    "currentness": {
@@ -2698,6 +2706,14 @@
    "latest_snapshot": "20261102T070045930779Z",
    "chunks": 1
   },
+  "YGPA-415": {
+   "currentness": {
+    "ok": true,
+    "detail": "오늘 받은 페이지 본문이 수집본과 같음"
+   },
+   "latest_snapshot": "20261102T070045930779Z",
+   "chunks": 1
+  },
   "YGPA-416": {
    "currentness": {
     "ok": true,
@@ -2899,6 +2915,14 @@
    "chunks": 1
   },
   "YGPA-514": {
+   "currentness": {
+    "ok": true,
+    "detail": "오늘 받은 페이지 본문이 수집본과 같음"
+   },
+   "latest_snapshot": "20261102T070045930779Z",
+   "chunks": 1
+  },
+  "YGPA-515": {
    "currentness": {
     "ok": true,
     "detail": "오늘 받은 페이지 본문이 수집본과 같음"
@@ -3176,7 +3200,7 @@
     "detail": "오늘 받은 페이지 본문이 수집본과 같음"
    },
    "latest_snapshot": "20261102T140551646143Z",
-   "chunks": 1
+   "chunks": 2
   },
   "YGPA-B189-45B2CA57": {
    "currentness": {
@@ -3232,7 +3256,7 @@
     "detail": "오늘 받은 페이지 본문이 수집본과 같음"
    },
    "latest_snapshot": "20261102T140551646143Z",
-   "chunks": 1
+   "chunks": 3
   },
   "YGPA-B191-12257E48": {
    "currentness": {
@@ -3280,7 +3304,7 @@
     "detail": "오늘 받은 페이지 본문이 수집본과 같음"
    },
    "latest_snapshot": "20261102T140551646143Z",
-   "chunks": 1
+   "chunks": 2
   },
   "YGPA-B191-4E337AC7": {
    "currentness": {
@@ -3376,7 +3400,7 @@
     "detail": "오늘 받은 페이지 본문이 수집본과 같음"
    },
    "latest_snapshot": "20261102T140551646143Z",
-   "chunks": 1
+   "chunks": 2
   },
   "YGPA-B191-914F7EBB": {
    "currentness": {
@@ -3400,7 +3424,7 @@
     "detail": "오늘 받은 페이지 본문이 수집본과 같음"
    },
    "latest_snapshot": "20261102T140551646143Z",
-   "chunks": 1
+   "chunks": 2
   },
   "YGPA-B191-A91C8E38": {
    "currentness": {
@@ -3416,7 +3440,7 @@
     "detail": "오늘 받은 페이지 본문이 수집본과 같음"
    },
    "latest_snapshot": "20261102T140551646143Z",
-   "chunks": 1
+   "chunks": 8
   },
   "YGPA-B191-B09E6654": {
    "currentness": {
@@ -5736,7 +5760,7 @@
     "detail": "오늘 받은 페이지 본문이 수집본과 같음"
    },
    "latest_snapshot": "20261102T140551646143Z",
-   "chunks": 1
+   "chunks": 2
   },
   "YGPA-B213-0C3170B6": {
    "currentness": {
@@ -5744,7 +5768,7 @@
     "detail": "오늘 받은 페이지 본문이 수집본과 같음"
    },
    "latest_snapshot": "20261102T140551646143Z",
-   "chunks": 1
+   "chunks": 3
   },
   "YGPA-B213-15C6DBBA": {
    "currentness": {
@@ -5752,7 +5776,7 @@
     "detail": "오늘 받은 페이지 본문이 수집본과 같음"
    },
    "latest_snapshot": "20261102T140551646143Z",
-   "chunks": 1
+   "chunks": 2
   },
   "YGPA-B213-1C6CCECD": {
    "currentness": {
@@ -5760,7 +5784,7 @@
     "detail": "오늘 받은 페이지 본문이 수집본과 같음"
    },
    "latest_snapshot": "20261102T140551646143Z",
-   "chunks": 1
+   "chunks": 3
   },
   "YGPA-B213-22276097": {
    "currentness": {
@@ -5784,7 +5808,7 @@
     "detail": "오늘 받은 페이지 본문이 수집본과 같음"
    },
    "latest_snapshot": "20261102T140551646143Z",
-   "chunks": 1
+   "chunks": 3
   },
   "YGPA-B213-3365AF6A": {
    "currentness": {
@@ -5792,7 +5816,7 @@
     "detail": "오늘 받은 페이지 본문이 수집본과 같음"
    },
    "latest_snapshot": "20261102T140551646143Z",
-   "chunks": 1
+   "chunks": 3
   },
   "YGPA-B213-3C67CED5": {
    "currentness": {
@@ -5800,7 +5824,7 @@
     "detail": "오늘 받은 페이지 본문이 수집본과 같음"
    },
    "latest_snapshot": "20261102T140551646143Z",
-   "chunks": 1
+   "chunks": 2
   },
   "YGPA-B213-43E8852D": {
    "currentness": {
@@ -5808,7 +5832,7 @@
     "detail": "오늘 받은 페이지 본문이 수집본과 같음"
    },
    "latest_snapshot": "20261102T140551646143Z",
-   "chunks": 1
+   "chunks": 2
   },
   "YGPA-B213-48EB576E": {
    "currentness": {
@@ -5816,7 +5840,7 @@
     "detail": "오늘 받은 페이지 본문이 수집본과 같음"
    },
    "latest_snapshot": "20261102T140551646143Z",
-   "chunks": 1
+   "chunks": 5
   },
   "YGPA-B213-4AAE4EDB": {
    "currentness": {
@@ -5824,7 +5848,7 @@
     "detail": "오늘 받은 페이지 본문이 수집본과 같음"
    },
    "latest_snapshot": "20261102T140551646143Z",
-   "chunks": 1
+   "chunks": 2
   },
   "YGPA-B213-4BD9EBB8": {
    "currentness": {
@@ -5832,7 +5856,7 @@
     "detail": "오늘 받은 페이지 본문이 수집본과 같음"
    },
    "latest_snapshot": "20261102T140551646143Z",
-   "chunks": 1
+   "chunks": 3
   },
   "YGPA-B213-4D0C1387": {
    "currentness": {
@@ -5840,7 +5864,7 @@
     "detail": "오늘 받은 페이지 본문이 수집본과 같음"
    },
    "latest_snapshot": "20261102T140551646143Z",
-   "chunks": 1
+   "chunks": 2
   },
   "YGPA-B213-52C50A67": {
    "currentness": {
@@ -5856,7 +5880,7 @@
     "detail": "오늘 받은 페이지 본문이 수집본과 같음"
    },
    "latest_snapshot": "20261102T140551646143Z",
-   "chunks": 1
+   "chunks": 2
   },
   "YGPA-B213-5C37750D": {
    "currentness": {
@@ -5864,7 +5888,7 @@
     "detail": "오늘 받은 페이지 본문이 수집본과 같음"
    },
    "latest_snapshot": "20261102T140551646143Z",
-   "chunks": 1
+   "chunks": 2
   },
   "YGPA-B213-5F4B8B2B": {
    "currentness": {
@@ -5880,7 +5904,7 @@
     "detail": "오늘 받은 페이지 본문이 수집본과 같음"
    },
    "latest_snapshot": "20261102T140551646143Z",
-   "chunks": 1
+   "chunks": 2
   },
   "YGPA-B213-60FA5C1C": {
    "currentness": {
@@ -5896,7 +5920,7 @@
     "detail": "오늘 받은 페이지 본문이 수집본과 같음"
    },
    "latest_snapshot": "20261102T140551646143Z",
-   "chunks": 1
+   "chunks": 3
   },
   "YGPA-B213-6DEEDCB2": {
    "currentness": {
@@ -5904,7 +5928,7 @@
     "detail": "오늘 받은 페이지 본문이 수집본과 같음"
    },
    "latest_snapshot": "20261102T140551646143Z",
-   "chunks": 1
+   "chunks": 5
   },
   "YGPA-B213-786A90E3": {
    "currentness": {
@@ -5912,7 +5936,7 @@
     "detail": "오늘 받은 페이지 본문이 수집본과 같음"
    },
    "latest_snapshot": "20261102T140551646143Z",
-   "chunks": 1
+   "chunks": 2
   },
   "YGPA-B213-9519C483": {
    "currentness": {
@@ -5920,7 +5944,7 @@
     "detail": "오늘 받은 페이지 본문이 수집본과 같음"
    },
    "latest_snapshot": "20261102T140551646143Z",
-   "chunks": 1
+   "chunks": 2
   },
   "YGPA-B213-96228027": {
    "currentness": {
@@ -5928,7 +5952,7 @@
     "detail": "오늘 받은 페이지 본문이 수집본과 같음"
    },
    "latest_snapshot": "20261102T140551646143Z",
-   "chunks": 1
+   "chunks": 3
   },
   "YGPA-B213-AA772384": {
    "currentness": {
@@ -5944,7 +5968,7 @@
     "detail": "오늘 받은 페이지 본문이 수집본과 같음"
    },
    "latest_snapshot": "20261102T140551646143Z",
-   "chunks": 1
+   "chunks": 3
   },
   "YGPA-B213-AEC0F26B": {
    "currentness": {
@@ -5960,7 +5984,7 @@
     "detail": "오늘 받은 페이지 본문이 수집본과 같음"
    },
    "latest_snapshot": "20261102T140551646143Z",
-   "chunks": 1
+   "chunks": 3
   },
   "YGPA-B213-CF32AC1F": {
    "currentness": {
@@ -5968,7 +5992,7 @@
     "detail": "오늘 받은 페이지 본문이 수집본과 같음"
    },
    "latest_snapshot": "20261102T140551646143Z",
-   "chunks": 1
+   "chunks": 4
   },
   "YGPA-B213-D73E508F": {
    "currentness": {
@@ -5984,7 +6008,7 @@
     "detail": "오늘 받은 페이지 본문이 수집본과 같음"
    },
    "latest_snapshot": "20261102T140551646143Z",
-   "chunks": 1
+   "chunks": 2
   },
   "YGPA-B213-D78DD87F": {
    "currentness": {
@@ -6000,7 +6024,7 @@
     "detail": "오늘 받은 페이지 본문이 수집본과 같음"
    },
    "latest_snapshot": "20261102T140551646143Z",
-   "chunks": 1
+   "chunks": 3
   },
   "YGPA-B213-E3D19BCE": {
    "currentness": {
@@ -6008,7 +6032,7 @@
     "detail": "오늘 받은 페이지 본문이 수집본과 같음"
    },
    "latest_snapshot": "20261102T140551646143Z",
-   "chunks": 1
+   "chunks": 3
   },
   "YGPA-B213-E58424AB": {
    "currentness": {
@@ -6016,7 +6040,7 @@
     "detail": "오늘 받은 페이지 본문이 수집본과 같음"
    },
    "latest_snapshot": "20261102T140551646143Z",
-   "chunks": 1
+   "chunks": 3
   },
   "YGPA-B213-EE90EE6F": {
    "currentness": {
@@ -6024,7 +6048,7 @@
     "detail": "오늘 받은 페이지 본문이 수집본과 같음"
    },
    "latest_snapshot": "20261102T140551646143Z",
-   "chunks": 1
+   "chunks": 2
   },
   "YGPA-B213-F6F1C7A0": {
    "currentness": {
@@ -6032,7 +6056,7 @@
     "detail": "오늘 받은 페이지 본문이 수집본과 같음"
    },
    "latest_snapshot": "20261102T140551646143Z",
-   "chunks": 1
+   "chunks": 2
   },
   "YGPA-B213-F9A66E2E": {
    "currentness": {
@@ -6528,7 +6552,7 @@
     "detail": "오늘 받은 페이지 본문이 수집본과 같음"
    },
    "latest_snapshot": "20261102T140551646143Z",
-   "chunks": 1
+   "chunks": 9
   },
   "YGPA-B416-21F1475A": {
    "currentness": {
@@ -6536,7 +6560,7 @@
     "detail": "오늘 받은 페이지 본문이 수집본과 같음"
    },
    "latest_snapshot": "20261102T140551646143Z",
-   "chunks": 2
+   "chunks": 11
   },
   "YGPA-B416-2C6000FC": {
    "currentness": {
@@ -6544,7 +6568,7 @@
     "detail": "오늘 받은 페이지 본문이 수집본과 같음"
    },
    "latest_snapshot": "20261102T140551646143Z",
-   "chunks": 1
+   "chunks": 6
   },
   "YGPA-B416-35F17404": {
    "currentness": {
@@ -6552,7 +6576,7 @@
     "detail": "오늘 받은 페이지 본문이 수집본과 같음"
    },
    "latest_snapshot": "20261102T140551646143Z",
-   "chunks": 1
+   "chunks": 5
   },
   "YGPA-B416-3655ADE7": {
    "currentness": {
@@ -6560,7 +6584,7 @@
     "detail": "오늘 받은 페이지 본문이 수집본과 같음"
    },
    "latest_snapshot": "20261102T140551646143Z",
-   "chunks": 2
+   "chunks": 8
   },
   "YGPA-B416-36C05F68": {
    "currentness": {
@@ -6568,7 +6592,7 @@
     "detail": "오늘 받은 페이지 본문이 수집본과 같음"
    },
    "latest_snapshot": "20261102T140551646143Z",
-   "chunks": 2
+   "chunks": 11
   },
   "YGPA-B416-5FE73049": {
    "currentness": {
@@ -6576,7 +6600,7 @@
     "detail": "오늘 받은 페이지 본문이 수집본과 같음"
    },
    "latest_snapshot": "20261102T140551646143Z",
-   "chunks": 2
+   "chunks": 10
   },
   "YGPA-B416-68B2E904": {
    "currentness": {
@@ -6584,7 +6608,7 @@
     "detail": "오늘 받은 페이지 본문이 수집본과 같음"
    },
    "latest_snapshot": "20261102T140551646143Z",
-   "chunks": 1
+   "chunks": 10
   },
   "YGPA-B416-6A6E65F4": {
    "currentness": {
@@ -6592,7 +6616,7 @@
     "detail": "오늘 받은 페이지 본문이 수집본과 같음"
    },
    "latest_snapshot": "20261102T140551646143Z",
-   "chunks": 1
+   "chunks": 10
   },
   "YGPA-B416-6C5B0FA3": {
    "currentness": {
@@ -6600,7 +6624,7 @@
     "detail": "오늘 받은 페이지 본문이 수집본과 같음"
    },
    "latest_snapshot": "20261102T140551646143Z",
-   "chunks": 1
+   "chunks": 7
   },
   "YGPA-B416-70DDAF99": {
    "currentness": {
@@ -6608,7 +6632,7 @@
     "detail": "오늘 받은 페이지 본문이 수집본과 같음"
    },
    "latest_snapshot": "20261102T140551646143Z",
-   "chunks": 2
+   "chunks": 10
   },
   "YGPA-B416-718507E1": {
    "currentness": {
@@ -6616,7 +6640,7 @@
     "detail": "오늘 받은 페이지 본문이 수집본과 같음"
    },
    "latest_snapshot": "20261102T140551646143Z",
-   "chunks": 1
+   "chunks": 6
   },
   "YGPA-B416-72C5EFB8": {
    "currentness": {
@@ -6624,7 +6648,7 @@
     "detail": "오늘 받은 페이지 본문이 수집본과 같음"
    },
    "latest_snapshot": "20261102T140551646143Z",
-   "chunks": 1
+   "chunks": 9
   },
   "YGPA-B416-7375EFF4": {
    "currentness": {
@@ -6632,7 +6656,7 @@
     "detail": "오늘 받은 페이지 본문이 수집본과 같음"
    },
    "latest_snapshot": "20261102T140551646143Z",
-   "chunks": 1
+   "chunks": 2
   },
   "YGPA-B416-762F4F8F": {
    "currentness": {
@@ -6640,7 +6664,7 @@
     "detail": "오늘 받은 페이지 본문이 수집본과 같음"
    },
    "latest_snapshot": "20261102T140551646143Z",
-   "chunks": 2
+   "chunks": 9
   },
   "YGPA-B416-7ADEF4D7": {
    "currentness": {
@@ -6648,7 +6672,7 @@
     "detail": "오늘 받은 페이지 본문이 수집본과 같음"
    },
    "latest_snapshot": "20261102T140551646143Z",
-   "chunks": 1
+   "chunks": 8
   },
   "YGPA-B416-7AEDB422": {
    "currentness": {
@@ -6656,7 +6680,7 @@
     "detail": "오늘 받은 페이지 본문이 수집본과 같음"
    },
    "latest_snapshot": "20261102T140551646143Z",
-   "chunks": 1
+   "chunks": 6
   },
   "YGPA-B416-888157EB": {
    "currentness": {
@@ -6664,7 +6688,7 @@
     "detail": "오늘 받은 페이지 본문이 수집본과 같음"
    },
    "latest_snapshot": "20261102T140551646143Z",
-   "chunks": 1
+   "chunks": 6
   },
   "YGPA-B416-89D85064": {
    "currentness": {
@@ -6672,7 +6696,7 @@
     "detail": "오늘 받은 페이지 본문이 수집본과 같음"
    },
    "latest_snapshot": "20261102T140551646143Z",
-   "chunks": 1
+   "chunks": 8
   },
   "YGPA-B416-8D216282": {
    "currentness": {
@@ -6680,7 +6704,7 @@
     "detail": "오늘 받은 페이지 본문이 수집본과 같음"
    },
    "latest_snapshot": "20261102T140551646143Z",
-   "chunks": 1
+   "chunks": 7
   },
   "YGPA-B416-9559D134": {
    "currentness": {
@@ -6688,7 +6712,7 @@
     "detail": "오늘 받은 페이지 본문이 수집본과 같음"
    },
    "latest_snapshot": "20261102T140551646143Z",
-   "chunks": 2
+   "chunks": 10
   },
   "YGPA-B416-A51ACC3A": {
    "currentness": {
@@ -6696,7 +6720,7 @@
     "detail": "오늘 받은 페이지 본문이 수집본과 같음"
    },
    "latest_snapshot": "20261102T140551646143Z",
-   "chunks": 1
+   "chunks": 3
   },
   "YGPA-B416-A72481F6": {
    "currentness": {
@@ -6704,7 +6728,7 @@
     "detail": "오늘 받은 페이지 본문이 수집본과 같음"
    },
    "latest_snapshot": "20261102T140551646143Z",
-   "chunks": 1
+   "chunks": 6
   },
   "YGPA-B416-AF17C17C": {
    "currentness": {
@@ -6712,7 +6736,7 @@
     "detail": "오늘 받은 페이지 본문이 수집본과 같음"
    },
    "latest_snapshot": "20261102T140551646143Z",
-   "chunks": 1
+   "chunks": 9
   },
   "YGPA-B416-B893E3C9": {
    "currentness": {
@@ -6720,7 +6744,7 @@
     "detail": "오늘 받은 페이지 본문이 수집본과 같음"
    },
    "latest_snapshot": "20261102T140551646143Z",
-   "chunks": 1
+   "chunks": 6
   },
   "YGPA-B416-C49B1EE8": {
    "currentness": {
@@ -6728,7 +6752,7 @@
     "detail": "오늘 받은 페이지 본문이 수집본과 같음"
    },
    "latest_snapshot": "20261102T140551646143Z",
-   "chunks": 2
+   "chunks": 9
   },
   "YGPA-B416-CCF28EF5": {
    "currentness": {
@@ -6736,7 +6760,7 @@
     "detail": "오늘 받은 페이지 본문이 수집본과 같음"
    },
    "latest_snapshot": "20261102T140551646143Z",
-   "chunks": 1
+   "chunks": 9
   },
   "YGPA-B416-CE1FCC52": {
    "currentness": {
@@ -6744,7 +6768,7 @@
     "detail": "오늘 받은 페이지 본문이 수집본과 같음"
    },
    "latest_snapshot": "20261102T140551646143Z",
-   "chunks": 1
+   "chunks": 8
   },
   "YGPA-B416-CF73127A": {
    "currentness": {
@@ -6752,7 +6776,7 @@
     "detail": "오늘 받은 페이지 본문이 수집본과 같음"
    },
    "latest_snapshot": "20261102T140551646143Z",
-   "chunks": 2
+   "chunks": 12
   },
   "YGPA-B416-DA3870C4": {
    "currentness": {
@@ -6760,7 +6784,7 @@
     "detail": "오늘 받은 페이지 본문이 수집본과 같음"
    },
    "latest_snapshot": "20261102T140551646143Z",
-   "chunks": 1
+   "chunks": 6
   },
   "YGPA-B416-DAFB2289": {
    "currentness": {
@@ -6768,7 +6792,7 @@
     "detail": "오늘 받은 페이지 본문이 수집본과 같음"
    },
    "latest_snapshot": "20261102T140551646143Z",
-   "chunks": 1
+   "chunks": 9
   },
   "YGPA-B416-DCE80F93": {
    "currentness": {
@@ -6784,7 +6808,7 @@
     "detail": "오늘 받은 페이지 본문이 수집본과 같음"
    },
    "latest_snapshot": "20261102T140551646143Z",
-   "chunks": 2
+   "chunks": 10
   },
   "YGPA-B416-EFE591A6": {
    "currentness": {
@@ -6792,7 +6816,7 @@
     "detail": "오늘 받은 페이지 본문이 수집본과 같음"
    },
    "latest_snapshot": "20261102T140551646143Z",
-   "chunks": 1
+   "chunks": 5
   },
   "YGPA-B416-F90B5306": {
    "currentness": {
@@ -6800,7 +6824,7 @@
     "detail": "오늘 받은 페이지 본문이 수집본과 같음"
    },
    "latest_snapshot": "20261102T140551646143Z",
-   "chunks": 2
+   "chunks": 9
   },
   "YGPA-B426-4EB25A8B": {
    "currentness": {
@@ -18624,27 +18648,35 @@
   },
   "MOF-3834-0151d0da03825a8008624193": {
    "doc_id": "MOF-3834",
-   "status": "approved",
-   "chunk_text_sha256": "aec30ac3d452acc6e092e45b89372849f08f0af0a41dd7cdcde28f981872f8a3",
-   "notes": []
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "230b42fc9a1f7f218f1edca77c566e42311bc0e62c2b0b874aac752c8699560d",
+   "notes": [
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
   },
   "MOF-3834-ae45c0f76a1b8462a74d0469": {
    "doc_id": "MOF-3834",
-   "status": "approved",
+   "status": "approved_with_notes",
    "chunk_text_sha256": "158562f60510a8ffeadda410d2e0c920de22f2bac0692584fc7f29646cf08b4f",
-   "notes": []
+   "notes": [
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
   },
   "MOF-3835-4fd79740b22b3f99bdeecaa9": {
    "doc_id": "MOF-3835",
-   "status": "approved",
-   "chunk_text_sha256": "afeed6e13b87fb01259be8f322e0437a62332ebdff45ee637e9ceda6f7b18bf1",
-   "notes": []
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "d4ce7fbee77bd58931c3db195559d05a02a4b9dd47f75ea91c1a4e3d1bca740d",
+   "notes": [
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
   },
   "MOF-3835-baa8821f8faf6fea7c0e14fe": {
    "doc_id": "MOF-3835",
-   "status": "approved",
+   "status": "approved_with_notes",
    "chunk_text_sha256": "0c24cc30e91abe94d6ccbb2aba09c74aa9b2236657de3bd3ca1347f66500407b",
-   "notes": []
+   "notes": [
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
   },
   "MOF-3836-ac05ac92815014b1ef62996f": {
    "doc_id": "MOF-3836",
@@ -18845,17 +18877,25 @@
   "MOF-3880-49057423a8ca2483fb094b07": {
    "doc_id": "MOF-3880",
    "status": "approved_with_notes",
-   "chunk_text_sha256": "ae96e35b3691ceb7a06b4a716b7f680313e6fd82f5c8500654890f090e996511",
+   "chunk_text_sha256": "0f2747a140255bd1f70388d33fe82c40f664a2c09e573495487bf76123d4c66f",
    "notes": [
-    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요"
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
    ]
   },
   "MOF-3881-6bc7e4b3dba89b2dcf1bbecb": {
    "doc_id": "MOF-3881",
    "status": "approved_with_notes",
-   "chunk_text_sha256": "b85f52eb6f738566a520226b9f7efb624e2efe51280574001a1f1074eb5efa27",
+   "chunk_text_sha256": "81f35affb8dba734cd5f5380c331fb4f5ac84748428d7f2d51acd47c5e73e794",
    "notes": [
-    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요"
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "MOF-3881-d344c9a741b897ddf94f2642": {
+   "doc_id": "MOF-3881",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "62f1fdb5c6b14f83368f775ef609e3cf8b21d95fb0f5c48860596be9bed6cc06",
+   "notes": [
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
    ]
   },
   "MOF-3905-e5b6f2c00be9b2c30146b040": {
@@ -18933,9 +18973,17 @@
   "MOF-3922-afadd80f6afd7d2067df0bb1": {
    "doc_id": "MOF-3922",
    "status": "approved_with_notes",
-   "chunk_text_sha256": "1f3aa72233d1e8dd4373b247a502dc8a459d5956dcc50c3153f094c0719c600f",
+   "chunk_text_sha256": "09556bd7670f4e6658046baf4b9c02b5fb3d7d9b7b9b19bfa9df1a4904195ad0",
    "notes": [
-    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요"
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "MOF-3922-ba6aac12c4b15217479c8165": {
+   "doc_id": "MOF-3922",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "c93f2da99879cee0178005e3621259e96581b89a0239c183971221ec76fdfab1",
+   "notes": [
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
    ]
   },
   "MOF-3923-aab1be3c9c749640d1ab8f13": {
@@ -18947,9 +18995,9 @@
   "MOF-3924-2fbdc9fefc3898ce418bbcb9": {
    "doc_id": "MOF-3924",
    "status": "approved_with_notes",
-   "chunk_text_sha256": "57d08292486413b1db280915923fb485de9287a7ea434376d13ca5e0cbc5b21f",
+   "chunk_text_sha256": "455b23543e06a1b803b5691108a9835c2cfb5ef5726a5eb4db73b315a3edaa1c",
    "notes": [
-    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요"
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
    ]
   },
   "MOF-3930-7f9c2af747182836ef2ef661": {
@@ -19013,22 +19061,26 @@
   "MOF-3989-163d0a4ed7a91bd551ceaf5f": {
    "doc_id": "MOF-3989",
    "status": "approved_with_notes",
-   "chunk_text_sha256": "3307562fd870fbb1488a1f4a4e7b91c97805712f313f5e2f256e804859a4e117",
+   "chunk_text_sha256": "2d1f028f114ab374c8637bb97706aad16f886cc04847ca8233ea72349f1f527d",
    "notes": [
-    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요"
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
    ]
   },
   "MOF-3990-54405a559ecf70fee3c320fb": {
    "doc_id": "MOF-3990",
-   "status": "approved",
-   "chunk_text_sha256": "88003c4e6442c7bf6edef82abd91e93e7073fd8bcd6f691792b696dbcbe7bb0e",
-   "notes": []
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "56515e7c0552103504b7f419591e39e0f63e4d85f2d33b43b587f56534b06134",
+   "notes": [
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
   },
   "MOF-3990-d258244f0c7cdd2a72e29030": {
    "doc_id": "MOF-3990",
-   "status": "approved",
+   "status": "approved_with_notes",
    "chunk_text_sha256": "789d2ee27780100bcfc27be098c75c1d700e56148d301792cab3d4cd64e3b261",
-   "notes": []
+   "notes": [
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
   },
   "MOF-3991-189bc04d23566a4fa0f3fe1b": {
    "doc_id": "MOF-3991",
@@ -19045,9 +19097,9 @@
   "MOF-4890-ac9a1d01dcf10f91e6e5243a": {
    "doc_id": "MOF-4890",
    "status": "approved_with_notes",
-   "chunk_text_sha256": "b6a3ad686eaffbb65daade5d0cf1a8beeb64b8ebd7c599db75ea3f0cd085f966",
+   "chunk_text_sha256": "19f20cdb8d41c7c99a9faea0d00fa9bbe9e6dd9ed733c5d3d1bf5e1e804205da",
    "notes": [
-    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요"
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
    ]
   },
   "ORG-000-e4ea075edd568425fc04878d": {
@@ -20510,12 +20562,20 @@
    "chunk_text_sha256": "3716c49fc2acbf69f75a0193b375cb247881cbf186e82ac81fb2b521a3fafb1a",
    "notes": []
   },
+  "YGPA-104-595a1b4893fda4bb710ee0ce": {
+   "doc_id": "YGPA-104",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "80ad55addb9b1b4215014b9012d56658abf103f674f1bd84ce471c4ccb0e0636",
+   "notes": [
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
   "YGPA-105-ec4f93fa41b712d71fe05385": {
    "doc_id": "YGPA-105",
    "status": "approved_with_notes",
-   "chunk_text_sha256": "30e9985a51339bd6a8a92bd8aca40ec6b70fa7389ab0da920f4da85440134c55",
+   "chunk_text_sha256": "c4b32b80a356554f771a956f8b8ee3b4b31dd4b03c77c9d422d0f8ee08664633",
    "notes": [
-    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요"
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
    ]
   },
   "YGPA-106-6461a5511097245616b10637": {
@@ -20535,7 +20595,15 @@
    "status": "approved_with_notes",
    "chunk_text_sha256": "a600e02618b8cc29e56eafc085581aa42fe151f06f7d911017dca44fb4e3a393",
    "notes": [
-    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요"
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-108-3fab846f3333777296d61248": {
+   "doc_id": "YGPA-108",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "0383ce8605f4de6f5a803c3a7bf765f28ad2671cfe06f5fb3f909eabc49d7bde",
+   "notes": [
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
    ]
   },
   "YGPA-108-77c2bdc466364306e533108d": {
@@ -20543,7 +20611,7 @@
    "status": "approved_with_notes",
    "chunk_text_sha256": "d7cb0ed91fe9fc020766bc34a4d477c63b9c1ebae07dada8b07c861fea3710aa",
    "notes": [
-    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요"
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
    ]
   },
   "YGPA-108-9c25091571b61d4ee07dc114": {
@@ -20551,7 +20619,7 @@
    "status": "approved_with_notes",
    "chunk_text_sha256": "fd2fcc01ee8daa3f0378843cb17339b771603db1740bb4f878375490b562773a",
    "notes": [
-    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요"
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
    ]
   },
   "YGPA-108-a856ccc9ed60687d2e4e95e2": {
@@ -20559,7 +20627,7 @@
    "status": "approved_with_notes",
    "chunk_text_sha256": "81c57d721498649627c26b4a0872f474abfb402e7ebd7750becf267669829260",
    "notes": [
-    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요"
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
    ]
   },
   "YGPA-108-d49d11cee7b33789f1cb8454": {
@@ -20567,15 +20635,15 @@
    "status": "approved_with_notes",
    "chunk_text_sha256": "a3919074e0383781551bd07b253d8fc3d769e08bed60c40dad568bf081651e39",
    "notes": [
-    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요"
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
    ]
   },
   "YGPA-108-d5d3c65e1bcb90d29ef0c200": {
    "doc_id": "YGPA-108",
    "status": "approved_with_notes",
-   "chunk_text_sha256": "2c727642661d0769035e22d8643796cf561dcb98682c5df630e04ec7c66d10dd",
+   "chunk_text_sha256": "f4da133c9f41bd0313353e074ccdc6338be095266f46d2365c3a6b20b5907c51",
    "notes": [
-    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요"
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
    ]
   },
   "YGPA-108-db1600f1bec62f3c1eaa4e5a": {
@@ -20583,7 +20651,7 @@
    "status": "approved_with_notes",
    "chunk_text_sha256": "31ad49927713cc5509cafb30f13224c010d25ec43cf270ed33575efa2f5fc158",
    "notes": [
-    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요"
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
    ]
   },
   "YGPA-108-df4320ccd82d5447fdee5a11": {
@@ -20591,7 +20659,7 @@
    "status": "approved_with_notes",
    "chunk_text_sha256": "6c41753aaf2b4c79358b8650709490853ff9f8f26fe64c55013e378b221a35f8",
    "notes": [
-    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요"
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
    ]
   },
   "YGPA-108-f360f2710955d3340e5cfd5e": {
@@ -20599,7 +20667,7 @@
    "status": "approved_with_notes",
    "chunk_text_sha256": "a5fdc030e2ce1ca4c5c6b3c8d30f47f58d2df6ec2293145c8e188828058c1384",
    "notes": [
-    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요"
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
    ]
   },
   "YGPA-109-72941647fbb5bd4eda894808": {
@@ -20607,15 +20675,15 @@
    "status": "approved_with_notes",
    "chunk_text_sha256": "89eb459815347aca398aa3df32d85e451552f9bfc0c8ead8162d191c62634f59",
    "notes": [
-    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요"
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
    ]
   },
   "YGPA-109-eaab75d45ff84dbc3906aeaf": {
    "doc_id": "YGPA-109",
    "status": "approved_with_notes",
-   "chunk_text_sha256": "be171a9431e6c6fdfda85a8659b90d21e1b00ed035ffa7bee35735ba8938a708",
+   "chunk_text_sha256": "85108b94aab0a29a6020e96146e84c0e2bc5a1234a8fc992a6a33777450d3dce",
    "notes": [
-    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요"
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
    ]
   },
   "YGPA-110-77f1e4aa55e9774323b93bd0": {
@@ -20627,9 +20695,9 @@
   "YGPA-111-4e3627487a97564319201179": {
    "doc_id": "YGPA-111",
    "status": "approved_with_notes",
-   "chunk_text_sha256": "c9e635be0c4cf04cc8cb1d3ed27ccc1bda182a0b5b8c497058c35e3cc9e2dcae",
+   "chunk_text_sha256": "6ea7dbf7f401f66baa6efb7a58feeee2d4108591fccc28f82cd0eea4fb25220f",
    "notes": [
-    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요"
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
    ]
   },
   "YGPA-112-3dbf0bb027d87d0fab9356d2": {
@@ -20770,12 +20838,20 @@
    "chunk_text_sha256": "9857d631a8f17f738873998a85546644a44556b187b4ec962709056620d15ca2",
    "notes": []
   },
+  "YGPA-125-0277057dee1641a58d4e07fe": {
+   "doc_id": "YGPA-125",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "877bf230707d5e25477963ec0b387686f809b61cfa508cd7f613b1d2ab9e4979",
+   "notes": [
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
   "YGPA-125-4bea3d4126d46b09d3ea644a": {
    "doc_id": "YGPA-125",
    "status": "approved_with_notes",
-   "chunk_text_sha256": "6d2a08ee6d91f428251cf1e216e164a3f00e29ac36d9df22027bffd034b5d8f2",
+   "chunk_text_sha256": "e19fc0a59ac5f5d9b50617ef33eb52fd8861f70c90dc2e9f92a71ab7af5277a3",
    "notes": [
-    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요"
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
    ]
   },
   "YGPA-126-d536733e443026d4c0918fc5": {
@@ -20793,9 +20869,9 @@
   "YGPA-128-14ff21e75ad70247dab30d7e": {
    "doc_id": "YGPA-128",
    "status": "approved_with_notes",
-   "chunk_text_sha256": "097a4a6e736f6728adf1d960f5a3ef33322dba82e1d67e38726e61774fce3dbb",
+   "chunk_text_sha256": "1f506fb0ecde621c12bd5d4d62c0b6e8f3c51d3508ba3fd5c14da5c3ff8012e1",
    "notes": [
-    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요"
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
    ]
   },
   "YGPA-129-899388c78c87f54e18384629": {
@@ -20807,9 +20883,9 @@
   "YGPA-130-016fbc613037ef1e0e86a4ca": {
    "doc_id": "YGPA-130",
    "status": "approved_with_notes",
-   "chunk_text_sha256": "1ddf08b1b7b648632dbc9adb61929b6df4b975aadb48043cf03af8d1ac26b8a1",
+   "chunk_text_sha256": "64f3eac77c672577b38d60c7235e826b89a74174d352f6d201a39987bfbb935d",
    "notes": [
-    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요"
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
    ]
   },
   "YGPA-131-c20ec639b3affa1e680f8f29": {
@@ -20821,25 +20897,25 @@
   "YGPA-132-3082e41b37d323008a5a429c": {
    "doc_id": "YGPA-132",
    "status": "approved_with_notes",
-   "chunk_text_sha256": "b6f8c32d99da6f2d2e28d42c8935719e20b34c82eab44ffd3d02c006d81805a1",
+   "chunk_text_sha256": "8c37e904f83e3a38d779c4773004d9833b838162408d4fca5a4a9f249b7be277",
    "notes": [
-    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요"
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
    ]
   },
   "YGPA-133-77a9f480da68911fa42c27a1": {
    "doc_id": "YGPA-133",
    "status": "approved_with_notes",
-   "chunk_text_sha256": "5c6ae55eb3092399318d05e2caab2e52d8f8e904de3b15f15df48dc967d495fa",
+   "chunk_text_sha256": "4f2bdff1d2c2e391227eba71382376d52fbac84fd0dd8eeabee2a2c33bce054a",
    "notes": [
-    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요"
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
    ]
   },
   "YGPA-134-5f96ca42b54761debc5f0022": {
    "doc_id": "YGPA-134",
    "status": "approved_with_notes",
-   "chunk_text_sha256": "edd138999b7fe729aafebe85bdfcf38ad3bcdd8e5fa5952b2391fed4188b74c9",
+   "chunk_text_sha256": "ee8e065c1bc01e70db6e50463f973db954306e35e5f5279b5717b729c7b4e9a6",
    "notes": [
-    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요"
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
    ]
   },
   "YGPA-135-4b9fbf269b2951e36d519207": {
@@ -20881,9 +20957,9 @@
   "YGPA-141-05269ae18436006605edd716": {
    "doc_id": "YGPA-141",
    "status": "approved_with_notes",
-   "chunk_text_sha256": "25ceae13d3d1f42e21580545a115bb87edc80c2dfdb5f921647eca227781418b",
+   "chunk_text_sha256": "d9394dc385a8dc7edf342e672fc3533ba81172711f9514c174ffda90a22aad08",
    "notes": [
-    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요"
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
    ]
   },
   "YGPA-142-22b77018ed91de8c50c699b1": {
@@ -20934,12 +21010,26 @@
    "chunk_text_sha256": "e6016314d44cc6a86669f17835c1c18fa99b20f5505423870567bf9df4517e77",
    "notes": []
   },
-  "YGPA-150-d2a2b7fa2d09a2d2e5d72020": {
+  "YGPA-150-19100695103f274581c8fb3e": {
    "doc_id": "YGPA-150",
    "status": "approved_with_notes",
-   "chunk_text_sha256": "cedc7511f3a4d4c94dddaa7b70105b71101f12c0325b25bf1169bd29c91ab084",
+   "chunk_text_sha256": "0f4e8560fd256207ca6ed5d48f0bc4d766e7035c2b6bfbf4b4383f2e7e9a23a3",
    "notes": [
-    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요"
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-150-d2a2b7fa2d09a2d2e5d72020": {
+   "doc_id": "YGPA-150",
+   "status": "approved",
+   "chunk_text_sha256": "611b1f901b456eb886b0524034dd6a2d1230cb19e90c16e98765d2279cd605bd",
+   "notes": []
+  },
+  "YGPA-150-e417ea40b6ae271f68deed1c": {
+   "doc_id": "YGPA-150",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "e0b7ac9287d4ac4ef84d4608aa6c73f65af876d362866d1f52d1e2f203e06aa8",
+   "notes": [
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
    ]
   },
   "YGPA-151-94de9ebbcc3c5799d8b5e506": {
@@ -20992,9 +21082,11 @@
   },
   "YGPA-159-4540230ab38986b03eb45a90": {
    "doc_id": "YGPA-159",
-   "status": "approved",
-   "chunk_text_sha256": "12c0e4bb05672a1d7b00bc03d57fb1fc524eb80873e97536ccd1576cc84a1355",
-   "notes": []
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "682a33571fb8bdf2bd1e190d99f9011f9569864a1694ab3b794b2ff2732b1be8",
+   "notes": [
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
   },
   "YGPA-160-a191af1f7e582183093711fc": {
    "doc_id": "YGPA-160",
@@ -21016,9 +21108,11 @@
   },
   "YGPA-163-43ce4fa76f5c49c2f3baac15": {
    "doc_id": "YGPA-163",
-   "status": "approved",
-   "chunk_text_sha256": "9c6872cefe97af68a65e2cf012c16bae76ffce9b914e6248e446e6e27ac9af43",
-   "notes": []
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "5ea2f0d3ad6e35e5c872437f547f0326d44aab490d868e01a5aa1fe9f7687fe1",
+   "notes": [
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
   },
   "YGPA-164-7cb71738b163e2e4db115a95": {
    "doc_id": "YGPA-164",
@@ -21094,9 +21188,11 @@
   },
   "YGPA-176-df2674b6d1174ef16662f204": {
    "doc_id": "YGPA-176",
-   "status": "approved",
-   "chunk_text_sha256": "fdf28577b26b40e07c3e683b3f3ba19314ed1c4fe841632cf558d5139f2d3299",
-   "notes": []
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "04d2d3f566b6578ef121f3651acc0707dab2e679f3a5ed960c8fbb5a304e15b6",
+   "notes": [
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
   },
   "YGPA-177-6e2a3260fc899df59cdb2df8": {
    "doc_id": "YGPA-177",
@@ -21184,9 +21280,11 @@
   },
   "YGPA-189-9ecd674773719dc59ef17c42": {
    "doc_id": "YGPA-189",
-   "status": "approved",
-   "chunk_text_sha256": "9286d72916d039116afdedb709c0c4724242ee6e02f0624b2a1c283c2402629c",
-   "notes": []
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "cbc0c64245ab129034dbd7317941f4d6c506c82dd4b4b32fbc96d8520ab7e085",
+   "notes": [
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
   },
   "YGPA-190-844edcf56a731a53f3e3b3f0": {
    "doc_id": "YGPA-190",
@@ -21220,9 +21318,11 @@
   },
   "YGPA-195-693b2fd58be5a6b4931de8ed": {
    "doc_id": "YGPA-195",
-   "status": "approved",
-   "chunk_text_sha256": "d67182c4482a4a063e3afda2056ce50fafecae29a74c939848f1bdbe455013a7",
-   "notes": []
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "c1ea7e6a0426f2d46c6346521db58732f856a8839d2397519e9257cccf765867",
+   "notes": [
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
   },
   "YGPA-196-472c267c45191d480e0558a2": {
    "doc_id": "YGPA-196",
@@ -21232,9 +21332,11 @@
   },
   "YGPA-197-2eae89210ff735f6fd08af03": {
    "doc_id": "YGPA-197",
-   "status": "approved",
-   "chunk_text_sha256": "46ccf028e695270d7350f77e962b98b8fdba3d994eddfb7e6b97943c75920fc2",
-   "notes": []
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "8edb7408dd792dcdb1965a50cb774d99c22e43f430cd93f5953ca960949b9c39",
+   "notes": [
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
   },
   "YGPA-198-9c9c095728500168138ac01b": {
    "doc_id": "YGPA-198",
@@ -21244,9 +21346,11 @@
   },
   "YGPA-199-65774cadbbc08ed67710c728": {
    "doc_id": "YGPA-199",
-   "status": "approved",
-   "chunk_text_sha256": "81d4ee769c14fa3ee878192a3ff1db6e9dce0200c98d2d28edb4e04909304052",
-   "notes": []
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "fc071f11f4b4072558146a281a4cc4d1252386dd6bd40f01fe88e58a70328d70",
+   "notes": [
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
   },
   "YGPA-200-3a5b8fed59f40cd2e75d5fc2": {
    "doc_id": "YGPA-200",
@@ -21268,9 +21372,11 @@
   },
   "YGPA-203-dd7718122ee90aaa857b0f3b": {
    "doc_id": "YGPA-203",
-   "status": "approved",
-   "chunk_text_sha256": "d1b2f2bb67a188cebd612b1290f0416b943009bad90cf56272633278429d02d7",
-   "notes": []
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "364931d4210f5f69671afad0b0956621f7eb7fc0ff49371cd8b3866a17b296cc",
+   "notes": [
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
   },
   "YGPA-204-d52498f31829903663a7318b": {
    "doc_id": "YGPA-204",
@@ -21292,21 +21398,27 @@
   },
   "YGPA-207-09cfc6029d6b9cfdd59a6b1c": {
    "doc_id": "YGPA-207",
-   "status": "approved",
-   "chunk_text_sha256": "75ffd9f830ebdedc8fd83f2da4c59c29678eecac100fd0cf6575218c8532b4d4",
-   "notes": []
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "35e7175e193542058edef9b565058d89f1e7d611fc48511e5d21fc3a8302fc41",
+   "notes": [
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
   },
   "YGPA-208-1040d947953ee927f7114438": {
    "doc_id": "YGPA-208",
-   "status": "approved",
-   "chunk_text_sha256": "86613fd61d02e90300fa76ba1da649256b7a3d5e5a56963daa9d38b1aa5b37f4",
-   "notes": []
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "14b668d04f32c5b182cecacbfde9370c06dd95d47227ef426882e49668b94004",
+   "notes": [
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
   },
   "YGPA-209-1c555eb29f9efa6bdd6fdcc5": {
    "doc_id": "YGPA-209",
-   "status": "approved",
-   "chunk_text_sha256": "804a4f2cdc2545e47a75300a7fa6943fdd0c6bb0b6595dbfbb13ca9199856892",
-   "notes": []
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "2f422e46158d422c605882b8b8b7e1a304fc489c00f979c1a8cff51d4540e477",
+   "notes": [
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
   },
   "YGPA-210-f2814c9cc00b4b92f98fabde": {
    "doc_id": "YGPA-210",
@@ -21346,9 +21458,11 @@
   },
   "YGPA-216-617e8a8dffecc0c602ff4944": {
    "doc_id": "YGPA-216",
-   "status": "approved",
-   "chunk_text_sha256": "151fc6de49ff0c061c8196fdfc0e772214e0eece6c103ba4c025835fa0d47e48",
-   "notes": []
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "f51699e27a764645fefa98485bf112b5d9557b1db4d2b10dfdecbf1ad98ffd66",
+   "notes": [
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
   },
   "YGPA-217-2b6914b9f429738bd577960a": {
    "doc_id": "YGPA-217",
@@ -21382,9 +21496,11 @@
   },
   "YGPA-222-1de98a87e5ad9e746a13134f": {
    "doc_id": "YGPA-222",
-   "status": "approved",
-   "chunk_text_sha256": "a5c35ce91550f19714993895c3f5a8173bb05b7500301c6a6bc7bef2b0ea6224",
-   "notes": []
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "34f084ff486756ecabf2d926c13188de4a0b0d8bb4fccdf4962f157b77e0049f",
+   "notes": [
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
   },
   "YGPA-223-5c8a6b99c9058678e53fb3d0": {
    "doc_id": "YGPA-223",
@@ -21424,32 +21540,34 @@
   },
   "YGPA-229-ecc0e4320d2ea73f3c709400": {
    "doc_id": "YGPA-229",
-   "status": "approved",
-   "chunk_text_sha256": "0b6bdc00393725c839f06b60b0c624479b0c83540321c473a421f4cfd8493266",
-   "notes": []
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "f7ddc2cc966330556d8c39ba1bae0a948a7002f26ee85f617f26714da233f30d",
+   "notes": [
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
   },
   "YGPA-238-f7d6583ad290f8daecf1e43e": {
    "doc_id": "YGPA-238",
    "status": "approved_with_notes",
-   "chunk_text_sha256": "bb4232c632d1b6197d4132462cfa09967131f62309f15f2dffa69c68b020ba53",
+   "chunk_text_sha256": "dfc80bef69a26c50fa789e05a15b2a0fe4ffbec1bd4369d8ffe604e6fa47d382",
    "notes": [
-    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요"
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
    ]
   },
   "YGPA-239-118a87b448f60d380a34d688": {
    "doc_id": "YGPA-239",
    "status": "approved_with_notes",
-   "chunk_text_sha256": "db936d6291746842edc4b9898a9a736be841b62a1accc3695abca50e785e08a0",
+   "chunk_text_sha256": "cd63f49436f8da208b66c2f96664aadcecfc5e84cae05ddb9ab03b027089d330",
    "notes": [
-    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요"
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
    ]
   },
   "YGPA-240-af449e6c6cafd8b470089530": {
    "doc_id": "YGPA-240",
    "status": "approved_with_notes",
-   "chunk_text_sha256": "dcb693fc39b1a6457b733877cf02cbacbfeae9a69b30e2eec27b632023b36822",
+   "chunk_text_sha256": "5fbd3e8e2c7099bae80d96cf43a7afeafb634540e83436ee5b8694dad18d48d5",
    "notes": [
-    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요"
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
    ]
   },
   "YGPA-241-3d9d15906984ee9ef00034c5": {
@@ -21467,9 +21585,9 @@
   "YGPA-243-98ebf2eae63da427226cbda3": {
    "doc_id": "YGPA-243",
    "status": "approved_with_notes",
-   "chunk_text_sha256": "e459c489e120b3f7d281bfd3c4f5b5c1488781ee376115d313a6e3839d9be204",
+   "chunk_text_sha256": "6ae9393abf488d1a940d1705d9513dabdebc332dbd513b0584a8af7228dc04ff",
    "notes": [
-    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요"
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
    ]
   },
   "YGPA-244-fcce3e078216cc18f58cd3ff": {
@@ -21512,9 +21630,11 @@
   },
   "YGPA-250-b669e18c5cde34596ec36994": {
    "doc_id": "YGPA-250",
-   "status": "approved",
-   "chunk_text_sha256": "062f73defbd17033cb23e804a8f13c2f8ccc443b38ea7f3ed4db0ed54455741b",
-   "notes": []
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "b29ec8140a84380a3f32e02c7c7e0fa42946e2292957f17ca8721426d5c319e2",
+   "notes": [
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
   },
   "YGPA-251-677015d5d324d3fd79bdfe43": {
    "doc_id": "YGPA-251",
@@ -21585,24 +21705,26 @@
   "YGPA-262-2f85dfe73685feaf58230914": {
    "doc_id": "YGPA-262",
    "status": "approved_with_notes",
-   "chunk_text_sha256": "06d28fcbf5961af6f6207cd5847f0b06263f159444460b2fca7cdf5aa3bedea7",
+   "chunk_text_sha256": "2e5f2a65f7fd346d077aead4f03a316609897087fefc875f893da1e3a663714d",
    "notes": [
-    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요"
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
    ]
   },
   "YGPA-262-65847d14b2ee8d734e31411e": {
    "doc_id": "YGPA-262",
    "status": "approved_with_notes",
-   "chunk_text_sha256": "85b343ed4f90fd470382f4e0b8e99e371cd525c69ac46b27054927c0eae6e9b9",
+   "chunk_text_sha256": "b13e7f784a2c4e7a8e863220dab30d029d5cb818052fe9772188a49ac17524ab",
    "notes": [
-    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요"
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
    ]
   },
   "YGPA-263-57a6d05669304e31ce1cb4e5": {
    "doc_id": "YGPA-263",
-   "status": "approved",
-   "chunk_text_sha256": "8dd5ca2eab253bd91fa8afe03c57d4c3840c6150ecfea2ba21393b54a9350bab",
-   "notes": []
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "9bf769752f3bdb361fc382637edff12e45b863e8624fddd048c0bc62a75efe15",
+   "notes": [
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
   },
   "YGPA-264-060645e59b249c12e446947f": {
    "doc_id": "YGPA-264",
@@ -21720,9 +21842,11 @@
   },
   "YGPA-315-e50e8a2aa567cd3fba616c8f": {
    "doc_id": "YGPA-315",
-   "status": "approved",
-   "chunk_text_sha256": "aed4bf748cdce6aa32e050ac78926855c1989cb9230597398015769b166934fb",
-   "notes": []
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "68024f1ce1ed8684e5283b38e891213b115eab7a7c35f3e8e5704704ad8a410a",
+   "notes": [
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
   },
   "YGPA-316-0c499d30066199a6bf309bf8": {
    "doc_id": "YGPA-316",
@@ -21768,21 +21892,27 @@
   },
   "YGPA-322-0474220e7d48a6571a91be64": {
    "doc_id": "YGPA-322",
-   "status": "approved",
+   "status": "approved_with_notes",
    "chunk_text_sha256": "2f480eefaf1a717022cb1f597e072b1d87f1f4a77490707a8155646973953527",
-   "notes": []
+   "notes": [
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
   },
   "YGPA-322-246a2d26f136ba73b2788744": {
    "doc_id": "YGPA-322",
-   "status": "approved",
+   "status": "approved_with_notes",
    "chunk_text_sha256": "b96595b238e1b2516a30cfda63a82d1d3aaec476ad24b47f2dec2aa237aac74b",
-   "notes": []
+   "notes": [
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
   },
   "YGPA-322-52a7942de124c8c2aa0abafc": {
    "doc_id": "YGPA-322",
-   "status": "approved",
-   "chunk_text_sha256": "19017e46d988a45a6f67a1b5d3f616c2c21a87f08cb844fcff96358377b3fc73",
-   "notes": []
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "03597b2c82779c7bbde2492c96c8f230c6d814bae4910e58ea74577c9448fc5a",
+   "notes": [
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
   },
   "YGPA-323-1c6868e8cdd717b584b9d741": {
    "doc_id": "YGPA-323",
@@ -21804,27 +21934,35 @@
   },
   "YGPA-324-11b62c1ac414baa39b5b5619": {
    "doc_id": "YGPA-324",
-   "status": "approved",
-   "chunk_text_sha256": "187932f1bbca949b7171ce4821ca3d1cb55f394f759ee3353ca8f01c4820343a",
-   "notes": []
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "0640c4c2193217de0242c2eee5092d8fd05fc20a39e148f20ae1b74fe31757c2",
+   "notes": [
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
   },
   "YGPA-324-79d2792a43595aa1495b8c2d": {
    "doc_id": "YGPA-324",
-   "status": "approved",
+   "status": "approved_with_notes",
    "chunk_text_sha256": "de5cb7a0d574b1d17dc23555de6bd8ae69709d9caf8e4838d111f97ae6ee995a",
-   "notes": []
+   "notes": [
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
   },
   "YGPA-324-9da400a633cf788d8fd44862": {
    "doc_id": "YGPA-324",
-   "status": "approved",
+   "status": "approved_with_notes",
    "chunk_text_sha256": "f1d210772a7480d1eb47e46172632bf5e562c2045a81361f3f649bf110ffa459",
-   "notes": []
+   "notes": [
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
   },
   "YGPA-324-a33992d5246784e5953ee91d": {
    "doc_id": "YGPA-324",
-   "status": "approved",
+   "status": "approved_with_notes",
    "chunk_text_sha256": "cde4d2d1b9d1937f0c8f07613dc3be27c15eeb89b19d6475bfda935046fce2bb",
-   "notes": []
+   "notes": [
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
   },
   "YGPA-325-e92a643a00cf2163a129d888": {
    "doc_id": "YGPA-325",
@@ -21940,6 +22078,14 @@
    "chunk_text_sha256": "f5bdf6c15ab23bd21a9149c7c254db519cb82b46dd5eed04101a607803324c8d",
    "notes": []
   },
+  "YGPA-415-3eb2777543191ff30ee320c6": {
+   "doc_id": "YGPA-415",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "2312265d8bcd412a641909c2aa02bda802259d6148d02f441287c46a8b1b67bb",
+   "notes": [
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
   "YGPA-416-3c9a6d8ec9651d9799ff05c3": {
    "doc_id": "YGPA-416",
    "status": "approved",
@@ -21978,15 +22124,19 @@
   },
   "YGPA-422-7c4dad7009992ed24204d63a": {
    "doc_id": "YGPA-422",
-   "status": "approved",
+   "status": "approved_with_notes",
    "chunk_text_sha256": "4dcaf96fab03fe27415bfc2ba7ddff2fb714d4b1ad8d1e465e71c1f13dc7cd6a",
-   "notes": []
+   "notes": [
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
   },
   "YGPA-422-ea51b57c759bb87d92252c83": {
    "doc_id": "YGPA-422",
-   "status": "approved",
-   "chunk_text_sha256": "3f15dbb705f8b729dedeadad6fd77dc587869c65a1678a1b912a67e1899eeeee",
-   "notes": []
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "938e1ceaddf1c28be801304d55b3ab82ba749ce56f55724e32c48fcdef87aa51",
+   "notes": [
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
   },
   "YGPA-423-dd055e1a4e0d3a1ba5a64376": {
    "doc_id": "YGPA-423",
@@ -21996,15 +22146,19 @@
   },
   "YGPA-424-742c88f84a48d5851bfcc2ae": {
    "doc_id": "YGPA-424",
-   "status": "approved",
-   "chunk_text_sha256": "3c86beba8fa1fccde8138295d116430a60eaee2ab7914755ad7da33fe1d0ce65",
-   "notes": []
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "c77a0a0f45733b03c80f2c7fb2856201ab36c0fb67b0dfa9618d6f71da4efe44",
+   "notes": [
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
   },
   "YGPA-424-a55ae0212c64db711fd1c128": {
    "doc_id": "YGPA-424",
-   "status": "approved",
+   "status": "approved_with_notes",
    "chunk_text_sha256": "cbabc3f2b30ef7f3073e0be3d0cd7300ac13d69b51fc56321431d13a64f1faf5",
-   "notes": []
+   "notes": [
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
   },
   "YGPA-425-a4d90ab94ce2be283b899884": {
    "doc_id": "YGPA-425",
@@ -22108,6 +22262,14 @@
    "chunk_text_sha256": "196d22c51b9eed882b51d02d3ebd0ed84e927c538740e2bc293aa9008ce7374a",
    "notes": []
   },
+  "YGPA-515-eb6d25c57818307a46edd452": {
+   "doc_id": "YGPA-515",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "336e342fa01b1d1eaa0f512d38234ad2d031a82f8857900b5a2e94a368c4a823",
+   "notes": [
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
   "YGPA-516-264ad8d5c555d316a327b795": {
    "doc_id": "YGPA-516",
    "status": "approved",
@@ -22146,15 +22308,19 @@
   },
   "YGPA-522-0fbc3c60a45200834e6dfb43": {
    "doc_id": "YGPA-522",
-   "status": "approved",
-   "chunk_text_sha256": "a0f7f5ac8d5fb95b94e09c7cdd8703323aba1d377ad6618923a85e4d5d85c00a",
-   "notes": []
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "3492a0ea9562345e1b78cd4a185d662292ef13b6744d645c4688ce73dceaa804",
+   "notes": [
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
   },
   "YGPA-522-3d68e0796db4e78c1e089cef": {
    "doc_id": "YGPA-522",
-   "status": "approved",
+   "status": "approved_with_notes",
    "chunk_text_sha256": "ecc5d65a6c25a01a8db563dbd83a0496cfdd9fb64b7deecbdce2b4b9b6a7da00",
-   "notes": []
+   "notes": [
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
   },
   "YGPA-523-9cc3b725cc2c31048ac19032": {
    "doc_id": "YGPA-523",
@@ -22164,15 +22330,19 @@
   },
   "YGPA-524-2eca623c9036b5b0d12007e6": {
    "doc_id": "YGPA-524",
-   "status": "approved",
+   "status": "approved_with_notes",
    "chunk_text_sha256": "e8b9b4545fe1f27dc7579a0a41bea6a3fb7f4651073af88f8841de8415b4924a",
-   "notes": []
+   "notes": [
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
   },
   "YGPA-524-df0b99db8a58a4487ed2499d": {
    "doc_id": "YGPA-524",
-   "status": "approved",
-   "chunk_text_sha256": "f33784305657ba9ec4ae61d718a389a1f85c685d7224e0fd6002d262a3fc66c9",
-   "notes": []
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "4c5c2511cb3dc4a9922149562321908ddb8dfe5a161bece272e7bca2766603ec",
+   "notes": [
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
   },
   "YGPA-525-51c5c90e47b95212deafbec4": {
    "doc_id": "YGPA-525",
@@ -22362,6 +22532,15 @@
     "게시일 기준 내용 — 지금도 유효한지 확인 필요"
    ]
   },
+  "YGPA-B189-31F22EE9-57add69c5fc03a843ac73576": {
+   "doc_id": "YGPA-B189-31F22EE9",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "f51109a493a9ec77e6edbb8ff684ccadc779c173c1d6e4dcc395b0f91fc11e4a",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
   "YGPA-B189-31F22EE9-5c3c597fe91dbece3e3b6c5d": {
    "doc_id": "YGPA-B189-31F22EE9",
    "status": "approved_with_notes",
@@ -22418,13 +22597,30 @@
     "게시일 기준 내용 — 지금도 유효한지 확인 필요"
    ]
   },
+  "YGPA-B189-E39CB7C9-47569e8b6b3adcbc862ba6b3": {
+   "doc_id": "YGPA-B189-E39CB7C9",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "d1952b7b8c54b24cad7f8301b96f3b76076242db82804f8dd4ea161017583e62",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B189-E39CB7C9-622e31c601287d3f4a504fbd": {
+   "doc_id": "YGPA-B189-E39CB7C9",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "fd60e59d88312e22975777433f9bac69c5101f7f25b0c1ed4aae3dfbf6ebe637",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
   "YGPA-B189-E39CB7C9-625738384bf879c13dbd2429": {
    "doc_id": "YGPA-B189-E39CB7C9",
    "status": "approved_with_notes",
-   "chunk_text_sha256": "c52c317a9f540b28a5fd1059dc039d1a58fc64613d17d554cad9a81a6de7c96d",
+   "chunk_text_sha256": "c96ad65e4da05674fe63e0cbf7b5982d809f66ddcaeaabcf0ff537f601559aef",
    "notes": [
-    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
-    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요"
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요"
    ]
   },
   "YGPA-B191-12257E48-f4fa6b115fe8da4e129062bd": {
@@ -22467,13 +22663,21 @@
     "게시일 기준 내용 — 지금도 유효한지 확인 필요"
    ]
   },
+  "YGPA-B191-439E4743-5241d2073b99a6af93b0db08": {
+   "doc_id": "YGPA-B191-439E4743",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "0b37fa6761dc36d047a1d417577a8037c74901d36a9ef2ab501fc8b0726e0609",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
   "YGPA-B191-439E4743-ac7bc1a23595d8328fb02f65": {
    "doc_id": "YGPA-B191-439E4743",
    "status": "approved_with_notes",
-   "chunk_text_sha256": "8fa6e9f37a226083ecfe9ac59c59db964ef795bfdf2a3f08d3116f063e6ae210",
+   "chunk_text_sha256": "ccc09fdcc7c07a16495e14e58d4582416928a5cd2d8e4c241b9acd15529a8e6f",
    "notes": [
-    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
-    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요"
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요"
    ]
   },
   "YGPA-B191-4E337AC7-82fce3155c65a3c4cb5dd9ab": {
@@ -22564,13 +22768,21 @@
     "게시일 기준 내용 — 지금도 유효한지 확인 필요"
    ]
   },
+  "YGPA-B191-8A4DB942-70681f691222070a07b2ff9e": {
+   "doc_id": "YGPA-B191-8A4DB942",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "2878ef3ee4236bc4e3836e9bdbbe12ab027ec493b3f5a64bbb3d419608d5b90e",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
   "YGPA-B191-8A4DB942-ff8172817941693af2484ef1": {
    "doc_id": "YGPA-B191-8A4DB942",
    "status": "approved_with_notes",
-   "chunk_text_sha256": "78e2b52f5f664bed9a6b0be79d311a9564c3a982d2601bc7e640844ae92942b1",
+   "chunk_text_sha256": "e13f9915461d66c5547ee7ec09a06936d262e039a141c917f969d8dadf245203",
    "notes": [
-    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
-    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요"
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요"
    ]
   },
   "YGPA-B191-914F7EBB-660024c3f1a3f796a56c7989": {
@@ -22592,10 +22804,18 @@
   "YGPA-B191-A7673A13-44bd18b0defdcddfaad9b2ba": {
    "doc_id": "YGPA-B191-A7673A13",
    "status": "approved_with_notes",
-   "chunk_text_sha256": "1870dbfc6e398be6d3ce73304ad7f1a765c2cf15f9c9e80fd7a12b21c2ee33da",
+   "chunk_text_sha256": "738a54de786806c996e65675e34874dcf2e27f102e0682a24cd23fe267140442",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요"
+   ]
+  },
+  "YGPA-B191-A7673A13-a394b813f922a28c4d40138b": {
+   "doc_id": "YGPA-B191-A7673A13",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "7893868b681a1946768897acfe6c21a6c82669069a807224b07d8584c6d6aaa6",
    "notes": [
     "게시일 기준 내용 — 지금도 유효한지 확인 필요",
-    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요"
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
    ]
   },
   "YGPA-B191-A91C8E38-d987f6f102f68070f8a9af5b": {
@@ -22606,13 +22826,75 @@
     "게시일 기준 내용 — 지금도 유효한지 확인 필요"
    ]
   },
+  "YGPA-B191-ACC49E40-09617ea7958d87e7a1dc4f8e": {
+   "doc_id": "YGPA-B191-ACC49E40",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "1a21e9bcf2aa379d7519bff6ba47c2dca1228fa4dff650ddf6fd3bddd3e50ac1",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B191-ACC49E40-18f42059a3cae25cfa263b6a": {
+   "doc_id": "YGPA-B191-ACC49E40",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "3db984db2391e908ca407ede4276cd6704da1de126e75581862567e601c2341d",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B191-ACC49E40-4a938310ea779b86c8599d9e": {
+   "doc_id": "YGPA-B191-ACC49E40",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "62e1e6cf0d8da5f15f96b4e2188359013f40575479ec770fd418b334c0dae90b",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B191-ACC49E40-56788cfce7b07fb302ee2f8e": {
+   "doc_id": "YGPA-B191-ACC49E40",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "22b19ddbac5d49cbf32027f2a5993dfe2ac732e1273ac6e16ba5a25d5e46a262",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
   "YGPA-B191-ACC49E40-6616e20b34fa6803ad077911": {
    "doc_id": "YGPA-B191-ACC49E40",
    "status": "approved_with_notes",
-   "chunk_text_sha256": "0f5a133c9d3e68c9df9f832f47f4704c7178037b45c9141a269a27b5c4377524",
+   "chunk_text_sha256": "22fb6b63ca0e21bee5e0e8314921d783ad1977af30d8f91db6ed3602539728ed",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요"
+   ]
+  },
+  "YGPA-B191-ACC49E40-6837c67961ea5f9967828bf3": {
+   "doc_id": "YGPA-B191-ACC49E40",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "ad00de3f3cd89c0b209161d862fab30d816336a84f333ed071d6ceefac2b7418",
    "notes": [
     "게시일 기준 내용 — 지금도 유효한지 확인 필요",
-    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요"
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B191-ACC49E40-77ded68f686c5809505539ea": {
+   "doc_id": "YGPA-B191-ACC49E40",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "7555f13165a186b81fdbec289984a31667324a27c3f827c53c9250737cf2383d",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B191-ACC49E40-865ba05a302305c3083ff923": {
+   "doc_id": "YGPA-B191-ACC49E40",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "de5a451497d160cd028b3bc236e6a2be1eb902c379635f150af4643e9c08a06d",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
    ]
   },
   "YGPA-B191-B09E6654-fe31ced6087c3db678f30d74": {
@@ -24406,19 +24688,53 @@
   "YGPA-B213-0A42FF55-60f58ac68cce2aa35d4f5329": {
    "doc_id": "YGPA-B213-0A42FF55",
    "status": "approved_with_notes",
-   "chunk_text_sha256": "9df0bb3638f959c2e0304b87d5608350103a855eddca69a23ea5029182de1b06",
+   "chunk_text_sha256": "6fd91a5cc8474b04253a99caa60c9ff5002b0e04d797cc9a40cae80e61c0a78f",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요"
+   ]
+  },
+  "YGPA-B213-0A42FF55-9a4ed0484e8839a44b7f8f5d": {
+   "doc_id": "YGPA-B213-0A42FF55",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "87a5536230642e4530dc6a83bb8ec4b57df56078735ade644680a57df57fc575",
    "notes": [
     "게시일 기준 내용 — 지금도 유효한지 확인 필요",
-    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요"
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
    ]
   },
   "YGPA-B213-0C3170B6-2e88c1c373b13b16635e6d98": {
    "doc_id": "YGPA-B213-0C3170B6",
    "status": "approved_with_notes",
-   "chunk_text_sha256": "0e7eb5ff12ef3bd6ab6c4959dbb29c8f0287788dafa4658b3624841941db8da6",
+   "chunk_text_sha256": "fea5a4d91dae7dd9af6fcb10defe99e7697925f36cc2195c3bf2140145fb648a",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요"
+   ]
+  },
+  "YGPA-B213-0C3170B6-a308e6a9671e0cc47f2ebe02": {
+   "doc_id": "YGPA-B213-0C3170B6",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "b5818dd4f545f7fd903477401d7a06980e322148173118795f8499e3935bce9e",
    "notes": [
     "게시일 기준 내용 — 지금도 유효한지 확인 필요",
-    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요"
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B213-0C3170B6-c20ba7dd915926cf3754e3ff": {
+   "doc_id": "YGPA-B213-0C3170B6",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "0cee97ce8c1783a5bc84f0a43eb5ad76e685a360651a38e34a3cf6afad42c313",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B213-15C6DBBA-3e48c83836420e9a1504338f": {
+   "doc_id": "YGPA-B213-15C6DBBA",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "8aecabe352e4845e1cfb2ed8b9b3e03cc8a3dfc9b02e05ed47b21aa37ad35c85",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
    ]
   },
   "YGPA-B213-15C6DBBA-4582321d2db2d2b01982e5c6": {
@@ -24432,10 +24748,27 @@
   "YGPA-B213-1C6CCECD-08d11b52dac6aef47fefcd6b": {
    "doc_id": "YGPA-B213-1C6CCECD",
    "status": "approved_with_notes",
-   "chunk_text_sha256": "42e981e0206138e214847f16bcad0813b1314b7d4039fcf4940524180918871e",
+   "chunk_text_sha256": "15912f6cf2077f532cdd2c76ca517e49ee48c7b1ef193bd8832ede2b8ffb8682",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요"
+   ]
+  },
+  "YGPA-B213-1C6CCECD-709c6547e47463e98567c6ce": {
+   "doc_id": "YGPA-B213-1C6CCECD",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "34467144556c1f4071c4599817f7f58ef16d924cb1424fa9be239b6ec99e85a0",
    "notes": [
     "게시일 기준 내용 — 지금도 유효한지 확인 필요",
-    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요"
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B213-1C6CCECD-c5e41382f8fc5cf840f4d17d": {
+   "doc_id": "YGPA-B213-1C6CCECD",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "ece5b612220a277735f18fee2ee7fb6afb0713a498a5dbf4f5954016805f6432",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
    ]
   },
   "YGPA-B213-22276097-beb5c8268231a5a37bbe0f95": {
@@ -24462,12 +24795,57 @@
     "게시일 기준 내용 — 지금도 유효한지 확인 필요"
    ]
   },
+  "YGPA-B213-28032996-7bdded595bf3ec6e1feb3f88": {
+   "doc_id": "YGPA-B213-28032996",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "de71a300c4debf6413bd0283d51e2023a284a1902c70fafeaea9b7d87f640f63",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B213-28032996-d792d115e8d1c40f82459f84": {
+   "doc_id": "YGPA-B213-28032996",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "13984b74c2bbfdbb2755029f1700d79df13edac56647c9b93e6c9537d62cc85e",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
   "YGPA-B213-3365AF6A-126edb26d64ac356422b7d26": {
    "doc_id": "YGPA-B213-3365AF6A",
    "status": "approved_with_notes",
    "chunk_text_sha256": "9d7544cb69b40ac35307afaa0269cee0b1305258226fded974d95a53fbc11dfb",
    "notes": [
     "게시일 기준 내용 — 지금도 유효한지 확인 필요"
+   ]
+  },
+  "YGPA-B213-3365AF6A-e45439a37d40dae4d45245c6": {
+   "doc_id": "YGPA-B213-3365AF6A",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "2116c7c5f995d0facb2836d658c09ddd20dc340eb8f3b30fce11c2ffe043af77",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B213-3365AF6A-efe7890d2e04c1c765a15519": {
+   "doc_id": "YGPA-B213-3365AF6A",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "16c8196f86a521e1a5fe57bc95341b9b584e78bb2975d42786942d1fa0716bd8",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B213-3C67CED5-8ef190b3ea6650570f46c041": {
+   "doc_id": "YGPA-B213-3C67CED5",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "bb4bdb069ab297136aaab0655128e96a3c4dd36d425e48228c91f0821bf632e2",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
    ]
   },
   "YGPA-B213-3C67CED5-aafbd434e74d0840177cbd0f": {
@@ -24478,22 +24856,65 @@
     "게시일 기준 내용 — 지금도 유효한지 확인 필요"
    ]
   },
+  "YGPA-B213-43E8852D-2231ffd5ec96e78223d49501": {
+   "doc_id": "YGPA-B213-43E8852D",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "892a2e14e9b72e2df10e37ef0426b9396b02ae2b159dee098d6718751db7869e",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
   "YGPA-B213-43E8852D-adcdb9e383101660405473bb": {
    "doc_id": "YGPA-B213-43E8852D",
    "status": "approved_with_notes",
-   "chunk_text_sha256": "26cadb45d8bd7bce409af93a757dd3b39030c5814829bc1eb9648adda5c9024f",
+   "chunk_text_sha256": "594c3288c692d46f030288a5cbb5429f701a41fdc8043871946f7be222525a8f",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요"
+   ]
+  },
+  "YGPA-B213-48EB576E-1934f66abb129929d2c13eab": {
+   "doc_id": "YGPA-B213-48EB576E",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "bb122ae8eaa7c8f3c2453780529fb226e7b7317a1cc51a242596eed77dba3f85",
    "notes": [
     "게시일 기준 내용 — 지금도 유효한지 확인 필요",
-    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요"
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
    ]
   },
   "YGPA-B213-48EB576E-6558c180dc103a5b1291dbac": {
    "doc_id": "YGPA-B213-48EB576E",
    "status": "approved_with_notes",
-   "chunk_text_sha256": "f94197a28a87fada2cb8a537d02d8aa2779e9537bddf65a7ca8663cef8641f50",
+   "chunk_text_sha256": "64ee120560511934acc9b8cfa75075511193d3503ad10eb7fcfdb7447568d22d",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요"
+   ]
+  },
+  "YGPA-B213-48EB576E-abfa7971982f9c2446b11560": {
+   "doc_id": "YGPA-B213-48EB576E",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "8b63ac4b05e4de3d2a56e235a8430513671411142fae47f2a657a4c424272be5",
    "notes": [
     "게시일 기준 내용 — 지금도 유효한지 확인 필요",
-    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요"
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B213-48EB576E-d8bcd7498b62bf936ab27fbf": {
+   "doc_id": "YGPA-B213-48EB576E",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "6bdf6773a68d7ae18ed976eb288e34f0fe38d5bba32f0745e0ce15eff0bdd49d",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B213-48EB576E-fcd7798fef84aa6328ec4026": {
+   "doc_id": "YGPA-B213-48EB576E",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "72b9b9566fc7d135caaf609a09d24b6be50c9ea17a49f083a71ceb5ec5a4c4aa",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
    ]
   },
   "YGPA-B213-4AAE4EDB-a1879fa8ded2d6b75e44fa09": {
@@ -24504,12 +24925,39 @@
     "게시일 기준 내용 — 지금도 유효한지 확인 필요"
    ]
   },
+  "YGPA-B213-4AAE4EDB-fa289c36b3f7c7de55436e75": {
+   "doc_id": "YGPA-B213-4AAE4EDB",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "31d468400a9c063883d9f47964625516282a82c07a3cc248b0c49f13123a437a",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
   "YGPA-B213-4BD9EBB8-39751df2dfaf298ce582929f": {
    "doc_id": "YGPA-B213-4BD9EBB8",
    "status": "approved_with_notes",
    "chunk_text_sha256": "fe430955146c81fcdc0f85407066e28b395069a2aa14f96bec1807850900c4f5",
    "notes": [
     "게시일 기준 내용 — 지금도 유효한지 확인 필요"
+   ]
+  },
+  "YGPA-B213-4BD9EBB8-60730a82b8a1fe44b3f634f9": {
+   "doc_id": "YGPA-B213-4BD9EBB8",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "155e2db3694fef9a4215c1019ae5e7ca263c374196be53fef25a473a53645c0f",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B213-4BD9EBB8-92fad53a9417be946824d064": {
+   "doc_id": "YGPA-B213-4BD9EBB8",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "609c07ca6fdda694da58770d2a6f4070ba91527fe03db4afc39607101ef41561",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
    ]
   },
   "YGPA-B213-4D0C1387-7d84b1569f57bc1072e90361": {
@@ -24520,6 +24968,15 @@
     "게시일 기준 내용 — 지금도 유효한지 확인 필요"
    ]
   },
+  "YGPA-B213-4D0C1387-ff54afe1101bedc90089fccf": {
+   "doc_id": "YGPA-B213-4D0C1387",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "d1c6b03c09521234adc8882fdcd6cd9581293896583cb665d37830aae7a98dc2",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
   "YGPA-B213-52C50A67-1fa4c787f4838acee685d0c8": {
    "doc_id": "YGPA-B213-52C50A67",
    "status": "approved_with_notes",
@@ -24528,13 +24985,21 @@
     "게시일 기준 내용 — 지금도 유효한지 확인 필요"
    ]
   },
+  "YGPA-B213-53141C2D-02633a41714a979ea1174129": {
+   "doc_id": "YGPA-B213-53141C2D",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "a8eec5f6dbeb2c0a2dfa2196c6907544026ea13c3f7688a81434bbd28e826a7f",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
   "YGPA-B213-53141C2D-7d6561e706a52afff5ff1df3": {
    "doc_id": "YGPA-B213-53141C2D",
    "status": "approved_with_notes",
-   "chunk_text_sha256": "a9c17e871d2f2c33b23c629844bb319499af0b82097d53789bf78d43226fd1d8",
+   "chunk_text_sha256": "67be6fb52d288bf943cc48585cea942354862aacd536551cd35b32218e38612d",
    "notes": [
-    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
-    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요"
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요"
    ]
   },
   "YGPA-B213-5C37750D-7cb59dd1c6e389446330d97e": {
@@ -24545,12 +25010,30 @@
     "게시일 기준 내용 — 지금도 유효한지 확인 필요"
    ]
   },
+  "YGPA-B213-5C37750D-c4484e4d0140946df58118f5": {
+   "doc_id": "YGPA-B213-5C37750D",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "8e4b3559a57de4bd16afd9de0534a4897aa5740d3bd5a499c48126a98207b5d0",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
   "YGPA-B213-5F4B8B2B-07000481dad45cb1b28f4808": {
    "doc_id": "YGPA-B213-5F4B8B2B",
    "status": "approved_with_notes",
    "chunk_text_sha256": "98850d2dea0e48ee4186c648aa754978a762d4c6d05c995dc10f046b49532cc7",
    "notes": [
     "게시일 기준 내용 — 지금도 유효한지 확인 필요"
+   ]
+  },
+  "YGPA-B213-603CE15F-516a739a51eb5ae7a4625768": {
+   "doc_id": "YGPA-B213-603CE15F",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "06f69a6e06363bc0988708726bf36c2bbd39e35acdfc8fa528ae966918aa61fc",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
    ]
   },
   "YGPA-B213-603CE15F-9ba6ed1d665a4a0abaac3318": {
@@ -24572,19 +25055,71 @@
   "YGPA-B213-63FDBE91-455d166f1e89883649fc8e6a": {
    "doc_id": "YGPA-B213-63FDBE91",
    "status": "approved_with_notes",
-   "chunk_text_sha256": "9ede0e790abbeecf6fce85ca75712c09d07c1c37f2ada7387d1f7fde35b45eb4",
+   "chunk_text_sha256": "87523aea74de952d78d9cb733b6619703edd0bdb2d3b0bfbcd0858bf7f671770",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요"
+   ]
+  },
+  "YGPA-B213-63FDBE91-66d0c4a03fe37e5455e1193c": {
+   "doc_id": "YGPA-B213-63FDBE91",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "dfb4f132d728bd86d2d9304893f122b6a57060fcb415ff54abc19a9cee4c6fc2",
    "notes": [
     "게시일 기준 내용 — 지금도 유효한지 확인 필요",
-    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요"
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B213-63FDBE91-f99f020a2ef6a430efefa493": {
+   "doc_id": "YGPA-B213-63FDBE91",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "5f06f53efee90901a9101b0a82584fde67666a8cadd43841fa3171f3f108f7fd",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
    ]
   },
   "YGPA-B213-6DEEDCB2-38beac38723c73b4feff8931": {
    "doc_id": "YGPA-B213-6DEEDCB2",
    "status": "approved_with_notes",
-   "chunk_text_sha256": "86f41357b05443ff94639854774a1a16a53cc1c222f57a3d42fe79bedde02347",
+   "chunk_text_sha256": "1a296b3a312c0c6567316468abace1047ea92a0a07af81f9777fb613883f2253",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요"
+   ]
+  },
+  "YGPA-B213-6DEEDCB2-59b0594e37ad52a6652ef359": {
+   "doc_id": "YGPA-B213-6DEEDCB2",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "0962e623b3843038289ce696f0575ca906b4f5c7c52d2739d7cf6823d4570157",
    "notes": [
     "게시일 기준 내용 — 지금도 유효한지 확인 필요",
-    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요"
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B213-6DEEDCB2-74741929d4519738e4ed37ff": {
+   "doc_id": "YGPA-B213-6DEEDCB2",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "81f8ba661a54fd773db2fdcfc1a3415c8acd2d59ca3bdcb1731fe3d9c3dc6f44",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B213-6DEEDCB2-8afa2157b2d5f635c9135801": {
+   "doc_id": "YGPA-B213-6DEEDCB2",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "f4a5bfe7b2e57e797609acefc49a680707ac29794e92e9ab8b390567ca29b167",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B213-6DEEDCB2-c0b3c37f528f6d2cdbcdf999": {
+   "doc_id": "YGPA-B213-6DEEDCB2",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "759fa5203af415d29b87beba0c9b14b2027ea09b801671f1c472124b39e7f74c",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
    ]
   },
   "YGPA-B213-786A90E3-c52deac41a13e47bc12e5451": {
@@ -24595,12 +25130,48 @@
     "게시일 기준 내용 — 지금도 유효한지 확인 필요"
    ]
   },
+  "YGPA-B213-786A90E3-cfc77c665f7d14751cd19166": {
+   "doc_id": "YGPA-B213-786A90E3",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "aa9c572c8a6ab544dcc57566065cf007d55545887f5b66cec7aee1714a47922d",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
   "YGPA-B213-9519C483-0417145faaee7579135dbf9d": {
    "doc_id": "YGPA-B213-9519C483",
    "status": "approved_with_notes",
    "chunk_text_sha256": "577c377d062533a0fff9f54c6668522fdfda32fe94dac7263d5858540ee3c453",
    "notes": [
     "게시일 기준 내용 — 지금도 유효한지 확인 필요"
+   ]
+  },
+  "YGPA-B213-9519C483-7ad0f747083510a80c21383f": {
+   "doc_id": "YGPA-B213-9519C483",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "7a8108a6df9e4996147843ebe7501bd5f16fa683ab71fd1ad47b8cd5d73ef1b5",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B213-96228027-105fb72fc8bbc30091dc4cf8": {
+   "doc_id": "YGPA-B213-96228027",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "7cd928dd4796c3eb3fda1ecdb857c3d67d9b58af86c17e11be27dcedcf63bdcf",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B213-96228027-3413b6f8fc3b9f41bf974283": {
+   "doc_id": "YGPA-B213-96228027",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "810310012841f269e3498006079b938413e0c59c8325f7ae21b6dd06f736c6dd",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
    ]
   },
   "YGPA-B213-96228027-ebc22b0201e89324fc016460": {
@@ -24627,12 +25198,48 @@
     "게시일 기준 내용 — 지금도 유효한지 확인 필요"
    ]
   },
+  "YGPA-B213-AB9DC44F-911d399923c6e1364ca36264": {
+   "doc_id": "YGPA-B213-AB9DC44F",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "f6b515b535f5f01f21c38253d85c812acedb012bab73d1257f116efe4fadc48c",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B213-AB9DC44F-a2bf3f5b26f7647d0d64eba3": {
+   "doc_id": "YGPA-B213-AB9DC44F",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "60b3e4c5841725f64bdc7eedac6fba50710031e86e598fcf39cc3f39d8bb81c3",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
   "YGPA-B213-AEC0F26B-52349c038e95d458a5b48964": {
    "doc_id": "YGPA-B213-AEC0F26B",
    "status": "approved_with_notes",
    "chunk_text_sha256": "5f81123a421446ab545bcfe193ad781acd6935a1370666f242fc65a43a801109",
    "notes": [
     "게시일 기준 내용 — 지금도 유효한지 확인 필요"
+   ]
+  },
+  "YGPA-B213-B037DB93-4d26cd9da18ff07fc9aa27ee": {
+   "doc_id": "YGPA-B213-B037DB93",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "ebb8e6d99fb47331df73c982a909e9a7304d2c4bb2cf700f343211dd55a95aca",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B213-B037DB93-70431663fd220a49f4bf9fb6": {
+   "doc_id": "YGPA-B213-B037DB93",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "4b95c912c1ffe16f013e45e0747fa6818ccacbc9fa3111bb34ff0350814f2eda",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
    ]
   },
   "YGPA-B213-B037DB93-d7a706de6c10972d33d4ccd9": {
@@ -24643,13 +25250,39 @@
     "게시일 기준 내용 — 지금도 유효한지 확인 필요"
    ]
   },
+  "YGPA-B213-CF32AC1F-1ffadd6972428fdf238f7cea": {
+   "doc_id": "YGPA-B213-CF32AC1F",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "6a708171c68d6becc80a0a42925013e09964e89fe4ed1886b359125ed2d4e53f",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B213-CF32AC1F-4ddec4252b5f210ba71c80d6": {
+   "doc_id": "YGPA-B213-CF32AC1F",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "79a2ae4f9a21b13e3cc032a35cd9c375104e9652ba89aa2eb56494267819d145",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B213-CF32AC1F-d516f5fc78e714fd0ff50193": {
+   "doc_id": "YGPA-B213-CF32AC1F",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "8d07c2db6ec94e317bc39998b7368ef77d3f852d9b4d9c999bfce19390471a34",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
   "YGPA-B213-CF32AC1F-ec64790f8ba2948094c70f95": {
    "doc_id": "YGPA-B213-CF32AC1F",
    "status": "approved_with_notes",
-   "chunk_text_sha256": "0270c160a32620dd02492e182be9f46d62b98b62b4327ec61c248f6bafeed767",
+   "chunk_text_sha256": "48ff45b4cfb9d065794682940d5cce238fdb22b5314e508a1ef70f594c76a040",
    "notes": [
-    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
-    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요"
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요"
    ]
   },
   "YGPA-B213-D73E508F-fc4d2a9a9ee5de0d341b4f8c": {
@@ -24668,6 +25301,15 @@
     "게시일 기준 내용 — 지금도 유효한지 확인 필요"
    ]
   },
+  "YGPA-B213-D74E1B90-a32045fddd3ffdbbb9e5f011": {
+   "doc_id": "YGPA-B213-D74E1B90",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "b16e494b60976ddcaadecc9255754df5d9200bb7bde564a458f06a2ae064bea7",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
   "YGPA-B213-D78DD87F-2c63ad1264f47e07ae85d2bd": {
    "doc_id": "YGPA-B213-D78DD87F",
    "status": "approved_with_notes",
@@ -24684,12 +25326,57 @@
     "게시일 기준 내용 — 지금도 유효한지 확인 필요"
    ]
   },
+  "YGPA-B213-DC58169B-43c3e4473b9af55ecbb14faa": {
+   "doc_id": "YGPA-B213-DC58169B",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "78aa4fe825c3b544be0160ad63e3b2dd5625ce2d556760b027cb74b25f438e49",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B213-DC58169B-e4147d6a17eeff27d7986ff1": {
+   "doc_id": "YGPA-B213-DC58169B",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "82ae26b9511f9c6cb9373d23c6ab075a9cb6b243b104900c97fadbd806219e58",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
   "YGPA-B213-E3D19BCE-6d8234bb4ec703b34e16866b": {
    "doc_id": "YGPA-B213-E3D19BCE",
    "status": "approved_with_notes",
    "chunk_text_sha256": "bd88826b715c7034d3948a0517e316f41d3a5868b4e94a2c46d7dab07aff0222",
    "notes": [
     "게시일 기준 내용 — 지금도 유효한지 확인 필요"
+   ]
+  },
+  "YGPA-B213-E3D19BCE-94d614d8fda50404efb3cf79": {
+   "doc_id": "YGPA-B213-E3D19BCE",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "abcc401bcad598a057445e087acad0b41b3a2bf21fd0302713f6a83b42fdbe46",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B213-E3D19BCE-bc0c5bf5dbe0617f68270418": {
+   "doc_id": "YGPA-B213-E3D19BCE",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "2868442009883543b56a7214f003e8a383e1ace45b2efbb151b62a98a1e3ea8d",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B213-E58424AB-1c2240cd79ba462b59eb295b": {
+   "doc_id": "YGPA-B213-E58424AB",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "1fbf473a8ff99b8571dee09bb11ce3bf32219ae4966a146d396a27f9fbcd39fc",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
    ]
   },
   "YGPA-B213-E58424AB-6f99d0bfa6552077bf062913": {
@@ -24700,13 +25387,39 @@
     "게시일 기준 내용 — 지금도 유효한지 확인 필요"
    ]
   },
+  "YGPA-B213-E58424AB-8cb6bf191c9e5a2271d7c2dc": {
+   "doc_id": "YGPA-B213-E58424AB",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "90cb52f4f534effd6c39385b4b2a5e356d89d10bec1d87cf433d8d4ec63afb49",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
   "YGPA-B213-EE90EE6F-2477306cb2e18bded6f59276": {
    "doc_id": "YGPA-B213-EE90EE6F",
    "status": "approved_with_notes",
-   "chunk_text_sha256": "21cedba9c269976140584c71350c05c6f86615ee1e7a5a9c00d060ef975dc2d1",
+   "chunk_text_sha256": "9e2ee8923a09c3dd9f58926458f084c2730c41fb9caec54c4264ff089ae3542e",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요"
+   ]
+  },
+  "YGPA-B213-EE90EE6F-849c7f2f580b188d3e381d1a": {
+   "doc_id": "YGPA-B213-EE90EE6F",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "4be1f6c7a785aa17100649ab2a69594d5af4859994fe7551a9c8858fb3120f32",
    "notes": [
     "게시일 기준 내용 — 지금도 유효한지 확인 필요",
-    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요"
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B213-F6F1C7A0-095b3776fcbfef87a6d5e812": {
+   "doc_id": "YGPA-B213-F6F1C7A0",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "8beee1bbbb51ab79cba9d2974cd5363a0b70dc6bde14918bca22ed5f6a89e51f",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
    ]
   },
   "YGPA-B213-F6F1C7A0-4e77ed45a2e3f8adba545402": {
@@ -25205,364 +25918,2188 @@
     "게시일 기준 내용 — 지금도 유효한지 확인 필요"
    ]
   },
+  "YGPA-B416-10B8DE25-1d3ed8000b9573ec0201031e": {
+   "doc_id": "YGPA-B416-10B8DE25",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "c6749d6b6089d90f14efadeb3267efcd390d6a205a1506358fa27309efc8f85a",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-10B8DE25-5749082c069401c1a00ffae7": {
+   "doc_id": "YGPA-B416-10B8DE25",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "b9218b3c17e4e9b9183b809ba75b6b6552687080cc836b9635627b8a2c6f2d8c",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-10B8DE25-5dd6de4b892320dce313390d": {
+   "doc_id": "YGPA-B416-10B8DE25",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "e81f32c468aa3aabaf05656ac19e4be87c7d59dc98d3849b87ed2a3b9ee626e5",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-10B8DE25-718ef8f2695c1e1d000512eb": {
+   "doc_id": "YGPA-B416-10B8DE25",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "cc112a7e247d0c93434980b0c34c9ca4478bad248c5bcedbc338f36c948ea769",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-10B8DE25-92b5f158720d716b778a9ad5": {
+   "doc_id": "YGPA-B416-10B8DE25",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "d5edeaee6716f5c52a174874e5257c42bfe56ae42345eda0c93883f87937f473",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-10B8DE25-a237e70cf46ef366719fa8f3": {
+   "doc_id": "YGPA-B416-10B8DE25",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "39936e3c16798acc217c8c27f42bfe17a6b4afbfacf506da1dd1a225688ba30c",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
   "YGPA-B416-10B8DE25-e0849289f3ae716642870d8c": {
    "doc_id": "YGPA-B416-10B8DE25",
    "status": "approved_with_notes",
-   "chunk_text_sha256": "383bca2d2aec2af1e5c4364ba71a6c8483acf5f205c104c90217895b8f5d8c06",
+   "chunk_text_sha256": "a2128267eed9b9da914c02ef16e781d33a7da760339ff5b4f85f6931e2ceb2e9",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요"
+   ]
+  },
+  "YGPA-B416-10B8DE25-e9b0160590dc020f404775e3": {
+   "doc_id": "YGPA-B416-10B8DE25",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "676895232541b8b23a001115694c6db34b68970e0f1e74fe0e81d42df0576acc",
    "notes": [
     "게시일 기준 내용 — 지금도 유효한지 확인 필요",
-    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요"
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-10B8DE25-fb3c60a32c5ab3cad98858f3": {
+   "doc_id": "YGPA-B416-10B8DE25",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "f3abc9ec79ee8aef97ab15ae713a5b6df4e08f9ec64de69ea48fed63cad6589d",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
    ]
   },
   "YGPA-B416-21F1475A-2a8fee9480318ad828a3d670": {
    "doc_id": "YGPA-B416-21F1475A",
    "status": "approved_with_notes",
-   "chunk_text_sha256": "cd3a761ded299a8e7c0577f6a1686e0394c14588996a967d34068db29b575f5e",
+   "chunk_text_sha256": "f818b53486b10080a702ba04f00e8d7a933cdbf774acc139793861ea61bef922",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요"
+   ]
+  },
+  "YGPA-B416-21F1475A-2e10c3b85b3806b5cddf23c2": {
+   "doc_id": "YGPA-B416-21F1475A",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "04ac485d48aead7abf050c4490fc86daf3528820cb761dbc83154c3b35a76730",
    "notes": [
     "게시일 기준 내용 — 지금도 유효한지 확인 필요",
-    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요"
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-21F1475A-49c0325bcc365e601a49d6a2": {
+   "doc_id": "YGPA-B416-21F1475A",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "d5effbee46e303c323a8823820d8da80ab2acfab5e069d823a457a7292162ca7",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
    ]
   },
   "YGPA-B416-21F1475A-528b884266903c138f85163c": {
    "doc_id": "YGPA-B416-21F1475A",
    "status": "approved_with_notes",
-   "chunk_text_sha256": "5730c4a6e55a089585632bf0fde9123ca4270fea9d4952f71298434b0bf475ff",
+   "chunk_text_sha256": "6706309db44f51a9c41b2159878ac59d9068fca9c92bf0adfda256a1e916bc04",
    "notes": [
     "게시일 기준 내용 — 지금도 유효한지 확인 필요",
-    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요"
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-21F1475A-9b406ffb938d4ae23c21e9bb": {
+   "doc_id": "YGPA-B416-21F1475A",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "5f4427d98d906f9733ebba618bd258813d9e0eddec16507c5d2845c4e3c72dd6",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-21F1475A-9de11b78f49a563f8c972a0c": {
+   "doc_id": "YGPA-B416-21F1475A",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "8654169800555a82bd592c4c8303d683d2bacc76dd53a2b14be77a8f29e1116d",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-21F1475A-a6b3def272749b53966d3ad1": {
+   "doc_id": "YGPA-B416-21F1475A",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "79318d76c1af17df25c1cc6af5f7ab9576681e0da62e459de2f478ee7f86d0b3",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-21F1475A-b7a98aa5128604cda83a2cee": {
+   "doc_id": "YGPA-B416-21F1475A",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "ee56effc64cd4b5eeef5adb481797d3fdfe6eacb7a11038980c5c5c6db709f60",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-21F1475A-cdf0d45a04ac838362e18560": {
+   "doc_id": "YGPA-B416-21F1475A",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "7cdd0f63572b1121bb5f35f97347d43558caacf05f556becee7366a44a055caf",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-21F1475A-dc9bf0685e9fdc819c7f960e": {
+   "doc_id": "YGPA-B416-21F1475A",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "a1bc8a536b0f1b64fc138990f522b52c1bb14ce353360a754c16101af990975a",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-21F1475A-fbcbe4b5c06c3ac780a8c005": {
+   "doc_id": "YGPA-B416-21F1475A",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "5cceb04c0a834ffd72d09eef52d87e6d3fd21905a2a8eb9aa9a479a74715e486",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-2C6000FC-1e13ed0e7abf88afe9657c5a": {
+   "doc_id": "YGPA-B416-2C6000FC",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "afaa4cfad5d176c966614f626ff5f15226f514e82852849c371ef2928907c24a",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-2C6000FC-3ef8689160b25fbea609f2df": {
+   "doc_id": "YGPA-B416-2C6000FC",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "1caae45beca6a0e4f219f5f7c13cce54bf8d752a3b5dd41887a3d87970f6ea9d",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-2C6000FC-7c3fac87e366aa267155495d": {
+   "doc_id": "YGPA-B416-2C6000FC",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "e0d7db9226292d307c1e3598a91745354f1d7d22941e8f7403cff86d18b56c67",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-2C6000FC-9448b4f64cb4074947f57988": {
+   "doc_id": "YGPA-B416-2C6000FC",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "0e47cf943ac44e3fc9ef03d40c4d069c799032d05ec9df825336f59bf3781d68",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
    ]
   },
   "YGPA-B416-2C6000FC-d399acaf01424ad4ce16c873": {
    "doc_id": "YGPA-B416-2C6000FC",
    "status": "approved_with_notes",
-   "chunk_text_sha256": "302dda8dba41a06941665e05ed82d062b4fcac7ea06f1a6f46068949cf1730a2",
+   "chunk_text_sha256": "b5834a1a16bb57c8810a6e4c5b442897aec31e1f4043cad06d2bb6dd9b93d635",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요"
+   ]
+  },
+  "YGPA-B416-2C6000FC-ecedc21cf2745a04b4db5aee": {
+   "doc_id": "YGPA-B416-2C6000FC",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "cd7333c419d2a496c86c2f5d5a375676f648f34cb8a07e2322e2121aa3624ea8",
    "notes": [
     "게시일 기준 내용 — 지금도 유효한지 확인 필요",
-    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요"
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-35F17404-554c646d82e15183f4ddc4e9": {
+   "doc_id": "YGPA-B416-35F17404",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "05a3dbbba63467ce8dfb146c77b36d4655e5617f1c2e5cb02388f2cd07366d54",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-35F17404-b29f682969ecfc55657e9e0f": {
+   "doc_id": "YGPA-B416-35F17404",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "f3f13abafa1ec43f98075a9aef4cc3ad91af8fc7fb38949f0a6c3fa8bc39e304",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
    ]
   },
   "YGPA-B416-35F17404-d4ee7067d942bcbbadb9d463": {
    "doc_id": "YGPA-B416-35F17404",
    "status": "approved_with_notes",
-   "chunk_text_sha256": "43db66e5b2b86317a837be8504da51cb27f9ee46ddf7d9346a117e20c6a156a3",
+   "chunk_text_sha256": "fd8173f6c7187aaff954c416714ea6dc92eb1648fbcc9f514644456e154d61f4",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요"
+   ]
+  },
+  "YGPA-B416-35F17404-dce934c48ad35a2d36b6e18b": {
+   "doc_id": "YGPA-B416-35F17404",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "ef8ccb4a33d06f6c03fd0306b11cdf83172db9fa8e7cc0c669cdff99d18ae315",
    "notes": [
     "게시일 기준 내용 — 지금도 유효한지 확인 필요",
-    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요"
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-35F17404-fc0f2a4f6aa94a4f9f9942c5": {
+   "doc_id": "YGPA-B416-35F17404",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "5043324c4ebaaa4933625bfb65d66dbf58b761e74ceba4b9e88aff6a77272c47",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-3655ADE7-2973d7bcfdbf4ccecf822597": {
+   "doc_id": "YGPA-B416-3655ADE7",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "09a72787b7e19eed83b8d1ab449498fa4f6f92c3d01263e0342ba242cd3fea15",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
    ]
   },
   "YGPA-B416-3655ADE7-85688dd81ae2e8aa5037d4c6": {
    "doc_id": "YGPA-B416-3655ADE7",
    "status": "approved_with_notes",
-   "chunk_text_sha256": "cf772dae650cdd479a6796b49efd497d5de5b78e20ddd09418b8db1926196e92",
+   "chunk_text_sha256": "05a9d7d1b86abc526b0d25af4c602d3954bad38a01e2ea04cc423ec091fe55d2",
    "notes": [
     "게시일 기준 내용 — 지금도 유효한지 확인 필요",
-    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요"
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-3655ADE7-b54d4b9fd9758293aef7c494": {
+   "doc_id": "YGPA-B416-3655ADE7",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "65cc2df930760fa16f5b90197542d39df1cc18158f07ceacea27b20e169197c0",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
    ]
   },
   "YGPA-B416-3655ADE7-bd4fabc3f44026eaf5802105": {
    "doc_id": "YGPA-B416-3655ADE7",
    "status": "approved_with_notes",
-   "chunk_text_sha256": "b23ee150e464aef3fcefd1961cd9ac06f4e8dd0a771dab7947e0d7796e0767ea",
+   "chunk_text_sha256": "64dfe55ace1fd90ce7cf5dc64f495628f1dc40e7216c9a8aef06a8bb9849071a",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요"
+   ]
+  },
+  "YGPA-B416-3655ADE7-c4ae86a93e54d3f8c952781b": {
+   "doc_id": "YGPA-B416-3655ADE7",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "b3cec81c395aebde0820e0939138f2940e9e2110c3fa097995d3106b291b7a9f",
    "notes": [
     "게시일 기준 내용 — 지금도 유효한지 확인 필요",
-    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요"
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-3655ADE7-c532c66df76114b7e874d2be": {
+   "doc_id": "YGPA-B416-3655ADE7",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "22e69fdacf7c8ee58de2a159fc7f70d55b4cca35f8433d6b0106bcafaca5b94b",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-3655ADE7-ceaa727fff77e167a6f1c207": {
+   "doc_id": "YGPA-B416-3655ADE7",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "c028704989d00e782a1d1704b0764f5fd5718e31e8ca09b4605dd4c74eca1267",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-3655ADE7-dc4fd63c72234c1ab8c17cae": {
+   "doc_id": "YGPA-B416-3655ADE7",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "eb60768eeb0f5dcb567115c056b6412c2e48a3bf154e06b90053744683689725",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
    ]
   },
   "YGPA-B416-36C05F68-158d5ad801ce6b1a64d96cd6": {
    "doc_id": "YGPA-B416-36C05F68",
    "status": "approved_with_notes",
-   "chunk_text_sha256": "f0608b6df11065d44c29ace033d7fb8a802e3955e3a18f3c6bed13d3ba4c6426",
+   "chunk_text_sha256": "8621a5d7f8a53c715b2e3f4b3c23bf1e1ee8eaa8ee6f7db06aa94b7b9bd77aa6",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요"
+   ]
+  },
+  "YGPA-B416-36C05F68-32d8cb07c6131618198f2981": {
+   "doc_id": "YGPA-B416-36C05F68",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "d7b45e293d128af2641fdc1d09eebb7ffb1f48172c8367eb5e60034e10c0c155",
    "notes": [
     "게시일 기준 내용 — 지금도 유효한지 확인 필요",
-    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요"
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
    ]
   },
   "YGPA-B416-36C05F68-47acb3f15ff2594f91fac48b": {
    "doc_id": "YGPA-B416-36C05F68",
    "status": "approved_with_notes",
-   "chunk_text_sha256": "c1aaaea7cea05536ab731f6d5e5991daaf553a2905711a3767dce5575c7b61b2",
+   "chunk_text_sha256": "973cb607a7686827c54eb195de44ab3fec1f8100b27bdfd065e0e4487285952b",
    "notes": [
     "게시일 기준 내용 — 지금도 유효한지 확인 필요",
-    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요"
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-36C05F68-50c75e5bb26264ca95213319": {
+   "doc_id": "YGPA-B416-36C05F68",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "a45c8b81fbe4233b8b5d30c205456b90c161fdb48881c32e68f3db0f6abafe82",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-36C05F68-58be80745e15e81923994a1e": {
+   "doc_id": "YGPA-B416-36C05F68",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "8d056b72bd0798100c6461e7e8370e6c587e4a0be6852837a4b5c2ae558c1418",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-36C05F68-67498fd92d025545852d3dd1": {
+   "doc_id": "YGPA-B416-36C05F68",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "5b8cb5ca92a9c6e8b0ec4a39e2513979da08c63fa30e5e76090788e9ed581124",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-36C05F68-787e9ad33208a1c761e48bb6": {
+   "doc_id": "YGPA-B416-36C05F68",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "b55d0378eba38a481f5cc6f62c61ac71546fb9d0be3fbdd2fa897d7205597636",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-36C05F68-8c679e00f9ba118f16b24ec1": {
+   "doc_id": "YGPA-B416-36C05F68",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "55801a2473e8711bea2604a5374bb7536c1b94227b92402348f50ee8393cb999",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-36C05F68-c223090cefa70153641a9752": {
+   "doc_id": "YGPA-B416-36C05F68",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "f0862606db60c7d0d98a9770a2c5fa089a21838a6e92ba94b4a93d5e75f6be66",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-36C05F68-e44afb552072e36eeba14d41": {
+   "doc_id": "YGPA-B416-36C05F68",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "5c39cc44d8a3c17bfd8df0d0202aa1da305eba6f295581c03f510657875d7224",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-36C05F68-f42bd2363f6070b47ea77746": {
+   "doc_id": "YGPA-B416-36C05F68",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "652f3fc53fe6762a5ea93550c84c1007a36126611ca1f2bc76754316cdf5b289",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-5FE73049-049c8340108c64f3160feeb1": {
+   "doc_id": "YGPA-B416-5FE73049",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "b18ea6d3c0f1211a4b9191034b7295053267de4a6660749bab016786f560846f",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-5FE73049-0ed21a0b8ea8117c158e5fb1": {
+   "doc_id": "YGPA-B416-5FE73049",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "17f23cd38e5c7e951bc179c2e13aa39572ef1ac40d665fb478c15e32aaebbf0b",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-5FE73049-1386a69ec09789defd32b956": {
+   "doc_id": "YGPA-B416-5FE73049",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "b5f6223c847911a53f1fd55757ab9dc61d857a1b1a8684ddc0086c3f92422e51",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-5FE73049-2e6266bd03254ce502ab0d00": {
+   "doc_id": "YGPA-B416-5FE73049",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "5f843cb065ff59f19584902dd7f86db44fe45f31e9e679a77940a3a874b3e72d",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-5FE73049-37e4603d06d228d78f8f8334": {
+   "doc_id": "YGPA-B416-5FE73049",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "02ccfa7a61fe67f352ec874341ee9e9186d51d5b4d47fcf417bcf8416aa2795e",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-5FE73049-9ac6052262478b77dc3f2fb9": {
+   "doc_id": "YGPA-B416-5FE73049",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "44e35e304fb55e3f3b1b4430ec97159f050a8e2ac2b7782fce21c99d053b612d",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-5FE73049-9c8308a2cccdadd5747e6679": {
+   "doc_id": "YGPA-B416-5FE73049",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "d07db5653ea4731b123c385f839aaeaaeedbdc752fa9cb43ecfe099157193958",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
    ]
   },
   "YGPA-B416-5FE73049-ad195be25a612d6ec2fa8838": {
    "doc_id": "YGPA-B416-5FE73049",
    "status": "approved_with_notes",
-   "chunk_text_sha256": "0f7252980f6b060e7c62c213d7d0d5c79068931673120d8b17aa4d634a5b14f2",
+   "chunk_text_sha256": "ccfc00361038dc3720e216a84a2dda85b8e3c4b8a7e1fd05513c4f827711b1da",
    "notes": [
-    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
-    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요"
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요"
    ]
   },
   "YGPA-B416-5FE73049-b2f9949477897eb51187d433": {
    "doc_id": "YGPA-B416-5FE73049",
    "status": "approved_with_notes",
-   "chunk_text_sha256": "a68bfd403fc9b7d141a7fb44aedbfc4e52d50e65f5c2c97cd6da2e757bee4bad",
+   "chunk_text_sha256": "fff8bbbf6d829f5086e0a0e503a0d3141866fdc09ad201182e09a08f78d5e091",
    "notes": [
     "게시일 기준 내용 — 지금도 유효한지 확인 필요",
-    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요"
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-5FE73049-d56e6833adccbafce325f9ba": {
+   "doc_id": "YGPA-B416-5FE73049",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "7b20b3786cfc08aed636d66907126560922b42a67849697774b9e753e96f7482",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-68B2E904-28b6cae3164269c2bbc133c7": {
+   "doc_id": "YGPA-B416-68B2E904",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "98ff9fea2963f2d3122227213c657bc2c453fbbf16713d3855d5085f458d21b7",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-68B2E904-2cf25befe3eae44bbb41094d": {
+   "doc_id": "YGPA-B416-68B2E904",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "b248549db652519fb884e5613c38b0398ae479b42cae5cd3aaf7e8f0040b4e55",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-68B2E904-444bdf07761ad94d2f064133": {
+   "doc_id": "YGPA-B416-68B2E904",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "8daa6cd59cd022b728c0c0410444943a7ee16268e24b4a37801dc0e37dd69536",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
    ]
   },
   "YGPA-B416-68B2E904-59144a743212ca902ecba073": {
    "doc_id": "YGPA-B416-68B2E904",
    "status": "approved_with_notes",
-   "chunk_text_sha256": "4149e087997387580a6c2c7d6e949f3b34d1febdb77cdeb736e4213c85f72cd8",
+   "chunk_text_sha256": "f301073330a5e01d8a5b11b702481cdd147a43436b1ec92f5f57a675c160634c",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요"
+   ]
+  },
+  "YGPA-B416-68B2E904-9333ed6737067331f8080166": {
+   "doc_id": "YGPA-B416-68B2E904",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "4e2096e0de6dd3eded2717f9040a2ac09cae367db50654c13ffdd41fbddf522a",
    "notes": [
     "게시일 기준 내용 — 지금도 유효한지 확인 필요",
-    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요"
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-68B2E904-bce97d3ac29a016c3924010d": {
+   "doc_id": "YGPA-B416-68B2E904",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "fed523d57e02207b2a3702e6aab45ceec46b5c2598d540e296e12e3fcd2202b7",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-68B2E904-c020f4b612ab74be75181132": {
+   "doc_id": "YGPA-B416-68B2E904",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "7d9c84f35213f1a4906d89388c419bfb8de0b015e52fc0abc35f6ff0771beab4",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-68B2E904-cd30ea883f0a8b3035c0d8a9": {
+   "doc_id": "YGPA-B416-68B2E904",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "49adc92c3888d52ed2c20b0632750a31b5bdc7b4392f5177acfa34f33e17a821",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-68B2E904-e08190d9be8ec280550c8c0b": {
+   "doc_id": "YGPA-B416-68B2E904",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "c502e423e444d83bdc95ed80f8c8246671ca0c0b9cb1155e3b987ae4d1e3909a",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-68B2E904-efca5437f27e415cc859d18f": {
+   "doc_id": "YGPA-B416-68B2E904",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "c6a468d6a02fa71e783214f67d99a9f5e132c9b11dc70813b79c9baef3fa6ce7",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
    ]
   },
   "YGPA-B416-6A6E65F4-112531d8fbd71136213c7bbe": {
    "doc_id": "YGPA-B416-6A6E65F4",
    "status": "approved_with_notes",
-   "chunk_text_sha256": "092639c191123176c31bb8fd2a1ce95ccfde69dbbb89e13326e1f1aa24ebc0b5",
+   "chunk_text_sha256": "47a279a7d2efbaeb954c78e167d3395a34be0ea60b273b15d26ce4a4dfe50870",
    "notes": [
     "게시일 기준 내용 — 지금도 유효한지 확인 필요",
     "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-6A6E65F4-272a62d4cada4c89a8402c47": {
+   "doc_id": "YGPA-B416-6A6E65F4",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "78bcdbd5e20924d09670c686d9c7d83f04b90b915cb701db0d62c7609c38bc5d",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-6A6E65F4-56858f71e57ada287b3f53a3": {
+   "doc_id": "YGPA-B416-6A6E65F4",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "a400473c45c3539c4708db0fda9cbe058f8cacc78f0afe142a44249feb5adeaa",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-6A6E65F4-572fe726bc6908c9d8302777": {
+   "doc_id": "YGPA-B416-6A6E65F4",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "1558a8e4cf2ec9866aa1906b1228ec4c254f33db60d901c703350f31d1bb2853",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-6A6E65F4-8cbd856173f0c713d95e4775": {
+   "doc_id": "YGPA-B416-6A6E65F4",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "c5096d20fc614d24ce4efac53b11cbe805c40cda6121e57d37db7786da482ea9",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-6A6E65F4-bb80454a1ed9791ea72dbee1": {
+   "doc_id": "YGPA-B416-6A6E65F4",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "5687fddd51a40136daa2a526528efe9233e776ce1e53d184cf7773d3030846db",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-6A6E65F4-bf6525e768b1bdd003dbf728": {
+   "doc_id": "YGPA-B416-6A6E65F4",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "8c569876096494f0c8aa0b95366c534f685d597884d64dc80367b3495025a8a2",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-6A6E65F4-c6509ccb52cb4eaad9506f0a": {
+   "doc_id": "YGPA-B416-6A6E65F4",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "87cc6f40e21fa51dafbf6dbe3a2a77a00c9bd2712da65c6ebbe5b9cb00293d2c",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-6A6E65F4-e9cf472ca954e422ab87d792": {
+   "doc_id": "YGPA-B416-6A6E65F4",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "fbb0a8d0b2f1b2c3154ff30272e7979200ab4f92cccec8df6351fcac7fcea380",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-6A6E65F4-f6c50ce011f577d39a757776": {
+   "doc_id": "YGPA-B416-6A6E65F4",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "fb78c11c27fe23790fc715b0dc401beb21cb91a7e1786025108401d86b143a13",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-6C5B0FA3-0c995ec9e4bcf8a1c0c0c723": {
+   "doc_id": "YGPA-B416-6C5B0FA3",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "142dc5b7cb4c5cc706b9aaa8749e10be737cf54eef59f1d5b26ad7200cd5d4ba",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-6C5B0FA3-0eaab58411e0c397a9303190": {
+   "doc_id": "YGPA-B416-6C5B0FA3",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "8731ebe26ec2f6710e4a4be63ac06d1a45785051d1eb90543853d97a179ef2c9",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-6C5B0FA3-16345a3b0ce472bdd1954ffb": {
+   "doc_id": "YGPA-B416-6C5B0FA3",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "2d15d043abde97393960c98d950b021d454b3b46c673a10a2113cf6d6c672059",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-6C5B0FA3-20fc00d09b8db5c5ceef1460": {
+   "doc_id": "YGPA-B416-6C5B0FA3",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "00940840a2af634b3c491837b5e128fc5613c66bc32ef55e2f9b121c766d106b",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-6C5B0FA3-47fd2689cbeabc6cc1e52943": {
+   "doc_id": "YGPA-B416-6C5B0FA3",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "368d0fcbc3d2dbaae7049c31ffc4760d9e92e9c874ac32171e94727d2530b3eb",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
    ]
   },
   "YGPA-B416-6C5B0FA3-8cc9f55fbd26fe37a3e7ec62": {
    "doc_id": "YGPA-B416-6C5B0FA3",
    "status": "approved_with_notes",
-   "chunk_text_sha256": "c5be6edf5897b6c04cb4f87320b1c0ee48a432a08e0b3ff7db80a06c708e6d9d",
+   "chunk_text_sha256": "666e2591caf56875a1b5345353442da43b9449a9ed4aad2089162728a8c3b2bb",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요"
+   ]
+  },
+  "YGPA-B416-6C5B0FA3-f09826f116a0664645a10ccd": {
+   "doc_id": "YGPA-B416-6C5B0FA3",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "4d2334bd5a964b600c31c7da4d1a8d6b791abaa3130bc400f126747b25b1600a",
    "notes": [
     "게시일 기준 내용 — 지금도 유효한지 확인 필요",
-    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요"
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
    ]
   },
   "YGPA-B416-70DDAF99-124581c2997cc6155a54d904": {
    "doc_id": "YGPA-B416-70DDAF99",
    "status": "approved_with_notes",
-   "chunk_text_sha256": "a7c0b3a97763f5acec1461e1d78fbbd146fc402d498873cd83584d9b4c754d0c",
+   "chunk_text_sha256": "d4a96afb41f1e1cea6880b064fcc0f303abd6df66bb9994efcabfefa1b7480c6",
    "notes": [
     "게시일 기준 내용 — 지금도 유효한지 확인 필요",
-    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요"
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-70DDAF99-1c1b3dcb299ea1b8fdb4c152": {
+   "doc_id": "YGPA-B416-70DDAF99",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "17877d0887f1edac2eb690d72dd82cb1f932bc40dadd878bd22f1667e495694f",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-70DDAF99-235c9d6e48ae2444700f7ba4": {
+   "doc_id": "YGPA-B416-70DDAF99",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "76446e0ddbbb5eed9015ba9597bef0d1dc52c3993ed8c056b3b14ef369228ecf",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-70DDAF99-31aa6afba27bfe4bbd7a0690": {
+   "doc_id": "YGPA-B416-70DDAF99",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "4854c0f2b6caf05ba84bb1facad1262a0afd7e752140ff2fcc5a393b50b82fe6",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-70DDAF99-324af9ebf07c21ebc62e1397": {
+   "doc_id": "YGPA-B416-70DDAF99",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "563fd15cdd852baa2dbb2fe07de8bdb7046d8983e54f9f72f499c751d508997a",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-70DDAF99-4acc77bc37966b597ee0fd9e": {
+   "doc_id": "YGPA-B416-70DDAF99",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "0a1f4cc3806011e53a685c6d23adf88d3bdc34535a0351339f4bbd90d5557669",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-70DDAF99-517546549262fd95c859b6f4": {
+   "doc_id": "YGPA-B416-70DDAF99",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "1cd6776a331163ed3b076a7f16d9a59ec0c3165b9948bc0228976aada84ae475",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-70DDAF99-a057667fe8b005f180fbfc1d": {
+   "doc_id": "YGPA-B416-70DDAF99",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "76dfd5494dd10bd1914ec20f0b6d22b5d184f811e6f84c9bb433b61d20dd4802",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-70DDAF99-ce444e3fccd305e61f6f2b93": {
+   "doc_id": "YGPA-B416-70DDAF99",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "32dd6c6876acf453cce8157489831283eb607a29c6f95d636e28cd8c99368954",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
    ]
   },
   "YGPA-B416-70DDAF99-e428a1a7487d55337c657076": {
    "doc_id": "YGPA-B416-70DDAF99",
    "status": "approved_with_notes",
-   "chunk_text_sha256": "f780bc4280174766e0a53dd268ce646cd8bb06c99deb3cfec1cb253b146c5070",
+   "chunk_text_sha256": "ddca7ac7c8a0cde106fab54290acf19b49315e4c0cbfcd0b8a38b31ba68ae019",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요"
+   ]
+  },
+  "YGPA-B416-718507E1-6bb4efd5da45df6ae819f96a": {
+   "doc_id": "YGPA-B416-718507E1",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "d181096004fadef474ade8af59328dbff2dda810bd397d8caa5c5d693a8ff826",
    "notes": [
     "게시일 기준 내용 — 지금도 유효한지 확인 필요",
-    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요"
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
    ]
   },
   "YGPA-B416-718507E1-7ee44ead135d2df13c3cd0db": {
    "doc_id": "YGPA-B416-718507E1",
    "status": "approved_with_notes",
-   "chunk_text_sha256": "e3e929925c213b2ad39c7d04cf867002a0c7b2f0b9c203089e7bcb758babe2cb",
+   "chunk_text_sha256": "1438f3628e036e005609e812b6449c547636845851e0d972907c098775d7d768",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요"
+   ]
+  },
+  "YGPA-B416-718507E1-8980d3f5718b21292462eac1": {
+   "doc_id": "YGPA-B416-718507E1",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "a3a69f2d2fe0ecbcae5391106418e62532e138518dbb467d91ea8c2860fd72e1",
    "notes": [
     "게시일 기준 내용 — 지금도 유효한지 확인 필요",
-    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요"
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-718507E1-920b2e99c7c42da7d804348d": {
+   "doc_id": "YGPA-B416-718507E1",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "dc6a3d6cd5ea5ac0841e8554b9993dfb95f5f41819428bdea0dd6ce7d8aff3ed",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-718507E1-a6ac1d1f836380acb0fde75e": {
+   "doc_id": "YGPA-B416-718507E1",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "0e437976b9fd156e2706f8fdaab580c129edcc495ad92d1b685dcc7fb850e314",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-718507E1-da348f49e00b377896c28313": {
+   "doc_id": "YGPA-B416-718507E1",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "66e69c3a801741e8d9eefa4ce211c50ed39b3faab539da2c805e7b54dd3a9c71",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-72C5EFB8-24c5fc064d95b4ef35d797ff": {
+   "doc_id": "YGPA-B416-72C5EFB8",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "c9482e8c6b6ca6a88bec0a35316a5445bdb6e7b83100bbad8245987dbdd3a624",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-72C5EFB8-52b3ee0ff0636727801f8f03": {
+   "doc_id": "YGPA-B416-72C5EFB8",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "582b55814a2e1dfe519bc5cb5be179f4fb1a36f13140d569b8ad2ac62ad08a67",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-72C5EFB8-6143e948e31579ec6fc0925c": {
+   "doc_id": "YGPA-B416-72C5EFB8",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "20378dcb7834565aaf555ed91a11d9a27f8780e3a02fb4ef2f48be7315083b6f",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-72C5EFB8-91a4954954a0d3a0b495ca13": {
+   "doc_id": "YGPA-B416-72C5EFB8",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "fc1320c9b1c140e4a583c3c734d76aa66ad329f7d797d462e1fbcb1282d024e1",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-72C5EFB8-997b45fac8a6a21c074881ca": {
+   "doc_id": "YGPA-B416-72C5EFB8",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "c15abeaeb2a91e482de0bf28668a2631c8be824777bf39f0b809b010f9e39d54",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-72C5EFB8-9db92df779202052b67bdb9b": {
+   "doc_id": "YGPA-B416-72C5EFB8",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "2ca1828e09fb345006ff987bac409acf1588598a53efed0e0c7762e64d93dc5c",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-72C5EFB8-adf16dc3c58ed02497c6d39d": {
+   "doc_id": "YGPA-B416-72C5EFB8",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "4efabbb23f7edf60a8c8a70be90ef612820af8510e2d99c11821aad8afd51c7f",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-72C5EFB8-c8498edd022a5a2f350e54e7": {
+   "doc_id": "YGPA-B416-72C5EFB8",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "680076ab34096879d5e3fc3029633f9658c05e4e370a085036d435a712604f67",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
    ]
   },
   "YGPA-B416-72C5EFB8-caf5541c5334562a300060a2": {
    "doc_id": "YGPA-B416-72C5EFB8",
    "status": "approved_with_notes",
-   "chunk_text_sha256": "35e7726f7ca71bdab9a91aa69418479fdd05b0fc6691c232eefe08f690ac3ebc",
+   "chunk_text_sha256": "62204658ddae56dd145cf3bcc6bff063fd9617126d52638685dcfea8236864c7",
    "notes": [
-    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
-    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요"
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요"
    ]
   },
   "YGPA-B416-7375EFF4-8f303c87676d84a8fc73cb75": {
    "doc_id": "YGPA-B416-7375EFF4",
    "status": "approved_with_notes",
-   "chunk_text_sha256": "dee952d49078e4c567a54666219e9011b80988e176dd7d5bf7d9f21d8de18438",
+   "chunk_text_sha256": "bfd5c09e19da42e77f3cb28c65adb68e7368a2cc17bd6f4f8500d4dcc21a86d4",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요"
+   ]
+  },
+  "YGPA-B416-7375EFF4-d0d38d5d5a2c37be3d3bfaa7": {
+   "doc_id": "YGPA-B416-7375EFF4",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "e13f4e9f113fa587614a6bc142bed3924958fce17b6aa91daf37779936fcf2d1",
    "notes": [
     "게시일 기준 내용 — 지금도 유효한지 확인 필요",
-    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요"
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-762F4F8F-27fde068ae65af2c6ca7374f": {
+   "doc_id": "YGPA-B416-762F4F8F",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "2965238e2529698f4b10a50a60264857edc51eeebc3c2a16128d96f4f46bda51",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-762F4F8F-4606fc34a2f41ad8b44e9cc1": {
+   "doc_id": "YGPA-B416-762F4F8F",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "9817107123f33dedd0bd2d683af869959137263d2c2199ebe0f8ae42bc01b006",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-762F4F8F-494ffc9a16fc2b97162b280b": {
+   "doc_id": "YGPA-B416-762F4F8F",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "696bbb82c3169b593df16cd97cd4b224158353c3acb6fcfbad255fdcdd20d4f7",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
    ]
   },
   "YGPA-B416-762F4F8F-4df3ccfe423c46de878759ee": {
    "doc_id": "YGPA-B416-762F4F8F",
    "status": "approved_with_notes",
-   "chunk_text_sha256": "a56b74ad69bc6cb63c8d141762a45fbcfde1e7a2e1e01f9a9c7364647ef64613",
+   "chunk_text_sha256": "5095172b2929f391da9fcfc07c1a120862b6f12d5d85472e79ddc055590533b1",
    "notes": [
     "게시일 기준 내용 — 지금도 유효한지 확인 필요",
-    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요"
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-762F4F8F-56ddc88d08940b3b357c874d": {
+   "doc_id": "YGPA-B416-762F4F8F",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "1b77150c609ce8b7cd1c99f52b12c65bb08e9b93170a69ea872970f8f378052c",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-762F4F8F-79b9ec6bea349b782db1fc19": {
+   "doc_id": "YGPA-B416-762F4F8F",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "aaf7cb1725b4264e6f622d7a57123161b38920eb0261b60e71cc564a0babf7e7",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-762F4F8F-94f17f1d53c746bb8ccdd190": {
+   "doc_id": "YGPA-B416-762F4F8F",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "360d81bc285237d342969c4762a618bdb318bd16fcb0a16d0301ef2f4963b123",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
    ]
   },
   "YGPA-B416-762F4F8F-97e10de7738347f4468f8a1b": {
    "doc_id": "YGPA-B416-762F4F8F",
    "status": "approved_with_notes",
-   "chunk_text_sha256": "768f6452376a4fbd76bb339f5c506c040b525acb60b35c106f6e95d10553f2d8",
+   "chunk_text_sha256": "33c62639d19fe785f20faa7489a45dc691a7fb0181514377048e2a05ee7f356c",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요"
+   ]
+  },
+  "YGPA-B416-762F4F8F-b2743a371593d4bf07fe4bd8": {
+   "doc_id": "YGPA-B416-762F4F8F",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "fb5951c25c8451b543d38e5c472bcb35e005d8a99347caacb26d86e7aedaf3c7",
    "notes": [
     "게시일 기준 내용 — 지금도 유효한지 확인 필요",
-    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요"
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-7ADEF4D7-01fa3aa0e163f6c3d747932a": {
+   "doc_id": "YGPA-B416-7ADEF4D7",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "907cd989e3d26b3a47c33be64b8d5adfb965c9902a8be33b6f8e9d653a9ac6f1",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-7ADEF4D7-3618d6981bd13e8f0352d733": {
+   "doc_id": "YGPA-B416-7ADEF4D7",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "2d4b36ef0fd6605d76be09cafbbc0311ee270c0afb7fc5ec8842cfa017e018bd",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-7ADEF4D7-8d618fd4a4ed49e38b449eb2": {
+   "doc_id": "YGPA-B416-7ADEF4D7",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "e3c8257a0a5d1d7d877843be2c8b0eb1641e49ca96a88a5e1d41f2986a890b50",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-7ADEF4D7-d406ee252b98191091303aa6": {
+   "doc_id": "YGPA-B416-7ADEF4D7",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "0cb936801b302b6468034aacaec1b61d3ca20797d491dcbda46ab68f88f715f5",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-7ADEF4D7-d6a8eef194c3133f46bcd6b7": {
+   "doc_id": "YGPA-B416-7ADEF4D7",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "c2e61000449d6f02f489d8c17dbf74b9bd98d375df161d30b0a196f5353ab185",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
    ]
   },
   "YGPA-B416-7ADEF4D7-e2328bc997c5f98eb5d325d8": {
    "doc_id": "YGPA-B416-7ADEF4D7",
    "status": "approved_with_notes",
-   "chunk_text_sha256": "d8b4c7af997051f7022d1b4efe14223a3f81972696fd9fb5824affb0cf810552",
+   "chunk_text_sha256": "91b3e3bef6a0c0480257d51a6a38fba078df0bad9c4bd9f5ae3ff3a02b604024",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요"
+   ]
+  },
+  "YGPA-B416-7ADEF4D7-e6470451cce2eabf73a87c3f": {
+   "doc_id": "YGPA-B416-7ADEF4D7",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "b0d52647e89253754090ce7842d52e8d56c851d790cc1c085c57e9847b465945",
    "notes": [
     "게시일 기준 내용 — 지금도 유효한지 확인 필요",
-    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요"
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-7ADEF4D7-fb29fd7118e69127bca1efb6": {
+   "doc_id": "YGPA-B416-7ADEF4D7",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "a0378eb774df0127951f045351ec19961cf85232e2098b174fc013dfd67c9e21",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-7AEDB422-47a02174086c3380a8b4c23b": {
+   "doc_id": "YGPA-B416-7AEDB422",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "83aa9b9185bca2af52e3127e6b083c845e87bf42592a17cca1023c606737ca96",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-7AEDB422-73b04cda4b0b6b7face31009": {
+   "doc_id": "YGPA-B416-7AEDB422",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "1f5d75d82f1d970cc9e9006c71d3455bfacada79d29f2b8506088eb91647c17a",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
    ]
   },
   "YGPA-B416-7AEDB422-75d05ac2b7f5b0d528c39dbb": {
    "doc_id": "YGPA-B416-7AEDB422",
    "status": "approved_with_notes",
-   "chunk_text_sha256": "83f62f876eec8a18abd2a054f74389fd84f4e62fe1297b0247b14a712df6f51f",
+   "chunk_text_sha256": "eb7963791b0ec216336c13fa0f5beec6f5351a41d35c4ac3493a8307501b9583",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요"
+   ]
+  },
+  "YGPA-B416-7AEDB422-80e29b9fea04d0193f5c2c80": {
+   "doc_id": "YGPA-B416-7AEDB422",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "588ba275f7ab6cc5ce79e2bccd88948b30594f4b13ae85a0d1a1a3eae1b7ecf4",
    "notes": [
     "게시일 기준 내용 — 지금도 유효한지 확인 필요",
-    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요"
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-7AEDB422-f3bed23ea1239bd80443df7b": {
+   "doc_id": "YGPA-B416-7AEDB422",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "2fc31debcd517b520da469508b87f2c677a7d42cc705077f0eea18c0ab9702fd",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-7AEDB422-fee20a0462a17230ec686bec": {
+   "doc_id": "YGPA-B416-7AEDB422",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "54424700fc0695452ff81a98e209a87997416b316d9124b780fe21801614ec49",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-888157EB-57289a873c10f5ebdb1996b6": {
+   "doc_id": "YGPA-B416-888157EB",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "bcaa6aa099c004527858422bae79575abfbf447c61069afcbeb8a52061487a9a",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-888157EB-81f9135d46006c31045c49ef": {
+   "doc_id": "YGPA-B416-888157EB",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "04824c7ec8d8ff7d985f036f62bb28e20b1dd56e5a8439878e348d5c7f212f6b",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-888157EB-9a9e5a3240e2d3bec782d8f0": {
+   "doc_id": "YGPA-B416-888157EB",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "b02612584972fd897c58de7f788b5a5d240d779cd963300201cf4eda0a2e3e0a",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-888157EB-c8005a1907fd3981fd9c3ea4": {
+   "doc_id": "YGPA-B416-888157EB",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "6f881d78788da7723f30c778d7f0af1550c5416a11344a9353a63954d7b5891b",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
    ]
   },
   "YGPA-B416-888157EB-e1ed9fe270c113fc210394b1": {
    "doc_id": "YGPA-B416-888157EB",
    "status": "approved_with_notes",
-   "chunk_text_sha256": "f3ebb6c56e068118b95e6dcbe4bb12a68f073a2b06c586998d0c69eabadbc996",
+   "chunk_text_sha256": "1e5e907bddb6829d85aadec2ff2a1a8cca2ff34c3bdca3e7ada9eafee04f9ec1",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요"
+   ]
+  },
+  "YGPA-B416-888157EB-e6351c2739de6957c71c8e86": {
+   "doc_id": "YGPA-B416-888157EB",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "6aff0b2e6bc6e1e1cfa932edb66d4c31d2a4af18133e416b73275d8a1e6347bc",
    "notes": [
     "게시일 기준 내용 — 지금도 유효한지 확인 필요",
-    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요"
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-89D85064-159c7f3ea53db79b0675cb0a": {
+   "doc_id": "YGPA-B416-89D85064",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "850cbd0972ed51cac58517172ac3ab1102d4b480b3495949ec347115f4281757",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-89D85064-7d877c4570817f11bdc7735b": {
+   "doc_id": "YGPA-B416-89D85064",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "199cd34e7e777c65545515881726f3d859926f008af5aee6dc6332706f7df488",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-89D85064-8945acc435481068d82a5c6f": {
+   "doc_id": "YGPA-B416-89D85064",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "d5334a76f78e073e339fcbf6ff745760cdaf323b8ca6af76eed5e903a211e088",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-89D85064-a3daaae9e3d6f350f20a5440": {
+   "doc_id": "YGPA-B416-89D85064",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "c6ff7efbaebdef5c6862475cea8006889c08c57b19986630c6e7250a7d1b7080",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
    ]
   },
   "YGPA-B416-89D85064-aa5a0699e726b9e9cbd1edbb": {
    "doc_id": "YGPA-B416-89D85064",
    "status": "approved_with_notes",
-   "chunk_text_sha256": "97ce5c8653a08bc13b97bc0828c4fc7fdb3133b55248c1082a328cd53145f3f7",
+   "chunk_text_sha256": "e5aa85daa72c36b7ef79e11f9623bc1f85f987b0e5550e940d8affed15179421",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요"
+   ]
+  },
+  "YGPA-B416-89D85064-be9d6dfc095af89d083c2c5f": {
+   "doc_id": "YGPA-B416-89D85064",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "0e4a52882db80a8d91ed5a0d254487c48fa701f737c61db4c298138e6d8ef587",
    "notes": [
     "게시일 기준 내용 — 지금도 유효한지 확인 필요",
-    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요"
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-89D85064-cc1b624fb990bbf3392fe557": {
+   "doc_id": "YGPA-B416-89D85064",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "8f746df39e452389787fc58b3db0faffa8859f12d4153e65549f39d1bd04a0bf",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-89D85064-d645207c1743b0dcbb321dc6": {
+   "doc_id": "YGPA-B416-89D85064",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "520abbe750bf4e2c75fbba0c5c16ddebfbdb665ce9c19a5c15660b6edc4687fb",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-8D216282-179d94c93db8d601ad9852f6": {
+   "doc_id": "YGPA-B416-8D216282",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "19fcf0328c31828da954b2e6ae69657aa9ecd71ff4700fed0225aca44bd1469f",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-8D216282-281e56b2ab9bd04140010841": {
+   "doc_id": "YGPA-B416-8D216282",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "48be850e77be71468e2770aa172c7d4f5ee30ae25a725c8f6becb293878ea6fe",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-8D216282-29f3385a57fe43e7a8856a48": {
+   "doc_id": "YGPA-B416-8D216282",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "c3a3a11b8d856e796d5b16f6f86b1b6180505fb0d9e6e4afaabe7f0f120dbd0b",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-8D216282-2d7db009035b15e5d9cff12a": {
+   "doc_id": "YGPA-B416-8D216282",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "234813233d42f1c1ea1ad59d36f2e8b04982ab0dcf7c73b2038b7fd3ed69ee94",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-8D216282-3aed81054b4b03022f0a6986": {
+   "doc_id": "YGPA-B416-8D216282",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "6047f500f8626eb8a5a1707163f51439846c1ba02218577e15dd3a08b647ed51",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-8D216282-91ee83b2ad642324d505e0ce": {
+   "doc_id": "YGPA-B416-8D216282",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "0e3025609e1db3db7575758125088b12f3015c1a801525805900d76eb16e78be",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
    ]
   },
   "YGPA-B416-8D216282-f2a2ad06c0a59f8cd4796c9e": {
    "doc_id": "YGPA-B416-8D216282",
    "status": "approved_with_notes",
-   "chunk_text_sha256": "b968788a2b0d65d05899fb5eab2b91ac01017b1ba2183a34fd63a13200296a48",
+   "chunk_text_sha256": "1738beeb37f6c2449f8ebb33901f4eb9c98cac520e37a71825e1f7bd53804fb8",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요"
+   ]
+  },
+  "YGPA-B416-9559D134-0a1d1ed627cd3283e43bd691": {
+   "doc_id": "YGPA-B416-9559D134",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "f4bd5a5b5deeb438a76407d90864333a7c90cc980d1c1ff76fa869ce6d070481",
    "notes": [
     "게시일 기준 내용 — 지금도 유효한지 확인 필요",
-    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요"
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-9559D134-1b838d21afb9832021538f04": {
+   "doc_id": "YGPA-B416-9559D134",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "9415e136b566a840c0a44a7a3e5c409ea779665cf9e9ba75793415e2c015b200",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-9559D134-1bddb057a5665f87fdbabd47": {
+   "doc_id": "YGPA-B416-9559D134",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "13120eb6b51a637ef66e16b476e2e49c51f3699de2b88fa05919ce95303cd6b3",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-9559D134-243f163321fe6429387443ed": {
+   "doc_id": "YGPA-B416-9559D134",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "19a8bbcc0b604cc7ec72934bd07eaa82bce9758f9fc030bd695b584bd4c9b695",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-9559D134-30ba775dbb769f0ee58cca77": {
+   "doc_id": "YGPA-B416-9559D134",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "c5daf6a874e4d2825594749f38964695d29b271ad5ac974e60bd63287765d49b",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
    ]
   },
   "YGPA-B416-9559D134-a173f94be1368a23edd4bb65": {
    "doc_id": "YGPA-B416-9559D134",
    "status": "approved_with_notes",
-   "chunk_text_sha256": "9f4a00786340d734490b965932ae822f8fda25e2080913b4d6746571f65fdb6e",
+   "chunk_text_sha256": "eef02897a0fe1350a9b7e8b26fde6b7fbc98206509bf76b486c10ffd733a4f91",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요"
+   ]
+  },
+  "YGPA-B416-9559D134-ddfa8b300def1537b95ae486": {
+   "doc_id": "YGPA-B416-9559D134",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "4e621e998aaed8834488ad45ba0ecbe08b5c0dd52c4e2c304b3e2674c98de32e",
    "notes": [
     "게시일 기준 내용 — 지금도 유효한지 확인 필요",
-    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요"
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-9559D134-e15fc09fb6f45ee8a1037867": {
+   "doc_id": "YGPA-B416-9559D134",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "7078e424462d7d39f5dc0579829696bbc5c06989a95f08e12ea36846650bbfbe",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
    ]
   },
   "YGPA-B416-9559D134-e5568a4c63e231b541b6ec3e": {
    "doc_id": "YGPA-B416-9559D134",
    "status": "approved_with_notes",
-   "chunk_text_sha256": "4485592560d3ab9e7877d08cd1999528361df0f3491149ffc2e667756b77d9c5",
+   "chunk_text_sha256": "ae572cabac5e07785f49a8c8973e741ab08ef54aabb65622bb34d1a3bf6bba9f",
    "notes": [
     "게시일 기준 내용 — 지금도 유효한지 확인 필요",
-    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요"
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-9559D134-f86150d6b5af4aedf770897c": {
+   "doc_id": "YGPA-B416-9559D134",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "8f3ad35b7b13323157d5872c41e9b88cd7d9d8c3e8109d2c7b3c4187cc850b6f",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-A51ACC3A-1d7611c585ff5f74fed09707": {
+   "doc_id": "YGPA-B416-A51ACC3A",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "58a19f2346f95541dec62508e4ab76bcb9878aa4b6d1fc2b05168c9bcffa2ed2",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-A51ACC3A-a7c73e446728e12bb97cd6bf": {
+   "doc_id": "YGPA-B416-A51ACC3A",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "e99b7370f9dc8e9aa77204c3e656f0143eb9b7e2faae4215f93e690809c0c0ee",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
    ]
   },
   "YGPA-B416-A51ACC3A-a887299bf0d574f9944d481f": {
    "doc_id": "YGPA-B416-A51ACC3A",
    "status": "approved_with_notes",
-   "chunk_text_sha256": "73823dfa32ca3aaa8ef1472457da2f533a8cb8f0b90912186211d04c5367e2c8",
+   "chunk_text_sha256": "cbcdef6a7c0ba6122a4bc35cf002db73a1e953964db853e130a7309637cd4c18",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요"
+   ]
+  },
+  "YGPA-B416-A72481F6-47ad86ab46a04531ce782dda": {
+   "doc_id": "YGPA-B416-A72481F6",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "27f5b0ac00595d239d6fbb4a2adbd88fd76db933e8337c6f734938797da02647",
    "notes": [
     "게시일 기준 내용 — 지금도 유효한지 확인 필요",
-    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요"
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
    ]
   },
   "YGPA-B416-A72481F6-a925d6ae08cca8dcd3c75b41": {
    "doc_id": "YGPA-B416-A72481F6",
    "status": "approved_with_notes",
-   "chunk_text_sha256": "b28d33467d0a691b79ae4a30404fc89809140769e980864bbd4d562fbb250988",
+   "chunk_text_sha256": "00d5b7bd9e87d1cd16e494211986d19fa70f1c0b47e955c2de69426eb2beac0b",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요"
+   ]
+  },
+  "YGPA-B416-A72481F6-c26a2ec7e6223c82943d3b66": {
+   "doc_id": "YGPA-B416-A72481F6",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "fae12bdd6a26025c1f31b4b0c09bafa75f375fe95b863288b3be10dac45fbe6c",
    "notes": [
     "게시일 기준 내용 — 지금도 유효한지 확인 필요",
-    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요"
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-A72481F6-d6f16e301e3f97669798591b": {
+   "doc_id": "YGPA-B416-A72481F6",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "9079dbe281bc0ea2490d93cdc444f8e2be84b16d07d1af1897194716f0059bcf",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-A72481F6-dc8a437f35b221bc754bac64": {
+   "doc_id": "YGPA-B416-A72481F6",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "c62d2f133db0498c4beb810afc1326e0c8d0ca1f472dfb66d1c7810c4ae2192e",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-A72481F6-eec99700e9b48243d625be80": {
+   "doc_id": "YGPA-B416-A72481F6",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "69263235b6ed451d308919772d11eac2bd711c84feae0cfad23daa8d23deed21",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-AF17C17C-08b9f584d5f737fe13270890": {
+   "doc_id": "YGPA-B416-AF17C17C",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "0b64f6c203966fdb6f521568f5f27115499a9bc1cc90e9a28707bc1ad7482954",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-AF17C17C-098483d29238eb9651c1d740": {
+   "doc_id": "YGPA-B416-AF17C17C",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "0eaa3022133a40d0a2cc32118e3db18a2c72e3c10a6f249ed53739d3d4558042",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-AF17C17C-3b5d6cc53ca440f5a5480129": {
+   "doc_id": "YGPA-B416-AF17C17C",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "c9a2d2b8a93baa63ba1cdd3177f263fea830ae50a318aaddf6bd3eda38dae3bb",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-AF17C17C-41e98e094795e763e7033b1d": {
+   "doc_id": "YGPA-B416-AF17C17C",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "955ed3db4688708edfa8f56fc622f3aba5095cb12154ed6e916f9227f5021510",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
    ]
   },
   "YGPA-B416-AF17C17C-8241fc6d6c7679c7e283c203": {
    "doc_id": "YGPA-B416-AF17C17C",
    "status": "approved_with_notes",
-   "chunk_text_sha256": "6cd4ee2dcb474991122b6ede2c170908b692f7471639b390ecae144239969d04",
+   "chunk_text_sha256": "f2fbf66379c322625fbcda996bcfac7ab1f00aa39c3011c45aaf67103fb9bfcc",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요"
+   ]
+  },
+  "YGPA-B416-AF17C17C-8394ae4fa7fad78086433f6b": {
+   "doc_id": "YGPA-B416-AF17C17C",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "7861ec80e5484e69b030201f2bcec647298bedd6539e7d7f73fa6dce159676c0",
    "notes": [
     "게시일 기준 내용 — 지금도 유효한지 확인 필요",
-    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요"
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-AF17C17C-944e0c531108f647f40aace2": {
+   "doc_id": "YGPA-B416-AF17C17C",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "b42a1c34d44f8ffae22f0495666a65b41a34e670af815507097eb35288fa07ff",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-AF17C17C-e9f5bb9bc6a40f755ee9cf05": {
+   "doc_id": "YGPA-B416-AF17C17C",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "0c4edab156ab7e4d186800b7f45c066cb1c316a110b5ba69af55f2771b6e01d9",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-AF17C17C-f7bdad4ca07207a1b13db556": {
+   "doc_id": "YGPA-B416-AF17C17C",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "69ac274e174c17388e159227518f75d8520d7b51dbe94cfda1da65af489e08dd",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-B893E3C9-3b7e5ab34f289bcb5a890a05": {
+   "doc_id": "YGPA-B416-B893E3C9",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "a23399033b1a84721305db3b2d91794014a6e87659c653ba90466143e6f34124",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-B893E3C9-536a2f3ea051c8f039951b74": {
+   "doc_id": "YGPA-B416-B893E3C9",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "d45a10f0eb9d1c5d357b44185f1519f1a99b0ab8f0c29a7d7b43817210f9210f",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-B893E3C9-61b733a31795cb96deb231e6": {
+   "doc_id": "YGPA-B416-B893E3C9",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "e1252c9d399ba3f24fb8c24627d09522e5f991cd02a7316d4db015cc5dce6e18",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-B893E3C9-b85b9348a0108a399297f1dd": {
+   "doc_id": "YGPA-B416-B893E3C9",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "e788e2e3f1becc8230c514d503dd6486e17a4a792e698cee482e2175f5b3379d",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
    ]
   },
   "YGPA-B416-B893E3C9-d59ef94091bda0e38b25c492": {
    "doc_id": "YGPA-B416-B893E3C9",
    "status": "approved_with_notes",
-   "chunk_text_sha256": "fad3d9210ef2b79c4db8a586403f51428820f79d2dadc51ddcbd58f8161c9de2",
+   "chunk_text_sha256": "d9ed0edf589dad50ed73d735182751346022eca604ea62e65277ca719f3598aa",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요"
+   ]
+  },
+  "YGPA-B416-B893E3C9-ede2945ba3a036b56fe1ed88": {
+   "doc_id": "YGPA-B416-B893E3C9",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "17f22f0eab67da12dc4df7a6a7e2ff22247313fc23da71db3e9b4a3818d9ea50",
    "notes": [
     "게시일 기준 내용 — 지금도 유효한지 확인 필요",
-    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요"
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-C49B1EE8-1b43461cc8d0b42ca6c69383": {
+   "doc_id": "YGPA-B416-C49B1EE8",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "da2cfd7d6042b988f15df3734766bc11b854a6a8ee08b9c5d1dade1e4da1e60e",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-C49B1EE8-246e0bd801ccf479deaae88d": {
+   "doc_id": "YGPA-B416-C49B1EE8",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "c49693a6f12b6056e2e44a9793c1adcbe5a4a93e0ec2bdf90bb550576ed4dc19",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
    ]
   },
   "YGPA-B416-C49B1EE8-3178935da515b5a93bc747c9": {
    "doc_id": "YGPA-B416-C49B1EE8",
    "status": "approved_with_notes",
-   "chunk_text_sha256": "465f93bf9d86212d40382049019b5541e9df87c326226e992978beb44162e6c3",
+   "chunk_text_sha256": "bccaac216da3dd0cc47a748ae3404205dfece67667c08e83a16640be41635b25",
    "notes": [
     "게시일 기준 내용 — 지금도 유효한지 확인 필요",
-    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요"
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-C49B1EE8-6fa119cf18d46dd8e843077b": {
+   "doc_id": "YGPA-B416-C49B1EE8",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "0d10ce38d691253e252aae5d0a5d683544b6d7e22aca8cd4278fd48c8597c28c",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-C49B1EE8-854a54f7ce5a37e4526a6387": {
+   "doc_id": "YGPA-B416-C49B1EE8",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "d6f734c930e9bc328bb9cb723e8ed2e278df80274a29ed707653d8e0ccebfd6c",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-C49B1EE8-8ec2dc98d0f2a1329755df7a": {
+   "doc_id": "YGPA-B416-C49B1EE8",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "3b88fc463713fbbe945c71423905c61d274b36adcc49c5ba5be3b3a0e76696d7",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-C49B1EE8-c582cde9e983c44944df0650": {
+   "doc_id": "YGPA-B416-C49B1EE8",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "6cd4ec28bf766849edb2c9ce3f557789bc4211a7d6d2a87542393576afce25e7",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
    ]
   },
   "YGPA-B416-C49B1EE8-eaa35c6ee26162c719dbb829": {
    "doc_id": "YGPA-B416-C49B1EE8",
    "status": "approved_with_notes",
-   "chunk_text_sha256": "a598bb82fcc6fd4b3d45fc9f3f3b1b2bf4ae3ef4879218365790241be359d6e1",
+   "chunk_text_sha256": "75d51c78bef5ab1aa6c05e58881ed12545f06676a34d1b444c49b1521fc8fcc5",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요"
+   ]
+  },
+  "YGPA-B416-C49B1EE8-ff79894554e39d6ca701728d": {
+   "doc_id": "YGPA-B416-C49B1EE8",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "116e5fa527b36434504fd755a54b1c4c7e4c02d1cf6d5c72ae0a5d319b3976b0",
    "notes": [
     "게시일 기준 내용 — 지금도 유효한지 확인 필요",
-    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요"
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-CCF28EF5-3c07b6b84bfee442625e24ec": {
+   "doc_id": "YGPA-B416-CCF28EF5",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "efd9a029f9b398324639073d4ab87662c1d06e469e2917d9b3f4fef5acc116ea",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-CCF28EF5-7b1faa319157adbd9d8af930": {
+   "doc_id": "YGPA-B416-CCF28EF5",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "8ddb98e9172a20edf11e0cc04bcaba328367244ae1541812110d5a5d852e0a4b",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-CCF28EF5-8402da2f7e70f818e313ff34": {
+   "doc_id": "YGPA-B416-CCF28EF5",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "afdad15f622806142d9495b4fec63095ea1ce159a8cab074e90f60aa3a055c35",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
    ]
   },
   "YGPA-B416-CCF28EF5-a3a0f7ef8533ace1be6545a1": {
    "doc_id": "YGPA-B416-CCF28EF5",
    "status": "approved_with_notes",
-   "chunk_text_sha256": "87959868364addb144e371dcb38c4e22ab0fb6c8eb8c8887330508110acbdd33",
+   "chunk_text_sha256": "cc4f56699057b529f8ffb1ccf152f83f3056069d379280590be44ba19df899fb",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요"
+   ]
+  },
+  "YGPA-B416-CCF28EF5-aabda5a9485cf2f6ada970e8": {
+   "doc_id": "YGPA-B416-CCF28EF5",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "5d7dbbecd7c2e431fce4d0ae1b8950e6aafe7785e31a3f0013c7226d37d96a39",
    "notes": [
     "게시일 기준 내용 — 지금도 유효한지 확인 필요",
-    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요"
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-CCF28EF5-c1abf843bff2188a6b84de9b": {
+   "doc_id": "YGPA-B416-CCF28EF5",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "75b4a8314ab8b6a5290ab35f399683feddbdf3ccbcac5512ea15ba80f7a99a58",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-CCF28EF5-c4233ae9ddae362d899fc0a7": {
+   "doc_id": "YGPA-B416-CCF28EF5",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "7866228ce8cd88e8fb8ad9282e24a67a039da4c1c342e8707d7ace4153352923",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-CCF28EF5-c695c68acecc779abb73b874": {
+   "doc_id": "YGPA-B416-CCF28EF5",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "249713e46cce09974efe47289f8aeaf5b7fd4778278281f140442caf7648e69c",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-CCF28EF5-ed35f244af11ae1f622f0c8d": {
+   "doc_id": "YGPA-B416-CCF28EF5",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "c95e64ea6351c9cf2cbb5f6a4331ab0d567adab12271e1aa4c21e618d2d4b55c",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
    ]
   },
   "YGPA-B416-CE1FCC52-0cb44ffea6eef2778cbdd751": {
    "doc_id": "YGPA-B416-CE1FCC52",
    "status": "approved_with_notes",
-   "chunk_text_sha256": "a26ebe858ff6286f58e2b6380973d205facd957c28d3b0686885f4240bf9a1bf",
+   "chunk_text_sha256": "e7fab597a22b8d1eefda49b0e9cb129dbd4545ee077ff4c2e0e47e358206422f",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요"
+   ]
+  },
+  "YGPA-B416-CE1FCC52-5a3cda3f435ae11fde9ece93": {
+   "doc_id": "YGPA-B416-CE1FCC52",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "9ad5ea8bb6a15f21e87fb66ca27e3bd083c710fd5ba234e4c06ef29adf0d341e",
    "notes": [
     "게시일 기준 내용 — 지금도 유효한지 확인 필요",
-    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요"
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-CE1FCC52-677870a9d4335e4339664dd3": {
+   "doc_id": "YGPA-B416-CE1FCC52",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "5b434e435fbc6f2a564d6724134b7d466641b86d82cae2a11fe56dcb0c2d90c2",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-CE1FCC52-982d198948b0ba08112978ee": {
+   "doc_id": "YGPA-B416-CE1FCC52",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "0f5d472bae4e5159400eff5cc226698363496a4317810fde2c4ec8316612bfc0",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-CE1FCC52-beb057ace8208a8d0600fa5b": {
+   "doc_id": "YGPA-B416-CE1FCC52",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "dc5d88322101be2337a60224884db2d41daae6cb3ebbe5fb255ac0e5d084e4b2",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-CE1FCC52-d6ed0a85d90def29d6acbf8f": {
+   "doc_id": "YGPA-B416-CE1FCC52",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "134b5435ee6cd954303eeac987e2c894f2459c7e953f74a8ab237988bff5eee5",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-CE1FCC52-f2f6580594aa2f5b693a4296": {
+   "doc_id": "YGPA-B416-CE1FCC52",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "8a7007908ec3a530dd2c93635b6dc29dca10c18426277227ff3f3179b0e8d8a9",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-CE1FCC52-f94d1ad450761a15c4003ce9": {
+   "doc_id": "YGPA-B416-CE1FCC52",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "859c92ede9e3fdde298e80a6475000fc49c088ddd0914c2e33543c1a8c2b21b5",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-CF73127A-068fefa4e6be134ba0792bfa": {
+   "doc_id": "YGPA-B416-CF73127A",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "eea5ebd3a4c1fe85fd043773ade0a328bd91077ece45b3d8b9fffd9f4a85dc07",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-CF73127A-38e026dffbf0c1dcf6371095": {
+   "doc_id": "YGPA-B416-CF73127A",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "f4600fc5aac059e02521685a61264b414686ba68bd0a16d222eb5905e8e2d39f",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
    ]
   },
   "YGPA-B416-CF73127A-413f2355dbf1058cda6a055f": {
    "doc_id": "YGPA-B416-CF73127A",
    "status": "approved_with_notes",
-   "chunk_text_sha256": "c233852289b87e7dfd293c58ec0997da3b9bc8431c9f7e8445ba3f200d4c9a43",
+   "chunk_text_sha256": "25e6b739894aeaed015a6621468069f9eec2eaae2b71b3a17be51d8093059bd1",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요"
+   ]
+  },
+  "YGPA-B416-CF73127A-428ffeb62f3781bc29406e13": {
+   "doc_id": "YGPA-B416-CF73127A",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "f364dcd4f913ab94b7ee91336afc4065291c9f30f942cc93b1378015e628314c",
    "notes": [
     "게시일 기준 내용 — 지금도 유효한지 확인 필요",
-    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요"
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-CF73127A-508e2a07d901485904f47385": {
+   "doc_id": "YGPA-B416-CF73127A",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "d42b1d6f5e1f6a23835ba2e095018d9b47e461676e3b45a721c8ed1c121c62f0",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-CF73127A-6c95c17032265bd6a0de14c7": {
+   "doc_id": "YGPA-B416-CF73127A",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "fe681e48a7775de4c559810c1dc0cc3cfacb345dec928a6d58b72cfb5e463f9f",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-CF73127A-7789f60a4593b1b873115899": {
+   "doc_id": "YGPA-B416-CF73127A",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "9ac4ff92a2fa1018b82d4ef02fadf93e3328d417ebae7bd1f28e1cd45903aee0",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-CF73127A-8de0dc0274921afe4e0b8d59": {
+   "doc_id": "YGPA-B416-CF73127A",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "d0d0c327a2ca38a6f21c91d376865d5f6ccc59ac18cd335b8981ec4cefc0b044",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
    ]
   },
   "YGPA-B416-CF73127A-df6c15c4bc42520da3840324": {
    "doc_id": "YGPA-B416-CF73127A",
    "status": "approved_with_notes",
-   "chunk_text_sha256": "a3e893b8a60de195d5c51989f24430a94aaca091b7b529f2aa75743e0db69f28",
+   "chunk_text_sha256": "6cdec3b4c4eaeecd4b94d1259c95af6cdaa254f294cc77fd5150d4d23609280a",
    "notes": [
     "게시일 기준 내용 — 지금도 유효한지 확인 필요",
-    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요"
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-CF73127A-e0b3e560134bd591a4c40d46": {
+   "doc_id": "YGPA-B416-CF73127A",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "876827b11bfd670b79b12e21100c87d508c7438ba96d997ad510d213c32f235a",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-CF73127A-ec1878c3f6bea352833bf24a": {
+   "doc_id": "YGPA-B416-CF73127A",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "254763f3e6cea2bb3c2b71b56a1bb47c054bfdf6c563e37945add5f7fb5a73de",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-CF73127A-f31cdb386b67e2fec4f24839": {
+   "doc_id": "YGPA-B416-CF73127A",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "9f9f6e3b84cada6fed327113d014268029ca57c6f217b6a70f5e1ec866f55948",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-DA3870C4-3dd15a8eb94c4bf5e4f7b126": {
+   "doc_id": "YGPA-B416-DA3870C4",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "34c7fa16ee18a7047f0398c1319578981bda3a81461334da7b7fe35e1d2a8327",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-DA3870C4-3ec22df10ef18f5ceaf761d9": {
+   "doc_id": "YGPA-B416-DA3870C4",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "63b0cbca7a9ca0b58357542a04a32f3e24a0e6232a7a35dcc9f9a1b647f24072",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-DA3870C4-488544b51ed0a3556fe84962": {
+   "doc_id": "YGPA-B416-DA3870C4",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "efd422e9339e5e5a7e3f11b86cc6e66c6c90888b7afd936a7447690f3e29e018",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
    ]
   },
   "YGPA-B416-DA3870C4-596e1dffc56b44b02976f815": {
    "doc_id": "YGPA-B416-DA3870C4",
    "status": "approved_with_notes",
-   "chunk_text_sha256": "bb25d5f59514be0aa5bc52ac9240f18c99d02896fd3f17068799dc441c2f8d77",
+   "chunk_text_sha256": "cc50d0d83807c9d6032aa3d693060491a7c6539cb29355908a815a76270d510e",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요"
+   ]
+  },
+  "YGPA-B416-DA3870C4-598594654dcd30a27c9b3d1b": {
+   "doc_id": "YGPA-B416-DA3870C4",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "35769536a45ac8e28f54b3d7d49d77a90e5064a4e51f0364d484965d7435f6b9",
    "notes": [
     "게시일 기준 내용 — 지금도 유효한지 확인 필요",
-    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요"
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-DA3870C4-84f06ee3825784d9286fa6f9": {
+   "doc_id": "YGPA-B416-DA3870C4",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "b61d04c1ddf544ea270dc7bbd097e95ecc253a9517f1bd3944e6781d22e22b3b",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-DAFB2289-1cab77847ff3c692a59e44ec": {
+   "doc_id": "YGPA-B416-DAFB2289",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "c2d15458479bb723927b20d113ec42e51db7bb02b4af0f7ba8e35f5226b8b03c",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-DAFB2289-3615d14872b8937b0580fb79": {
+   "doc_id": "YGPA-B416-DAFB2289",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "e1513813e8ec356fed2a3ffc1c078dfc42ed9edc9a37902d616390be8f19177c",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-DAFB2289-487e3046dfc09f27b8f41192": {
+   "doc_id": "YGPA-B416-DAFB2289",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "55ce10d05a2eb9dfa027799f675968ae7e74e6bd197bba75c6a21567e13cf16a",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-DAFB2289-521363fc2c42c252bdedf726": {
+   "doc_id": "YGPA-B416-DAFB2289",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "aeb929a638ccf02980c04731941698cb9800c12be8158612c23b9bd46976a7dc",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-DAFB2289-78f123303477e24170068179": {
+   "doc_id": "YGPA-B416-DAFB2289",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "7bc78c6d016bfb5893cae5f3606f205d53cf7cea8185c8becf5ecbc3aecc108e",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
    ]
   },
   "YGPA-B416-DAFB2289-9b42a7f2c1e2ac5172a17c59": {
    "doc_id": "YGPA-B416-DAFB2289",
    "status": "approved_with_notes",
-   "chunk_text_sha256": "122fbe38b99aa35becd7dff61c65c477effe2954eddaeb99b9324d0a3e6ce626",
+   "chunk_text_sha256": "fb488b970a1bef860a20ef9a0110e81b4c1b378a264bdcf0119ceb7684e4ea8d",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요"
+   ]
+  },
+  "YGPA-B416-DAFB2289-ab5661afbee3b313dc739009": {
+   "doc_id": "YGPA-B416-DAFB2289",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "f9a664c8d4cb366c09d4841d582fbc6f56c253e8306d46e8b3b7eb05e07b627e",
    "notes": [
     "게시일 기준 내용 — 지금도 유효한지 확인 필요",
-    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요"
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-DAFB2289-e30260af992c3abc6a3a188f": {
+   "doc_id": "YGPA-B416-DAFB2289",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "e254add6f63b9d69fac68eccc84460d2877e15c62aa5810ddb4c5a182b5f12dd",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-DAFB2289-f3bad6c81e05c04242d0e0ee": {
+   "doc_id": "YGPA-B416-DAFB2289",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "dcf72b4c970321b9046cdb930fea0d2fe3eccb1dfd2c3e0dbe84c0ccd67eec30",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
    ]
   },
   "YGPA-B416-DCE80F93-989664eb47e54a42b152c00d": {
@@ -25576,46 +28113,214 @@
   "YGPA-B416-ED9B40DC-00c158614d55055efda51f3f": {
    "doc_id": "YGPA-B416-ED9B40DC",
    "status": "approved_with_notes",
-   "chunk_text_sha256": "bce81a3f5bde2e52e5256cd57e4135c93abe34b0a2aa1736b6ad63906a9e8c0a",
+   "chunk_text_sha256": "16b5d60162352a7df9006ea2194a13a4a2422fa4b0815436713ee296f8f839bf",
    "notes": [
-    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
-    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요"
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요"
    ]
   },
   "YGPA-B416-ED9B40DC-2198ffd208b7d79013be55ab": {
    "doc_id": "YGPA-B416-ED9B40DC",
    "status": "approved_with_notes",
-   "chunk_text_sha256": "866e2a89d4a8f4ee57ccca3a85cca51e61a43a993712d00a57ff12bd98371369",
+   "chunk_text_sha256": "3994f20b694d861c482a496bbcbf91cb8290ed60ddf46d719c0619617057431a",
    "notes": [
     "게시일 기준 내용 — 지금도 유효한지 확인 필요",
-    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요"
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-ED9B40DC-48558236b15022a96f9c9308": {
+   "doc_id": "YGPA-B416-ED9B40DC",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "3760adc86e63007aeaa4b9acfdcea49403346f2553a3d225361f3c7e03e39ae0",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-ED9B40DC-49a114177b432f4ff5a09147": {
+   "doc_id": "YGPA-B416-ED9B40DC",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "0129a42355d2e02392894821064a15fabd5346225cbc2a694cc27de910d7ff01",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-ED9B40DC-6e40a87720b10099e3acd040": {
+   "doc_id": "YGPA-B416-ED9B40DC",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "998d4dd6bdc2c4aa94317152e67b937072ca1d315c91eae0bf374b3e7c6c19c3",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-ED9B40DC-b8a669d5fbefbd1c94073e27": {
+   "doc_id": "YGPA-B416-ED9B40DC",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "37fb43a2e2c69d9dc30fb4e73f26900f4646f423354d8cf16f3d23bfb153dfb1",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-ED9B40DC-c1d5a223bc9aab9502b959cf": {
+   "doc_id": "YGPA-B416-ED9B40DC",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "b4cc2f6271ca50ae5cb5a40ca4c1a590eb4438ab27d0cd4a4c7c0882f9037519",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-ED9B40DC-cbafa7eb2307ce26089bfe38": {
+   "doc_id": "YGPA-B416-ED9B40DC",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "f038dd5f2b075c3637557a85c83859333cd3a5aea581c61c4461ddfb065319ad",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-ED9B40DC-f3f77b9fe6c2388688b22f11": {
+   "doc_id": "YGPA-B416-ED9B40DC",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "a809950c83017b0018f540432d612b84c4c158dbdd4278d1ca571c9a2f848386",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-ED9B40DC-ff5fcb402e40bcb134fbbcd2": {
+   "doc_id": "YGPA-B416-ED9B40DC",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "8bfcec6452c63852fe6eee099e54fab0b016bf085cf3c855bfcba2067bd6ab81",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-EFE591A6-1aec199b73cbc4dc64811259": {
+   "doc_id": "YGPA-B416-EFE591A6",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "bd177af512d78642f3b2ced504f3e2b11c19cc632a54e3b96529cc4b648f7f4c",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
    ]
   },
   "YGPA-B416-EFE591A6-b238503791f6b0b1e9168908": {
    "doc_id": "YGPA-B416-EFE591A6",
    "status": "approved_with_notes",
-   "chunk_text_sha256": "3ce26ed75cbd6e173e86aaab801c849cfd26892baf53aadc644866424fef48cd",
+   "chunk_text_sha256": "bb6ce0c370a5832033fd275cba4820e8f76a0196d147d2f02e575943903d276d",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요"
+   ]
+  },
+  "YGPA-B416-EFE591A6-c5312dc94523f2e6efb46ea9": {
+   "doc_id": "YGPA-B416-EFE591A6",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "8a51be8cf7c2d191b219347aa28e4fcf5454d123be493331eeb0399778db4c98",
    "notes": [
     "게시일 기준 내용 — 지금도 유효한지 확인 필요",
-    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요"
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-EFE591A6-e361f1ef002ea3882af2c8d3": {
+   "doc_id": "YGPA-B416-EFE591A6",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "908aa8da265c9f7ecd036bd6c4a8a02c37993b05388105ef50ff1913c27d91a9",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-EFE591A6-e91a2e1bd17eefb89d258447": {
+   "doc_id": "YGPA-B416-EFE591A6",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "75acf77bb02464c9893848528640d80c3106c8f1280dd3db0aea50ea8ec42499",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-F90B5306-1d2cd3affef6de88e3384dd1": {
+   "doc_id": "YGPA-B416-F90B5306",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "3bd226a4536685dd508e1927b46bec2dfa347a3573b92bf5ed6c7e9fe49b8150",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-F90B5306-24a5e83c8da16020ccc389bc": {
+   "doc_id": "YGPA-B416-F90B5306",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "6ace6a1732ca11de9c39f067779dc1ea4fb1f481917bfd060c5aa700b8acf056",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-F90B5306-26624338d8ada0366295e3ea": {
+   "doc_id": "YGPA-B416-F90B5306",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "206b5be2279fc326c1680adbb4ee01b7f2a6f67e8e0867c7e1adf439a8dda4fa",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
    ]
   },
   "YGPA-B416-F90B5306-507f78eb9204fc43ec040677": {
    "doc_id": "YGPA-B416-F90B5306",
    "status": "approved_with_notes",
-   "chunk_text_sha256": "83e3ba5f82a744f7ec4a7af70b7f54170974c6d387ae647aaca020b0535dfd38",
+   "chunk_text_sha256": "992b6f2477dcc86f0c650e94c64ab07a99b76c238393ed9558dd94f7c7b3cd33",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요"
+   ]
+  },
+  "YGPA-B416-F90B5306-b6d75772f420f1af0f8bb711": {
+   "doc_id": "YGPA-B416-F90B5306",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "62f42131f1ce630152e6b249b166014e1fbbe7de29580a4d57a389dd0ba7bbeb",
    "notes": [
     "게시일 기준 내용 — 지금도 유효한지 확인 필요",
-    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요"
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
    ]
   },
   "YGPA-B416-F90B5306-c5dbf30eebd85c6784e7a170": {
    "doc_id": "YGPA-B416-F90B5306",
    "status": "approved_with_notes",
-   "chunk_text_sha256": "c17b3ef4ac08bf1ea1f5e0ba8e4e42734d8b3be18c16bd2d4280357a710532c0",
+   "chunk_text_sha256": "73b649ac7f60537358ef604511d05d284f03a8712a059d8223744c7eb2b302e7",
    "notes": [
     "게시일 기준 내용 — 지금도 유효한지 확인 필요",
-    "이미지에서 자동으로 읽은 글자 포함 — 숫자는 원문 확인 필요"
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-F90B5306-cff5707383a2048508dd9924": {
+   "doc_id": "YGPA-B416-F90B5306",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "f64fb4e775d438460f3bd67efd3ae9b4d92e04558b57a3633229f134b6f33034",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-F90B5306-d571e85c745d8bbf4cbfcb68": {
+   "doc_id": "YGPA-B416-F90B5306",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "2dbdec7c94098d5c83eec0a0a598d012688a1e81d600b70b999d16ce693f7ed3",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
+   ]
+  },
+  "YGPA-B416-F90B5306-d8ee02c88898221e3f661f68": {
+   "doc_id": "YGPA-B416-F90B5306",
+   "status": "approved_with_notes",
+   "chunk_text_sha256": "567834ab1e681a8879ac2dde9e14d451bdd31d410e26afcca63557f5999d9fc9",
+   "notes": [
+    "게시일 기준 내용 — 지금도 유효한지 확인 필요",
+    "이미지 내용을 AI(VLM)가 옮긴 글 포함 — 숫자·이름은 원문 확인 필요"
    ]
   },
   "YGPA-B426-4EB25A8B-1b653b9da597bb2b82db115b": {

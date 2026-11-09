@@ -30,11 +30,11 @@ def install(index: str):
         max_form = search.form_cap() if max_law is None else max_law
         max_law = search.law_cap() if max_law is None else max_law
         excluded = set(search.excluded_docs(question))
-        foreign = search.is_foreign(question)
+        allowed = set(search.chunk_languages(question))
         best = {}
         for i in np.argsort(dist):
             c = chunks[i]
-            if c["doc_id"] in excluded or (not foreign and langs[i] != "ko"):
+            if c["doc_id"] in excluded or langs[i] not in allowed:
                 continue
             u = units[i]
             if u not in best:

@@ -50,7 +50,7 @@ FROM (
                               WHEN chunk->>'chunk_kind' = 'whole_form' THEN 'form' ELSE 'law' END AS kind,
                          CASE WHEN chunk->>'parent_chunk_id' IS NOT NULL THEN chunk->>'text' END AS part
                   FROM rag_chunks WHERE index_version = :version AND NOT (doc_id = ANY(:excluded))
-                    AND (:foreign OR COALESCE(chunk->>'language', 'ko') = 'ko')) d
+                    AND COALESCE(chunk->>'language', 'ko') = ANY(:langs)) d
             ORDER BY unit, dist
         ) u
     ) p
@@ -94,6 +94,16 @@ def is_foreign(question: str) -> bool:
     return bool(question.strip()) and not lang.is_korean(question)
 
 
+def chunk_languages(question: str) -> list[str]:
+    """검색 후보로 받을 청크 언어: 한국어 + 질문 언어. 영어 질문에 일·중 페이지가 자리를 차지했다
+    (2026-11-09, 이미지 글이 들어간 일·중 Port-MIS 흐름도가 영어 출입증 질문 t24의 상위를 채움).
+    가나 없이 한자만 쓴 질문은 일·중을 가를 수 없어 둘 다 받는다"""
+    if not is_foreign(question):
+        return ["ko"]
+    found = lang.detect(question)
+    return ["ko", "zh", "ja"] if found == "zh" else ["ko", found] if found in ("en", "ja") else ["ko", "en", "ja", "zh"]
+
+
 def excluded_docs(question: str) -> list[str]:
     excluded = [doc for doc, words in SCOPED_DOCS.items() if not any(w in question for w in words)]
     if VESSEL_REPORT.search(question) and "출입증" not in question:
@@ -113,6 +123,6 @@ def search(query_vector: list[float], k: int = 5, question: str = "", max_law: i
             max_law = law_cap()
         rows = conn.execute(SQL, {"q": q, "version": version, "per_doc": MAX_PER_DOC, "max_law": max_law,
                                   "max_form": max_form, "k": k, "excluded": excluded_docs(question),
-                                  "foreign": is_foreign(question)}).all()
+                                  "langs": chunk_languages(question)}).all()
     # part: 자식(항)이 걸렸을 때 그 항 글 — 재정렬은 부모 전체 대신 이것을 읽는다 (app/rerank.py)
     return [{"chunk": chunk, "score": float(score)} | ({"part": part} if part else {}) for chunk, score, part in rows]
