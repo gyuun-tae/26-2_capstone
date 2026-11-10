@@ -1,0 +1,317 @@
+{
+ "version": "1.1",
+ "created_at": "2026-11-10T14:28:16.143998+00:00",
+ "rule": "v1.0에 더해 사전정보공표 안내 페이지 전체와 아래 게시판을 넣는다. 하위 게시판 82개·사용자 글 게시판·FAQ는 계속 제외.",
+ "faq_informed": "이 확대는 FAQ 골든셋 검토(2026-11-10)에서 근거 미수집 문항을 보고 사용자 결정으로 한 것이다. 골든셋 'FAQ 보고 수집' 열이 Y인 문항은 개발에 쓰인 문항으로 보고 지표를 따로 낸다.",
+ "boards": {
+  "211": {
+   "name": "민원서식자료실",
+   "limit": 30,
+   "files": true
+  },
+  "339": {
+   "name": "개인정보처리업무 위탁사실 공개",
+   "limit": 5,
+   "files": true
+  },
+  "275": {
+   "name": "공고",
+   "limit": 10,
+   "files": false
+  },
+  "391": {
+   "name": "채용공고",
+   "limit": 10,
+   "files": false
+  }
+ },
+ "pages": [
+  {
+   "doc_id": "YGPA-600",
+   "kind": "page",
+   "path": "/hmpg/ygpa/info/bein/in00/contPageDetail.do?conts_no=A6440D724FFB4AC2B49215497908B0BB",
+   "lang": "ko",
+   "title": "열린경영 — 사전정보공표 — 전체"
+  },
+  {
+   "doc_id": "YGPA-601",
+   "kind": "page",
+   "path": "/hmpg/ygpa/info/bein/in01/bu05/contPageDetail.do?conts_no=64F9A0D2C1814932A0801DF8740AE424",
+   "lang": "ko",
+   "title": "사전정보공표 — 경영기획 — 공공데이터 개방사업 현황"
+  },
+  {
+   "doc_id": "YGPA-602",
+   "kind": "page",
+   "path": "/hmpg/ygpa/info/bein/in01/bu06/contPageDetail.do?conts_no=7C357B38F4D54D579268FFB3245BC387",
+   "lang": "ko",
+   "title": "사전정보공표 — 경영기획 — 해외 협력사업 현황"
+  },
+  {
+   "doc_id": "YGPA-603",
+   "kind": "page",
+   "path": "/hmpg/ygpa/info/bein/in01/contPageDetail.do?conts_no=EEB7EEEC5B584BA28CDE0E5F44E2976C",
+   "lang": "ko",
+   "title": "열린경영 — 사전정보공표 — 경영기획"
+  },
+  {
+   "doc_id": "YGPA-604",
+   "kind": "page",
+   "path": "/hmpg/ygpa/info/bein/in02/contPageDetail.do?conts_no=7FD4BED8154A4D089A2228CFB04B8364",
+   "lang": "ko",
+   "title": "열린경영 — 사전정보공표 — 총무"
+  },
+  {
+   "doc_id": "YGPA-605",
+   "kind": "page",
+   "path": "/hmpg/ygpa/info/bein/in02/mg03/contPageDetail.do?conts_no=A3C82520759B4564B2EC15BD37E9BECC",
+   "lang": "ko",
+   "title": "사전정보공표 — 총무 — 청사현황 및 시설사용 안내"
+  },
+  {
+   "doc_id": "YGPA-606",
+   "kind": "page",
+   "path": "/hmpg/ygpa/info/bein/in02/mg17/contPageDetail.do?conts_no=54A1E2FC45E34846A544CBBF433CE943",
+   "lang": "ko",
+   "title": "사전정보공표 — 총무 — 환경친화적 차량 도입 현황"
+  },
+  {
+   "doc_id": "YGPA-607",
+   "kind": "page",
+   "path": "/hmpg/ygpa/info/bein/in03/contPageDetail.do?conts_no=07C21CB1BBC5452288C3779CE5673746",
+   "lang": "ko",
+   "title": "열린경영 — 사전정보공표 — 인사"
+  },
+  {
+   "doc_id": "YGPA-608",
+   "kind": "page",
+   "path": "/hmpg/ygpa/info/bein/in03/hr05/contPageDetail.do?conts_no=EC9D99E2738C46F59B40EBAB1A26DAD6",
+   "lang": "ko",
+   "title": "사전정보공표 — 인사 — 임원 선임 방법 및 절차"
+  },
+  {
+   "doc_id": "YGPA-609",
+   "kind": "page",
+   "path": "/hmpg/ygpa/info/bein/in04/contPageDetail.do?conts_no=9873764EE0A3433A8D8752A4C5EACE24",
+   "lang": "ko",
+   "title": "열린경영 — 사전정보공표 — 법무노무"
+  },
+  {
+   "doc_id": "YGPA-610",
+   "kind": "page",
+   "path": "/hmpg/ygpa/info/bein/in04/la02/contPageDetail.do?conts_no=8CD6A0F492A645BEADE1F00BBCA90338",
+   "lang": "ko",
+   "title": "사전정보공표 — 법무노무 — 각종 기금운영 계획"
+  },
+  {
+   "doc_id": "YGPA-611",
+   "kind": "page",
+   "path": "/hmpg/ygpa/info/bein/in04/la03/contPageDetail.do?conts_no=4AE0D7E20BBF434895293138381D2627",
+   "lang": "ko",
+   "title": "사전정보공표 — 법무노무 — 기금지원사업 선정 결과"
+  },
+  {
+   "doc_id": "YGPA-612",
+   "kind": "page",
+   "path": "/hmpg/ygpa/info/bein/in04/la05/contPageDetail.do?conts_no=599D8581E6064BC180EE1021FF1B6280",
+   "lang": "ko",
+   "title": "사전정보공표 — 법무노무 — 해외 파견직원 복리후생비 등 지급내역"
+  },
+  {
+   "doc_id": "YGPA-613",
+   "kind": "page",
+   "path": "/hmpg/ygpa/info/bein/in05/bg10/contPageDetail.do?conts_no=30865AB975D74E079D1429EB16A9E358",
+   "lang": "ko",
+   "title": "사전정보공표 — 예산/계약 — 연도별 예산운영계획"
+  },
+  {
+   "doc_id": "YGPA-614",
+   "kind": "page",
+   "path": "/hmpg/ygpa/info/bein/in05/bg11/contPageDetail.do?conts_no=0A322E3E1108420A94C4EE74551DD9CB",
+   "lang": "ko",
+   "title": "사전정보공표 — 예산/계약 — 연도별 예산 현황"
+  },
+  {
+   "doc_id": "YGPA-615",
+   "kind": "page",
+   "path": "/hmpg/ygpa/info/bein/in05/contPageDetail.do?conts_no=78840352E6DB42F8BA829E1618B9C6F9",
+   "lang": "ko",
+   "title": "열린경영 — 사전정보공표 — 예산/계약"
+  },
+  {
+   "doc_id": "YGPA-616",
+   "kind": "page",
+   "path": "/hmpg/ygpa/info/bein/in06/contPageDetail.do?conts_no=EBE204C367654D2DAB187FCBE66EC72E",
+   "lang": "ko",
+   "title": "열린경영 — 사전정보공표 — 재정"
+  },
+  {
+   "doc_id": "YGPA-617",
+   "kind": "page",
+   "path": "/hmpg/ygpa/info/bein/in06/fi06/contPageDetail.do?conts_no=1DC03681E6C849C99315BDF6C3E68818",
+   "lang": "ko",
+   "title": "사전정보공표 — 재정 — 재무제표(현금흐름표)"
+  },
+  {
+   "doc_id": "YGPA-618",
+   "kind": "page",
+   "path": "/hmpg/ygpa/info/bein/in07/au06/contPageDetail.do?conts_no=62A4CD7A799349B4997D737374D40166",
+   "lang": "ko",
+   "title": "사전정보공표 — 행정감시 — 법인카드 관리 현황"
+  },
+  {
+   "doc_id": "YGPA-619",
+   "kind": "page",
+   "path": "/hmpg/ygpa/info/bein/in07/contPageDetail.do?conts_no=C5507C68583B427FBAB113DC40DA0B01",
+   "lang": "ko",
+   "title": "열린경영 — 사전정보공표 — 행정감시"
+  },
+  {
+   "doc_id": "YGPA-620",
+   "kind": "page",
+   "path": "/hmpg/ygpa/info/bein/in08/contPageDetail.do?conts_no=A2DA02AFDE46426A90CBB74927BD5E13",
+   "lang": "ko",
+   "title": "열린경영 — 사전정보공표 — 사회공헌"
+  },
+  {
+   "doc_id": "YGPA-621",
+   "kind": "page",
+   "path": "/hmpg/ygpa/info/bein/in08/so05/contPageDetail.do?conts_no=F7A3D4525E7D457C9B2D55030CAD8677",
+   "lang": "ko",
+   "title": "사전정보공표 — 사회공헌 — 협력업체 상벌심의 결과"
+  },
+  {
+   "doc_id": "YGPA-622",
+   "kind": "page",
+   "path": "/hmpg/ygpa/info/bein/in08/so06/contPageDetail.do?conts_no=26638A87006C45EB84EFC61303E1310B",
+   "lang": "ko",
+   "title": "사전정보공표 — 사회공헌 — 협력업체 포상내역"
+  },
+  {
+   "doc_id": "YGPA-623",
+   "kind": "page",
+   "path": "/hmpg/ygpa/info/bein/in08/so07/contPageDetail.do?conts_no=8805F6D3DAF44B7896DD1A59E25FF28F",
+   "lang": "ko",
+   "title": "사전정보공표 — 사회공헌 — 협력업체 행동강령"
+  },
+  {
+   "doc_id": "YGPA-624",
+   "kind": "page",
+   "path": "/hmpg/ygpa/info/bein/in09/contPageDetail.do?conts_no=A1915BF0C65A4D429CE00C666494A442",
+   "lang": "ko",
+   "title": "열린경영 — 사전정보공표 — 청렴윤리"
+  },
+  {
+   "doc_id": "YGPA-625",
+   "kind": "page",
+   "path": "/hmpg/ygpa/info/bein/in09/et01/contPageDetail.do?conts_no=B67A8A9250244031916FB65CCFE30674",
+   "lang": "ko",
+   "title": "사전정보공표 — 청렴윤리 — 범죄유형별 형사처분 임직원 현황"
+  },
+  {
+   "doc_id": "YGPA-626",
+   "kind": "page",
+   "path": "/hmpg/ygpa/info/bein/in09/et05/contPageDetail.do?conts_no=B386B147BCFA4930991298CB0BA2EF80",
+   "lang": "ko",
+   "title": "사전정보공표 — 청렴윤리 — 반부패 경쟁력 평가 현황"
+  },
+  {
+   "doc_id": "YGPA-627",
+   "kind": "page",
+   "path": "/hmpg/ygpa/info/bein/in09/et06/contPageDetail.do?conts_no=3CAD5EF7D2AC460FB05F7FE33E7764E3",
+   "lang": "ko",
+   "title": "사전정보공표 — 청렴윤리 — 종합청렴도 평가"
+  },
+  {
+   "doc_id": "YGPA-628",
+   "kind": "page",
+   "path": "/hmpg/ygpa/info/bein/in09/et07/contPageDetail.do?conts_no=D1AA61B9577E476FA4A690D75D5C1CDE",
+   "lang": "ko",
+   "title": "사전정보공표 — 청렴윤리 — 반부패 경쟁력 추진 현황"
+  },
+  {
+   "doc_id": "YGPA-629",
+   "kind": "page",
+   "path": "/hmpg/ygpa/info/bein/in10/contPageDetail.do?conts_no=D027A6CCB3B644789C4D8439ED345753",
+   "lang": "ko",
+   "title": "열린경영 — 사전정보공표 — 기관평가"
+  },
+  {
+   "doc_id": "YGPA-630",
+   "kind": "page",
+   "path": "/hmpg/ygpa/info/bein/in11/contPageDetail.do?conts_no=97A06EE81F8D4E92B9A6D9E313339D0E",
+   "lang": "ko",
+   "title": "열린경영 — 사전정보공표 — 안전보안"
+  },
+  {
+   "doc_id": "YGPA-631",
+   "kind": "page",
+   "path": "/hmpg/ygpa/info/bein/in11/sf03/contPageDetail.do?conts_no=567E2A44F49142F981B22E9521AFB2C2",
+   "lang": "ko",
+   "title": "사전정보공표 — 안전보안 — 항만시설물 안전등급 현황"
+  },
+  {
+   "doc_id": "YGPA-632",
+   "kind": "page",
+   "path": "/hmpg/ygpa/info/bein/in12/contPageDetail.do?conts_no=1AC7C453533B4267BD03C4C4F9BAEB8E",
+   "lang": "ko",
+   "title": "열린경영 — 사전정보공표 — 항만시설/개발"
+  },
+  {
+   "doc_id": "YGPA-633",
+   "kind": "page",
+   "path": "/hmpg/ygpa/info/bein/in13/contPageDetail.do?conts_no=FFDEF972379E467D8E2AA7F072D120DB",
+   "lang": "ko",
+   "title": "열린경영 — 사전정보공표 — 항만운영"
+  },
+  {
+   "doc_id": "YGPA-634",
+   "kind": "page",
+   "path": "/hmpg/ygpa/info/bein/in14/contPageDetail.do?conts_no=7108A1C7654B4B63B7EDD4A1B7864EC2",
+   "lang": "ko",
+   "title": "열린경영 — 사전정보공표 — 홍보대외협력"
+  },
+  {
+   "doc_id": "YGPA-635",
+   "kind": "page",
+   "path": "/hmpg/ygpa/info/bein/in14/pr05/contPageDetail.do?conts_no=BC2CEC483BAA45DF92BCCD34186EBEAE",
+   "lang": "ko",
+   "title": "사전정보공표 — 홍보대외협력 — 명예대사 및 홍보대사 운영현황"
+  },
+  {
+   "doc_id": "YGPA-636",
+   "kind": "page",
+   "path": "/hmpg/ygpa/info/bein/in15/cm01/contPageDetail.do?conts_no=084C5EFC69624CA2B7DA0E5C7502F800",
+   "lang": "ko",
+   "title": "사전정보공표 — 소통 — 민원관련 조사 및 처리결과"
+  },
+  {
+   "doc_id": "YGPA-637",
+   "kind": "page",
+   "path": "/hmpg/ygpa/info/bein/in15/cm02/contPageDetail.do?conts_no=4D33CAC6AEEF4BA7AA30F4F2D7BE142A",
+   "lang": "ko",
+   "title": "사전정보공표 — 소통 — 빅데이터활용 현황 및 계획"
+  },
+  {
+   "doc_id": "YGPA-638",
+   "kind": "page",
+   "path": "/hmpg/ygpa/info/bein/in15/contPageDetail.do?conts_no=E35C5EBB66D04ED5B1121CEE428519C7",
+   "lang": "ko",
+   "title": "열린경영 — 사전정보공표 — 소통"
+  },
+  {
+   "doc_id": "YGPA-639",
+   "kind": "page",
+   "path": "/hmpg/ygpa/info/bein/in16/contPageDetail.do?conts_no=FB4538E3BC2042F3A667A63F74BC2359",
+   "lang": "ko",
+   "title": "열린경영 — 사전정보공표 — 기타"
+  },
+  {
+   "doc_id": "YGPA-640",
+   "kind": "page",
+   "path": "/hmpg/ygpa/info/bein/in17/contPageDetail.do?conts_no=8E6334506D0F498D93044FF64B9924A0",
+   "lang": "ko",
+   "title": "열린경영 — 사전정보공표 — 자주찾는 정보"
+  }
+ ]
+}

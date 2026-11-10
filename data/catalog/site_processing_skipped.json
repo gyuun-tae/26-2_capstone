@@ -156,8 +156,16 @@
 "본문 거의 없음"
 ],
 [
+"YGPA-F01F909E4D9",
+"ModuleNotFoundError: No module named 'requests'"
+],
+[
 "YGPA-F0B88E47071",
 "형식 미지원 .png"
+],
+[
+"YGPA-F0C19A9A7B9",
+"ModuleNotFoundError: No module named 'requests'"
 ],
 [
 "YGPA-F14A986968E",
@@ -165,6 +173,10 @@
 ],
 [
 "YGPA-F1CE731BA7C",
+"ModuleNotFoundError: No module named 'requests'"
+],
+[
+"YGPA-F23F317A653",
 "ModuleNotFoundError: No module named 'requests'"
 ],
 [
@@ -200,6 +212,10 @@
 "ModuleNotFoundError: No module named 'requests'"
 ],
 [
+"YGPA-F393C0EA939",
+"ModuleNotFoundError: No module named 'requests'"
+],
+[
 "YGPA-F395D97D71D",
 "ModuleNotFoundError: No module named 'requests'"
 ],
@@ -216,11 +232,27 @@
 "형식 미지원 .jpg"
 ],
 [
+"YGPA-F47EC99A7DC",
+"ModuleNotFoundError: No module named 'requests'"
+],
+[
+"YGPA-F4DBCD84104",
+"ModuleNotFoundError: No module named 'requests'"
+],
+[
 "YGPA-F51438C4718",
 "형식 미지원 .jpg"
 ],
 [
+"YGPA-F568CDB68E9",
+"ModuleNotFoundError: No module named 'requests'"
+],
+[
 "YGPA-F57902D4B22",
+"ModuleNotFoundError: No module named 'requests'"
+],
+[
+"YGPA-F5F0A434527",
 "ModuleNotFoundError: No module named 'requests'"
 ],
 [
@@ -232,11 +264,19 @@
 "ModuleNotFoundError: No module named 'requests'"
 ],
 [
+"YGPA-F64912DF972",
+"ModuleNotFoundError: No module named 'requests'"
+],
+[
 "YGPA-F663C7A6D26",
 "ModuleNotFoundError: No module named 'requests'"
 ],
 [
 "YGPA-F68012A8183",
+"ModuleNotFoundError: No module named 'requests'"
+],
+[
+"YGPA-F68CD5F2379",
 "ModuleNotFoundError: No module named 'requests'"
 ],
 [
@@ -252,6 +292,14 @@
 "형식 미지원 .hwpx"
 ],
 [
+"YGPA-F7EF20C1E5D",
+"ModuleNotFoundError: No module named 'requests'"
+],
+[
+"YGPA-F873B58AEEF",
+"ModuleNotFoundError: No module named 'requests'"
+],
+[
 "YGPA-F878E558A06",
 "ModuleNotFoundError: No module named 'requests'"
 ],
@@ -264,12 +312,28 @@
 "ModuleNotFoundError: No module named 'requests'"
 ],
 [
+"YGPA-F92B5E786D2",
+"ModuleNotFoundError: No module named 'requests'"
+],
+[
 "YGPA-F966F2EDB4E",
 "형식 미지원 .jpg"
 ],
 [
 "YGPA-F977FC5E0F1",
 "형식 미지원 .hwpx"
+],
+[
+"YGPA-F9C36192F9B",
+"ModuleNotFoundError: No module named 'requests'"
+],
+[
+"YGPA-F9CFBF9E0D3",
+"ModuleNotFoundError: No module named 'requests'"
+],
+[
+"YGPA-F9F38F27228",
+"추출 글자 없음"
 ],
 [
 "YGPA-F9FF2D39DB5",
@@ -292,7 +356,19 @@
 "형식 미지원 .hwpx"
 ],
 [
+"YGPA-FBCB679E07A",
+"ModuleNotFoundError: No module named 'requests'"
+],
+[
 "YGPA-FBFBDCABE0F",
+"ModuleNotFoundError: No module named 'requests'"
+],
+[
+"YGPA-FC10E4A9914",
+"ModuleNotFoundError: No module named 'requests'"
+],
+[
+"YGPA-FCF07E957A5",
 "ModuleNotFoundError: No module named 'requests'"
 ],
 [
@@ -316,6 +392,10 @@
 "ModuleNotFoundError: No module named 'requests'"
 ],
 [
+"YGPA-FDF4148F819",
+"ModuleNotFoundError: No module named 'requests'"
+],
+[
 "YGPA-FE361054774",
 "형식 미지원 .hwpx"
 ],
@@ -325,6 +405,14 @@
 ],
 [
 "YGPA-FED51B936CD",
+"ModuleNotFoundError: No module named 'requests'"
+],
+[
+"YGPA-FF03D24CF6A",
+"ModuleNotFoundError: No module named 'requests'"
+],
+[
+"YGPA-FF0E7362EF9",
 "ModuleNotFoundError: No module named 'requests'"
 ],
 [

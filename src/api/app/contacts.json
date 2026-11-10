@@ -2332,6 +2332,270 @@
    "source": "YGPA — 최고경영자 — 인사말 페이지 담당자 안내",
    "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/ygpa/yceo/iceo/contPageDetail.do?conts_no=A61A4D0CF017433C9E0602E8B10D9B15",
    "fetched_on": "2026-11-02"
+  },
+  {
+   "key": "site-YGPA-601",
+   "label": "AI디지털부",
+   "phone": "061-797-4471",
+   "note": "사전정보공표 — 경영기획 — 공공데이터 개방사업 현황",
+   "doc_ids": [
+    "YGPA-601"
+   ],
+   "source": "사전정보공표 — 경영기획 — 공공데이터 개방사업 현황 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/info/bein/in01/bu05/contPageDetail.do?conts_no=64F9A0D2C1814932A0801DF8740AE424",
+   "fetched_on": "2026-11-10"
+  },
+  {
+   "key": "site-YGPA-602",
+   "label": "글로벌마케팅부",
+   "phone": "061-797-4463",
+   "note": "사전정보공표 — 경영기획 — 해외 협력사업 현황",
+   "doc_ids": [
+    "YGPA-602"
+   ],
+   "source": "사전정보공표 — 경영기획 — 해외 협력사업 현황 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/info/bein/in01/bu06/contPageDetail.do?conts_no=7C357B38F4D54D579268FFB3245BC387",
+   "fetched_on": "2026-11-10"
+  },
+  {
+   "key": "site-YGPA-605",
+   "label": "해양복합운영부",
+   "phone": "061-797-4542",
+   "note": "사전정보공표 — 총무 — 청사현황 및 시설사용 안내",
+   "doc_ids": [
+    "YGPA-605"
+   ],
+   "source": "사전정보공표 — 총무 — 청사현황 및 시설사용 안내 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/info/bein/in02/mg03/contPageDetail.do?conts_no=A3C82520759B4564B2EC15BD37E9BECC",
+   "fetched_on": "2026-11-10"
+  },
+  {
+   "key": "site-YGPA-606",
+   "label": "해양복합운영부",
+   "phone": "061-797-4542",
+   "note": "사전정보공표 — 총무 — 환경친화적 차량 도입 현황",
+   "doc_ids": [
+    "YGPA-606"
+   ],
+   "source": "사전정보공표 — 총무 — 환경친화적 차량 도입 현황 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/info/bein/in02/mg17/contPageDetail.do?conts_no=54A1E2FC45E34846A544CBBF433CE943",
+   "fetched_on": "2026-11-10"
+  },
+  {
+   "key": "site-YGPA-608",
+   "label": "경영지원부",
+   "phone": "061-797-4353",
+   "note": "사전정보공표 — 인사 — 임원 선임 방법 및 절차",
+   "doc_ids": [
+    "YGPA-608"
+   ],
+   "source": "사전정보공표 — 인사 — 임원 선임 방법 및 절차 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/info/bein/in03/hr05/contPageDetail.do?conts_no=EC9D99E2738C46F59B40EBAB1A26DAD6",
+   "fetched_on": "2026-11-10"
+  },
+  {
+   "key": "site-YGPA-610",
+   "label": "경영지원부",
+   "phone": "061-797-4352",
+   "note": "사전정보공표 — 법무노무 — 각종 기금운영 계획",
+   "doc_ids": [
+    "YGPA-610"
+   ],
+   "source": "사전정보공표 — 법무노무 — 각종 기금운영 계획 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/info/bein/in04/la02/contPageDetail.do?conts_no=8CD6A0F492A645BEADE1F00BBCA90338",
+   "fetched_on": "2026-11-10"
+  },
+  {
+   "key": "site-YGPA-611",
+   "label": "경영지원부",
+   "phone": "061-797-4352",
+   "note": "사전정보공표 — 법무노무 — 기금지원사업 선정 결과",
+   "doc_ids": [
+    "YGPA-611"
+   ],
+   "source": "사전정보공표 — 법무노무 — 기금지원사업 선정 결과 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/info/bein/in04/la03/contPageDetail.do?conts_no=4AE0D7E20BBF434895293138381D2627",
+   "fetched_on": "2026-11-10"
+  },
+  {
+   "key": "site-YGPA-612",
+   "label": "경영지원부",
+   "phone": "061-797-4352",
+   "note": "사전정보공표 — 법무노무 — 해외 파견직원 복리후생비 등 지급내역",
+   "doc_ids": [
+    "YGPA-612"
+   ],
+   "source": "사전정보공표 — 법무노무 — 해외 파견직원 복리후생비 등 지급내역 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/info/bein/in04/la05/contPageDetail.do?conts_no=599D8581E6064BC180EE1021FF1B6280",
+   "fetched_on": "2026-11-10"
+  },
+  {
+   "key": "site-YGPA-613",
+   "label": "기획조정실",
+   "phone": "061-797-4326",
+   "note": "사전정보공표 — 예산/계약 — 연도별 예산운영계획",
+   "doc_ids": [
+    "YGPA-613"
+   ],
+   "source": "사전정보공표 — 예산/계약 — 연도별 예산운영계획 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/info/bein/in05/bg10/contPageDetail.do?conts_no=30865AB975D74E079D1429EB16A9E358",
+   "fetched_on": "2026-11-10"
+  },
+  {
+   "key": "site-YGPA-614",
+   "label": "기획조정실",
+   "phone": "061-797-4326",
+   "note": "사전정보공표 — 예산/계약 — 연도별 예산 현황",
+   "doc_ids": [
+    "YGPA-614"
+   ],
+   "source": "사전정보공표 — 예산/계약 — 연도별 예산 현황 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/info/bein/in05/bg11/contPageDetail.do?conts_no=0A322E3E1108420A94C4EE74551DD9CB",
+   "fetched_on": "2026-11-10"
+  },
+  {
+   "key": "site-YGPA-618",
+   "label": "재무회계부",
+   "phone": "061-797-4367",
+   "note": "사전정보공표 — 행정감시 — 법인카드 관리 현황",
+   "doc_ids": [
+    "YGPA-618"
+   ],
+   "source": "사전정보공표 — 행정감시 — 법인카드 관리 현황 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/info/bein/in07/au06/contPageDetail.do?conts_no=62A4CD7A799349B4997D737374D40166",
+   "fetched_on": "2026-11-10"
+  },
+  {
+   "key": "site-YGPA-621",
+   "label": "경영지원부",
+   "phone": "061-797-4353",
+   "note": "사전정보공표 — 사회공헌 — 협력업체 상벌심의 결과",
+   "doc_ids": [
+    "YGPA-621"
+   ],
+   "source": "사전정보공표 — 사회공헌 — 협력업체 상벌심의 결과 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/info/bein/in08/so05/contPageDetail.do?conts_no=F7A3D4525E7D457C9B2D55030CAD8677",
+   "fetched_on": "2026-11-10"
+  },
+  {
+   "key": "site-YGPA-622",
+   "label": "경영지원부",
+   "phone": "061-797-4353",
+   "note": "사전정보공표 — 사회공헌 — 협력업체 포상내역",
+   "doc_ids": [
+    "YGPA-622"
+   ],
+   "source": "사전정보공표 — 사회공헌 — 협력업체 포상내역 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/info/bein/in08/so06/contPageDetail.do?conts_no=26638A87006C45EB84EFC61303E1310B",
+   "fetched_on": "2026-11-10"
+  },
+  {
+   "key": "site-YGPA-623",
+   "label": "ESG경영실",
+   "phone": "061-797-4382",
+   "note": "사전정보공표 — 사회공헌 — 협력업체 행동강령",
+   "doc_ids": [
+    "YGPA-623"
+   ],
+   "source": "사전정보공표 — 사회공헌 — 협력업체 행동강령 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/info/bein/in08/so07/contPageDetail.do?conts_no=8805F6D3DAF44B7896DD1A59E25FF28F",
+   "fetched_on": "2026-11-10"
+  },
+  {
+   "key": "site-YGPA-625",
+   "label": "ESG경영실",
+   "phone": "061-797-4382",
+   "note": "사전정보공표 — 청렴윤리 — 범죄유형별 형사처분 임직원 현황",
+   "doc_ids": [
+    "YGPA-625"
+   ],
+   "source": "사전정보공표 — 청렴윤리 — 범죄유형별 형사처분 임직원 현황 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/info/bein/in09/et01/contPageDetail.do?conts_no=B67A8A9250244031916FB65CCFE30674",
+   "fetched_on": "2026-11-10"
+  },
+  {
+   "key": "site-YGPA-626",
+   "label": "ESG경영실",
+   "phone": "061-797-4382",
+   "note": "사전정보공표 — 청렴윤리 — 반부패 경쟁력 평가 현황",
+   "doc_ids": [
+    "YGPA-626"
+   ],
+   "source": "사전정보공표 — 청렴윤리 — 반부패 경쟁력 평가 현황 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/info/bein/in09/et05/contPageDetail.do?conts_no=B386B147BCFA4930991298CB0BA2EF80",
+   "fetched_on": "2026-11-10"
+  },
+  {
+   "key": "site-YGPA-627",
+   "label": "ESG경영실",
+   "phone": "061-797-4382",
+   "note": "사전정보공표 — 청렴윤리 — 종합청렴도 평가",
+   "doc_ids": [
+    "YGPA-627"
+   ],
+   "source": "사전정보공표 — 청렴윤리 — 종합청렴도 평가 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/info/bein/in09/et06/contPageDetail.do?conts_no=3CAD5EF7D2AC460FB05F7FE33E7764E3",
+   "fetched_on": "2026-11-10"
+  },
+  {
+   "key": "site-YGPA-628",
+   "label": "ESG경영실",
+   "phone": "061-797-4382",
+   "note": "사전정보공표 — 청렴윤리 — 반부패 경쟁력 추진 현황",
+   "doc_ids": [
+    "YGPA-628"
+   ],
+   "source": "사전정보공표 — 청렴윤리 — 반부패 경쟁력 추진 현황 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/info/bein/in09/et07/contPageDetail.do?conts_no=D1AA61B9577E476FA4A690D75D5C1CDE",
+   "fetched_on": "2026-11-10"
+  },
+  {
+   "key": "site-YGPA-631",
+   "label": "스마트항만개발실",
+   "phone": "061-797-4512",
+   "note": "사전정보공표 — 안전보안 — 항만시설물 안전등급 현황",
+   "doc_ids": [
+    "YGPA-631"
+   ],
+   "source": "사전정보공표 — 안전보안 — 항만시설물 안전등급 현황 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/info/bein/in11/sf03/contPageDetail.do?conts_no=567E2A44F49142F981B22E9521AFB2C2",
+   "fetched_on": "2026-11-10"
+  },
+  {
+   "key": "site-YGPA-635",
+   "label": "경영지원부",
+   "phone": "061-797-4343",
+   "note": "사전정보공표 — 홍보대외협력 — 명예대사 및 홍보대사 운영현황",
+   "doc_ids": [
+    "YGPA-635"
+   ],
+   "source": "사전정보공표 — 홍보대외협력 — 명예대사 및 홍보대사 운영현황 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/info/bein/in14/pr05/contPageDetail.do?conts_no=BC2CEC483BAA45DF92BCCD34186EBEAE",
+   "fetched_on": "2026-11-10"
+  },
+  {
+   "key": "site-YGPA-636",
+   "label": "AI디지털부",
+   "phone": "061-797-4473",
+   "note": "사전정보공표 — 소통 — 민원관련 조사 및 처리결과",
+   "doc_ids": [
+    "YGPA-636"
+   ],
+   "source": "사전정보공표 — 소통 — 민원관련 조사 및 처리결과 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/info/bein/in15/cm01/contPageDetail.do?conts_no=084C5EFC69624CA2B7DA0E5C7502F800",
+   "fetched_on": "2026-11-10"
+  },
+  {
+   "key": "site-YGPA-637",
+   "label": "AI디지털부",
+   "phone": "061-797-4472",
+   "note": "사전정보공표 — 소통 — 빅데이터활용 현황 및 계획",
+   "doc_ids": [
+    "YGPA-637"
+   ],
+   "source": "사전정보공표 — 소통 — 빅데이터활용 현황 및 계획 페이지 담당자 안내",
+   "source_url": "https://www.ygpa.or.kr/hmpg/ygpa/info/bein/in15/cm02/contPageDetail.do?conts_no=4D33CAC6AEEF4BA7AA30F4F2D7BE142A",
+   "fetched_on": "2026-11-10"
   }
  ]
 }

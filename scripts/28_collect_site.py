@@ -415,5 +415,71 @@ def collect_mof():
     print("수집", len(done_ids) - len(empty), "빈 페이지", empty)
 
 
+# ---------- 2026-11-10 범위 확대 (v1.1) ----------
+# 경위: 팀 골든셋(FAQ 75문항 답변 확정판)을 채점 열로 옮기다 보니 30문항이 '근거가 수집 자료에 없음'으로 제외됐다.
+# 사용자 결정으로 v1.0의 제외 규칙 두 가지(사전정보공표 세부, 공고·채용 게시판)를 풀어 수집한다.
+# 즉 이 확대는 FAQ를 보고 정한 것이다 → evaluation_boundary 2·7번에 걸리므로, 골든셋에 'FAQ 보고 수집' 표시를 남겨
+# 지표를 그 문항 포함/제외 두 가지로 낸다. 문항의 URL만 고르지 않고 메뉴·게시판 단위 규칙으로 넣는다.
+# 여전히 제외: FAQ 게시판(230)과 FAQ 첨부 복사본, 사용자 글 게시판(293 등), 사전정보공표 하위 게시판 82개(행정 공시, 양이 많음), 외부 사이트.
+PLAN_EXTRA = ROOT / "docs/contracts/site_collection_v1_1.json"
+BOARDS_EXTRA = {
+    211: ("민원서식자료실", "/hmpg/ygpa/mwse/onmw/mwfm", 30, True),
+    339: ("개인정보처리업무 위탁사실 공개", "/hmpg/ygpa/addi/pers/open", 5, True),
+    275: ("공고", "/hmpg/ygpa/comu/anno", 10, False),
+    391: ("채용공고", "/hmpg/ygpa/comu/recr/rcan", 10, False),
+}
+PAGES_EXTRA: list[str] = []  # 메뉴 밖에서 따로 넣을 안내 페이지 (지금은 없음)
+
+
+def collect_extra():
+    have, seen, pages = existing_conts(), set(), {}
+    todo = sorted(l for l in menu_links(fetch("/hmpg/ygpa/main.do")[0].decode("utf-8", "replace")) if "/info/bein/" in l) + PAGES_EXTRA
+    while todo:
+        path = todo.pop(0)
+        if path in seen or blocked(path):
+            continue
+        seen.add(path)
+        try:
+            raw = fetch(path)[0].decode("utf-8", "replace")
+        except Exception as e:
+            print("조회 실패", path[:80], e)
+            continue
+        m = CONT.search(path)
+        if m and m.group(2) not in have:
+            pages[m.group(2)] = {"path": path, "lang": "ko", "title": page_title(raw)}
+        if "/info/bein/" in path:
+            todo += [l for l in sorted(menu_links(raw)) if "/info/bein/" in l and l not in seen and CONT.search(l)]
+    docs = [{"doc_id": f"YGPA-{600 + i}", "kind": "page", **t} for i, t in enumerate(sorted(pages.values(), key=lambda x: x["path"]))]
+    old = json.loads(PLAN_EXTRA.read_text(encoding="utf-8"))["pages"] if PLAN_EXTRA.exists() else []
+    known = {d["path"]: d for d in old}  # 다시 실행해도 문서 ID가 바뀌지 않게
+    docs = old + [dict(d, doc_id=f"YGPA-{600 + len(old) + i}") for i, d in enumerate(x for x in docs if x["path"] not in known)]
+    PLAN_EXTRA.write_text(json.dumps({
+        "version": "1.1", "created_at": datetime.now(timezone.utc).isoformat(),
+        "rule": "v1.0에 더해 사전정보공표 안내 페이지 전체와 아래 게시판을 넣는다. 하위 게시판 82개·사용자 글 게시판·FAQ는 계속 제외.",
+        "faq_informed": "이 확대는 FAQ 골든셋 검토(2026-11-10)에서 근거 미수집 문항을 보고 사용자 결정으로 한 것이다. "
+                        "골든셋 'FAQ 보고 수집' 열이 Y인 문항은 개발에 쓰인 문항으로 보고 지표를 따로 낸다.",
+        "boards": {str(k): {"name": v[0], "limit": v[2], "files": v[3]} for k, v in BOARDS_EXTRA.items()}, "pages": docs,
+    }, ensure_ascii=False, indent=1) + chr(10), encoding="utf-8")
+    snap = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%S%fZ")
+    faq = faq_hashes()
+    log = dict(page_errors=[], file_errors=[], file_skipped=[], image_errors=0, faq_duplicates=0, boards={})
+    for doc in docs:
+        collect_document(doc, snap, faq, log)
+    print("안내 페이지", len(docs), flush=True)
+    for no, (name, base, limit, files) in BOARDS_EXTRA.items():
+        try:
+            posts = board_posts(no, base, limit)
+        except Exception as e:
+            log["page_errors"].append(f"게시판 {no}: {e}")
+            continue
+        log["boards"][name] = len(posts)
+        for q in posts:
+            collect_document({"doc_id": f"YGPA-B{no}-{sha(q['pst'].encode())[:8].upper()}", "kind": "board_post", "board": name, "lang": "ko",
+                              "path": f"{base}/bordContDetail.do?bbs_no={no}&pst_no={q['pst']}"}, snap, faq, log, files)
+        print(f"게시판 {name} {len(posts)}건", flush=True)
+    (ROOT / "data/catalog/site_collection_log_v1_1.json").write_text(json.dumps(log, ensure_ascii=False, indent=1) + chr(10), encoding="utf-8")
+    print({k: (len(v) if isinstance(v, (list, dict)) else v) for k, v in log.items()})
+
+
 if __name__ == "__main__":
-    {"plan": plan, "collect": collect, "mof": collect_mof}[sys.argv[1]]()
+    {"plan": plan, "collect": collect, "mof": collect_mof, "extra": collect_extra}[sys.argv[1]]()

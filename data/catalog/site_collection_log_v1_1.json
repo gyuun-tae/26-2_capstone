@@ -1,0 +1,13 @@
+{
+ "page_errors": [],
+ "file_errors": [],
+ "file_skipped": [],
+ "image_errors": 0,
+ "faq_duplicates": 3,
+ "boards": {
+  "민원서식자료실": 14,
+  "개인정보처리업무 위탁사실 공개": 5,
+  "공고": 10,
+  "채용공고": 4
+ }
+}
