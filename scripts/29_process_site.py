@@ -8,6 +8,7 @@
 - 이미지: alt 글자 + OCR. 품질 기준을 넘긴 글만 쓰고, review_flags에 ocr_text_unverified를 남긴다.
   사람이 원본과 대조해 옮긴 글은 data/catalog/image_transcripts.json이 OCR보다 우선한다
   글자 이미지는 VLM이 옮긴 글(data/processed/vlm_accepted.json, 31번 --split)이 OCR보다 우선하고 vlm_text_unverified 표시 (2026-11-09)
+  VLM이 잘라 낸 지도·도면 중 핵심은 AI(Claude)가 원본을 보고 옮긴 초안(data/catalog/image_transcripts_ai_draft.json)을 VLM과 같은 표시로 쓴다 (2026-11-10)
 - 첨부: PDF(글자 없는 쪽만 OCR), HWP, XLSX
 - 게시글: 게시일을 본문 첫 줄에 적고 time_sensitive_notice 표시
 - 페이지 아래 담당 부서·전화는 연락처 버튼(contacts.json의 site- 항목)으로
@@ -29,6 +30,7 @@ VERSION = "site-pages-v1"
 MAX_CHARS = 2500
 CACHE = ROOT / "data/processed/ocr_cache.json"
 TRANSCRIPTS = ROOT / "data/catalog/image_transcripts.json"
+AI_DRAFT = ROOT / "data/catalog/image_transcripts_ai_draft.json"  # 사람 확인 전 지도·도면 글 (2026-11-10). 확인되면 TRANSCRIPTS로 옮긴다
 VLM = ROOT / "data/processed/vlm_accepted.json"  # 31번 --split의 auto (글자 이미지를 VLM이 옮긴 글, 2026-11-09). 없으면 OCR만 쓴다
 CONTACTS = ROOT / "src/api/app/contacts.json"
 PUBLISHER = "여수광양항만공사"
@@ -265,6 +267,8 @@ def main():
     ocr = Ocr(not args.no_ocr)
     manual = json.loads(TRANSCRIPTS.read_text(encoding="utf-8")) if TRANSCRIPTS.exists() else {}
     vlm = json.loads(VLM.read_text(encoding="utf-8")) if VLM.exists() else {}
+    if AI_DRAFT.exists():  # VLM 결과보다 우선 (같은 이미지면 VLM이 잘라 낸 것이라 원래 겹치지 않음)
+        vlm |= {k: v for k, v in json.loads(AI_DRAFT.read_text(encoding="utf-8")).items() if not k.startswith("_")}
     docs = []
     for folder in sorted([*(ROOT / "data/raw").glob("YGPA-*"), *(ROOT / "data/raw").glob("MOF-*")]):
         snaps = sorted(p for p in folder.iterdir() if p.is_dir())
