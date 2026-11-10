@@ -174,7 +174,7 @@ assert run("Port-MIS가 뭐예요?", ["정보시스템입니다[1].", '@@META {"
 assert len(calls["chat"]) == n + 1
 assert run("BTS 멤버 알려줘", ["부르면 안 됨"], hits=term)[-1][1]["answer_type"] == "unknown"
 # LLM이 근거로 답할 수 없다고 판단하면 근거·링크 대신 대표전화만 보여준다 (조기 판단도 같음)
-MAIN = {"type": "contact", "label": "여수광양항만공사 대표전화", "url": None, "phone": "061-797-4300",
+MAIN = {"type": "contact", "label": "여수광양항만공사 대표전화", "url": None, "phone": "061-797-4400",
         "note": "담당 부서를 모를 때", "source_ref": None}
 ev = run("부산항 운영사는?", ["확인이 어렵습니다.", '@@META {"type": "unknown", "actions": ["port_mis"]}'])
 assert ev[-1][1]["answer_type"] == "unknown" and ev[-2][1] == [] and ev[-1][1]["actions"] == [MAIN], ev[-1][1]
@@ -406,7 +406,7 @@ assert prompt.FOREIGN_NOTE not in last_user("TEU")
 ev = run("What is the weather today?", ["부르면 안 됨"], hits=[{"chunk": html_text, "score": 0.40}])
 assert text_of(ev) == lang.TEXT["unknown"]["en"], text_of(ev)
 main = ev[-1][1]["actions"]
-assert [(a["label"], a["phone"]) for a in main] == [("Yeosu Gwangyang Port Authority (main line)", "061-797-4300")], main
+assert [(a["label"], a["phone"]) for a in main] == [("Yeosu Gwangyang Port Authority (main line)", "061-797-4400")], main
 ev = run("今日の天気はどうですか?", ["부르면 안 됨"], hits=[{"chunk": html_text, "score": 0.40}])
 assert text_of(ev) == lang.TEXT["unknown"]["ja"] and ev[-1][1]["actions"][0]["label"] == "麗水光陽港湾公社 代表電話"
 for failure in (httpx.ConnectError("down"),):

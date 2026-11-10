@@ -37,6 +37,11 @@ def snapshot(path: Path) -> str:
     return f"{s[:4]}-{s[4:6]}-{s[6:8]}"
 
 
+# 팀 결정(2026-11-10): 챗봇 대표 안내 번호를 061-797-4400으로 통일 (골든셋과 같게). 홈페이지 하단 대표전화(4300)와 다르다.
+# 4400은 조직도·공사뉴스상 감사실(장) 번호이기도 하다. 결정을 되돌리면 None으로 두면 홈페이지 하단 번호를 쓴다
+MAIN_PHONE_DECISION = "061-797-4400"
+
+
 def main_phone() -> dict:
     found = Counter()
     for page in ROOT.glob("data/raw/*/*/*source.html"):
@@ -46,8 +51,11 @@ def main_phone() -> dict:
     if len(found) != 1:
         sys.exit(f"대표전화가 하나로 정해지지 않습니다: {dict(found)}")
     phone, n = found.most_common(1)[0]
+    source = f"홈페이지 하단 (수집 페이지 {n}개 공통)"
+    if MAIN_PHONE_DECISION:
+        phone, source = MAIN_PHONE_DECISION, f"팀 결정 2026-11-10 (홈페이지 하단 대표전화 {phone})"
     return {"key": "main", "label": "여수광양항만공사 대표전화", "phone": phone,
-            "note": "담당 부서를 모를 때", "doc_ids": [], "source": f"홈페이지 하단 (수집 페이지 {n}개 공통)",
+            "note": "담당 부서를 모를 때", "doc_ids": [], "source": source,
             "source_url": "https://www.ygpa.or.kr/"}
 
 
