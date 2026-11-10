@@ -8,6 +8,22 @@
  */
 @import './tokens.css';
 
+/*
+ * 일·중 화면(2026-11-10): Pretendard에는 한국 한자만 있어 湾·発 같은 일본 신자체·중국 간체가 다른 글꼴로 섞여 보였다.
+ * 그 언어 화면에서는 시스템 일·중 글꼴을 앞에 둔다.
+ */
+.ygpa-widget-root:lang(ja),
+.ygpa-widget-root :lang(ja) {
+  --font-sans: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Yu Gothic UI', 'Yu Gothic', Meiryo, 'Noto Sans JP',
+    'Pretendard Variable', Pretendard, sans-serif;
+}
+
+.ygpa-widget-root:lang(zh),
+.ygpa-widget-root :lang(zh) {
+  --font-sans: 'PingFang SC', 'Microsoft YaHei UI', 'Microsoft YaHei', 'Noto Sans SC', 'Pretendard Variable', Pretendard,
+    sans-serif;
+}
+
 .ygpa-widget-root {
   color: var(--color-text);
   font-family: var(--font-sans);

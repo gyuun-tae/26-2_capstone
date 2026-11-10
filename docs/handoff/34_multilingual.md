@@ -44,7 +44,9 @@
 
 - API: `test_rag_real.py` 15번 (판별·힌트·4개 언어 고정 문구·버튼·Port-MIS 안내·잘못된 language 422) — 4개 파일 OK
 - FE: `src/widget/i18n.test.ts` (네 언어 문구 항목 일치, 외국어 화면에 한글 없음, 카드·예시 네 언어, Port-MIS 새 주소, 날짜·복사 영어) — 20개 OK, lint·build OK
-- 브라우저 화면 확인과 실제 GPU 답변 확인은 아직 (목업 개발 서버로 확인 필요)
+- 브라우저 화면 확인 (11/10, 목업 개발 서버 + 헤드리스 Chrome, 480×900): 네 언어 모두 외국어 화면에 한글 없음.
+  고친 것: 일·중 화면에서 湾·発 같은 글자만 다른 글꼴로 섞임(Pretendard에 일본 신자체·간체 없음) → `widget-base.css`에서 :lang(ja/zh)일 때 시스템 일·중 글꼴 먼저,
+  영어 카드 'Complaints/reports'가 'repor/ts'로 끊김 → 'Complaints & reports'. 실제 GPU 답변 확인은 아직
 
 ## 남은 일
 

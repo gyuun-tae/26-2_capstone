@@ -75,7 +75,7 @@ export const TASKS: Task[] = [
   },
   {
     id: 'civil', icon: MessageSquare, kind: 'ask',
-    label: { ko: '민원·신고', en: 'Complaints/reports', ja: '苦情・申告', zh: '投诉·举报' },
+    label: { ko: '민원·신고', en: 'Complaints & reports', ja: '苦情・申告', zh: '投诉·举报' },
     question: {
       ko: '민원이나 신고는 어떻게 하나요?',
       en: 'How do I file a complaint or report?',
