@@ -1,0 +1,1080 @@
+{
+ "dataset": "dev_questions_media_v1.jsonl",
+ "index_version": "bge-m3-dense-7747f421d88d",
+ "run_at": "2026-11-09T14:49:07.222721+00:00",
+ "summary": {
+  "retrieval": "20/24",
+  "retrieval@1": "18/24",
+  "type": "22/25",
+  "buttons": "25/25",
+  "mention": "18/22",
+  "lead": "0/0",
+  "absent": "0/0",
+  "contact_btn": "0/0",
+  "contact": "2/4",
+  "type_by_group": {
+   "drawing": "6/8",
+   "foreign": "6/7",
+   "image": "10/10"
+  },
+  "uncited_lines_total": 1,
+  "violations_total": 0,
+  "unsupported_numbers_total": 0,
+  "first_token_s": {
+   "mean": 1.95,
+   "median": 2.02,
+   "max": 2.97
+  }
+ },
+ "rows": [
+  {
+   "id": "d01",
+   "group": "drawing",
+   "question": "여천일반부두 야적장 면적은 얼마인가요?",
+   "answer_type": "answer",
+   "top1_score": 0.711,
+   "top_docs": [
+    "YGPA-031",
+    "YGPA-031",
+    "YGPA-189",
+    "MOF-3834",
+    "MOF-3834"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 2.32,
+   "total_s": 3.28,
+   "timings": {
+    "embed_s": 0.25,
+    "search_s": 0.01,
+    "rerank_s": 0.15,
+    "gate_s": 1.76,
+    "first_token_s": 2.32,
+    "llm_s": 2.87,
+    "total_s": 3.28
+   },
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "여천일반부두 야적장의 면적은 43,834㎡입니다[1]."
+  },
+  {
+   "id": "d02",
+   "group": "drawing",
+   "question": "광양항 제품부두 야적장은 몇 제곱미터예요?",
+   "answer_type": "answer",
+   "top1_score": 0.747,
+   "top_docs": [
+    "YGPA-031",
+    "YGPA-031",
+    "YGPA-196",
+    "YGPA-199",
+    "YGPA-189"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 1.02,
+   "total_s": 1.5,
+   "timings": {
+    "embed_s": 0.08,
+    "search_s": 0.03,
+    "rerank_s": 0.12,
+    "gate_s": 0.8,
+    "first_token_s": 1.02,
+    "llm_s": 1.27,
+    "total_s": 1.5
+   },
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "광양항 제품부두 야적장은 166,701㎡입니다[1]."
+  },
+  {
+   "id": "d03",
+   "group": "drawing",
+   "question": "율촌일반부두 야적장에는 조명탑이 몇 개 있어요?",
+   "answer_type": "answer",
+   "top1_score": 0.686,
+   "top_docs": [
+    "YGPA-031",
+    "YGPA-189",
+    "YGPA-F3D94F75F06",
+    "MOF-3876",
+    "YGPA-031"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 2.08,
+   "total_s": 2.91,
+   "timings": {
+    "embed_s": 0.06,
+    "search_s": 0.01,
+    "rerank_s": 0.15,
+    "gate_s": 1.79,
+    "first_token_s": 2.08,
+    "llm_s": 2.68,
+    "total_s": 2.91
+   },
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "율촌일반부두 야적장에는 조명탑이 4개 있습니다[1]."
+  },
+  {
+   "id": "d04",
+   "group": "drawing",
+   "question": "중마일반부두 야적장 크기 알려주세요",
+   "answer_type": "answer",
+   "top1_score": 0.684,
+   "top_docs": [
+    "YGPA-031",
+    "YGPA-195",
+    "YGPA-B198-53C7071A",
+    "MOF-3835",
+    "YGPA-189"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 1.57,
+   "total_s": 3.61,
+   "timings": {
+    "embed_s": 0.06,
+    "search_s": 0.01,
+    "rerank_s": 0.13,
+    "gate_s": 1.22,
+    "first_token_s": 1.57,
+    "llm_s": 3.41,
+    "total_s": 3.61
+   },
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "중마일반부두 야적장의 크기는 63천㎡입니다[1].  \n\n1. 야적장의 길이는 420m이며, 폭은 150m입니다[1].  \n2. 안벽 쪽 20m는 별도로 계산됩니다[1]."
+  },
+  {
+   "id": "d05",
+   "group": "drawing",
+   "question": "광양항 속력제한구역에서 위험물운반선은 몇 노트 이하로 가야 하나요?",
+   "answer_type": "unknown",
+   "top1_score": 0.613,
+   "top_docs": [
+    "MOF-3855",
+    "MOF-3876",
+    "YGPA-228",
+    "MOF-3990",
+    "YGPA-032"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [
+    "여수광양항만공사 대표전화 061-797-4300"
+   ],
+   "options": [],
+   "uncited_lines": 2,
+   "violations": [],
+   "contacts_from_evidence": 1,
+   "unsupported_numbers": [],
+   "first_token_s": 2.97,
+   "total_s": 5.52,
+   "timings": {
+    "embed_s": 0.06,
+    "search_s": 0.01,
+    "rerank_s": 0.12,
+    "gate_s": 2.24,
+    "first_token_s": 2.97,
+    "llm_s": 5.34,
+    "total_s": 5.52
+   },
+   "checks": {
+    "type": false,
+    "retrieval": false,
+    "retrieval@1": false,
+    "mention": false,
+    "contact": true,
+    "buttons": true
+   },
+   "answer": "광양항 속력제한구역에서 위험물운반선은 안전한 속력으로 항행해야 합니다[1]. \n\n구체적인 속도 제한은 근거 자료에 명시되어 있지 않습니다. \n\n확인한 공식 자료만으로는 답을 확정하기 어렵습니다. 담당 부서를 모르시면 아래 대표전화로 문의해 주세요."
+  },
+  {
+   "id": "d06",
+   "group": "drawing",
+   "question": "광양항 컨테이너부두 지역 맨 서쪽에는 어떤 부두가 있나요?",
+   "answer_type": "unknown",
+   "top1_score": 0.634,
+   "top_docs": [
+    "MOF-3984",
+    "YGPA-201",
+    "YGPA-199",
+    "YGPA-200",
+    "YGPA-190"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [
+    "여수광양항만공사 대표전화 061-797-4300"
+   ],
+   "options": [],
+   "uncited_lines": 1,
+   "violations": [],
+   "contacts_from_evidence": 1,
+   "unsupported_numbers": [],
+   "first_token_s": 1.79,
+   "total_s": 1.79,
+   "timings": {
+    "embed_s": 0.06,
+    "search_s": 0.01,
+    "rerank_s": 0.11,
+    "gate_s": 1.61,
+    "llm_s": 1.61,
+    "first_token_s": 1.79,
+    "total_s": 1.79
+   },
+   "checks": {
+    "type": false,
+    "retrieval": false,
+    "retrieval@1": false,
+    "mention": false,
+    "contact": true,
+    "buttons": true
+   },
+   "answer": "확인한 공식 자료만으로는 답을 확정하기 어렵습니다. 질문을 조금 더 구체적으로 써 주시거나, 아래 대표전화로 문의해 주세요."
+  },
+  {
+   "id": "d07",
+   "group": "drawing",
+   "question": "여수신항 선회장 지름이 얼마나 되나요?",
+   "answer_type": "answer",
+   "top1_score": 0.626,
+   "top_docs": [
+    "MOF-3837",
+    "MOF-3836",
+    "YGPA-252",
+    "YGPA-245",
+    "MOF-3876"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 2.27,
+   "total_s": 3.24,
+   "timings": {
+    "embed_s": 0.05,
+    "search_s": 0.01,
+    "rerank_s": 0.14,
+    "gate_s": 1.8,
+    "first_token_s": 2.27,
+    "llm_s": 3.04,
+    "total_s": 3.24
+   },
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "여수신항의 선회장 지름은 400m와 600m입니다[1]."
+  },
+  {
+   "id": "d08",
+   "group": "drawing",
+   "question": "D-2 정박지는 어떤 선박이 쓰는 곳인가요?",
+   "answer_type": "answer",
+   "top1_score": 0.482,
+   "top_docs": [
+    "MOF-3837",
+    "YGPA-031",
+    "LAW-007",
+    "LAW-024",
+    "YGPA-031"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 1.29,
+   "total_s": 1.9,
+   "timings": {
+    "embed_s": 0.05,
+    "search_s": 0.01,
+    "rerank_s": 0.15,
+    "gate_s": 1.03,
+    "first_token_s": 1.29,
+    "llm_s": 1.69,
+    "total_s": 1.9
+   },
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "D-2 정박지는 흘수 16m 미만 선박용으로 쓰는 곳입니다[1]."
+  },
+  {
+   "id": "i01",
+   "group": "image",
+   "question": "외항선이 입항하기 전에 해야 하는 신고에는 어떤 것들이 있나요?",
+   "answer_type": "answer",
+   "top1_score": 0.754,
+   "top_docs": [
+    "LAW-008",
+    "YGPA-031",
+    "LAW-009",
+    "MOF-3853",
+    "YGPA-150"
+   ],
+   "downloads": [],
+   "port_mis": true,
+   "contacts": [
+    "여수지사 061-797-4346"
+   ],
+   "options": [],
+   "uncited_lines": 1,
+   "violations": [],
+   "contacts_from_evidence": 1,
+   "unsupported_numbers": [],
+   "first_token_s": 1.51,
+   "total_s": 6.67,
+   "timings": {
+    "embed_s": 0.05,
+    "search_s": 0.01,
+    "rerank_s": 0.1,
+    "gate_s": 1.27,
+    "first_token_s": 1.51,
+    "llm_s": 6.51,
+    "total_s": 6.67
+   },
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": false,
+    "mention": false,
+    "buttons": true
+   },
+   "answer": "외항선이 입항하기 전에 해야 하는 신고는 다음과 같습니다.\n\n1. 외항선 입항보고(최초, 변경)를 Port-MIS에 입력합니다[2][5].  \n2. 선박제원신고서를 제출합니다[5].  \n3. 선원/승객명부를 제출합니다[3].  \n4. 선박보안정보를 통보합니다[4].  \n5. 무전검역신청을 합니다[4].  \n6. 위험물 반입 신고와 위험물 일람표를 첨부합니다[4].  \n7. 도선신청(도선사, 예선, 강취방 배정)을 합니다[4].  \n8. 항만시설 사용신청(정박지, 선석)을 합니다[2][4].  \n9. 통합화물신고(반입)를 합니다[4]."
+  },
+  {
+   "id": "i02",
+   "group": "image",
+   "question": "Port-MIS로 입출항 신고하기 전에 먼저 해야 하는 게 뭐예요?",
+   "answer_type": "answer",
+   "top1_score": 0.629,
+   "top_docs": [
+    "YGPA-031",
+    "YGPA-032",
+    "YGPA-150",
+    "LAW-009",
+    "LAW-008"
+   ],
+   "downloads": [],
+   "port_mis": true,
+   "contacts": [
+    "여수지사 061-797-4346"
+   ],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 1,
+   "unsupported_numbers": [],
+   "first_token_s": 1.51,
+   "total_s": 4.63,
+   "timings": {
+    "embed_s": 0.06,
+    "search_s": 0.01,
+    "rerank_s": 0.12,
+    "gate_s": 1.24,
+    "first_token_s": 1.51,
+    "llm_s": 4.45,
+    "total_s": 4.63
+   },
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": false,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "Port-MIS로 입출항 신고를 하기 전에 먼저 사용자 등록 신청을 해야 합니다[3].\n\n1. 사용자 등록 신청(ID, Password 등록)을 해야 합니다[3]\n2. 선박 제원이 등록되어 있는지 확인해야 합니다[3]\n3. 선박 제원이 등록되어 있지 않다면 선박 제원 신고서를 제출해야 합니다[3]\n4. 입출항 이력을 조회하여 항차를 확인해야 합니다[3]"
+  },
+  {
+   "id": "i03",
+   "group": "image",
+   "question": "광양항 배후단지 토지 분양은 어떤 방식으로 하나요?",
+   "answer_type": "answer",
+   "top1_score": 0.693,
+   "top_docs": [
+    "YGPA-170",
+    "YGPA-169",
+    "YGPA-039",
+    "YGPA-038",
+    "YGPA-034"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [
+    "물류단지부 061-797-4456",
+    "물류단지부 (배후단지 담당) 061-797-4456"
+   ],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 2,
+   "unsupported_numbers": [],
+   "first_token_s": 1.67,
+   "total_s": 5.89,
+   "timings": {
+    "embed_s": 0.05,
+    "search_s": 0.01,
+    "rerank_s": 0.13,
+    "gate_s": 1.48,
+    "first_token_s": 1.67,
+    "llm_s": 5.7,
+    "total_s": 5.89
+   },
+   "checks": {
+    "type": true,
+    "retrieval": false,
+    "retrieval@1": false,
+    "mention": false,
+    "buttons": true
+   },
+   "answer": "광양항 배후단지는 임대 방식으로 운영되며, 토지 분양 방식은 제공되지 않습니다[2].\n\n임대기간은 50년이며, 임대료는 해양수산부에서 고시한 기준에 따라 적용됩니다[5].\n\n1. 입주기업 모집 및 우선협상 대상자 선정[3]\n2. 입주계약 체결 후 건축 허가 및 준공[3]\n3. 임대료는 연간 선납 방식으로 징수됩니다[5]\n4. 외국인 투자금액 500만 불 이상 시 3년간 50% 임대료 감면 혜택이 있습니다[5]"
+  },
+  {
+   "id": "i04",
+   "group": "image",
+   "question": "정보공개를 청구하면 며칠 안에 공개 여부를 알려 주나요?",
+   "answer_type": "answer",
+   "top1_score": 0.704,
+   "top_docs": [
+    "YGPA-141",
+    "YGPA-FDD11E3B933",
+    "YGPA-140",
+    "YGPA-FDB9F409161",
+    "YGPA-F30332B5D48"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [
+    "경영지원부 061-797-4343"
+   ],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 1,
+   "unsupported_numbers": [],
+   "first_token_s": 1.51,
+   "total_s": 3.15,
+   "timings": {
+    "embed_s": 0.06,
+    "search_s": 0.01,
+    "rerank_s": 0.11,
+    "gate_s": 1.23,
+    "first_token_s": 1.51,
+    "llm_s": 2.97,
+    "total_s": 3.15
+   },
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "정보공개를 청구하면 공공기관은 청구를 받은 날로부터 **10일** 이내에 공개 여부를 결정합니다. 부득이한 경우 **10일 더 연장**될 수 있습니다[1]."
+  },
+  {
+   "id": "i05",
+   "group": "image",
+   "question": "공사 핵심 안전수칙에서 끼임 사고는 어떻게 예방하나요?",
+   "answer_type": "answer",
+   "top1_score": 0.648,
+   "top_docs": [
+    "YGPA-130",
+    "YGPA-129",
+    "YGPA-128",
+    "LAW-012",
+    "YGPA-FB2C5F5A490"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [
+    "재난안전실 061-797-4483"
+   ],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 1,
+   "unsupported_numbers": [],
+   "first_token_s": 2.12,
+   "total_s": 5.58,
+   "timings": {
+    "embed_s": 0.06,
+    "search_s": 0.01,
+    "rerank_s": 0.13,
+    "gate_s": 1.92,
+    "first_token_s": 2.12,
+    "llm_s": 5.38,
+    "total_s": 5.58
+   },
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "공사 핵심 안전수칙에서 끼임 사고는 크레인·하역장비·컨베이어 등 설비의 방호장치를 유지하고, 정비·청소·수리 시 전원을 차단하고 잠금·표시(LOTO)를 실시하여 예방합니다[1].\n\n1. 크레인·하역장비·컨베이어 등 설비의 방호장치 유지[1]  \n2. 정비·청소·수리 시 전원 차단 및 잠금·표시(LOTO) 실시[1]"
+  },
+  {
+   "id": "i06",
+   "group": "image",
+   "question": "광양항에서 선박이 저속운항하면 항비를 깎아 주나요?",
+   "answer_type": "answer",
+   "top1_score": 0.67,
+   "top_docs": [
+    "YGPA-B416-6C5B0FA3",
+    "YGPA-186",
+    "YGPA-B191-4FDA6DB5",
+    "YGPA-185",
+    "YGPA-228"
+   ],
+   "downloads": [],
+   "port_mis": true,
+   "contacts": [
+    "물류전략실 061-797-4432"
+   ],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 1,
+   "unsupported_numbers": [],
+   "first_token_s": 2.67,
+   "total_s": 7.56,
+   "timings": {
+    "embed_s": 0.05,
+    "search_s": 0.01,
+    "rerank_s": 0.16,
+    "gate_s": 2.22,
+    "first_token_s": 2.67,
+    "llm_s": 7.35,
+    "total_s": 7.56
+   },
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "광양항에서 선박이 저속운항하면 항비가 감면됩니다[2]. \n\n1. 여수광양항에서 해당선박(컨테이너선, 세미컨테이너선, 자동차운반선, LNG운반선)이 연간 60% 이상의 항차를 저속운항에 참여/준수한 경우, 선박입출항료가 선종별 최대 15%~30% 감면됩니다[2].  \n2. 계절관리제 기간(1~3월, 12월)에는 감면율이 10% 추가 적용됩니다[2].  \n3. 저속운항 프로그램 세부운영방안이 변경되어, 참여신청이 간소화되고 정상운항 제외 선박이 추가되었습니다[3]."
+  },
+  {
+   "id": "i07",
+   "group": "image",
+   "question": "여수항 크루즈부두에는 몇 톤급 크루즈선까지 댈 수 있나요?",
+   "answer_type": "answer",
+   "top1_score": 0.711,
+   "top_docs": [
+    "YGPA-B416-7ADEF4D7",
+    "YGPA-252",
+    "MOF-3836",
+    "YGPA-B213-603CE15F",
+    "MOF-3984"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [
+    "여수지사 061-797-4348"
+   ],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 1,
+   "unsupported_numbers": [],
+   "first_token_s": 2.27,
+   "total_s": 4.04,
+   "timings": {
+    "embed_s": 0.05,
+    "search_s": 0.01,
+    "rerank_s": 0.15,
+    "gate_s": 1.82,
+    "first_token_s": 2.27,
+    "llm_s": 3.83,
+    "total_s": 4.04
+   },
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "여수항 크루즈부두에는 15만 톤급까지 접안이 가능하며, 선박 제원 및 접안여건이 충족되면 최대 17만 톤급까지 검토가 가능합니다[1][2]."
+  },
+  {
+   "id": "i08",
+   "group": "image",
+   "question": "크루즈선 터미널이용료는 승객 한 명당 얼마예요?",
+   "answer_type": "answer",
+   "top1_score": 0.604,
+   "top_docs": [
+    "YGPA-B416-7ADEF4D7",
+    "LAW-010",
+    "YGPA-032",
+    "YGPA-032",
+    "LAW-010"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 2.47,
+   "total_s": 4.09,
+   "timings": {
+    "embed_s": 0.06,
+    "search_s": 0.01,
+    "rerank_s": 0.14,
+    "gate_s": 1.92,
+    "first_token_s": 2.47,
+    "llm_s": 3.88,
+    "total_s": 4.09
+   },
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "크루즈선 터미널이용료는 국제여객 기준으로 출항여객 1인당 1,500원입니다[4]. 6세 미만 소아는 제외됩니다[4]."
+  },
+  {
+   "id": "i09",
+   "group": "image",
+   "question": "광양항 프리넷(GP FreeNet) 계정은 어떻게 만들어요?",
+   "answer_type": "answer",
+   "top1_score": 0.72,
+   "top_docs": [
+    "MOF-3881",
+    "MOF-3880",
+    "YGPA-108",
+    "YGPA-108",
+    "YGPA-185"
+   ],
+   "downloads": [],
+   "port_mis": true,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 2.73,
+   "total_s": 7.99,
+   "timings": {
+    "embed_s": 0.13,
+    "search_s": 0.01,
+    "rerank_s": 0.15,
+    "gate_s": 2.23,
+    "first_token_s": 2.73,
+    "llm_s": 7.7,
+    "total_s": 7.99
+   },
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "광양항 프리넷(GP FreeNet) 계정은 PORT-MIS 사용자 계정을 이용할 수 있으며, 등록되지 않은 사용자는 회원등록절차를 통해 사용자 등록한 후 사용할 수 있습니다[1].\n\n1. GP FreeNet 이용신청서를 다운받아 작성합니다[1]\n2. 무선랜 장치(Wi-Fi)가 부착된 스마트폰, 노트북 등을 이용하여 무선 네트워크 검색을 하여 'GP FreeNet'을 연결하고 브라우저를 실행합니다[1]\n3. 인트로 화면이 나타나면 등록된 사용자 계정으로 사용자 인증을 합니다[1]\n4. PORT-MIS 이용자(업체 이용자)는 PORT-MIS ID와 비밀번호로 이용이 가능합니다. 선박 이용자는 GP FreeNet회원가입 후 사용하시기 바랍니다[1]"
+  },
+  {
+   "id": "i10",
+   "group": "image",
+   "question": "컨테이너 세척·수리장 운영자 모집 접수는 언제까지였나요?",
+   "answer_type": "answer",
+   "top1_score": 0.635,
+   "top_docs": [
+    "YGPA-B416-888157EB",
+    "YGPA-F2E94CCC79B",
+    "YGPA-B213-F9A66E2E",
+    "YGPA-B213-1C6CCECD",
+    "YGPA-B213-0323D074"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 2.37,
+   "total_s": 3.89,
+   "timings": {
+    "embed_s": 0.06,
+    "search_s": 0.01,
+    "rerank_s": 0.13,
+    "gate_s": 1.82,
+    "first_token_s": 2.37,
+    "llm_s": 3.7,
+    "total_s": 3.89
+   },
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "광양항 컨테이너 세척·수리장 운영자 모집 접수는 2026년 9월 7일(월) 14:00까지였습니다[1]."
+  },
+  {
+   "id": "f01",
+   "group": "foreign",
+   "question": "Who operates the dangerous goods warehouse in the Gwangyang Port hinterland?",
+   "answer_type": "answer",
+   "top1_score": 0.648,
+   "top_docs": [
+    "YGPA-308",
+    "YGPA-300",
+    "YGPA-323",
+    "YGPA-323",
+    "YGPA-305"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 0.93,
+   "total_s": 1.95,
+   "timings": {
+    "embed_s": 0.07,
+    "search_s": 0.01,
+    "rerank_s": 0.14,
+    "gate_s": 0.71,
+    "first_token_s": 0.93,
+    "llm_s": 1.73,
+    "total_s": 1.95
+   },
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "The dangerous goods warehouse in the Gwangyang Port hinterland is operated by Daepyung Co., Ltd. [1]"
+  },
+  {
+   "id": "f02",
+   "group": "foreign",
+   "question": "What do I need to do first before filing a port entry report on Port-MIS?",
+   "answer_type": "answer",
+   "top1_score": 0.702,
+   "top_docs": [
+    "YGPA-315",
+    "YGPA-031",
+    "YGPA-150",
+    "LAW-009",
+    "YGPA-032"
+   ],
+   "downloads": [],
+   "port_mis": true,
+   "contacts": [
+    "여수지사 061-797-4346"
+   ],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 1,
+   "unsupported_numbers": [],
+   "first_token_s": 1.63,
+   "total_s": 4.67,
+   "timings": {
+    "embed_s": 0.06,
+    "search_s": 0.01,
+    "rerank_s": 0.31,
+    "gate_s": 1.23,
+    "first_token_s": 1.63,
+    "llm_s": 4.29,
+    "total_s": 4.67
+   },
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "buttons": true
+   },
+   "answer": "You need to complete the user registration application (ID and password registration) before filing a port entry report on Port-MIS [1][3].\n\n1. Check if the vessel information is registered. If not, submit a vessel information report (new or amended) [1][3].\n2. If the vessel information is already registered, check the vessel's entry and exit history (voyage confirmation) [1][3].\n3. Submit the initial or amended port entry report for ocean-going or coastal ships [1][3]."
+  },
+  {
+   "id": "f03",
+   "group": "foreign",
+   "question": "麗水事業所の電話番号を教えてください",
+   "answer_type": "answer",
+   "top1_score": 0.705,
+   "top_docs": [
+    "YGPA-417",
+    "YGPA-416",
+    "YGPA-418",
+    "ORG-017",
+    "ORG-021"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 0.93,
+   "total_s": 1.9,
+   "timings": {
+    "embed_s": 0.06,
+    "search_s": 0.01,
+    "rerank_s": 0.13,
+    "gate_s": 0.57,
+    "first_token_s": 0.93,
+    "llm_s": 1.71,
+    "total_s": 1.9
+   },
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "麗水事業所の電話番号は +82-061-692-4348 です[1]."
+  },
+  {
+   "id": "f04",
+   "group": "foreign",
+   "question": "丽水光阳港湾公社的组织结构是怎样的?",
+   "answer_type": "unknown",
+   "top1_score": 0.577,
+   "top_docs": [
+    "YGPA-523",
+    "YGPA-423",
+    "YGPA-521",
+    "YGPA-421",
+    "YGPA-526"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [
+    "丽水光阳港湾公社 代表电话 061-797-4300"
+   ],
+   "options": [],
+   "uncited_lines": 1,
+   "violations": [],
+   "contacts_from_evidence": 1,
+   "unsupported_numbers": [],
+   "first_token_s": 1.99,
+   "total_s": 1.99,
+   "timings": {
+    "embed_s": 0.05,
+    "search_s": 0.01,
+    "rerank_s": 0.17,
+    "gate_s": 1.76,
+    "llm_s": 1.76,
+    "first_token_s": 1.99,
+    "total_s": 1.99
+   },
+   "checks": {
+    "type": false,
+    "retrieval": false,
+    "retrieval@1": false,
+    "contact": false,
+    "buttons": true
+   },
+   "answer": "仅凭已确认的官方资料无法确定答案。请把问题写得更具体一些，或拨打下方的代表电话咨询。"
+  },
+  {
+   "id": "f05",
+   "group": "foreign",
+   "question": "How much is the passenger terminal fee for cruise ships at Yeosu Port?",
+   "answer_type": "answer",
+   "top1_score": 0.585,
+   "top_docs": [
+    "YGPA-B416-7ADEF4D7",
+    "YGPA-326",
+    "YGPA-325",
+    "YGPA-323",
+    "YGPA-F3D94F75F06"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 2.51,
+   "total_s": 3.56,
+   "timings": {
+    "embed_s": 0.04,
+    "search_s": 0.01,
+    "rerank_s": 0.19,
+    "gate_s": 1.9,
+    "first_token_s": 2.51,
+    "llm_s": 3.31,
+    "total_s": 3.56
+   },
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "The passenger terminal fee for cruise ships at Yeosu Port is 1,500 won per passenger[1]."
+  },
+  {
+   "id": "f06",
+   "group": "foreign",
+   "question": "Is there free Wi-Fi for ships at Gwangyang Port?",
+   "answer_type": "answer",
+   "top1_score": 0.656,
+   "top_docs": [
+    "MOF-3880",
+    "YGPA-323",
+    "YGPA-300",
+    "YGPA-321",
+    "YGPA-322"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [],
+   "options": [],
+   "uncited_lines": 0,
+   "violations": [],
+   "contacts_from_evidence": 0,
+   "unsupported_numbers": [],
+   "first_token_s": 2.02,
+   "total_s": 5.93,
+   "timings": {
+    "embed_s": 0.07,
+    "search_s": 0.01,
+    "rerank_s": 0.17,
+    "gate_s": 1.71,
+    "first_token_s": 2.02,
+    "llm_s": 5.69,
+    "total_s": 5.93
+   },
+   "checks": {
+    "type": true,
+    "retrieval": true,
+    "retrieval@1": true,
+    "mention": true,
+    "buttons": true
+   },
+   "answer": "Yes, there is free Wi-Fi for ships at Gwangyang Port. It is called GP FreeNet, a Wi-Fi-based wireless network service that allows all vessels entering and exiting Gwangyang Port and Yeosu Port to use the internet for free [1].\n\n1. The wireless network utilizes existing structures such as lighting facilities, CCTV poles, and navigation aids in Gwangyang Port to build the wireless infrastructure [1].\n2. It is recommended to install an external antenna on the ship and use a wireless bridge to maintain optimal connectivity even during the ship's movement or swaying [1].\n3. The wireless portal provides information such as wind direction and speed, safety rules, vessel arrival and departure status, and other useful information for crew members [1]."
+  },
+  {
+   "id": "f07",
+   "group": "foreign",
+   "question": "What is the weather like at Busan Port today?",
+   "answer_type": "unknown",
+   "top1_score": 0.567,
+   "top_docs": [
+    "YGPA-FE3F1B96336",
+    "YGPA-FE3F1B96336",
+    "YGPA-FAAD7B39DDB",
+    "YGPA-FAAD7B39DDB",
+    "YGPA-323"
+   ],
+   "downloads": [],
+   "port_mis": false,
+   "contacts": [
+    "Yeosu Gwangyang Port Authority (main line) 061-797-4300"
+   ],
+   "options": [],
+   "uncited_lines": 1,
+   "violations": [],
+   "contacts_from_evidence": 1,
+   "unsupported_numbers": [],
+   "first_token_s": 2.54,
+   "total_s": 2.54,
+   "timings": {
+    "embed_s": 0.08,
+    "search_s": 0.01,
+    "rerank_s": 0.2,
+    "gate_s": 2.25,
+    "llm_s": 2.25,
+    "first_token_s": 2.54,
+    "total_s": 2.54
+   },
+   "checks": {
+    "type": true,
+    "contact": false,
+    "buttons": true
+   },
+   "answer": "We could not find a definite answer in the official materials we checked. Please make your question a little more specific, or call the main number below."
+  }
+ ]
+}
